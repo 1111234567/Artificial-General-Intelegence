@@ -68,15 +68,20 @@ bad = [n for n in h2_nums if n is None]
 if bad:
     print("  注: 无编号 H2 %d 个（文档头部章节，正常）" % len(bad))
 seq = [n for n in h2_nums if n is not None]
-expect = list(range(seq[0], seq[0] + len(seq)))
-if seq != expect:
+if not seq:
+    print("  OK 无编号 H2（本文档不用编号体系）")
+    expect = []
+    gaps = []
+else:
+    expect = list(range(seq[0], seq[0] + len(seq)))
+if seq and seq != expect:
     gaps = [n for n in range(seq[0], max(seq) + 1) if n not in seq]
     outside = [n for n in gaps if (n, None) not in exist_all]
     if gaps and not outside:
         print("  OK 编号连续（缺的 %s 在其它卷，已用底簿补齐）" % gaps)
     else:
         print("  !! 编号不连续:", seq, " 缺:", gaps, " 其中全项目都没有的:", outside)
-else:
+elif seq:
     print("  OK 编号连续")
 
 # ---------- 3. H3 编号与归属 ----------
