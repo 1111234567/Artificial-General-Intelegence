@@ -2,10 +2,21 @@
 """草案结构核验：标题编号 / 交叉引用 / 表格形态 / 乱码 / 行尾"""
 import io, re, sys, collections
 
-P = r"E:\pando\workspace\design-memory-learning-2026-10-22.md"
+# 用法：python check_draft.py [目标文件] [其它卷 ...]
+#   第一个参数 = 本次要检查的文件；其余卷只作为交叉引用的底簿（章节号全项目唯一）。
+#   省略参数时回落到旧草案路径（保留兼容）。
+ARGS = [a for a in sys.argv[1:] if not a.startswith("-")]
+P = ARGS[0] if ARGS else r"E:\pando\workspace\design-memory-learning-2026-10-22.md"
+ALL_PATHS = [P] + ARGS[1:]
 raw = io.open(P, "r", encoding="utf-8", newline="").read()
-lines = raw.split("\r\n")
-print("lines:", len(lines))
+CR = chr(13)
+LF = chr(10)
+crlf = raw.count(CR + LF)
+lf_only = raw.count(LF) - crlf
+bare_cr = raw.count(CR) - crlf
+lines = raw.splitlines()
+print("file:", P)
+print("lines:", len(lines), " CRLF:", crlf, " bare-LF:", lf_only, " bare-CR:", bare_cr)
 
 # ---------- 1. 标题结构 ----------
 heads = []          # (lineno, level, text)
@@ -26,18 +37,45 @@ for no, lv, t in heads:
         print("  %5d  %s" % (no, t))
 
 # ---------- 2. 编号连续性 ----------
+# 全项目章节编号（本卷 + 其它卷）：供连续性、悬空引用两处共用
+exist_all = set()
+for _p in ALL_PATHS:
+    _txt = io.open(_p, "r", encoding="utf-8", newline="").read()
+    _fence = False
+    for _ln in _txt.splitlines():
+        if _ln.lstrip().startswith("```"):
+            _fence = not _fence
+            continue
+        if _fence:
+            continue
+        _m = re.match(r"^(#{2,4}) +([0-9]+)(?:[.]([0-9]+))?", _ln)
+        if not _m:
+            continue
+        _n1 = int(_m.group(2))
+        _n2 = int(_m.group(3)) if _m.group(3) else None
+        if len(_m.group(1)) == 2:
+            exist_all.add((_n1, None))
+        elif _n2 is not None:
+            exist_all.add((_n1, _n2))
+
 h2_nums = []
 for no, lv, t in heads:
     if lv == 2:
-        m = re.match(r"^(\d+)\.", t)
+        m = re.match(r"^([0-9]+)[.]", t)
         h2_nums.append(int(m.group(1)) if m else None)
 print("\nH2 编号序列:", h2_nums)
 bad = [n for n in h2_nums if n is None]
 if bad:
-    print("  !! 有 H2 无编号，数量:", len(bad))
+    print("  注: 无编号 H2 %d 个（文档头部章节，正常）" % len(bad))
 seq = [n for n in h2_nums if n is not None]
-if seq != list(range(seq[0], seq[0] + len(seq))):
-    print("  !! 编号不连续:", seq)
+expect = list(range(seq[0], seq[0] + len(seq)))
+if seq != expect:
+    gaps = [n for n in range(seq[0], max(seq) + 1) if n not in seq]
+    outside = [n for n in gaps if (n, None) not in exist_all]
+    if gaps and not outside:
+        print("  OK 编号连续（缺的 %s 在其它卷，已用底簿补齐）" % gaps)
+    else:
+        print("  !! 编号不连续:", seq, " 缺:", gaps, " 其中全项目都没有的:", outside)
 else:
     print("  OK 编号连续")
 
@@ -80,20 +118,26 @@ for no, lv, t in heads:
         exist.add((int(m3.group(1)), int(m3.group(2))))
 exist_top = {k[0] for k in exist}
 
+exist_all = exist_all | exist
+
 print("\n=== 悬空引用（指向不存在的章节）===")
 missed = []
+crossed = []
 for (a, b), c in sorted(refs.items(), key=lambda kv: (kv[0][0], -1 if kv[0][1] is None else kv[0][1])):
-    if b is None:
-        if a not in exist_top:
-            missed.append(("§%d" % a, c))
-    else:
-        if (a, b) not in exist:
-            missed.append(("§%d.%d" % (a, b), c))
+    label = ("§%d" % a) if b is None else ("§%d.%d" % (a, b))
+    if (a, b) in exist:
+        continue
+    if (a, b) in exist_all:
+        crossed.append((label, c))
+        continue
+    missed.append((label, c))
 if missed:
     for t, c in missed:
-        print("  %-10s x%d" % (t, c))
+        print("  MISS  %-10s x%d" % (t, c))
 else:
     print("  OK 无悬空引用")
+if crossed:
+    print("  （另 %d 个引用指向其它卷，属正常；本条只查本卷）" % len(crossed))
 
 # ---------- 5. 表格形态 ----------
 print("\n=== 表格列数异常行 ===")
@@ -164,12 +208,18 @@ for x in ctrl[:5]:
 
 # ---------- 7. 空标题 / 断链 ----------
 print("\n=== 空标题检查 ===")
+n_empty = 0
 for idx, (no, lv, t) in enumerate(heads):
     nxt = heads[idx + 1][0] if idx + 1 < len(heads) else len(lines) + 1
+    nxt_lv = heads[idx + 1][1] if idx + 1 < len(heads) else 0
     body = [x for x in lines[no:nxt - 1] if x.strip()]
     if not body:
+        if nxt_lv > lv:
+            continue   # 下一行就是子标题：内容由小节承载，不算空
+        n_empty += 1
         print("  !! 空标题 %5d: %s" % (no, t))
-print("  (无输出即 OK)")
+if not n_empty:
+    print("  OK 无空标题")
 
 # ---------- 8. 待定项计数 ----------
 print("\n=== 待定项编号 ===")

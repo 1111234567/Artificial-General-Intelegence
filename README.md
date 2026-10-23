@@ -49,12 +49,19 @@ python test/grow_world.py 50000 8 8 closed,open,randact,noise_in,frozen
 # python test/grow_v2.py 50000 8 8
 ```
 
-文档校验（章节编号 / 悬空引用 / 旧断言残留）：
+文档校验（章节编号 / 悬空引用 / 表格列数 / 乱码与行尾 / 待定项编号）：
 
 ```bash
-python scripts/check_draft.py docs/design.md
-python scripts/check_draft.py docs/experiments.md
-python scripts/check_draft.py docs/reference.md
+# 第一个参数是要检查的卷；其余两卷自动作为交叉引用的底簿（章节号全项目唯一）
+python scripts/check_draft.py docs/design.md docs/experiments.md docs/reference.md
+python scripts/check_draft.py docs/experiments.md docs/design.md docs/reference.md
+python scripts/check_draft.py docs/reference.md docs/design.md docs/experiments.md
+
+# 三卷整合校验（章节归属 / 跨卷引用前缀 / 逐字块 / 编码）
+python scripts/check_docs.py
+
+# 拆分无损证明（三卷重建回单文件，与归档原件逐行 diff）
+python scripts/diff_volumes.py
 ```
 
 ## 技术栈
