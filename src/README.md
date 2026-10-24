@@ -46,7 +46,7 @@ scripts/align_layers.py  移植对齐工具（六层）
 > **已与旧脚本对齐：9 个脚本 / 201 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21、`grow_hebb` 96/96）。
 > 验证方式与全套跑法见 `docs/experiments.md` §16.18 / §16.19；工具 `scripts/align_layers.py`。
 >
-> **只剩工具类**：`bench_lif2` / `calib5` / `scan_base`（应做成 `run.py bench` / `scan` 子命令）
+> **已无待移植项**：三个工具类已子命令化（`scan homeo` / `scan calib` / `bench`）；`probe_*` 约定不移植
 > + `bench_lif2` / `calib5` / `scan_base`（后三个应做成 `run.py bench` / `scan` 子命令）。
 > 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 9 个长出来的，
 > 剩下 8 个里的机制它很可能还表达不了。

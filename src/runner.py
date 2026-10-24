@@ -1268,7 +1268,10 @@ def _run_homeo(cfg, return_net=False):
             net.x_rec[:] = 1.0
         for t in range(ch):
             xin.fill(0.0)
-            xin[N_IN:] = (rng.random(N - N_IN) < BG).astype(np.float32) * IN_SPIKE
+            if cfg.task.bg_all:
+                xin[:] = (rng.random(N) < BG).astype(np.float32) * IN_SPIKE
+            else:
+                xin[N_IN:] = (rng.random(N - N_IN) < BG).astype(np.float32) * IN_SPIKE
             if cue is not None:
                 blk, enc = cue
                 if t == 0 or t == max(1, enc - 2):
@@ -1302,6 +1305,11 @@ def _run_homeo(cfg, return_net=False):
         'born': int(n_born), 'drop': int(n_drop),
         'n_inh': int((net.pre >= N_E).sum()),
         'rate': float(last[2]), 'rate_mean': float(last[2]),
+        # 扫描工具（scan_base / calib5）需要的三个量
+        'rate_i': float(rr[N_E:].mean()) if N_E < N else 0.0,
+        'n_active': int((rr[:N_E] > 1e-4).sum()),
+        'rate_tail_std': float(np.std([h[2] for h in hist[-10:]])) if len(hist) >= 2 else 0.0,
+        'rate_tail_mean': float(np.mean([h[2] for h in hist[-10:]])) if hist else 0.0,
         'n_over': int(last[3]), 'n_under': int(last[4]), 'n_alive': int(last[5]),
         'hist': hist,
         'out_deg': 0, 'out_bias': 0.0,

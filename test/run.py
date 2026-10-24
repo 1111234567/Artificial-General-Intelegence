@@ -26,6 +26,172 @@ from src.config import Config
 ENV_ROOT_OK = True
 
 
+def _scan_one(a):
+    """模块级（Windows spawn 下局部函数不能 pickle）。"""
+    from src import runner
+    label, cfg, seed = a
+    return (label, runner.run(cfg.with_(seed=seed)))
+
+
+def cmd_scan(which="homeo", nseed=2, nproc=None):
+    """参数扫描（工具）。不登记结果，只看趋势。
+
+    which: homeo = scan_base 的网格（无 E-E，扫 W_I/D_IE/D_EI）
+           calib = calib5 的网格（纯随机结构，扫 w_E/抑制比/T_REF）
+    """
+    from src import scan as scanmod
+    from src import runner
+    grid = scanmod.grid_homeo() if which == "homeo" else scanmod.grid_calib()
+    tasks = [(label, cfg, s) for label, cfg in grid for s in range(nseed)]
+    nproc = nproc or min(len(tasks), os.cpu_count() or 4)
+
+
+    print("=" * 96)
+    if which == "homeo":
+        print("scan / homeo — 无 E-E 时，什么参数组合让 rate 落在 0.2~0.5%？")
+        print("  （旧脚本 scan_base.py 的网格；目标区间下限 0.64%%）")
+    else:
+        print("scan / calib — 加不应期后，什么 (w_E, 抑制比, T_REF) 标定到 2%？")
+        print("  （旧脚本 calib5.py 的网格；T_REF=50 -> 上限 2%% / T_REF=20 -> 上限 5%%）")
+    print("  nseed=%d  任务数=%d  并行度=%d" % (nseed, len(tasks), nproc))
+    print("=" * 96)
+    with Pool(nproc) as pool:
+        rs = pool.map(_scan_one, tasks)
+
+    by = {}
+    for label, r in rs:
+        by.setdefault(label, []).append(r)
+    rows = scanmod.summarize([(k, v) for k, v in by.items()])
+
+    if which == "homeo":
+        print("%-32s %10s %10s %8s" % ("组合", "E_rate%", "I_rate%", "活跃数"))
+        print("-" * 96)
+        for r in rows:
+            mark = ""
+            if 0.15 <= r["rate_e"] <= 0.60:
+                mark = "   <-- 合适（低于目标区间）"
+            elif r["rate_e"] > 0.64:
+                mark = "   (已在目标区间或以上)"
+            print("%-32s %10.3f %10.3f %8.0f%s" % (
+                r["label"], r["rate_e"], r["rate_i"], r["n_active"], mark))
+    else:
+        print("%-30s %10s %10s  %s" % ("组合", "rate%", "尾部 std", "状态"))
+        print("-" * 96)
+        for r in rows:
+            m = ""
+            if 1.0 <= r["rate_e"] <= 4.0 and r["std"] < 1.0:
+                m = "** 目标区 **"
+            elif r["rate_e"] < 0.5:
+                m = "死亡"
+            elif r["rate_e"] > 50:
+                m = "饱和"
+            print("%-30s %10.2f %10.3f  %s" % (r["label"], r["rate_e"], r["std"], m))
+    print("-" * 96)
+    return 0
+
+
+def cmd_bench(steps_cpu=2000, steps_gpu=500):
+    """模拟器成本基准（工具）。
+
+    ⚠️ 本命令**不用框架的 Network**：它测的就是「实现形态本身」
+    （稠密 vs 稀疏、CPU vs GPU、前向 vs 迹 vs 可塑），所以必须旁开一份最简实现。
+    数据基线：test/baseline-2026-10-23-simulator.md。
+    """
+    import time
+    t0 = time.perf_counter()
+    TAU = 20.0
+    DECAY = float(np.exp(-1.0 / TAU))
+    V_TH = 1.0
+    TAU_E = 20.0
+    DECAY_E = float(np.exp(-1.0 / TAU_E))
+    LR = 1e-3
+
+    def make(N, density, seed=0):
+        rng = np.random.default_rng(seed)
+        ne = max(1, int(N * N * density))
+        pre = rng.integers(0, N, ne).astype(np.int64)
+        post = rng.integers(0, N, ne).astype(np.int64)
+        sc = 1.0 / np.sqrt(max(1.0, density * N))
+        w = (rng.standard_normal(ne) * sc).astype(np.float32)
+        return pre, post, w, ne
+
+    def mk_input(steps, N, rate=0.02, seed=1):
+        rng = np.random.default_rng(seed)
+        return (rng.random((steps, N)) < rate).astype(np.float32)
+
+    def fwd_sparse(N, pre, post, w, X, steps, plastic=False):
+        v = np.zeros(N, np.float32); s = np.zeros(N, np.float32)
+        tr = np.zeros(pre.size, np.float32)
+        ww = w.copy()
+        for t in range(steps):
+            I = np.bincount(post, weights=ww * s[pre], minlength=N).astype(np.float32)
+            v = v * DECAY + I + X[t]
+            s = (v > V_TH).astype(np.float32)
+            v = np.where(s > 0, 0.0, v)
+            if plastic:
+                tr *= DECAY_E
+                tr += s[pre] * s[post]
+                ww += LR * tr
+                np.clip(ww, -2.0, 2.0, out=ww)
+
+    def fwd_dense(N, W, X, steps):
+        v = np.zeros(N, np.float32); s = np.zeros(N, np.float32)
+        for t in range(steps):
+            v = v * DECAY + (W @ s) + X[t]
+            s = (v > V_TH).astype(np.float32)
+            v = np.where(s > 0, 0.0, v)
+
+    print("=" * 96)
+    print("bench — LIF 模拟器成本（CPU 稀疏 vs 稠密 × 前向 vs 可塑）")
+    print("  CPU 每档 %d 步；GPU 部分需要 torch+cuda，不可用则跳过" % steps_cpu)
+    print("=" * 96)
+    print("%-8s %8s %12s %12s %12s" % ("N", "密度", "稀疏 fwd", "稀疏 +可塑", "稠密 fwd"))
+    print("-" * 96)
+    for N in (1000, 2000):
+        for dens in (0.005, 0.01, 0.05, 0.10):
+            pre, post, w, ne = make(N, dens)
+            X = mk_input(steps_cpu, N)
+            a = time.perf_counter(); fwd_sparse(N, pre, post, w, X, steps_cpu); ta = time.perf_counter() - a
+            b = time.perf_counter(); fwd_sparse(N, pre, post, w, X, steps_cpu, True); tb = time.perf_counter() - b
+            W = np.zeros((N, N), np.float32)
+            np.add.at(W, (post, pre), w)
+            c = time.perf_counter(); fwd_dense(N, W, X, steps_cpu); tc = time.perf_counter() - c
+            print("%-8d %8.3f %10.3fms %10.3fms %10.3fms   (边 %d)" % (
+                N, dens, ta / steps_cpu * 1e3, tb / steps_cpu * 1e3,
+                tc / steps_cpu * 1e3, ne))
+    print("-" * 96)
+    try:
+        import torch
+        if torch.cuda.is_available():
+            print("GPU（batch 稠密）：")
+            N = 1000
+            pre, post, w, ne = make(N, 0.01)
+            W = np.zeros((N, N), np.float32)
+            np.add.at(W, (post, pre), w)
+            X = mk_input(steps_gpu, N)
+            dev = torch.device("cuda")
+            Wt = torch.from_numpy(W).to(dev)
+            Xt = torch.from_numpy(X).to(dev)
+            for B in (1, 16, 64, 256):
+                v = torch.zeros(B, N, device=dev)
+                s = torch.zeros(B, N, device=dev)
+                t1 = time.perf_counter()
+                for t in range(steps_gpu):
+                    v = v * DECAY + (s @ Wt.T) + Xt[t]
+                    s = (v > V_TH).float()
+                    v = torch.where(s > 0, torch.zeros_like(v), v)
+                torch.cuda.synchronize()
+                dt = (time.perf_counter() - t1) / steps_gpu * 1e6
+                print("  B=%-4d  %8.3f us/步" % (B, dt))
+        else:
+            print("GPU：torch 在但 cuda 不可用，跳过")
+    except ImportError:
+        print("GPU：未安装 torch，跳过")
+    print("-" * 96)
+    print("总耗时 %.1fs" % (time.perf_counter() - t0))
+    return 0
+
+
 def cmd_list():
     print("%-16s %-13s %-6s %s" % ("name", "fingerprint", "n_ep", "sove"))
     print("-" * 110)
@@ -211,6 +377,7 @@ def main():
     if len(sys.argv) < 2:
         print(__doc__ or "用法：run.py list|show|check|run|results|gaps")
         print("  list / show <name> / check [name] / run <name> [nseed] [nproc] / results / gaps")
+        print("  align / scan [homeo|calib] [nseed] [nproc] / bench")
         return
     cmd = sys.argv[1]
     if cmd == "list":
@@ -229,6 +396,13 @@ def main():
         cmd_gaps()
     elif cmd == "align":
         cmd_align()
+    elif cmd == "scan":
+        which = sys.argv[2] if len(sys.argv) > 2 else "homeo"
+        nseed = int(sys.argv[3]) if len(sys.argv) > 3 else 2
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        cmd_scan(which, nseed, nproc)
+    elif cmd == "bench":
+        cmd_bench()
     else:
         print("未知命令：%s" % cmd)
 

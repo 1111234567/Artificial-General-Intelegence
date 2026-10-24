@@ -5,8 +5,8 @@
 **状态：阶段 1/2（教）已跑通（25% → 75.0%，v2 脉冲形态）；工作记忆跨度只有 20 步（= τ）；阶段 2（巩固）尚未开始。** 设计推演已完成（七轮修正），模拟器成本已实测，动力学已标定（rate 1.99%）；结构自生长已跑通（rate **1.55% ± 0.44**）。
 
 **统一框架（`src/`）已建成并开始对齐（2026-10-24）**：71 个实验声明 + 七命令，
-**已移植 9 个旧脚本 / 201 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21、`grow_hebb` 96/96）；
-只剩 bench/calib/scan 三个子命令——详见 `docs/experiments.md` §16.18–§16.24 与 `src/README.md` 的「移植覆盖度」。
+**已移植 9 个旧脚本 / 201 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21、`grow_hebb` 96/96）+ **3 个工具子命令**（`scan homeo` / `scan calib` / `bench`）；
+**11/11 收官**——详见 `docs/experiments.md` §16.18–§16.26 与 `src/README.md` 的「移植覆盖度」。
 
 **闭环三步（`grow_goal.py`，§16.13）：当时的阴性结论已不可信 —— 因为它建在一个不可完成的任务上。**
 真正的发现（§16.16）：① **任务在参数上不可完成**——6 个动作 × 1 步 = 6，而目标差距 30~40；
@@ -87,6 +87,11 @@ python scripts/align_layers.py cond 0 400          # grow_cond（teach + punish�
 python scripts/align_layers.py teach 0 600         # grow_teach（4 modes，11 项）
 python scripts/align_layers.py func 0 3000         # grow_func（闭环/断开/冻结/前史，21 项）
 python scripts/align_layers.py hebb 3000           # grow_hebb（8 case × 12 项）
+
+# 工具类子命令（不是实验，不登记）
+python test/run.py scan homeo 2                     # scan_base 的 14 个组合
+python test/run.py scan calib 1                     # calib5 的 32 个组合
+python test/run.py bench                            # 模拟器成本基准（约 30 s）
 python scripts/align_layers.py contrib    # 单变量消融（从已对齐基准往下关）
 ```
 

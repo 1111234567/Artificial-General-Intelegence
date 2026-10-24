@@ -42,6 +42,9 @@ class NetSpec:
     # 拓扑细节（旧两个脚本不同，必须显式）
     block_input_edges: bool = True   # 新建边是否要求 post >= n_in（grow_agent 要 / grow_world 不要）
     protect_out_edges: bool = True   # 淘汰时是否保护接口边（grow_agent 要 / grow_world 不要）
+    # 初始权重的乘性噪声（1 + sigma*randn）。calib5 用 0.15（初始异质性）；
+    # 默 0 = 不变（不影响已对齐的流程）。
+    init_w_noise: float = 0.0
     p_global: int = 0                # 每 t_global 步加的全局随机边数（grow_world=4）
     t_global: int = 2000
     # ---- 结构初始化形态（grow_talk 需要一套专门的接口）----
@@ -180,7 +183,10 @@ class TaskSpec:
     enc_steps: int = 20         # 编码步数（cue 在第 0 与 enc_steps-2 拍注入）
     enc_gap: int = 150          # 两次 cue 的间隔
     cue_after: int = 0          # 首次 cue 的时刻（0 = 用 steps//2）
-    bg_rate: float = 0.015      # 背景脉冲概率（只给 N_IN 之后的神经元）
+    bg_rate: float = 0.015      # 背景脉冲概率
+    # False = 只给 N_IN 之后的神经元（grow_homeo 的形态）
+    # True  = 给全体 N 个（calib5 的形态）
+    bg_all: bool = False
 
     # ---- cond 流程（grow_cond）：变长呈现 + VI 课程（保持期从 Gamma 采样）----
     var_delay: bool = False

@@ -60,6 +60,10 @@ class Network:
                 ok = ok & (post >= self.N_IN)      # 输入区不接受反向边（grow_agent）
             pre, post = pre[ok], post[ok]
             w = np.where(pre >= self.N_E, -spec.w_e * spec.w_i_ratio, spec.w_e).astype(np.float32)
+            if spec.init_w_noise > 0:
+                # calib5 的初始异质性：w *= (1 + sigma*randn)
+                w = (w * (1.0 + spec.init_w_noise
+                          * rng.standard_normal(w.size))).astype(np.float32)
             age = np.full(pre.size, 100, np.int16)
         self.pre, self.post, self.w, self.key, self.age = sort_edges(
             pre, post, w, age, self.N)
