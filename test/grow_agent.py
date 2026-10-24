@@ -290,8 +290,26 @@ def run_one(args):
     # 隔离：本 episode 活跃过的神经元
     ep_active = np.zeros(N, bool)
 
-    do_plast_w = mode not in ('frozen', 'plast_topo', 'discrete_frozen')
-    do_plast_topo = mode not in ('frozen', 'plast_w', 'discrete_frozen')
+    # ---- 可塑性开关：**三层分开控制**（2026-10-24 修正）----
+    # 之前用 `_frozen` 同时关掉权重和拓扑，但 **bias 的更新是无条件的** ->
+    # `discrete_frozen` 实际是「只学 bias」，**名字骗人**；而真正的「什么都不学」根本不存在。
+    # 所以「frozen 42.0% > discrete 36.2%」曾被读成「不学更好」，实际是「只学管用的那一层更好」。
+    # 现在：三层各自独立，mode 名 = 实际行为。
+    #   none      什么都不学（真正的基线）
+    #   bias      只学 bias
+    #   w         只学权重
+    #   topo      只学拓扑
+    #   bias_w    bias + 权重
+    #   all       bias + 权重 + 拓扑（= 原 discrete）
+    _MODE_PARTS = mode.replace('discrete_', '').split('_')
+    do_bias = (mode != 'frozen') and ('none' not in _MODE_PARTS)
+    do_plast_w = ('topo' not in _MODE_PARTS) and ('bias' in _MODE_PARTS or 'all' in _MODE_PARTS or 'w' in _MODE_PARTS) \
+                 or mode in ('discrete',)
+    do_plast_topo = ('topo' in _MODE_PARTS or 'all' in _MODE_PARTS or mode == 'discrete')
+    if 'none' in _MODE_PARTS:
+        do_bias = do_plast_w = do_plast_topo = False
+    if 'bias' in _MODE_PARTS and len(_MODE_PARTS) == 1:
+        do_plast_w = do_plast_topo = False
     use_gate = mode not in ('no_gate',)
     use_bridge = mode not in ('no_bridge',)
     use_isolation = mode not in ('no_isolation',)
@@ -455,8 +473,9 @@ def run_one(args):
                         mv[0] = 0.2; mv[2] = 0.2      # +1 / +10
                     elif want0 < 0:
                         mv[1] = 0.2; mv[3] = 0.2      # -1 / -10
-                    bias[OUT_IDX] = np.clip(
-                        bias[OUT_IDX] + ETA_BIAS * mv, BIAS_MIN, BIAS_MAX)
+                    if do_bias:
+                        bias[OUT_IDX] = np.clip(
+                            bias[OUT_IDX] + ETA_BIAS * mv, BIAS_MIN, BIAS_MAX)
                     upd_weights(mv, 0.0)
                     win_i = -1
                     continue
@@ -503,8 +522,9 @@ def run_one(args):
                 r_base = 0.9 * r_base + 0.1 * r_act
                 upd_weights(mv, mg)
                 # 偏置：同一信号，立即生效（§14.6 作用点二）
-                bias[OUT_IDX] = np.clip(
-                    bias[OUT_IDX] + ETA_BIAS * mv, BIAS_MIN, BIAS_MAX)
+                if do_bias:
+                    bias[OUT_IDX] = np.clip(
+                        bias[OUT_IDX] + ETA_BIAS * mv, BIAS_MIN, BIAS_MAX)
 
                 new_err = abs(goal - new_st)
                 if new_err > cur_err and first_far < 0:
