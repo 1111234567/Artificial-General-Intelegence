@@ -89,6 +89,44 @@
 - **engram 亚群 F-RAM / N-RAM**：Cell Research 2025
 - **STM trace 数天 + 再暴露巩固**：Commun Biol 2022
 
+#### 神经元–突触耦合动力学（2026-10-24 补录——**「多吸引子」这个词的正主**）
+
+> 起因：2026-10-24 场次三里，我把「多吸引子」当成了自制判据（「关输入后活动模式两两余弦 < 0.5」），
+> 但没读过它的原始出处。这两篇是同一条线的一前一后，**判据完全不同**。
+
+**① Clark & Abbott, *Theory of Coupled Neuronal-Synaptic Dynamics*, Phys. Rev. X 14, 021001 (2024)**
+（arXiv 2302.08985）
+
+模型：速率网络 `(1+∂t)x_i = Σ_j [J_ij + A_ij(t)]·φ(x_j)`，`J ~ N(0, g²/N)` 是冻动的随机骨架，
+`(1+p∂t)A_ij = (k/N)·φ(x_i)φ(x_j)` 是**持续进行的 Hebbian 可塑性**（带遗忘）。**突触是动态变量**。
+
+正文原句（本节判断的直接依据）：
+
+> 「For g<1, the trivial neuronal fixed point of the nonplastic network, x(t)=0_N, **is globally stable and the network is quiescent**.」
+> 「…if Hebbian plasticity is strong, there exist **stable fixed points** to which finite-size networks settle following transient chaos…」
+> 「We compute … their number, showing **exponential growth with network size**.」
+> 「In chaotic states with strong Hebbian plasticity, a stable fixed point of neuronal dynamics is **destabilized by synaptic dynamics**, allowing **any neuronal state to be stored as a stable fixed point by halting the plasticity**. This phase of **freezable chaos** offers a new mechanism for working memory.」
+
+**② Wakhloo, Clark & Abbott, *Associative synaptic plasticity creates dynamic persistent activity*,
+PNAS 123(40) e2526156123 (2026)**（bioRxiv 2025.08.20.671131）
+
+同一模型的另一面：外部**振荡**刺激（`h_i = I·cos(2πft+θ_i)`，`t<0`）撤除后，网络**自己继续振荡**：
+
+> 「following oscillatory stimulation, neurons continue to oscillate **long after the input is removed**. This creates a dynamic form of memory that **has no explicit storage or retrieval phases** and that requires no prior knowledge of the input.」
+> 「We trace the mechanism of these **persistent oscillations** to an interaction between neurons and synapses that creates **complex outlier eigenvalues** of the connectivity matrix.」
+> 「…the network anchors the input to **pre-existing modes of the connectivity**.」
+> 「even **microscopic changes in synaptic weights** can have dramatic effects on neuronal dynamics.」
+
+**这两篇对项目的两条硬约束：**
+
+| | 含义 |
+|---|---|
+| **权重可塑性是前提，不是可选** | 固定的网络（无论结构怎么长）在 g<1 时**只有平凡不动点**——全局静息。多不动点 / 持续振荡都只出现在突触是动态变量的相区。**只有结构增删、权重恒定的网络，不可能有多吸引子。** |
+| **记忆的形态可能不是静态态** | 两篇各给一种：静态的（freezable chaos，冻结可塑性→当前状态成为不动点）与动态的（persistent oscillations，复数 outlier 特征值→自持振荡）。**判据不同：前者的「模式相似度」，对后者没意义；后者的判据是「活动是否持续」+「频率是否匹配输入」。** |
+
+**与 `experiments.md` §16.11 的关系**：`grow_homeo.py` 在 probe 期权重是常量（无 Hebbian 更新），按此分类属 nonplastic；
+实测「关输入 50 步归零」正是「quiescent 相、只有平凡不动点」的形态。**那边说的「多吸引子」用词需按此收窄。**
+
 ### 12.6 绑定与容量
 
 - **HeRR**（绑定容量是紧致群的性质，非向量表示）：Zenodo 2026-09（未同行评审）
