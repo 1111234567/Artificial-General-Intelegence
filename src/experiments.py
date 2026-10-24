@@ -473,6 +473,35 @@ HB_R0 = Config(name="hb_r0", note="grow_hebb r=0（无 A；对照）",
                **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.0)))
 HB_SHUF = Config(name="hb_shuf", note="grow_hebb r=0.05 pulse + A 随机重排",
                  **dict(_HEBB, readout=replace(_HOMEO_READOUT, a_shuffle=True)))
+# 根因①修正：cn 中心化 + tanh（可正可负）。旧实现的 cn 恒 ≥ 0 -> A 是纯偏置。
+HB_CENTER = Config(name="hb_center",
+                  note="grow_hebb r=0.40 pulse + cn 中心化（根因①修正）",
+                  **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.40,
+                                                       hebb_centered=True)))
+HB_CENTER_SHUF = Config(name="hb_center_shuf",
+                       note="grow_hebb r=0.40 pulse + cn 中心化 + A 重排",
+                       **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.40,
+                                                            hebb_centered=True),
+                                readout=replace(_HOMEO_READOUT, a_shuffle=True)))
+# 组合：亚临界（g_eff~0.80）+ 中心化 A（可正可负）+ 振荡输入
+# 问：不过临界时，涨落成分能不能自己记住输入的频率？
+HB_SUB_OSC = Config(name="hb_sub_osc",
+                    note="grow_hebb w_e=0.15 + 中心化 + osc（亚临界 + 涨落）",
+                    **dict(_HEBB, task=replace(_HEBB_TASK, input_mode="osc"),
+                             net=replace(_HEBB["net"], w_ee_init=0.15),
+                             plast=replace(_HEBB_PLAST, hebb_centered=True)))
+HB_SUB_OSC_SHUF = Config(name="hb_sub_osc_shuf",
+                         note="grow_hebb 亚临界 + 中心化 + osc + A 重排",
+                         **dict(_HEBB, task=replace(_HEBB_TASK, input_mode="osc"),
+                                  net=replace(_HEBB["net"], w_ee_init=0.15),
+                                  plast=replace(_HEBB_PLAST, hebb_centered=True),
+                                  readout=replace(_HOMEO_READOUT, a_shuffle=True)))
+
+HB_CENTER_OSC = Config(name="hb_center_osc",
+                       note="grow_hebb r=0.05 osc + cn 中心化（根因①修正）",
+                       **dict(_HEBB, task=replace(_HEBB_TASK, input_mode="osc"),
+                                plast=replace(_HEBB_PLAST, hebb_centered=True)))
+
 HB_P040 = Config(name="hb_p040", note="grow_hebb r=0.40 pulse（§16.12 主档）",
                  **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.40)))
 HB_P040_SHUF = Config(name="hb_p040_shuf",
@@ -506,6 +535,8 @@ ALL = [
     FU_CLOSED, FU_OPEN, FU_FROZEN, FU_DIV,
     HB_PULSE, HB_OSC, HB_R0, HB_SHUF, HB_FREEZE,
     HB_P040, HB_P040_SHUF, HB_OSC_SHUF,
+    HB_CENTER, HB_CENTER_SHUF, HB_CENTER_OSC,
+    HB_SUB_OSC, HB_SUB_OSC_SHUF,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

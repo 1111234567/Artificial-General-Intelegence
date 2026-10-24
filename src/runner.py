@@ -868,7 +868,10 @@ def _run_hebb(cfg):
         if plastic and r > 0.0:
             m = c[:N_E].mean()
             if m > 1e-9:
-                cn = c[:N_E] / m
+                if cfg.plast.hebb_centered:
+                    cn = np.tanh((c[:N_E] - m) / m)   # centered + tanh
+                else:
+                    cn = c[:N_E] / m          # legacy: always >= 0 (pure bias)
                 target = np.zeros_like(A)
                 if im_all.size:
                     target[im_all] = r * sp.w_ee_init * cn[pre[im_all]] * cn[post[im_all]]
@@ -938,6 +941,8 @@ def _run_hebb(cfg):
         'enc': float(enc_tot), 'bins': bins, 'head': bins[:6],
         'tail_sum': float(np.sum(bins[6:])), 'total': float(np.sum(bins)),
         'period': per, 'ac': ac, 'a_abs': float(np.abs(A).mean()),
+        # A 的符号统计（根因①的直接读数：旧实现恒 1.0）
+        'a_pos': float((A > 0).mean()), 'a_neg': float((A < 0).mean()),        'a_mean': float(A.mean()), 'a_std': float(A.std()),
         'elapsed': round(time.perf_counter() - t0, 2),
     }
 

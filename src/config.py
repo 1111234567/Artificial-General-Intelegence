@@ -278,6 +278,11 @@ class Plasticity:
     tau_syn: float = 600.0       # 突触时间常数（步）；神经元 τ = 20 步
     tau_c: float = 20.0          # 活动率滤波（与膜电位同尺度）
     a_max_rel: float = 2.0       # |A| 上界 = a_max_rel × r × w_ee_init × 4
+    # 根因①（§16.12）：旧实现 `cn = c/mean(c)` **恒 ≥ 0**，所以 A 恒 ≥ 0
+    # —— 那是一片均匀增益（纯偏置），不是论文里的「涨落」。
+    # 论文：`(1+p∂t)A_ij = (k/N)φ(x_i)φ(x_j)`，φ=tanh → 均值≈0、可正可负。
+    # False = 旧行为（对齐 grow_hebb 用）；True = 中心化 + tanh（可正可负）。
+    hebb_centered: bool = False
 
 
 # ---------------------------------------------------------------- 信号 m
