@@ -2,6 +2,29 @@
 
 > 倒序，只追加。历史变更记录在这里；设计推演过程不进本文件。
 
+## 0.11.0 — 2026-10-24
+
+**移植 `grow_homeo`（第 5 个脚本）：12/12 逐位一致；同时拓出两件大事。**
+
+框架新增第 5 个流程 `flow="homeo"`（PLOS CB 2022 形态）：`init_kind="homeo"`（初始无 E-E）、
+`use_std/tau_rec/u_std`（STD）、`tau_rate` + `Net.rate_ema`（逐神经元放电率）、
+`Plasticity.struct_kind="homeo"` + `r_target/tol/p_del/p_new`（按率偏差双向调）、
+`TaskSpec.n_cue/enc_steps/enc_gap/bg_rate`（周期 cue）、`theta_out_adapt=False`（读出不当特殊神经元）。
+
+对齐：construct 3/3（45356 条边，**E-E = 0**）、500 步纯模拟 7 个状态量 maxdiff=0、
+run 2/2（6000 步 120 行 hist）+ 2/2（40000 步 800 行 hist）、probe 2/2（n_ee + 6 sims + 4 totals）。
+
+**拓出 ①：旧 `grow_homeo` 每个 chunk 把网络状态清空**——`grow()` 调 `simulate()` **从不传 `start=`**，
+每 50 步把 v/s/ref/θ/x_rec 清回零，只保留 rate_ema 与结构。与「一条永不重置的时间轴」直接矛盾，
+也把 STD 与阈值适应这两个短时机制的短时记忆反复抹掉。加 `Plasticity.reset_state_per_chunk`：
+`True` = 旧行为（`ho_*`，可复现）；`False` = 状态连续（设计要的，待跑）。
+
+**拓出 ②：§16.11 的「23000 条边」不成立**——当前代码 40000 步只有 **13082 / 13726** 条（与 §16.12 重跑的 13156 一致），
+率 0.676% / 0.685%（已在目标区间内，「率没到目标区」那条已知问题不再成立）；
+而 **probe 那组逐位复现**（相似度 0.405 / 0.801，边数 13756 / 14095，总放电 205/148/162/162）。
+
+文档：`docs/experiments.md` §16.20、`agi.md`（5/11）、`README.md`、`src/README.md`（五流程）。
+
 ## 0.10.1 — 2026-10-24
 
 **两处口径问题处理（§16.19）：接口权重偏移加开关、两个时刻拆成两个参数。**

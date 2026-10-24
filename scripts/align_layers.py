@@ -1013,6 +1013,119 @@ def layer_talk(seed=0, n_present=100, nproc=None):
     return n_ok == len(pairs)
 
 
+def _homeo_one(arg):
+    """层 11：grow_homeo 移植对齐——hist 逐行（6 列）+ 末态 E-E 边数。"""
+    seed, steps, cfg_name = arg
+    import grow_homeo as old_h
+    from src import runner as new_runner
+    from src import experiments
+
+    r_old = old_h.grow((seed, steps, steps // 2))
+    cfg = experiments.BY_NAME[cfg_name].with_(seed=seed, steps=steps)
+    r_new = new_runner.run(cfg)
+
+    ho, hn = r_old["hist"], r_new["hist"]
+    bad = []
+    if len(ho) != len(hn):
+        bad.append(("hist_len", len(ho), len(hn)))
+    for i, (a, b) in enumerate(zip(ho, hn)):
+        for j in range(min(len(a), len(b))):
+            try:
+                ok = abs(float(a[j]) - float(b[j])) <= 1e-9 * max(1.0, abs(float(a[j])))
+            except (TypeError, ValueError):
+                ok = a[j] == b[j]
+            if not ok:
+                bad.append(("hist[%d][%d]" % (i, j), a[j], b[j]))
+                break
+        if bad:
+            break
+    if r_old["n_ee"] != r_new["n_ee"]:
+        bad.append(("n_ee", r_old["n_ee"], r_new["n_ee"]))
+    last = hn[-1] if hn else (0,) * 6
+    return dict(seed=seed, steps=steps, cfg=cfg_name, bad=bad,
+                n_ee_o=r_old["n_ee"], n_ee_n=r_new["n_ee"],
+                rate=last[2], over=int(last[3]), under=int(last[4]), alive=int(last[5]))
+
+
+def layer_homeo(seed=0, steps=6000, nproc=None):
+    """层 11 / homeo — grow_homeo 的移植对齐（hist 逐行）。"""
+    pairs = [("ho_grow", 6000), ("ho_long", 40000)]
+    print("=" * 108)
+    print("层 11 / homeo — grow_homeo 移植验证（判据 = hist 逐行逐列 + 末态 E-E 边数）")
+    print("  seed=%d" % seed)
+    print("=" * 108)
+    print("%-10s %8s %9s %9s %8s %8s %6s  %s" % (
+        "config", "steps", "n_ee 旧", "n_ee 新", "rate%", "超标", "不达", "判定"))
+    print("-" * 108)
+    args = [(seed, st, cn) for cn, st in pairs]
+    rs = _pool_map(_homeo_one, args, nproc)
+    n_ok = 0
+    for r in rs:
+        if not r["bad"]:
+            verdict = "OK"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(r["bad"]), ", ".join(str(b[0]) for b in r["bad"][:3]))
+        print("%-10s %8d %9d %9d %8.3f %8d %6d  %s" % (
+            r["cfg"], r["steps"], r["n_ee_o"], r["n_ee_n"],
+            r["rate"] * 100, r["over"], r["under"], verdict))
+    print("-" * 108)
+    print("结论：%d/%d 个移植项逐位相同" % (n_ok, len(pairs)))
+    print("=" * 108)
+    return n_ok == len(pairs)
+
+
+def _homeoprobe_one(arg):
+    """层 12：grow_homeo --probe 移植对齐——4 个 cue 的两两相似度 + 总放电。"""
+    seed, warm, cfg_name = arg
+    import grow_homeo as old_h
+    from src import runner as new_runner
+    from src import experiments
+
+    r_old = old_h.probe((seed, 4, warm))
+    cfg = experiments.BY_NAME[cfg_name].with_(seed=seed)
+    r_new = new_runner._probe_homeo(cfg, 4, warm)
+
+    bad = []
+    if r_old["n_ee"] != r_new["n_ee"]:
+        bad.append(("n_ee", r_old["n_ee"], r_new["n_ee"]))
+    for i, (a, b) in enumerate(zip(r_old["sims"], r_new["sims"])):
+        if abs(a - b) > 1e-9:
+            bad.append(("sims[%d]" % i, a, b))
+    for i, (a, b) in enumerate(zip(r_old["totals"], r_new["totals"])):
+        if abs(a - b) > 1e-6:
+            bad.append(("totals[%d]" % i, a, b))
+    import numpy as np
+    m = float(np.mean([x for x in r_new["sims"] if x == x])) if r_new["sims"] else float("nan")
+    return dict(seed=seed, cfg=cfg_name, bad=bad, n_ee=r_new["n_ee"], sim_mean=m)
+
+
+def layer_homeoprobe(seed=0, warm=30000, nproc=None):
+    """层 12 / homeoprobe — grow_homeo --probe 的移植对齐。"""
+    print("=" * 108)
+    print("层 12 / homeoprobe — grow_homeo --probe（4 cue 两两相似度 + 总放电）")
+    print("  warm=%d" % warm)
+    print("=" * 108)
+    print("%-5s %9s %12s  %s" % ("seed", "n_ee", "平均相似度", "判定"))
+    print("-" * 108)
+    args = [(s, warm, "ho_warm") for s in range(max(2, seed + 1))]
+    rs = _pool_map(_homeoprobe_one, args, nproc)
+    n_ok = 0
+    for r in rs:
+        if not r["bad"]:
+            verdict = "OK（n_ee + 6 sims + 4 totals）"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(r["bad"]), ", ".join(str(b[0]) for b in r["bad"][:3]))
+        print("%-5d %9d %12.3f  %s" % (r["seed"], r["n_ee"], r["sim_mean"], verdict))
+    print("-" * 108)
+    print("结论：%d/%d 个种子逐位相同" % (n_ok, len(rs)))
+    print("=" * 108)
+    return n_ok == len(rs)
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "construct"
     nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -1063,6 +1176,15 @@ def main():
         n_present = int(sys.argv[3]) if len(sys.argv) > 3 else 100
         nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
         ok = layer_talk(seed, n_present, nproc)
+    elif cmd == "homeo":
+        seed = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        ok = layer_homeo(seed, 6000, nproc)
+    elif cmd == "homeoprobe":
+        seed = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        warm = int(sys.argv[3]) if len(sys.argv) > 3 else 30000
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        ok = layer_homeoprobe(seed, warm, nproc)
     else:
         print("未知层：%s（construct / forward / run / noop / seq / contrib / modes / verify / goal / world）" % cmd)
         ok = False

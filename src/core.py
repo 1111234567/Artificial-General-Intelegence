@@ -48,6 +48,8 @@ class Network:
         # 结构：过度生产 -> 硬预算修剪
         if spec.init_kind == "talk":
             pre, post, w, age = self._init_talk()
+        elif spec.init_kind == "homeo":
+            pre, post, w, age = self._init_homeo()
         else:
             pre = rng.integers(0, self.N, spec.e0_init).astype(np.int32)
             post = rng.integers(0, self.N, spec.e0_init).astype(np.int32)
@@ -67,11 +69,15 @@ class Network:
         self.trace = np.zeros(self.N, np.float32)
         # 阈值：两种语义（见 NetSpec.theta_mode）
         #   trace_bcm  θ = trace 的慢平均（BCM 滑动阈值，量级 0.01~0.1）
-        #   fire_adapt θ = 放电阈值本身（量级 1.0~3.0；grow_talk）
+        #   fire_adapt θ = 放电阈值本身（量级 1.0~3.0；grow_talk / grow_homeo）
         if spec.theta_mode == "fire_adapt":
             self.theta = np.full(self.N, spec.v_th, np.float32)
         else:
             self.theta = np.zeros(self.N, np.float32)
+        # STD：抑制突触的可用资源（1 = 满；只作用于 pre 是抑制神经元的边）
+        self.x_rec = np.ones(self.N, np.float32)
+        # 逐神经元放电率估计（homeo 的受控变量；旧实现每次 simulate 重置 = 假读数）
+        self.rate_ema = np.zeros(self.N, np.float64)
         self.bias = np.zeros(self.N, np.float32)
         self.ema_rate = 0.02
 
@@ -154,10 +160,52 @@ class Network:
         age = np.full(pre.size, 100, np.int16)
         return pre, post, w, age
 
+    # ---- 结构初始化：homeo 形态（初始**无 E-E**；逐行照搬 grow_homeo.build）----
+    def _init_homeo(self):
+        """PLOS CB 2022 形态：只有 E→I / I→E / I→I / 输入扇出，**没有任何 E-E**。
+
+        四条拼接顺序与 RNG 消耗必须与旧实现逐字一致（construct 层要比对）：
+        E→I → I→E → I→I → 输入扇出。
+        """
+        sp = self._spec
+        N, N_E = self.N, self.N_E
+        N_I = N - N_E
+        N_IN = self.N_IN
+        rng = self.rng
+        pre, post = [], []
+
+        n = int(N_E * N_I * sp.d_ei)
+        pre.append(rng.integers(0, N_E, n).astype(np.int32))
+        post.append(rng.integers(N_E, N, n).astype(np.int32))
+
+        n = int(N_E * N_I * sp.d_ie)
+        pre.append(rng.integers(N_E, N, n).astype(np.int32))
+        post.append(rng.integers(0, N_E, n).astype(np.int32))
+
+        n = int(N_I * N_I * sp.d_ii)
+        a = rng.integers(N_E, N, n).astype(np.int32)
+        b = rng.integers(N_E, N, n).astype(np.int32)
+        ok = a != b
+        pre.append(a[ok]); post.append(b[ok])
+
+        src = np.repeat(np.arange(N_IN, dtype=np.int32), sp.n_in_fanout)
+        dst = rng.integers(N_IN, N, N_IN * sp.n_in_fanout).astype(np.int32)
+        pre.append(src); post.append(dst)
+
+        pre = np.concatenate(pre)
+        post = np.concatenate(post)
+        w = np.where(pre >= N_E, -sp.w_e * sp.w_i_ratio, sp.w_e).astype(np.float32)
+        age = np.full(pre.size, 100, np.int16)
+        return pre, post, w, age
+
     # ---- 单步 ----
     def step(self, xin, apply_side_inh=True, add_bias=True):
         sp = self._spec
-        I = np.bincount(self.post, weights=self.w * self.state[self.pre],
+        if sp.use_std:
+            w_eff = np.where(self.pre >= self.N_E, self.w * self.x_rec[self.pre], self.w)
+        else:
+            w_eff = self.w
+        I = np.bincount(self.post, weights=w_eff * self.state[self.pre],
                         minlength=self.N).astype(np.float32)
         if apply_side_inh:
             ro = self.state[self.out_idx]
@@ -177,29 +225,100 @@ class Network:
         self.ref -= 1
         np.maximum(self.ref, 0, out=self.ref)
         self.ref[self.state > 0] = sp.t_ref
-        of = self.state[self.out_idx] > 0
-        if of.any():
-            self.ref[self.out_idx[of]] = sp.t_ref_out
+        if sp.theta_out_adapt:
+            of = self.state[self.out_idx] > 0
+            if of.any():
+                self.ref[self.out_idx[of]] = sp.t_ref_out
 
         nsp = int(self.state.sum())
         self.ema_rate = 0.99 * self.ema_rate + 0.01 * (nsp / self.N)
+        # 逐神经元放电率（τ = tau_rate；homeo 的受控变量）
+        a = 1.0 / sp.tau_rate
+        self.rate_ema *= (1 - a)
+        self.rate_ema += a * self.state
+        if sp.use_std:
+            self.x_rec += (1.0 - self.x_rec) / sp.tau_rec
+            ii = np.nonzero(self.state[self.N_E:] > 0)[0] + self.N_E
+            if ii.size:
+                self.x_rec[ii] *= (1.0 - sp.u_std)
         self.trace *= (self.trace_decay if self.trace_decay > 0
                        else float(np.exp(-1.0 / self.tau_trace)))
         self.trace += self.state
         if sp.theta_mode == "fire_adapt":
-            # 放电后阈值上调、全体向 v_th 回落（grow_talk 的形态）
+            # 放电后阈值上调、全体向 v_th 回落（grow_talk / grow_homeo 的形态）
             if fire.any():
                 self.theta[fire] = np.minimum(self.theta[fire] + sp.d_theta, sp.th_max)
-                ob = fire[self.out_idx]
-                if ob.any():
-                    oi = self.out_idx[ob]
-                    self.theta[oi] = np.maximum(
-                        self.theta[oi] - sp.d_theta + sp.d_theta_out, sp.th_min)
+                if sp.theta_out_adapt:
+                    ob = fire[self.out_idx]
+                    if ob.any():
+                        oi = self.out_idx[ob]
+                        self.theta[oi] = np.maximum(
+                            self.theta[oi] - sp.d_theta + sp.d_theta_out, sp.th_min)
             self.theta += (sp.v_th - self.theta) / sp.tau_adapt
         else:
             self.theta *= (1.0 - 1.0 / self.tau_theta)
             self.theta += self.trace / self.tau_theta
         return nsp
+
+    # ---- 结构可塑性：homeo 形态（按率偏差双向调 E-E 入边；照搬 grow_homeo）----
+    def structural_homeo(self, rng, r_target, tol, p_del, p_new, w_ee_init):
+        """按**每个兴奋神经元的放电率偏差**双向调 E-E 入边数。
+
+        与 budget 形态的根本区别（这是 PLOS CB 2022 的核心）：
+          budget：强化 + 随机新建 + 超预算按**权重**被动淘汰（单向、按权重）
+          homeo ：超标就删、不达标就长（**闭环、双向、按率**）
+
+        ⚠️ E-E 边定义为 `pre >= n_in & pre < N_E & post < N_E`——**必须排除输入区**：
+        输入扇出的 pre 是 0..99（< N_E）、post 也在 100..799 里，不排除会把
+        「感觉输入」当成 E-E 边裁掉（旧实现实测误算 3797 条）。
+
+        ⚠️ 两处 RNG 消耗必须与旧实现逐字一致（即便 p=0 也要消耗）：
+          ① 裁剪：`rng.random(idx.size)` 先算 keep，再按 drop 过滤
+          ② 生长：先对 starve 全体抽 `rng.random(starve.size)`，再筛 want
+        返回 (n_ee_before, n_dropped, n_born)。
+        """
+        sp = self._spec
+        N_E = self.N_E
+        eemask = ((self.pre >= self.N_IN) & (self.pre < N_E) & (self.post < N_E))
+        n_ee_before = int(eemask.sum())
+        rel = (self.rate_ema[:N_E] - r_target) / r_target
+        drop_n = 0
+        born_n = 0
+
+        # ① 裁剪：超标神经元，按偏差概率删掉入边（只删 E-E）
+        if eemask.any():
+            idx = np.nonzero(eemask)[0]
+            d_ = rel[self.post[idx]]
+            pdel = np.clip(d_, 0, 1) * p_del
+            keep = rng.random(idx.size) >= pdel
+            drop = idx[~keep]
+            if drop.size:
+                m = np.ones(self.pre.size, bool); m[drop] = False
+                self.pre, self.post, self.w, self.key = (
+                    self.pre[m], self.post[m], self.w[m], self.key[m])
+                self.age = self.age[m]
+                drop_n = int(drop.size)
+
+        # ② 生长：不达标神经元，**按共激活迹加权**选取源（不是均匀随机）
+        # 旧实现实测：源选取从均匀随机改成按迹加权，4 个 cue 的模式相似度 0.996 -> 0.405。
+        # 均匀随机会只保证放电率、不含任何选择性——永远长不出「某 cue → 某一群」的映射。
+        tw = self.trace[:N_E].astype(np.float64)
+        if tw.sum() > 0:
+            starve = np.nonzero(rel < -tol)[0]
+            if starve.size:
+                pnew = np.clip(-rel[starve], 0, 1) * p_new
+                want = starve[rng.random(starve.size) < pnew]
+                if want.size:
+                    p_src = tw / tw.sum()
+                    np_pre = rng.choice(N_E, want.size, p=p_src).astype(np.int32)
+                    np_post = want.astype(np.int32)
+                    ok = np_pre != np_post
+                    np_pre, np_post = np_pre[ok], np_post[ok]
+                    if np_pre.size:
+                        npw = np.full(np_pre.size, w_ee_init, np.float32)
+                        self._grow(np_pre, np_post, npw)
+                        born_n = int(np_pre.size)
+        return n_ee_before, drop_n, born_n
 
     # ---- 可塑性：权重 ----
     def apply_weight(self, m_vec, m_glob, eta, isolate_mask=None, norm="after_m"):

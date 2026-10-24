@@ -43,17 +43,17 @@ scripts/align_layers.py  移植对齐工具（六层）
 
 ## 移植覆盖度（2026-10-24）
 
-> **已与旧脚本对齐：4 个脚本 / 39 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19）。
+> **已与旧脚本对齐：5 个脚本 / 51 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12）。
 > 验证方式与全套跑法见 `docs/experiments.md` §16.18 / §16.19；工具 `scripts/align_layers.py`。
 >
-> **未移植（7 个）**：`grow_cond` / `grow_func` / `grow_homeo` / `grow_teach` / `grow_hebb`
+> **未移植（6 个）**：`grow_cond` / `grow_func` / `grow_teach` / `grow_hebb`
 > + `bench_lif2` / `calib5` / `scan_base`（后三个应做成 `run.py bench` / `scan` 子命令）。
-> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 4 个长出来的，
+> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 5 个长出来的，
 > 剩下 8 个里的机制它很可能还表达不了。
 
-## 四个流程（`Config.flow`）
+## 五个流程（`Config.flow`）
 
-本体（`core.py`）与可塑性原子操作四个流程共用；区别只在「什么时候调哪个原子操作」。
+本体（`core.py`）与可塑性原子操作五个流程共用；区别只在「什么时候调哪个原子操作」。
 
 | flow | 时间结构 | 动作 | 环境 | 更新时机 |
 |---|---|---|---|---|
@@ -61,6 +61,7 @@ scripts/align_layers.py  移植对齐工具（六层）
 | `goal` | episode | 2 维独立符号（`sign_2d`）| 2D 数学世界 | 每 `t_s` 步 |
 | `world` | **单条连续时间轴**（`steps`）| 2 维连续（`tanh_2d`）| 2D 振荡器 | 每 `t_s` 步 |
 | `talk` | **呈现**（n_ep × t_present，三段式：编码脉冲 → 保持 → 提问 → 回答）| 4 个离散（`first_spike`，平手取 v 最大）| 无环境（程序生成输入）| 每 `k_update` 步 |
+| `homeo` | **单条时间轴**（`steps`，内部按 `t_s` 分 chunk）| 无（不读动作）| 周期性 cue 编码 + 背景脉冲 | 每 `t_s` 步（按率偏差双向调 E-E 边）|
 
 **四个脚本的可塑性规则确实不同**（不是同一件事的不同写法）：`agent` 对称 + BCM；`goal` 对称 + BCM；
 `world` **非对称 + 无 BCM**；`talk` 用旧算式（`el[nz]` 子集按 `max` 归一，不是全局 `abs`）——所以它不经 `apply_weight`。硬合并成一套，任何一个方向都会移植失败。

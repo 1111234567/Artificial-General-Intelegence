@@ -484,6 +484,175 @@ def _run_goal(cfg):
     }
 
 
+def _run_homeo(cfg, return_net=False):
+    """移植自 grow_homeo.py：放电率稳态下的结构自生长（PLOS CB 2022 形态）。
+
+    与另外四个流程的差异（全部在 Config 里显式）：
+      - 初始**无 E-E**（只有 E→I / I→E / I→I / 输入扇出）
+      - 结构可塑性 = **按每个兴奋神经元的放电率偏差双向调 E-E 入边**
+      - 有 STD（抑制突触短时抑郁）与阈值适应两个自组织机制
+      - 周期性 cue 编码（每 enc_gap 步注入）+ 背景脉冲（只给 n_in 之后的神经元）
+
+    ⚠️ RNG 消耗顺序：build -> cue_plan（全部先生成）-> 逐步背景脉冲。不能换。
+    """
+    t0 = time.perf_counter()
+    rng = np.random.default_rng(cfg.seed)
+    out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+    net = Network(cfg.net, rng, out_idx)
+    net.tau_trace = cfg.plast.tau_trace
+    net.trace_decay = cfg.plast.trace_decay
+    net.tau_theta = cfg.plast.tau_theta
+
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    N_CUE = cfg.task.n_cue
+    BLK = N_IN // N_CUE
+    ENC = cfg.task.enc_steps
+    BG = cfg.task.bg_rate
+    IN_SPIKE = cfg.task.in_spike
+    steps = cfg.steps
+    t_struct = cfg.plast.t_s
+    r_target = cfg.plast.r_target
+    tol = cfg.plast.tol
+
+    hist = []
+    done = 0
+    cue_plan = []
+    tt = cfg.task.cue_after or (steps // 2)
+    while tt < steps:
+        cue_plan.append((tt, int(rng.integers(0, N_CUE))))
+        tt += cfg.task.enc_gap
+    ci = 0
+
+    xin = np.zeros(N, np.float32)
+    n_drop = n_born = 0
+
+    while done < steps:
+        ch = min(t_struct, steps - done)
+        cue = None
+        if ci < len(cue_plan) and cue_plan[ci][0] < done + ch:
+            cue = (cue_plan[ci][1], ENC)
+            ci += 1
+
+        # ⚠️ 迹必须在**每个 chunk 开头清零**：旧 `simulate()` 的 trace 是函数内局部变量，
+        # 每次调用（= 每个 50 步的 chunk）从 0 重新累积。
+        # ⚠️ 若 `reset_state_per_chunk`：旧 grow 调 simulate 时**从不传 start=**，
+        # 所以每个 chunk 的 v/s/ref/θ/x_rec 都从零开始，只保留 rate_ema 与结构。
+        # 这是旧实现的缺陷（状态并不连续），为逐位对齐而保留。
+        net.trace[:] = 0.0
+        if cfg.plast.reset_state_per_chunk:
+            net.v[:] = 0.0
+            net.state[:] = 0.0
+            net.ref[:] = 0
+            net.theta[:] = cfg.net.v_th
+            net.x_rec[:] = 1.0
+        for t in range(ch):
+            xin.fill(0.0)
+            xin[N_IN:] = (rng.random(N - N_IN) < BG).astype(np.float32) * IN_SPIKE
+            if cue is not None:
+                blk, enc = cue
+                if t == 0 or t == max(1, enc - 2):
+                    xin[blk * BLK:(blk + 1) * BLK] = IN_SPIKE
+            net.step(xin, False, False)
+
+        done += ch
+        eemask = ((net.pre >= N_IN) & (net.pre < N_E) & (net.post < N_E))
+        rr = net.rate_ema
+        hist.append((done, int(eemask.sum()), float(rr[:N_E].mean()),
+                     float((rr[:N_E] > r_target * (1 + tol)).sum()),
+                     float((rr[:N_E] < r_target * (1 - tol)).sum()),
+                     float((rr[:N_E] > r_target * 0.1).sum())))
+        if cfg.plast.topology:
+            _, d_, b_ = net.structural_homeo(
+                rng, r_target, tol, cfg.plast.p_del, cfg.plast.p_new, cfg.net.w_ee_init)
+            n_drop += d_
+            n_born += b_
+
+    eemask = ((net.pre >= N_IN) & (net.pre < N_E) & (net.post < N_E))
+    n_ee = int(eemask.sum())
+    last = hist[-1] if hist else (0, 0, 0.0, 0.0, 0.0, 0.0)
+
+    res = {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': 0, 'steps': steps,
+        'succ': float('nan'), 'succ_first': float('nan'), 'succ_last': float('nan'),
+        'progress': float('nan'), 'basis': float('nan'), 'dist_end': float('nan'),
+        'out_fire': 0.0, 'fixdelay': None, 'react': None,
+        'E_final': int(net.key.size), 'n_ee': n_ee,
+        'born': int(n_born), 'drop': int(n_drop),
+        'n_inh': int((net.pre >= N_E).sum()),
+        'rate': float(last[2]), 'rate_mean': float(last[2]),
+        'n_over': int(last[3]), 'n_under': int(last[4]), 'n_alive': int(last[5]),
+        'hist': hist,
+        'out_deg': 0, 'out_bias': 0.0,
+        'n_upd_w': 0, 'n_upd_b': 0, 'n_upd_top': len(hist),
+        'io_ok': True, 'n_io': 0,
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+    if return_net:
+        res['_net'] = net
+    return res
+
+
+def _probe_homeo(cfg, n_cue=4, warm=30000):
+    """移植自 grow_homeo.probe：长好之后，不同 cue 是否留下不同模式？
+
+    做法：先用 warm 步长到平衡 → 对每个 cue 从同一个预热态出发、编码 20 步
+    → **完全关掉背景**跑 300 步 → 累加放电 → 两两余弦相似度。
+
+    ⚠️ 判据的边界（§16.12 已记）：4 个 cue 打的是 4 块**不同输入神经元**，
+    下游本来就会不同——这是**通路差异**，不是记忆。低相似度不能单独当多吸引子的证据。
+    """
+    g = _run_homeo(cfg.with_(steps=warm), return_net=True)
+    net = g['_net']
+    rng = np.random.default_rng(cfg.seed + 99999)
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    IN_SPIKE = cfg.task.in_spike
+    BLK = N_IN // n_cue
+
+    TOTAL = np.zeros((n_cue, N), np.float64)
+    xin = np.zeros(N, np.float32)
+
+    for cu in range(n_cue):
+        # 从同一个预热态出发：**每个 cue 前重置状态**，再跑 500 步背景
+        # （旧 probe 每轮调 simulate 不传 start，等于无条件清空）
+        net.v[:] = 0.0
+        net.state[:] = 0.0
+        net.ref[:] = 0
+        net.theta[:] = cfg.net.v_th
+        net.x_rec[:] = 1.0
+        net.trace[:] = 0.0
+        for t in range(500):
+            xin.fill(0.0)
+            xin[N_IN:] = (rng.random(N - N_IN) < cfg.task.bg_rate).astype(np.float32) * IN_SPIKE
+            net.step(xin, False, False)
+
+        # 给 cue：编码 20 步（背景全关）
+        for t in range(20):
+            xin.fill(0.0)
+            if t == 0 or t == 18:
+                xin[cu * BLK:(cu + 1) * BLK] = IN_SPIKE
+            net.step(xin, False, False)
+
+        # 关掉 cue 与背景，统计 300 步
+        for t in range(300):
+            xin.fill(0.0)
+            net.step(xin, False, False)
+            TOTAL[cu] += net.state
+
+    sims = []
+    for i in range(n_cue):
+        for j in range(i + 1, n_cue):
+            a, b = TOTAL[i], TOTAL[j]
+            na, nb = np.linalg.norm(a), np.linalg.norm(b)
+            sims.append(float(a @ b / (na * nb)) if na > 1e-9 and nb > 1e-9 else float('nan'))
+    return dict(seed=cfg.seed, n_ee=g['n_ee'], sims=sims,
+                totals=[float(x.sum()) for x in TOTAL], elapsed=g['elapsed'])
+
+
 def _run_talk(cfg):
     """移植自 grow_talk.py：脉冲刺激 + 事件发射 + 连续时间轴（阶段 1/2 v2）。
 
@@ -810,6 +979,8 @@ def run(cfg):
         return _run_random(cfg, rng)
     if cfg.flow == 'goal':
         return _run_goal(cfg)
+    if cfg.flow == 'homeo':
+        return _run_homeo(cfg)
     if cfg.flow == 'talk':
         return _run_talk(cfg)
     if cfg.flow == 'world':

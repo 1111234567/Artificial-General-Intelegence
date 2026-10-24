@@ -289,6 +289,48 @@ TK_FROZEN = Config(name="tk_frozen", note="grow_talk frozen + 修正接口权重
                    **dict(_TALK_FIX, plast=_TALK_PLAST_OFF))
 
 
+# ---------------- 从旧 grow_homeo 移植（2026-10-24）----------------
+# 形态：PLOS CB 2022 —— 初始**无 E-E**，结构按放电率偏差**双向**调 E-E 入边。
+# 两个自组织机制同时开：阈值适应（fire_adapt）+ STD（抑制短时抑郁）。
+# 目标率 0.8% / ±20% 容忍区间 / 率估计 τ=500 / 结构周期 50 步。
+_HOMEO = dict(
+    flow="homeo",
+    steps=6000,
+    net=NetSpec(
+        init_kind="homeo", theta_mode="fire_adapt",
+        tau_adapt=100.0, d_theta=0.20, th_min=1.0, th_max=3.0, d_theta_out=0.0,
+        theta_out_adapt=False, t_ref_out=20,   # homeo：out_idx 只是普通神经元，全体一视同仁
+        w_i_ratio=2.0,          # w_i = -(0.50 × 2.0) = -1.0（旧扫描出的工作点）
+        w_ee_init=0.25,
+        d_ei=0.20, d_ie=0.05, d_ii=0.10,
+        n_in_fanout=50,
+        use_std=True, tau_rec=100.0, u_std=0.30,
+        tau_rate=500.0,
+    ),
+    task=TaskSpec(kind="none", n_cue=4, enc_steps=20, enc_gap=150,
+                  cue_after=0, bg_rate=0.015, in_spike=3.0),
+    plast=Plasticity(weight=False, topology=True, bias=False,
+                     trigger="step", t_s=50,
+                     struct_kind="homeo", r_target=0.008, tol=0.20,
+                     p_del=0.30, p_new=0.30, trace_decay=0.95,
+                     reset_state_per_chunk=True),   # 旧行为：每 chunk 清空网络状态
+    signal=SignalSpec(source="homeo"),
+    n_ep=0,
+)
+
+HO_GROW = Config(name="ho_grow", note="grow_homeo 主表（6000 步；对应旧默认参数）", **_HOMEO)
+HO_LONG = Config(name="ho_long", note="grow_homeo 长跑（40000 步；§16.11 那张表的规模）",
+                 **dict(_HOMEO, steps=40000))
+HO_WARM = Config(name="ho_warm", note="grow_homeo probe 的生长阶段（30000 步）",
+                 **dict(_HOMEO, steps=30000))
+HO_FROZEN = Config(name="ho_frozen", note="grow_homeo 关结构可塑性（对照）",
+                   **dict(_HOMEO, plast=Plasticity(
+                       weight=False, topology=False, bias=False,
+                       trigger="step", t_s=50, struct_kind="homeo",
+                       r_target=0.008, tol=0.20, p_del=0.30, p_new=0.30,
+                       trace_decay=0.95)))
+
+
 ALL = [
     BASE,
     PLAST_NONE, PLAST_BIAS, PLAST_W, PLAST_TOPO, PLAST_W_BIAS,
@@ -301,6 +343,7 @@ ALL = [
     GA_WORLD_CLOSED, GA_WORLD_OPEN, GA_WORLD_RANDACT, GA_WORLD_NOISE, GA_WORLD_FROZEN,
     TA_TEACH, TA_RAND_M, TA_NO_TEACH, TA_FROZEN,
     TK_TEACH, TK_RAND_M, TK_NO_TEACH, TK_FROZEN,
+    HO_GROW, HO_LONG, HO_WARM, HO_FROZEN,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

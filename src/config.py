@@ -54,6 +54,10 @@ class NetSpec:
     th_min: float = 1.0             # fire_adapt：阈值下界（回落目标）
     th_max: float = 3.0             # fire_adapt：阈值上界
     d_theta_out: float = 0.02       # fire_adapt：输出神经元的适应幅度（读出不该被锁死）
+    # 是否对「读出神经元」做特殊的阈值/不应期处理。
+    #   True  = talk（输出是读出层，不应期 4、阈值适应极小）
+    #   False = homeo（out_idx 只是普通内部神经元，全体一视同仁）
+    theta_out_adapt: bool = True
     # ---- talk 接口参数（init_kind="talk" 时生效）----
     n_q: int = 10                   # 提问区神经元数（紧跟输入区的 N_IN..N_IN+n_q-1）
     blk: int = 25                   # 每个词占多少输入神经元
@@ -64,6 +68,17 @@ class NetSpec:
     # 整体后移、从未落到接口边上（实测接口权重全为 w_e=0.5）。
     # True = 旧偏移（对齐旧脚本 / 复现 §16.10 用）；False = 修正（接口权重真正随机）。
     talk_legacy_offset: bool = False
+    # ---- homeo 形态（grow_homeo）：初始无 E-E，结构按放电率偏差双向调 ----
+    d_ei: float = 0.20              # E→I 连接概率
+    d_ie: float = 0.05              # I→E 连接概率（原 0.20；扫描后取 0.05，见 grow_homeo 头注）
+    d_ii: float = 0.10              # I→I 连接概率
+    w_ee_init: float = 0.25         # 新生 E-E 边的初始强度
+    # ---- 抑制性突触短时抑郁（STD，Phys Rev Research 2, 012042 的两个机制之一）----
+    use_std: bool = False
+    tau_rec: float = 100.0          # 抑制资源的恢复时间常数（步）
+    u_std: float = 0.30             # 每次传递耗掉的比例
+    # ---- 逐神经元放电率估计（homeo 的受控变量）----
+    tau_rate: float = 500.0
 
 
 # ---------------------------------------------------------------- 环境
@@ -157,6 +172,13 @@ class TaskSpec:
         """回答窗是否早于提问（= 不需要跨保持期；旧脚本 `--delay=20` 的形态）。"""
         return self.answer_from < self.query_at
 
+    # ---- homeo 流程（grow_homeo）：周期性 cue 编码 + 背景输入 ----
+    n_cue: int = 4              # cue 个数（输入区分块）
+    enc_steps: int = 20         # 编码步数（cue 在第 0 与 enc_steps-2 拍注入）
+    enc_gap: int = 150          # 两次 cue 的间隔
+    cue_after: int = 0          # 首次 cue 的时刻（0 = 用 steps//2）
+    bg_rate: float = 0.015      # 背景脉冲概率（只给 N_IN 之后的神经元）
+
     def check_feasible(self, steps_per_action: int) -> Tuple[bool, str]:
         """**前置检查**：最多能走多远 vs 目标差距。
 
@@ -205,6 +227,18 @@ class Plasticity:
     trigger: str = "action"
     t_s: int = 20               # step 触发的周期
     topo_thresh: float = 0.3    # 选「活跃神经元」的迹阈值（grow_agent 0.3 / grow_goal 0.5）
+    # ---- 结构可塑性的形态（2026-10-24：homeo 需要另一套）----
+    #   budget : 强化 + 随机新建 + 超预算按权重淘汰（agent / goal / world / talk）
+    #   homeo  : **按每个神经元的放电率偏差双向调 E-E 入边数**（grow_homeo / PLOS CB 2022）
+    struct_kind: str = "budget"
+    r_target: float = 0.008     # homeo：目标放电率（0.8%）
+    tol: float = 0.20           # homeo：±20% 内不动
+    p_del: float = 0.30         # homeo：超标神经元每周期删掉入边的比例上限
+    p_new: float = 0.30         # homeo：不达标神经元每周期新建入边的比例上限
+    # ⚠️ homeo 的旧实现每个 chunk 都从**零状态**开始（grow 调 simulate 时不传 start），
+    # 只保留 rate_ema 与结构——等于每 50 步把 v/s/ref/θ/x_rec 清空。
+    # True = 旧行为（对齐 grow_homeo / 复现 §16.11 用）；False = 状态连续（设计要的）。
+    reset_state_per_chunk: bool = False
 
 
 # ---------------------------------------------------------------- 信号 m
@@ -341,6 +375,21 @@ class Config:
             if self.readout.n_out * self.net.blk > self.net.n_in:
                 errs.append("n_out(%d) × blk(%d) 超过输入区 n_in(%d)" % (
                     self.readout.n_out, self.net.blk, self.net.n_in))
+            return errs
+        if self.flow == "homeo":
+            if self.signal.source not in ("homeo", "none"):
+                errs.append("homeo 流程要求 signal.source ∈ {homeo, none}，实际 %s" % self.signal.source)
+            if self.steps <= 0:
+                errs.append("homeo 流程必须显式给 steps")
+            if self.plast.struct_kind != "homeo":
+                errs.append("homeo 流程要求 plast.struct_kind == 'homeo'，实际 %s"
+                            % self.plast.struct_kind)
+            if self.task.enc_steps >= self.task.enc_gap:
+                errs.append("enc_steps(%d) 必须 < enc_gap(%d)" % (
+                    self.task.enc_steps, self.task.enc_gap))
+            if self.task.n_cue * (self.net.n_in // self.task.n_cue) > self.net.n_in:
+                errs.append("n_cue(%d) 超过输入区 n_in(%d)" % (
+                    self.task.n_cue, self.net.n_in))
             return errs
         if self.flow == "world":
             # 单条时间轴，无任务、无成败 -> 没有「可达性」判据
