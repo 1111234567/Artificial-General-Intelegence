@@ -914,7 +914,11 @@ def layer_modes(seed=0, n_ep=20):
         print("  全部 mode 的解析与实测一致（%d 个）" % len(rows))
 
     # 同一配置的「不同 mode」会给出逐位相同的结果——这是「对照组名不副实」的直接证据。
+    # 但反向推论需要前提：**跑得够长**。短跑下不同配置也会逐位相同（都还没分化）。
     print("\n  —— 行为指纹分组（同组 = 实际是同一个配置）——")
+    if n_ep < 10:
+        print("  **警告：n_ep=%d 太短——不同配置也会因为「都还没学到东西」而逐位相同，"
+              "分组不可信。用 n_ep>=20 复核。**" % n_ep)
     groups = {}
     for mode, _db, _dw, _dt, r in rows:
         sig = (round(r.get("out_bias", 0.0), 6), r.get("born", 0),
@@ -923,6 +927,9 @@ def layer_modes(seed=0, n_ep=20):
     for sig, ms in groups.items():
         if len(ms) > 1:
             print("  **%s  —— 结果逐位相同**" % " / ".join(ms))
+
+    print("\n  提醒：分组的依据是「结果逐位相同 + 三层开关相同」。")
+    print("        短跑（n_ep<10）下很多组合会因「都没学到」而相同——用 n_ep>=20 复核。")
 
     print("\n" + "=" * 110)
     return bad == 0
