@@ -9,20 +9,479 @@ import numpy as np
 
 from .core import Network
 from .env import make_env
-from .signal import Signal
+from .signal import Signal, steady_gate
 
 
-def _first_spike(state, out_idx, win_i):
+def _first_spike(state, out_idx, win_i, v=None, tie_break="first"):
     if win_i >= 0:
         return win_i
     of = state[out_idx] > 0
     if not of.any():
         return -1
-    return int(np.nonzero(of)[0][0])
+    cand = np.nonzero(of)[0]
+    if tie_break == "argmax_v" and cand.size > 1:
+        return int(cand[np.argmax(v[out_idx][cand])])
+    return int(cand[0])
 
 
 def src_is_episode(cfg):
     return cfg.signal.source == 'episode'
+
+
+def _run_random(cfg, rng):
+    """移植自 grow_agent 的 mode=random：**不建网、不学**，只随机选动作。
+
+    这是「不学网络」的下界基线——没有它，脉冲网络的绝对成功率读不出方向
+    （§16.16：`none` 5.9% 比 `random` 20.6% 还差 3.5 倍，而当时差点把 5.9% 读成「网络废了」）。
+
+    必须不消耗 RNG 建网：旧代码在 `_init_net` 之前就 return，第一个 draw 就是选动作。
+    """
+    t0 = time.perf_counter()
+    n_out = cfg.readout.n_out
+    env = make_env(cfg.env, '%s_s%d' % (cfg.name, cfg.seed))
+    n_ep = cfg.n_ep
+    t_ep, t_act = cfg.task.t_ep, cfg.task.t_act
+
+    ep_succ = np.zeros(n_ep, np.float32)
+    ep_prog = np.zeros(n_ep, np.float32)
+    ep_basis = np.zeros(n_ep, np.float32)
+    ep_dist = np.zeros(n_ep, np.float32)
+
+    n_io = 0
+    for ep in range(n_ep):
+        if cfg.task.kind == 'discrete':
+            st0, goal = cfg.task.cases[ep % len(cfg.task.cases)]
+        else:
+            st0 = int(rng.integers(cfg.task.obs_lo, cfg.task.obs_hi))
+            goal = int(rng.integers(cfg.task.obs_lo, cfg.task.obs_hi))
+        env.set_target(goal)
+        env.set_state(st0)
+        st = st0
+        start = st
+        min_move = abs(goal - start)
+        total = 0
+        n_act = n_ok = 0
+        for k in range(t_ep):
+            if k % t_act == 0 and k > 0:
+                a_idx = int(rng.integers(0, n_out))
+                new_st, moved, _a = env.act(a_idx)
+                total += abs(moved)
+                want = int(np.sign(goal - st))
+                if want != 0 and np.sign(moved) != 0:
+                    n_act += 1
+                    if np.sign(moved) == want:
+                        n_ok += 1
+                st = new_st
+                if st == goal:
+                    break
+        ep_succ[ep] = 1.0 if st == goal else 0.0
+        ep_prog[ep] = total / max(min_move, 1)
+        ep_basis[ep] = n_ok / max(n_act, 1)
+        ep_dist[ep] = abs(goal - st)
+
+    n_io = env.n_io
+    env.close()
+
+    k6 = max(1, n_ep // 6)
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': n_ep,
+        'succ': float(ep_succ.mean()),
+        'succ_first': float(ep_succ[:k6].mean()),
+        'succ_last': float(ep_succ[-k6:].mean()),
+        'progress': float(ep_prog.mean()),
+        'basis': float(ep_basis.mean()),
+        'dist_end': float(ep_dist.mean()),
+        'out_fire': 0.0, 'fixdelay': None, 'react': None,
+        'E_final': 0, 'n_inh': 0, 'rate': 0.0, 'out_deg': 0, 'out_bias': 0.0,
+        'n_upd_w': 0, 'n_upd_b': 0, 'n_upd_top': 0,
+        'io_ok': bool(env.io_ok), 'n_io': int(n_io),
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+
+
+def _run_world(cfg):
+    """移植自 grow_world.py：2D 振荡器世界 + 单条连续时间轴（无 episode）。
+
+    与另外两个流程的差异（全部在 Config 里显式）：
+      - 没有 episode / 没有重置；一条时间轴跑 steps 步
+      - 观测 = tanh(漏积分变量)，动作 = tanh((r_out - base)/scale) 连续值
+      - m = 稳态门 × (0.2 + 0.8 × 动作方差代理)
+      - el 不减 θ（恒 ≥ 0）+ **非对称**权重更新 + 生长不过滤输入区 + 全局随机边 + 淘汰不保护接口边
+    """
+    t0 = time.perf_counter()
+    rng = np.random.default_rng(cfg.seed)
+    out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+    net = Network(cfg.net, rng, out_idx)
+    net.tau_trace = cfg.plast.tau_trace
+    net.trace_decay = cfg.plast.trace_decay
+    net.tau_theta = cfg.plast.tau_theta
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    steps = cfg.steps or (cfg.n_ep * cfg.task.t_ep)
+    t_s = cfg.plast.t_s
+    closed = (cfg.flow == "world") and cfg.signal.gate      # gate 作「闭环」开关
+    use_plast = bool(cfg.plast.weight or cfg.plast.topology)
+
+    # ---- RNG 顺序必须与旧脚本一致 ----
+    u_in = rng.random((steps, N_IN), dtype=np.float32)
+    u_wht = rng.random((steps, 2), dtype=np.float32)
+    noise = rng.normal(0.0, cfg.env.w_noise, size=(steps, 2))
+    u_rand = (rng.uniform(-1.0, 1.0, size=(steps, 2))
+              if cfg.readout.kind == "randact" else None)
+
+    xin = np.zeros(N, np.float32)
+    w_f = 2.0 * np.pi / cfg.env.period_d
+    w_s = 2.0 * np.pi / cfg.env.period_d_slow
+    kf = 1.0 - 1.0 / cfg.env.tau_w_f
+    ks = 1.0 - 1.0 / cfg.env.tau_w_s
+    xf = xs = 0.0
+
+    r_out = np.full(2, cfg.readout.r_base, np.float64)
+    a_all = np.zeros((steps, 2), np.float64)
+    o_all = np.zeros((steps, 2), np.float32)
+
+    born = drop = 0
+    m_acc = 0.0
+    m_cnt = 0
+    elig_mean = 0.0
+    prev = None
+    tovs = []
+    tail = []
+    out_acc = np.zeros(2, np.float64)
+    tov_every = max(2000, steps // 5)
+    n_upd_w = 0
+    n_upd_top = 0
+
+    for t in range(steps):
+        # ---- 1) 观测 ----
+        if cfg.signal.source == "noise":
+            o0 = float(u_wht[t, 0]) * 2.0 - 1.0
+            o1 = float(u_wht[t, 1]) * 2.0 - 1.0
+        else:
+            o0 = float(np.tanh(xf))
+            o1 = float(np.tanh(xs))
+        o_all[t, 0] = o0
+        o_all[t, 1] = o1
+
+        # ---- 2) 输入脉冲 ----
+        h = N_IN // 2
+        p0 = 0.02 * (1.0 + 0.8 * o0)
+        p1 = 0.02 * (1.0 + 0.8 * o1)
+        xin.fill(0.0)
+        xin[0:h] = u_in[t, 0:h] < p0
+        xin[h:N_IN] = u_in[t, h:N_IN] < p1
+
+        # ---- 3) 网络 ----
+        net.step(xin, False)
+        s = net.state
+
+        # ---- 4) 动作 ----
+        r_out *= (1.0 - 1.0 / cfg.readout.a_tau)
+        r_out += s[out_idx] / cfg.readout.a_tau
+        a = np.tanh((r_out - cfg.readout.r_base) / cfg.readout.r_scale)
+        if u_rand is not None:
+            a = u_rand[t].copy()
+        a_all[t] = a
+
+        # ---- 5) 世界 ----
+        uf = cfg.env.amp_d * float(np.cos(w_f * t))
+        us = cfg.env.amp_d_slow * float(np.cos(w_s * t))
+        if closed:
+            uf += cfg.env.k_phase * a[0]
+            us += cfg.env.k_phase * a[1]
+        xf = kf * xf + uf + noise[t, 0]
+        xs = ks * xs + us + noise[t, 1]
+
+        # ---- 6) 结构可塑性 ----
+        if use_plast and t > 0 and t % t_s == 0:
+            lo = max(0, t - 200)
+            aw = a_all[lo:t]
+            agency = float(np.clip(max(aw[:, 0].std(), aw[:, 1].std())
+                                   / cfg.signal.agency_scale, 0.0, 1.0))
+            m = steady_gate(net.ema_rate) * (cfg.signal.base + (1.0 - cfg.signal.base) * agency)
+            m_acc += m
+            m_cnt += 1
+
+            if cfg.plast.weight and net.key.size:
+                elig_mean += net.apply_weight_asym(m, cfg.plast.eta_w, use_theta=False)
+                n_upd_w += 1
+
+            if cfg.plast.topology:
+                born += net.grow_edges(cfg.plast.topo_thresh, cfg.net.p_new, cfg.net.max_active)
+                if cfg.net.p_global > 0 and t % cfg.net.t_global == 0:
+                    born += net.grow_global(cfg.net.p_global)
+                drop += net.prune(cfg.net.budget, cfg.net.min_age)
+                n_upd_top += 1
+
+        # ---- 7) 记录 ----
+        if t > 0 and t % tov_every == 0:
+            if prev is not None:
+                inter = np.intersect1d(prev, net.key, assume_unique=True).size
+                tovs.append(1.0 - inter / max(prev.size + net.key.size - inter, 1))
+            prev = net.key.copy()
+        if t >= steps - 2000:
+            tail.append(int(s.sum()))
+            out_acc += s[out_idx]
+
+    deg = net.in_degree()
+    aw = a_all[max(0, steps - 2000):]
+    ow = o_all[max(0, steps - 2000):]
+    ca = 0.0
+    for j in range(2):
+        sj = float(aw[:, j].std())
+        so = float(ow[:, j].std())
+        if sj > 1e-9 and so > 1e-9:
+            ca = max(ca, abs(float(np.corrcoef(aw[:, j], ow[:, j])[0, 1])))
+    ntail = max(len(tail), 1)
+
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': 0, 'steps': steps,
+        'succ': float('nan'), 'succ_first': float('nan'), 'succ_last': float('nan'),
+        'progress': float('nan'), 'basis': float('nan'), 'dist_end': float('nan'),
+        'out_fire': float(out_acc[0] / ntail),
+        'fixdelay': None, 'react': None,
+        'E_final': int(net.key.size),
+        'born': int(born), 'n_upd_top': int(drop),
+        'n_inh': int((net.pre >= N_E).sum()),
+        'rate': float(np.mean(tail) / N) if tail else 0.0,
+        'rate_std': float(np.std(tail) / N) if tail else 0.0,
+        'deg_e': float(deg[:N_E].mean()), 'deg_i': float(deg[N_E:].mean()),
+        'w_abs': float(np.abs(net.w).mean()),
+        'tov_last': float(tovs[-1]) if tovs else float('nan'),
+        'tov_all': tovs,
+        'a_std': float(max(aw[:, 0].std(), aw[:, 1].std())),
+        'a_sat': float((np.abs(aw) >= 0.95).mean()),
+        'a_obs_corr': ca,
+        'out_deg': int(deg[out_idx].mean()),
+        'out_deg0': int(deg[out_idx[0]]),
+        'out_deg1': int(deg[out_idx[1]]),
+        'out_bias': 0.0,
+        'out_r0': float(out_acc[0] / ntail),
+        'out_r1': float(out_acc[1] / ntail),
+        'm_mean': float(m_acc / m_cnt) if m_cnt else 0.0,
+        'elig_mean': float(elig_mean / m_cnt) if m_cnt else 0.0,
+        'n_upd_w': int(n_upd_w), 'n_upd_b': 0,
+        'io_ok': True, 'n_io': 0,
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+
+
+def _run_goal(cfg):
+    """移植自 grow_goal.py：2D 连续世界 + 2 维符号动作 + 每 t_s 步结构可塑性。
+
+    与 agent 流程的差异（**全部在 Config 里显式声明**，不是隐含分支）：
+      - 世界是内存数学变量（math_2d），不是文件
+      - 动作是 2 维独立符号（sign_2d），不是离散索引
+      - 无 bias、无侧抑制
+      - m = 稳态门 × 价值（只在刚成功的 window 步内为 1）
+      - 可塑性每 t_s 步触发，不是每动作；淘汰**无条件**执行
+    """
+    t0 = time.perf_counter()
+    rng = np.random.default_rng(cfg.seed)
+    out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+    net = Network(cfg.net, rng, out_idx)
+    net.tau_trace = cfg.plast.tau_trace
+    net.trace_decay = cfg.plast.trace_decay
+    net.tau_theta = cfg.plast.tau_theta
+
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    n_ch = N_IN // 4
+    n_out = cfg.readout.n_out
+    t_act, t_ep, n_ep = cfg.task.t_act, cfg.task.t_ep, cfg.n_ep
+    tol, k_act = cfg.env.tol, cfg.env.k_act
+    t_s = cfg.plast.t_s
+
+    # ---- RNG 顺序必须与旧脚本一致（结构之后：u_in / noise / x0 / g）----
+    tot = n_ep * t_ep + 8
+    u_in = rng.random((tot, N_IN), dtype=np.float32)
+    noise = rng.normal(0.0, cfg.env.w_noise, size=(tot, 2))
+    x0_all = rng.uniform(cfg.env.x0_lo, cfg.env.x0_hi, size=(n_ep, 2))
+    g_all = rng.uniform(cfg.env.g_lo, cfg.env.g_hi, size=(n_ep, 2))
+
+    if cfg.task.goal_mode == "fixed":
+        g_all[:] = np.asarray(cfg.task.fixed_goal, np.float64)
+    elif cfg.task.goal_mode == "two_phase":
+        half = n_ep // 2
+        g_all[:half] = g_all[:half] * 0.5 + np.array([0.5, 0.5])
+        g_all[half:] = g_all[half:] * 0.5 + np.array([-0.5, -0.5])
+        if cfg.task.phase == "fresh":
+            g_all[:half] = g_all[half:].copy()
+
+    xin = np.zeros(N, np.float32)
+    r_out = np.zeros(n_out, np.float64)
+    base = np.zeros(n_out, np.float64)
+    a = np.zeros(n_out, np.float64)
+
+    succ_recent = 0
+    ep_succ = np.zeros(n_ep, np.float32)
+    ep_steps = np.zeros(n_ep, np.float32)
+    born = 0
+    m_acc = m_steady_acc = m_value_acc = 0.0
+    m_cnt = 0
+    th_acc = 0.0
+    align_acc = 0.0
+    align_cnt = 0
+    a_sum = np.zeros(n_out)
+    a_switch = 0
+    a_switch_n = 0
+    x_end_sum = np.zeros(2)
+    probe_S = [] if cfg.readout.probe else None
+    probe_D = [] if cfg.readout.probe else None
+    t_glob = 0
+    n_upd_w = 0
+    n_upd_top = 0
+
+    use_plast = bool(cfg.plast.weight or cfg.plast.topology)
+
+    for ep in range(n_ep):
+        x = x0_all[ep].copy()
+        g = g_all[ep].copy()
+        succ = 0
+        succ_recent = 0
+        ep_step_done = t_ep
+
+        for k in range(t_ep):
+            t = t_glob
+            # ---- 1) 输入脉冲（4 通道：x0 / x1 / g0 / g1）----
+            p0 = 0.02 * (1.0 + 0.8 * x[0])
+            p1 = 0.02 * (1.0 + 0.8 * x[1])
+            q0 = 0.02 * (1.0 + 0.8 * g[0])
+            q1 = 0.02 * (1.0 + 0.8 * g[1])
+            xin.fill(0.0)
+            xin[0:n_ch] = u_in[t, 0:n_ch] < p0
+            xin[n_ch:2 * n_ch] = u_in[t, n_ch:2 * n_ch] < p1
+            xin[2 * n_ch:3 * n_ch] = u_in[t, 2 * n_ch:3 * n_ch] < q0
+            xin[3 * n_ch:4 * n_ch] = u_in[t, 3 * n_ch:4 * n_ch] < q1
+
+            # ---- 2) 网络（无侧抑制；bias 全 0）----
+            net.step(xin, False)
+            s = net.state
+
+            # ---- 3) 输出与动作（每 t_act 步采一次符号）----
+            r_out *= (1.0 - 1.0 / cfg.readout.a_tau)
+            r_out += s[out_idx] / cfg.readout.a_tau
+            base *= (1.0 - 1.0 / cfg.readout.base_tau)
+            base += r_out / cfg.readout.base_tau
+            if k % t_act == 0:
+                a_new = np.where(r_out > base, 1.0, -1.0)
+                if k > 0:
+                    a_switch_n += 1
+                    if not np.array_equal(a_new, a):
+                        a_switch += 1
+                a = a_new
+                a_sum += a
+                sgn = np.sign(g - x)
+                sgn[sgn == 0.0] = 1.0
+                align_acc += float(np.dot(a, sgn))
+                align_cnt += 1
+
+            # ---- 4) 世界推进 ----
+            drift = cfg.env.amp_d * float(np.cos(2.0 * np.pi * t_glob / cfg.env.period_d))
+            x = x + k_act * a + drift + noise[t_glob]
+            x = np.clip(x, -1.0, 1.0)
+
+            # ---- 5) 任务判定 ----
+            d = float(max(abs(x[0] - g[0]), abs(x[1] - g[1])))
+            if probe_S is not None and k % 5 == 0:
+                probe_S.append(s.copy())
+                probe_D.append(g - x)
+            if d < tol and succ == 0:
+                succ = 1
+                ep_step_done = k + 1
+                succ_recent = t_s
+
+            # ---- 6) 结构可塑性（每 t_s 步）——淘汰始终执行，只关「强化 + 生长」----
+            if t_glob > 0 and t_glob % t_s == 0:
+                m_value = 1.0 if succ_recent > 0 else 0.0
+                succ_recent = max(0, succ_recent - t_s)
+                m_steady = steady_gate(net.ema_rate)
+                m = m_steady * m_value
+                if not use_plast:
+                    m = 0.0
+                m_steady_acc += m_steady
+                m_value_acc += m_value
+                m_acc += m
+                m_cnt += 1
+                th_acc += float(net.theta.mean())
+
+                if cfg.plast.weight and use_plast and m > 0:
+                    net.apply_weight(None, m, cfg.plast.eta_w, None, norm="before_m")
+                    n_upd_w += 1
+
+                # 淘汰**无条件**（grow_goal：frozen 只关「强化 + 生长」）
+                n_upd_top += net.apply_topology(
+                    cfg.plast.topo_thresh, cfg.net.budget, cfg.net.p_new,
+                    cfg.net.max_active, cfg.net.min_age,
+                    grow=(use_plast and cfg.plast.topology)) or 0
+                born += net.last_born
+
+            t_glob += 1
+
+        ep_succ[ep] = succ
+        ep_steps[ep] = ep_step_done if succ else t_ep
+        x_end_sum += x
+
+    k6 = max(1, n_ep // 6)
+    if cfg.task.phase == "seq" and cfg.task.goal_mode == "two_phase":
+        p2 = slice(n_ep // 2, n_ep // 2 + k6)
+    elif cfg.task.goal_mode == "two_phase":
+        p2 = slice(0, k6)
+    else:
+        p2 = slice(n_ep - k6, n_ep)
+
+    deg = net.in_degree()
+    r2 = r2s = None
+    if probe_S and len(probe_S) > 200:
+        S = np.asarray(probe_S, np.float64)
+        D = np.asarray(probe_D, np.float64)
+        S1 = np.hstack([S, np.ones((S.shape[0], 1))])
+        Wt, *_ = np.linalg.lstsq(S1, D, rcond=None)
+        P = S1 @ Wt
+        ss_res = ((D - P) ** 2).sum(axis=0)
+        ss_tot = ((D - D.mean(axis=0)) ** 2).sum(axis=0)
+        r2s = float(np.mean(1.0 - ss_res / np.maximum(ss_tot, 1e-12)))
+        Sg = (D > 0).astype(np.float64)
+        Ws, *_ = np.linalg.lstsq(S1, Sg, rcond=None)
+        Ps = S1 @ Ws
+        pred_sign = (Ps > 0.5).astype(np.float64)
+        r2 = float(np.mean((pred_sign == Sg).mean(axis=0)))
+
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': n_ep,
+        'succ': float(ep_succ.mean()),
+        'succ_first': float(ep_succ[:k6].mean()),
+        'succ_last': float(ep_succ[-k6:].mean()),
+        'phase2_succ': float(ep_succ[p2].mean()),
+        'step_first': float(ep_steps[:k6].mean()),
+        'step_last': float(ep_steps[-k6:].mean()),
+        'phase2_step': float(ep_steps[p2].mean()),
+        'progress': float(ep_steps.mean() / max(t_ep, 1)),   # 归一化到 0~1（越小越好；与 agent 流程的可比）
+        'basis': float(align_acc / max(align_cnt, 1) / 2.0),
+        'dist_end': float(np.abs(x_end_sum / max(n_ep, 1)).mean()),
+        'out_fire': 0.0,
+        'fixdelay': None, 'react': None,
+        'E_final': int(net.key.size), 'n_inh': int((net.pre >= N_E).sum()),
+        'rate': float(net.ema_rate),
+        'out_deg': int(deg[out_idx].mean()), 'out_bias': 0.0,
+        'n_upd_w': int(n_upd_w), 'n_upd_b': 0, 'n_upd_top': int(n_upd_top),
+        'born': int(born),
+        'm_steady': float(m_steady_acc / max(m_cnt, 1)),
+        'm_value': float(m_value_acc / max(m_cnt, 1)),
+        'm_mean': float(m_acc / max(m_cnt, 1)),
+        'theta_mean': float(th_acc / max(m_cnt, 1)),
+        'align': float(align_acc / max(align_cnt, 1) / 2.0),
+        'a_mean': float(np.abs(a_sum / max(align_cnt, 1)).mean()),
+        'a_switch': float(a_switch / max(a_switch_n, 1)),
+        'r2_val': r2s, 'r2_sign': r2,
+        'io_ok': True, 'n_io': 0,
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
 
 
 def run(cfg):
@@ -30,6 +489,15 @@ def run(cfg):
     rng = np.random.default_rng(cfg.seed)
     n_out = cfg.readout.n_out
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+
+    if cfg.readout.kind == 'random':
+        return _run_random(cfg, rng)
+    if cfg.flow == 'goal':
+        return _run_goal(cfg)
+    if cfg.flow == 'world':
+        return _run_world(cfg)
+    if cfg.flow == 'world':
+        return _run_world(cfg)
 
     net = Network(cfg.net, rng, out_idx)
     net.tau_trace = cfg.plast.tau_trace
@@ -39,13 +507,15 @@ def run(cfg):
 
     n_in = cfg.net.n_in
     n_ch = n_in // 4
-    u_buf = rng.random((16384, n_in), dtype=np.float32)
+    u_buf = rng.random((cfg.u_buf_rows, n_in), dtype=np.float32)
     xin = np.zeros(cfg.net.N, np.float32)
 
     t_ep = cfg.task.t_ep
     t_act = cfg.task.t_act
     n_ep = cfg.n_ep
     ep_active = np.zeros(cfg.net.N, bool)
+    recall = (cfg.task.kind == "recall")
+    prev_end = None
 
     ep_succ = np.zeros(n_ep, np.float32)
     ep_prog = np.zeros(n_ep, np.float32)
@@ -59,12 +529,20 @@ def run(cfg):
     n_upd_b = 0
     n_upd_top = 0
     t_glob = 0
+    win_i = -1   # 本动作窗口内第一个放电的输出。**必须在 ep 循环外**：
+    # 旧 grow_agent 只在 run_one 开头初始化一次，episode 之间不重置；
+    # 跑满 240 步的 episode 末尾会把 win_i 带进下一个 ep 的前几个窗口。
+    # 框架原来在 ep 开头 `win_i = -1`，那一行造成第 9 处差异（实测在 ep7 第一个动作分叉）。
 
     def encode(st, goal, ti):
         row = u_buf[ti % u_buf.shape[0]]
         xin.fill(0.0)
-        for ch, val in ((0, st), (1, goal)):
-            p = 0.02 * (1.0 + 0.8 * (val / (cfg.env.v_max * 0.5) - 1.0))
+        # 归一化到 [-1, 1]（旧 grow_agent 的 obs_code）；recall 时目标**不可观测** -> 中性 0
+        half = cfg.env.v_max * 0.5
+        xs = st / half - 1.0
+        xg = 0.0 if recall else (goal / half - 1.0)
+        for ch, xv in ((0, xs), (1, xg)):
+            p = 0.02 * (1.0 + 0.8 * xv)
             a, b = ch * 2 * n_ch, (ch * 2 + 1) * n_ch
             xin[a:b] = row[a:b] < p
             a2, b2 = (ch * 2 + 1) * n_ch, (ch * 2 + 2) * n_ch
@@ -73,12 +551,22 @@ def run(cfg):
     for ep in range(n_ep):
         if cfg.task.kind == 'discrete':
             st0, goal = cfg.task.cases[ep % len(cfg.task.cases)]
+            env.set_target(goal)
+            env.set_state(st0)
+            st = st0
         else:
+            # —— 与 grow_agent.py 同序：先（每 k_ep_task）换目标，再采 st ——
+            if ep % cfg.task.k_ep_task == 0:
+                env.set_target(int(rng.integers(cfg.task.obs_lo, cfg.task.obs_hi)))
             st0 = int(rng.integers(cfg.task.obs_lo, cfg.task.obs_hi))
-            goal = int(rng.integers(cfg.task.obs_lo, cfg.task.obs_hi))
-        env.set_target(goal)
-        env.set_state(st0)
-        st = st0
+            env.set_state(st0)
+            _tg = env.get_target()
+            if recall:
+                # 目标不可观测：要求回到上一 episode 的终点（首个 ep 用 v_max - st）
+                goal = prev_end if prev_end is not None else (cfg.env.v_max - st0)
+            else:
+                goal = _tg
+            st = st0
 
         start = st
         min_move = max(abs(goal - start), 1)
@@ -91,7 +579,8 @@ def run(cfg):
         last_dir = 0
         reacted = react_n = 0
         ep_active[:] = False
-        win_i = -1
+        if cfg.reset_readout_per_ep:
+            win_i = -1
         r_out = np.zeros(n_out)
 
         for k in range(t_ep):
@@ -105,7 +594,8 @@ def run(cfg):
             r_out = 0.95 * r_out + 0.05 * net.state[out_idx]
 
             if cfg.readout.kind == 'first_spike':
-                win_i = _first_spike(net.state, out_idx, win_i)
+                win_i = _first_spike(net.state, out_idx, win_i, net.v,
+                                     cfg.readout.tie_break)
             else:
                 win_i = int(np.argmax(r_out))
 
@@ -125,6 +615,13 @@ def run(cfg):
                     net.apply_bias(mv, cfg.plast.eta_bias,
                                    cfg.plast.bias_min, cfg.plast.bias_max)
                     n_upd_b += 1
+                if mv is not None and cfg.plast.weight and cfg.signal.silence_update_w:
+                    mask = None
+                    if cfg.plast.isolate:
+                        mask = (ep_active[net.pre] &
+                                (ep_active[net.post] | (net.post >= net.N_E)))
+                    net.apply_weight(mv, 0.0, cfg.plast.eta_w, mask)
+                    n_upd_w += 1
                 win_i = -1
                 continue
 
@@ -179,7 +676,10 @@ def run(cfg):
             ep_react[ep] = reacted / react_n
 
         m_ep, mv_ep, mg_ep = sig.on_episode(succ, ep_prog[ep], 1.0, env.io_ok)
-        if cfg.plast.topology and m_ep > 0:
+        if cfg.signal.steady_gate_ep:
+            m_ep = m_ep * steady_gate(net.ema_rate)
+        if cfg.plast.topology and (m_ep > 0 or not cfg.plast.topo_gate) \
+                and (ep > 0 or not cfg.plast.topo_skip_first):
             n_upd_top += net.apply_topology(
                 cfg.plast.isolate_thresh, cfg.net.budget, cfg.net.p_new,
                 cfg.net.max_active, cfg.net.min_age) or 0
@@ -190,6 +690,8 @@ def run(cfg):
                         (ep_active[net.post] | (net.post >= net.N_E)))
             net.apply_weight(mv_ep, mg_ep, cfg.plast.eta_w, mask)
             n_upd_w += 1
+
+        prev_end = st
 
         for _ in range(cfg.task.t_gap):
             encode(50, 50, t_glob)

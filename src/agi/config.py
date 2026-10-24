@@ -39,17 +39,42 @@ class NetSpec:
     min_age: int = 25
     p_new: float = 0.004
     side_inh: float = 1.5
+    # 拓扑细节（旧两个脚本不同，必须显式）
+    block_input_edges: bool = True   # 新建边是否要求 post >= n_in（grow_agent 要 / grow_world 不要）
+    protect_out_edges: bool = True   # 淘汰时是否保护接口边（grow_agent 要 / grow_world 不要）
+    p_global: int = 0                # 每 t_global 步加的全局随机边数（grow_world=4）
+    t_global: int = 2000
 
 
 # ---------------------------------------------------------------- 环境
 
 @dataclass(frozen=True)
 class EnvSpec:
-    """环境。`kind` 必须显式：本机真实文件是唯一实装项。"""
+    """环境。`kind` 必须显式。
+
+    local_files : 真实读写 data/env/...（state/target 为标量）
+    math_2d     : 内存 2D 连续世界（x ∈ [-1,1]²，动作推力 + 漂移 + 噪声）——grow_goal 形态
+    """
     kind: str = "local_files"       # local_files = 真实读写 data/env/...
     root: str = "data/env"
     v_max: int = 100
     actions: Tuple[int, ...] = (1, -1)   # 2026-10-24：±10 无用（linear 基线 W 恒 0）
+    # ---- math_2d 的世界参数（环境设计，不是机制参数）----
+    k_act: float = 0.02            # 每步动作推力
+    tol: float = 0.08              # 成功判据（切比雪夫距离）
+    amp_d: float = 0.01            # 外源扰动幅度（只有动作的一半）
+    period_d: float = 40.0         # 扰动周期
+    w_noise: float = 0.002         # 世界噪声
+    x0_lo: float = -0.6            # 初态采样区间
+    x0_hi: float = 0.6
+    g_lo: float = -0.8             # 目标采样区间
+    g_hi: float = 0.8
+    # ---- oscillator 世界（grow_world）：两个漏积分变量 + 周期驱动 ----
+    period_d_slow: float = 500.0
+    tau_w_f: float = 50.0          # 快世界变量的漏时间（动作效果持续 ~50 步）
+    tau_w_s: float = 500.0
+    amp_d_slow: float = 0.10
+    k_phase: float = 0.05          # 动作对世界变量的推动
 
 
 # ---------------------------------------------------------------- 任务
@@ -58,8 +83,9 @@ class EnvSpec:
 class TaskSpec:
     """任务。`kind` 决定状态怎么来。
 
-    discrete: 固定的（初态, 目标）对循环 —— 每个状态重复 n_ep/len(cases) 次
-    sampled : 初态与目标随机采样 —— 样本几乎不重复
+    discrete: 固定的（初态, 目标）对循环 ---- 每个状态重复 n_ep/len(cases) 次
+    sampled : 初态与目标随机采样 ---- 样本几乎不重复
+    recall  : 目标不可观测，要求回到上一 episode 的终点（跟 episode 记忆）
     """
     kind: str = "discrete"
     cases: Tuple[Tuple[int, int], ...] = ((20, 60), (40, 70), (60, 20), (70, 30))
@@ -68,6 +94,12 @@ class TaskSpec:
     t_ep: int = 240
     t_act: int = 5              # 动作窗口（必须满足 t_ep/t_act * step >= 最大差距）
     t_gap: int = 200            # episode 间隙（逼退隐状态）
+    k_ep_task: int = 5          # sampled/recall：目标每 K 个 episode 换一次（跟 episode 稳定）
+    k_ep_task: int = 5          # sampled/recall：目标每 K 个 episode 换一次（跟 episode 稳定）
+
+    goal_mode: str = "random"       # random / fixed / two_phase（两阶段任务，grow_goal 的 T_*）
+    fixed_goal: Tuple[float, float] = (0.5, -0.5)
+    phase: str = "seq"              # two_phase：seq（先 A 后 B）/ fresh（直接 B）
 
     def check_feasible(self, steps_per_action: int) -> Tuple[bool, str]:
         """**前置检查**：最多能走多远 vs 目标差距。
@@ -104,9 +136,19 @@ class Plasticity:
     bias_min: float = -0.3
     bias_max: float = 2.0
     tau_trace: float = 100.0    # 迹必须跨过「动作 → 反馈」的延迟
+    trace_decay: float = 0.0    # >0 时**直接指定**每步衰减（不按 exp(-1/τ）——grow_world 用 0.95
     tau_theta: float = 200.0    # BCM 滑动阈值
     isolate: bool = True        # 只写入本 episode 活跃过的边（§9.2 隔离）
     isolate_thresh: float = 0.3
+    # ---- 对齐开关（只为复现旧实现的行为，不是设计选择）----
+    # 2026-10-24：旧 grow_agent 无条件每 episode 更一次拓扑（m 只累加统计）；
+    # 框架改成「m_ep > 0 才更」（= 只在成功时）。两者结构更新频率差一个量级。
+    topo_gate: bool = True      # True = 现行（m_ep>0）；False = 旧（无条件）
+    topo_skip_first: bool = False   # True = 旧：ep0 结束不更新拓扑
+    # 可塑性触发时机：action（每次动作后，grow_agent）/ step（每 t_s 步，grow_goal）
+    trigger: str = "action"
+    t_s: int = 20               # step 触发的周期
+    topo_thresh: float = 0.3    # 选「活跃神经元」的迹阈值（grow_agent 0.3 / grow_goal 0.5）
 
 
 # ---------------------------------------------------------------- 信号 m
@@ -135,6 +177,14 @@ class SignalSpec:
     gate: bool = True
     bridge: float = 0.0          # 桥接强度（0 = 不用）
     silence_hint: float = 0.2    # 沉默时给「朝目标侧」的偏置增量（0 = 不提示）
+    # ---- 对齐开关（只为复现旧实现的行为）----
+    silence_update_w: bool = False   # 沉默时是否也更新权重（旧 grow_agent 做：upd_weights(mv, 0.0)）
+    steady_gate_ep: bool = False     # episode 级 m 是否乘稳态门（旧做：m_gate × steady_gate(ema_rate)）
+    # value 源（grow_goal 形态）：只在「刚成功」的 window 步内 m=1，否则 0
+    value_window: int = 20
+    # agency 源（grow_world 形态）：m = 稳态门 × (base + (1-base)×动作方差代理)
+    agency_scale: float = 0.2
+    base: float = 0.2
 
 
 # ---------------------------------------------------------------- 读数
@@ -142,11 +192,20 @@ class SignalSpec:
 @dataclass(frozen=True)
 class ReadoutSpec:
     """输出怎么变成动作。"""
-    kind: str = "first_spike"   # first_spike（谁先放选谁；都不放=不说） / argmax
+    kind: str = "first_spike"   # first_spike（谁先放选谁；都不放=不说） / argmax / random
     n_out: int = 4
     out_idx: Tuple[int, ...] = (500, 501, 502, 503)
     allow_noop: bool = True      # 「不说」是不是一个合法动作
     ensemble: str = "action"     # argmax 是 action；first_spike 不必
+    # 同一 tick 多个输出放电时选谁：first = 索引最小（现行）；argmax_v = 膜电位最高（旧）
+    tie_break: str = "first"
+    # sign_2d（grow_goal 形态）：每个输出维度算 sign(r_out - base)，动作是 ±1 向量
+    a_tau: float = 20.0          # 输出放电率 EMA
+    base_tau: float = 100.0      # 动作基线的慢 EMA（防动作饱和）
+    # tanh_2d（grow_world 形态）：a = tanh((r_out - r_base)/r_scale)
+    r_base: float = 0.02
+    r_scale: float = 0.03
+    probe: bool = False          # 是否记录状态快照做线性探针（grow_goal 的 A_probe）
 
 
 # ---------------------------------------------------------------- 完整配置
@@ -163,6 +222,19 @@ class Config:
     readout: ReadoutSpec = field(default_factory=ReadoutSpec)
     n_ep: int = 200
     seed: int = 0
+    # 输入随机缓冲行数。旧 grow_agent = 65536，框架原为 16384。
+    # 它影响回绕点：88000 步的跑法下两者分叉，所以必须显式（它对行为是真的有影响）。
+    u_buf_rows: int = 16384
+    # 读出寄存器（win_i）是否在每个 episode 开头重置。
+    # 旧 grow_agent：不重置（只在 run_one 开头初始化一次）——跑满的 ep 末尾会带进下一个 ep。
+    # 2026-10-24 实测：这一条单独就是 10pp（是 9 处差异里第二大的一项）。
+    reset_readout_per_ep: bool = False
+    # 实验形态：流程不同，但**本体与可塑性原子操作共用**（core.py）。
+    #   agent  = 离散动作 + 文件环境 + 每动作更新（grow_agent）
+    #   goal   = 2D 连续动作 + 数学世界 + 每 t_s 步更新（grow_goal）
+    #   world  = 2D 振荡器世界 + 单条连续时间轴 + 每 t_s 步（grow_world）
+    flow: str = "agent"
+    steps: int = 0          # >0 时用「单条时间轴」而不是「n_ep × t_ep」（world 流程）
 
     # ---- 序列化 / 指纹 ----
     def to_dict(self) -> dict:
@@ -190,11 +262,35 @@ class Config:
     def validate(self) -> list:
         """硬检查。任何一条不过就不该跑。"""
         errs = []
+        if self.flow == "world":
+            # 单条时间轴，无任务、无成败 -> 没有「可达性」判据
+            if self.signal.source not in ("agency", "noise"):
+                errs.append("world 流程要求 signal.source ∈ {agency, noise}，实际 %s" % self.signal.source)
+            if self.readout.kind not in ("tanh_2d", "randact"):
+                errs.append("world 流程要求 readout.kind ∈ {tanh_2d, randact}，实际 %s" % self.readout.kind)
+            if self.steps <= 0:
+                errs.append("world 流程必须显式给 steps")
+            return errs
+        if self.readout.kind == "random":
+            # random 不建网、不学——只用作「不学网络」的下界基线
+            step = max(abs(a) for a in self.env.actions)
+            ok, msg = self.task.check_feasible(step)
+            if not ok:
+                errs.append("任务不可完成：" + msg)
+            return errs
+        if self.env.kind == "math_2d":
+            n_win = self.task.t_ep // self.task.t_act
+            reach = n_win * self.env.k_act * self.task.t_act
+            gap = max(abs(self.env.g_hi - self.env.x0_lo),
+                      abs(self.env.g_lo - self.env.x0_hi))
+            if reach < gap * 1.2:
+                errs.append("2D 世界不可完成：可达 %.2f < 差距 %.2f × 1.2" % (reach, gap))
+            return errs
         step = max(abs(a) for a in self.env.actions)
         ok, msg = self.task.check_feasible(step)
         if not ok:
             errs.append("任务不可完成：" + msg)
-        if self.signal.source not in ("none", "random", "action", "episode"):
+        if self.signal.source not in ("none", "random", "action", "episode", "value"):
             errs.append("未知 signal.source: %s" % self.signal.source)
         if self.signal.shape not in ("scalar", "per_neuron"):
             errs.append("未知 signal.shape: %s" % self.signal.shape)

@@ -16,12 +16,28 @@
 
 ## 当前在 `test/` 根的脚本
 
+> **2026-10-24 更新：** 新实验一律走框架（`test/run.py` + `src/agi/`）；
+> 下表的 `grow_*` / `probe_*` 是**实验记录**，不再新增。
+
+### 框架（新的入口）
+
 | 文件 | 用途 |
 |---|---|
+| **`run.py`** | **唯一入口**：`list / show / check / run / results / gaps / align`（§16.17） |
+| `baseline_linear.py` | **非脉冲基线**：random / greedy / linear 三档，判「任务可学性 + 上界」（§16.16） |
+| `CONSTANTS.md` | 常数台账（来源分类）+ 已删的机制 + 场次四 12 条核对表 |
+| `net.py` | 旧共享参数（框架已收敛进 `src/agi/config.py`；仍被 `grow_agent` / `grow_goal` import） |
+
+### 旧实验脚本（记录，不再新增）
+
+| 文件 | 用途 |
+|---|---|
+| `grow_agent.py` | 智能体：本机真环境 + 三闸 + 隔离 + 四层反馈 + 四度量（§16.15） |
+| `grow_goal.py` | 闭环三步 C/A/T：目标 + 成败 + 探针（§16.13） |
 | `grow_world.py` | 闭环：输出神经元 → 动作 → 世界 → 输入（§16.6） |
 | `grow_teach.py` | 阶段 1/2 v1（持续输入 + 固定窗口，§16.9） |
 | `grow_talk.py` | 阶段 1/2 v2（脉冲 + 事件发射 + 连续状态，§16.10） |
-| `grow_cond.py` | 阶段 1/2 v3（只奖励正确 + VI 课程 + 迹 τ=200）——**文档里尚未记录** |
+| `grow_cond.py` | 阶段 1/2 v3（只奖励正确 + VI 课程 + 迹 τ=200）——已跑，形态不成立（§16.14） |
 | `grow_func.py` | 功能测量（预测误差 / 动作增益 / 前史因果，§16.8） |
 | `grow_homeo.py` | 按放电率的双向结构可塑性（PLOS CB 2022 形态，§16.11） |
 | `grow_hebb.py` | Hebbian 权重可塑性（§16.12，首轮阴性） |
@@ -33,6 +49,3 @@
 | `probe_homeo.py` / `probe_sim_noise.py` | 稳态阈值扫描 / 测量面校准 |
 | `probe_env.py` | 环境探测（python / numpy / torch / CUDA 版本与冒烟） |
 | `baseline-2026-10-23-simulator.md` | 模拟器成本基线数据 |
-
-> **一处待确认：** `grow_cond.py` 在 `docs/experiments.md` 里 0 处引用——它是写完但没跑/没记录的一代。
-> 下次动阶段 1/2 时先确认它的状态（是「待跑」还是「跑了没记」），否则会重复写一遍 v3。

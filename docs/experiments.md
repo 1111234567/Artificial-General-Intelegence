@@ -1658,7 +1658,8 @@ python test/grow_cond.py 1200 8 8 teach --punish        # 惩罚：抢答 0% 但
 | ② | 三因子公式缺 `(a_post−θ)` | `Δw = η · trace[pre] · (trace[post] − θ)`，θ 是 trace 的慢 EMA（τ=200） |
 | ③ | 门控只需三个、能手推 | `m_gate(admit, correct, consistent) = admit × (correct × consistent)`——三个 0~1 标量，可手推 |
 | ④ | 多吸引子当目标 | 不测它（已是作废项） |
-| ⑤ | 更新频率 = 反馈频率 | 结构更新 **每个 episode 一次**（= 每个任务一次反馈）；迹 τ=100 跨过反馈延迟 || ⑥ | 三要素：结构/压力/**隔离** | 压力 = 本机真实文件后果；**隔离 = 只写入「本 episode 活跃过」的两端** |
+| ⑤ | 更新频率 = 反馈频率 | 结构更新 **每个 episode 一次**（= 每个任务一次反馈）；迹 τ=100 跨过反馈延迟 |
+| ⑥ | 三要素：结构/压力/**隔离** | 压力 = 本机真实文件后果；**隔离 = 只写入「本 episode 活跃过」的两端** |
 | ⑦ | 环境是锚不是梯度 | 环境层只给「成/不成 + 真实值」，不当梯度；内部层（预测误差）只填空隙 |
 | ⑧ | 四层反馈 | 环境层（IO 成败）/ 参照层（**显式未实现**）/ 内部层（一致度）/ 过程层（四度量） |
 | ⑨ | 过程四可测量 | 弯路率（仅成功 n）/ 修正延迟 / 依据密度 / 遇意外反应 + 额外 progress |
@@ -1929,3 +1930,136 @@ python test/run.py gaps
 python test/run.py align
 ```
 
+
+### 16.18 移植旧脚本进框架（2026-10-24）——3 个脚本 / 20 项，全部逐位一致
+
+**起因（用户）：** 「`F:\agi\test` 这里面的一堆你是否全部都移植过来了？」
+
+核对结果：**只对齐了 1 个（`grow_agent` 的 `discrete`）**，而且严格说是「给框架加开关让它能复现」，不是移植。所以本场按「判据 = 行为一致」重做。
+
+#### 判据
+
+移植的唯一判据是**同 seed、同参数下行为逐项相同**，不是「配置抄过去了」：
+
+| 脚本形态 | 判据 |
+|---|---|
+| 写环境文件 | 动作序列逐项相同（拦截 `state.txt` 的写入值） |
+| 内存世界 / 统计量 | 全部字段逐位相同 |
+
+#### 结果
+
+| 脚本 | 行数 | mode | 结果 | 判据 | 耗时 |
+|---|---|---|---|---|---|
+| `grow_agent.py` | 710 | 13（4 个别名） | **9/9** | 动作序列逐项 | 21 s（8 进程） |
+| `grow_goal.py` | 403 | 6 | **6/6** | 16 字段逐位 | 3 s |
+| `grow_world.py` | 369 | 5 | **5/5** | 19 字段逐位 | 4 s |
+
+全套 28 秒（`python scripts/align_layers.py verify|goal|world`）。
+
+#### 四层对齐法（每层通过前不碰下一层）
+
+| 层 | 比什么 | 结果 |
+|---|---|---|
+| construct | 同 seed 的初始 `key` / `pre` / `post` / `w` / `age` + RNG 尾状态 | 3/3 逐位 |
+| forward | 同结构 + 同输入串跑 250 步的 `state` / `v` / `trace` / `theta` / `ema` | 3/3 逐位 |
+| run | 编排端到端（同 seed、同 episode 数） | 差异量化 |
+| seq | 动作序列（拦 `state.txt` 写入） | 逐项相同 |
+
+**前两层先过是关键**——本体不等价的话，后面所有差异都会被它放大成噪声，无法归因。
+
+> **工具说明：** `forward` 层的被测对象是**从 `grow_agent.py` 原文抽取**的 `net_step`（只把 `nonlocal` 换成 `global` 一行语法），不是手抄——手抄等于把「我以为它怎么写」当成被测对象。
+
+#### grow_agent 的九处差异与边际贡献
+
+从已对齐的基准逐项关掉（3 seeds × 200 ep）：
+
+| # | 差异 | 框架原来 | 旧实现 | Δ |
+|---|---|---|---|---|
+| 1 | **动作集** | ±1（2 个） | ±1, ±10（4 个） | **−29.3 pp** |
+| 2 | **ep0 是否更新拓扑** | 更新 | 不更新（`if ep > 0`） | **−14.0 pp** |
+| 3 | **`win_i` 跨 ep 是否重置** | 重置 | 不重置 | **−10.0 pp** |
+| 4 | **沉默时是否更新权重** | 不更新 | 更新 | **−5.2 pp** |
+| 5 | `u_buf` 行数 | 16384 | 65536 | −4.7 pp |
+| 6 | 拓扑门槛 `m_ep > 0` | 有 | 无 | 0 pp |
+| 7 | 同 tick 决胜 | `first` | `argmax(v)` | 0 pp |
+| 8 | bridge | 0 | 0.15 | 0 pp |
+| 9 | episode 级 `steady_gate` | 缺 | 有 | 0 pp |
+| — | noop 时 `m_glob = −base`（框架独有 bug） | 非零 | 无此分支 | 已修 |
+
+**两个交互，比数字本身重要：**
+
+- **bridge 与 topo_gate 耦合**：`bridge>0` 让 `m_ep` 每 episode 都为正 → 「只在成功时更新拓扑」失效。所以 #6 / #8 单独看是 0，合起来不是。
+- **`u_buf_rows` 值 4.7 pp**——它只是随机序列的长度，**没有任何机制含义**。这是这个系统的混沌噪声量级：**3 seed 的差异小于 5 pp 不能当机制结论**。§16.13~16.16 里那些 2~5 pp 的「差异」都要按这把尺子重读。
+
+#### 三个脚本的可塑性规则真的不同
+
+移植时发现它们不是「同一件事的不同写法」：
+
+| 脚本 | 归一化 | BCM 项 | 更新方向 |
+|---|---|---|---|
+| `grow_agent` | `e = el·m` 后归一（m 被约掉） | 有 | 对称 |
+| `grow_goal` | `el` 先归一，再乘 m（m 的大小保留） | 有 | 对称 |
+| `grow_world` | `el` 先归一，再乘 m | **无**（恒 ≥0） | **非对称**（兴奋向 +1 / 抑制向 −2.5） |
+
+硬合并成一套，任何一个方向都会移植失败。所以 `core.py` 现在是三个原子操作（`apply_weight(norm=)` / `apply_weight_asym`）。
+
+#### 初始化也不同
+
+`grow_world` **不过滤 `post >= N_IN`**（`grow_agent` 过滤）→ 初始边数 **29501 vs 26594**。`frozen` 组的 `E` 直接对不上就是这个原因。已参数化（`block_input_edges`）。
+
+#### 一个新发现：§16.15 的四个对照组是同一配置
+
+`grow_agent` 的 mode 解析（代码 + 实测交叉，13/13 一致）显示三组「不同 mode」逐位相同：
+
+- `discrete` / `discrete_all`
+- **`base` / `no_gate` / `no_bridge` / `no_isolation`**（都是**只学 bias**）
+- `discrete_w` / `discrete_bias_w`
+
+后果：§16.15 写道「不是 m 大小（`no_gate` 的 m≡1 也一样）、不是隔离（无差异）」——**这两个排除无效**，因为开关根本没接到任何更新逻辑上。这是第四次「对照组自己错了」（前三次见 §16.16 / §16.17）。
+
+#### 框架扩展（全部用 Config 字段，无 if-else 堆叠）
+
+| 字段 | 用途 |
+|---|---|
+| `Config.flow` | `agent` / `goal` / `world`——流程不同，本体与可塑性原子操作共用 |
+| `Config.steps` | 单条时间轴（world）vs `n_ep × t_ep` |
+| `EnvSpec.kind` | `local_files` / `math_2d` / `oscillator` |
+| `ReadoutSpec.kind` | `first_spike` / `argmax` / `random` / `sign_2d` / `tanh_2d` / `randact` |
+| `Plasticity.trigger` | `action` / `step` |
+| `Plasticity.trace_decay` | 直接指定（world 的 0.95 vs `exp(-1/τ)`） |
+| `Plasticity.topo_gate` / `topo_skip_first` / `topo_thresh` | 拓扑更新条件与阈值 |
+| `NetSpec.block_input_edges` / `protect_out_edges` | 新建边过滤 / 淘汰保护 |
+| `NetSpec.p_global` / `t_global` | 全局随机边 |
+| `SignalSpec.source` | `none` / `random` / `action` / `episode` / `value` / `agency` / `noise` |
+| `Config.reset_readout_per_ep` / `u_buf_rows` | 读出寄存器 / 输入缓冲 |
+
+#### 已修的框架缺陷（4 个）
+
+1. `noop` 分支返回 `m_glob = −base`（非零）——「什么都不做」也在削弱全部边
+2. `win_i` 在 ep 开头被重置（旧代码不重置）——单独值 10 pp
+3. `apply_weight` 的归一化位置（两个旧脚本不同）
+4. `Network.__init__` 硬编 `post >= N_IN`（grow_world 没有）
+
+#### 剩余（8 个脚本）
+
+| 脚本 | 行数 | 缺什么 |
+|---|---|---|
+| `grow_talk.py` | 878 | 事件呈现（脉冲爆发 + 连续轴）+ 阈值适应 + m 衰减 |
+| `grow_cond.py` | 552 | VI 课程 + 抢答判定 |
+| `grow_func.py` | 566 | 功能测量套件（在线 LMS + 离线最优读出 + 动作增益 R² + 前史因果） |
+| `grow_homeo.py` | 415 | 双向结构可塑性（初始无 E-E，按放电率超标删 / 不达标按共激活迹长） |
+| `grow_teach.py` | 386 | 教师信号源（按神经元分配）+ 只更新接口边 |
+| `grow_hebb.py` | 299 | Hebbian 慢变量 A（低秩、可正可负） |
+| `bench_lif2.py` / `calib5.py` / `scan_base.py` | 232/98/129 | 应做成 `run.py bench` / `scan` 子命令 |
+
+`probe_*.py`（7 个）不移植（一次性诊断，随用随写）；`baseline_linear.py` 不依赖 `Network`，不是移植对象。
+
+**可复现：**
+
+```bash
+python scripts/align_layers.py modes       # mode → 三层开关（代码 + 实测交叉）
+python scripts/align_layers.py verify      # grow_agent 9 项
+python scripts/align_layers.py goal        # grow_goal 6 项
+python scripts/align_layers.py world       # grow_world 5 项
+python scripts/align_layers.py contrib     # 单变量消融
+```

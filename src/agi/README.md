@@ -12,11 +12,12 @@ src/agi/
   core.py         本体（LIF 网络）——**唯一实现**
   env.py          环境（本机真实文件）
   signal.py       m 的来源与形态（= 学习方式本身）
-  runner.py       跑一个配置，返回一条结构化结果
+  runner.py       跑一个配置，返回一条结构化结果（三个流程见下）
   store.py        结果登记（JSONL，按指纹查）
-  experiments.py  **唯一声明实验的地方**
+  experiments.py  **唯一声明实验的地方**（35 个）
 
 test/run.py       唯一入口（七个子命令）
+scripts/align_layers.py  移植对齐工具（六层）
 ```
 
 ## 七个命令
@@ -35,22 +36,33 @@ test/run.py       唯一入口（七个子命令）
 
 | 今天的教训 | 框架里的对策 |
 |---|---|
-| 任务不可完成（6 个动作 vs 差距 40），5 轮补丁解释一个算术问题 | `TaskSpec.check_feasible()` + `run.py check` 硬拦 |
+| 任务不可完成（6 个动作 vs 差距 40），5 轮补丁解释一个算术问题 | `TaskSpec.check_feasible()`（含 `math_2d` 分支）+ `run.py check` 硬拦 |
 | `frozen` 名不副实（只关了权重和拓扑，bias 还在学）→ 结论反了 | `Plasticity` **三层独立开关**；`gaps` 自动列出差异字段 |
 | 21 个脚本各实现一遍本体，改一个参数要改 10~25 处 | `core.py` 唯一实现；实验只能在 `experiments.py` 加 Config |
+| **四个“不同 mode”实际是同一配置**（`base`/`no_gate`/`no_bridge`/`no_isolation` 都只学 bias）| **行为指纹验证**：`align_layers.py modes` 把结果逐位相同的 mode 分组；`fingerprint()` 去重 |
 
-## 已知缺陷（必须写明）
+## 移植覆盖度（2026-10-24）
 
-> **行为尚未与旧脚本对齐。** 旧 `grow_agent` 的 discrete 组是 36.2%，
-> 框架 `base` 只有 6.9~8.0%。差异没定位。
+> **已与旧脚本对齐：3 个脚本 / 20 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5）。
+> 验证方式与全套跑法见 `docs/experiments.md` §16.18；工具 `scripts/align_layers.py`。
 >
-> 所以在 `align` 通过（同一配置重复运行跨度 < 20%）**并且**与旧脚本的数对上之前，
-> **框架不能用来自信复现任何历史结论**。它当前的价值是：结构、前置检查、对照表、登记。
->
-> 下一步（按优先级）：
-> 1. **逐模块对齐**：拿旧 `grow_agent` 的同一套参数，在框架里逐层比对（构造 / 前向 / m / 更新）
-> 2. 把旧脚本的 21 个配置全部抄进 `experiments.py`，一条条复现
-> 3. 全部对上之后，旧脚本移入 `test/archived/`，只留 `run.py`
+> **未移植（8 个）**：`grow_talk` / `grow_cond` / `grow_func` / `grow_homeo` / `grow_teach` / `grow_hebb`
+> + `bench_lif2` / `calib5` / `scan_base`（后三个应做成 `run.py bench` / `scan` 子命令）。
+> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 3 个长出来的，
+> 剩下 8 个里的机制它很可能还表达不了。
+
+## 三个流程（`Config.flow`）
+
+本体（`core.py`）与可塑性原子操作三个流程共用；区别只在「什么时候调哪个原子操作」。
+
+| flow | 时间结构 | 动作 | 环境 | 更新时机 |
+|---|---|---|---|---|
+| `agent` | episode（n_ep × t_ep + 间隙）| 离散索引（`first_spike`）| 本机真实文件 | 每次动作后 |
+| `goal` | episode | 2 维独立符号（`sign_2d`）| 2D 数学世界 | 每 `t_s` 步 |
+| `world` | **单条连续时间轴**（`steps`）| 2 维连续（`tanh_2d`）| 2D 振荡器 | 每 `t_s` 步 |
+
+**三个脚本的可塑性规则确实不同**（不是同一件事的不同写法）：`agent` 对称 + BCM；`goal` 对称 + BCM；
+`world` **非对称 + 无 BCM**。硬合并成一套，任何一个方向都会移植失败。
 
 ## 约定
 
@@ -58,3 +70,4 @@ test/run.py       唯一入口（七个子命令）
 2. 每个 Config 的 `note` 必须写「它在哪些维度上与 BASE 不同」。
 3. 任何新常数必须带来源标签（`[标定]/[约定]/[派生]/[需求]/[拍]`）。
 4. 每次 `run` 自动登记；`gaps` 告诉你对照组缺哪些。
+5. **移植旧脚本时，先跑 `align_layers.py` 的对应层，逐位相同才算完成**——「配置抄过去了」不算。

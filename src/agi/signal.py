@@ -37,6 +37,15 @@ class Signal(object):
 
         moved = 实际位移（带符号）；want = sign(goal - state)。
         """
+        # noop（a_idx < 0）：什么都没做 -> 不给任何 m。
+        # 2026-10-24 实测：不修这一条时，noop 分支会返回 m_glob = -base（非零），
+        # 而 runner 的条件是 `mv is not None or mg is not None` -> 照样更新，
+        # 于是「什么都不做」的那个窗口也在削弱全部边（实浏 noop 时 100% 非零，均值 -0.29）。
+        # 旧 grow_agent 不存在这条分支（a_idx 永远 0..3），所以这是框架独有的缺陷。
+        if a_idx < 0:
+            self._last = (None, None)
+            return None, None
+
         mv = np.zeros(self.n_out, np.float32)
         r = 0.0
         if a_idx >= 0 and want != 0 and moved != 0:

@@ -2,6 +2,76 @@
 
 > 倒序，只追加。历史变更记录在这里；设计推演过程不进本文件。
 
+## 0.9.0 — 2026-10-24
+
+**移植旧脚本进框架（判据 = 行为一致）：3 个脚本 / 20 项，全部逐位一致。**
+
+起因（用户）：「`F:\agi\test` 这里面的一堆你是否全部都移植过来了？」——核对结果：
+**只对齐了 1 个 mode**（`grow_agent` 的 `discrete`），而且严格说是「给框架加开关让它能复现」，不是移植。
+
+### 结果
+
+| 脚本 | 行数 | mode | 结果 | 判据 |
+|---|---|---|---|---|
+| `grow_agent.py` | 710 | 13（4 别名）| **9/9** | 动作序列逐项（拦 `state.txt` 写入）|
+| `grow_goal.py` | 403 | 6 | **6/6** | 16 字段逐位 |
+| `grow_world.py` | 369 | 5 | **5/5** | 19 字段逐位 |
+
+全套 28 秒。工具 `scripts/align_layers.py`（九层：construct / forward / run / seq / noop / modes / contrib / verify / goal / world）。
+
+### 四层对齐法
+
+construct（初始结构 + RNG 尾状态，3/3 逐位）→ forward（250 步逐位，3/3）→ run（编排差异量化）→ seq（动作序列逐项）。
+**前两层先过是关键**——本体不等价时，后面的差异都会被它放大成噪声，无法归因。
+
+`forward` 层的被测对象是**从 `grow_agent.py` 原文抽取**的 `net_step`（只换一行 `nonlocal`→`global`），不手抄。
+
+### grow_agent 的九处差异与边际贡献（3 seeds × 200 ep）
+
+| # | 差异 | Δ |
+|---|---|---|
+| 1 | 动作集（±1 vs ±1,±10） | **−29.3 pp** |
+| 2 | ep0 是否更新拓扑（旧不更新） | **−14.0 pp** |
+| 3 | `win_i` 跨 ep 是否重置（旧不重置） | **−10.0 pp** |
+| 4 | 沉默时是否更新权重（旧更新） | **−5.2 pp** |
+| 5 | `u_buf` 行数（16384 vs 65536） | −4.7 pp |
+| 6-9 | 拓扑门槛 / tie_break / bridge / steady_gate | 0 pp（但有交互，见下）|
+
+**两个交互：** bridge 与 topo_gate 耦合（`bridge>0` 让 `m_ep` 每 ep 为正 → “只在成功时更新拓扑”失效）；
+**`u_buf_rows` 值 4.7 pp 但无任何机制含义**——这是系统的混沌噪声量级，**3 seed 的差异小于 5 pp 不能当机制结论**。
+
+### 三个脚本的可塑性规则真的不同
+
+| 脚本 | 归一化 | BCM | 更新方向 |
+|---|---|---|---|
+| `grow_agent` | `e=el·m` 后归一（m 被约掉）| 有 | 对称 |
+| `grow_goal` | `el` 先归一再乘 m | 有 | 对称 |
+| `grow_world` | `el` 先归一再乘 m | **无** | **非对称** |
+
+所以 `core.py` 现在是三个原子操作（`apply_weight(norm=)` / `apply_weight_asym`），不是一套。
+
+### 一个新发现：§16.15 的四个对照组是同一配置
+
+`base` / `no_gate` / `no_bridge` / `no_isolation` 实测**逐位相同**（都只学 bias）——
+开关根本没接到更新逻辑上。§16.15 据此写的两个「排除」无效。这是第四次「对照组自己错了」。
+
+### 框架缺陷（4 个，已修）
+
+1. `noop` 分支返回 `m_glob = −base`（非零）——「什么都不做」也在削弱全部边
+2. `win_i` 在 ep 开头被重置（单独值 10 pp）
+3. `apply_weight` 的归一化位置（两个旧脚本不同）
+4. `Network.__init__` 硬编 `post >= N_IN`（`grow_world` 没有 → E 29501 vs 26594）
+
+### 文档
+
+`docs/experiments.md` §16.18（完整记录）/ `agi.md`（现状表 + 下一步表重写）/ `src/agi/README.md`
+（已知缺陷 → 移植覆盖度 + 三个流程表）/ `CHANGELOG`。中间台账 `docs/_porting-progress.md` 已并入 §16.18 并删除。
+
+### 下一步
+
+继续移植剩下 8 个脚本：`grow_talk` / `grow_cond` / `grow_func` / `grow_homeo` / `grow_teach` / `grow_hebb`
++ `bench` / `calib` / `scan` 子命令。`probe_*.py` 不移植（一次性诊断）；`baseline_linear.py` 不依赖 `Network`，不是移植对象。
+
 ## 0.8.0 — 2026-10-24
 
 **建立统一框架 `src/agi/`，替代 21 个各实现一遍本体的手写脚本。**

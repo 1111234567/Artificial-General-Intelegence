@@ -68,10 +68,19 @@ def cmd_check(name=None):
             bad += 1
             print("FAIL %-16s %s" % (c.name, "; ".join(errs)))
         else:
-            print("OK   %-16s %s" % (c.name, c.task.check_feasible(
-                max(abs(a) for a in c.env.actions))[1]))
+            print("OK   %-16s %s" % (c.name, _feasible_msg(c)))
     if bad:
         print("\n%d 个实验未通过前置检查（不该跑）" % bad)
+
+
+def _feasible_msg(c):
+    """前置检查的**通过**说明——按 env.kind 分派（否则 2D 世界会打错口径）。"""
+    if c.env.kind == "math_2d":
+        n_win = c.task.t_ep // c.task.t_act
+        reach = n_win * c.env.k_act * c.task.t_act
+        gap = max(abs(c.env.g_hi - c.env.x0_lo), abs(c.env.g_lo - c.env.x0_hi))
+        return "2D 可达 %.2f >= 差距 %.2f×1.2" % (reach, gap)
+    return c.task.check_feasible(max(abs(a) for a in c.env.actions))[1]
 
 
 def _one(arg):
