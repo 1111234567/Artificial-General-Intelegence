@@ -1269,6 +1269,81 @@ def layer_teach(seed=0, n_tr=600, nproc=None):
     return n_ok == len(args)
 
 
+def _func_one(arg):
+    """层 15：grow_func 移植对齐——17 标量 + 7 序列（含测量曲线）。"""
+    mode, cfg_name, seed, steps, pert = arg
+    import grow_func as old_f
+    from src import runner as new_runner
+    from src import experiments
+
+    r_old = old_f.run_one((seed, mode, steps, pert))
+    cfg = experiments.BY_NAME[cfg_name].with_(seed=seed, steps=steps)
+    r_new = new_runner.run(cfg)
+
+    SCALARS = [("E", "E_final"), ("born", "born"), ("drop", "n_upd_top"),
+               ("rate", "rate"), ("rate_std", "rate_std"),
+               ("deg_e", "deg_e"), ("deg_i", "deg_i"), ("w_abs", "w_abs"),
+               ("n_inh", "n_inh"), ("tov_last", "tov_last"),
+               ("a_std", "a_std"), ("a_obs_corr", "a_obs_corr"),
+               ("out_r0", "out_r0"), ("out_r1", "out_r1")]
+    SEQS = [("pred", "pred"), ("train", "train"), ("base", "base"),
+            ("pred_ls", "pred_ls"), ("r2", "r2"), ("xc", "xc"),
+            ("out_seg", "out_seg")]
+
+    def eq(a, b):
+        try:
+            fa, fb = float(a), float(b)
+        except (TypeError, ValueError):
+            return a == b
+        if np.isnan(fa) and np.isnan(fb):
+            return True
+        return abs(fa - fb) <= 1e-9 * max(1.0, abs(fa), abs(fb))
+
+    bad = []
+    for ko, kn in SCALARS:
+        if not eq(r_old.get(ko), r_new.get(kn)):
+            bad.append((ko, r_old.get(ko), r_new.get(kn)))
+    for ko, kn in SEQS:
+        a, b = r_old.get(ko), r_new.get(kn)
+        if a is None or b is None or len(a) != len(b) or not all(
+                eq(p, q) for p, q in zip(a, b)):
+            bad.append((ko, len(a) if a is not None else None,
+                        len(b) if b is not None else None))
+    pm = np.nanmean(r_new.get("pred", [np.nan])) if r_new.get("pred") is not None else np.nan
+    bm = np.nanmean(r_new.get("base", [np.nan])) if r_new.get("base") is not None else np.nan
+    return dict(mode=mode, cfg=cfg_name, seed=seed, bad=bad,
+                ratio=float(pm / bm) if bm and bm == bm and bm > 0 else float("nan"),
+                a_obs=r_new.get("a_obs_corr", float("nan")))
+
+
+def layer_func(seed=0, steps=3000, nproc=None):
+    """层 15 / func — grow_func 的移植对齐。"""
+    pairs = [("closed", "fu_closed", 0.0), ("open", "fu_open", 0.0),
+             ("frozen", "fu_frozen", 0.0), ("closed", "fu_div", 1e-3)]
+    print("=" * 108)
+    print("层 15 / func — grow_func 移植验证（判据 = 14 标量 + 7 序列逐位相同）")
+    print("  seed=%d  steps=%d" % (seed, steps))
+    print("=" * 108)
+    print("%-9s %-12s %10s %10s  %s" % ("old mode", "new config", "pred/base", "a-o 相关", "判定"))
+    print("-" * 108)
+    args = [(m, c, seed, steps, pt) for m, c, pt in pairs]
+    rs = _pool_map(_func_one, args, nproc)
+    n_ok = 0
+    for r in rs:
+        if not r["bad"]:
+            verdict = "OK（21/21）"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(r["bad"]), ", ".join(str(b[0]) for b in r["bad"][:3]))
+        print("%-9s %-12s %10.4f %10.4f  %s" % (
+            r["mode"], r["cfg"], r["ratio"], r["a_obs"], verdict))
+    print("-" * 108)
+    print("结论：%d/%d 个移植项逐位相同" % (n_ok, len(args)))
+    print("=" * 108)
+    return n_ok == len(args)
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "construct"
     nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -1338,6 +1413,11 @@ def main():
         n_tr = int(sys.argv[3]) if len(sys.argv) > 3 else 600
         nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
         ok = layer_teach(seed, n_tr, nproc)
+    elif cmd == "func":
+        seed = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        steps = int(sys.argv[3]) if len(sys.argv) > 3 else 3000
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        ok = layer_func(seed, steps, nproc)
     else:
         print("未知层：%s（construct / forward / run / noop / seq / contrib / modes / verify / goal / world）" % cmd)
         ok = False

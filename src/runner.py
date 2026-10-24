@@ -138,6 +138,32 @@ def _run_world(cfg):
     ks = 1.0 - 1.0 / cfg.env.tau_w_s
     xf = xs = 0.0
 
+    # ---- 功能测量套件（grow_func）：纯观测，不改 v/s/w，不消耗 RNG ----
+    meas = bool(cfg.readout.func_measure)
+    if meas:
+        nseg = 10
+        SSEG = max(1, steps // 10)
+        nout = max(2, steps // max(1, cfg.readout.oseg))
+        Wp = np.zeros((2, N), np.float32)      # s[t] -> o[t+1]
+        s_prev = np.zeros(N, np.float32)
+        o_hat = np.zeros(2, np.float32)
+        o_prev = np.zeros(2, np.float64)
+        a_prev = np.zeros(2, np.float64)
+        freeze_at = steps // 2
+        pred_err = np.zeros(nseg, np.float64); pred_n = np.zeros(nseg, np.int64)
+        base_err = np.zeros(nseg, np.float64); base_n = np.zeros(nseg, np.int64)
+        train_err = np.zeros(nseg, np.float64); train_n = np.zeros(nseg, np.int64)
+        ls_err = np.zeros(nseg, np.float64); ls_n = np.zeros(nseg, np.int64)
+        XTX = np.zeros((N, N), np.float64)
+        XTy = np.zeros((2, N), np.float64)
+        Wls = None
+        ga = np.zeros(nseg); ga2 = np.zeros(nseg)
+        gd = np.zeros(nseg); gd2 = np.zeros(nseg)
+        gad = np.zeros(nseg); gn = np.zeros(nseg, np.int64)
+        out_seg = np.zeros(nout, np.float64)
+        if cfg.readout.perturb:
+            net.v[0] = cfg.readout.perturb   # 前史因果：只动初始膜电位，不动 rng
+
     r_out = np.full(2, cfg.readout.r_base, np.float64)
     a_all = np.zeros((steps, 2), np.float64)
     o_all = np.zeros((steps, 2), np.float32)
@@ -165,6 +191,54 @@ def _run_world(cfg):
         o_all[t, 0] = o0
         o_all[t, 1] = o1
 
+        # ---- 1b) 功能测量：用「上一步的预测」对「这一步的实测」打分 ----
+        if meas and t > 0:
+            si = min(t // SSEG, nseg - 1)
+            d0 = o0 - o_prev[0]
+            d1 = o1 - o_prev[1]
+            e0 = d0 - float(o_hat[0])
+            e1 = d1 - float(o_hat[1])
+            mse = 0.5 * (e0 * e0 + e1 * e1)
+            base_err[si] += 0.5 * (d0 * d0 + d1 * d1)   # 零模型：预测「与上一步相同」
+            base_n[si] += 1
+            if t < freeze_at:
+                train_err[si] += mse
+                train_n[si] += 1
+                ss = float(s_prev @ s_prev)
+                if ss > 0:
+                    upd = (cfg.readout.pred_lr * np.array([e0, e1]) / ss).astype(np.float32)
+                    Wp += upd[:, None] * s_prev[None, :]
+                    nz = np.nonzero(s_prev)[0]
+                    if nz.size:
+                        sv = s_prev[nz].astype(np.float64)
+                        XTX[np.ix_(nz, nz)] += np.outer(sv, sv)
+                        XTy[0, nz] += sv * d0
+                        XTy[1, nz] += sv * d1
+            else:
+                pred_err[si] += mse
+                pred_n[si] += 1
+                if Wls is not None:
+                    e2 = np.array([d0, d1]) - Wls @ s_prev
+                    ls_err[si] += 0.5 * float(e2[0] * e2[0] + e2[1] * e2[1])
+                    ls_n[si] += 1
+            ga[si] += a_prev[0] + a_prev[1]
+            ga2[si] += a_prev[0] ** 2 + a_prev[1] ** 2
+            gd[si] += d0 + d1
+            gd2[si] += d0 * d0 + d1 * d1
+            gad[si] += a_prev[0] * d0 + a_prev[1] * d1
+            gn[si] += 2
+        if meas:
+            o_prev[0] = o0
+            o_prev[1] = o1
+            # 1c) 训练期结束时解一次离线最优读出
+            if t == freeze_at - 1:
+                lam = 1e-2 * float(np.trace(XTX)) / N + 1e-6
+                Am = XTX + lam * np.eye(N)
+                try:
+                    Wls = np.linalg.solve(Am, XTy.T).T.astype(np.float32)
+                except np.linalg.LinAlgError:
+                    Wls = None
+
         # ---- 2) 输入脉冲 ----
         h = N_IN // 2
         p0 = 0.02 * (1.0 + 0.8 * o0)
@@ -176,6 +250,10 @@ def _run_world(cfg):
         # ---- 3) 网络 ----
         net.step(xin, False)
         s = net.state
+        if meas:
+            o_hat = Wp @ s
+            s_prev[:] = s
+            out_seg[min(t // cfg.readout.oseg, nout - 1)] += float(s[out_idx].sum())
 
         # ---- 4) 动作 ----
         r_out *= (1.0 - 1.0 / cfg.readout.a_tau)
@@ -184,6 +262,9 @@ def _run_world(cfg):
         if u_rand is not None:
             a = u_rand[t].copy()
         a_all[t] = a
+        if meas:
+            a_prev[0] = float(a[0])
+            a_prev[1] = float(a[1])
 
         # ---- 5) 世界 ----
         uf = cfg.env.amp_d * float(np.cos(w_f * t))
@@ -234,6 +315,41 @@ def _run_world(cfg):
         so = float(ow[:, j].std())
         if sj > 1e-9 and so > 1e-9:
             ca = max(ca, abs(float(np.corrcoef(aw[:, j], ow[:, j])[0, 1])))
+
+    if meas:
+        _pe = np.where(pred_n > 0, pred_err / np.maximum(pred_n, 1), np.nan)
+        _te = np.where(train_n > 0, train_err / np.maximum(train_n, 1), np.nan)
+        _ba = np.where(base_n > 0, base_err / np.maximum(base_n, 1), np.nan)
+        _ls = np.where(ls_n > 0, ls_err / np.maximum(ls_n, 1), np.nan)
+        _r2 = np.zeros(nseg)
+        for k in range(nseg):
+            nn = gn[k]
+            if nn < 10:
+                _r2[k] = np.nan
+                continue
+            va = ga2[k] / nn - (ga[k] / nn) ** 2
+            vd = gd2[k] / nn - (gd[k] / nn) ** 2
+            cv = gad[k] / nn - (ga[k] / nn) * (gd[k] / nn)
+            _r2[k] = (cv * cv) / (va * vd) if va > 1e-12 and vd > 1e-12 else 0.0
+        LAG = 20
+        mm = min(20000, steps)
+        sa = a_all[steps - mm:steps]
+        so = o_all[steps - mm:steps]
+        xc = np.zeros(2 * LAG + 1, np.float64)
+        for k in range(-LAG, LAG + 1):
+            if k >= 0:
+                xa = sa[:mm - k]
+                xo = so[k:]
+            else:
+                xa = sa[-k:]
+                xo = so[:mm + k]
+            cc = 0.0
+            for j in range(2):
+                sja = float(xa[:, j].std())
+                sjo = float(xo[:, j].std())
+                if sja > 1e-9 and sjo > 1e-9:
+                    cc = max(cc, abs(float(np.corrcoef(xa[:, j], xo[:, j])[0, 1])))
+            xc[k + LAG] = cc
     ntail = max(len(tail), 1)
 
     return {
@@ -266,6 +382,8 @@ def _run_world(cfg):
         'n_upd_w': int(n_upd_w), 'n_upd_b': 0,
         'io_ok': True, 'n_io': 0,
         'elapsed': round(time.perf_counter() - t0, 2),
+        **(dict(pred=_pe, train=_te, base=_ba, pred_ls=_ls, r2=_r2,
+                xc=xc, out_seg=out_seg, perturb=cfg.readout.perturb) if meas else {}),
     }
 
 

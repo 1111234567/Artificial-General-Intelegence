@@ -422,6 +422,32 @@ TE_FROZEN = Config(name="te_frozen", note="grow_teach frozen（三层可塑性�
                    **dict(_TEACH, plast=_TEACH_OFF))
 
 
+# ---------------- 从旧 grow_func 移植（2026-10-24）----------------
+# 动力学与 grow_world **完全一致**，只加功能测量（原文件头注自己写了这句）。
+# 三项：① 预测误差（在线 LMS + 离线最优读出，前半训练后半冻结）
+#       ② 动作增益 R²；③ 前史因果（perturb 初始膜电位）
+_FUNC = dict(_WORLD, readout=ReadoutSpec(
+    kind="tanh_2d", n_out=2, out_idx=(500, 501),
+    a_tau=20.0, r_base=0.02, r_scale=0.03,
+    func_measure=True, pred_lr=0.02, oseg=100))
+
+FU_CLOSED = Config(name="fu_closed", note="grow_func closed（闭环 + 功能测量）",
+                   **_FUNC)
+FU_OPEN = Config(name="fu_open", note="grow_func open（断开动作对世界的影响）",
+                 **dict(_FUNC, signal=SignalSpec(source="agency", gate=False,
+                                                base=0.2, agency_scale=0.2)))
+FU_FROZEN = Config(name="fu_frozen", note="grow_func frozen（结构冻结）",
+                   **dict(_FUNC, plast=Plasticity(
+                       weight=False, topology=False, bias=False,
+                       trigger="step", t_s=20, topo_thresh=0.5,
+                       tau_trace=20.0, trace_decay=0.95)))
+FU_DIV = Config(name="fu_div", note="grow_func --div（前史因果：初始膜电位 +1e-3）",
+                **dict(_FUNC, readout=ReadoutSpec(
+                    kind="tanh_2d", n_out=2, out_idx=(500, 501),
+                    a_tau=20.0, r_base=0.02, r_scale=0.03,
+                    func_measure=True, pred_lr=0.02, oseg=100, perturb=1e-3)))
+
+
 ALL = [
     BASE,
     PLAST_NONE, PLAST_BIAS, PLAST_W, PLAST_TOPO, PLAST_W_BIAS,
@@ -437,6 +463,7 @@ ALL = [
     HO_GROW, HO_LONG, HO_WARM, HO_FROZEN,
     CO_TEACH, CO_PUNISH, CO_FROZEN,
     TE_TEACH, TE_RAND_M, TE_NO_TEACH, TE_FROZEN,
+    FU_CLOSED, FU_OPEN, FU_FROZEN, FU_DIV,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

@@ -328,6 +328,11 @@ class ReadoutSpec:
     r_base: float = 0.02
     r_scale: float = 0.03
     probe: bool = False          # 是否记录状态快照做线性探针（grow_goal 的 A_probe）
+    # ---- 功能测量套件（grow_func）：**不改动力学**，只加测量 ----
+    func_measure: bool = False   # 在线 LMS 预测误差 + 离线最优读出 + 动作增益 R² + 因果方向
+    pred_lr: float = 0.02        # 归一化 LMS 学习率（读出层 Wp: s[t] -> o[t+1]）
+    oseg: int = 100              # 输出放电分段的步长（前史因果对比用）
+    perturb: float = 0.0         # 初始膜电位扰动幅度（前史因果诊断；0 = 不扰动）
     # 抢答是否终止本呈现。talk 终止（抢答=答错）；cond **不终止**（只记录）。
     early_terminate: bool = True
 
