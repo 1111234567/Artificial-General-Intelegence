@@ -244,6 +244,16 @@ def _feasible_msg(c):
     if c.flow == "talk":
         return "不适用（talk：无目标可达性）；提问@%d 回答@%d（保持 %d 步 / 抢答窗 %d 步）" % (
             c.task.query_at, c.task.answer_from, c.task.hold_steps, c.task.early_steps)
+    if c.flow == "teach":
+        return "不适用（teach：固定 trial + 末窗 argmax）；trial=%d 读出窗=%d" % (
+            c.task.trial_steps, c.task.read_win)
+    if c.flow == "cond":
+        return "不适用（cond：变长呈现）；保持期 Gamma %.0f->%.0f（CV %.1f）" % (
+            c.task.d_mean_start, c.task.d_mean_end, c.task.d_cv)
+    if c.flow == "homeo":
+        return "不适用（homeo：单条时间轴，按放电率双向调结构）"
+    if c.flow == "hebb":
+        return "不适用（hebb：结构冻结 + 三段式；判据是撤输入后的自持活动）"
     if c.flow == "world":
         return "不适用（world：单条时间轴，无目标与成败）"
     if c.env.kind == "math_2d":

@@ -12,8 +12,11 @@ import json
 import os
 import time
 
-DEFAULT = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)))), "data", "results.jsonl")
+# 2026-10-24 修：原来套了三层 dirname——src/store.py -> src -> agi -> F:\，
+# 于是 run.py run 会把结果写进 F:\data\results.jsonl（数据盘根），而 results / gaps / align
+# 读的也是那里。**结果登记从建立起就是断的。** 两层才对：src -> agi。
+DEFAULT = os.path.join(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__))), "data", "results.jsonl")
 
 
 def append(record, path=DEFAULT):

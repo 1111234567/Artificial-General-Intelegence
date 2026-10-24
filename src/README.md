@@ -14,13 +14,13 @@ src/
   signal.py       m 的来源与形态（= 学习方式本身）
   runner.py       跑一个配置，返回一条结构化结果（四个流程见下）
   store.py        结果登记（JSONL，按指纹查）
-  experiments.py  **唯一声明实验的地方**（35 个）
+  experiments.py  **唯一声明实验的地方**（71 个）
 
-test/run.py       唯一入口（七个子命令）
+test/run.py       唯一入口（九个子命令）
 scripts/align_layers.py  移植对齐工具（六层）
 ```
 
-## 七个命令
+## 九个命令
 
 | 命令 | 回答什么 |
 |---|---|
@@ -31,6 +31,8 @@ scripts/align_layers.py  移植对齐工具（六层）
 | `results` | 历史结果排序 |
 | `gaps` | **对照差集**：基准与每个变体差哪个字段、哪些还没跑 |
 | `align` | **对齐验证**：同一配置重复运行的跨度 |
+| `scan [homeo|calib] [nseed] [nproc]` | 参数扫描（工具；不登记；用框架的 `_run_homeo`） |
+| `bench` | 模拟器成本基准（约 30 s；**不用**框架的 `Network`——它测的就是实现形态本身） |
 
 ## 三个「不能再犯」对应的机制
 
@@ -44,12 +46,10 @@ scripts/align_layers.py  移植对齐工具（六层）
 ## 移植覆盖度（2026-10-24）
 
 > **已与旧脚本对齐：9 个脚本 / 201 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21、`grow_hebb` 96/96）。
-> 验证方式与全套跑法见 `docs/experiments.md` §16.18 / §16.19；工具 `scripts/align_layers.py`。
+> 验证方式与全套跑法见 `docs/experiments.md` §16.18–§16.26；工具 `scripts/align_layers.py`。
 >
-> **已无待移植项**：三个工具类已子命令化（`scan homeo` / `scan calib` / `bench`）；`probe_*` 约定不移植
-> + `bench_lif2` / `calib5` / `scan_base`（后三个应做成 `run.py bench` / `scan` 子命令）。
-> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 9 个长出来的，
-> 剩下 8 个里的机制它很可能还表达不了。
+> **已无待移植项**：9 个 grow 脚本全部对齐；三个工具类已子命令化（`scan homeo` / `scan calib` / `bench`）；
+> `probe_*` 约定不移植（一次性诊断，随用随写）；`baseline_linear.py` 不依赖 `Network`，不是移植对象。
 
 ## 八个流程（`Config.flow`）
 

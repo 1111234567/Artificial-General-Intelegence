@@ -350,6 +350,137 @@ PNAS 123(40) e2526156123 (2026)**（bioRxiv 2025.08.20.671131）
 
 ---
 
+
+### 12.12 世界模型与持续控制（2026-10-25 补录）
+
+> 起因：用户问「Dreamer v3 和 v4、以及各种其他连续状态模型」。查完后发现**这一支在项目里几乎是空白**——
+> §12.8 有 C-DESN / LNN / 储备池 / 循环深度，但没有 Dreamer / RSSM / TD-MPC 这一整个「显式连续状态 + 在想象中学习」的主线。
+> 而 `design.md` §3.2 说「密度维靠世界模型」、`experiments.md` §16.8 / `experiments.md` §16.13 测预测误差全部失败——
+> 这条线的现成答案正好在那里。
+>
+> **命名澄清：** 官方没有「Dreamer **V**4」。第三代官方写作 **DreamerV3**（带 V），第四代论文标题是
+> *Training Agents Inside of Scalable World Models*，作者与 PyPI 包都叫 **Dreamer 4**（无 V）。
+> 社区（博客 / wiki 聚合）写成 V4 是沿用 V1-V3 的习惯，不是官方措辞。
+
+#### 12.12.1 DreamerV3（Nature 640(8059):647-653, 2025）
+
+世界模型 = **RSSM**，六个部件（原文公式）：
+
+```
+sequence model   h_t = f_φ(h_{t-1}, z_{t-1}, a_{t-1})     确定性递归状态
+encoder          z_t ~ q_φ(z_t | h_t, x_t)                后验（训练时）
+dynamics pred.   ẑ_t ~ p_φ(ẑ_t | h_t)                      先验（想象时用这个）
+reward / continue / decoder    ~ p_φ(· | h_t, z_t)
+```
+
+损失：`L = Σ_t (β_pred·L_pred + β_dyn·L_dyn + β_rep·L_rep)`，**β_pred = 1 / β_dyn = 1 / β_rep = 0.1**；
+dyn 与 rep 用不同的 stop-gradient，并用 **free bits 裁在 1 nat（≈1.44 bit）** 以下——
+原文目的：防止「dynamics 平凡可预测但没信息」的退化解。
+
+**五项鲁棒技术（消融结论：KL balancing 与 free bits 最显著，其次是 return normalization 与 symexp twohot）：**
+
+| 技术 | 形式 / 作用 |
+|---|---|
+| **symlog / symexp** | `symlog(x) = sign(x)·ln(|x|+1)`；编码器输入与解码器目标都变换 |
+| **twohot 回归** | 连续值 → 分类，解决多模态分布 |
+| **KL balancing** | 动态调整世界模型目标权重，防表征崩塌 |
+| **free bits** | KL 项裁在 1 nat 以下就关掉 |
+| **百分位回报归一化** | 回报缩放到 [0,1] |
+
+战绩：单一配置、8 领域 **150+ 任务**、Minecraft 从零采钻石（**1 亿**环境步）。
+
+#### 12.12.2 Dreamer 4（arXiv 2509.24527, 2025-09-29；Hafner / Yan / Lillicrap）
+
+与 V3 **不是同一套架构**：从 RSSM 换成 tokenizer + 交互式扩散 / 动力学 transformer。
+
+- **tokenizer**：因果注意力 MAE，把帧压成连续 latent（低维 tanh 投影）
+- **动力学**：在「动作 ⊕ shortcut 噪声水平 ⊕ 步长 ⊕ token 表示」的交错序列上跑，
+  用 **shortcut forcing** 去噪 → 少量前向传递即可交互式生成，且**抑制误差随时间累积**
+- **微调成 agent**：在动力学 transformer 里插 **task token**，从中间时预测 action / reward / value
+- 结果：**单 GPU 实时交互**；**首个纯离线**（零环境交互）在 Minecraft 采到钻石，动作序列 **>20,000** 步；
+  **比 OpenAI VPT 的离线 agent 用少 100 倍数据**却更好；世界模型的特征用于 BC **优于 Gemma 3**
+- 官方代码**未发布**；非官方实现：`nicklashansen/dreamer4`（PyTorch）、`edwhu/dreamer4-jax`
+
+**一条反面对照（第三方复现，可信度中等）：** HuggingFace `Dreamer-VLA/dreamer-vla-dreamer4-libero` 在 LIBERO 上
+复现 5 个变体（64M~276M，含 DMControl 预训练与辅助逆动力学损失），**action-probe R² 全为负**
+（−0.036 ~ −0.040）；而 V-JEPA 2 ViT-L **+0.845**、LAPA **+0.510**。
+→ 可能结论：**Dreamer 4 的能力来自规模 + Minecraft 数据，不一定来自那个重建目标。**
+
+#### 12.12.3 TD-MPC2（arXiv 2310.16828，ICLR 2024 Spotlight）
+
+与 Dreamer 最大的差别一句话：**decoder-free，不重建像素。**
+
+- 隐式世界模型：只学 `latent + reward + value + policy prior`，**没有任何生成 / 重建头**
+- 潜空间里做**局部轨迹优化**（MPPI 风格），执行首步后重规划
+- 用**学出来的 terminal value** bootstrap 超出 horizon 的回报
+- 104 个连续控制任务（DMControl / Meta-World / ManiSkill2 / MyoSuite）、**单一超参**；
+  单 agent **317M 参数跑 80 任务**；**300+ checkpoint + 数据集开源**（MIT）
+
+原文明写的动机：**「精确预测原始未来观测（图像 / 本体感觉）在长时程上很难，而且对控制没有帮助」**——所以干脆不要 decoder。
+
+#### 12.12.4 V-JEPA 2 / V-JEPA 2-AC（arXiv 2506.09985, 2025-06）
+
+- **V-JEPA 2**：action-free 联合嵌入预测，**1M+ 小时**互联网视频 + 1M 图；
+  Something-Something v2 **77.3** top-1；Epic-Kitchens-100 **39.7** recall@5
+- **V-JEPA 2-AC**：在 **<62 小时**无标注机器人视频（Droid）上后训练成动作条件世界模型；
+  300M transformer predictor，**block-causal attention**；损失 = teacher-forcing L1 + **rollout loss**
+  （原文：rollout loss 是稳定多步预测的**关键**）；规划 = CEM 800 样本 / 10 轮精化 / 13 cm 动作约束
+- 结果：零样本部署到两个实验室的 Franka 臂，拾放 **65%~80%**（无环境数据、无任务训练、无奖励）
+
+#### 12.12.5 连续状态载体（LLM 侧）
+
+| 工作 | 形态 | 关键结论 |
+|---|---|---|
+| **TTT**（Sun et al., ICML 2025） | **隐状态本身是一个模型**（线性 / 2 层 MLP），更新规则 = 一步自监督学习；**推理时也在更新** | 125M~1.3B；「Transformer 与 TTT 能靠更多 token 持续降 PPL，而 **Mamba 在 16k 之后不能**」 |
+| **⚠️ TTT 的修正**（ICML 2026, NVIDIA） | 带 KV binding 的 TTT **可化归为「学出来的线性注意力」** | 「测试时记忆」这个解读是**错的**；它不是记忆查找，是表达力更强的线性注意力 |
+| **MesaNet**（Google, 2025） | 把 DeltaNet / Mamba / xLSTM 统一成「in-context 回归目标的在线近似优化」；MesaNet 每步用共轭梯度**最小化到最优** | 十亿参数规模，长上下文优于前代 RNN；代价是**推理时更多 FLOPs** |
+| **Atlas**（arXiv 2505.23735） | 记忆 = 在线优化问题；线性记忆退化为 **gated linear attention**：`W_t = α_t W_{t-1} + v_t k_tᵀ` | 提供「记忆更新 = 优化步」的统一写法 |
+
+**四个都是同一个形态**：「状态是一个随每个 token 更新的模型」——与 `design.md` §2.10「记忆就是连接」是同一件事的两种说法。
+**但它们全部在序列结束时重置**——这是与本项目的关键边界。
+
+#### 12.12.6 reset-free / continual RL（这条线项目里完全没有）
+
+| 工作 | 干什么 |
+|---|---|
+| *You Only Live Once: Single-Life RL*（Chen & Finn, 2022） | 一次机会、无 episode 重置；分布匹配从新状态恢复（成功率 +20~60%） |
+| *Reset-Free Lifelong Learning with Skill-Space Planning*（LiSP, 2020） | 非平稳、非 episodic 环境下的技能空间规划 |
+| *NeoRL* / *STEEL*（Levine & Zhang） | 单条轨迹上的探索；用环境里的确定性循环「等掉」相关噪声 |
+| *A Definition of Continual RL*（arXiv 2401.15059） | 给「持续」下定义（不是「多任务」的别名） |
+| 平均奖励（average-reward）替代折扣 | 折扣在无限时程下对 γ 敏感；持续任务改用平均每步收益 |
+| **forward-backward policy** | 训一个「倒回去」的策略来自动 reset，人不用插手 |
+| 评测基准：**Jelly Bean World / AgarCL / POPGym** | 逼着 agent 处理非平稳与不可逆转移 |
+
+**注意：** POPGym 是专门测「记忆」的基准，可作为 `experiments.md` §11.4 那六条判活里「有记忆」一项的外部参照（本轮只看到标题级，未读原文）。
+
+#### 12.12.7 RNN → SNN 转换（阶段 0.5 的直接先例）
+
+**Conversion of Artificial Recurrent Neural Networks to Spiking Neural Networks for Low-power Neuromorphic Hardware**（arXiv **1601.04187**，2016）——用 Elman RNN 转 SNN 做问答分类。三段损失拆开看：
+
+| 离散化对象 | 性能变化 | 机制 |
+|---|---|---|
+| 突触权重 | **最大损失来源** | 可用「训练时就用量化权重」或概率化取整缓解 |
+| 隐藏状态 → 4 bit | **不降反升** | 离散化**阻止状态漂移**：以 "where" 开头的问句，答案应是地点，这个状态必须在后续无关词上保持住 |
+| 映射到脉冲 | **−4.4%** | ReLU→spike 的损失随积分时间趋近零；但**循环层不能靠「把样例呈现更久」换精度**，要靠 delay 机制，而 delay 长度受轴突资源限制 |
+
+**现代 ANN→SNN（前馈侧）已经相当成熟：**
+
+| 工作 | 做了什么 | 数字 |
+|---|---|---|
+| **Closed-Loop CKA Distillation**（ICML 2026，湖南大学） | 冻结源 ANN → 转一次 → **再 fine-tune SNN**（全局 logits 蒸馏 + 局部 CKA 特征对齐） | ResNet-18/CIFAR-10：T=2 **90.05%**（基线 10%）、T=8 95.33%、T=32 **96.38%**（源 ANN 96.39%） |
+| **IDSNN**（Biomimetics 2023） | 用 ANN 参数**初始化** SNN → 再蒸馏训练 | CIFAR-10 **94.03%**（T=4） |
+| **Bi-Spectrum Distillation**（AAAI 2025） | 指出 **LIF 是低通滤波器**，高频被抑制 → 「spectral mismatch」是转换的核心障碍 | CNN 与 **Transformer** 上都报 SOTA |
+| **Training-free conversion**（arXiv 2409.03368） | 局部阈值平衡，最小化转换误差界 | —— |
+| **Spiking LLM 双转换 + 逐层校准** | LLaMA 转 SNN，整数脉冲神经元 + 多阈值 | 与 SOTA 量化可比 |
+
+**所以「转换」不是新的，「转换后继续训」也不是新的**（闭环蒸馏就是）。
+真正的空白是更窄的一条：**转换后的 SNN 在一条永不重置的时间轴上、用局部规则、在线继续学**（无 teacher / 无 dataset / 无 epoch）。
+
+**一个原理性障碍必须先承认：LIF 是低通。** 所以「转成 SNN 就获得 RNN 级智能」要打折成「获得**低通版本**」。
+与 §15.4 引的 Scientific Reports 2024 是同一件事的另一面：「二值激活在准确率上被连续饱和激活所上界」。
+可证伪推论：回路里高频被反复低通 → 首尾相连后系统会**趋向慢变 / 同步**——
+既可给更长的记忆，也可能吃掉区分力（测法：`probe_decay` + 4 cue 相似度，两个装置都是现成的）。
+
 ## 15. 与 SNN 领域的关系（2026-10-23 第三次修正）
 
 > 本节回答一个把草案打回原点的问题：「这不就是个 SNN？」
@@ -485,6 +616,14 @@ PNAS 123(40) e2526156123 (2026)**（bioRxiv 2025.08.20.671131）
 
 **关键区分：SNN 说的「连续状态」是「一条序列内不清空」，不是「一个东西一直在活」。** 序列结束、batch 结束、请求结束，状态就没了。
 
+> **⚠️ 2026-10-25 口径修正（重要）：** 上面这个「几乎没有」的判断**只在 SNN / LLM 这一支内部成立**。
+> 在 **continual RL / reset-free RL** 那一支里，「永不重置」是**标准设定，已有 20 年积累**——
+> Single-Life RL（Chen & Finn 2022）、LiSP（2020）、NeoRL、STEEL、平均奖励替代折扣、
+> forward-backward policy、Jelly Bean World / AgarCL / POPGym 基准（详见 §12.12.6）。
+>
+> **所以真空不是「永不重置」，是三合一：永不重置 + 无任务 + 无准确率。**
+> 本卷与 `design.md` 里写「没有人做永不重置」的地方，都应读成这四字的缩写。
+
 #### 维度二：训练方式——主流就是梯度 + BPTT
 
 最直接的一句（DelRec 2025）：**「Currently, all state-of-the-art spiking approaches on these benchmarks rely on surrogate gradient learning (SGL)」**。
@@ -556,6 +695,10 @@ SpNCN（arXiv 1908.08655）开场一句：**「unlike in standard spiking neural
 ```
 
 **这就是为什么 SNN 领域没人做阶段 B——不是没想到，是被 BPTT 锁死了。** 这不是「研究不足」，是「设计前提互斥」。
+
+> **2026-10-25 补：** 这句话要加一个范围——它只解释「**SNN 领域**为什么没人做」。
+> continual RL 那一支用 TD / 策略梯度照样做「一条命」（§12.12.6），它们没有 BPTT 锁；
+> 但它们保留了**任务与奖励**。所以完整的真空表述仍是三合一（§15.5 修正块）。
 
 ### 15.7 对草案的直接后果（四条）
 

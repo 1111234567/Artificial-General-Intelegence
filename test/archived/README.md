@@ -23,7 +23,8 @@
 
 | 文件 | 用途 |
 |---|---|
-| **`run.py`** | **唯一入口**：`list / show / check / run / results / gaps / align`（§16.17） |
+| **`run.py`** | **唯一入口**：`list / show / check / run / results / gaps / align / scan / bench`（§16.17 / §16.26） |
+| **`grow_rnn.py`** | **阶段 0.5 步 1/2**：BP 训 2 层 Elman RNN（含 `--gradcheck` 反向校验 / `--random-goal` / `--blind=N` / `--renorm`），§16.27 |
 | `baseline_linear.py` | **非脉冲基线**：random / greedy / linear 三档，判「任务可学性 + 上界」（§16.16） |
 | `CONSTANTS.md` | 常数台账（来源分类）+ 已删的机制 + 场次四 12 条核对表 |
 | `net.py` | 旧共享参数（框架已收敛进 `src/agi/config.py`；仍被 `grow_agent` / `grow_goal` import） |
