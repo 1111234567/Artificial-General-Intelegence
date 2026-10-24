@@ -179,6 +179,15 @@ class TaskSpec:
     cue_after: int = 0          # 首次 cue 的时刻（0 = 用 steps//2）
     bg_rate: float = 0.015      # 背景脉冲概率（只给 N_IN 之后的神经元）
 
+    # ---- cond 流程（grow_cond）：变长呈现 + VI 课程（保持期从 Gamma 采样）----
+    var_delay: bool = False
+    d_mean_start: float = 40.0   # 保持期均值从 40 线性涨到 320
+    d_mean_end: float = 320.0
+    d_cv: float = 0.5            # 变异系数（固定 → 方差随均值一起涨）
+    d_min: int = 30              # 最短（= 保持 10 步）
+    d_max: int = 520             # 最长（= 保持 500 步）
+    answer_win: int = 150        # 回答窗（从提问开始算）
+
     def check_feasible(self, steps_per_action: int) -> Tuple[bool, str]:
         """**前置检查**：最多能走多远 vs 目标差距。
 
@@ -282,6 +291,10 @@ class SignalSpec:
     m_dn: float = -0.5          # 负信号幅度（不对称：削弱只有一半，防早期死亡螺旋）
     warmup: int = 3000          # 前 N 步不开可塑性（让 RPE 基线先收敛）
     bl_tau: float = 40.0        # RPE 基线的时间常数
+    # ---- reward_only 源（grow_cond）：**只奖励正确，不惩罚错误** ----
+    # False = 错/抢答/沉默都给 0（不产生更新，靠「对的被强化」相对占优）
+    # True  = 错/抢答/沉默给 -1（grow_cond 的 --punish 对照）
+    punish: bool = False
 
 
 # ---------------------------------------------------------------- 读数
@@ -303,6 +316,8 @@ class ReadoutSpec:
     r_base: float = 0.02
     r_scale: float = 0.03
     probe: bool = False          # 是否记录状态快照做线性探针（grow_goal 的 A_probe）
+    # 抢答是否终止本呈现。talk 终止（抢答=答错）；cond **不终止**（只记录）。
+    early_terminate: bool = True
 
 
 # ---------------------------------------------------------------- 完整配置
@@ -372,6 +387,21 @@ class Config:
                     self.task.query_at, self.task.burst))
             if self.task.answer_from < self.task.burst:
                 errs.append("answer_from(%d) 必须 >= burst(%d)" % (self.task.answer_from, self.task.burst))
+            if self.readout.n_out * self.net.blk > self.net.n_in:
+                errs.append("n_out(%d) × blk(%d) 超过输入区 n_in(%d)" % (
+                    self.readout.n_out, self.net.blk, self.net.n_in))
+            return errs
+        if self.flow == "cond":
+            if self.readout.kind != "first_spike":
+                errs.append("cond 流程要求 readout.kind == first_spike，实际 %s" % self.readout.kind)
+            if self.signal.source not in ("reward_only", "none"):
+                errs.append("cond 流程要求 signal.source ∈ {reward_only, none}，实际 %s" % self.signal.source)
+            if not self.task.var_delay:
+                errs.append("cond 流程要求 task.var_delay == True")
+            if self.task.answer_win <= 0:
+                errs.append("cond 流程要求 answer_win > 0")
+            if self.task.d_min < self.task.burst:
+                errs.append("d_min(%d) 必须 >= burst(%d)" % (self.task.d_min, self.task.burst))
             if self.readout.n_out * self.net.blk > self.net.n_in:
                 errs.append("n_out(%d) × blk(%d) 超过输入区 n_in(%d)" % (
                     self.readout.n_out, self.net.blk, self.net.n_in))

@@ -1126,6 +1126,83 @@ def layer_homeoprobe(seed=0, warm=30000, nproc=None):
     return n_ok == len(rs)
 
 
+def _cond_one(arg):
+    """层 13：grow_cond 移植对齐——14 个标量 + 8 个序列逐位比较。"""
+    seed, n_pres, punish = arg
+    import grow_cond as old_c
+    from src import runner as new_runner
+    from src import experiments
+
+    r_old = old_c.run_one((seed, "teach", n_pres, punish))
+    name = "co_punish" if punish else "co_teach"
+    cfg = experiments.BY_NAME[name].with_(seed=seed, n_ep=n_pres)
+    r_new = new_runner.run(cfg)
+
+    SCALARS = [("E", "E_final"), ("born", "born"), ("drop", "drop"),
+               ("rate", "rate"), ("n_inh", "n_inh"), ("sigma", "sigma"),
+               ("deg_out", "out_deg"), ("acc_first", "acc_first"),
+               ("acc_last", "acc_last"), ("early_first", "early_first"),
+               ("early_last", "early_last"), ("sil_last", "sil_last"),
+               ("delay_first", "delay_first"), ("delay_last", "delay_last")]
+    SEQS = [("win", "win"), ("win_sil", "win_sil"), ("win_early", "win_early"),
+            ("win_delay", "win_delay"), ("win_rate", "win_rate"),
+            ("buck_n", "buck_n"), ("buck_acc", "buck_acc"), ("bias", "out_bias")]
+
+    def eq(a, b):
+        try:
+            fa, fb = float(a), float(b)
+        except (TypeError, ValueError):
+            return a == b
+        if np.isnan(fa) and np.isnan(fb):
+            return True
+        return abs(fa - fb) <= 1e-9 * max(1.0, abs(fa), abs(fb))
+
+    bad = []
+    for ko, kn in SCALARS:
+        if not eq(r_old.get(ko), r_new.get(kn)):
+            bad.append((ko, r_old.get(ko), r_new.get(kn)))
+    for ko, kn in SEQS:
+        a, b = r_old.get(ko), r_new.get(kn)
+        if a is None or b is None or len(a) != len(b) or not all(
+                eq(p, q) for p, q in zip(a, b)):
+            bad.append((ko, "len=%s" % (len(a) if a is not None else None),
+                        "len=%s" % (len(b) if b is not None else None)))
+    return dict(seed=seed, cfg=name, bad=bad,
+                acc_o=r_old.get("acc_last", float("nan")),
+                acc_n=r_new.get("acc_last", float("nan")),
+                early_o=r_old.get("early_last", float("nan")),
+                early_n=r_new.get("early_last", float("nan")),
+                rate_o=r_old.get("rate", 0.0), rate_n=r_new.get("rate", 0.0))
+
+
+def layer_cond(seed=0, n_pres=400, nproc=None):
+    """层 13 / cond — grow_cond 的移植对齐。"""
+    print("=" * 108)
+    print("层 13 / cond — grow_cond 移植验证（判据 = 14 标量 + 8 序列逐位相同）")
+    print("  seed=%d  n_pres=%d" % (seed, n_pres))
+    print("=" * 108)
+    print("%-10s %9s %9s %9s %9s %8s  %s" % (
+        "config", "acc 旧", "acc 新", "抢答旧", "抢答新", "rate%", "判定"))
+    print("-" * 108)
+    args = [(seed, n_pres, False), (seed, n_pres, True)]
+    rs = _pool_map(_cond_one, args, nproc)
+    n_ok = 0
+    for r in rs:
+        if not r["bad"]:
+            verdict = "OK（22/22）"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(r["bad"]), ", ".join(str(b[0]) for b in r["bad"][:3]))
+        print("%-10s %9.4f %9.4f %9.3f %9.3f %8.3f  %s" % (
+            r["cfg"], r["acc_o"], r["acc_n"], r["early_o"], r["early_n"],
+            r["rate_n"] * 100, verdict))
+    print("-" * 108)
+    print("结论：%d/%d 个移植项逐位相同" % (n_ok, len(args)))
+    print("=" * 108)
+    return n_ok == len(args)
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "construct"
     nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -1185,6 +1262,11 @@ def main():
         warm = int(sys.argv[3]) if len(sys.argv) > 3 else 30000
         nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
         ok = layer_homeoprobe(seed, warm, nproc)
+    elif cmd == "cond":
+        seed = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        n_pres = int(sys.argv[3]) if len(sys.argv) > 3 else 400
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        ok = layer_cond(seed, n_pres, nproc)
     else:
         print("未知层：%s（construct / forward / run / noop / seq / contrib / modes / verify / goal / world）" % cmd)
         ok = False

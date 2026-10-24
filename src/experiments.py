@@ -331,6 +331,49 @@ HO_FROZEN = Config(name="ho_frozen", note="grow_homeo 关结构可塑性（对�
                        trace_decay=0.95)))
 
 
+# ---------------- 从旧 grow_cond 移植（2026-10-24）----------------
+# 阶段 1/2 v3：经典条件作用 + 可变间隔（VI）课程。与 talk 的四处差异：
+#   ① 变长呈现（burst + Gamma 采样的保持期 + answer_win）
+#   ② **只奖励正确**（punish=False：错/抢答/沉默都给 0）
+#   ③ **抢答不终止呈现**（只记录；否则抢答率 100% 时正确率永远测不到）
+#   ④ 分桶按保持期长度（hold // 50，8 桶）
+# 接口与 talk **修正版**相同（它的 nfan 用 (n_in+n_q)*fanout，本来就是对的）。
+_COND_NET = _TALK["net"].__class__(**{
+    **{f: getattr(_TALK["net"], f) for f in _TALK["net"].__dataclass_fields__},
+    "talk_legacy_offset": False,
+})
+_COND = dict(
+    flow="cond",
+    n_ep=1200,                     # 呈现数（旧命令行第 1 个参数）
+    net=_COND_NET,
+    task=TaskSpec(kind="none", var_delay=True, burst=20, nburst=2,
+                  qburst=10, answer_win=150,
+                  d_mean_start=40.0, d_mean_end=320.0, d_cv=0.5,
+                  d_min=30, d_max=520, in_spike=3.0, in_lo=0.001),
+    readout=ReadoutSpec(kind="first_spike", n_out=4,
+                        out_idx=(500, 501, 502, 503),
+                        allow_noop=True, tie_break="argmax_v",
+                        early_terminate=False),
+    plast=Plasticity(weight=True, topology=True, bias=True,
+                     eta_w=0.008, eta_bias=0.004,
+                     bias_min=-0.10, bias_max=0.40,
+                     trace_decay=0.95, topo_thresh=0.5, t_s=20),
+    signal=SignalSpec(source="reward_only", tau_m=100.0, k_update=5,
+                      warmup=3000, punish=False),
+)
+
+CO_TEACH = Config(name="co_teach", note="grow_cond teach（只奖励正确；基准）", **_COND)
+CO_PUNISH = Config(name="co_punish", note="grow_cond --punish（错/抢答/沉默给 -1）",
+                   **dict(_COND, signal=SignalSpec(source="reward_only", tau_m=100.0,
+                                                  k_update=5, warmup=3000, punish=True)))
+CO_FROZEN = Config(name="co_frozen", note="grow_cond frozen（三层可塑性全关）",
+                   **dict(_COND, plast=Plasticity(
+                       weight=False, topology=False, bias=False,
+                       eta_w=0.008, eta_bias=0.004,
+                       bias_min=-0.10, bias_max=0.40,
+                       trace_decay=0.95, topo_thresh=0.5, t_s=20)))
+
+
 ALL = [
     BASE,
     PLAST_NONE, PLAST_BIAS, PLAST_W, PLAST_TOPO, PLAST_W_BIAS,
@@ -344,6 +387,7 @@ ALL = [
     TA_TEACH, TA_RAND_M, TA_NO_TEACH, TA_FROZEN,
     TK_TEACH, TK_RAND_M, TK_NO_TEACH, TK_FROZEN,
     HO_GROW, HO_LONG, HO_WARM, HO_FROZEN,
+    CO_TEACH, CO_PUNISH, CO_FROZEN,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

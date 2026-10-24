@@ -2368,3 +2368,57 @@ python scripts/align_layers.py homeo 0          # grow（6000 + 40000 步），�
 python scripts/align_layers.py homeoprobe 0 30000   # probe，2 seeds，约 240 s
 ```
 
+
+### 16.21 `grow_cond` 移植（2026-10-24）——6 个脚本 / 73 项；§16.14 的「抢答 50%」"与"惩罚即死网"全部复现
+
+**起因：** 继续移植。`grow_cond` 是阶段 1/2 的 v3（只奖励正确 + VI 课程 + 变长呈现）。
+
+#### 框架新增了什么（第 6 个 flow）
+
+| 能力 | 新字段 | 为什么 talk 接不上 |
+|---|---|---|
+| 变长呈现 | `TaskSpec.var_delay` + `d_mean_start/d_mean_end/d_cv/d_min/d_max` + `answer_win` | talk 的呈现长度是常数 `t_present`；cond 每个呈现 = burst + **Gamma 采样的保持期** + answer_win |
+| 只奖励正确 | `SignalSpec.source="reward_only"` + `punish` | talk 的 `teacher_word` 是双向（`tgt-got` 方向）；cond 是「对就 +1，其余 0」 |
+| 抢答不终止 | `ReadoutSpec.early_terminate=False` | talk 抢答 = 答错并终止；cond 只记录并继续跑 |
+
+**接口直接复用 talk 的修正版**——`grow_cond` 的 `nfan` 本来就是 `(n_in+n_q)*fanout`（没有 talk 那个偏移），
+所以 construct 层用的是 `talk_legacy_offset=False`，**3/3 逐位相同**（接口权重实测 0.151~0.599）。
+
+#### 对齐结果
+
+| 层 | 范围 | 结果 |
+|---|---|---|
+| construct | 初始结构 + RNG 尾状态 | **3/3** |
+| run（小） | 200 呈现 × 2 模式 × 2 seed，**14 标量 + 8 序列** | **4/4** |
+| run（原规模） | 1200 呈现 × 2 模式 × 2 seed（11 个统计窗口） | **4/4** |
+
+工具：`python scripts/align_layers.py cond <seed> <n_pres>`。
+
+#### §16.14 重测（8 种子 × 1200 呈现，24 任务 / 20 进程）
+
+| 组 | §16.14 记录 | 重测（8 seeds，mean±sd） |
+|---|---|---|
+| **co_teach** | acc 11.9% → 12.2%，抢答 **50.0%**，rate 1.66% | 11.9±1.3 → **12.2±1.1**，抢答 **0.500**，rate **1.66%** |
+| **co_punish** | acc 4.8% → 0.0%，抢答 0%，rate **0.04%** | 4.8±1.4 → **0.0±0.0**，抢答 **0.000**，rate **0.04%** |
+| co_frozen（新跑） | —（§16.14 未跑） | 13.4±1.5 → 12.7±0.5，抢答 0.500，rate 1.37% |
+
+**每个种子的抢答率精确 = 0.50（8/8 全部）**——这印证了 §16.14 的判断：「概率性行为不会这么齐」，
+它是一半呈现抢答、一半呈现回答的结构结果，不是随机。
+
+`co_punish` 的 `沉默晚 = 1.000`（100% 沉默）+ `rate 0.04%` + `out_deg 60`：确认「惩罚把抢答压住的同时把网络打死」。
+
+#### 三条结论
+
+1. **移植成立**：与**当前**旧脚本逐位一致（22 项 × 2 模式）。
+2. **§16.14 的两个结论现在都有 8 种子支撑**：① 抢答 50%（不惩罚时）；② 惩罚 → 抢答 0% 但死网。
+3. **`co_frozen` 的 acc 高于 `co_teach`**（12.7% vs 12.2%）——与 §16.9 的「会学的组反而更差」同向。
+   而且 **frozen 也抢答 0.500**（它没在学，抢答完全是接口结构决定的）——这是抢答根因的又一个侧面证据：
+   **输出接口能直接被刺激驱动，与学习无关**。
+
+**可复现：**
+
+```bash
+python scripts/align_layers.py cond 0 400      # 2 模式 × 22 项，约 60 s
+python scripts/align_layers.py cond 0 1200     # 原规模，约 4 min
+```
+

@@ -2,6 +2,29 @@
 
 > 倒序，只追加。历史变更记录在这里；设计推演过程不进本文件。
 
+## 0.12.0 — 2026-10-24
+
+**移植 `grow_cond`（第 6 个脚本）：22 项 × 2 模式逐位一致；§16.14 两个结论全部复现。**
+
+框架新增第 6 个流程 `flow="cond"`（阶段 1/2 v3：经典条件作用 + VI 课程）：
+`TaskSpec.var_delay` + `d_mean_start/d_mean_end/d_cv/d_min/d_max` + `answer_win`（变长呈现、Gamma 采样保持期）、
+`SignalSpec.source="reward_only"` + `punish`（**只奖励正确**，错/抢答/沉默给 0）、
+`ReadoutSpec.early_terminate=False`（抢答不终止，只记录）。
+
+接口直接复用 talk 的**修正版**（grow_cond 的 nfan 本来就是 `(n_in+n_q)*fanout`，无偏移）——construct 3/3。
+
+对齐：construct 3/3、run 4/4（200 呈现）、4/4（1200 呈现原规模，11 个统计窗口）。
+
+8 种子重测（24 任务 / 20 进程）：
+  co_teach   11.9±1.3 -> 12.2±1.1，抢答 0.500，rate 1.66%   [§16.14: 11.9->12.2 / 50.0% / 1.66%]
+  co_punish   4.8±1.4 ->  0.0±0.0，抢答 0.000，rate 0.04%   [§16.14: 4.8->0.0 / 0% / 0.04%]
+  co_frozen  13.4±1.5 -> 12.7±0.5，抢答 0.500，rate 1.37%   [新跑]
+每个种子的抢答率精确 0.50（8/8）——结构性结果，不是随机。
+frozen 也抢答 0.500：抢答由接口结构决定、与学习无关（根因的又一侧证）。
+
+工具：align_layers.py cond
+文档：§16.21、agi.md（6/11）、README.md、src/README.md（六流程）、CHANGELOG 0.12.0
+
 ## 0.11.0 — 2026-10-24
 
 **移植 `grow_homeo`（第 5 个脚本）：12/12 逐位一致；同时拓出两件大事。**

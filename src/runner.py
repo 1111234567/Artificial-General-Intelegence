@@ -484,6 +484,257 @@ def _run_goal(cfg):
     }
 
 
+def sample_delay(cfg, progress, rng):
+    """可变间隔（VI）：Gamma 采样。均值随进度上升，CV 固定 → 方差随之上升。"""
+    m = cfg.task.d_mean_start + (cfg.task.d_mean_end - cfg.task.d_mean_start) * float(
+        np.clip(progress, 0.0, 1.0))
+    shape = 1.0 / (cfg.task.d_cv * cfg.task.d_cv)
+    scale = m / shape
+    d = int(rng.gamma(shape, scale))
+    return max(cfg.task.d_min, min(cfg.task.d_max, d))
+
+
+def _run_cond(cfg):
+    """移植自 grow_cond.py：经典条件作用 + 可变间隔课程（阶段 1/2 v3）。
+
+    与 talk 流程的四处差异（全部在 Config 里显式）：
+      ① **变长呈现**：每个 = burst + 保持期(从 Gamma 采样) + answer_win
+      ② **只奖励正确**（`signal.punish=False`）：错/抢答/沉默都给 0，不产生更新
+      ③ **抢答不终止本呈现**（`readout.early_terminate=False`）：只记录并继续跑
+      ④ 分桶按**保持期长度**（hold // 50，8 桶），不是按回答延迟
+
+    ⚠️ 抢答不终止的后果（写在 §16.14）：抢答率 100% 时正确率测不到，但
+    「说什么」这条链可以测——这是当时故意接受的代价，不是缺陷。
+    """
+    t0 = time.perf_counter()
+    rng = np.random.default_rng(cfg.seed)
+    out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+    net = Network(cfg.net, rng, out_idx)
+    net.tau_trace = cfg.plast.tau_trace
+    net.trace_decay = cfg.plast.trace_decay
+    net.tau_theta = cfg.plast.tau_theta
+
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    N_WORD = cfg.readout.n_out
+    N_OUT = N_WORD
+    BLK = cfg.net.blk
+    N_Q = cfg.net.n_q
+    Q_IDX = np.arange(N_IN, N_IN + N_Q)
+    BURST = cfg.task.burst
+    QBURST = cfg.task.qburst
+    AW = cfg.task.answer_win
+    IN_SPIKE = cfg.task.in_spike
+    IN_LO = cfg.task.in_lo
+    ETA_W = cfg.plast.eta_w
+    ETA_BIAS = cfg.plast.eta_bias
+    BIAS_MIN = cfg.plast.bias_min
+    BIAS_MAX = cfg.plast.bias_max
+    W_MAX_E = cfg.net.w_max_e
+    M_DECAY = float(np.exp(-1.0 / cfg.signal.tau_m))
+    K_UPDATE = cfg.signal.k_update
+    WARMUP = cfg.signal.warmup
+    PUNISH = cfg.signal.punish
+    TOPO_EVERY = cfg.plast.t_s
+    nb = 8
+
+    n_pres = cfg.n_ep
+    mode = cfg.signal.source
+    teach = mode in ("reward_only", "teacher_word")
+    use_plast = bool(cfg.plast.weight or cfg.plast.topology)
+    use_bias = bool(cfg.plast.bias)
+
+    bias = np.zeros(N, np.float32)
+    bias[out_idx] = 0.05
+    m_out = np.zeros(N_OUT, np.float64)
+    m_glob = 0.0
+    ist_out = np.isin(net.post, out_idx)
+
+    buck_n = np.zeros(nb, np.int64)
+    buck_ok = np.zeros(nb, np.int64)
+    win, win_delay, win_early, win_sil, win_rate = [], [], [], [], []
+    n_corr = n_tot = n_sil = n_early = 0
+    nsp_win = 0
+    n_win = 0
+    born = drop = 0
+    s_a1a0 = s_a0a0 = 0.0
+    a_prev = 0.0
+    n_upd_w = n_upd_b = n_upd_top = 0
+
+    t = 0
+    pres = 0
+    p_start = 0
+    p_delay = 0
+    p_end = 0
+    c = 0
+    answered = False
+    early_flag = False
+    lim = n_pres * cfg.task.d_mean_end * 2
+
+    while t < lim and pres < n_pres:
+        # ===== 呈现边界 =====
+        if t >= p_end:
+            if pres > 0 and not answered:
+                n_tot += 1
+                n_sil += 1
+                if PUNISH:
+                    m_out[c] -= 1.0
+                    m_glob = -1.0
+            if pres > 0 and (pres % 100) == 0:
+                win.append(n_corr / max(n_tot, 1))
+                win_sil.append(n_sil / max(n_tot, 1))
+                win_early.append(n_early / max(n_tot, 1))
+                win_delay.append(p_delay)
+                if n_win > 0:
+                    win_rate.append(nsp_win / n_win / N)
+                    nsp_win = n_win = 0
+                n_corr = n_tot = n_sil = n_early = 0
+            progress = pres / max(n_pres - 1, 1)
+            p_start = t
+            p_delay = sample_delay(cfg, progress, rng)
+            p_end = p_start + p_delay + AW
+            c = int(rng.integers(0, N_WORD))
+            answered = False
+            early_flag = False
+            pres += 1
+
+        phase = t - p_start
+        xin = np.zeros(N, np.float32)
+        if phase < BURST:
+            if phase == 0 or phase == BURST - 2:
+                xin[c * BLK:(c + 1) * BLK] = IN_SPIKE
+        if p_delay <= phase < p_delay + QBURST:
+            qq = phase - p_delay
+            if qq == 0 or qq == QBURST // 2:
+                xin[Q_IDX] = IN_SPIKE
+        xin[0:N_IN] += (rng.random(N_IN) < IN_LO).astype(np.float32) * IN_SPIKE
+        xin[Q_IDX] += (rng.random(N_Q) < IN_LO).astype(np.float32) * IN_SPIKE
+        xin += bias
+
+        nsp = net.step(xin, False, add_bias=False)
+        s = net.state
+        v = net.v
+
+        nsp_win += nsp
+        n_win += 1
+        if t > 2000:
+            s_a1a0 += float(nsp) * a_prev
+            s_a0a0 += a_prev * a_prev
+        a_prev = float(nsp)
+
+        # ===== 抢答：只记录，**不终止本呈现** =====
+        if (not answered) and BURST <= phase < p_delay:
+            of = s[out_idx] > 0
+            if of.any():
+                if not early_flag:
+                    n_early += 1
+                    n_tot += 1
+                    early_flag = True
+                if PUNISH:
+                    cand = np.nonzero(of)[0]
+                    o = int(cand[np.argmax(v[out_idx][cand])])
+                    m_out[o] -= 1.0
+                    m_glob = -1.0
+
+        # ===== 回答期 =====
+        if (not answered) and p_delay <= phase < p_delay + AW:
+            of = s[out_idx] > 0
+            if of.any():
+                cand = np.nonzero(of)[0]
+                o = int(cand[np.argmax(v[out_idx][cand])])
+                answered = True
+                ok = (o == c)
+                n_tot += 1
+                if ok:
+                    n_corr += 1
+                    m_out[o] += 1.0
+                    m_glob = 1.0
+                else:
+                    if PUNISH:
+                        m_out[o] -= 1.0
+                        m_glob = -1.0
+                hold = p_delay - BURST
+                b = int(min(nb - 1, hold // 50))
+                buck_n[b] += 1
+                if ok:
+                    buck_ok[b] += 1
+
+        m_out *= M_DECAY
+        m_glob *= M_DECAY
+
+        # ===== 可塑性（每 k_update 步）=====
+        if (t + 1) % K_UPDATE == 0 and t >= WARMUP:
+            has_m = bool(np.abs(m_out).max() > 1e-6) or abs(m_glob) > 1e-6
+            if use_plast and net.key.size and has_m:
+                gate = steady_gate(net.ema_rate)
+                el = net.trace[net.pre] * net.trace[net.post]
+                mp = np.zeros(N, np.float32)
+                mp[out_idx] = m_out.astype(np.float32)
+                sel = mp[net.post.astype(np.int64)]
+                if abs(m_glob) > 1e-9:
+                    sel = np.where(ist_out, sel, np.float32(m_glob)).astype(np.float32)
+                nz = sel != 0
+                if nz.any() and el[nz].max() > 1e-9:
+                    el_n = el[nz] / float(el[nz].max())
+                    dw = ETA_W * gate * el_n * sel[nz]
+                    sl = np.nonzero(nz)[0]
+                    pos = net.w[sl] > 0
+                    net.w[sl] = np.where(
+                        pos,
+                        np.minimum(net.w[sl] + dw * (W_MAX_E - net.w[sl]), W_MAX_E),
+                        net.w[sl])
+                    net.w[sl] = np.maximum(net.w[sl], 0.0)
+                n_upd_w += 1
+            if use_bias:
+                nb_ = bias[out_idx] + ETA_BIAS * m_out.astype(np.float32)
+                bias[out_idx] = np.clip(nb_, BIAS_MIN, BIAS_MAX)
+                n_upd_b += 1
+
+        # ===== 结构更新（每 t_s 步）=====
+        if use_plast and t % TOPO_EVERY == 0 and t > 0:
+            born += net.grow_edges(cfg.plast.topo_thresh, cfg.net.p_new, cfg.net.max_active)
+            if cfg.net.p_global > 0 and t % cfg.net.t_global == 0:
+                born += net.grow_global(cfg.net.p_global)
+            ist_out = np.isin(net.post, out_idx)
+            drop += net.prune(cfg.net.budget, cfg.net.min_age)
+            ist_out = np.isin(net.post, out_idx)
+            n_upd_top += 1
+
+        t += 1
+
+    deg_in = net.in_degree()
+    bk = np.where(buck_n > 0, buck_ok / np.maximum(buck_n, 1), np.nan)
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': pres, 'steps': t,
+        'succ': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'succ_first': float(np.mean(win[:2])) if len(win) >= 2 else float('nan'),
+        'succ_last': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'progress': float('nan'), 'basis': float('nan'), 'dist_end': float('nan'),
+        'out_fire': 0.0, 'fixdelay': None, 'react': None,
+        'E_final': int(net.key.size), 'born': int(born), 'drop': int(drop),
+        'n_inh': int((net.pre >= N_E).sum()),
+        'rate': float(net.ema_rate),
+        'sigma': float(s_a1a0 / s_a0a0) if s_a0a0 > 0 else float('nan'),
+        'out_deg': int(deg_in[out_idx].mean()),
+        'out_bias': tuple(round(float(x), 4) for x in bias[out_idx]),
+        'n_upd_w': int(n_upd_w), 'n_upd_b': int(n_upd_b), 'n_upd_top': int(n_upd_top),
+        'io_ok': True, 'n_io': 0,
+        'win': win, 'win_sil': win_sil, 'win_early': win_early,
+        'win_delay': win_delay, 'win_rate': win_rate,
+        'buck_n': buck_n, 'buck_acc': bk,
+        'acc_first': float(np.mean(win[:2])) if len(win) >= 2 else float('nan'),
+        'acc_last': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'early_first': float(np.mean(win_early[:2])) if len(win_early) >= 2 else float('nan'),
+        'early_last': float(np.mean(win_early[-2:])) if len(win_early) >= 2 else float('nan'),
+        'sil_last': float(np.mean(win_sil[-2:])) if len(win_sil) >= 2 else float('nan'),
+        'delay_first': float(np.mean(win_delay[:2])) if len(win_delay) >= 2 else float('nan'),
+        'delay_last': float(np.mean(win_delay[-2:])) if len(win_delay) >= 2 else float('nan'),
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+
+
 def _run_homeo(cfg, return_net=False):
     """移植自 grow_homeo.py：放电率稳态下的结构自生长（PLOS CB 2022 形态）。
 
@@ -981,6 +1232,8 @@ def run(cfg):
         return _run_goal(cfg)
     if cfg.flow == 'homeo':
         return _run_homeo(cfg)
+    if cfg.flow == 'cond':
+        return _run_cond(cfg)
     if cfg.flow == 'talk':
         return _run_talk(cfg)
     if cfg.flow == 'world':
