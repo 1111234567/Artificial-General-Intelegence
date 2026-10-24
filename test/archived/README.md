@@ -13,6 +13,7 @@
 | 动力学标定的前四版 | `calib_dynamics.py`、`calib2.py`、`calib3.py`、`calib4.py` | 逐次加机制的中间态；标定结果与判据见 §11.4.0，当前入口 `calib5.py` |
 | 成本实测的前后版本 | `bench_lif.py`、`bench_lif3.py` | 结论见 §16.1 与 `baseline-2026-10-23-simulator.md`，当前入口 `bench_lif2.py` |
 | 目标形态已消失的诊断 | `probe_ask.py` | 它从 `grow_talk.py` 里 `exec` 代码、诊断的是「三段式抢答」；`grow_talk` 改成 first-spike 后该形态已不存在 |
+| **实验形态错了的那一版** | **`grow_trace.py`** | **独立 trial 形态**（每 trial 1 个刺激 + 状态清零）——那是 delayed match-to-sample 的独立分类，不是 conditioning；且噪声放在独立 16 通道（可被权重绕过）。被 **`grow_stream.py`**（连续事件流 + 噪声与刺激同通道）取代。三个自加机制（`clip=1.0` / 每 50 步缩放 U / silent loss）也在里面，已证会把 L≤40 从 100% 压到 50~84%。§16.28 |
 
 ## 当前在 `test/` 根的脚本
 
@@ -24,7 +25,8 @@
 | 文件 | 用途 |
 |---|---|
 | **`run.py`** | **唯一入口**：`list / show / check / run / results / gaps / align / scan / bench`（§16.17 / §16.26） |
-| **`grow_rnn.py`** | **阶段 0.5 步 1/2**：BP 训 2 层 Elman RNN（含 `--gradcheck` 反向校验 / `--random-goal` / `--blind=N` / `--renorm`），§16.27 |
+| **`grow_rnn.py`** | **阶段 0.5 步 1/2**：BP 训 2 层 Elman RNN（含 `--gradcheck` 反向校验 / `--random-goal` / `--blind=N` / `--renorm`），§16.27。**2026-10-25 加 `backward(state_mask=)` 参数（默认 None = 原行为，gradcheck 仍 1e-10）** |
+| **`grow_stream.py`** | **连续事件流上的 trace conditioning**（§16.28）：一条序列内含多个「刺激 → 间隔 → 提醒」对；**噪声与刺激同一批通道**；孤立提醒须沉默；间隔课程（短间隔永久保留固定比例）。本轮唯一的记忆跨度测量装置 |
 | `baseline_linear.py` | **非脉冲基线**：random / greedy / linear 三档，判「任务可学性 + 上界」（§16.16） |
 | `CONSTANTS.md` | 常数台账（来源分类）+ 已删的机制 + 场次四 12 条核对表 |
 | `net.py` | 旧共享参数（框架已收敛进 `src/agi/config.py`；仍被 `grow_agent` / `grow_goal` import） |

@@ -112,8 +112,13 @@ class Elman2(object):
         return z
 
     # ---- 反向：全序列 BPTT ----
-    def backward(self, X, H1, H2, dZ):
+    def backward(self, X, H1, H2, dZ, state_mask=None):
         """dZ: (T, N_OUT)，只在有监督的步非零。返回 {name: grad}。
+
+        state_mask（可选）：逐帧布尔。False 表示该帧的**输出误差不进状态**（只训输出层），
+        但状态梯度本身仍穿过它继续回传。默认 None = 原行为（全部进状态）。
+        用途：trace conditioning 里「沉默帧」的监督不应推动隐状态，
+        否则「保持安静」的梯度会和「记住刺激」冲突。
 
         索引约定（这里写清，因为最容易错）：
           a1[t] = W1 X[t] + U1 H1[t] + b1,  H1[t+1] = tanh(a1[t])
@@ -126,7 +131,10 @@ class Elman2(object):
         dH1 = np.zeros(N_H)      # dL/dH1[t+1]（下一轮用）
         dH2 = np.zeros(N_H)      # dL/dH2[t+1]
         for t in range(T - 1, -1, -1):
-            dH2 = dH2 + self.W3.T @ dZ[t]
+            g['W3'] += np.outer(dZ[t], H2[t + 1])
+            g['b3'] += dZ[t]
+            if state_mask is None or state_mask[t]:
+                dH2 = dH2 + self.W3.T @ dZ[t]
             da2 = dH2 * (1.0 - H2[t + 1] ** 2)
             g['W2'] += np.outer(da2, H1[t + 1])
             g['U2'] += np.outer(da2, H2[t])
@@ -138,8 +146,6 @@ class Elman2(object):
             g['U1'] += np.outer(da1, H1[t])
             g['b1'] += da1
             dH1 = self.U1.T @ da1          # 赋值：下一轮的 dL/dH1[t]
-            g['W3'] += np.outer(dZ[t], H2[t + 1])
-            g['b3'] += dZ[t]
         return g
 
     def renorm(self, rho_target):
