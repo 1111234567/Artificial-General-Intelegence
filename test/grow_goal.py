@@ -39,86 +39,32 @@ import time
 import numpy as np
 from multiprocessing import Pool
 
-# ---- 网络（沿用 grow_world / calib5 的标定值）----
-N = 1000
-N_E = 800
-DECAY_V = float(np.exp(-1.0 / 20.0))
-V_TH = 1.0
-T_REF = 20
+from net import (N, N_E, N_IN, DECAY_V, V_TH, T_REF,
+                 W_E, W_I_RATIO, W_MAX_E, W_MAX_I, W_NEW_E, W_NEW_I,
+                 BUDGET, E0_INIT, T_S, TRACE_DECAY, ETA_POT, P_NEW,
+                 P_GLOBAL, T_GLOBAL,
+                 MAX_ACTIVE, MIN_AGE, _sort, find, steady_gate, cheb)
 
-W_E = 0.50
-W_I_RATIO = 5.0
-ETA_POT = 0.02
-W_MAX_E = 1.0
-W_MAX_I = 2.5
-W_NEW_E = 0.15
-W_NEW_I = 0.75
-BUDGET = 15000
-E0_INIT = 30000
+# ---- 接口（本实验特有）----
+N_CH = N_IN // 4          # [派生] 4 通道：x0 / x1 / g0 / g1
+IN_RATE = 0.02            # [拍] 输入放电率基准
+GAIN = 0.8                # [拍] 观测 -> 输入率的调制深度
+OUT_IDX = np.array([500, 501])   # [拍] 输出神经元（回路里的普通节点）
+A_TAU = 20.0              # [拍] 输出放电率 EMA
+BASE_TAU = 100.0          # [拍] 动作基线的慢 EMA（防动作饱和）
 
-T_S = 20
-TRACE_DECAY = 0.95
-P_NEW = 0.004
-P_GLOBAL = 4
-T_GLOBAL = 2000
-MAX_ACTIVE = 48
-MIN_AGE = 25
+# ---- 世界与任务（环境设计，不是机制参数）----
+T_ACT = 20                # [需求] 动作窗口（行为是一个事件窗口，design.md §14.6）
+T_EP = 120                # [需求] episode 上限（120 x 0.02 = 2.4 位移能力）
+K_ACT = 0.02              # [需求] 每步动作推力
+TOL = 0.08                # [需求] 成功判据（切比雪夫距离）
+AMP_D = 0.01              # [需求] 外源扰动（只有动作的一半）
+PERIOD_D = 40.0           # [需求] 扰动周期
+W_NOISE = 0.002           # [需求] 世界噪声
 
-# ---- 接口 ----
-N_IN = 100
-N_CH = 25                 # 每个输入通道占的神经元数（4 通道：x0 / x1 / g0 / g1）
-IN_RATE = 0.02
-GAIN = 0.8
-OUT_IDX = np.array([500, 501])
-A_TAU = 20.0              # 输出放电率 EMA
-BASE_TAU = 100.0          # 动作基线（自适应，防动作饱和）
-
-# ---- 世界与任务 ----
-T_ACT = 20                # 动作窗口（动作在窗口内保持不变）
-T_EP = 120                # 每个 episode 的步数上限（120 × 0.02 = 2.4 总位移能力，够到任一目标）
-K_ACT = 0.02              # 每步动作推力
-TOL = 0.08                # 成功判据（切比雪夫距离）——随机游走至 0.08 很难，区分度靠这里
-AMP_D = 0.01              # 外源扰动幅度（只有动作的 1/2，任务主要靠动作）
-PERIOD_D = 40.0
-W_NOISE = 0.002
-
-# ---- 预测器（步 1 的价值信号）----
-PRED_K = 20               # 预测 o[t+PRED_K]
-PRED_LR = 0.02
-
-
-def _sort(pre, post, w, age):
-    key = post.astype(np.int64) * N + pre
-    o = np.argsort(key, kind='stable')
-    key, pre, post, w, age = key[o], pre[o], post[o], w[o], age[o]
-    if key.size > 1:
-        u = np.empty(key.size, bool); u[0] = True
-        np.not_equal(key[1:], key[:-1], out=u[1:])
-        if not u.all():
-            key, pre, post, w, age = key[u], pre[u], post[u], w[u], age[u]
-    return (np.ascontiguousarray(pre), np.ascontiguousarray(post),
-            np.ascontiguousarray(w), np.ascontiguousarray(key),
-            np.ascontiguousarray(age))
-
-
-def find(key, q):
-    if key.size == 0:
-        return np.zeros(q.size, bool), np.zeros(q.size, np.int64)
-    i = np.searchsorted(key, q)
-    np.clip(i, 0, key.size - 1, out=i)
-    return key[i] == q, i
-
-
-def steady_gate(r):
-    if r < 0.005:
-        return max(0.0, r / 0.005)
-    if r > 0.05:
-        return max(0.0, 0.05 / r)
-    return 1.0
-
-
-def cheb(x, g):
-    return float(max(abs(x[0] - g[0]), abs(x[1] - g[1])))
+# ---- 预测器（C 步用；**已知是外挂**——2x2 线性，不代表世界模型，见 CONSTANTS.md）----
+PRED_K = T_ACT            # [派生] 预测 T_ACT 步后
+PRED_LR = 0.02            # [拍] 在线 LMS 学习率
 
 
 def run_one(args):
