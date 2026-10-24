@@ -53,6 +53,19 @@ ENV_ROOT = r"F:\agi\data\env"
 # [需求] 4 个动作 = 4 个输出神经元；§16.10 已证明这个形态能学
 N_OUT = 4
 OUT_IDX = np.arange(500, 504)
+# [需求] 第 5 个动作 = **不动**。
+# 为什么必要：原来用 `argmax(r_out)` 选动作，**永远选一个**——即使四个输出都沉默。
+# 而 rate 1.5%、20 步动作窗内输出期望只放 0.6 次放电 -> r_out 差异在 0.001 量级
+# -> argmax 就是浮点噪声（实测 basis = 0.502，即随机）。
+# grow_talk / grow_teach 的做法是 `nonzero(s[OUT_IDX]>0)` ——**谁放电选谁，都不放就不说**。
+# 这里把它搬过来：first-spike + 「不说」是个真选项。
+NO_ACT = N_OUT
+ACTIONS = np.array([1, -1, 10, -10, 0], np.int64)
+# **2026-10-24 实验结论**：`baseline_linear.py` 证明只用 ±1 就能 100%，
+# linear 学到的 W 里 +10 / -10 的权重**恒为 0**（它完全放弃了这两个动作）。
+# 而 ±10 会把 40 的差距一步跳过（走过头），是纯干扰。所以默认只用 ±1。
+# 用 --big 打开四动作对照。
+ACTIONS_SMALL = np.array([1, -1], np.int64)
 N_CH = N_IN // 4                 # [派生] 4 通道 × 25：state / target / （2 个备用通道）
 IN_RATE = 0.02                   # [拍] 输入放电率基准
 GAIN = 0.8                       # [拍] 观测 -> 输入率的调制深度
@@ -63,17 +76,39 @@ T_REF_OUT = 4                    # [需求] 输出神经元的不应期（§16.1
 A_TAU = 20.0                     # [拍] 输出放电率 EMA（对应步级反馈）
 
 # ---- 环境（本机真实文件）----
-T_ACT = 20                       # [需求] 动作窗口（§14.6：行为是一个事件窗口）
-T_EP = 120                       # [需求] 每个 episode 的步数
+# **任务参数的可行性约束（2026-10-24 实测）**：
+#   动作数 = T_EP / T_ACT（实际 = 动作数 - 1）；最大移动 = 动作数 × max|动作|。
+#   ① 原来 T_EP=120 / T_ACT=20 = 6 个动作，而目标差距 30~40 -> **永远到不了**。
+#   ② 改成 T_EP=200 / T_ACT=5 后 = 39 个动作，而差距 40 的 case **还差一步**。
+#      （实测：linear 读出 basis=1.000、progress=0.98，但成功率只有 25% = 仅 1/4 的 case 能到）
+#   现在：T_EP=240 / T_ACT=5 = 47 个动作 -> 对最大差距 40 有 17.5% 余量。
+#   判据：**先算出「最多能走多远」，确认它 ≥ 目标差距 × 1.2**；否则实验不可完成。
+T_ACT = 5                        # [需求] 动作窗口（§14.6：行为是一个事件窗口）
+T_EP = 240                       # [需求] 每个 episode 的步数（= 47 个动作）
 T_GAP = 200                      # [需求] episode 间间隙：逼退隐状态（τ_v=20），迫使依赖连接
 K_EP_TASK = 5                    # [需求] 同一目标持续的 episode 数
+
+# [需求] discrete 模式的状态集：4 个固定的（初态, 目标）对。
+# 为什么要它：源任务的状态是连续采样的（初态、目标都是随机 int），
+# 900 个样本在 80x80=6400 个格子里 -> 几乎每个状态只出现一次 -> **样本不重复**。
+# 而标量 m 靠「同一模式反复出现」做统计分离（递只说谁参与，不说谁该负责）。
+# grow_talk 能学到 75% 的前提就是「4 个词 = 4 个状态，每个重复 200 次」。
+# 这组把状态空间降到 4 -> 900 次决策 / 4 = **225 次重复/状态**，与 grow_talk 同量级。
+# 与连续组相比，唯一变量是「重复率」——这是本对照要隔离的东西。
+FIXED_CASES = ((20, 60), (40, 70), (60, 20), (70, 30))
 V_MAX = 100                      # [需求] 值的取值范围 [0, V_MAX]
 OBS_LO, OBS_HI = 10, 90          # [需求] state / target 的采样区间
-ACTIONS = np.array([1, -1, 10, -10], np.int64)   # [需求] 4 个离散动作
+ACTIONS_OLD = np.array([1, -1, 10, -10], np.int64)   # 已废弃，保留作对照记录
 
 # ---- m 的三闸（§7.1）----
 SURPRISE_K = 10.0                # [拍] 归因门的尺度：预测误差 / K，clip 到 [0,1]
 BRIDGE = 0.15                    # [拍] 桥接强度（中性事件 = 值发生变化）
+
+# ---- 读出层的偏置（§14.6 作用点二：节点偏置 -> 行为频率）----
+# 为什么必需：没有它，输出神经元的膜电位只由输入驱动 -> 永远学不到「该放电时放电」。
+# 而这正是 first-spike 读法的前提（不说 = 不动）。grow_talk 有 bias，我上一版把它去掉了。
+ETA_BIAS = 0.05                  # [拍] 偏置学习率
+BIAS_MIN, BIAS_MAX = -0.3, 2.0   # [需求] 上界 = 能自己把自己点到放电；下界不能太深（否则永远沉默）
 
 # ---- 隔离 ----
 ISOLATE_THRESH = 0.3             # [拍] 「本 episode 活跃过」的判定阈值（迹）
@@ -183,6 +218,56 @@ def run_one(args):
     rng = np.random.default_rng(seed)
     tag = "%s_%d" % (mode, seed)
 
+    # **随机对照**：不建网络、不学。只用来回答「这个任务什么都不学能到多少」。
+    # 没有它，所有脉冲网络的数字都不知道该和什么比（实测：random 48% > 网络 12.8%）。
+    if mode == 'random':
+        env = Env(ENV_ROOT, tag)
+        succ = np.zeros(n_ep, np.float32)
+        prog = np.zeros(n_ep, np.float32)
+        basis = np.zeros(n_ep, np.float32)
+        dist = np.zeros(n_ep, np.float32)
+        for ep in range(n_ep):
+            c_st, c_tg = FIXED_CASES[ep % len(FIXED_CASES)]
+            env.set_target(c_tg)
+            env.set_state(c_st)
+            st, goal = c_st, c_tg
+            start = st
+            min_move = abs(goal - start)
+            total = 0
+            n_act = n_ok = 0
+            for k in range(T_EP):
+                if k % T_ACT == 0 and k > 0:
+                    a_idx = int(rng.integers(0, N_OUT))
+                    new_st, ok = env.step(a_idx)
+                    if not ok:
+                        break
+                    mv = new_st - st
+                    total += abs(mv)
+                    want = np.sign(goal - st)
+                    if want != 0 and np.sign(mv) != 0:
+                        n_act += 1
+                        if np.sign(mv) == want:
+                            n_ok += 1
+                    st = new_st
+                    if st == goal:
+                        break
+            succ[ep] = 1.0 if st == goal else 0.0
+            prog[ep] = total / max(min_move, 1)
+            basis[ep] = n_ok / max(n_act, 1)
+            dist[ep] = abs(goal - st)
+        env.cleanup()
+        k6 = max(1, n_ep // 6)
+        return dict(
+            seed=seed, mode=mode, E=0, born=0, drop=0, rate=0.0, n_inh=0,
+            succ=float(succ.mean()),
+            succ_first=float(succ[:k6].mean()), succ_last=float(succ[-k6:].mean()),
+            progress=float(prog.mean()), detour=float('nan'), n_detour=0,
+            detour_first=float('nan'), detour_last=float('nan'),
+            fixdelay=float('nan'), basis=float(basis.mean()),
+            react=float('nan'), consistent=float('nan'), io_ok=1.0,
+            m_mean=0.0, n_io=0, out_deg=0, out_bias=0.0, out_rate=0.0,
+            dist_end=float(dist.mean()), elapsed=0.0)
+
     env = Env(ENV_ROOT, tag)
     pre, post, w, key, age = _init_net(rng)
 
@@ -192,9 +277,11 @@ def run_one(args):
     xin = np.zeros(N, np.float32)
     trace = np.zeros(N, np.float32)
     theta = np.zeros(N, np.float32)        # BCM 滑动阈值（§7.3 的 (a_post − θ)）
+    bias = np.zeros(N, np.float32)         # 节点偏置（只学输出神经元那 4 个）
 
     r_out = np.zeros(N_OUT, np.float64)
     ema_rate = 0.02
+    win_i = -1          # 本动作窗口内第一个放电的输出神经元（-1 = 还没说）
 
     # 归因门用的「世界模型」：预测下一步 state。1 参数线性（state += k·a）
     k_pred = 0.0
@@ -203,11 +290,11 @@ def run_one(args):
     # 隔离：本 episode 活跃过的神经元
     ep_active = np.zeros(N, bool)
 
-    do_plast_w = mode not in ('frozen', 'plast_topo')
-    do_plast_topo = mode not in ('frozen', 'plast_w')
-    use_gate = mode != 'no_gate'
-    use_bridge = mode != 'no_bridge'
-    use_isolation = mode != 'no_isolation'
+    do_plast_w = mode not in ('frozen', 'plast_topo', 'discrete_frozen')
+    do_plast_topo = mode not in ('frozen', 'plast_w', 'discrete_frozen')
+    use_gate = mode not in ('no_gate',)
+    use_bridge = mode not in ('no_bridge',)
+    use_isolation = mode not in ('no_isolation',)
     recall = (mode == 'recall')
 
     ep_succ = np.zeros(n_ep, np.float32)
@@ -218,6 +305,7 @@ def run_one(args):
     ep_react = np.zeros(n_ep, np.float32)
     ep_consistent = np.zeros(n_ep, np.float32)
     ep_io_ok = np.zeros(n_ep, np.float32)
+    ep_out_fire = np.zeros(n_ep, np.float32)      # 本 episode 输出神经元的放电步数占比
 
     m_acc = m_cnt = 0.0
     born = drop = 0
@@ -231,7 +319,7 @@ def run_one(args):
             ro = s[OUT_IDX]
             if ro.any():
                 I[OUT_IDX] -= SIDE_INH * ro
-        v = v * DECAY_V + I + xin_vec
+        v = v * DECAY_V + I + xin_vec + bias
         fire = (v > V_TH) & (ref <= 0)
         s = fire.astype(np.float32)
         v = np.where(s > 0, 0.0, v)
@@ -267,15 +355,54 @@ def run_one(args):
     u_buf = rng.random((65536, N_IN), dtype=np.float32)
     t_glob = 0
 
+    def upd_weights(mv, mg):
+        """Δw = η · m · e —— grow_talk 的形态：m 逐输出神经元 + 全局 RPE。
+
+        关键：**调用时机在动作后的 0 步**（不是 episode 末），所以迹是新鲜的。
+        grow_talk 用 τ=20 也能学到，就是因为它的反馈是零延迟的。
+        """
+        nonlocal w
+        if not do_plast_w or not key.size:
+            return
+        if np.abs(mv).max() < 1e-9 and abs(mg) < 1e-9:
+            return
+        mfull = np.zeros(N, np.float32)
+        mfull[OUT_IDX] = mv.astype(np.float32)
+        el = trace[pre] * (trace[post] - theta[post])
+        if use_isolation:
+            mask = ep_active[pre] & (ep_active[post] | (post >= N_E))
+            el = np.where(mask, el, 0.0)
+        ist_o = (post == OUT_IDX[0]) | (post == OUT_IDX[1]) | \
+                (post == OUT_IDX[2]) | (post == OUT_IDX[3])
+        sel = np.where(ist_o, mfull[post.astype(np.int64)], np.float32(mg)).astype(np.float32)
+        e = el * sel
+        emax = float(np.abs(e).max())
+        if emax > 1e-9:
+            e = e / emax
+            dw = (ETA_POT * e).astype(np.float32)
+            cap = np.where(w > 0, W_MAX_E, W_MAX_I)
+            w = w + dw * (cap - np.abs(w))
+            np.clip(w, -W_MAX_I, W_MAX_E, out=w)
+
+    r_base = 0.0     # RPE 的基线（grow_talk 的 baseline）
+
     prev_end = None      # recall 模式用：上一个 episode 的终点
 
     for ep in range(n_ep):
-        # ---- 任务：目标每 K_EP_TASK 个 episode 换一次（跨 episode 稳定）----
-        if ep % K_EP_TASK == 0:
-            env.set_target(int(rng.integers(OBS_LO, OBS_HI)))
-        st = int(rng.integers(OBS_LO, OBS_HI))
-        env.set_state(st)
-        tg = env.get_target()
+        if mode.startswith('discrete'):
+            # 状态空间 = 4 个固定案例（循环取）——隔离「重复率」这一个变量
+            c_st, c_tg = FIXED_CASES[ep % len(FIXED_CASES)]
+            env.set_target(c_tg)
+            st = c_st
+            env.set_state(st)
+            tg = c_tg
+        else:
+            # ---- 任务：目标每 K_EP_TASK 个 episode 换一次（跨 episode 稳定）----
+            if ep % K_EP_TASK == 0:
+                env.set_target(int(rng.integers(OBS_LO, OBS_HI)))
+            st = int(rng.integers(OBS_LO, OBS_HI))
+            env.set_state(st)
+            tg = env.get_target()
 
         if recall:
             # 目标不可观测；要求回到上一 episode 的终点（跨 episode 记忆）
@@ -299,6 +426,7 @@ def run_one(args):
         last_dir = 0
         consistent_sum = 0.0
         consistent_n = 0
+        n_out_fire = 0
 
         for k in range(T_EP):
             encode(st, goal, t_glob)
@@ -306,11 +434,34 @@ def run_one(args):
             net_step(xin, True)
             ep_active |= (s > 0)
 
-            r_out *= (1.0 - 1.0 / A_TAU)
-            r_out += s[OUT_IDX] / A_TAU
+            # ---- 3) 动作：first-spike（grow_talk 的形态）+ 「不动」选项 ----
+            # 谁先放电选谁；本窗口一直没放电 -> 不动。
+            of = s[OUT_IDX] > 0
+            if of.any():
+                n_out_fire += 1
+            if of.any() and win_i < 0:
+                cand = np.nonzero(of)[0]
+                win_i = int(cand[np.argmax(v[OUT_IDX][cand])])
 
             if k % T_ACT == 0 and k > 0:
-                a_idx = int(np.argmax(r_out))
+                want0 = np.sign(goal - st)
+                if win_i < 0:
+                    # **沉默**：不是免费的安全选项（实测：输出放电占比只有 0.079 ->
+                    # agent 学会了「少说话」，因为 mv 对「不动」不给信号）。
+                    # grow_talk 的镜像处理：沉默时提高「正确目标」的兴奋性。
+                    # 这里不知道哪个动作正确，但知道方向 -> 提高朝目标那侧两个输出的兴奋性。
+                    mv = np.zeros(N_OUT, np.float32)
+                    if want0 > 0:
+                        mv[0] = 0.2; mv[2] = 0.2      # +1 / +10
+                    elif want0 < 0:
+                        mv[1] = 0.2; mv[3] = 0.2      # -1 / -10
+                    bias[OUT_IDX] = np.clip(
+                        bias[OUT_IDX] + ETA_BIAS * mv, BIAS_MIN, BIAS_MAX)
+                    upd_weights(mv, 0.0)
+                    win_i = -1
+                    continue
+                a_idx = win_i
+                win_i = -1
                 # 归因门：预测下一步 state（1 参数：state += k_pred * ACTION）
                 pred = st + k_pred * float(ACTIONS[a_idx])
                 new_st, ok = env.step(a_idx)
@@ -318,7 +469,9 @@ def run_one(args):
                     break
                 perr = abs(new_st - pred)
                 pred_err_ema = 0.9 * pred_err_ema + 0.1 * perr
-                k_pred += 0.05 * (new_st - st) / float(ACTIONS[a_idx])
+                act_v = float(ACTIONS[a_idx])
+                if act_v != 0.0:
+                    k_pred += 0.05 * (new_st - st) / act_v
                 consistent = float(np.clip(1.0 - perr / SURPRISE_K, 0.0, 1.0))
                 consistent_sum += consistent
                 consistent_n += 1
@@ -333,6 +486,26 @@ def run_one(args):
                     if np.sign(move) == want:
                         n_ok_act += 1
                         act_good[a_idx] += 1
+
+                # ---- 立即反馈（延迟 0）—— §5.4「环境事实：每个动作」----
+                # m_out：这个动作朝目标 +1 / 背目标 -1 / 不动 0
+                mv = np.zeros(N_OUT, np.float32)
+                r_act = 0.0
+                if act_v != 0.0 and want != 0.0:
+                    if np.sign(move) == want:
+                        mv[a_idx] = 1.0
+                        r_act = 1.0
+                    elif np.sign(move) == -want:
+                        mv[a_idx] = -1.0
+                        r_act = -1.0
+                # m_glob = RPE（可正可负，grow_talk 的形态）；不用门控时就直用 r
+                mg = (r_act - r_base) if use_gate else r_act
+                r_base = 0.9 * r_base + 0.1 * r_act
+                upd_weights(mv, mg)
+                # 偏置：同一信号，立即生效（§14.6 作用点二）
+                bias[OUT_IDX] = np.clip(
+                    bias[OUT_IDX] + ETA_BIAS * mv, BIAS_MIN, BIAS_MAX)
+
                 new_err = abs(goal - new_st)
                 if new_err > cur_err and first_far < 0:
                     first_far = k
@@ -360,8 +533,11 @@ def run_one(args):
         ep_react[ep] = float(reacted) / max(react_n, 1)
         ep_consistent[ep] = consistent_sum / max(consistent_n, 1)
         ep_io_ok[ep] = 1.0 if env.io_ok else 0.0
+        ep_out_fire[ep] = float(n_out_fire) / max(T_EP, 1)
 
-        # ---- 结构更新：**每个 episode 一次**（长期记忆只有次数，没有时间 —— §2.10）----
+        # ---- 拓扑更新：**每个 episode 一次**（长期记忆只有次数，没有时间 —— §2.10）----
+        # 注意：**权重不在这里更新**——它们已经每个动作后立即更新了（延迟 0）。
+        # 这里是「任务级」那一半（§5.4：任务成败 -> 策略/结构）。
         if ep > 0:
             admit = 1.0 if env.io_ok else 0.0
             moved = 1.0 if total_move > 0 else 0.0
@@ -376,34 +552,6 @@ def run_one(args):
                 m = steady_gate(ema_rate)
             m_acc += m
             m_cnt += 1
-
-            # ** m 必须按神经元分配，不能是标量**（§16.9 缺陷 3、§16.10 缺陷 3 同一个错）：
-            # 标量 m 让所有边同等更新 -> 学不到「该选哪个动作」。
-            # 这里把标量门控再用「该动作朝目标的比例」分配到底四个输出神经元上。
-            m_vec = np.zeros(N, np.float32)
-            for i in range(N_OUT):
-                if act_hist[i] > 0:
-                    m_vec[OUT_IDX[i]] = float(act_good[i] / act_hist[i])
-
-            if m > 0 and key.size:
-                el = trace[pre] * (trace[post] - theta[post])
-                if use_isolation:
-                    # 隔离：只写入「本 episode 活跃过」的两端（§9.2 / §2.4 第 2 条）
-                    mask = ep_active[pre] & (ep_active[post] | (post >= N_E))
-                    el = np.where(mask, el, 0.0)
-                # 接口边（突触后是输出神经元）用分配的 m；其余边用标量门控
-                ist_o = (post == OUT_IDX[0]) | (post == OUT_IDX[1]) | \
-                        (post == OUT_IDX[2]) | (post == OUT_IDX[3])
-                sel = np.where(ist_o, m_vec[post], m).astype(np.float32)
-                el = el * sel
-                emax = float(np.abs(el).max())
-                if emax > 1e-9:
-                    el = el / emax
-                    if do_plast_w:
-                        dw = (ETA_POT * el).astype(np.float32)
-                        cap = np.where(w > 0, W_MAX_E, W_MAX_I)
-                        w = w + dw * (cap - np.abs(w))
-                        np.clip(w, -W_MAX_I, W_MAX_E, out=w)
 
             if do_plast_topo:
                 act = np.nonzero(trace > ISOLATE_THRESH)[0]
@@ -480,6 +628,8 @@ def run_one(args):
         m_mean=float(m_acc / max(m_cnt, 1)),
         n_io=env.n_io,
         out_deg=int(deg_in[OUT_IDX].mean()),
+        out_bias=float(bias[OUT_IDX].mean()),
+        out_rate=float(np.mean(ep_out_fire)),
         elapsed=time.perf_counter() - t0)
 
 
@@ -495,22 +645,25 @@ def main():
         print('grow_agent  mode=%-12s  N=%d  预算=%d  episode=%d×%d步  种子=%d'
               % (mode, N, BUDGET, n_ep, T_EP, nseed))
         print('  环境 = 本机真实文件 %s\\<mode>_<seed>\\  动作 = %s  间隙 = %d 步'
-              % (ENV_ROOT, list(ACTIONS), T_GAP))
+              % (ENV_ROOT, [int(v) for v in ACTIONS], T_GAP))
+        if mode.startswith('discrete'):
+            print('  任务 = discrete：4 个固定（初态, 目标）对 %s -> 每个状态 %d 次重复'
+                  % (list(FIXED_CASES), n_ep // len(FIXED_CASES)))
         print('=' * 138)
         with Pool(nproc) as pool:
             t0 = time.perf_counter()
             res = pool.map(run_one, [(s, mode, n_ep) for s in range(nseed)])
             wall = time.perf_counter() - t0
 
-        print('%-5s %6s %7s %6s %7s %7s %8s %8s %8s %7s %6s %6s'
+        print('%-5s %6s %7s %6s %7s %7s %8s %8s %8s %7s %6s %6s %6s'
               % ('seed', 'E', 'rate%', 'n_inh', 'succ', 'prog', 'fixdelay',
-                 'basis', 'react', 'consist', 'm', 'odeg'))
+                 'basis', 'react', 'consist', 'm', 'odeg', 'bias'))
         for r in res:
-            print('%-5d %6d %7.2f %6d %7.1f%% %7.2f %8.1f %8.3f %8.3f %7.3f %6.3f %6d'
+            print('%-5d %6d %7.2f %6d %7.1f%% %7.2f %8.1f %8.3f %8.3f %7.3f %6.3f %6d %6.2f'
                   % (r['seed'], r['E'], r['rate'] * 100, r['n_inh'],
                      r['succ'] * 100, r['progress'], r['fixdelay'],
                      r['basis'], r['react'], r['consistent'], r['m_mean'],
-                     r['out_deg']))
+                     r['out_deg'], r['out_bias']))
 
         def agg(k):
             return float(np.mean([r[k] for r in res]))
@@ -525,9 +678,10 @@ def main():
         print('               progress %.2f（走过距离/最短需要，<1 = 没走够）' % agg('progress'))
         print('  四层反馈: 环境层（IO 成功 %.3f）  参照层（**未实现**）  '
               '内部层（一致 %.3f）  过程层 ↑' % (agg('io_ok'), agg('consistent')))
-        print('  m 均值 %.4f   IO 次数 %.0f   E %.0f±%.0f   耗时 %.1fs'
+        print('  m 均值 %.4f   IO 次数 %.0f   E %.0f±%.0f   输出放电占比 %.3f  偏置均值 %.2f   耗时 %.1fs'
               % (agg('m_mean'), agg('n_io'), agg('E'),
-                 float(np.std([r['E'] for r in res])), wall))
+                 float(np.std([r['E'] for r in res])), agg('out_rate'),
+                 agg('out_bias'), wall))
         print()
 
 
