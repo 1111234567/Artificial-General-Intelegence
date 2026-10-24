@@ -1836,3 +1836,96 @@ python test/baseline_linear.py 400 8 random,linear   # 基线三档
 python test/grow_agent.py 200 8 8 random,discrete,discrete_frozen
 ```
 
+
+
+### 16.17 统一框架（2026-10-24）——从 21 个脚本到一套声明
+
+**起因（用户）：** 「写一个统一的框架，这样才能真正统计做什么，不做什么，结果是什么。
+test 目录下现在全是你手写的一堆东西，没有任何结构」。
+
+这个判断被当天的事实完全支撑：同一场里我连续撞上 **三个「对照组自己错了」**：
+
+| # | 错 | 后果 |
+|---|---|---|
+| 1 | 任务不可完成（6 个动作 vs 差距 40，§16.16） | §16.13 / §16.15 的全部读数失去意义 |
+| 2 | `frozen` 名不副实（只关权重/拓扑，bias 还在学，§16.16） | 「不学更好」——结论完全反了 |
+| 3 | 没有 `random` 基线 | 「12.8%」读不出是「没学到」还是「比不动还差」 |
+
+三个都不在「机制」那一层，而在「实验怎么组织」那一层。
+
+#### 结构（`src/agi/`）
+
+| 文件 | 职责 |
+|---|---|
+| `config.py` | 声明：一个实验 = 一个 `Config`，**没有隐式默认**；`fingerprint()` 用作结果主键 |
+| `core.py` | 本体：LIF 稀疏网络（**唯一实现**） |
+| `env.py` | 环境：本机真实文件（`kind` 必填枚举） |
+| `signal.py` | `m` 的来源与形态（= 学习方式本身） |
+| `runner.py` | 跑一个配置 -> 一条结构化结果 |
+| `store.py` | 结果登记（JSONL） |
+| `experiments.py` | **唯一声明实验的地方**（15 个配置） |
+
+入口：`test/run.py`，七个命令：
+
+| 命令 | 回答什么 |
+|---|---|
+| `list` | 有哪些实验，每个开了什么（含指纹） |
+| `show <name>` | 展开一份配置的**全部开关** |
+| `check [name]` | **前置检查**（任务可行性等） |
+| `run <name> [nseed] [nproc]` | 跑并登记 |
+| `results` | 历史结果排序 |
+| `gaps` | **对照差集**：差哪个字段、哪些还没跑 |
+| `align` | **对齐验证**：同一配置重复运行的跨度 |
+
+#### 三个「不能再犯」对应的机制
+
+| 教训 | 机制 | 已验证 |
+|---|---|---|
+| 任务不可完成 | `TaskSpec.check_feasible()` + `run.py check` 硬拦 | ✅ 实跑拦下 2 个：`task_sampled`（差距 80 > 能走 48）、`readout_argmax`（动作数少于输出数）|
+| `frozen` 名不副实 | `Plasticity` **三层独立开关** + `gaps` 自动列差异字段 | ✅ |
+| 各实现一遍本体 | `core.py` 唯一实现；实验只能在 `experiments.py` 加 Config | ✅ |
+
+#### 已声明的 15 个实验
+
+| 组 | 配置 |
+|---|---|
+| 基准 | `base` |
+| 可塑性层 | `plast_none` / `plast_bias` / `plast_w` / `plast_topo` / `plast_w_bias` |
+| 信号源 | `sig_none` / `sig_random` / `sig_episode` / `sig_scalar` / `sig_norpe` / `sig_nogate` |
+| 隔离 | `no_isolate` |
+| 任务 | `task_sampled` |
+| 读数 | `readout_argmax` |
+
+#### ⚠️ 已知缺陷：行为尚未与旧脚本对齐
+
+| | 成功率 |
+|---|---|
+| 旧 `grow_agent`（discrete） | **36.2%** |
+| 框架 `base` | **6.9 ~ 8.0%** |
+
+差 5 倍，**差异未定位**。试过一次对齐（沉默时也更新权重），结果更差（5.0%），已回滚。
+
+**所以在对齐之前，框架不能用来自信复现任何历史结论。** 它当前的价值是：
+结构、前置检查、对照表、登记。
+
+下一步三件（已写进 `agi.md` 下一步）：
+1. 逐模块对齐（构造 / 前向 / m / 更新）
+2. 把旧脚本的配置全抄进 `experiments.py`，一条条复现
+3. 全部对上之后，旧脚本移入 `test/archived/`，只留 `run.py`
+
+#### 一条方法学结论
+
+> **没有框架时，我连「对照组错了」都发现不了**——因为对照组是手写在每个脚本里的，
+> 没有一处能横向比较它们。框架把「下了什么开关」从隐含变成显式，
+> 把「哪些组合跑过」从记忆变成可查。
+
+**可复现：**
+
+```bash
+python test/run.py list
+python test/run.py check
+python test/run.py run base 8 8
+python test/run.py gaps
+python test/run.py align
+```
+
