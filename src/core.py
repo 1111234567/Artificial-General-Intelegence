@@ -48,6 +48,8 @@ class Network:
         # 结构：过度生产 -> 硬预算修剪
         if spec.init_kind == "talk":
             pre, post, w, age = self._init_talk()
+        elif spec.init_kind == "teach":
+            pre, post, w, age = self._init_teach()
         elif spec.init_kind == "homeo":
             pre, post, w, age = self._init_homeo()
         else:
@@ -70,7 +72,7 @@ class Network:
         # 阈值：两种语义（见 NetSpec.theta_mode）
         #   trace_bcm  θ = trace 的慢平均（BCM 滑动阈值，量级 0.01~0.1）
         #   fire_adapt θ = 放电阈值本身（量级 1.0~3.0；grow_talk / grow_homeo）
-        if spec.theta_mode == "fire_adapt":
+        if spec.theta_mode in ("fire_adapt", "static"):
             self.theta = np.full(self.N, spec.v_th, np.float32)
         else:
             self.theta = np.zeros(self.N, np.float32)
@@ -198,6 +200,48 @@ class Network:
         age = np.full(pre.size, 100, np.int16)
         return pre, post, w, age
 
+    # ---- 结构初始化：teach 形态（逐行照搬 grow_teach._init_net）----
+    def _init_teach(self):
+        """grow_teach 的接口：输出神经元直连**输入区**（60 条，权重 0.05~0.35）。
+
+        与 talk/cond 的三处差别（都与它们相反）：
+          ① **不过滤** `post >= n_in`：随机边可以指向输入区
+          ② **不过滤** `~isin(post, out_idx)`：随机边可以指向输出（与接口边共存）
+          ③ 输出接的是输入区（不是提问区 + 内部），且**无输入扇出**
+
+        ⚠️ RNG 消耗顺序：integers ×2 -> choice ×n_out -> uniform(接口)。不能换。
+        """
+        sp = self._spec
+        N, N_E, N_IN = self.N, self.N_E, self.N_IN
+        out_idx = self.out_idx
+        rng = self.rng
+        pre = rng.integers(0, N, sp.e0_init).astype(np.int32)
+        post = rng.integers(0, N, sp.e0_init).astype(np.int32)
+        ok = pre != post
+        pre, post = pre[ok], post[ok]
+
+        for o in out_idx:
+            src = rng.choice(N_IN, sp.n_out_link, replace=False).astype(np.int32)
+            pre = np.concatenate([pre, src])
+            post = np.concatenate([post, np.full(src.size, int(o), np.int32)])
+
+        sp_, sq_ = [], []
+        for o in out_idx:
+            for p in out_idx:
+                if o != p:
+                    sp_.append(int(o)); sq_.append(int(p))
+        pre = np.concatenate([pre, np.array(sp_, np.int32)])
+        post = np.concatenate([post, np.array(sq_, np.int32)])
+
+        is_inh = pre >= N_E
+        w = np.where(is_inh, -sp.w_e * sp.w_i_ratio, sp.w_e).astype(np.float32)
+        nside = len(sp_)
+        n_tail = len(out_idx) * sp.n_out_link + nside
+        w[-n_tail:-nside] = rng.uniform(0.05, 0.35, len(out_idx) * sp.n_out_link).astype(np.float32)
+        w[-nside:] = -sp.side_inh
+        age = np.full(pre.size, 100, np.int16)
+        return pre, post, w, age
+
     # ---- 单步 ----
     def step(self, xin, apply_side_inh=True, add_bias=True):
         sp = self._spec
@@ -244,7 +288,9 @@ class Network:
         self.trace *= (self.trace_decay if self.trace_decay > 0
                        else float(np.exp(-1.0 / self.tau_trace)))
         self.trace += self.state
-        if sp.theta_mode == "fire_adapt":
+        if sp.theta_mode == "static":
+            pass          # θ 恒 = v_th，从不更新（grow_teach）
+        elif sp.theta_mode == "fire_adapt":
             # 放电后阈值上调、全体向 v_th 回落（grow_talk / grow_homeo 的形态）
             if fire.any():
                 self.theta[fire] = np.minimum(self.theta[fire] + sp.d_theta, sp.th_max)

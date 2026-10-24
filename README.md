@@ -4,9 +4,9 @@
 
 **状态：阶段 1/2（教）已跑通（25% → 75.0%，v2 脉冲形态）；工作记忆跨度只有 20 步（= τ）；阶段 2（巩固）尚未开始。** 设计推演已完成（七轮修正），模拟器成本已实测，动力学已标定（rate 1.99%）；结构自生长已跑通（rate **1.55% ± 0.44**）。
 
-**统一框架（`src/`）已建成并开始对齐（2026-10-24）**：50 个实验声明 + 七命令，
-**已移植 6 个旧脚本 / 73 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22）；
-剩 4 个脚本未移植——详见 `docs/experiments.md` §16.18–§16.21 与 `src/README.md` 的「移植覆盖度」。
+**统一框架（`src/`）已建成并开始对齐（2026-10-24）**：54 个实验声明 + 七命令，
+**已移植 7 个旧脚本 / 84 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11）；
+剩 3 个脚本未移植——详见 `docs/experiments.md` §16.18–§16.22 与 `src/README.md` 的「移植覆盖度」。
 
 **闭环三步（`grow_goal.py`，§16.13）：当时的阴性结论已不可信 —— 因为它建在一个不可完成的任务上。**
 真正的发现（§16.16）：① **任务在参数上不可完成**——6 个动作 × 1 步 = 6，而目标差距 30~40；
@@ -39,7 +39,7 @@
 | `src/README.md` | 框架：结构、七命令、三个「不能再犯」的机制、**移植覆盖度** |
 | `scripts/check_docs.py` | 文档结构校验：章节完整性 / 引用可解析 / 关键内容逐字存在 / 编码 |
 | `scripts/diff_volumes.py` | 把三卷重建回原文，与 `docs/archived/` 的草案逐行 diff（验证信息不丢） |
-| `scripts/align_layers.py` | **移植对齐工具**：construct / forward / run / seq / modes / contrib / verify / goal / world / talk / homeo / homeoprobe / cond |
+| `scripts/align_layers.py` | **移植对齐工具**：construct / forward / run / seq / modes / contrib / verify / goal / world / talk / homeo / homeoprobe / cond / teach |
 | `CHANGELOG.md` | 版本历程 |
 
 > 原设计草案 `docs/archived/design-memory-learning-2026-10-22.md` 已退役（2026-10-24 拆入三卷，内容逐行迁移）。
@@ -84,6 +84,7 @@ python scripts/align_layers.py talk 0 100 4   # grow_talk 4 项（19 项逐位�
 python scripts/align_layers.py homeo 0    # grow_homeo grow（6000 + 40000 步，hist 逐行）
 python scripts/align_layers.py homeoprobe 0 30000   # grow_homeo --probe（2 seeds，含相似度）
 python scripts/align_layers.py cond 0 400          # grow_cond（teach + punish，22 项）
+python scripts/align_layers.py teach 0 600         # grow_teach（4 modes，11 项）
 python scripts/align_layers.py contrib    # 单变量消融（从已对齐基准往下关）
 ```
 

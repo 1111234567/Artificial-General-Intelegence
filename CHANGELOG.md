@@ -2,6 +2,32 @@
 
 > 倒序，只追加。历史变更记录在这里；设计推演过程不进本文件。
 
+## 0.13.0 — 2026-10-24
+
+**移植 `grow_teach`（第 7 个脚本）：11 项 × 4 模式逐位一致；拓出旧实现两处死代码。**
+
+框架新增第 7 个流程 `flow="teach"`（阶段 1/2 v1：持续速率编码 + 末窗 argmax）：
+`NetSpec.init_kind="teach"` + `n_out_link`（输出直连**输入区** 60 条，权重 0.05~0.35；
+随机边**不过滤** post）——与 talk/cond 相反；
+`TaskSpec.trial_steps` + `read_win` + `in_hi`；`Plasticity.only_out_edges`（只更接口边）；
+`NetSpec.theta_mode="static"`（θ 恒 = v_th）。
+
+**拓出 ①：`grow_teach` 根本没有阈值适应**——`vth` 只在初始化时设一次、从不更新
+（`D_THETA`/`TAU_ADAPT`/`TH_MIN`/`TH_MAX` 四个常数定义了但没用）。
+我误按其它脚本加了 `fire_adapt`，rate 1.9%→1.5%、conf 全错。新增 `theta_mode="static"`。
+
+**拓出 ②：`bias` 是死变量**——前向用**常数** 0.05，`bias` 只更新不读、也不返回。
+所以 §16.16「bias 是学习的全部贡献」是 **grow_agent** 的结论（那里 bias 真的进前向），
+两个脚本名字相近但机制不同，不能串。
+
+对齐：construct 3/3（29747 条边）、run 8/8（600 trial × 4 模式 × 2 seed）。
+完整规模（框架内，10000 trial × 8 种子）完全复现 §16.9：
+  teach 25.8±2.7 -> 65.8±3.4 (+40.0) / rand_m 26.4->24.5 / no_teach 24.4->24.2 / frozen 25.3->26.2
+  rate 0.264% / conf 2.84 vs 3.05 / E 15000（frozen 29764）——每个数都对得上
+
+工具：align_layers.py teach
+文档：§16.22、agi.md（7/11）、README.md、src/README.md（七流程）、CHANGELOG 0.13.0
+
 ## 0.12.0 — 2026-10-24
 
 **移植 `grow_cond`（第 6 个脚本）：22 项 × 2 模式逐位一致；§16.14 两个结论全部复现。**

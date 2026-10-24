@@ -374,6 +374,54 @@ CO_FROZEN = Config(name="co_frozen", note="grow_cond frozen（三层可塑性全
                        trace_decay=0.95, topo_thresh=0.5, t_s=20)))
 
 
+# ---------------- 从旧 grow_teach 移植（2026-10-24）----------------
+# 阶段 1/2 v1：持续速率编码 + 固定 40 步 trial + 末窗 argmax 读出。
+# 与 talk / cond 的差异：
+#   ① 输入是**持续速率**（in_hi / in_lo），不是脉冲爆发
+#   ② 读出 = trial 末 read_win 步的**放电计数 argmax**（不是 first-spike）
+#   ③ **只更新接口边**（only_out_edges）；结构更新在 trial 末
+#   ④ 接口直连**输入区**（60 条，权重 0.05~0.35），且随机边**不过滤** post
+_TEACH_NET = NetSpec(
+    init_kind="teach", theta_mode="static",   # grow_teach 无阈值适应（vth 从不更新）
+    tau_adapt=100.0, d_theta=0.20, th_min=1.0, th_max=3.0,
+    theta_out_adapt=True, d_theta_out=0.02, t_ref_out=4,
+    side_inh=1.5, n_out_link=60,
+    block_input_edges=False, protect_out_edges=True,
+    p_global=4, t_global=25, max_active=48, min_age=25, p_new=0.004,
+    budget=15000, e0_init=30000,
+)
+_TEACH_PLAST = Plasticity(
+    weight=True, topology=True, bias=True,
+    eta_w=0.008, eta_bias=0.004, bias_min=-0.10, bias_max=0.40,
+    trace_decay=0.95, topo_thresh=0.5, t_s=20, only_out_edges=True,
+)
+_TEACH = dict(
+    flow="teach",
+    n_ep=10000,                    # trial 数（旧默认 6000，§16.9 用的是 10000）
+    net=_TEACH_NET,
+    task=TaskSpec(kind="none", trial_steps=40, read_win=20,
+                  in_hi=0.030, in_lo=0.001),
+    readout=ReadoutSpec(kind="argmax", n_out=4,
+                        out_idx=(500, 501, 502, 503),
+                        allow_noop=False),
+    plast=_TEACH_PLAST,
+    signal=SignalSpec(source="teacher_word", m_up=1.0, m_dn=-1.0),
+)
+_TEACH_OFF = Plasticity(
+    weight=False, topology=False, bias=False,
+    eta_w=0.008, eta_bias=0.004, bias_min=-0.10, bias_max=0.40,
+    trace_decay=0.95, topo_thresh=0.5, t_s=20, only_out_edges=True,
+)
+
+TE_TEACH = Config(name="te_teach", note="grow_teach teach（正常教师；基准）", **_TEACH)
+TE_RAND_M = Config(name="te_rand_m", note="grow_teach rand_m（m 随机 ±1）",
+                   **dict(_TEACH, signal=SignalSpec(source="random", m_up=1.0, m_dn=-1.0)))
+TE_NO_TEACH = Config(name="te_no_teach", note="grow_teach no_teach（m 恒 +1）",
+                     **dict(_TEACH, signal=SignalSpec(source="constant", m_up=1.0, m_dn=-1.0)))
+TE_FROZEN = Config(name="te_frozen", note="grow_teach frozen（三层可塑性全关）",
+                   **dict(_TEACH, plast=_TEACH_OFF))
+
+
 ALL = [
     BASE,
     PLAST_NONE, PLAST_BIAS, PLAST_W, PLAST_TOPO, PLAST_W_BIAS,
@@ -388,6 +436,7 @@ ALL = [
     TK_TEACH, TK_RAND_M, TK_NO_TEACH, TK_FROZEN,
     HO_GROW, HO_LONG, HO_WARM, HO_FROZEN,
     CO_TEACH, CO_PUNISH, CO_FROZEN,
+    TE_TEACH, TE_RAND_M, TE_NO_TEACH, TE_FROZEN,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

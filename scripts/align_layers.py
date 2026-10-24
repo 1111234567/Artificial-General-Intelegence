@@ -1203,6 +1203,72 @@ def layer_cond(seed=0, n_pres=400, nproc=None):
     return n_ok == len(args)
 
 
+def _teach_one(arg):
+    """层 14：grow_teach 移植对齐——10 个标量 + win 序列 + conf_right/conf_wrong。"""
+    seed, n_tr, mode = arg
+    import grow_teach as old_t
+    from src import runner as new_runner
+    from src import experiments
+
+    r_old = old_t.run_one((seed, mode, n_tr))
+    cfg = experiments.BY_NAME["te_" + mode].with_(seed=seed, n_ep=n_tr)
+    r_new = new_runner.run(cfg)
+
+    SCALARS = [("E", "E_final"), ("born", "born"), ("drop", "drop"),
+               ("rate", "rate"), ("n_inh", "n_inh"), ("deg_out", "out_deg"),
+               ("conf_right", "conf_right"), ("conf_wrong", "conf_wrong"),
+               ("acc_first", "acc_first"), ("acc_last", "acc_last")]
+
+    def eq(a, b):
+        try:
+            fa, fb = float(a), float(b)
+        except (TypeError, ValueError):
+            return a == b
+        if np.isnan(fa) and np.isnan(fb):
+            return True
+        return abs(fa - fb) <= 1e-9 * max(1.0, abs(fa), abs(fb))
+
+    bad = []
+    for ko, kn in SCALARS:
+        if not eq(r_old.get(ko), r_new.get(kn)):
+            bad.append((ko, r_old.get(ko), r_new.get(kn)))
+    a, b = r_old.get("win"), r_new.get("win")
+    if a is None or b is None or len(a) != len(b) or not all(eq(x, y) for x, y in zip(a, b)):
+        bad.append(("win", len(a) if a else None, len(b) if b else None))
+    return dict(seed=seed, mode=mode, bad=bad,
+                acc_o=r_old.get("acc_last", float("nan")),
+                acc_n=r_new.get("acc_last", float("nan")),
+                rate_o=r_old.get("rate", 0.0), rate_n=r_new.get("rate", 0.0))
+
+
+def layer_teach(seed=0, n_tr=600, nproc=None):
+    """层 14 / teach — grow_teach 的移植对齐。"""
+    modes = ["teach", "rand_m", "no_teach", "frozen"]
+    print("=" * 108)
+    print("层 14 / teach — grow_teach 移植验证（判据 = 10 标量 + win 序列逐位相同）")
+    print("  seed=%d  n_trials=%d" % (seed, n_tr))
+    print("=" * 108)
+    print("%-10s %9s %9s %9s %9s  %s" % (
+        "mode", "acc 旧", "acc 新", "rate 旧", "rate 新", "判定"))
+    print("-" * 108)
+    args = [(seed, n_tr, m) for m in modes]
+    rs = _pool_map(_teach_one, args, nproc)
+    n_ok = 0
+    for r in rs:
+        if not r["bad"]:
+            verdict = "OK（11/11）"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(r["bad"]), ", ".join(str(b[0]) for b in r["bad"][:3]))
+        print("%-10s %9.4f %9.4f %9.4f %9.4f  %s" % (
+            r["mode"], r["acc_o"], r["acc_n"], r["rate_o"], r["rate_n"], verdict))
+    print("-" * 108)
+    print("结论：%d/%d 个移植项逐位相同" % (n_ok, len(args)))
+    print("=" * 108)
+    return n_ok == len(args)
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "construct"
     nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -1267,6 +1333,11 @@ def main():
         n_pres = int(sys.argv[3]) if len(sys.argv) > 3 else 400
         nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
         ok = layer_cond(seed, n_pres, nproc)
+    elif cmd == "teach":
+        seed = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        n_tr = int(sys.argv[3]) if len(sys.argv) > 3 else 600
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        ok = layer_teach(seed, n_tr, nproc)
     else:
         print("未知层：%s（construct / forward / run / noop / seq / contrib / modes / verify / goal / world）" % cmd)
         ok = False

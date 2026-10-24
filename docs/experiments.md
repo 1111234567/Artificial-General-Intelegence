@@ -2422,3 +2422,81 @@ python scripts/align_layers.py cond 0 400      # 2 模式 × 22 项，约 60 s
 python scripts/align_layers.py cond 0 1200     # 原规模，约 4 min
 ```
 
+
+### 16.22 `grow_teach` 移植（2026-10-24）——7 个脚本 / 84 项；拓出旧实现两处死代码
+
+**起因：** 继续移植。§16.9 的 65.8% 刚验证站得住（8 种子逐位复现），但那是旧脚本；
+这一步把它搬进框架，顺便把「持续输入 + 末窗 argmax」这种形态也变成声明。
+
+#### 框架新增了什么（第 7 个 flow）
+
+| 能力 | 新字段 | 旧做法为什么接不上 |
+|---|---|---|
+| 输出接**输入区** | `NetSpec.init_kind="teach"` + `n_out_link=60` | talk/cond 接的是「提问区 + 内部随机」；teach 直连输入区，权重 0.05~0.35 |
+| 随机边**不过滤** | ——（`block_input_edges=False` 且无 `~isin(post, out)`） | talk/cond 都要求 `post >= n_in` 且不碰输出；teach **都不过滤** |
+| 固定 trial | `TaskSpec.trial_steps` + `read_win` | talk 是变长呈现；teach 是固定 40 步 + 末 20 步 argmax 计数 |
+| 持续速率编码 | `TaskSpec.in_hi`（+ `in_lo`） | talk/cond 是脉冲爆发 |
+| 只更新接口边 | `Plasticity.only_out_edges` | 内部边不动，否则背景强化会把接口边相对强度洗没 |
+| **无阈值适应** | `NetSpec.theta_mode="static"` | 见下 |
+
+#### 拓出 ①：`grow_teach` 根本没有阈值适应
+
+```python
+vth = np.full(N, V_TH, np.float32)   # 初始化一次
+vth[OUT_IDX] = V_TH_OUT
+...
+fire = (v > vth) & (ref <= 0)        # 循环里只用不更新
+```
+
+`D_THETA` / `TAU_ADAPT` / `TH_MIN` / `TH_MAX` 四个常数定义了但**从头到尾没被用过**。
+
+我是按其它脚本的形态误以为它有阈值适应，加了 `fire_adapt` —— 结果 `rate` 从 1.9% 降到 1.5%、`conf` 全错。
+**发现方式：** 手写一个逐步复刻与框架同步对比，发现必须把 θ 固定才能对上。
+（注意：第一次复刻我漏了 `masks[c]` 与 `u[t]` 的滚动，绕了两轮——**复刻脚本本身也要验证**。）
+
+新增 `theta_mode="static"`：θ 恒 = `v_th`，从不更新。
+
+#### 拓出 ②：`bias` 是死变量
+
+```python
+xin[OUT_IDX] += BIAS_OUT                       # 前向用**常数** 0.05
+...
+bias[OUT_IDX] = np.clip(bias[OUT_IDX] + ETA_BIAS * m_out, ...)   # 只更新，从不读
+return dict(...)                                # 而且不返回
+```
+
+所以 `grow_teach` 的「偏置可学」实际上是**完全无效的更新**——它既不影响前向，也不进结果。
+
+**这一条要说清一件事：** §16.16 的「bias 是学习的全部贡献（+36.1 pp）」是 **`grow_agent`** 的结论，
+那里 bias **真的进前向**（`v = ... + bias`）。两个脚本名字相近但机制不同，不能串。
+
+#### 对齐结果
+
+| 层 | 范围 | 结果 |
+|---|---|---|
+| construct | 初始结构（29747 条边）+ RNG 尾状态 | **3/3** |
+| run | 600 trial × 4 模式 × 2 seed，10 标量 + `win` 序列 | **8/8** |
+
+工具：`python scripts/align_layers.py teach <seed> <n_trials>`。
+
+#### 完整规模复现（框架内，10000 trial × 8 种子）
+
+| 组 | §16.9 记录 | 框架重测 |
+|---|---|---|
+| **teach** | 25.8% → **65.8%** | 25.8±2.7 → **65.8±3.4**（+40.0 pp）|
+| rand_m | 26.4% → 24.5% | 26.4±2.0 → 24.5±2.1 |
+| no_teach | 24.4% → 24.2% | 24.4±2.4 → 24.2±2.0 |
+| frozen | 25.3% → 26.2% | 25.3±3.0 → 26.2±2.0 |
+
+逐种子 `66.0 62.0 66.8 63.5 64.8 62.7 73.5 67.3`，`rate` 0.264%、`conf` 2.84/3.05、
+`E` 15000（frozen 29764）——与 §16.9 的每一个数都对得上。
+
+**所以 65.8% 现在有两份证据：旧脚本（§16.9 复核块）+ 框架（本节），且逐位一致。**
+
+**可复现：**
+
+```bash
+python scripts/align_layers.py teach 0 600       # 4 模式 × 11 项，约 40 s
+python test/run.py run te_teach 8                 # 8 种子 × 10000 trial（默认配置）
+```
+

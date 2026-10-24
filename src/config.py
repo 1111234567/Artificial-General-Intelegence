@@ -48,7 +48,9 @@ class NetSpec:
     init_kind: str = "random"       # random（三个旧流程）/ talk（输入区→扇出→内部 + 输出接口 + 侧抑制边）
     side_inh_edges: bool = False    # True = 侧抑制由**显式边**实现（step 不再内联；grow_talk）
     # ---- 阈值形态 ----
-    theta_mode: str = "trace_bcm"   # trace_bcm（θ = trace 慢平均，BCM）/ fire_adapt（θ = 放电阈值）
+    # trace_bcm（θ = trace 慢平均，BCM）/ fire_adapt（θ = 放电阈值，放电后上调）
+    # static（θ 恒 = v_th，**从不更新**——grow_teach 的形态：D_THETA 等常数定义了但没用）
+    theta_mode: str = "trace_bcm"
     tau_adapt: float = 100.0        # fire_adapt：阈值回落时间常数
     d_theta: float = 0.2            # fire_adapt：每次放电阈值上调幅度
     th_min: float = 1.0             # fire_adapt：阈值下界（回落目标）
@@ -63,6 +65,7 @@ class NetSpec:
     blk: int = 25                   # 每个词占多少输入神经元
     n_out_int: int = 40             # 每个输出从内部网络接多少条
     n_in_fanout: int = 50           # 每个输入区神经元连多少个下游
+    n_out_link: int = 60            # teach：每个输出神经元直连多少个**输入区**神经元（0.05~0.35）
     # 接口权重偏移：旧实现算 `nfan = n_in * n_in_fanout`，而扇出实际插了
     # `(n_in+n_q) * n_in_fanout` 条 → 少算 n_q*n_in_fanout 条，`uniform(0.15~0.60)`
     # 整体后移、从未落到接口边上（实测接口权重全为 w_e=0.5）。
@@ -188,6 +191,12 @@ class TaskSpec:
     d_max: int = 520             # 最长（= 保持 500 步）
     answer_win: int = 150        # 回答窗（从提问开始算）
 
+    # ---- teach 流程（grow_teach）：固定长度 trial + 持续速率编码 + 末窗 argmax ----
+    trial_steps: int = 40        # 一个 trial 的步数（> t_ref，让不应期不主导）
+    read_win: int = 20           # 读出窗口（trial 最后 N 步做 argmax 计数）
+    in_hi: float = 0.030         # 目标类对应的输入区放电率
+    # 注：in_lo 复用上面的 0.001（非目标区）
+
     def check_feasible(self, steps_per_action: int) -> Tuple[bool, str]:
         """**前置检查**：最多能走多远 vs 目标差距。
 
@@ -239,6 +248,9 @@ class Plasticity:
     # ---- 结构可塑性的形态（2026-10-24：homeo 需要另一套）----
     #   budget : 强化 + 随机新建 + 超预算按权重淘汰（agent / goal / world / talk）
     #   homeo  : **按每个神经元的放电率偏差双向调 E-E 入边数**（grow_homeo / PLOS CB 2022）
+    # True = 只更新「突触后是输出神经元」的边（grow_teach：内部边不动，
+    #        否则背景强化会把接口边的相对强度汴没——旧实现实测输出边被优先淘汰）
+    only_out_edges: bool = False
     struct_kind: str = "budget"
     r_target: float = 0.008     # homeo：目标放电率（0.8%）
     tol: float = 0.20           # homeo：±20% 内不动
@@ -390,6 +402,20 @@ class Config:
             if self.readout.n_out * self.net.blk > self.net.n_in:
                 errs.append("n_out(%d) × blk(%d) 超过输入区 n_in(%d)" % (
                     self.readout.n_out, self.net.blk, self.net.n_in))
+            return errs
+        if self.flow == "teach":
+            if self.readout.kind != "argmax":
+                errs.append("teach 流程要求 readout.kind == argmax，实际 %s" % self.readout.kind)
+            if self.signal.source not in ("teacher_word", "random", "constant", "none"):
+                errs.append("teach 流程要求 signal.source ∈ {teacher_word, random, constant, none}，实际 %s"
+                            % self.signal.source)
+            if self.task.read_win <= 0 or self.task.read_win > self.task.trial_steps:
+                errs.append("read_win(%d) 必须在 1..trial_steps(%d)" % (
+                    self.task.read_win, self.task.trial_steps))
+            if self.task.in_hi <= 0:
+                errs.append("in_hi 必须 > 0")
+            if self.readout.n_out * (self.net.n_in // self.readout.n_out) > self.net.n_in:
+                errs.append("n_out(%d) 超过输入区块数" % self.readout.n_out)
             return errs
         if self.flow == "cond":
             if self.readout.kind != "first_spike":

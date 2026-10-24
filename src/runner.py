@@ -7,7 +7,7 @@
 import time
 import numpy as np
 
-from .core import Network
+from .core import Network, find_edges
 from .env import make_env
 from .signal import Signal, steady_gate
 
@@ -480,6 +480,184 @@ def _run_goal(cfg):
         'a_switch': float(a_switch / max(a_switch_n, 1)),
         'r2_val': r2s, 'r2_sign': r2,
         'io_ok': True, 'n_io': 0,
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+
+
+def _run_teach(cfg):
+    """移植自 grow_teach.py：阶段 1/2 v1（持续速率编码 + 末窗 argmax + 只更接口边）。
+
+    与 talk / cond 的差异（全部在 Config 里显式）：
+      - trial 固定长度（`task.trial_steps`），每 trial **清空 trace**
+      - 输入是**持续速率编码**（`in_hi` / `in_lo`），不是脉冲爆发
+      - 读出 = trial 最后 `read_win` 步的**放电计数 argmax**（不是 first-spike）
+      - 只更新「突触后是输出神经元」的边（`plast.only_out_edges`）；m_glob 不参与权重
+      - 结构更新在 **trial 末**（不是每 20 步），且随机新建无活跃区限制
+
+    ⚠️ RNG 顺序：`_init_net` -> `u = rng.random((trial, n_in))`（一次性）-> 逐步
+    `u[t] = rng.random(n_in)` 滚动替换。不能换顺序。
+    """
+    t0 = time.perf_counter()
+    rng = np.random.default_rng(cfg.seed)
+    out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+    net = Network(cfg.net, rng, out_idx)
+    net.tau_trace = cfg.plast.tau_trace
+    net.trace_decay = cfg.plast.trace_decay
+    net.tau_theta = cfg.plast.tau_theta
+
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    N_WORD = cfg.readout.n_out
+    N_OUT = N_WORD
+    TRIAL = cfg.task.trial_steps
+    READ_WIN = cfg.task.read_win
+    IN_HI = cfg.task.in_hi
+    IN_LO = cfg.task.in_lo
+    ETA_W = cfg.plast.eta_w
+    ETA_BIAS = cfg.plast.eta_bias
+    BIAS_MIN = cfg.plast.bias_min
+    BIAS_MAX = cfg.plast.bias_max
+    W_MAX_E = cfg.net.w_max_e
+    M_UP = cfg.signal.m_up
+    M_DN = cfg.signal.m_dn
+    mode = cfg.signal.source
+    n_trials = cfg.n_ep
+    use_plast = bool(cfg.plast.weight or cfg.plast.topology)
+    use_bias = bool(cfg.plast.bias)
+
+    # 输入掩码：4 个词各占 25 个输入神经元
+    n_blk = N_IN // N_WORD
+    masks = np.zeros((N_WORD, N_IN), np.float32)
+    for c in range(N_WORD):
+        masks[c, c * n_blk:(c + 1) * n_blk] = IN_HI
+    masks[masks == 0] = IN_LO
+
+    bias = np.zeros(N, np.float32)
+    bias[out_idx] = 0.05
+    ist_out = np.isin(net.post, out_idx)
+    xin = np.zeros(N, np.float32)
+    born = drop = 0
+    conf_right, conf_wrong = [], []
+    win = []
+    n_corr = n_tot = 0
+    n_upd_w = n_upd_b = n_upd_top = 0
+
+    u = rng.random((TRIAL, N_IN), dtype=np.float32)
+
+    for it in range(n_trials):
+        c = int(rng.integers(0, N_WORD))
+        net.trace[:] = 0.0          # 每 trial 清空迹（旧实现的局部变量语义）
+        cnt = np.zeros(N_OUT, np.int64)
+        for t in range(TRIAL):
+            xin.fill(0.0)
+            xin[0:N_IN] = u[t] < masks[c]
+            xin[out_idx] += 0.05     # BIAS_OUT：先诱导说
+            net.step(xin, False, add_bias=False)
+            s = net.state
+            if t >= TRIAL - READ_WIN:
+                cnt += s[out_idx].astype(np.int64)
+            u[t] = rng.random(N_IN, dtype=np.float32)
+
+        word = int(np.argmax(cnt))
+        corr = (word == c)
+        n_tot += 1
+        if corr:
+            n_corr += 1
+        strength = float(cnt.sum())
+        (conf_right if corr else conf_wrong).append(strength)
+
+        # 教师信号：按神经元分配的误差方向（只学错的地方）
+        if mode == "random":
+            m_out = np.where(rng.random(N_OUT) < 0.5, M_UP, M_DN)
+        elif mode == "constant":
+            m_out = np.ones(N_OUT, np.float32) * M_UP
+        else:
+            tgt = np.zeros(N_OUT, np.float32)
+            tgt[c] = 1.0
+            got = (cnt > 0).astype(np.float32)
+            m_out = np.where(tgt > got, M_UP, np.where(got > tgt, M_DN, 0.0))
+
+        if use_plast and net.key.size:
+            gate = steady_gate(net.ema_rate)
+            el = net.trace[net.pre] * net.trace[net.post]
+            mp = np.zeros(N, np.float32)
+            mp[out_idx] = m_out.astype(np.float32)
+            sel = mp[net.post.astype(np.int64)]
+            if not cfg.plast.only_out_edges and np.any(m_out):
+                # 非 only_out_edges：把全局 0 填给内部边（旧实现不做，保留开关）
+                sel = np.where(ist_out, sel, np.float32(0.0)).astype(np.float32)
+            nz = sel != 0
+            if nz.any() and el[nz].max() > 1e-9:
+                el_n = el[nz] / float(el[nz].max())
+                dw = ETA_W * gate * el_n * sel[nz]
+                sl = np.nonzero(nz)[0]
+                pos = net.w[sl] > 0
+                net.w[sl] = np.where(
+                    pos,
+                    np.minimum(net.w[sl] + dw * (W_MAX_E - net.w[sl]), W_MAX_E),
+                    net.w[sl])
+                net.w[sl] = np.maximum(net.w[sl], 0.0)
+            n_upd_w += 1
+
+            if use_bias:
+                nb_ = bias[out_idx] + ETA_BIAS * m_out.astype(np.float32)
+                bias[out_idx] = np.clip(nb_, BIAS_MIN, BIAS_MAX)
+                n_upd_b += 1
+
+            # 结构更新（每 trial 一次）
+            if cfg.plast.topology:
+                act = np.nonzero(net.trace > cfg.plast.topo_thresh)[0]
+                if act.size > cfg.net.max_active:
+                    act = rng.choice(act, cfg.net.max_active, replace=False)
+                if act.size >= 2:
+                    na = act.size
+                    q_pre = np.repeat(act, na)
+                    q_post = np.tile(act, na)
+                    okk = q_pre != q_post
+                    q_pre, q_post = q_pre[okk], q_post[okk]
+                    qk = q_post.astype(np.int64) * N + q_pre
+                    found, _ = find_edges(net.key, qk)
+                    npw, nqw = q_pre[~found], q_post[~found]
+                    if npw.size:
+                        pick = rng.random(npw.size) < cfg.net.p_new
+                        if pick.any():
+                            npw, nqw = npw[pick], nqw[pick]
+                            nw = np.where(npw < N_E, cfg.net.w_new_e,
+                                          -cfg.net.w_new_e * cfg.net.w_i_ratio).astype(np.float32)
+                            net._grow(npw.astype(np.int32), nqw.astype(np.int32), nw)
+                            born += int(npw.size)
+                if cfg.net.p_global > 0 and it % cfg.net.t_global == 0:
+                    born += net.grow_global(cfg.net.p_global)
+                drop += net.prune(cfg.net.budget, cfg.net.min_age)
+                ist_out = np.isin(net.post, out_idx)
+                n_upd_top += 1
+
+        if (it + 1) % 200 == 0:
+            win.append(n_corr / max(n_tot, 1))
+            n_corr = n_tot = 0
+
+    deg_in = net.in_degree()
+    cr = float(np.mean(conf_right)) if conf_right else 0.0
+    cw = float(np.mean(conf_wrong)) if conf_wrong else 0.0
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': n_trials, 'steps': n_trials * TRIAL,
+        'succ': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'succ_first': float(np.mean(win[:2])) if len(win) >= 2 else float('nan'),
+        'succ_last': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'progress': float('nan'), 'basis': float('nan'), 'dist_end': float('nan'),
+        'out_fire': 0.0, 'fixdelay': None, 'react': None,
+        'E_final': int(net.key.size), 'born': int(born), 'drop': int(drop),
+        'n_inh': int((net.pre >= N_E).sum()),
+        'rate': float(net.ema_rate),
+        'out_deg': int(deg_in[out_idx].mean()),
+        'out_bias': tuple(round(float(x), 4) for x in bias[out_idx]),
+        'n_upd_w': int(n_upd_w), 'n_upd_b': int(n_upd_b), 'n_upd_top': int(n_upd_top),
+        'io_ok': True, 'n_io': 0,
+        'win': win, 'conf_right': cr, 'conf_wrong': cw,
+        'acc_first': float(np.mean(win[:2])) if len(win) >= 2 else float('nan'),
+        'acc_last': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
         'elapsed': round(time.perf_counter() - t0, 2),
     }
 
@@ -1234,6 +1412,8 @@ def run(cfg):
         return _run_homeo(cfg)
     if cfg.flow == 'cond':
         return _run_cond(cfg)
+    if cfg.flow == 'teach':
+        return _run_teach(cfg)
     if cfg.flow == 'talk':
         return _run_talk(cfg)
     if cfg.flow == 'world':
