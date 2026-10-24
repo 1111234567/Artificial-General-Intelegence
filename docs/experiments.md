@@ -1854,7 +1854,7 @@ test 目录下现在全是你手写的一堆东西，没有任何结构」。
 
 三个都不在「机制」那一层，而在「实验怎么组织」那一层。
 
-#### 结构（`src/agi/`）
+#### 结构（`src/`）
 
 | 文件 | 职责 |
 |---|---|
@@ -1864,7 +1864,7 @@ test 目录下现在全是你手写的一堆东西，没有任何结构」。
 | `signal.py` | `m` 的来源与形态（= 学习方式本身） |
 | `runner.py` | 跑一个配置 -> 一条结构化结果 |
 | `store.py` | 结果登记（JSONL） |
-| `experiments.py` | **唯一声明实验的地方**（15 个配置） |
+| `experiments.py` | **唯一声明实验的地方**（建立时 15 个；后扩展到 35） |
 
 入口：`test/run.py`，七个命令：
 
@@ -1886,7 +1886,7 @@ test 目录下现在全是你手写的一堆东西，没有任何结构」。
 | `frozen` 名不副实 | `Plasticity` **三层独立开关** + `gaps` 自动列差异字段 | ✅ |
 | 各实现一遍本体 | `core.py` 唯一实现；实验只能在 `experiments.py` 加 Config | ✅ |
 
-#### 已声明的 15 个实验
+#### 已声明的 15 个实验（建立时；后扩展到 35）
 
 | 组 | 配置 |
 |---|---|
@@ -2067,3 +2067,85 @@ python scripts/align_layers.py goal        # grow_goal 6 项
 python scripts/align_layers.py world       # grow_world 5 项
 python scripts/align_layers.py contrib     # 单变量消融
 ```
+
+### 16.19 `grow_talk` 移植（2026-10-24）——4 modes / 3 seeds 逐位一致；同时拓出两处口径问题
+
+**起因：** 继续移植（`../agi.md` 下一步第 1 项）。`grow_talk` 是已移植的三个脚本里缺失机制最多的一个：
+事件呈现（脉冲爆发 + 连续轴）+ 阈值适应 + m 衰减，三项框架都没有。
+
+#### 框架新增了什么（第 4 个 flow）
+
+| 能力 | 新字段 | 为什么旧做法接不上 |
+|---|---|---|
+| 结构初始化 | `NetSpec.init_kind="talk"` | 旧接口是「输出只接提问区 + 内部随机」（**不接词块**），并带输入扇出与侧抑制边；随机结构表达不了 |
+| 侧抑制 | `NetSpec.side_inh_edges=True` | 旧实现是**显式边**（−0.5×12 条），不是步内的内联项 |
+| 阈值语义 | `NetSpec.theta_mode="fire_adapt"` | 旧 θ 是**放电阈值**（1.0~3.0，放电后 +0.2、τ=100 回落）；框架原来那套是 trace 慢平均（BCM，量级 0.01~0.1）。两个不同量 |
+| 加 bias 的位置 | `step(..., add_bias=False)` | 旧实现把 bias 先加进 `xin`；float32 下加法顺序不同会差位 |
+| 时间轴 | `TaskSpec.t_present / burst / nburst / delay / qburst / answer_from / t_max` | 三段式（编码脉冲 → 保持 → 提问 → 回答），不是 episode |
+| 教师信号 | `SignalSpec.source="teacher_word"` + `tau_m / k_update / m_up / m_dn / warmup / bl_tau` | 按神经元分配的 `(tgt − got)` 方向；m 按 τ=100 衰减、每 5 步写一次 |
+| 对照 | `source="constant"`（m 恒 +1）/ `"random"` | 旧脚本的 `no_teach` / `rand_m` |
+
+流程落在 `runner._run_talk`（第 4 个分支）。三个旧流程（agent / goal / world）一行未动，回归 20/20 仍全过。
+
+#### 对齐结果
+
+| 层 | 范围 | 结果 |
+|---|---|---|
+| construct | 同 seed 的 `pre / post / w / age / key` + **RNG 尾状态** | **3/3 逐位相同** |
+| run | 4 modes（teach / rand_m / no_teach / frozen）× 3 seeds × **25 个字段**（10 标量 + 9 序列） | **全部逐个相同** |
+| 规模 | `n_present` = 50 / 100 / 200 / 800 | 均相同 |
+| 回答窗 | `answer_from` = 20 / 50 / 150（各自 `win` 序列） | 均相同 |
+
+`forward` 层**没做**：`grow_talk` 的网络步进内联在 `run_one` 的循环体里（不是独立函数），
+无法像 `grow_agent.net_step` 那样从源码切片抽取。用 run 层的小规模（n=50，跨过 `warmup=3000`）替代，
+它已经覆盖了前向 + 阈值适应 + 可塑性 + 结构更新四条路径。
+
+工具：`python scripts/align_layers.py talk <seed> <n_present> <nproc>`。
+
+#### 两处口径发现（都不是移植缺陷，但会影响引用）
+
+**① 接口权重的偏移：`uniform(0.15~0.60)` 从未落到接口边上。**
+
+旧实现先算 `n_rand = pre.size − nlink − nfan − nside`，但 `nfan` 用的是 `N_IN * N_IN_FANOUT`（= 5000），
+而扇出实际插入的是 `(N_IN + N_Q) * N_IN_FANOUT`（= 5500）——**少算 500 条**，
+所以 `w[n_rand : n_rand+nlink]` 整体后移 500 条，落进了扇出段内部。
+
+实测（seed 0）：接口边 **197 条**（应为 200，3 条在排序去重时被同 key 合并），
+`face_w: min = max = mean = 0.5000`——**全部是 `w_e`，不是 uniform**。而扇出段中段的 500 条被随机化了。
+
+**框架照搬了这个偏移**（否则 construct 层过不去），`maxdiff = 0` 验证了这一点。
+要不要修是另一个决定：修了就不再逐位一致，§16.10 的那个 75% 需要重跑。**待拍板。**
+
+**② `--delay` 只改「何时允许回答」，不改「何时提问」。**
+
+`DELAY = 120` 是模块常数（提问脉冲时刻），`--delay=` 只设 `ANSWER_FROM`。所以：
+
+| `answer_from` | 回答窗 | 抢答窗（`burst .. answer_from`） | seed 0 实测（800 呈现） |
+|---|---|---|---|
+| 20 | 20~200 | **空** | acc **0.50**、early 0 |
+| 50 | 50~200 | 30 步 | acc 0、early **1.00**（全抢答） |
+| 150 | 150~200 | 130 步 | acc 0、early **1.00** |
+
+含义：§16.10 的「75%」出自 `answer_from=20`——那时回答窗紧接刺激末尾（保持期 0 步），
+**不需要跨保持期**；而「跨度 = τ」那组（50 / 100 / 150）在单 seed 下表现为**全抢答**（不是「答错」），
+所以「25%」是 8 种子的均值口径。两件事要分开引用：
+
+- **「学到了」**（`answer_from=20`）——成立。
+- **「跨度只有 τ」**（`answer_from ≥ 50`）——成立，但表现形式是「抢答」，不是「答错」。
+
+这与 §16.14 的发现同源（抢答浪费一半呈现），但 §16.14 是 `grow_cond` 的另一份实现。
+
+#### 一个工程事实：并行度 = 任务数
+
+首轮验证是串行写的（单进程，旧/新实现又在进程内串行），`n_present=800` × 6 个组合耗了 20 分钟以上，
+8 核只占 1 核。改成 `Pool.map` 一次提交全部 6 个任务后，同样的工作量 **246.8 s**。
+**同一个错已在 2026-10-24 场次六犯过一次**（§16.18），本次是第二次。
+
+**可复现：**
+
+```bash
+python scripts/align_layers.py talk 0 100 4      # 4 modes × 1 seed，约 30 s
+python scripts/align_layers.py talk 0 800 4      # 跨过完整学习曲线，约 4 min
+python scripts/align_layers.py talk 1 100 4      # 换 seed
+```
+

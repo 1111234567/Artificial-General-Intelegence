@@ -44,6 +44,21 @@ class NetSpec:
     protect_out_edges: bool = True   # 淘汰时是否保护接口边（grow_agent 要 / grow_world 不要）
     p_global: int = 0                # 每 t_global 步加的全局随机边数（grow_world=4）
     t_global: int = 2000
+    # ---- 结构初始化形态（grow_talk 需要一套专门的接口）----
+    init_kind: str = "random"       # random（三个旧流程）/ talk（输入区→扇出→内部 + 输出接口 + 侧抑制边）
+    side_inh_edges: bool = False    # True = 侧抑制由**显式边**实现（step 不再内联；grow_talk）
+    # ---- 阈值形态 ----
+    theta_mode: str = "trace_bcm"   # trace_bcm（θ = trace 慢平均，BCM）/ fire_adapt（θ = 放电阈值）
+    tau_adapt: float = 100.0        # fire_adapt：阈值回落时间常数
+    d_theta: float = 0.2            # fire_adapt：每次放电阈值上调幅度
+    th_min: float = 1.0             # fire_adapt：阈值下界（回落目标）
+    th_max: float = 3.0             # fire_adapt：阈值上界
+    d_theta_out: float = 0.02       # fire_adapt：输出神经元的适应幅度（读出不该被锁死）
+    # ---- talk 接口参数（init_kind="talk" 时生效）----
+    n_q: int = 10                   # 提问区神经元数（紧跟输入区的 N_IN..N_IN+n_q-1）
+    blk: int = 25                   # 每个词占多少输入神经元
+    n_out_int: int = 40             # 每个输出从内部网络接多少条
+    n_in_fanout: int = 50           # 每个输入区神经元连多少个下游
 
 
 # ---------------------------------------------------------------- 环境
@@ -100,6 +115,18 @@ class TaskSpec:
     goal_mode: str = "random"       # random / fixed / two_phase（两阶段任务，grow_goal 的 T_*）
     fixed_goal: Tuple[float, float] = (0.5, -0.5)
     phase: str = "seq"              # two_phase：seq（先 A 后 B）/ fresh（直接 B）
+
+    # ---- talk 流程（grow_talk）：三段式时间轴（编码 → 保持 → 提问/回答）----
+    t_present: int = 500        # 一次呈现的总长（必须 > t_max）
+    burst: int = 20             # 内容脉冲窗长
+    nburst: int = 2             # 内容窗内几次同步爆发
+    delay: int = 120           # 提问时刻（保持期 = delay - burst）
+    qburst: int = 10            # 提问脉冲窗长
+    answer_from: int = 120      # 从这里开始可以回答
+    t_max: int = 200            # 回答截止（过 = 沉默）
+    cool: int = 30              # 说完后的冷却
+    in_spike: float = 3.0       # 输入脉冲幅度（必须 > v_th，见 §16.10 缺陷 3）
+    in_lo: float = 0.001        # 背景噪声率
 
     def check_feasible(self, steps_per_action: int) -> Tuple[bool, str]:
         """**前置检查**：最多能走多远 vs 目标差距。
@@ -185,6 +212,13 @@ class SignalSpec:
     # agency 源（grow_world 形态）：m = 稳态门 × (base + (1-base)×动作方差代理)
     agency_scale: float = 0.2
     base: float = 0.2
+    # ---- teacher_word 源（grow_talk 形态）：按神经元分配的 (tgt - got) 方向 ----
+    tau_m: float = 100.0        # m 的衰减（= 巩固窗口，不是 trial 边界）
+    k_update: int = 5           # 每 K 步写一次（不是每 trial）
+    m_up: float = 1.0           # 正信号幅度
+    m_dn: float = -0.5          # 负信号幅度（不对称：削弱只有一半，防早期死亡螺旋）
+    warmup: int = 3000          # 前 N 步不开可塑性（让 RPE 基线先收敛）
+    bl_tau: float = 40.0        # RPE 基线的时间常数
 
 
 # ---------------------------------------------------------------- 读数
@@ -262,6 +296,20 @@ class Config:
     def validate(self) -> list:
         """硬检查。任何一条不过就不该跑。"""
         errs = []
+        if self.flow == "talk":
+            if self.readout.kind != "first_spike":
+                errs.append("talk 流程要求 readout.kind == first_spike，实际 %s" % self.readout.kind)
+            if self.signal.source not in ("teacher_word", "random", "constant", "none"):
+                errs.append("talk 流程要求 signal.source ∈ {teacher_word, random, constant, none}，实际 %s"
+                            % self.signal.source)
+            if self.task.t_max >= self.task.t_present:
+                errs.append("t_max(%d) 必须 < t_present(%d)" % (self.task.t_max, self.task.t_present))
+            if self.task.answer_from < self.task.burst:
+                errs.append("answer_from(%d) 必须 >= burst(%d)" % (self.task.answer_from, self.task.burst))
+            if self.readout.n_out * self.net.blk > self.net.n_in:
+                errs.append("n_out(%d) × blk(%d) 超过输入区 n_in(%d)" % (
+                    self.readout.n_out, self.net.blk, self.net.n_in))
+            return errs
         if self.flow == "world":
             # 单条时间轴，无任务、无成败 -> 没有「可达性」判据
             if self.signal.source not in ("agency", "noise"):

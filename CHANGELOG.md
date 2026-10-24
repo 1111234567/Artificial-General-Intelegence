@@ -2,6 +2,39 @@
 
 > 倒序，只追加。历史变更记录在这里；设计推演过程不进本文件。
 
+## 0.10.0 — 2026-10-24
+
+**移植 `grow_talk`（第 4 个脚本）：4 modes × 3 seeds × 19 项，全部逐位一致。**
+
+框架新增第 4 个流程 `flow="talk"`（三段式时间轴 + 事件发射 + 教师 m）：
+`NetSpec.init_kind="talk"` / `side_inh_edges` / `theta_mode="fire_adapt"`、
+`TaskSpec` 的 talk 时间轴字段、`SignalSpec.source="teacher_word"|"constant"`、
+`step(..., add_bias=False)`。三个旧流程一行未动，回归 20/20 仍全过。
+
+两处口径发现（详见 `docs/experiments.md` §16.19，均待拍板）：
+① 接口权重的 `uniform(0.15~0.60)` 因 `nfan` 少算 500 条而从未落到接口边上（实测全为 `w_e=0.5`）；
+② `--delay` 只改回答窗起点、不改提问时刻，所以 §16.10 的 75% 出自 `answer_from=20`（回答窗紧接刺激末尾）。
+
+工具：`python scripts/align_layers.py talk <seed> <n_present> <nproc>`。
+文档：`agi.md` 现状/下一步、`README.md`、`src/README.md`（四流程 + 覆盖度）、§16.19。
+
+## 0.9.1 — 2026-10-24
+
+**包根从 `src/agi/` 改为 `src/`**（`src/` 自身即包；`src/__init__.py` 用相对导入）。
+
+起因：`src/agi/` 下的 8 个文件被移到 `src/`（纯移动，blob 逐字节相同），但消费方仍按包名 `agi` 导入
+→ `test/run.py` / `scripts/align_layers.py` 双双 `ModuleNotFoundError: No module named 'agi'`。
+
+修法（选 B——保留 `src/` 作为包根）：
+
+- `test/run.py`：`sys.path.insert(0, ROOT/src)` → `ROOT`；`from agi` → `from src`（2 处）
+- `scripts/align_layers.py`：同上（`sys.path` 1 处 + `from agi` 24 处）
+- 文档：`agi.md` / `README.md` / `src/README.md` / `docs/experiments.md` / 本文件共 15 处路径同步；
+  `agi.md` 目录树去掉 `agi\` 一层，配置数 15 → 35
+
+验收（行为不变）：construct 3/3、forward 3/3、`verify` 9/9、`goal` 6/6、`world` 5/5（20/20 项逐位）。
+`test/run.py list` 正常（35 个实验）、`check` 全过。
+
 ## 0.9.0 — 2026-10-24
 
 **移植旧脚本进框架（判据 = 行为一致）：3 个脚本 / 20 项，全部逐位一致。**
@@ -64,7 +97,7 @@ construct（初始结构 + RNG 尾状态，3/3 逐位）→ forward（250 步逐
 
 ### 文档
 
-`docs/experiments.md` §16.18（完整记录）/ `agi.md`（现状表 + 下一步表重写）/ `src/agi/README.md`
+`docs/experiments.md` §16.18（完整记录）/ `agi.md`（现状表 + 下一步表重写）/ `src/README.md`
 （已知缺陷 → 移植覆盖度 + 三个流程表）/ `CHANGELOG`。中间台账 `docs/_porting-progress.md` 已并入 §16.18 并删除。
 
 ### 下一步
@@ -74,7 +107,7 @@ construct（初始结构 + RNG 尾状态，3/3 逐位）→ forward（250 步逐
 
 ## 0.8.0 — 2026-10-24
 
-**建立统一框架 `src/agi/`，替代 21 个各实现一遍本体的手写脚本。**
+**建立统一框架 `src/`，替代 21 个各实现一遍本体的手写脚本。**
 
 起因（用户）：「写一个统一的框架，这样才能真正统计做什么，不做什么，结果是什么。
 test 目录下现在全是你手写的一堆东西，没有任何结构」。
@@ -92,13 +125,13 @@ test 目录下现在全是你手写的一堆东西，没有任何结构」。
 - `frozen` 名不副实 -> `Plasticity` 三层独立开关 + `gaps` 自动列差异字段
 - 各实现一遍本体 -> `core.py` 唯一实现；实验只能在 `experiments.py` 加 Config
 
-**⚠️ 已知缺陷（已写进 `src/agi/README.md`）：行为尚未与旧脚本对齐。**
+**⚠️ 已知缺陷（已写进 `src/README.md`）：行为尚未与旧脚本对齐。**
 旧 `grow_agent` 的 discrete 组 36.2%，框架 `base` 只有 6.9~8.0%，差 5 倍，差异未定位。
 试过一次对齐（沉默时也更新权重），结果更差（5.0%），已回滚。
 **所以对齐之前，框架不能用来自信复现任何历史结论**；它当前的价值是：结构、前置检查、对照表、登记。
 
 **文档：** `experiments.md` §16.17（框架建立）；`agi.md` 当前状态表 / 下一步 / 目录全更新；
-`README.md` 运行节改为「一律走框架」；`src/agi/README.md`（为什么这么设计 + 已知缺陷）。
+`README.md` 运行节改为「一律走框架」；`src/README.md`（为什么这么设计 + 已知缺陷）。
 
 **下一步三件：** 逐模块对齐 / 把旧配置全抄进来复现 / 对齐后归档旧脚本。
 

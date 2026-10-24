@@ -25,13 +25,13 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "src"))
+sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "test"))
 
 import numpy as np
 
-from agi.config import Config
-from agi.core import Network as NewNetwork
+from src.config import Config
+from src.core import Network as NewNetwork
 
 import net as old_net
 import grow_agent as old_ga
@@ -224,9 +224,9 @@ def layer_run(seeds, n_ep=50, cfg_name="base"):
 
     cfg_name="aligned" 时对的是「全部对齐开关打开」的配置（验证差集是否完整）。
     """
-    from agi import runner as new_runner
-    from agi import experiments
-    from agi.core import Network as _Net
+    from src import runner as new_runner
+    from src import experiments
+    from src.core import Network as _Net
 
     # 框架侧没有 born 计数（apply_topology 只返回删除数）——包装 _grow 计数。
     _born = {"n": 0}
@@ -301,9 +301,9 @@ def layer_noop(seeds, n_ep=20):
     本层量三件事：① noop 占多少；② noop 时 `m_glob` 是不是非零（= 在默默削弱全局权重）；
     ③ 对应的成功率。
     """
-    from agi import runner as new_runner
-    from agi import experiments
-    from agi import signal as sigmod
+    from src import runner as new_runner
+    from src import experiments
+    from src import signal as sigmod
 
     print("=" * 104)
     print("层 3b / noop — 框架独有的一条分支（旧代码不存在 noop）")
@@ -377,10 +377,10 @@ def _seq_of(mode, cfg_name, seed, n_ep, diag=False):
 
     diag=True 时额外记录每个动作窗口时刻的 (max v[out], mean bias[out])。
     """
-    from agi import runner as new_runner
-    from agi import experiments
-    from agi.env import LocalFilesEnv
-    from agi.core import Network as _NetCls
+    from src import runner as new_runner
+    from src import experiments
+    from src.env import LocalFilesEnv
+    from src.core import Network as _NetCls
 
     _last = {"net": None}
     _orig_step = _NetCls.step
@@ -511,8 +511,8 @@ def _goal_one(arg):
     """
     mode, cfg_name, seed, n_ep = arg
     import grow_goal as old_g
-    from agi import runner as new_runner
-    from agi import experiments
+    from src import runner as new_runner
+    from src import experiments
 
     r_old = old_g.run_one((seed, mode, n_ep))
     r_new = new_runner.run(experiments.BY_NAME[cfg_name].with_(seed=seed, n_ep=n_ep))
@@ -588,8 +588,8 @@ def _world_one(arg):
     """层 7：grow_world 移植对齐——逐字段比较（结构 + 动力学统计量）。"""
     mode, cfg_name, seed, steps = arg
     import grow_world as old_w
-    from agi import runner as new_runner
-    from agi import experiments
+    from src import runner as new_runner
+    from src import experiments
 
     r_old = old_w.run_one((seed, mode, steps))
     r_new = new_runner.run(experiments.BY_NAME[cfg_name].with_(seed=seed, steps=steps))
@@ -678,10 +678,10 @@ def layer_seq(seed, n_ep=2, diag=False, mode="discrete", cfg_name="ga_discrete")
     写进去的值序列就是动作序列。
     这是移植的**判据**：旧 mode ↔ 新 config 的动作序列必须逐项相同。
     """
-    from agi import runner as new_runner
-    from agi import experiments
-    from agi.env import LocalFilesEnv
-    from agi.core import Network as _NetCls
+    from src import runner as new_runner
+    from src import experiments
+    from src.env import LocalFilesEnv
+    from src.core import Network as _NetCls
 
     # 拿框架侧当前实例：帧栈查找不可靠（不同调用路径深度不同）——改成在 step 里存引用。
     _last = {"net": None}
@@ -773,8 +773,8 @@ def layer_seq(seed, n_ep=2, diag=False, mode="discrete", cfg_name="ga_discrete")
 
 def _contrib_one(arg):
     tag, cfg, seed, n_ep = arg
-    from agi import runner as new_runner
-    from agi.core import Network as _Net
+    from src import runner as new_runner
+    from src.core import Network as _Net
     born = {"n": 0}
     _og = _Net._grow
 
@@ -798,8 +798,8 @@ def layer_contrib(seeds, n_ep=200, nproc=None):
     从「已对上的基准」往下拆，每一项的边际贡献才是干净的。
     """
     from dataclasses import replace
-    from agi import experiments
-    from agi.config import EnvSpec
+    from src import experiments
+    from src.config import EnvSpec
 
     A = experiments.BY_NAME["ga_discrete"]
 
@@ -935,6 +935,84 @@ def layer_modes(seed=0, n_ep=20):
     return bad == 0
 
 
+def _talk_one(arg):
+    """层 10：grow_talk 移植对齐——10 个标量 + 9 个序列逐位比较。"""
+    mode, cfg_name, seed, n_present = arg
+    import grow_talk as old_t
+    from src import runner as new_runner
+    from src import experiments
+
+    r_old = old_t.run_one((seed, mode, n_present, old_t.ANSWER_FROM,
+                           old_t.CONT_INPUT, old_t.USE_STD, old_t.USE_SCALE))
+    cfg = experiments.BY_NAME[cfg_name].with_(seed=seed, n_ep=n_present)
+    r_new = new_runner.run(cfg)
+
+    SCALARS = [("E", "E_final"), ("born", "born"), ("drop", "drop"),
+               ("rate", "rate"), ("n_inh", "n_inh"), ("deg_out", "out_deg"),
+               ("sigma", "sigma"), ("rate_burst", "rate_burst"),
+               ("rate_tail", "rate_tail"), ("burst_fire", "burst_fire")]
+    SEQS = [("win", "win"), ("win_sil", "win_sil"), ("win_early", "win_early"),
+            ("win_lat", "win_lat"), ("rate_win", "rate_win"),
+            ("buck_n", "buck_n"), ("buck_acc", "buck_acc"),
+            ("bias", "out_bias"), ("theta_out", "theta_out")]
+
+    def eq(a, b):
+        try:
+            fa, fb = float(a), float(b)
+        except (TypeError, ValueError):
+            return a == b
+        if np.isnan(fa) and np.isnan(fb):
+            return True
+        return abs(fa - fb) <= 1e-9 * max(1.0, abs(fa), abs(fb))
+
+    bad = []
+    for ko, kn in SCALARS:
+        if not eq(r_old.get(ko), r_new.get(kn)):
+            bad.append((ko, r_old.get(ko), r_new.get(kn)))
+    for ko, kn in SEQS:
+        a, b = r_old.get(ko), r_new.get(kn)
+        if a is None or b is None or len(a) != len(b) or not all(
+                eq(p, q) for p, q in zip(a, b)):
+            bad.append((ko, "len=%s" % (len(a) if a is not None else None),
+                        "len=%s" % (len(b) if b is not None else None)))
+    return dict(mode=mode, cfg=cfg_name, bad=bad,
+                acc_old=r_old.get("acc_last", float("nan")),
+                acc_new=r_new.get("acc_last", float("nan")),
+                rate_old=r_old.get("rate", 0.0), rate_new=r_new.get("rate", 0.0))
+
+
+def layer_talk(seed=0, n_present=100, nproc=None):
+    """层 10 / talk — grow_talk 的移植对齐（结构 + 端到端 19 项）。"""
+    pairs = [("teach", "ta_teach"), ("rand_m", "ta_rand_m"),
+             ("no_teach", "ta_no_teach"), ("frozen", "ta_frozen")]
+    print("=" * 108)
+    print("层 10 / talk — grow_talk 移植验证（判据 = 10 标量 + 9 序列逐位相同）")
+    print("  seed=%d  n_present=%d" % (seed, n_present))
+    print("=" * 108)
+    print("%-10s %-16s %9s %9s %9s %9s  %s" % (
+        "old mode", "new config", "rate 旧", "rate 新", "acc 旧", "acc 新", "判定"))
+    print("-" * 108)
+
+    args = [(m, c, seed, n_present) for m, c in pairs]
+    rs = _pool_map(_talk_one, args, nproc)
+    n_ok = 0
+    for r in rs:
+        if not r["bad"]:
+            verdict = "OK（19/19）"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(r["bad"]), ", ".join(str(b[0]) for b in r["bad"][:3]))
+        print("%-10s %-16s %8.3f%% %8.3f%% %9.3f %9.3f  %s" % (
+            r["mode"], r["cfg"], r["rate_old"] * 100, r["rate_new"] * 100,
+            r["acc_old"], r["acc_new"], verdict))
+
+    print("-" * 108)
+    print("结论：%d/%d 个移植项逐位相同" % (n_ok, len(pairs)))
+    print("=" * 108)
+    return n_ok == len(pairs)
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "construct"
     nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -980,6 +1058,11 @@ def main():
         steps = int(sys.argv[3]) if len(sys.argv) > 3 else 5000
         nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
         ok = layer_world(seed, steps, nproc)
+    elif cmd == "talk":
+        seed = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        n_present = int(sys.argv[3]) if len(sys.argv) > 3 else 100
+        nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
+        ok = layer_talk(seed, n_present, nproc)
     else:
         print("未知层：%s（construct / forward / run / noop / seq / contrib / modes / verify / goal / world）" % cmd)
         ok = False

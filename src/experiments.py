@@ -228,6 +228,51 @@ GA_WORLD_FROZEN = Config(name="ga_world_frozen",
                              tau_trace=20.0, trace_decay=0.95)))
 
 
+# ---------------- 从旧 grow_talk 移植（2026-10-24）----------------
+# 形态：三段式时间轴（编码脉冲 → 保持 → 提问 → 回答）+ 事件发射（first-spike）
+#       + 状态永不清空 + 阈值适应 + 教师 m（按神经元分配的 tgt-got）。
+# 接口：输出只接「提问区 10 + 内部随机 40」——**不接词块**（不把答案焊上去）。
+# ⚠️ 未移植：STD / 突触缩放（旧脚本默认关，不影响默认行为）。
+_TALK = dict(
+    flow="talk",
+    n_ep=800,                      # 呈现数（旧脚本命令行第 1 个参数）
+    net=NetSpec(
+        init_kind="talk", side_inh_edges=True, side_inh=0.5,
+        block_input_edges=False, protect_out_edges=True,
+        p_global=4, t_global=1000,
+        theta_mode="fire_adapt", tau_adapt=100.0, d_theta=0.2,
+        th_min=1.0, th_max=3.0, d_theta_out=0.02,
+        n_q=10, blk=25, n_out_int=40, n_in_fanout=50,
+    ),
+    task=TaskSpec(kind="none", t_present=500, burst=20, nburst=2, delay=120,
+                  qburst=10, answer_from=120, t_max=200, cool=30,
+                  in_spike=3.0, in_lo=0.001),
+    readout=ReadoutSpec(kind="first_spike", n_out=4,
+                        out_idx=(500, 501, 502, 503),
+                        allow_noop=True, tie_break="argmax_v"),
+    plast=Plasticity(weight=True, topology=True, bias=True,
+                     eta_w=0.008, eta_bias=0.004,
+                     bias_min=-0.10, bias_max=0.40,
+                     trace_decay=0.95, topo_thresh=0.5, t_s=20),
+    signal=SignalSpec(source="teacher_word", tau_m=100.0, k_update=5,
+                      m_up=1.0, m_dn=-0.5, warmup=3000, bl_tau=40.0),
+)
+_TALK_SIG = dict(tau_m=100.0, k_update=5, m_up=1.0, m_dn=-0.5,
+                 warmup=3000, bl_tau=40.0)
+_TALK_PLAST_OFF = Plasticity(weight=False, topology=False, bias=False,
+                             eta_w=0.008, eta_bias=0.004,
+                             bias_min=-0.10, bias_max=0.40,
+                             trace_decay=0.95, topo_thresh=0.5, t_s=20)
+
+TA_TEACH = Config(name="ta_teach", note="grow_talk teach（教师信号；基准）", **_TALK)
+TA_RAND_M = Config(name="ta_rand_m", note="grow_talk rand_m（m 随机 ±1）",
+                   **dict(_TALK, signal=SignalSpec(source="random", **_TALK_SIG)))
+TA_NO_TEACH = Config(name="ta_no_teach", note="grow_talk no_teach（m 恒 +1）",
+                     **dict(_TALK, signal=SignalSpec(source="constant", **_TALK_SIG)))
+TA_FROZEN = Config(name="ta_frozen", note="grow_talk frozen（三层可塑性全关）",
+                   **dict(_TALK, plast=_TALK_PLAST_OFF))
+
+
 ALL = [
     BASE,
     PLAST_NONE, PLAST_BIAS, PLAST_W, PLAST_TOPO, PLAST_W_BIAS,
@@ -238,6 +283,7 @@ ALL = [
     GA_GOAL_A, GA_GOAL_FROZEN, GA_GOAL_FIXED, GA_GOAL_PROBE,
     GA_GOAL_T_SEQ, GA_GOAL_T_FRESH,
     GA_WORLD_CLOSED, GA_WORLD_OPEN, GA_WORLD_RANDACT, GA_WORLD_NOISE, GA_WORLD_FROZEN,
+    TA_TEACH, TA_RAND_M, TA_NO_TEACH, TA_FROZEN,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

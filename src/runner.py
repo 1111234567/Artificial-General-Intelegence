@@ -484,6 +484,322 @@ def _run_goal(cfg):
     }
 
 
+def _run_talk(cfg):
+    """移植自 grow_talk.py：脉冲刺激 + 事件发射 + 连续时间轴（阶段 1/2 v2）。
+
+    与另外三个流程的差异（**全部在 Config 里显式声明**）：
+      - 时间轴是「呈现」为单位的三段式：编码（脉冲）→ 保持 → 提问 → 回答
+      - 状态永不清空（v / state / ref / trace / theta 全部跨呈现连续）
+      - 发射是事件：第一个放电的输出神经元 = 它说的词（first-spike，平手取 v 最大）
+      - m = 按神经元分配的 (tgt - got) 方向，经 tau_m 衰减，每 k_update 步写一次
+      - 有「抢答」与「沉默」两个独立错误类型（不与「答错」混计）
+
+    ⚠️ 未移植：STD（抑制短时抑郁）与突触缩放——旧脚本里两者默认关，不影响默认行为。
+    ⚠️ 可塑性更新**不用** Network.apply_weight：旧实现对 `el[nz]` 子集用 `max`（非 abs），
+       与框架的全局 abs 归一不同。为逐位一致，这里照搬旧算式。
+    """
+    t0 = time.perf_counter()
+    rng = np.random.default_rng(cfg.seed)
+    out_idx = np.asarray(cfg.readout.out_idx, np.int64)
+    net = Network(cfg.net, rng, out_idx)
+    net.tau_trace = cfg.plast.tau_trace
+    net.trace_decay = cfg.plast.trace_decay
+    net.tau_theta = cfg.plast.tau_theta
+
+    N = cfg.net.N
+    N_E = net.N_E
+    N_IN = cfg.net.n_in
+    N_WORD = cfg.readout.n_out
+    N_OUT = N_WORD
+    BLK = cfg.net.blk
+    N_Q = cfg.net.n_q
+    Q_IDX = np.arange(N_IN, N_IN + N_Q)
+    T_PRESENT = cfg.task.t_present
+    BURST = cfg.task.burst
+    NBURST = cfg.task.nburst
+    DELAY = cfg.task.delay
+    QBURST = cfg.task.qburst
+    ANSWER_FROM = cfg.task.answer_from
+    T_MAX = cfg.task.t_max
+    IN_SPIKE = cfg.task.in_spike
+    IN_LO = cfg.task.in_lo
+    ETA_W = cfg.plast.eta_w
+    ETA_BIAS = cfg.plast.eta_bias
+    BIAS_MIN = cfg.plast.bias_min
+    BIAS_MAX = cfg.plast.bias_max
+    W_MAX_E = cfg.net.w_max_e
+    TAU_M = cfg.signal.tau_m
+    K_UPDATE = cfg.signal.k_update
+    M_DECAY = float(np.exp(-1.0 / TAU_M))
+    BL_TAU = cfg.signal.bl_tau
+    BL_DECAY = float(np.exp(-1.0 / BL_TAU))
+    M_UP = cfg.signal.m_up
+    M_DN = cfg.signal.m_dn
+    WARMUP = cfg.signal.warmup
+    THRESH = cfg.plast.topo_thresh
+    TOPO_EVERY = cfg.plast.t_s
+
+    n_present = cfg.n_ep
+    steps = n_present * T_PRESENT
+    mode = cfg.signal.source          # teacher_word / random / none（对照由 Config 决定）
+    teach = (mode == "teacher_word")
+    use_plast = bool(cfg.plast.weight or cfg.plast.topology)
+    use_bias = bool(cfg.plast.bias)
+
+    # ---- 状态（全部在 Network 里，跨呈现不清空）----
+    bias = np.zeros(N, np.float32)
+    bias[out_idx] = 0.05              # 初始：先诱导说
+    m_out = np.zeros(N_OUT, np.float64)
+    m_glob = 0.0
+    baseline = 0.0
+
+    # ---- 统计 ----
+    nb = 6
+    buck_n = np.zeros(nb, np.int64)
+    buck_ok = np.zeros(nb, np.int64)
+    win, win_sil, win_early, win_lat = [], [], [], []
+    n_corr = n_tot = n_sil = n_early = 0
+    n_burst_fire = 0
+    lat_sum = 0
+    nsp_tot = 0
+    nsp_burst = nsp_tail = 0
+    n_burst = n_tail = 0
+    s_a1a0 = 0.0
+    s_a0a0 = 0.0
+    a_prev = 0.0
+    rate_win = []
+    nsp_win = 0
+    n_win = 0
+    born = drop = 0
+    n_upd_w = n_upd_b = n_upd_top = 0
+    bias_end = None
+
+    c = 0
+    answered = False
+    lat = 0
+    burst_at = np.zeros(BURST, np.int32)
+
+    ist_out = np.isin(net.post, out_idx)
+
+    for t in range(steps):
+        phase = t % T_PRESENT
+        if phase == 0:
+            c = int(rng.integers(0, N_WORD))
+            answered = False
+            lat = 0
+            burst_at = np.zeros(NBURST, np.int32)
+            if NBURST > 1:
+                burst_at = np.linspace(0, BURST - 2, NBURST).astype(np.int32)
+
+        # ===== 输入：三段式 =====
+        xin = np.zeros(N, np.float32)
+        if phase < BURST and phase in burst_at:
+            base = c * BLK
+            xin[base:base + BLK] = IN_SPIKE
+        if DELAY <= phase < DELAY + QBURST:
+            qq = phase - DELAY
+            if qq == 0 or qq == QBURST // 2:
+                xin[Q_IDX] = IN_SPIKE
+        xin[0:N_IN] += (rng.random(N_IN) < IN_LO).astype(np.float32) * IN_SPIKE
+        xin[Q_IDX] += (rng.random(N_Q) < IN_LO).astype(np.float32) * IN_SPIKE
+        xin += bias
+
+        # ===== 网络一步（bias 已加进 xin；侧抑制已在显式边里）=====
+        nsp = net.step(xin, False, add_bias=False)
+        s = net.state
+        v = net.v
+
+        nsp_tot += nsp
+        nsp_win += nsp
+        n_win += 1
+        if t > steps // 5:
+            s_a1a0 += float(nsp) * a_prev
+            s_a0a0 += a_prev * a_prev
+        a_prev = float(nsp)
+        if phase < BURST:
+            nsp_burst += nsp
+            n_burst += 1
+        elif phase < BURST + 100:
+            nsp_tail += nsp
+            n_tail += 1
+
+        # ===== 编码期的放电：不算抢答，但单独计数 =====
+        if (not answered) and phase < BURST:
+            if s[out_idx].any():
+                n_burst_fire += 1
+
+        # ===== 抢答（编码结束到提问之前开口）=====
+        if (not answered) and BURST <= phase < ANSWER_FROM:
+            of = s[out_idx] > 0
+            if of.any():
+                cand = np.nonzero(of)[0]
+                o = int(cand[np.argmax(v[out_idx][cand])])
+                answered = True
+                n_early += 1
+                n_tot += 1
+                lat = -1
+                if teach:
+                    got = np.zeros(N_OUT)
+                    got[o] = 1.0
+                    tgt = np.zeros(N_OUT)
+                    tgt[c] = 1.0
+                    raw = tgt - got
+                    m_out += np.where(raw > 0, 1.0, np.where(raw < 0, -1.0, 0.0))
+                    r = -1.0
+                    m_glob = (r - baseline)
+                    m_glob = M_UP * m_glob if m_glob > 0 else M_DN * (-m_glob)
+                    baseline = BL_DECAY * baseline + (1 - BL_DECAY) * r
+                elif mode == "random":
+                    m_out += np.where(rng.random(N_OUT) < 0.5, 1.0, -1.0)
+                elif mode == "constant":
+                    m_out += 1.0
+
+        # ===== 发射事件（first-spike）=====
+        if (not answered) and ANSWER_FROM <= phase < T_MAX:
+            of = s[out_idx] > 0
+            if of.any():
+                cand = np.nonzero(of)[0]
+                o = int(cand[np.argmax(v[out_idx][cand])])
+                word = o
+                answered = True
+                lat = phase
+                ok = (word == c)
+                n_tot += 1
+                if ok:
+                    n_corr += 1
+                lat_sum += lat
+                b = min(nb - 1, max(0, (lat - ANSWER_FROM) // 20))
+                buck_n[b] += 1
+                if ok:
+                    buck_ok[b] += 1
+                if teach:
+                    got = np.zeros(N_OUT)
+                    got[o] = 1.0
+                    tgt = np.zeros(N_OUT)
+                    tgt[c] = 1.0
+                    raw = tgt - got
+                    m_out += np.where(raw > 0, 1.0, np.where(raw < 0, -1.0, 0.0))
+                    r = 1.0 if ok else -1.0
+                    m_glob = (r - baseline)
+                    m_glob = M_UP * m_glob if m_glob > 0 else M_DN * (-m_glob)
+                    baseline = BL_DECAY * baseline + (1 - BL_DECAY) * r
+                elif mode == "random":
+                    m_out += np.where(rng.random(N_OUT) < 0.5, 1.0, -1.0)
+                elif mode == "constant":
+                    m_out += 1.0
+
+        # ===== 沉默也是一次作答 =====
+        if (not answered) and phase == T_MAX - 1:
+            answered = True
+            n_tot += 1
+            n_sil += 1
+            if teach:
+                tgt = np.zeros(N_OUT)
+                tgt[c] = 1.0
+                raw = tgt
+                m_out += np.where(raw > 0, 1.0, 0.0)
+                r = -1.0
+                m_glob = (r - baseline)
+                m_glob = M_UP * m_glob if m_glob > 0 else M_DN * (-m_glob)
+                baseline = BL_DECAY * baseline + (1 - BL_DECAY) * r
+            elif mode == "random":
+                m_out += np.where(rng.random(N_OUT) < 0.5, 1.0, -1.0)
+            elif mode == "constant":
+                m_out += 1.0
+
+        # ===== m 衰减 =====
+        m_out *= M_DECAY
+        # ===== 每 K 步写一次（不是每呈现）=====
+        if (t + 1) % K_UPDATE == 0 and t >= WARMUP:
+            has_m = bool(np.abs(m_out).max() > 1e-6) or abs(m_glob) > 1e-6
+            if use_plast and net.key.size and has_m:
+                gate = steady_gate(net.ema_rate)
+                el = net.trace[net.pre] * net.trace[net.post]
+                mp = np.zeros(N, np.float32)
+                mp[out_idx] = m_out.astype(np.float32)
+                sel = mp[net.post.astype(np.int64)]
+                if abs(m_glob) > 1e-9:
+                    sel = np.where(ist_out, sel, np.float32(m_glob)).astype(np.float32)
+                nz = sel != 0
+                if nz.any() and el[nz].max() > 1e-9:
+                    el_n = el[nz] / float(el[nz].max())
+                    dw = ETA_W * gate * el_n * sel[nz]
+                    sl = np.nonzero(nz)[0]
+                    pos = net.w[sl] > 0
+                    net.w[sl] = np.where(
+                        pos,
+                        np.minimum(net.w[sl] + dw * (W_MAX_E - net.w[sl]), W_MAX_E),
+                        net.w[sl])
+                    net.w[sl] = np.maximum(net.w[sl], 0.0)
+                n_upd_w += 1
+
+            if use_bias:
+                nb_ = bias[out_idx] + ETA_BIAS * m_out.astype(np.float32)
+                bias[out_idx] = np.clip(nb_, BIAS_MIN, BIAS_MAX)
+                n_upd_b += 1
+
+        # ===== 结构更新（每 TOPO_EVERY 步）=====
+        if use_plast and t % TOPO_EVERY == 0 and t > 0:
+            born += net.grow_edges(THRESH, cfg.net.p_new, cfg.net.max_active)
+            if cfg.net.p_global > 0 and t % cfg.net.t_global == 0:
+                born += net.grow_global(cfg.net.p_global)
+            ist_out = np.isin(net.post, out_idx)
+            drop += net.prune(cfg.net.budget, cfg.net.min_age)
+            ist_out = np.isin(net.post, out_idx)
+            n_upd_top += 1
+
+        # ===== 统计窗口（每呈现一次）=====
+        if phase == T_PRESENT - 1:
+            win.append(n_corr / max(n_tot, 1))
+            win_sil.append(n_sil / max(n_tot, 1))
+            win_early.append(n_early / max(n_tot, 1))
+            win_lat.append(lat_sum / max(n_tot - n_sil - n_early, 1)
+                           if n_tot > n_sil + n_early else 0.0)
+            n_corr = n_tot = n_sil = n_early = lat_sum = 0
+            if n_win > 0:
+                rate_win.append(nsp_win / n_win / N)
+                nsp_win = 0
+                n_win = 0
+            if len(win) == max(4, n_present // 4):
+                bias_end = bias[out_idx].copy()
+
+    deg_in = net.in_degree()
+    bk = np.where(buck_n > 0, buck_ok / np.maximum(buck_n, 1), np.nan)
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': n_present,
+        'succ': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'succ_first': float(np.mean(win[:2])) if len(win) >= 2 else float('nan'),
+        'succ_last': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'progress': float('nan'), 'basis': float('nan'), 'dist_end': float('nan'),
+        'out_fire': 0.0, 'fixdelay': None, 'react': None,
+        'E_final': int(net.key.size),
+        'born': int(born), 'drop': int(drop),
+        'n_inh': int((net.pre >= N_E).sum()),
+        'rate': float(net.ema_rate),
+        'out_deg': int(deg_in[out_idx].mean()),
+        'out_bias': tuple(round(float(x), 4) for x in bias[out_idx]),
+        'theta_out': tuple(round(float(x), 3) for x in net.theta[out_idx]),
+        'n_upd_w': int(n_upd_w), 'n_upd_b': int(n_upd_b), 'n_upd_top': int(n_upd_top),
+        'io_ok': True, 'n_io': 0,
+        # ---- talk 专有 ----
+        'acc_first': float(np.mean(win[:2])) if len(win) >= 2 else float('nan'),
+        'acc_last': float(np.mean(win[-2:])) if len(win) >= 2 else float('nan'),
+        'sil_first': float(np.mean(win_sil[:2])) if len(win_sil) >= 2 else float('nan'),
+        'sil_last': float(np.mean(win_sil[-2:])) if len(win_sil) >= 2 else float('nan'),
+        'early_first': float(np.mean(win_early[:2])) if len(win_early) >= 2 else float('nan'),
+        'early_last': float(np.mean(win_early[-2:])) if len(win_early) >= 2 else float('nan'),
+        'rate_burst': float(nsp_burst / max(n_burst, 1) / N),
+        'rate_tail': float(nsp_tail / max(n_tail, 1) / N),
+        'sigma': float(s_a1a0 / s_a0a0) if s_a0a0 > 0 else float('nan'),
+        'buck_n': buck_n, 'buck_acc': bk,
+        'win': win, 'win_sil': win_sil, 'win_early': win_early, 'win_lat': win_lat,
+        'rate_win': rate_win,
+        'burst_fire': int(n_burst_fire),
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+
+
 def run(cfg):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
@@ -494,6 +810,8 @@ def run(cfg):
         return _run_random(cfg, rng)
     if cfg.flow == 'goal':
         return _run_goal(cfg)
+    if cfg.flow == 'talk':
+        return _run_talk(cfg)
     if cfg.flow == 'world':
         return _run_world(cfg)
     if cfg.flow == 'world':

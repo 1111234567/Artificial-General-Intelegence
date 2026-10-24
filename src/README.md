@@ -7,12 +7,12 @@
 ## 结构
 
 ```
-src/agi/
+src/
   config.py       声明（一个实验 = 一个 Config，没有隐式默认）
   core.py         本体（LIF 网络）——**唯一实现**
   env.py          环境（本机真实文件）
   signal.py       m 的来源与形态（= 学习方式本身）
-  runner.py       跑一个配置，返回一条结构化结果（三个流程见下）
+  runner.py       跑一个配置，返回一条结构化结果（四个流程见下）
   store.py        结果登记（JSONL，按指纹查）
   experiments.py  **唯一声明实验的地方**（35 个）
 
@@ -43,26 +43,27 @@ scripts/align_layers.py  移植对齐工具（六层）
 
 ## 移植覆盖度（2026-10-24）
 
-> **已与旧脚本对齐：3 个脚本 / 20 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5）。
-> 验证方式与全套跑法见 `docs/experiments.md` §16.18；工具 `scripts/align_layers.py`。
+> **已与旧脚本对齐：4 个脚本 / 39 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19）。
+> 验证方式与全套跑法见 `docs/experiments.md` §16.18 / §16.19；工具 `scripts/align_layers.py`。
 >
-> **未移植（8 个）**：`grow_talk` / `grow_cond` / `grow_func` / `grow_homeo` / `grow_teach` / `grow_hebb`
+> **未移植（7 个）**：`grow_cond` / `grow_func` / `grow_homeo` / `grow_teach` / `grow_hebb`
 > + `bench_lif2` / `calib5` / `scan_base`（后三个应做成 `run.py bench` / `scan` 子命令）。
-> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 3 个长出来的，
+> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 4 个长出来的，
 > 剩下 8 个里的机制它很可能还表达不了。
 
-## 三个流程（`Config.flow`）
+## 四个流程（`Config.flow`）
 
-本体（`core.py`）与可塑性原子操作三个流程共用；区别只在「什么时候调哪个原子操作」。
+本体（`core.py`）与可塑性原子操作四个流程共用；区别只在「什么时候调哪个原子操作」。
 
 | flow | 时间结构 | 动作 | 环境 | 更新时机 |
 |---|---|---|---|---|
 | `agent` | episode（n_ep × t_ep + 间隙）| 离散索引（`first_spike`）| 本机真实文件 | 每次动作后 |
 | `goal` | episode | 2 维独立符号（`sign_2d`）| 2D 数学世界 | 每 `t_s` 步 |
 | `world` | **单条连续时间轴**（`steps`）| 2 维连续（`tanh_2d`）| 2D 振荡器 | 每 `t_s` 步 |
+| `talk` | **呈现**（n_ep × t_present，三段式：编码脉冲 → 保持 → 提问 → 回答）| 4 个离散（`first_spike`，平手取 v 最大）| 无环境（程序生成输入）| 每 `k_update` 步 |
 
-**三个脚本的可塑性规则确实不同**（不是同一件事的不同写法）：`agent` 对称 + BCM；`goal` 对称 + BCM；
-`world` **非对称 + 无 BCM**。硬合并成一套，任何一个方向都会移植失败。
+**四个脚本的可塑性规则确实不同**（不是同一件事的不同写法）：`agent` 对称 + BCM；`goal` 对称 + BCM；
+`world` **非对称 + 无 BCM**；`talk` 用旧算式（`el[nz]` 子集按 `max` 归一，不是全局 `abs`）——所以它不经 `apply_weight`。硬合并成一套，任何一个方向都会移植失败。
 
 ## 约定
 

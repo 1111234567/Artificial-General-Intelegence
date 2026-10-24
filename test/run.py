@@ -15,13 +15,13 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "src"))
+sys.path.insert(0, ROOT)
 
 import numpy as np
 from multiprocessing import Pool
 
-from agi import experiments, run, append, summary, load
-from agi.config import Config
+from src import experiments, run, append, summary, load
+from src.config import Config
 
 ENV_ROOT_OK = True
 
@@ -74,7 +74,12 @@ def cmd_check(name=None):
 
 
 def _feasible_msg(c):
-    """前置检查的**通过**说明——按 env.kind 分派（否则 2D 世界会打错口径）。"""
+    """前置检查的**通过**说明——按流程/环境分派（否则不适用可达性的流程会打错口径）。"""
+    if c.flow == "talk":
+        return "不适用（talk：无目标可达性；时间轴 %d 步 × %d 呈现）" % (
+            c.task.t_present, c.n_ep)
+    if c.flow == "world":
+        return "不适用（world：单条时间轴，无目标与成败）"
     if c.env.kind == "math_2d":
         n_win = c.task.t_ep // c.task.t_act
         reach = n_win * c.env.k_act * c.task.t_act

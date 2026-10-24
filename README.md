@@ -4,9 +4,9 @@
 
 **状态：阶段 1/2（教）已跑通（25% → 75.0%，v2 脉冲形态）；工作记忆跨度只有 20 步（= τ）；阶段 2（巩固）尚未开始。** 设计推演已完成（七轮修正），模拟器成本已实测，动力学已标定（rate 1.99%）；结构自生长已跑通（rate **1.55% ± 0.44**）。
 
-**统一框架（`src/agi/`）已建成并开始对齐（2026-10-24）**：35 个实验声明 + 七命令，
-**已移植 3 个旧脚本 / 20 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5）；
-剩 8 个脚本未移植——详见 `docs/experiments.md` §16.18 与 `src/agi/README.md` 的「移植覆盖度」。
+**统一框架（`src/`）已建成并开始对齐（2026-10-24）**：35 个实验声明 + 七命令，
+**已移植 4 个旧脚本 / 39 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19）；
+剩 7 个脚本未移植——详见 `docs/experiments.md` §16.18 / §16.19 与 `src/README.md` 的「移植覆盖度」。
 
 **闭环三步（`grow_goal.py`，§16.13）：当时的阴性结论已不可信 —— 因为它建在一个不可完成的任务上。**
 真正的发现（§16.16）：① **任务在参数上不可完成**——6 个动作 × 1 步 = 6，而目标差距 30~40；
@@ -23,9 +23,9 @@
 | linear（非脉冲上界） | 99.8% |
 
 **bias 是学习的全部贡献（+36.1 pp），权重/拓扑是负贡献（−5.8 pp）。**
-**并且 2026-10-24 建立了统一框架（`src/agi/`）**，替代 21 个各实现一遍本体的手写脚本；
+**并且 2026-10-24 建立了统一框架（`src/`）**，替代 21 个各实现一遍本体的手写脚本；
 15 个实验声明 + 七命令。**⚠️ 行为尚未与旧脚本对齐**（旧 discrete 36.2% vs 框架 6.9~8%），
-对齐前框架不能用来复现历史结论——详见 `src/agi/README.md` 的「已知缺陷」。
+对齐前框架不能用来复现历史结论——详见 `src/README.md` 的「已知缺陷」。
 阶段 B（真正的真空）未开始。
 
 ## 文档
@@ -36,10 +36,10 @@
 | `docs/design.md` | 设计：判断与机制（§0–§9、§14） |
 | `docs/experiments.md` | 验证：待定项 / 实验设计 / 准则与自评 / 实验记录（§10、§11、§13、§16） |
 | `docs/reference.md` | 参考：文献索引与领域定位（§12、§15） |
-| `src/agi/README.md` | 框架：结构、七命令、三个「不能再犯」的机制、**移植覆盖度** |
+| `src/README.md` | 框架：结构、七命令、三个「不能再犯」的机制、**移植覆盖度** |
 | `scripts/check_docs.py` | 文档结构校验：章节完整性 / 引用可解析 / 关键内容逐字存在 / 编码 |
 | `scripts/diff_volumes.py` | 把三卷重建回原文，与 `docs/archived/` 的草案逐行 diff（验证信息不丢） |
-| `scripts/align_layers.py` | **移植对齐工具**：construct / forward / run / seq / modes / contrib / verify / goal / world |
+| `scripts/align_layers.py` | **移植对齐工具**：construct / forward / run / seq / modes / contrib / verify / goal / world / talk |
 | `CHANGELOG.md` | 版本历程 |
 
 > 原设计草案 `docs/archived/design-memory-learning-2026-10-22.md` 已退役（2026-10-24 拆入三卷，内容逐行迁移）。
@@ -51,7 +51,7 @@ F:\agi\
   agi.md            主文档
   docs\             设计 / 实验 / 参考（三卷）
     archived\       已退役文档
-  src\agi\          **统一框架**（config / core / env / signal / runner / store / experiments）
+  src\          **统一框架**（config / core / env / signal / runner / store / experiments）
   scripts\          核验脚本
   test\
     run.py          **唯一入口**（list / show / check / run / results / gaps / align）
@@ -80,6 +80,7 @@ python scripts/align_layers.py modes      # mode → 三层开关（代码 + 实
 python scripts/align_layers.py verify     # grow_agent 9 项（动作序列逐项）
 python scripts/align_layers.py goal       # grow_goal 6 项（16 字段逐位）
 python scripts/align_layers.py world      # grow_world 5 项（19 字段逐位）
+python scripts/align_layers.py talk 0 100 4   # grow_talk 4 项（19 项逐位；第2个=seed，3=n_present，4=nproc）
 python scripts/align_layers.py contrib    # 单变量消融（从已对齐基准往下关）
 ```
 

@@ -46,14 +46,17 @@ class Network:
         self.tau_theta = 200.0
 
         # 结构：过度生产 -> 硬预算修剪
-        pre = rng.integers(0, self.N, spec.e0_init).astype(np.int32)
-        post = rng.integers(0, self.N, spec.e0_init).astype(np.int32)
-        ok = (pre != post)
-        if spec.block_input_edges:
-            ok = ok & (post >= self.N_IN)      # 输入区不接受反向边（grow_agent）
-        pre, post = pre[ok], post[ok]
-        w = np.where(pre >= self.N_E, -spec.w_e * spec.w_i_ratio, spec.w_e).astype(np.float32)
-        age = np.full(pre.size, 100, np.int16)
+        if spec.init_kind == "talk":
+            pre, post, w, age = self._init_talk()
+        else:
+            pre = rng.integers(0, self.N, spec.e0_init).astype(np.int32)
+            post = rng.integers(0, self.N, spec.e0_init).astype(np.int32)
+            ok = (pre != post)
+            if spec.block_input_edges:
+                ok = ok & (post >= self.N_IN)      # 输入区不接受反向边（grow_agent）
+            pre, post = pre[ok], post[ok]
+            w = np.where(pre >= self.N_E, -spec.w_e * spec.w_i_ratio, spec.w_e).astype(np.float32)
+            age = np.full(pre.size, 100, np.int16)
         self.pre, self.post, self.w, self.key, self.age = sort_edges(
             pre, post, w, age, self.N)
 
@@ -62,7 +65,13 @@ class Network:
         self.state = np.zeros(self.N, np.float32)
         self.ref = np.zeros(self.N, np.int32)
         self.trace = np.zeros(self.N, np.float32)
-        self.theta = np.zeros(self.N, np.float32)
+        # 阈值：两种语义（见 NetSpec.theta_mode）
+        #   trace_bcm  θ = trace 的慢平均（BCM 滑动阈值，量级 0.01~0.1）
+        #   fire_adapt θ = 放电阈值本身（量级 1.0~3.0；grow_talk）
+        if spec.theta_mode == "fire_adapt":
+            self.theta = np.full(self.N, spec.v_th, np.float32)
+        else:
+            self.theta = np.zeros(self.N, np.float32)
         self.bias = np.zeros(self.N, np.float32)
         self.ema_rate = 0.02
 
@@ -79,8 +88,70 @@ class Network:
     def w_new_i(self):
         return self._spec.w_new_e * self._spec.w_i_ratio
 
+    # ---- 结构初始化：talk 形态（逐行照搬 grow_talk._init_net，RNG 顺序不能变）----
+    def _init_talk(self):
+        """grow_talk 的接口形态。与 random 版的四处差别：
+
+          ① 初始边过滤加 `~isin(post, out_idx)`（输出入边只能来自接口）
+          ② 输出接口 = 提问区 n_q + 内部随机 n_out_int（**不接词块**——不把答案焊上去）
+          ③ 输入区 → 内部扇出 n_in_fanout/神经元（否则 w=0.5 需要 2 个同步输入才到阈值）
+          ④ 输出两两侧抑制边（**显式**，权重 −side_inh）
+
+        ⚠️ 两处必须与旧实现逐字一致，否则 construct 层过不去：
+          - RNG 消耗顺序：integers ×2 → choice ×n_out → integers(扇出) → uniform(接口)
+          - `nfan` 用 `n_in * n_in_fanout`（**不是** (n_in+n_q)*n_in_fanout）——
+            旧实现就是这么写的（扇出实际插了 (n_in+n_q)*fanout 条，偏移少算 n_q*fanout 条）。
+            为逐位对齐而保留；这是偏移错误，已记录待拍板。
+        """
+        sp = self._spec
+        N, N_IN, N_E = self.N, self.N_IN, self.N_E
+        out_idx = self.out_idx
+        rng = self.rng
+        pre = rng.integers(0, N, sp.e0_init).astype(np.int32)
+        post = rng.integers(0, N, sp.e0_init).astype(np.int32)
+        ok = (pre != post) & (post >= N_IN) & (~np.isin(post, out_idx))
+        pre, post = pre[ok], post[ok]
+
+        q_idx = np.arange(N_IN, N_IN + sp.n_q)
+        for o in out_idx:
+            src_i = rng.choice(np.arange(N_IN + sp.n_q, N_E),
+                               sp.n_out_int, replace=False).astype(np.int32)
+            src = np.concatenate([q_idx.astype(np.int32), src_i])
+            pre = np.concatenate([pre, src])
+            post = np.concatenate([post, np.full(src.size, int(o), np.int32)])
+
+        n_src = np.repeat(np.arange(N_IN + sp.n_q, dtype=np.int32), sp.n_in_fanout)
+        n_dst = rng.integers(N_IN + sp.n_q, N_E,
+                             (N_IN + sp.n_q) * sp.n_in_fanout).astype(np.int32)
+        bad = np.isin(n_dst, out_idx)
+        while bad.any():
+            n_dst[bad] = rng.integers(N_IN + sp.n_q, N_E,
+                                      int(bad.sum())).astype(np.int32)
+            bad = np.isin(n_dst, out_idx)
+        pre = np.concatenate([pre, n_src])
+        post = np.concatenate([post, n_dst])
+
+        sp_, sq_ = [], []
+        for o in out_idx:
+            for p in out_idx:
+                if o != p:
+                    sp_.append(int(o)); sq_.append(int(p))
+        pre = np.concatenate([pre, np.array(sp_, np.int32)])
+        post = np.concatenate([post, np.array(sq_, np.int32)])
+
+        is_inh = pre >= N_E
+        w = np.where(is_inh, -sp.w_e * sp.w_i_ratio, sp.w_e).astype(np.float32)
+        nside = len(sp_)
+        nlink = len(out_idx) * (sp.n_q + sp.n_out_int)
+        nfan = N_IN * sp.n_in_fanout          # ⚠️ 旧实现的偏移（不是 (N_IN+n_q)*fanout）
+        n_rand = pre.size - nlink - nfan - nside
+        w[n_rand:n_rand + nlink] = rng.uniform(0.15, 0.60, nlink).astype(np.float32)
+        w[pre.size - nside:] = -sp.side_inh
+        age = np.full(pre.size, 100, np.int16)
+        return pre, post, w, age
+
     # ---- 单步 ----
-    def step(self, xin, apply_side_inh=True):
+    def step(self, xin, apply_side_inh=True, add_bias=True):
         sp = self._spec
         I = np.bincount(self.post, weights=self.w * self.state[self.pre],
                         minlength=self.N).astype(np.float32)
@@ -88,8 +159,15 @@ class Network:
             ro = self.state[self.out_idx]
             if ro.any():
                 I[self.out_idx] -= sp.side_inh * ro
-        self.v = self.v * self.decay_v + I + xin + self.bias
-        fire = (self.v > sp.v_th) & (self.ref <= 0)
+        if add_bias:
+            self.v = self.v * self.decay_v + I + xin + self.bias
+        else:
+            # grow_talk：bias 由调用方先加进 xin（加法顺序不同，float32 下会差位）
+            self.v = self.v * self.decay_v + I + xin
+        if sp.theta_mode == "fire_adapt":
+            fire = (self.v > self.theta) & (self.ref <= 0)
+        else:
+            fire = (self.v > sp.v_th) & (self.ref <= 0)
         self.state = fire.astype(np.float32)
         self.v = np.where(self.state > 0, 0.0, self.v)
         self.ref -= 1
@@ -104,8 +182,19 @@ class Network:
         self.trace *= (self.trace_decay if self.trace_decay > 0
                        else float(np.exp(-1.0 / self.tau_trace)))
         self.trace += self.state
-        self.theta *= (1.0 - 1.0 / self.tau_theta)
-        self.theta += self.trace / self.tau_theta
+        if sp.theta_mode == "fire_adapt":
+            # 放电后阈值上调、全体向 v_th 回落（grow_talk 的形态）
+            if fire.any():
+                self.theta[fire] = np.minimum(self.theta[fire] + sp.d_theta, sp.th_max)
+                ob = fire[self.out_idx]
+                if ob.any():
+                    oi = self.out_idx[ob]
+                    self.theta[oi] = np.maximum(
+                        self.theta[oi] - sp.d_theta + sp.d_theta_out, sp.th_min)
+            self.theta += (sp.v_th - self.theta) / sp.tau_adapt
+        else:
+            self.theta *= (1.0 - 1.0 / self.tau_theta)
+            self.theta += self.trace / self.tau_theta
         return nsp
 
     # ---- 可塑性：权重 ----
