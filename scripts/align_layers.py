@@ -1344,6 +1344,79 @@ def layer_func(seed=0, steps=3000, nproc=None):
     return n_ok == len(args)
 
 
+def _hebb_one(arg):
+    """层 16：grow_hebb 移植对齐——10 个量 + bins/head 逐格。"""
+    grow_steps, r, mode, plastic, shuffle, cfg_name = arg
+    import grow_hebb as old_h
+    from src import runner as new_runner
+    from src import experiments
+    from dataclasses import replace
+
+    r_old = old_h.run_one((0, r, 600.0, mode, plastic, shuffle, grow_steps))
+    c = experiments.BY_NAME[cfg_name]
+    cfg = c.with_(seed=0, task=replace(c.task, grow_steps=grow_steps))
+    r_new = new_runner.run(cfg)
+
+    SCALARS = ["r", "mode", "plastic", "shuffle", "enc", "tail_sum",
+               "total", "period", "ac", "a_abs"]
+
+    def eq(a, b):
+        try:
+            fa, fb = float(a), float(b)
+        except (TypeError, ValueError):
+            return a == b
+        if np.isnan(fa) and np.isnan(fb):
+            return True
+        return abs(fa - fb) <= 1e-9 * max(1.0, abs(fa), abs(fb))
+
+    bad = []
+    for k in SCALARS:
+        if not eq(r_old.get(k), r_new.get(k)):
+            bad.append((k, r_old.get(k), r_new.get(k)))
+    for k in ("bins", "head"):
+        a, b = r_old.get(k), r_new.get(k)
+        if a is None or b is None or len(a) != len(b) or not all(
+                eq(p, q) for p, q in zip(a, b)):
+            bad.append((k, len(a) if a is not None else None,
+                        len(b) if b is not None else None))
+    return dict(cfg=cfg_name, bad=bad, tail=r_new.get("tail_sum", 0.0),
+                per=r_new.get("period", 0.0), a_abs=r_new.get("a_abs", 0.0))
+
+
+def layer_hebb(grow_steps=3000, nproc=None):
+    """层 16 / hebb — grow_hebb 的移植对齐。"""
+    cases = [(0.05, "pulse", True, False, "hb_pulse"),
+             (0.05, "osc", True, False, "hb_osc"),
+             (0.0, "pulse", True, False, "hb_r0"),
+             (0.05, "pulse", True, True, "hb_shuf"),
+             (0.05, "pulse", False, False, "hb_freeze"),
+             (0.40, "pulse", True, False, "hb_p040"),
+             (0.40, "pulse", True, True, "hb_p040_shuf"),
+             (0.05, "osc", True, True, "hb_osc_shuf")]
+    print("=" * 108)
+    print("层 16 / hebb — grow_hebb 移植验证（判据 = 10 量 + bins/head 逐格）")
+    print("  grow_steps=%d" % grow_steps)
+    print("=" * 108)
+    print("%-14s %10s %8s %10s  %s" % ("config", "尾段放电", "周期", "|A| 均值", "判定"))
+    print("-" * 108)
+    args = [(grow_steps, r, m, pl, sh, nn) for r, m, pl, sh, nn in cases]
+    rs = _pool_map(_hebb_one, args, nproc)
+    n_ok = 0
+    for x in rs:
+        if not x["bad"]:
+            verdict = "OK（12/12）"
+            n_ok += 1
+        else:
+            verdict = "**%d 项不同**：%s" % (
+                len(x["bad"]), ", ".join(str(b[0]) for b in x["bad"][:3]))
+        print("%-14s %10.0f %8.0f %10.2e  %s" % (
+            x["cfg"], x["tail"], x["per"], x["a_abs"], verdict))
+    print("-" * 108)
+    print("结论：%d/%d 个移植项逐位相同" % (n_ok, len(cases)))
+    print("=" * 108)
+    return n_ok == len(cases)
+
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "construct"
     nseed = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -1418,6 +1491,10 @@ def main():
         steps = int(sys.argv[3]) if len(sys.argv) > 3 else 3000
         nproc = int(sys.argv[4]) if len(sys.argv) > 4 else None
         ok = layer_func(seed, steps, nproc)
+    elif cmd == "hebb":
+        gs = int(sys.argv[2]) if len(sys.argv) > 2 else 3000
+        nproc = int(sys.argv[3]) if len(sys.argv) > 3 else None
+        ok = layer_hebb(gs, nproc)
     else:
         print("未知层：%s（construct / forward / run / noop / seq / contrib / modes / verify / goal / world）" % cmd)
         ok = False

@@ -293,6 +293,7 @@ TK_FROZEN = Config(name="tk_frozen", note="grow_talk frozen + 修正接口权重
 # 形态：PLOS CB 2022 —— 初始**无 E-E**，结构按放电率偏差**双向**调 E-E 入边。
 # 两个自组织机制同时开：阈值适应（fire_adapt）+ STD（抑制短时抑郁）。
 # 目标率 0.8% / ±20% 容忍区间 / 率估计 τ=500 / 结构周期 50 步。
+_HOMEO_READOUT = ReadoutSpec(kind="first_spike", n_out=2, out_idx=(500, 501))
 _HOMEO = dict(
     flow="homeo",
     steps=6000,
@@ -448,6 +449,45 @@ FU_DIV = Config(name="fu_div", note="grow_func --div（前史因果：初始膜�
                     func_measure=True, pred_lr=0.02, oseg=100, perturb=1e-3)))
 
 
+# ---------------- 从旧 grow_hebb 移植（2026-10-24）----------------
+# 结构冻结（先用 homeo 长 30000 步）+ E-E 边上一条 Hebbian 慢变量 A。
+# 依据：Clark & Abbott PRX 14, 021001 (2024) / Wakhloo et al. PNAS 2026。
+# 三段：warm(500 背景) -> encode(pulse 20 / osc 400) -> observe(1200 无输入)
+# 判据：撤掉输入后活动能不能自持 + 主周期。本体的 net/homeo 参数直接复用 _HOMEO。
+_HEBB_TASK = TaskSpec(kind="none", n_cue=4, in_spike=3.0, bg_rate=0.015,
+                      grow_steps=30000, warm_steps=500, input_mode="pulse",
+                      enc_steps=20, osc_steps=400, osc_period=100.0, osc_amp=3.0,
+                      obs_steps=1200, bin_size=20)
+_HEBB_PLAST = Plasticity(weight=True, topology=True, bias=False,
+                         trigger="step", t_s=50, struct_kind="hebb",
+                         r_target=0.008, tol=0.20, p_del=0.30, p_new=0.30,
+                         trace_decay=0.95, reset_state_per_chunk=True,
+                         hebb_r=0.05, tau_syn=600.0, tau_c=20.0, a_max_rel=2.0)
+_HEBB = dict(_HOMEO, flow="hebb", task=_HEBB_TASK, plast=_HEBB_PLAST,
+             signal=SignalSpec(source="none"), n_ep=0, steps=0)
+
+HB_PULSE = Config(name="hb_pulse", note="grow_hebb r=0.05 pulse（基准）", **_HEBB)
+HB_OSC = Config(name="hb_osc", note="grow_hebb r=0.05 osc（振荡输入）",
+                **dict(_HEBB, task=replace(_HEBB_TASK, input_mode="osc")))
+HB_R0 = Config(name="hb_r0", note="grow_hebb r=0（无 A；对照）",
+               **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.0)))
+HB_SHUF = Config(name="hb_shuf", note="grow_hebb r=0.05 pulse + A 随机重排",
+                 **dict(_HEBB, readout=replace(_HOMEO_READOUT, a_shuffle=True)))
+HB_P040 = Config(name="hb_p040", note="grow_hebb r=0.40 pulse（§16.12 主档）",
+                 **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.40)))
+HB_P040_SHUF = Config(name="hb_p040_shuf",
+                      note="grow_hebb r=0.40 pulse + A 随机重排（§16.12 对照）",
+                      **dict(_HEBB, plast=replace(_HEBB_PLAST, hebb_r=0.40),
+                               readout=replace(_HOMEO_READOUT, a_shuffle=True)))
+HB_OSC_SHUF = Config(name="hb_osc_shuf",
+                     note="grow_hebb r=0.05 osc + A 随机重排（§16.12 对照）",
+                     **dict(_HEBB, task=replace(_HEBB_TASK, input_mode="osc"),
+                              readout=replace(_HOMEO_READOUT, a_shuffle=True)))
+HB_FREEZE = Config(name="hb_freeze",
+                   note="grow_hebb r=0.05 pulse + observe 期 A 冻结",
+                   **dict(_HEBB, plast=replace(_HEBB_PLAST, weight=False)))
+
+
 ALL = [
     BASE,
     PLAST_NONE, PLAST_BIAS, PLAST_W, PLAST_TOPO, PLAST_W_BIAS,
@@ -464,6 +504,8 @@ ALL = [
     CO_TEACH, CO_PUNISH, CO_FROZEN,
     TE_TEACH, TE_RAND_M, TE_NO_TEACH, TE_FROZEN,
     FU_CLOSED, FU_OPEN, FU_FROZEN, FU_DIV,
+    HB_PULSE, HB_OSC, HB_R0, HB_SHUF, HB_FREEZE,
+    HB_P040, HB_P040_SHUF, HB_OSC_SHUF,
 ]
 
 BY_NAME = {c.name: c for c in ALL}

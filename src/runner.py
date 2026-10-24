@@ -780,6 +780,173 @@ def _run_teach(cfg):
     }
 
 
+def _main_period(bins, bin_size, lo=2):
+    """从分格序列里估主周期（自相关第一个正峰）。太静默则返回 0。"""
+    a = np.asarray(bins, float)
+    if a.size < 8 or a.sum() <= 0:
+        return 0.0, 0.0
+    a = a - a.mean()
+    if np.allclose(a, 0):
+        return 0.0, 0.0
+    ac = np.correlate(a, a, mode='full')[a.size - 1:]
+    ac = ac / (ac[0] + 1e-12)
+    for k in range(lo, ac.size // 2):
+        if ac[k] > ac[k - 1] and ac[k] >= ac[k + 1] and ac[k] > 0.2:
+            return float(k * bin_size), float(ac[k])
+    return 0.0, 0.0
+
+
+def _run_hebb(cfg):
+    """移植自 grow_hebb.py：结构冻结 + Hebbian 慢变量 A + 三段（warm / encode / observe）。
+
+    与其它流程的根本区别：
+      - 结构不是自己长（先跑一次 homeo），而是**冻结**——隔离变量
+      - 权重 = `w_struct + A`，A 是一条与边同型的慢变量（PRX 14, 021001 的低秩形态）
+      - 判据不是分类准确率，而是「撤掉输入后活动能不能自持」+ 主周期
+
+    ⚠️ 两处容易抄错的对齐点（旧实现就是这么写的）：
+      ① 放电数只算**兴奋神经元**（`s[:N_E].sum()`），不是全体
+      ② `cn = c[:N_E] / mean(c[:N_E])`；pre/post 里含抑制神经元（≥N_E）——
+         必须先按 mask 取子集再索引，否则越界
+    """
+    t0 = time.perf_counter()
+    sp = cfg.net
+    N = sp.N
+    N_E = int(round(N * sp.e_ratio))
+    N_IN = sp.n_in
+
+    # ---- 1) 结构：homeo 长出来，然后冻结 ----
+    gres = _run_homeo(cfg.with_(steps=cfg.task.grow_steps), return_net=True)
+    net = gres['_net']
+    pre, post = net.pre, net.post
+    w_struct = net.w
+    del gres
+
+    # ---- 2) 状态重置（旧实现不用 grow 结束时的状态）----
+    v = np.zeros(N, np.float32)
+    s = np.zeros(N, np.float32)
+    ref = np.zeros(N, np.int32)
+    theta = np.full(N, sp.v_th, np.float32)
+    x_rec = np.ones(N, np.float32)
+    c = np.zeros(N, np.float32)
+    A = np.zeros(pre.size, np.float32)
+    mask = (pre >= N_IN) & (pre < N_E) & (post < N_E)
+    im_all = np.nonzero(mask)[0]
+
+    rng = np.random.default_rng(cfg.seed + 31337)
+    r = cfg.plast.hebb_r
+    tau_syn = cfg.plast.tau_syn
+    tau_c = cfg.plast.tau_c
+    lim = cfg.plast.a_max_rel * r * sp.w_ee_init * 4.0
+    use_std = bool(sp.use_std)
+    in_spike = cfg.task.in_spike
+    bg = cfg.task.bg_rate
+    zero = np.zeros(N, np.float32)
+
+    def step(xin, plastic):
+        nonlocal v, s, ref, theta, x_rec, c, A
+        w_eff = w_struct + A
+        if use_std:
+            w_eff = np.where(pre >= N_E, w_eff * x_rec[pre], w_eff)
+        I = np.bincount(post, weights=w_eff * s[pre], minlength=N).astype(np.float32)
+        v = v * np.float32(np.exp(-1.0 / sp.tau_v)) + I + xin
+        fire = (v > theta) & (ref <= 0)
+        s_new = fire.astype(np.float32)
+        v = np.where(s_new > 0, 0.0, v)
+        ref -= 1
+        np.maximum(ref, 0, out=ref)
+        ref[s_new > 0] = sp.t_ref
+        if fire.any():
+            theta[fire] = np.minimum(theta[fire] + sp.d_theta, sp.th_max)
+        theta += (sp.v_th - theta) / sp.tau_adapt
+        if use_std:
+            x_rec += (1.0 - x_rec) / sp.tau_rec
+            ii = np.nonzero(s_new[N_E:] > 0)[0] + N_E
+            if ii.size:
+                x_rec[ii] *= (1.0 - sp.u_std)
+        c += (s_new - c) / tau_c
+        if plastic and r > 0.0:
+            m = c[:N_E].mean()
+            if m > 1e-9:
+                cn = c[:N_E] / m
+                target = np.zeros_like(A)
+                if im_all.size:
+                    target[im_all] = r * sp.w_ee_init * cn[pre[im_all]] * cn[post[im_all]]
+                A += (target - A) / tau_syn
+                np.clip(A, -lim, lim, out=A)
+                A[~mask] = 0.0
+        s = s_new
+        return float(s_new[:N_E].sum())
+
+    # ---- 3) warm（背景预热）----
+    for _ in range(cfg.task.warm_steps):
+        xin = zero.copy()
+        xin[N_IN:] = (rng.random(N - N_IN) < bg).astype(np.float32) * in_spike
+        step(xin, True)
+
+    if cfg.readout.a_shuffle:
+        A = A[rng.permutation(A.size)]
+
+    # ---- 4) encode ----
+    B = N_IN // max(1, cfg.task.n_cue)
+    blk = 0
+    enc_tot = 0.0
+    if cfg.task.input_mode == "pulse":
+        for t in range(cfg.task.enc_steps):
+            xin = zero.copy()
+            if t == 0 or t == max(1, cfg.task.enc_steps - 2):
+                xin[blk * B:(blk + 1) * B] = in_spike
+            enc_tot += step(xin, True)
+    else:
+        phase = rng.random(N_IN) * 2 * np.pi
+        for t in range(cfg.task.osc_steps):
+            drive = np.cos(2 * np.pi * t / cfg.task.osc_period + phase) * cfg.task.osc_amp
+            drive = np.maximum(drive, 0.0)
+            xin = zero.copy()
+            xin[:N_IN] = (drive.astype(np.float32)
+                          * (rng.random(N_IN) < 0.9).astype(np.float32))
+            enc_tot += step(xin, True)
+
+    # ---- 5) observe（撤掉全部输入）----
+    bins = []
+    acc = 0.0
+    bs = cfg.task.bin_size
+    plastic_obs = bool(cfg.plast.weight)
+    for t in range(cfg.task.obs_steps):
+        acc += step(zero.copy(), plastic_obs)
+        if (t + 1) % bs == 0:
+            bins.append(acc)
+            acc = 0.0
+
+    per, ac = _main_period(bins, bs)
+    return {
+        'config': cfg.name, 'fingerprint': cfg.fingerprint(), 'seed': cfg.seed,
+        'n_ep': 0, 'steps': int(cfg.task.warm_steps + cfg.task.enc_steps
+                               + cfg.task.obs_steps),
+        'succ': float('nan'), 'succ_first': float('nan'), 'succ_last': float('nan'),
+        'progress': float('nan'), 'basis': float('nan'), 'dist_end': float('nan'),
+        'out_fire': 0.0, 'fixdelay': None, 'react': None,
+        'E_final': int(pre.size), 'n_ee': int(net_ee(pre, post, N_IN, N_E)),
+        'born': 0, 'drop': 0, 'n_inh': int((pre >= N_E).sum()),
+        'rate': 0.0,
+        'out_deg': 0, 'out_bias': 0.0,
+        'n_upd_w': 0, 'n_upd_b': 0, 'n_upd_top': 0,
+        'io_ok': True, 'n_io': 0,
+        # ---- hebb 专有 ----
+        'r': r, 'tau_syn': tau_syn, 'mode': cfg.task.input_mode,
+        'plastic': plastic_obs, 'shuffle': bool(cfg.readout.a_shuffle),
+        'enc': float(enc_tot), 'bins': bins, 'head': bins[:6],
+        'tail_sum': float(np.sum(bins[6:])), 'total': float(np.sum(bins)),
+        'period': per, 'ac': ac, 'a_abs': float(np.abs(A).mean()),
+        'elapsed': round(time.perf_counter() - t0, 2),
+    }
+
+
+def net_ee(pre, post, n_in, n_e):
+    m = (pre >= n_in) & (pre < n_e) & (post < n_e)
+    return int(m.sum())
+
+
 def sample_delay(cfg, progress, rng):
     """可变间隔（VI）：Gamma 采样。均值随进度上升，CV 固定 → 方差随之上升。"""
     m = cfg.task.d_mean_start + (cfg.task.d_mean_end - cfg.task.d_mean_start) * float(
@@ -1532,6 +1699,8 @@ def run(cfg):
         return _run_cond(cfg)
     if cfg.flow == 'teach':
         return _run_teach(cfg)
+    if cfg.flow == 'hebb':
+        return _run_hebb(cfg)
     if cfg.flow == 'talk':
         return _run_talk(cfg)
     if cfg.flow == 'world':

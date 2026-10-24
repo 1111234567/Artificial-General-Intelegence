@@ -43,17 +43,17 @@ scripts/align_layers.py  移植对齐工具（六层）
 
 ## 移植覆盖度（2026-10-24）
 
-> **已与旧脚本对齐：8 个脚本 / 105 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21）。
+> **已与旧脚本对齐：9 个脚本 / 201 项，行为逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21、`grow_hebb` 96/96）。
 > 验证方式与全套跑法见 `docs/experiments.md` §16.18 / §16.19；工具 `scripts/align_layers.py`。
 >
-> **未移植（1 个）**：`grow_hebb`
+> **只剩工具类**：`bench_lif2` / `calib5` / `scan_base`（应做成 `run.py bench` / `scan` 子命令）
 > + `bench_lif2` / `calib5` / `scan_base`（后三个应做成 `run.py bench` / `scan` 子命令）。
-> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 8 个长出来的，
+> 未移植的脚本**不能**当作“框架没实现那个机制”的依据——框架是根据已移植的 9 个长出来的，
 > 剩下 8 个里的机制它很可能还表达不了。
 
-## 七个流程（`Config.flow`）
+## 八个流程（`Config.flow`）
 
-本体（`core.py`）与可塑性原子操作七个流程共用；区别只在「什么时候调哪个原子操作」。
+本体（`core.py`）与可塑性原子操作八个流程共用；区别只在「什么时候调哪个原子操作」。
 
 | flow | 时间结构 | 动作 | 环境 | 更新时机 |
 |---|---|---|---|---|

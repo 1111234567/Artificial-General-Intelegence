@@ -191,6 +191,16 @@ class TaskSpec:
     d_max: int = 520             # 最长（= 保持 500 步）
     answer_win: int = 150        # 回答窗（从提问开始算）
 
+    # ---- hebb 流程（grow_hebb）：结构冻结 + A 慢变量 + 三段（warm / encode / observe）----
+    grow_steps: int = 30000      # 先用 homeo 长出结构的步数
+    warm_steps: int = 500        # 状态重置后的背景预热
+    input_mode: str = "pulse"    # pulse（两拍）/ osc（余弦 + 逐单元随机相位，切负半周）
+    osc_steps: int = 400         # osc 输入持续步数（= 4 个 100 步周期）
+    osc_period: float = 100.0
+    osc_amp: float = 3.0
+    obs_steps: int = 1200        # 撤掉全部输入后的观测步数
+    bin_size: int = 20           # 观测分格粒度
+
     # ---- teach 流程（grow_teach）：固定长度 trial + 持续速率编码 + 末窗 argmax ----
     trial_steps: int = 40        # 一个 trial 的步数（> t_ref，让不应期不主导）
     read_win: int = 20           # 读出窗口（trial 最后 N 步做 argmax 计数）
@@ -260,6 +270,14 @@ class Plasticity:
     # 只保留 rate_ema 与结构——等于每 50 步把 v/s/ref/θ/x_rec 清空。
     # True = 旧行为（对齐 grow_homeo / 复现 §16.11 用）；False = 状态连续（设计要的）。
     reset_state_per_chunk: bool = False
+    # ---- hebb 形态：结构冻结，只变权重（E-E 边上一条慢变量 A）----
+    # A[e] <- A[e] + (1/tau_syn)·(-A[e] + r·w_ee_init·cn[pre]·cn[post])
+    # cn = c[:N_E] / mean(c[:N_E])（均值归一 → 尺度不随放电率漂移）
+    # 依据：Clark & Abbott PRX 14, 021001 (2024) / Wakhloo et al. PNAS 2026
+    hebb_r: float = 0.05         # A 相对于结构权重的稳态强度（0 = 无 A）
+    tau_syn: float = 600.0       # 突触时间常数（步）；神经元 τ = 20 步
+    tau_c: float = 20.0          # 活动率滤波（与膜电位同尺度）
+    a_max_rel: float = 2.0       # |A| 上界 = a_max_rel × r × w_ee_init × 4
 
 
 # ---------------------------------------------------------------- 信号 m
@@ -335,6 +353,8 @@ class ReadoutSpec:
     perturb: float = 0.0         # 初始膜电位扰动幅度（前史因果诊断；0 = 不扰动）
     # 抢答是否终止本呈现。talk 终止（抢答=答错）；cond **不终止**（只记录）。
     early_terminate: bool = True
+    # hebb 对照：保持 A 的数值分布、破坏它与边上神经元的对应关系
+    a_shuffle: bool = False
 
 
 # ---------------------------------------------------------------- 完整配置
@@ -407,6 +427,17 @@ class Config:
             if self.readout.n_out * self.net.blk > self.net.n_in:
                 errs.append("n_out(%d) × blk(%d) 超过输入区 n_in(%d)" % (
                     self.readout.n_out, self.net.blk, self.net.n_in))
+            return errs
+        if self.flow == "hebb":
+            if self.plast.struct_kind != "hebb":
+                errs.append("hebb 流程要求 plast.struct_kind == 'hebb'，实际 %s"
+                            % self.plast.struct_kind)
+            if self.task.input_mode not in ("pulse", "osc"):
+                errs.append("hebb 流程要求 input_mode ∈ {pulse, osc}，实际 %s" % self.task.input_mode)
+            if self.task.grow_steps <= 0 or self.task.obs_steps <= 0:
+                errs.append("hebb 流程要求 grow_steps 与 obs_steps > 0")
+            if self.plast.struct_kind == "hebb" and self.plast.t_s <= 0:
+                errs.append("hebb 流程要求 t_s > 0")
             return errs
         if self.flow == "teach":
             if self.readout.kind != "argmax":

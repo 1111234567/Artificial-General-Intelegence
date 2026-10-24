@@ -2,6 +2,34 @@
 
 > 倒序，只追加。历史变更记录在这里；设计推演过程不进本文件。
 
+## 0.15.0 — 2026-10-24
+
+**移植 `grow_hebb`（第 9 个脚本，最后一个主要脚本）：8/8 逐位一致；§16.12 五个数字全部逐字复现。**
+
+框架新增第 8 个 flow `flow="hebb"`（结构冻结 + Hebbian 慢变量 A + 三段式）：
+`Plasticity.struct_kind="hebb"` + `hebb_r` / `tau_syn` / `tau_c` / `a_max_rel`；
+`TaskSpec.grow_steps` / `warm_steps` / `input_mode`（pulse|osc）/ `osc_steps` / `osc_period` /
+`osc_amp` / `obs_steps` / `bin_size`；`ReadoutSpec.a_shuffle`（A 重排对照）。
+实现上 `_run_hebb` 先调一次 `_run_homeo` 拿结构（复用已有实现），再重置状态跑三段。
+
+对齐：grow_steps=3000 → 8/8；grow_steps=30000 → 8/8（10 个量 + bins/head 逐格）。
+
+§16.12 复核（grow_steps=30000）：
+  r=0.40 pulse        34566 / 420   [记录同]
+  r=0.40 pulse A 重排 34077 / 420   [记录同]
+  r=0.05 osc          30121 / 380   [记录同]
+  r=0.05 osc  A 重排  30042 /  40   [记录同]
+  r=0.02 osc -> r=0.40 osc  31194 / 34596  [记录同]
+
+两个结论有框架侧支撑：打乱 A 效果不变（差 1.4%）、r 差 20 倍效果几乎一样（差 11%）。
+新读数（这次把 r 扫开）：同样 pulse，r=0.05 完全归零、r=0.40 自持 3.4 万次
+  -> 「A 有没有用」取决于 r 是否过了分岔点，不是「Hebbian 是否可行」。
+
+未做：§16.12 的两个根因（A 是纯偏置 / 网络压在相变点）一行未改，只做了移植。
+
+工具：align_layers.py hebb
+文档：§16.24、agi.md（9/11）、README.md、src/README.md（八流程）、CHANGELOG 0.15.0
+
 ## 0.14.0 — 2026-10-24
 
 **移植 `grow_func`（第 8 个脚本）：21 项 × 4 模式逐位一致；§16.8 完全复现。**
