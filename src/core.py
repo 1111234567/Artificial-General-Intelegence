@@ -144,6 +144,10 @@ class Network:
         nside = len(sp_)
         nlink = len(out_idx) * (sp.n_q + sp.n_out_int)
         nfan = N_IN * sp.n_in_fanout          # ⚠️ 旧实现的偏移（不是 (N_IN+n_q)*fanout）
+        if not sp.talk_legacy_offset:
+            # 修正（2026-10-24）：扇出实际插入的是 (n_in+n_q)*fanout 条，
+            # 所以偏移必须按同一个数算——否则接口权重永远拿不到 uniform。
+            nfan = (N_IN + sp.n_q) * sp.n_in_fanout
         n_rand = pre.size - nlink - nfan - nside
         w[n_rand:n_rand + nlink] = rng.uniform(0.15, 0.60, nlink).astype(np.float32)
         w[pre.size - nside:] = -sp.side_inh

@@ -76,8 +76,8 @@ def cmd_check(name=None):
 def _feasible_msg(c):
     """前置检查的**通过**说明——按流程/环境分派（否则不适用可达性的流程会打错口径）。"""
     if c.flow == "talk":
-        return "不适用（talk：无目标可达性；时间轴 %d 步 × %d 呈现）" % (
-            c.task.t_present, c.n_ep)
+        return "不适用（talk：无目标可达性）；提问@%d 回答@%d（保持 %d 步 / 抢答窗 %d 步）" % (
+            c.task.query_at, c.task.answer_from, c.task.hold_steps, c.task.early_steps)
     if c.flow == "world":
         return "不适用（world：单条时间轴，无目标与成败）"
     if c.env.kind == "math_2d":

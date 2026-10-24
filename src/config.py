@@ -59,6 +59,11 @@ class NetSpec:
     blk: int = 25                   # 每个词占多少输入神经元
     n_out_int: int = 40             # 每个输出从内部网络接多少条
     n_in_fanout: int = 50           # 每个输入区神经元连多少个下游
+    # 接口权重偏移：旧实现算 `nfan = n_in * n_in_fanout`，而扇出实际插了
+    # `(n_in+n_q) * n_in_fanout` 条 → 少算 n_q*n_in_fanout 条，`uniform(0.15~0.60)`
+    # 整体后移、从未落到接口边上（实测接口权重全为 w_e=0.5）。
+    # True = 旧偏移（对齐旧脚本 / 复现 §16.10 用）；False = 修正（接口权重真正随机）。
+    talk_legacy_offset: bool = False
 
 
 # ---------------------------------------------------------------- 环境
@@ -117,16 +122,40 @@ class TaskSpec:
     phase: str = "seq"              # two_phase：seq（先 A 后 B）/ fresh（直接 B）
 
     # ---- talk 流程（grow_talk）：三段式时间轴（编码 → 保持 → 提问/回答）----
+    #
+    # 两个时刻必须分开（2026-10-24 修正）：旧脚本的 `--delay=` 只改「何时允许回答」，
+    # 不改「何时提问」（DELAY 是独立常数）——名字与实际含义不符，导致 `--delay=20`
+    # 变成「回答窗早于提问」（不跨保持期）。现在它们是两个独立、名字准确的参数。
+    #
+    #   t=0      burst        query_at           t_max      t_present
+    #   |-- 编码 --|-- 保持 -----|-- 提问/回答 ------|-- 尾巴 ----|
+    #              ^ answer_from 可以早于 query_at（= 不需要跨保持期，旧 75% 就是这种）
     t_present: int = 500        # 一次呈现的总长（必须 > t_max）
     burst: int = 20             # 内容脉冲窗长
     nburst: int = 2             # 内容窗内几次同步爆发
-    delay: int = 120           # 提问时刻（保持期 = delay - burst）
+    query_at: int = 120         # **何时提问**（提问脉冲的时刻）
     qburst: int = 10            # 提问脉冲窗长
-    answer_from: int = 120      # 从这里开始可以回答
+    answer_from: int = 120      # **何时允许回答**（回答窗起点；无抢答窗 = 与 query_at 相等）
     t_max: int = 200            # 回答截止（过 = 沉默）
     cool: int = 30              # 说完后的冷却
     in_spike: float = 3.0       # 输入脉冲幅度（必须 > v_th，见 §16.10 缺陷 3）
     in_lo: float = 0.001        # 背景噪声率
+
+    # ---- 派生量（不参与指纹，避免同一件事两种写法）----
+    @property
+    def hold_steps(self):
+        """保持期长度 = 提问时刻 − 编码窗尾。这是真正要扫的记忆跨度。"""
+        return self.query_at - self.burst
+
+    @property
+    def early_steps(self):
+        """抢答窗长度 = 回答起点 − 编码窗尾。> 0 才可能出现「抢答」。"""
+        return self.answer_from - self.burst
+
+    @property
+    def answer_before_query(self):
+        """回答窗是否早于提问（= 不需要跨保持期；旧脚本 `--delay=20` 的形态）。"""
+        return self.answer_from < self.query_at
 
     def check_feasible(self, steps_per_action: int) -> Tuple[bool, str]:
         """**前置检查**：最多能走多远 vs 目标差距。
@@ -304,6 +333,9 @@ class Config:
                             % self.signal.source)
             if self.task.t_max >= self.task.t_present:
                 errs.append("t_max(%d) 必须 < t_present(%d)" % (self.task.t_max, self.task.t_present))
+            if self.task.query_at < self.task.burst:
+                errs.append("query_at(%d) 必须 >= burst(%d)（提问不能在编码期内）" % (
+                    self.task.query_at, self.task.burst))
             if self.task.answer_from < self.task.burst:
                 errs.append("answer_from(%d) 必须 >= burst(%d)" % (self.task.answer_from, self.task.burst))
             if self.readout.n_out * self.net.blk > self.net.n_in:

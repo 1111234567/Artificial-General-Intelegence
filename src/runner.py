@@ -517,7 +517,7 @@ def _run_talk(cfg):
     T_PRESENT = cfg.task.t_present
     BURST = cfg.task.burst
     NBURST = cfg.task.nburst
-    DELAY = cfg.task.delay
+    DELAY = cfg.task.query_at
     QBURST = cfg.task.qburst
     ANSWER_FROM = cfg.task.answer_from
     T_MAX = cfg.task.t_max

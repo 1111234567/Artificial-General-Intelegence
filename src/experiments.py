@@ -5,6 +5,8 @@
 #
 # 每个实验都必须说清：这份配置在哪些维度上与基准不同（对照组的差集）。
 
+from dataclasses import replace
+
 from .config import (Config, Plasticity, SignalSpec, TaskSpec, EnvSpec,
                      ReadoutSpec, NetSpec)
 
@@ -243,8 +245,9 @@ _TALK = dict(
         theta_mode="fire_adapt", tau_adapt=100.0, d_theta=0.2,
         th_min=1.0, th_max=3.0, d_theta_out=0.02,
         n_q=10, blk=25, n_out_int=40, n_in_fanout=50,
+        talk_legacy_offset=True,   # 旧偏移：保持与 grow_talk 逐位一致（对齐用）
     ),
-    task=TaskSpec(kind="none", t_present=500, burst=20, nburst=2, delay=120,
+    task=TaskSpec(kind="none", t_present=500, burst=20, nburst=2, query_at=120,
                   qburst=10, answer_from=120, t_max=200, cool=30,
                   in_spike=3.0, in_lo=0.001),
     readout=ReadoutSpec(kind="first_spike", n_out=4,
@@ -272,6 +275,19 @@ TA_NO_TEACH = Config(name="ta_no_teach", note="grow_talk no_teach（m 恒 +1）"
 TA_FROZEN = Config(name="ta_frozen", note="grow_talk frozen（三层可塑性全关）",
                    **dict(_TALK, plast=_TALK_PLAST_OFF))
 
+# ---- 修正接口权重偏移后的同一组（2026-10-24）----
+# 与 ta_* 的唯一差异：`talk_legacy_offset=False`——接口边真正拿到 uniform(0.15~0.60)。
+# ta_* 保留旧偏移（逐位可复现 / 与 §16.10 历史读数可比），两组并存。
+_TALK_FIX = dict(_TALK, net=replace(_TALK["net"], talk_legacy_offset=False))
+
+TK_TEACH = Config(name="tk_teach", note="grow_talk teach + 修正接口权重偏移", **_TALK_FIX)
+TK_RAND_M = Config(name="tk_rand_m", note="grow_talk rand_m + 修正接口权重偏移",
+                   **dict(_TALK_FIX, signal=SignalSpec(source="random", **_TALK_SIG)))
+TK_NO_TEACH = Config(name="tk_no_teach", note="grow_talk no_teach + 修正接口权重偏移",
+                     **dict(_TALK_FIX, signal=SignalSpec(source="constant", **_TALK_SIG)))
+TK_FROZEN = Config(name="tk_frozen", note="grow_talk frozen + 修正接口权重偏移",
+                   **dict(_TALK_FIX, plast=_TALK_PLAST_OFF))
+
 
 ALL = [
     BASE,
@@ -284,6 +300,7 @@ ALL = [
     GA_GOAL_T_SEQ, GA_GOAL_T_FRESH,
     GA_WORLD_CLOSED, GA_WORLD_OPEN, GA_WORLD_RANDACT, GA_WORLD_NOISE, GA_WORLD_FROZEN,
     TA_TEACH, TA_RAND_M, TA_NO_TEACH, TA_FROZEN,
+    TK_TEACH, TK_RAND_M, TK_NO_TEACH, TK_FROZEN,
 ]
 
 BY_NAME = {c.name: c for c in ALL}
