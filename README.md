@@ -55,7 +55,7 @@ python test/grow_func.py 50000 8 8 --diag                # 因果方向（a 领�
 python test/grow_func.py 50000 8 8 --div                 # 前史因果（1e-3 扰动）
 
 # 旧版（结构自生长，已停用——它的 15 版死网已定位为五个实现缺陷，见 experiments.md §16.6）
-# python test/grow_v2.py 50000 8 8
+# python test/archived/grow_v2.py 50000 8 8
 ```
 
 文档校验（章节编号 / 悬空引用 / 表格列数 / 乱码与行尾 / 待定项编号）：
