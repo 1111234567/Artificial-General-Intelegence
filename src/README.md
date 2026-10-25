@@ -12,12 +12,13 @@ src/
   core.py         本体（LIF 网络）——**唯一实现**
   env.py          环境（本机真实文件）
   signal.py       m 的来源与形态（= 学习方式本身）
-  runner.py       跑一个配置，返回一条结构化结果（四个流程见下）
+  runner.py       跑一个配置，返回一条结构化结果（八个流程见下）
   store.py        结果登记（JSONL，按指纹查）
   experiments.py  **唯一声明实验的地方**（71 个）
+  scan.py         参数网格（`run.py scan` 用；只生成网格，不登记结果）
 
 test/run.py       唯一入口（九个子命令）
-scripts/align_layers.py  移植对齐工具（六层）
+scripts/align_layers.py  移植对齐工具（17 层）
 ```
 
 ## 九个命令
@@ -34,7 +35,7 @@ scripts/align_layers.py  移植对齐工具（六层）
 | `scan [homeo|calib] [nseed] [nproc]` | 参数扫描（工具；不登记；用框架的 `_run_homeo`） |
 | `bench` | 模拟器成本基准（约 30 s；**不用**框架的 `Network`——它测的就是实现形态本身） |
 
-## 三个「不能再犯」对应的机制
+## 四个「不能再犯」对应的机制
 
 | 今天的教训 | 框架里的对策 |
 |---|---|
@@ -64,9 +65,10 @@ scripts/align_layers.py  移植对齐工具（六层）
 | `homeo` | **单条时间轴**（`steps`，内部按 `t_s` 分 chunk）| 无（不读动作）| 周期性 cue 编码 + 背景脉冲 | 每 `t_s` 步（按率偏差双向调 E-E 边）|
 | `cond` | **变长呈现**（burst + Gamma 采样的保持期 + answer_win）| 4 个离散（抢答不终止）| 无环境（程序生成输入）| 每 `k_update` 步 |
 | `teach` | **固定 trial**（n_ep × trial_steps）+ 末 `read_win` 步 argmax | 4 个离散（计数 argmax）| 无环境（持续速率编码）| 每 trial 一次（只更接口边）|
+| `hebb` | **一次性三段**（warm → encode → observe，不是循环）| 无（不读动作）| 无环境（pulse / osc 两种输入）| observe 期 A 冻结；结构在 warm 之前由 `_run_homeo` 长好 |
 
 **这些脚本的可塑性规则确实不同**（不是同一件事的不同写法）：`agent` 对称 + BCM；`goal` 对称 + BCM；
-`world` **非对称 + 无 BCM**；`talk` / `cond` / `teach` 用旧算式（`el[nz]` 子集按 `max` 归一，不是全局 `abs`）——所以它们不经 `apply_weight`。硬合并成一套，任何一个方向都会移植失败。
+`world` **非对称 + 无 BCM**；`talk` / `cond` / `teach` 用旧算式（`el[nz]` 子集按 `max` 归一，不是全局 `abs`）——所以它们不经 `apply_weight`；`hebb` 用的是 Hebbian 慢变量（`w_eff = w_struct + A`，结构冻结）。硬合并成一套，任何一个方向都会移植失败。
 
 ## 约定
 

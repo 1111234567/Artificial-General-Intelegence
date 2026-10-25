@@ -38,10 +38,10 @@
 | `docs/design.md` | 设计：判断与机制（§0–§9、§14） |
 | `docs/experiments.md` | 验证：待定项 / 实验设计 / 准则与自评 / 实验记录（§10、§11、§13、§16） |
 | `docs/reference.md` | 参考：文献索引与领域定位（§12、§15） |
-| `src/README.md` | 框架：结构、九个子命令、三个「不能再犯」的机制、**移植覆盖度** |
+| `src/README.md` | 框架：结构、九个子命令、四个「不能再犯」的机制、**移植覆盖度** |
 | `scripts/check_docs.py` | 文档结构校验：章节完整性 / 引用可解析 / 关键内容逐字存在 / 编码 |
-| `scripts/diff_volumes.py` | 把三卷重建回原文，与 `docs/archived/` 的草案逐行 diff（验证信息不丢） |
-| `scripts/align_layers.py` | **移植对齐工具**：construct / forward / run / seq / modes / contrib / verify / goal / world / talk / homeo / homeoprobe / cond / teach / func / hebb |
+| `scripts/diff_volumes.py` | 把三卷重建回原文，与 `docs/archived/` 的草案逐行 diff（**只报差异、不区分「新增」与「丢失」**；拆分后新增内容会一起出现，所以**不是无损证明**） |
+| `scripts/align_layers.py` | **移植对齐工具**（17 层）：construct / forward / run / noop / seq / modes / contrib / verify / goal / world / talk / homeo / homeoprobe / cond / teach / func / hebb |
 | `CHANGELOG.md` | 版本历程 |
 
 > 原设计草案 `docs/archived/design-memory-learning-2026-10-22.md` 已退役（2026-10-24 拆入三卷，内容逐行迁移）。
@@ -56,8 +56,8 @@ F:\agi\
   src\          **统一框架**（config / core / env / signal / runner / store / experiments）
   scripts\          核验脚本
   test\
-    run.py          **唯一入口**（list / show / check / run / results / gaps / align）
-    archived\       17 个退役版本脚本 + README（退役理由）
+    run.py          **唯一入口**（9 个子命令：list / show / check / run / results / gaps / align / scan / bench）
+    archived\       18 个退役版本脚本 + README（退役理由）
     net.py          旧共享参数（框架将其收敛进 config.py）
     CONSTANTS.md    常数台账 + 场次四 12 条核对表
     *.py            旧实验脚本（实验记录，不再新增）
@@ -136,7 +136,7 @@ python scripts/check_draft.py docs/reference.md docs/design.md docs/experiments.
 # 三卷整合校验（章节归属 / 跨卷引用前缀 / 逐字块 / 编码）
 python scripts/check_docs.py
 
-# 拆分无损证明（三卷重建回单文件，与归档原件逐行 diff）
+# 拆分对照（三卷重建回单文件，与归档原件 diff；新增内容与丢失都会报出来）
 python scripts/diff_volumes.py
 ```
 
