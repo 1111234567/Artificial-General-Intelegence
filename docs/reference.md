@@ -377,6 +377,18 @@ reward / continue / decoder    ~ p_φ(· | h_t, z_t)
 dyn 与 rep 用不同的 stop-gradient，并用 **free bits 裁在 1 nat（≈1.44 bit）** 以下——
 原文目的：防止「dynamics 平凡可预测但没信息」的退化解。
 
+**三处与「记忆 / 压缩」直接相关的细节（2026-10-25 回查 Nature 正文原文）：**
+
+| 项 | 原文 | 为什么它是压缩压力 |
+|---|---|---|
+| latent 形态 | 「The representations are sampled from a vector of softmax distributions and we take straight-through gradients through the sampling step」 | **离散 categorical**，不是连续浮点——容量有硬上限 |
+| 必须重建 | 「...and **reconstruct the inputs to ensure informative representations**」 | 每步都要还原整帧 → 与重建无关的信息被挤掉 |
+| free bits 的理由 | 「To avoid a degenerate solution where **the dynamics are trivial to predict but contain no information about the input**」 | 在给「压缩到什么程度算够」定标（低于 1 nat 就关掉） |
+
+另：序列模型是 **block-diagonal GRU，8 块**（「to allow for a large number of memory units without quadratic increase in parameters and computation」）；encoder / dynamics / actor 三处 softmax 均混 **1% uniform（unimix）** 防变确定性；消融里**最显著的两项就是 KL balancing 与 free bits**。
+
+正文记录见 KB `raw/papers/world-models/nature-2025_dreamerv3-record.md`；论文 PDF 见同目录 `2301.04104_dreamerv3.pdf`。
+
 **五项鲁棒技术（消融结论：KL balancing 与 free bits 最显著，其次是 return normalization 与 symexp twohot）：**
 
 | 技术 | 形式 / 作用 |
@@ -480,6 +492,66 @@ dyn 与 rep 用不同的 stop-gradient，并用 **free bits 裁在 1 nat（≈1.
 与 §15.4 引的 Scientific Reports 2024 是同一件事的另一面：「二值激活在准确率上被连续饱和激活所上界」。
 可证伪推论：回路里高频被反复低通 → 首尾相连后系统会**趋向慢变 / 同步**——
 既可给更长的记忆，也可能吃掉区分力（测法：`probe_decay` + 4 cue 相似度，两个装置都是现成的）。
+
+### 12.12.8 记忆任务的基准读数：DreamerV3 vs R2I（2026-10-25 补录）
+
+> **这一节回答「1 bit 的记忆到底有多难」。** 起因：本项目在一条 RNN 上测「记住一个 cue 能跨多少步」，得到 160 步还有 70~80%，看起来比世界模型强得多——本节说明那是任务更简单的结果，不是能力。
+
+**R2I（Recall to Imagine，Samsami et al., ICLR 2024 oral，arXiv 2403.04253）** 是 DreamerV3 的直接后继：把 RSSM 的 GRU 换成 **SSM（S4 变体）**，得 S3M（Structured State-Space Model）。同一套损失、同一套 KL balancing + free bits。
+
+| 任务 | 定义 | 需记多少 | DreamerV3 | R2I |
+|---|---|---|---|---|
+| **BSuite Memory Length** | 「output an action which is dictated by **the initial observation**」 | episode 有多长就记多久 | **~30 步** | **~100 步** |
+| BSuite Discounting Chain | 第一个动作的奖励在 N 步后才给 | reward delay | ~30 步 | 更长 |
+| POPGym RepeatPrevious | 重复上一个动作 | 64 步 | 差 | SOTA（Medium/Hard） |
+| POPGym Autoencode | 重建之前的观测 | **104 步**（Easy/Medium） | 差 | SOTA |
+| POPGym Concentration | 记住已翻开的牌 | up to 208 步 | 与 R2I 接近（Easy）、略差（Medium） | 略好 |
+| **Memory Maze** | 3D 迷宫，要记物体位置 + 墙体 + 自身位置 | episode 最长 **4K 步** | 远低于人类 | **超过人类**（9×9/11×11/13×13） |
+
+**三条对项目直接有用的判断（原文）：**
+
+1. **「记 1 bit」本身就是这个领域的硬基准。** BSuite Memory Length 的信息量与 `experiments.md` §16.28 同量级（一个初始观测 → 一个动作），而一个**完整的世界模型**只做到 ~30 步。所以「1 bit 没有意义」不成立；没有意义的是**在没有重建、没有任务、没有竞争的条件下测它**。
+
+2. **SSM 在监督学习里的 16K 长程能力，不自动迁移到 MBRL。** 原文：
+   > 「While SSMs have shown their ability to handle extremely long-range dependencies in SL and SSL, this capability **does not necessarily translate to MBRL**, even though the world model optimizes the same supervised objective. This discrepancy arises from **the lifelong nature of world model training**. That is, it needs to bootstrap its performance from a very small dataset with hugely imbalanced reward 『labels』... Additionally, **the continuously growing replay buffer** imposes the need to quickly learn the newly arrived data.」
+
+   → 与 `experiments.md` §16.28「信息在饱和到哪、不在衰减多久」是同一件事的两个面：**终身在线训练 ≠ 离线长序列训练**。
+
+3. **策略输入接口是独立的一层难点。** 原文在记忆型环境里把策略条件在 `(z_t, h_t)` 会「breakdown of policy learning」；改喂 `(z_t, x_t)`（SSM 的隐藏状态）才对；而把三者全喂进去**也不解决**——因为特征的经验分布在训练中漂移，带来非平稳。
+   → 与 `experiments.md` §16.13 的「线性探针 73.5% 可读出、而 `align` = −0.44」是同一形态：**信息在状态里，读出接口不对**。
+
+**R2I 也没解决的问题：** 序列长度与想象 horizon 都不算长（原文自述）；且它仍在「有任务、有奖励、按 episode 训练」的框里——**阶段 B 的三条前提它一条没碰**。
+
+原文 PDF：KB `raw/papers/world-models/2403.04253_r2i-memory-tasks.pdf`。
+
+### 12.12.9 生成式世界模型的「记忆」形态（Genie 3 / Odyssey-3 / Cosmos）
+
+> 这一支的记忆不是「隐状态」，是「**能够续写多久**」。它的压缩压力来自**历史不断增长而必须每帧生成**。
+
+| 模型 | 形态 | 记忆怎么处理 | 度量 |
+|---|---|---|---|
+| **Genie 3**（DeepMind 2025-08，**仅博客、无论文**） | 自回归逐帧，720p / 24fps | **回溯已生成帧**；视觉记忆 **~1 分钟**；一致性是**涌现**的（无显式 3D 表示） | 交互一致性 / 场景复访 |
+| **Odyssey-3**（2026-10-08，**官方页、无权重**） | **自回归扩散 transformer**；训练含带键鼠动作的游戏录像 + 刚体物理仿真 | 未见公开机制细节 | Physics-IQ Verified V2V **66.1**（自评 best-of-8）；WorldMark 13 指标均值，四类中三类第一 |
+| **Cosmos / Cosmos-Drive**（NVIDIA，arXiv 2501.03575） | 扩散视频，7–14B，开放权重 | 未见 | 生成质量 + 下游策略增益 |
+
+**Genie 3 的机制原句（对本项目最有用的一句）：**
+
+> 「During the auto-regressive generation of each frame, the model has to take into account **the previously generated trajectory that grows with time**. For example, if the user is revisiting a location after a minute, the model has to refer back to the relevant information from a minute ago. To achieve real-time interactivity, **this computation must happen multiple times per second**.」
+
+→ 记忆的必要性来自**生成压力**：不记住就没法续写，续错就崩。**没有「只想记住一个标签」的位置。**
+
+**一条统一的说法**（arXiv 2510.20668, *From Masks to Worlds*）：
+
+> 「**The Compression Problem (Scaling).** An ever-growing history risks computational collapse. The challenge is to learn **causally sufficient state abstractions** that preserve consequence while discarding noise, approaching the information-theoretic bounds of predictive representation.」
+
+这篇把「真正的世界模型」拆成三个依次掌握的能力：**统一生成 → 实时交互 → 持久记忆**。
+
+**两个共同局限（与阶段 B 直接相关）：** Genie 3 只支持**几分钟**连续交互（不是数小时）；Odyssey-3 无权重、benchmark 为自评。**即最前沿的生成式世界模型，也还没有「永不重置」那条时间轴。**
+
+### 12.12.10 本线的材料库
+
+`E:\knowledge-base\raw\papers\world-models\`（2026-10-25 建立）——7 篇 PDF + 3 份无 PDF 来源的转录。索引与用法见该目录 `INDEX.md`。
+**未入 RAG 索引**（下次启动 KB 时需 `reindex(paths=[该目录])`）。
 
 ## 15. 与 SNN 领域的关系（2026-10-23 第三次修正）
 
