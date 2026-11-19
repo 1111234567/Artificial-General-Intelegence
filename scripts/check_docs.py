@@ -1,133 +1,173 @@
-# -*- coding: utf-8 -*-
-"""check_docs.py -- structural checks for the three-volume docs.
+"""检查现行文档的 UTF-8 编码、本地链接和必要入口。
 
-Checks
-  1. every volume carries exactly the expected H2 sections
-  2. every section reference (\u00a7N or \u00a7N.M) resolves to an existing heading,
-     and a prefixed reference (xxx.md \u00a7N) points into that volume
-  3. key blocks that must survive the split are present verbatim
-  4. no mojibake / replacement characters
-
-Usage: python scripts/check_docs.py [--verbose]
+用法：python scripts/check_docs.py [--verbose] [文件 ...]
+相对参数以仓库根目录为基准；默认检查分主题报告和现行索引，归档原件可单独指定。
+只检查文档结构，不把历史数字、原句或研究假设设为通过条件。
 """
-import io
-import os
+
+import argparse
+from pathlib import Path
 import re
-import sys
+from urllib.parse import unquote, urlsplit
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, 'docs')
-ARCHIVED = os.path.join(DOCS, 'archived',
-                        'design-memory-learning-2026-10-22.md')
 
-EXPECT = {
-    'design.md': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14],
-    'experiments.md': [10, 11, 13, 16],
-    'reference.md': [12, 15],
-}
+ROOT = Path(__file__).resolve().parents[1]
+REQUIRED = (
+    "README.md", "agi.md", "CHANGELOG.md", "src/README.md", "src/neurons/README.md",
+    "docs/README.md", "docs/design.md", "docs/experiments.md", "docs/reference.md",
+    "docs/reports/README.md", "docs/evidence/README.md",
+    "docs/review-2026-10-26.md", "docs/archived/README.md", "scripts/run.py", "scripts/align_layers.py",
+    "scripts/README.md", "scripts/historical/README.md", "test/run.py", "test/README.md",
+    "data/README.md", "data/pulse-game/README.md", "experiments/pulse_game/INDEX.md",
+    "experiments/README.md", "experiments/legacy/README.md",
+    "experiments/prototypes/README.md", "experiments/diagnostics/README.md",
+    "experiments/baselines/README.md", "experiments/retired/README.md",
+)
 
-verbose = '--verbose' in sys.argv
-fails = []
 
-# --- load ----------------------------------------------------------------
-texts = {}
-for name in EXPECT:
-    p = os.path.join(DOCS, name)
-    if not os.path.exists(p):
-        fails.append('MISSING FILE: %s' % name)
-        continue
-    texts[name] = io.open(p, 'r', encoding='utf-8', newline='').read()
+def without_code(text, inline=True):
+    """保留行号，忽略围栏代码和行内代码中的示例链接。"""
+    lines = []
+    fence = None
+    for line in text.splitlines(keepends=True):
+        marker = re.match(r"^\s{0,3}(`{3,}|~{3,})", line)
+        if marker:
+            token = marker.group(1)
+            if fence is None:
+                fence = token
+            elif token[0] == fence[0] and len(token) >= len(fence):
+                fence = None
+            lines.append("\n" if line.endswith("\n") else "")
+        elif fence:
+            lines.append("\n" if line.endswith("\n") else "")
+        else:
+            lines.append(re.sub(r"(`+).*?\1", "", line) if inline else line)
+    return "".join(lines)
 
-# --- 1. sections ---------------------------------------------------------
-sec_owner = {}
-for name, txt in texts.items():
-    got = [int(x) for x in re.findall(r'^## (\d+)\.', txt, re.M)]
-    if got != EXPECT[name]:
-        fails.append('%s: sections %s != expected %s'
-                     % (name, got, EXPECT[name]))
-    for n in got:
-        if n in sec_owner:
-            fails.append('section %d appears in both %s and %s'
-                         % (n, sec_owner[n], name))
-        sec_owner[n] = name
 
-# --- 2. references -------------------------------------------------------
-subs = {}          # '11.4' -> file
-for name, txt in texts.items():
-    for m in re.finditer(r'^(#{3,4}) (\d+(?:\.\d+)+)', txt, re.M):
-        subs.setdefault(m.group(2), name)
+def links(text):
+    """产生 (行号, 目标)：行内链接、引用定义和 HTML href/src。"""
+    body = without_code(text)
+    for match in re.finditer(r"!?\[[^\]\n]*\]\(\s*", body):
+        start = pos = match.end()
+        if pos < len(body) and body[pos] == "<":
+            end = body.find(">", pos + 1)
+            target = body[pos + 1:end] if end >= 0 else ""
+        else:
+            depth = 0
+            while pos < len(body):
+                ch = body[pos]
+                if ch == "\\" and pos + 1 < len(body):
+                    pos += 2
+                    continue
+                if ch == "(":
+                    depth += 1
+                elif ch == ")":
+                    if depth == 0:
+                        break
+                    depth -= 1
+                elif ch.isspace() and depth == 0:
+                    break
+                pos += 1
+            target = body[start:pos]
+        target = re.sub(r"\\([\\`()\[\] ])", r"\1", target)
+        yield body.count("\n", 0, match.start()) + 1, target
+    for match in re.finditer(r"^\s{0,3}\[[^\]\n]+\]:\s*(?:<([^>\n]+)>|(\S+))", body, re.M):
+        yield body.count("\n", 0, match.start()) + 1, match.group(1) or match.group(2)
+    for match in re.finditer(r"<[^>]*?\b(?:href|src)=[\"']([^\"']+)[\"'][^>]*>", body):
+        yield body.count("\n", 0, match.start()) + 1, match.group(1)
 
-ref_re = re.compile(r'(?:(`?(?:design|experiments|reference)\.md`?) )?\u00a7(\d+(?:\.\d+)*)')
-bad_ref = 0
-checked = 0
-for name, txt in texts.items():
-    for m in ref_re.finditer(txt):
-        prefix, num = m.group(1), m.group(2)
-        top = int(num.split('.')[0])
-        checked += 1
-        owner = sec_owner.get(top)
-        if owner is None:
-            fails.append('%s: \u00a7%s -> no such section' % (name, num))
-            bad_ref += 1
+
+def anchors(text):
+    """常见 Markdown 标题锚点（含重复标题后缀）和显式 HTML id/name。"""
+    body = without_code(text, inline=False)
+    result = set(re.findall(r"\b(?:id|name)=[\"']([^\"']+)[\"']", body))
+    seen = {}
+    for match in re.finditer(r"^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$", body, re.M):
+        title = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", match.group(1))
+        title = re.sub(r"<[^>]+>", "", title).lower()
+        slug = re.sub(r"[^\w\- ]", "", title).replace(" ", "-")
+        number = seen.get(slug, 0)
+        seen[slug] = number + 1
+        result.add(slug if number == 0 else "%s-%d" % (slug, number))
+    return result
+
+
+def default_targets():
+    paths = list(ROOT.glob("*.md")) + list((ROOT / "docs").glob("*.md"))
+    paths += list((ROOT / "docs/reports").rglob("*.md"))
+    paths += [ROOT / "src/README.md", ROOT / "src/neurons/README.md", ROOT / "test/README.md",
+              ROOT / "docs/archived/README.md", ROOT / "docs/evidence/README.md",
+              ROOT / "data/README.md", ROOT / "data/pulse-game/README.md",
+              ROOT / "experiments/pulse_game/INDEX.md"]
+    paths += list((ROOT / "experiments").rglob("*README.md"))
+    paths += list((ROOT / "experiments").rglob("*-plan.md"))
+    paths += list((ROOT / "scripts").rglob("README.md"))
+    return sorted(set(paths))
+
+
+def display(path):
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("paths", nargs="*")
+    parser.add_argument("--verbose", action="store_true")
+    args = parser.parse_args(argv)
+    targets = [(ROOT / p).resolve() for p in args.paths] if args.paths else default_targets()
+    failures = []
+    texts = {}
+    checked_links = 0
+
+    if not args.paths:
+        failures.extend("必要路径不存在：%s" % rel for rel in REQUIRED if not (ROOT / rel).exists())
+
+    def read(path):
+        if path not in texts:
+            try:
+                texts[path] = path.read_text(encoding="utf-8-sig")
+            except (OSError, UnicodeError) as error:
+                failures.append("%s：不能作为 UTF-8 读取（%s）" % (display(path), error))
+                texts[path] = None
+        return texts[path]
+
+    for path in targets:
+        text = read(path)
+        if text is None:
             continue
-        if prefix:
-            got = prefix.strip('`')
-            if got != owner:
-                fails.append('%s: "%s \u00a7%s" but section %d is in %s'
-                             % (name, got, num, top, owner))
-                bad_ref += 1
-        elif owner != name:
-            fails.append('%s: bare \u00a7%s but section %d is in %s'
-                         % (name, num, top, owner))
-            bad_ref += 1
-        if '.' in num and num not in subs:
-            fails.append('%s: \u00a7%s -> subsection heading not found'
-                         % (name, num))
-            bad_ref += 1
+        for lineno, line in enumerate(text.split("\n"), 1):
+            if "\ufffd" in line or any(ord(ch) < 32 and ch not in "\t\r" for ch in line):
+                failures.append("%s:%d：替代字符或控制字符" % (display(path), lineno))
+        for lineno, target in links(text):
+            parsed = urlsplit(target)
+            if (parsed.scheme and not (len(parsed.scheme) == 1 and target[1:2] == ":")) or parsed.netloc:
+                continue
+            local = unquote(parsed.path)
+            if local.startswith("/"):
+                dest = (ROOT / local.lstrip("/")).resolve()
+            else:
+                dest = (path.parent / local).resolve() if local else path
+            checked_links += 1
+            if not dest.exists():
+                failures.append("%s:%d：本地目标不存在：%s" % (display(path), lineno, target))
+                continue
+            if parsed.fragment and dest.is_file() and dest.suffix.lower() == ".md":
+                other = read(dest)
+                if other is not None and unquote(parsed.fragment) not in anchors(other):
+                    failures.append("%s:%d：标题锚点不存在：%s" % (display(path), lineno, target))
+        if args.verbose:
+            print("checked", display(path))
 
-# --- 3. verbatim blocks that must survive --------------------------------
-MUST = [
-    # life-criteria table (stage A)
-    '| **\u4e0d\u70b8** | \u6d3b\u52a8\u5e45\u5ea6\u65f6\u95f4\u5e8f\u5217\u7684 max / mean | < 20 |',
-    '| **\u6709\u8bb0\u5fc6** | \u6ce8\u5165\u552f\u4e00\u6807\u8bb0\uff0c100 \u6b65\u540e\u80fd\u4e0d\u80fd\u7ebf\u6027\u8bfb\u51fa | \u9ad8\u4e8e\u968f\u673a |',
-    # stage B vacuum table
-    '| \u4e00\u6761\u6c38\u4e0d\u91cd\u7f6e\u7684\u65f6\u95f4\u8f74 | \u6bcf\u6837\u672c / \u6bcf\u5e27\u91cd\u7f6e |',
-    # the three original rewrite records
-    '> - **v1**\uff1a\u4e24\u4e2a\u5b50\u4efb\u52a1\u4ea4\u66ff + \u6d88\u878d\u53cc\u5206\u79bb',
-    '> - **v3**\uff1a\u52a0\u4e00\u4e2a\u524d\u9762\u7684\u9636\u6bb5',
-    # soul-level conclusions
-    '\u957f\u671f\u8bb0\u5fc6\u5c31\u662f\u8fde\u63a5\u672c\u8eab',
-    '\u03c4 \u4e0d\u80fd\u9010\u5355\u5143\u8fde\u7eed\u8bbe\u8ba1',
-    # judgement / criterion
-    '\u5224\u636e\u662f\u8fc7\u7a0b\u7684\u5f62\u72b6',
-    # snn positioning
-    '\u8fd9\u4e0d\u662f\u4e00\u4e2a\u65b0\u67b6\u6784\uff0c\u662f\u4e00\u4e2a',
-]
-all_txt = '\n'.join(texts.values())
-for needle in MUST:
-    if needle not in all_txt:
-        fails.append('verbatim block missing: %s' % needle[:50])
+    for failure in failures:
+        print("FAIL", failure)
+    print("%s：%d 份现行文档，%d 个本地链接，%d 个问题" % (
+        "FAIL" if failures else "PASS", len(targets), checked_links, len(failures)))
+    return 1 if failures else 0
 
-# --- 4. mojibake ---------------------------------------------------------
-BAD = ['\ufffd', '\u951f', '\u9239', '\u6ebe', '\u6522', '\u65ba']
-for name, txt in texts.items():
-    for ch in BAD:
-        if ch in txt:
-            ln = txt[:txt.index(ch)].count('\n') + 1
-            fails.append('%s:%d: suspicious char U+%04X' % (name, ln, ord(ch)))
 
-# --- report --------------------------------------------------------------
-print('volumes      : %s' % ', '.join('%s(%d lines)' % (n, t.count('\n'))
-                                       for n, t in texts.items()))
-print('sections     : %s' % ', '.join('%d->%s' % (k, v)
-                                      for k, v in sorted(sec_owner.items())))
-print('subsections  : %d' % len(subs))
-print('references   : %d checked, %d bad' % (checked, bad_ref))
-print('verbatim     : %d needles' % len(MUST))
-print('')
-if fails:
-    print('FAIL (%d)' % len(fails))
-    for f in fails:
-        print('  - ' + f)
-    raise SystemExit(1)
-print('PASS -- structure, references, verbatim blocks and encoding all clean')
+if __name__ == "__main__":
+    raise SystemExit(main())

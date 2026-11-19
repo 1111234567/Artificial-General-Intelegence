@@ -1,0 +1,517 @@
+{
+  "format": "learned-binding-posthoc-action-loss-diagnostic-v1",
+  "created_utc": "2026-11-07T09:02:32.259Z",
+  "posthoc": true,
+  "status": "Read-only training-data diagnostic requested after formal behavior summaries were observed.",
+  "experiment": "data/learned-binding/v1",
+  "protocol_changes": false,
+  "no_optimizer_updates": true,
+  "no_heldout_observations_used": true,
+  "fixed_training_stream_index": 8,
+  "method": {
+    "input": "Each seed's archived train stream_08, 1024 ticks x 32 actors x 2 jobs. Only obs enters load_native(seed).train(); h/z/M start at zero as in CE training.",
+    "execution": "Three independent CPU processes, one intra-op and one inter-op thread each. FP32 forward/backward, TF32 disabled. Float64 used only for norms/dots of already-computed gradient vectors.",
+    "mode_definitions": {
+      "WAIT": "action == 0",
+      "BEGIN": "action in {1,2}",
+      "FINISH": "action in {3,...,10}"
+    },
+    "mean_mode_loss": "For each mode, mean ordinary cross-entropy over the original 11 native action logits and the actual teacher action labels in that mode.",
+    "original_weighted_ce": "sum_i w_i CE_i / sum_i w_i, with w_WAIT=.25 and all other class weights=1.",
+    "mode_coefficient": "w_mode * n_mode / sum_i w_i; multiplying the mode mean loss/gradient gives its exact original weighted-CE contribution.",
+    "gradient_cosine": "Cosine between flattened gradients of mean mode losses over all 8210 trainable parameters.",
+    "proposed_equal_mode_ce": "(mean_CE_WAIT + mean_CE_BEGIN + mean_CE_FINISH) / 3",
+    "wait_projection_relative_to_finish_component": "(alpha_WAIT * ||g_WAIT|| * cosine(g_WAIT,g_FINISH)) / (alpha_FINISH * ||g_FINISH||). Negative means that WAIT opposes the FINISH-axis component; it is not a measured change in training outcomes.",
+    "combined_gradient_dot_interpretation": "For sufficiently small gradient descent steps, a positive dot with a mode gradient predicts a decrease of that mode's loss locally, before optimizer preconditioning.",
+    "limitations": [
+      "One fixed archived training stream per seed, measured only at final CE endpoints.",
+      "Gradient alignment is local and does not reconstruct earlier optimization or establish why binding failed.",
+      "Adam, clipping, trajectory changes and generalization can make actual retraining behave differently from these raw-gradient comparisons.",
+      "Three-mode balancing also changes relative gradient scale; equal update count alone does not isolate a single causal mechanism."
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "device": "cpu",
+      "threads": 1,
+      "dtype": "torch.float32",
+      "shape": [
+        1024,
+        32,
+        56
+      ],
+      "labels": 65536,
+      "wait_class_weight": 0.25,
+      "weighted_denominator": 17097.25,
+      "current_weighted_ce": 0.11047022044658661,
+      "loss_for_ce": 0.11047022044658661,
+      "modes": {
+        "WAIT": {
+          "count": 64585,
+          "fraction": 0.9854888916015625,
+          "mean_11_action_ce": 0.00795933697372675,
+          "current_weighted_loss_coefficient": 0.94437701969615,
+          "contribution_to_current_weighted_ce": 0.007516614930005441,
+          "fraction_of_current_weighted_ce": 0.06804200172334947,
+          "mean_ce_gradient_norm": 0.030170275664734444,
+          "weighted_contribution_gradient_norm": 0.028492115015673194,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.00003366253440617584,
+            "encoder": 0.003596266886943761,
+            "query": 0.029212831992302984,
+            "key": 0.005802054334765887,
+            "value": 0.0030184097794063508,
+            "gate": 0.001071018154469532
+          }
+        },
+        "BEGIN": {
+          "count": 602,
+          "fraction": 0.009185791015625,
+          "mean_11_action_ce": 0.00021409055625554174,
+          "current_weighted_loss_coefficient": 0.03521034084428783,
+          "contribution_to_current_weighted_ce": 0.000007538201457300802,
+          "fraction_of_current_weighted_ce": 0.00006823740757307164,
+          "mean_ce_gradient_norm": 0.00019852306964407172,
+          "weighted_contribution_gradient_norm": 0.000006990064947622055,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 7.583741279404421e-8,
+            "encoder": 0.000024117220470740778,
+            "query": 0.0001896486460269984,
+            "key": 0.000040088588652115394,
+            "value": 0.000035339690340635386,
+            "gate": 0.0000026768475849698457
+          }
+        },
+        "FINISH": {
+          "count": 349,
+          "fraction": 0.0053253173828125,
+          "mean_11_action_ce": 5.0432515144348145,
+          "current_weighted_loss_coefficient": 0.02041263945956221,
+          "contribution_to_current_weighted_ce": 0.10294607486804898,
+          "fraction_of_current_weighted_ce": 0.9318898292397667,
+          "mean_ce_gradient_norm": 4.044741767910757,
+          "weighted_contribution_gradient_norm": 0.08256385541539454,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.029508791863918304,
+            "encoder": 0.2428522413443041,
+            "query": 3.728796762047179,
+            "key": 0.7757305130328118,
+            "value": 1.3383637796493375,
+            "gate": 0.05645583209620534
+          }
+        }
+      },
+      "mode_gradient_cosines": {
+        "WAIT": {
+          "WAIT": 0.9999999999999991,
+          "BEGIN": 0.9313080643193868,
+          "FINISH": -0.19436516077587396
+        },
+        "BEGIN": {
+          "WAIT": 0.9313080643193868,
+          "BEGIN": 0.9999999999999987,
+          "FINISH": -0.29246427649958073
+        },
+        "FINISH": {
+          "WAIT": -0.19436516077587396,
+          "BEGIN": -0.29246427649958073,
+          "FINISH": 0.9999999999999996
+        }
+      },
+      "combined_gradients": {
+        "original_weighted": {
+          "gradient_norm": 0.08194002520304013,
+          "norm_over_sum_component_norms": 0.7377799478520106,
+          "cosine_with_modes": {
+            "WAIT": 0.151953674124302,
+            "BEGIN": 0.02922806410598187,
+            "FINISH": 0.9400038182119469
+          },
+          "dot_with_modes": {
+            "WAIT": 0.00037565275388989634,
+            "BEGIN": 4.754524900368949e-7,
+            "FINISH": 0.311541933313891
+          }
+        },
+        "three_mode_equal": {
+          "gradient_norm": 1.3463097954368384,
+          "norm_over_sum_component_norms": 0.9911214236416639,
+          "cosine_with_modes": {
+            "WAIT": -0.1871292240904541,
+            "BEGIN": -0.2858792566649578,
+            "FINISH": 0.9999728319622793
+          },
+          "dot_with_modes": {
+            "WAIT": -0.007600915435716818,
+            "BEGIN": -0.00007640796473846112,
+            "FINISH": 5.445327519268004
+          }
+        }
+      },
+      "parameter_count": 8210,
+      "parameters_unchanged": true,
+      "no_optimizer_created": true,
+      "all_parameter_grad_fields_absent": true,
+      "source_model_parameter_hash": "24d57ac6cee382290b4c8b0df115b1162ea54c0a6a45763a06bc5f0a87560fe1",
+      "sources": {
+        "training_stream": {
+          "path": "data/learned-binding/v1/seed_000/data/stream_08.pt",
+          "sha256": "59e58c88d46a26be150fd3ca1194dc245e4a530f514a06266ada8fa83539b2e1"
+        },
+        "endpoint_checkpoint": {
+          "path": "data/learned-binding/v1/seed_000/pretrain/final.pt",
+          "sha256": "9c6632c9a6cf0ef1db6b2fecb9e2bd1086415a3c763bbea16c1c5d254d632d34"
+        },
+        "loss_source": {
+          "path": "experiments/learned_binding/pretrain.py",
+          "sha256": "1bbe7d41574ef867e25f3cb3630a0b48fb5250fd34b72ca12deca990b63bc5ff"
+        },
+        "model_source": {
+          "path": "experiments/learned_binding/model.py",
+          "sha256": "7c9e081ce3ec12f334a946a230465c9f7b774802949a7526b156861358f8929b"
+        }
+      },
+      "seconds": 1.9612997000003816,
+      "three_mode_equal_ce": 1.6838083139882656,
+      "equal_mode_finish_coefficient_gain": 16.329751671442214,
+      "wait_projection_relative_to_finish_component": -0.06707383622050966
+    },
+    {
+      "seed": 1,
+      "device": "cpu",
+      "threads": 1,
+      "dtype": "torch.float32",
+      "shape": [
+        1024,
+        32,
+        56
+      ],
+      "labels": 65536,
+      "wait_class_weight": 0.25,
+      "weighted_denominator": 17090.5,
+      "current_weighted_ce": 0.11671274900436401,
+      "loss_for_ce": 0.11671274155378342,
+      "modes": {
+        "WAIT": {
+          "count": 64594,
+          "fraction": 0.985626220703125,
+          "mean_11_action_ce": 0.004145812708884478,
+          "current_weighted_loss_coefficient": 0.9448816594014219,
+          "contribution_to_current_weighted_ce": 0.003917302391938269,
+          "fraction_of_current_weighted_ce": 0.033563620301598734,
+          "mean_ce_gradient_norm": 0.007950624917505103,
+          "weighted_contribution_gradient_norm": 0.007512399665330515,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.0000015042303402879043,
+            "encoder": 0.0005461404573751009,
+            "query": 0.007160865802342556,
+            "key": 0.0029372787402031078,
+            "value": 0.001705283028261839,
+            "gate": 0.0003171265893552088
+          }
+        },
+        "BEGIN": {
+          "count": 597,
+          "fraction": 0.0091094970703125,
+          "mean_11_action_ce": 0.0002540315908845514,
+          "current_weighted_loss_coefficient": 0.0349316871946403,
+          "contribution_to_current_weighted_ce": 0.000008873752070335988,
+          "fraction_of_current_weighted_ce": 0.00007603070055358039,
+          "mean_ce_gradient_norm": 0.00017399993990902898,
+          "weighted_contribution_gradient_norm": 0.000006078111472788409,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.0000011055892628064612,
+            "encoder": 0.000016199035647166427,
+            "query": 0.00015614131770919638,
+            "key": 0.000058817049991336716,
+            "value": 0.000046450237034723444,
+            "gate": 0.000003894485665644701
+          }
+        },
+        "FINISH": {
+          "count": 345,
+          "fraction": 0.0052642822265625,
+          "mean_11_action_ce": 5.587184906005859,
+          "current_weighted_loss_coefficient": 0.02018665340393786,
+          "contribution_to_current_weighted_ce": 0.11278656520125342,
+          "fraction_of_current_weighted_ce": 0.9663602833743228,
+          "mean_ce_gradient_norm": 2.260223018422941,
+          "weighted_contribution_gradient_norm": 0.045626338688506164,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.03069957345724106,
+            "encoder": 0.13677172527298054,
+            "query": 2.0916044758642793,
+            "key": 0.675516570937586,
+            "value": 0.5016843469365072,
+            "gate": 0.07835827548147029
+          }
+        }
+      },
+      "mode_gradient_cosines": {
+        "WAIT": {
+          "WAIT": 0.9999999999999993,
+          "BEGIN": 0.5943851956370909,
+          "FINISH": 0.2294894371050853
+        },
+        "BEGIN": {
+          "WAIT": 0.5943851956370909,
+          "BEGIN": 1.0000000000000009,
+          "FINISH": -0.2249076868695061
+        },
+        "FINISH": {
+          "WAIT": 0.2294894371050853,
+          "BEGIN": -0.2249076868695061,
+          "FINISH": 0.9999999999999993
+        }
+      },
+      "combined_gradients": {
+        "original_weighted": {
+          "gradient_norm": 0.04791085069629492,
+          "norm_over_sum_component_norms": 0.9015150278591885,
+          "cosine_with_modes": {
+            "WAIT": 0.37542174530809547,
+            "BEGIN": -0.12085732050986261,
+            "FINISH": 0.9882727473399049
+          },
+          "dot_with_modes": {
+            "WAIT": 0.00014300610299208412,
+            "BEGIN": -0.0000010075252567500195,
+            "FINISH": 0.10701927267838543
+          }
+        },
+        "three_mode_equal": {
+          "gradient_norm": 0.7540073690305605,
+          "norm_over_sum_component_norms": 0.9972113903230785,
+          "cosine_with_modes": {
+            "WAIT": 0.23286746600939234,
+            "BEGIN": -0.22256272191922216,
+            "FINISH": 0.999993970812333
+          },
+          "dot_with_modes": {
+            "WAIT": 0.001396000819140611,
+            "BEGIN": -0.000029199614153253026,
+            "FINISH": 1.7042145364521781
+          }
+        }
+      },
+      "parameter_count": 8210,
+      "parameters_unchanged": true,
+      "no_optimizer_created": true,
+      "all_parameter_grad_fields_absent": true,
+      "source_model_parameter_hash": "a364e93fe4bb17e71c45db461c36425281ee5e58bb761cbbd6952835cb21b675",
+      "sources": {
+        "training_stream": {
+          "path": "data/learned-binding/v1/seed_001/data/stream_08.pt",
+          "sha256": "0d07b2237f90ae64bdd56ec0262e23a4c09d79ecb607015391296a0687982d1a"
+        },
+        "endpoint_checkpoint": {
+          "path": "data/learned-binding/v1/seed_001/pretrain/final.pt",
+          "sha256": "fa939a2056c50abbf177e25fe80950344ba0a67c257299ecbabe3ab8fc5c1c43"
+        },
+        "loss_source": {
+          "path": "experiments/learned_binding/pretrain.py",
+          "sha256": "1bbe7d41574ef867e25f3cb3630a0b48fb5250fd34b72ca12deca990b63bc5ff"
+        },
+        "model_source": {
+          "path": "experiments/learned_binding/model.py",
+          "sha256": "7c9e081ce3ec12f334a946a230465c9f7b774802949a7526b156861358f8929b"
+        }
+      },
+      "seconds": 1.978208700000323,
+      "three_mode_equal_ce": 1.8638615834352095,
+      "equal_mode_finish_coefficient_gain": 16.512560386473428,
+      "wait_projection_relative_to_finish_component": 0.03778555150513166
+    },
+    {
+      "seed": 2,
+      "device": "cpu",
+      "threads": 1,
+      "dtype": "torch.float32",
+      "shape": [
+        1024,
+        32,
+        56
+      ],
+      "labels": 65536,
+      "wait_class_weight": 0.25,
+      "weighted_denominator": 17080,
+      "current_weighted_ce": 0.09913738816976547,
+      "loss_for_ce": 0.09913738816976547,
+      "modes": {
+        "WAIT": {
+          "count": 64608,
+          "fraction": 0.98583984375,
+          "mean_11_action_ce": 0.009854923002421856,
+          "current_weighted_loss_coefficient": 0.9456674473067915,
+          "contribution_to_current_weighted_ce": 0.009319479879105258,
+          "fraction_of_current_weighted_ce": 0.09400570310715,
+          "mean_ce_gradient_norm": 0.036940412275328995,
+          "weighted_contribution_gradient_norm": 0.034933345378870835,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.00006250037404242903,
+            "encoder": 0.0018515926630789615,
+            "query": 0.03582653037117733,
+            "key": 0.006427858596446129,
+            "value": 0.005721134818714948,
+            "gate": 0.001890166447126604
+          }
+        },
+        "BEGIN": {
+          "count": 580,
+          "fraction": 0.00885009765625,
+          "mean_11_action_ce": 0.00022819743026047945,
+          "current_weighted_loss_coefficient": 0.03395784543325527,
+          "contribution_to_current_weighted_ce": 0.000007749093065051411,
+          "fraction_of_current_weighted_ce": 0.00007816519285117398,
+          "mean_ce_gradient_norm": 0.0002770026959109221,
+          "weighted_contribution_gradient_norm": 0.000009406414732338105,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.0000046257764552137814,
+            "encoder": 0.000023828079866477607,
+            "query": 0.00021585288459506006,
+            "key": 0.00004812826996113881,
+            "value": 0.0001615444443835576,
+            "gate": 0.000033703303626337105
+          }
+        },
+        "FINISH": {
+          "count": 348,
+          "fraction": 0.00531005859375,
+          "mean_11_action_ce": 4.407924175262451,
+          "current_weighted_loss_coefficient": 0.020374707259953162,
+          "contribution_to_current_weighted_ce": 0.08981016469504292,
+          "fraction_of_current_weighted_ce": 0.9059161871528191,
+          "mean_ce_gradient_norm": 3.721768867122445,
+          "weighted_contribution_gradient_norm": 0.07582995115682734,
+          "gradient_norm_by_module": {
+            "read_scale_raw": 0.002642605686560273,
+            "encoder": 0.20708778537887493,
+            "query": 3.5690098619200925,
+            "key": 0.7134138080362042,
+            "value": 0.748297813722849,
+            "gate": 0.04394191691265556
+          }
+        }
+      },
+      "mode_gradient_cosines": {
+        "WAIT": {
+          "WAIT": 1,
+          "BEGIN": -0.36989402339747285,
+          "FINISH": -0.6334040691934367
+        },
+        "BEGIN": {
+          "WAIT": -0.36989402339747285,
+          "BEGIN": 1.0000000000000007,
+          "FINISH": 0.493308813721998
+        },
+        "FINISH": {
+          "WAIT": -0.6334040691934367,
+          "BEGIN": 0.493308813721998,
+          "FINISH": 1.0000000000000002
+        }
+      },
+      "combined_gradients": {
+        "original_weighted": {
+          "gradient_norm": 0.06012664843765464,
+          "norm_over_sum_component_norms": 0.5427930061845707,
+          "cosine_with_modes": {
+            "WAIT": -0.21789229846694042,
+            "BEGIN": 0.40739596548407453,
+            "FINISH": 0.8932423427241799
+          },
+          "dot_with_modes": {
+            "WAIT": -0.0004839612774627316,
+            "BEGIN": 0.000006785279092959981,
+            "FINISH": 0.19988752784414388
+          }
+        },
+        "three_mode_equal": {
+          "gradient_norm": 1.232872540254316,
+          "norm_over_sum_component_norms": 0.9839401751428811,
+          "cosine_with_modes": {
+            "WAIT": -0.6274088949807354,
+            "BEGIN": 0.4927771769456674,
+            "FINISH": 0.9999701744723641
+          },
+          "dot_with_modes": {
+            "WAIT": -0.02857397032026775,
+            "BEGIN": 0.0001682878494786098,
+            "FINISH": 4.588329784010175
+          }
+        }
+      },
+      "parameter_count": 8210,
+      "parameters_unchanged": true,
+      "no_optimizer_created": true,
+      "all_parameter_grad_fields_absent": true,
+      "source_model_parameter_hash": "baebed4dbadecb3e5a5f7439c1d97dda0ccf45fa1acf425cd1758d40adfb685e",
+      "sources": {
+        "training_stream": {
+          "path": "data/learned-binding/v1/seed_002/data/stream_08.pt",
+          "sha256": "0e3eb6afadd72b48ae3b8d1b0751d37437aff34de179988a43146a03c498ecc5"
+        },
+        "endpoint_checkpoint": {
+          "path": "data/learned-binding/v1/seed_002/pretrain/final.pt",
+          "sha256": "989f5006b3298e217a36305366f846a362b738c40ed680cb1fc843f5c57dd8c8"
+        },
+        "loss_source": {
+          "path": "experiments/learned_binding/pretrain.py",
+          "sha256": "1bbe7d41574ef867e25f3cb3630a0b48fb5250fd34b72ca12deca990b63bc5ff"
+        },
+        "model_source": {
+          "path": "experiments/learned_binding/model.py",
+          "sha256": "7c9e081ce3ec12f334a946a230465c9f7b774802949a7526b156861358f8929b"
+        }
+      },
+      "seconds": 1.9448167000000467,
+      "three_mode_equal_ce": 1.4726690985650446,
+      "equal_mode_finish_coefficient_gain": 16.36015325670498,
+      "wait_projection_relative_to_finish_component": -0.29179661566384024
+    }
+  ],
+  "equal_seed_means": {
+    "label_fractions": {
+      "WAIT": 0.9856516520182291,
+      "BEGIN": 0.0090484619140625,
+      "FINISH": 0.005299886067708333
+    },
+    "weighted_ce": 0.1087734525402387,
+    "weighted_ce_contribution_fractions": {
+      "WAIT": 0.06520377504403273,
+      "BEGIN": 0.00007414443365927533,
+      "FINISH": 0.9347220999223028
+    },
+    "wait_finish_gradient_cosine": -0.19942659762140846,
+    "current_gradient_cosine_with_finish": 0.9405063027586773
+  },
+  "recommendation": {
+    "decision": "Reasonable only as a separate post-hoc sensitivity experiment; evidence does not identify WAIT cancellation as the main cause.",
+    "supporting_observations": [
+      "FINISH already contributes 90.59% to 96.64% of current weighted CE despite only about 0.53% of labels.",
+      "WAIT opposes FINISH in seeds 0 and 2 but aligns in seed 1. The current total gradient still aligns with FINISH at cosine 0.893 to 0.988.",
+      "Equal-mode weighting raises the FINISH mean-loss coefficient about 16.3 to 16.5 times and makes the raw total gradient almost parallel to FINISH; it also greatly weakens WAIT relative to FINISH."
+    ],
+    "proposed_control": "If pursued, declare a new experiment and fresh artifact directory before running it: retain all three seeds, the same 16 training streams, initialization, 512 updates, optimizer/hyperparameters and actual 11-action labels; change only CE reduction to the three-mode equal mean.",
+    "evaluation_risk": "Inspect actual idle opportunities and behavior completion together; reduced WAIT pressure could increase idle actions or mistimed FINISH actions.",
+    "prohibited_claim": "Do not claim that this diagnostic proves WAIT gradients caused unreliable binding, or that equal-mode CE will solve it.",
+    "training_started": false
+  },
+  "provenance": {
+    "frozen_artifact_hashes_verified": true,
+    "sources": {
+      "protocol": {
+        "path": "data/learned-binding/v1/protocol.json",
+        "sha256": "996a2fa76a4cb1ec860de4ee8fc1df798f02c23d57dc070c61e944c44f657d9a"
+      },
+      "data_freeze": {
+        "path": "data/learned-binding/v1/data-freeze.json",
+        "sha256": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66"
+      },
+      "training_freeze": {
+        "path": "data/learned-binding/v1/training-freeze.json",
+        "sha256": "791ca14b78bc53ad05a4a4042fdb7bce59d6985ffa86156310f11e6d321e4dcb"
+      }
+    }
+  }
+}

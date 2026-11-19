@@ -1,0 +1,51 @@
+{
+  "format": "integration-pilot-plan-v1",
+  "created_utc": "2026-10-27T03:44:09.992721+00:00",
+  "source": "F:\\agi\\data\\integration\\pilot-source-v1\\seed_101\\online128\\checkpoint.pt",
+  "source_seed": 101,
+  "required_source_updates": 2048,
+  "ticks_per_arm": 16384,
+  "tau": 16.0,
+  "max_parallel_pilot_workers": 2,
+  "arms": [
+    {
+      "label": "bp64",
+      "mode": "bp64",
+      "local_lr": 0.001
+    },
+    {
+      "label": "mix_1e4",
+      "mode": "coact_mix",
+      "local_lr": 0.0001
+    },
+    {
+      "label": "mix_1e3",
+      "mode": "coact_mix",
+      "local_lr": 0.001
+    },
+    {
+      "label": "only_1e3",
+      "mode": "coact_only_mix",
+      "local_lr": 0.001
+    }
+  ],
+  "regime": {
+    "duration_range": [
+      4.0,
+      8.0
+    ],
+    "gap_range": [
+      4.0,
+      12.0
+    ]
+  },
+  "decision_before_pilot": ".001 is the formal coefficient if finite and exact-resumable; .0001 is sensitivity only; no task-score selection",
+  "evaluation": "none; own training execution, numerical and update-scale diagnostics only",
+  "frozen_integration_source_hashes": {
+    "run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+    "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+    "test_run.py": "d42f9832c748385e449ca1fd956099293eb5a99ce6ad093d37c94d6afe6fc0ff",
+    "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+  },
+  "orchestrator_sha256": "d90524329039d22123af9aa07a6a47e42ba52b1fdf278124eb7ae2f8451888db"
+}

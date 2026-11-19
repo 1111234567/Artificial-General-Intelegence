@@ -1,0 +1,41 @@
+{
+  "all_complete_before_scoring": true,
+  "checkpoints": {
+    "data\\learned-binding\\read-first-v2\\seed_000\\pretrain\\final.pt": "623082303ae78394c2d83ff81b6f0b6c95a54ec2055c3d58ef0ad2129e36413c",
+    "data\\learned-binding\\read-first-v2\\seed_001\\pretrain\\final.pt": "34b4fca89d5b5083bc68bc7a14fe5b9b6eac994f0bfd2720c3749a4d67a89ce7",
+    "data\\learned-binding\\read-first-v2\\seed_002\\pretrain\\final.pt": "fba89a2dd2e1409216481f449a3bda2f370ecc5ba384284a643a3182225428e4"
+  },
+  "model_parameter_hashes": {
+    "data\\learned-binding\\read-first-v2\\seed_000\\pretrain\\final.pt": "31873ff2b715c1cca8d4438ffda2619cc314740ae16c50e24ab2519c0ea8cec8",
+    "data\\learned-binding\\read-first-v2\\seed_001\\pretrain\\final.pt": "f0015b7c20203cd920d2c69eed87f985fce3d65224b168e24e7454236d35a8cd",
+    "data\\learned-binding\\read-first-v2\\seed_002\\pretrain\\final.pt": "b9c10eafa4a2442132a230937db0ce01a2706c7a243620c187340d77be9e1e6b"
+  },
+  "training_metadata": {
+    "0": {
+      "path": "data\\learned-binding\\read-first-v2\\seed_000\\pretrain\\training.json",
+      "sha256": "4e18592748fd7c9f65882d6ef3795076de46f4601389430a4acd4383c46abef5"
+    },
+    "1": {
+      "path": "data\\learned-binding\\read-first-v2\\seed_001\\pretrain\\training.json",
+      "sha256": "14df3d713746fd5b71173db7706e713048c9826f1a3fa71390fad768ded30449"
+    },
+    "2": {
+      "path": "data\\learned-binding\\read-first-v2\\seed_002\\pretrain\\training.json",
+      "sha256": "fd31707b8ffdda2ab9af4312b21f36d0effe6d6ef38be4a23ac876b53ef19123"
+    }
+  },
+  "source_protocol_sha256": "ad5d0c7bfc7e91c077ef9cae05f3161aee8d844aa06780c1951065277b1088a1",
+  "architecture": "ReadFirstPolicy",
+  "read_write_order": "read_then_write_job0_then_job1",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "updates_per_seed": 512,
+  "devices": {
+    "0": "cuda",
+    "1": "cpu",
+    "2": "cpu"
+  }
+}

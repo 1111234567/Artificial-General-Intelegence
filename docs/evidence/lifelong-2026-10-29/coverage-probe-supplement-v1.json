@@ -1,0 +1,128 @@
+{
+  "format": "lifelong-coverage-supplement-v1",
+  "created_utc": "2026-10-29T05:49:49.405000+00:00",
+  "parent_protocol": "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\study-protocol-v1.json",
+  "parent_protocol_sha256": "7cb8cb76eee72759bb12687242fe4221705387cf32280ed8e08d4b6cbbda86e8",
+  "sources": {
+    "F:\\agi\\experiments\\lifelong\\supplement.py": "2f813b29a529e36e791e3dcc79c8c0c955e9b1930953d643a2f290bbb4d70be0",
+    "F:\\agi\\experiments\\lifelong\\test_supplement.py": "5bf297cff74897098d88f691f5b676ee2c3ad09087983580d4e77824152bd9bf"
+  },
+  "evaluation_specs": [
+    {
+      "tick": 131072,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 1,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 2,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 3,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 131072,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 163840,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 163840,
+      "family": 1,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 163840,
+      "family": 2,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 163840,
+      "family": 3,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 164864,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 164864,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 167936,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    },
+    {
+      "tick": 167936,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "aligned_memory"
+    }
+  ],
+  "raw_root": "F:\\agi\\data\\lifelong\\coverage-v1",
+  "training_changed": false,
+  "reason": "Before examining formal evaluation scores, a measurement audit found that narrow training lacked within-support short-condition longitudinal probes, and original temporal probes had different horizons. Add only frozen evaluation on already-declared snapshots; every new fork has2048ticks. Some original training branches had already completed. Original46forks/branch remain preserved.",
+  "interpretation": "Combine these probes with existing2048tick source/final probes. Mainend131072, before-return163840, return+1024/+4096, final+8192 can be compared at equal horizon in short and long_both; task0 retention is primary and other families are controls."
+}

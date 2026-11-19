@@ -1,0 +1,209 @@
+{
+  "version": "continuity-main-v1",
+  "created_utc": "2026-10-26T16:42:31.562566+00:00",
+  "user_date": "2026-10-27",
+  "status": "frozen_before_formal_training_and_test",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "A_variants": {
+    "c64": {
+      "name": "c64",
+      "kind": "learned",
+      "width": 64,
+      "policy": "teacher",
+      "reset_every": 0
+    },
+    "c128": {
+      "name": "c128",
+      "kind": "learned",
+      "width": 128,
+      "policy": "teacher",
+      "reset_every": 0
+    },
+    "c256": {
+      "name": "c256",
+      "kind": "learned",
+      "width": 256,
+      "policy": "teacher",
+      "reset_every": 0
+    },
+    "reset128": {
+      "name": "reset128",
+      "kind": "learned",
+      "width": 128,
+      "policy": "teacher",
+      "reset_every": 512
+    },
+    "reservoir128": {
+      "name": "reservoir128",
+      "kind": "reservoir",
+      "width": 128,
+      "policy": "teacher",
+      "reset_every": 0
+    },
+    "gru128": {
+      "name": "gru128",
+      "kind": "gru",
+      "width": 128,
+      "policy": "teacher",
+      "reset_every": 0
+    },
+    "online128": {
+      "name": "online128",
+      "kind": "learned",
+      "width": 128,
+      "policy": "online",
+      "reset_every": 0
+    }
+  },
+  "A_updates": 2048,
+  "batch_size": 64,
+  "n_jobs": 4,
+  "tbptt": 64,
+  "dt": 0.25,
+  "train_dts": [
+    0.25
+  ],
+  "reset_control_period_ticks": 512,
+  "lr": 0.001,
+  "wait_weight": 0.1,
+  "total_ticks_per_A_life": 131072,
+  "eval_steps": 2048,
+  "eval_conditions": [
+    "iid",
+    "long_wait",
+    "longer",
+    "sparse",
+    "conflict"
+  ],
+  "eval_policy": "frozen copies of full live checkpoint; no hidden/world reset; IID additionally hidden-reset every512; new-regime postfork matured requests primary; inherited,carryover,censored separate",
+  "B_source": "each seed online128 final A checkpoint; same complete model/Adam/h/world/RNG/replay",
+  "B_modes": [
+    "frozen",
+    "current",
+    "current_repeat",
+    "replay"
+  ],
+  "B_updates": 1024,
+  "B_durations": [
+    4,
+    8
+  ],
+  "B_policy": "own actions, current-world causal oracle loss; preserve h/world at distribution change",
+  "B_eval_conditions": [
+    "iid",
+    "long_wait",
+    "longer"
+  ],
+  "B_gradient_passes": {
+    "frozen": 0,
+    "current": 1,
+    "current_repeat": 2,
+    "replay": 2
+  },
+  "replay_capacity_blocks": 32,
+  "replay_ticks_per_block": 128,
+  "replay_burnin_ticks": 64,
+  "replay_origin": "finite uniform reservoir of actual A observations, teacher labels and historical start_h; no B/test additions",
+  "budget_limit": "repeat/replay equal gradient passes, replay has64 extra no-grad burnin steps per chunk; not equal forward FLOPs",
+  "parameters": {
+    "c64": {
+      "kind": "learned",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 64,
+      "total_parameters": 13100,
+      "trainable_parameters": 13100,
+      "max_solver_step": 0.25,
+      "time_constant": 1.0
+    },
+    "c128": {
+      "kind": "learned",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 128,
+      "total_parameters": 34348,
+      "trainable_parameters": 34348,
+      "max_solver_step": 0.25,
+      "time_constant": 1.0
+    },
+    "c256": {
+      "kind": "learned",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 256,
+      "total_parameters": 101420,
+      "trainable_parameters": 101420,
+      "max_solver_step": 0.25,
+      "time_constant": 1.0
+    },
+    "reset128": {
+      "kind": "learned",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 128,
+      "total_parameters": 34348,
+      "trainable_parameters": 34348,
+      "max_solver_step": 0.25,
+      "time_constant": 1.0
+    },
+    "reservoir128": {
+      "kind": "reservoir",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 128,
+      "total_parameters": 34348,
+      "trainable_parameters": 17964,
+      "max_solver_step": 0.25,
+      "time_constant": 1.0
+    },
+    "gru128": {
+      "kind": "gru",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 128,
+      "total_parameters": 117420,
+      "trainable_parameters": 117420,
+      "max_solver_step": 0.25,
+      "time_constant": null
+    },
+    "online128": {
+      "kind": "learned",
+      "input_size": 96,
+      "n_jobs": 4,
+      "n_actions": 11,
+      "state_scalars": 128,
+      "total_parameters": 34348,
+      "trainable_parameters": 34348,
+      "max_solver_step": 0.25,
+      "time_constant": 1.0
+    }
+  },
+  "checkpoint_selection": "last update, never test/validation best",
+  "primary_claim": "effect of continuous state on same live environment, boundary-straddling requests and long waiting; parameter scale and training-policy comparisons factorized",
+  "pilot": "seed101 512updates c128/reset128/online128 with mixed clocks used to validate plumbing; pilot independent of formal seeds",
+  "clock_choice": "main constant .25 decouples state cuts from clock transitions and gives GRU a simpler timing distribution",
+  "source_hashes": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+  },
+  "evaluator_sha256": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+  "hardware": "shared GPU with concurrent workers; elapsed timings include contention, not isolated speed benchmarks",
+  "limits": [
+    "TBPTT64 detaches gradients but keeps values; not unlimited temporal credit",
+    "fixed-size learned controller, oracle supervision, not autonomous reward-only learning",
+    "evaluation forks never overwrite live learner",
+    "checkpoint restart pauses simulated time; no claim of computation while process is stopped"
+  ]
+}

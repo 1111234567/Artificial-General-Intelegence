@@ -1,0 +1,666 @@
+{
+  "rtrl": {
+    "valid_samples": 973,
+    "reported_errors": 25,
+    "error_fraction": 0.025050100200400802,
+    "duration_seconds": 20,
+    "rate_hz": 50,
+    "nonblocking": true,
+    "stage": [
+      {
+        "name": "credit_block_jacobians",
+        "samples": 807,
+        "percent": 82.9393627954779
+      },
+      {
+        "name": "live_world_forward",
+        "samples": 62,
+        "percent": 6.3720452209660845
+      },
+      {
+        "name": "checkpoint_state_hashes",
+        "samples": 54,
+        "percent": 5.549845837615622
+      },
+      {
+        "name": "auxiliary_gradient",
+        "samples": 26,
+        "percent": 2.672147995889003
+      },
+      {
+        "name": "credit_reconstruction_reverse",
+        "samples": 13,
+        "percent": 1.3360739979445015
+      },
+      {
+        "name": "other",
+        "samples": 9,
+        "percent": 0.9249743062692704
+      },
+      {
+        "name": "live_ledger_serialization",
+        "samples": 2,
+        "percent": 0.20554984583761562
+      }
+    ],
+    "secondary_inclusive": [
+      {
+        "name": "native_autograd_below_Python_engine_frame",
+        "samples": 791,
+        "percent": 81.29496402877699
+      },
+      {
+        "name": "hashing_any_stage",
+        "samples": 51,
+        "percent": 5.241521068859199
+      },
+      {
+        "name": "compression",
+        "samples": 1,
+        "percent": 0.10277492291880781
+      }
+    ],
+    "leaf_top": [
+      {
+        "frame": "_engine_run_backward (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\graph.py:869)",
+        "samples": 791,
+        "percent": 81.29496402877699
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:235)",
+        "samples": 17,
+        "percent": 1.7471736896197325
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:101)",
+        "samples": 16,
+        "percent": 1.644398766700925
+      },
+      {
+        "frame": "vector_field (F:\\agi\\experiments\\undirected\\model.py:254)",
+        "samples": 11,
+        "percent": 1.1305241521068858
+      },
+      {
+        "frame": "_require_finite (F:\\agi\\experiments\\undirected\\run.py:68)",
+        "samples": 9,
+        "percent": 0.9249743062692704
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:121)",
+        "samples": 7,
+        "percent": 0.7194244604316548
+      },
+      {
+        "frame": "dumps (C:\\Users\\Jerry\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\json\\__init__.py:242)",
+        "samples": 5,
+        "percent": 0.513874614594039
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:238)",
+        "samples": 5,
+        "percent": 0.513874614594039
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:234)",
+        "samples": 4,
+        "percent": 0.41109969167523125
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:120)",
+        "samples": 4,
+        "percent": 0.41109969167523125
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:237)",
+        "samples": 4,
+        "percent": 0.41109969167523125
+      },
+      {
+        "frame": "add (F:\\agi\\experiments\\undirected\\credit.py:98)",
+        "samples": 3,
+        "percent": 0.3083247687564234
+      },
+      {
+        "frame": "flow (F:\\agi\\experiments\\undirected\\model.py:265)",
+        "samples": 3,
+        "percent": 0.3083247687564234
+      },
+      {
+        "frame": "act (F:\\agi\\experiments\\continuity\\world.py:505)",
+        "samples": 3,
+        "percent": 0.3083247687564234
+      },
+      {
+        "frame": "_live_chunk (F:\\agi\\experiments\\undirected\\run.py:349)",
+        "samples": 3,
+        "percent": 0.3083247687564234
+      },
+      {
+        "frame": "<lambda> (F:\\agi\\experiments\\continuity\\run.py:108)",
+        "samples": 2,
+        "percent": 0.20554984583761562
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:108)",
+        "samples": 2,
+        "percent": 0.20554984583761562
+      },
+      {
+        "frame": "_events (F:\\agi\\experiments\\lifelong\\world.py:158)",
+        "samples": 2,
+        "percent": 0.20554984583761562
+      }
+    ],
+    "inclusive_top": [
+      {
+        "frame": "thread (138924)",
+        "samples": 973,
+        "percent": 100.0
+      },
+      {
+        "frame": "<module> (F:\\agi\\experiments\\undirected\\study.py:672)",
+        "samples": 972,
+        "percent": 99.8972250770812
+      },
+      {
+        "frame": "main (F:\\agi\\experiments\\undirected\\study.py:666)",
+        "samples": 972,
+        "percent": 99.8972250770812
+      },
+      {
+        "frame": "_run_code (<frozen runpy>:88)",
+        "samples": 972,
+        "percent": 99.8972250770812
+      },
+      {
+        "frame": "_run_module_as_main (<frozen runpy>:204)",
+        "samples": 972,
+        "percent": 99.8972250770812
+      },
+      {
+        "frame": "train (F:\\agi\\experiments\\undirected\\study.py:518)",
+        "samples": 972,
+        "percent": 99.8972250770812
+      },
+      {
+        "frame": "train (F:\\agi\\experiments\\undirected\\run.py:981)",
+        "samples": 918,
+        "percent": 94.34737923946557
+      },
+      {
+        "frame": "train_update (F:\\agi\\experiments\\undirected\\run.py:509)",
+        "samples": 820,
+        "percent": 84.27543679342241
+      },
+      {
+        "frame": "_flat_vmap (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\vmap.py:507)",
+        "samples": 807,
+        "percent": 82.9393627954779
+      },
+      {
+        "frame": "_block_jacobians (F:\\agi\\experiments\\undirected\\credit.py:345)",
+        "samples": 807,
+        "percent": 82.9393627954779
+      },
+      {
+        "frame": "vmap_impl (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\vmap.py:316)",
+        "samples": 807,
+        "percent": 82.9393627954779
+      },
+      {
+        "frame": "wrapped (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\apis.py:220)",
+        "samples": 807,
+        "percent": 82.9393627954779
+      },
+      {
+        "frame": "gradients (F:\\agi\\experiments\\undirected\\credit.py:396)",
+        "samples": 807,
+        "percent": 82.9393627954779
+      },
+      {
+        "frame": "_engine_run_backward (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\graph.py:869)",
+        "samples": 791,
+        "percent": 81.29496402877699
+      },
+      {
+        "frame": "grad (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\__init__.py:532)",
+        "samples": 791,
+        "percent": 81.29496402877699
+      },
+      {
+        "frame": "wrapper_fn (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\eager_transforms.py:747)",
+        "samples": 785,
+        "percent": 80.67831449126413
+      },
+      {
+        "frame": "compute_jacobian_stacked (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\eager_transforms.py:665)",
+        "samples": 783,
+        "percent": 80.47276464542652
+      },
+      {
+        "frame": "_autograd_grad (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\eager_transforms.py:175)",
+        "samples": 782,
+        "percent": 80.36998972250771
+      },
+      {
+        "frame": "wrapper (F:\\agi\\.venv\\Lib\\site-packages\\torch\\_functorch\\eager_transforms.py:441)",
+        "samples": 782,
+        "percent": 80.36998972250771
+      },
+      {
+        "frame": "train_update (F:\\agi\\experiments\\undirected\\run.py:505)",
+        "samples": 62,
+        "percent": 6.3720452209660845
+      },
+      {
+        "frame": "train (F:\\agi\\experiments\\undirected\\run.py:984)",
+        "samples": 52,
+        "percent": 5.344295991778006
+      },
+      {
+        "frame": "step (F:\\agi\\experiments\\undirected\\model.py:274)",
+        "samples": 51,
+        "percent": 5.241521068859199
+      },
+      {
+        "frame": "state_digest (F:\\agi\\experiments\\continuity\\run.py:125)",
+        "samples": 47,
+        "percent": 4.830421377183967
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:110)",
+        "samples": 47,
+        "percent": 4.830421377183967
+      },
+      {
+        "frame": "vector_field (F:\\agi\\experiments\\undirected\\model.py:254)",
+        "samples": 43,
+        "percent": 4.419321685508735
+      }
+    ]
+  },
+  "tbptt": {
+    "valid_samples": 758,
+    "reported_errors": 230,
+    "error_fraction": 0.23279352226720648,
+    "duration_seconds": 20,
+    "rate_hz": 50,
+    "nonblocking": true,
+    "stage": [
+      {
+        "name": "checkpoint_state_hashes",
+        "samples": 408,
+        "percent": 53.825857519788926
+      },
+      {
+        "name": "live_world_forward",
+        "samples": 204,
+        "percent": 26.912928759894463
+      },
+      {
+        "name": "auxiliary_gradient",
+        "samples": 63,
+        "percent": 8.311345646437996
+      },
+      {
+        "name": "credit_reconstruction_reverse",
+        "samples": 47,
+        "percent": 6.200527704485488
+      },
+      {
+        "name": "other",
+        "samples": 18,
+        "percent": 2.3746701846965697
+      },
+      {
+        "name": "live_ledger_serialization",
+        "samples": 15,
+        "percent": 1.978891820580475
+      },
+      {
+        "name": "progress_report",
+        "samples": 3,
+        "percent": 0.395778364116095
+      }
+    ],
+    "secondary_inclusive": [
+      {
+        "name": "hashing_any_stage",
+        "samples": 374,
+        "percent": 49.340369393139845
+      },
+      {
+        "name": "native_autograd_below_Python_engine_frame",
+        "samples": 40,
+        "percent": 5.277044854881266
+      },
+      {
+        "name": "compression",
+        "samples": 2,
+        "percent": 0.2638522427440633
+      }
+    ],
+    "leaf_top": [
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:121)",
+        "samples": 139,
+        "percent": 18.337730870712402
+      },
+      {
+        "frame": "_engine_run_backward (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\graph.py:869)",
+        "samples": 40,
+        "percent": 5.277044854881266
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:120)",
+        "samples": 21,
+        "percent": 2.7704485488126647
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:98)",
+        "samples": 21,
+        "percent": 2.7704485488126647
+      },
+      {
+        "frame": "dumps (C:\\Users\\Jerry\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\json\\__init__.py:242)",
+        "samples": 21,
+        "percent": 2.7704485488126647
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:235)",
+        "samples": 20,
+        "percent": 2.638522427440633
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:101)",
+        "samples": 19,
+        "percent": 2.5065963060686016
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:112)",
+        "samples": 17,
+        "percent": 2.242744063324538
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:109)",
+        "samples": 15,
+        "percent": 1.978891820580475
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:108)",
+        "samples": 15,
+        "percent": 1.978891820580475
+      },
+      {
+        "frame": "vector_field (F:\\agi\\experiments\\undirected\\model.py:254)",
+        "samples": 15,
+        "percent": 1.978891820580475
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:110)",
+        "samples": 13,
+        "percent": 1.7150395778364116
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:238)",
+        "samples": 13,
+        "percent": 1.7150395778364116
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:115)",
+        "samples": 13,
+        "percent": 1.7150395778364116
+      },
+      {
+        "frame": "dumps (C:\\Users\\Jerry\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\json\\__init__.py:238)",
+        "samples": 13,
+        "percent": 1.7150395778364116
+      },
+      {
+        "frame": "_deepcopy_dict (C:\\Users\\Jerry\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copy.py:202)",
+        "samples": 11,
+        "percent": 1.4511873350923483
+      },
+      {
+        "frame": "deepcopy (C:\\Users\\Jerry\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copy.py:110)",
+        "samples": 10,
+        "percent": 1.3192612137203166
+      },
+      {
+        "frame": "cpu_copy (F:\\agi\\experiments\\lifelong\\replay.py:29)",
+        "samples": 9,
+        "percent": 1.1873350923482848
+      }
+    ],
+    "inclusive_top": [
+      {
+        "frame": "thread (108660)",
+        "samples": 758,
+        "percent": 100.0
+      },
+      {
+        "frame": "<module> (F:\\agi\\experiments\\undirected\\study.py:672)",
+        "samples": 756,
+        "percent": 99.73614775725594
+      },
+      {
+        "frame": "main (F:\\agi\\experiments\\undirected\\study.py:666)",
+        "samples": 756,
+        "percent": 99.73614775725594
+      },
+      {
+        "frame": "_run_code (<frozen runpy>:88)",
+        "samples": 756,
+        "percent": 99.73614775725594
+      },
+      {
+        "frame": "_run_module_as_main (<frozen runpy>:204)",
+        "samples": 756,
+        "percent": 99.73614775725594
+      },
+      {
+        "frame": "train (F:\\agi\\experiments\\undirected\\study.py:518)",
+        "samples": 756,
+        "percent": 99.73614775725594
+      },
+      {
+        "frame": "train (F:\\agi\\experiments\\undirected\\run.py:984)",
+        "samples": 398,
+        "percent": 52.5065963060686
+      },
+      {
+        "frame": "state_digest (F:\\agi\\experiments\\continuity\\run.py:125)",
+        "samples": 359,
+        "percent": 47.361477572559366
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:110)",
+        "samples": 358,
+        "percent": 47.229551451187334
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:115)",
+        "samples": 350,
+        "percent": 46.17414248021108
+      },
+      {
+        "frame": "train (F:\\agi\\experiments\\undirected\\run.py:981)",
+        "samples": 339,
+        "percent": 44.72295514511873
+      },
+      {
+        "frame": "state_dict (F:\\agi\\experiments\\undirected\\run.py:657)",
+        "samples": 328,
+        "percent": 43.27176781002638
+      },
+      {
+        "frame": "train_update (F:\\agi\\experiments\\undirected\\run.py:505)",
+        "samples": 205,
+        "percent": 27.044854881266488
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:121)",
+        "samples": 178,
+        "percent": 23.482849604221638
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:109)",
+        "samples": 109,
+        "percent": 14.379947229551451
+      },
+      {
+        "frame": "_live_chunk (F:\\agi\\experiments\\undirected\\run.py:337)",
+        "samples": 97,
+        "percent": 12.796833773087071
+      },
+      {
+        "frame": "observe (F:\\agi\\experiments\\lifelong\\world.py:169)",
+        "samples": 90,
+        "percent": 11.87335092348285
+      },
+      {
+        "frame": "step (F:\\agi\\experiments\\undirected\\model.py:274)",
+        "samples": 83,
+        "percent": 10.949868073878628
+      },
+      {
+        "frame": "train_update (F:\\agi\\experiments\\undirected\\run.py:522)",
+        "samples": 64,
+        "percent": 8.443271767810026
+      },
+      {
+        "frame": "vector_field (F:\\agi\\experiments\\undirected\\model.py:254)",
+        "samples": 63,
+        "percent": 8.311345646437996
+      },
+      {
+        "frame": "train_update (F:\\agi\\experiments\\undirected\\run.py:509)",
+        "samples": 48,
+        "percent": 6.33245382585752
+      },
+      {
+        "frame": "state_dict (F:\\agi\\experiments\\undirected\\run.py:655)",
+        "samples": 46,
+        "percent": 6.068601583113456
+      },
+      {
+        "frame": "grad (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\__init__.py:532)",
+        "samples": 40,
+        "percent": 5.277044854881266
+      },
+      {
+        "frame": "_engine_run_backward (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\graph.py:869)",
+        "samples": 40,
+        "percent": 5.277044854881266
+      },
+      {
+        "frame": "_live_chunk (F:\\agi\\experiments\\undirected\\run.py:347)",
+        "samples": 40,
+        "percent": 5.277044854881266
+      }
+    ]
+  },
+  "untied_rtrl": {
+    "valid_samples": 985,
+    "reported_errors": 13,
+    "error_fraction": 0.013026052104208416,
+    "nonblocking": true,
+    "duration_seconds": 20,
+    "rate_hz": 50,
+    "stage": {
+      "bookkeeping_or_other": {
+        "samples": 47,
+        "percent": 4.771573604060913
+      },
+      "credit_reconstruction": {
+        "samples": 15,
+        "percent": 1.5228426395939088
+      },
+      "auxiliary": {
+        "samples": 21,
+        "percent": 2.131979695431472
+      },
+      "live": {
+        "samples": 37,
+        "percent": 3.7563451776649748
+      },
+      "jacobians": {
+        "samples": 865,
+        "percent": 87.81725888324873
+      }
+    },
+    "secondary": {
+      "hash_any_stage": {
+        "samples": 26,
+        "percent": 2.6395939086294415
+      },
+      "native_autograd_python_frame": {
+        "samples": 860,
+        "percent": 87.30964467005076
+      }
+    },
+    "leaf_top": [
+      {
+        "frame": "_engine_run_backward (F:\\agi\\.venv\\Lib\\site-packages\\torch\\autograd\\graph.py:869)",
+        "samples": 860,
+        "percent": 87.30964467005076
+      },
+      {
+        "frame": "_require_finite (F:\\agi\\experiments\\undirected\\run.py:68)",
+        "samples": 11,
+        "percent": 1.116751269035533
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:235)",
+        "samples": 10,
+        "percent": 1.015228426395939
+      },
+      {
+        "frame": "vector_field (F:\\agi\\experiments\\undirected\\model.py:254)",
+        "samples": 9,
+        "percent": 0.9137055837563453
+      },
+      {
+        "frame": "put (F:\\agi\\experiments\\continuity\\run.py:101)",
+        "samples": 8,
+        "percent": 0.8121827411167513
+      },
+      {
+        "frame": "add (F:\\agi\\experiments\\undirected\\credit.py:98)",
+        "samples": 7,
+        "percent": 0.7106598984771574
+      },
+      {
+        "frame": "cpu_copy (F:\\agi\\experiments\\lifelong\\replay.py:29)",
+        "samples": 5,
+        "percent": 0.5076142131979695
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:238)",
+        "samples": 4,
+        "percent": 0.40609137055837563
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:234)",
+        "samples": 4,
+        "percent": 0.40609137055837563
+      },
+      {
+        "frame": "recurrent_matrix (F:\\agi\\experiments\\undirected\\model.py:237)",
+        "samples": 3,
+        "percent": 0.3045685279187817
+      },
+      {
+        "frame": "observation_pulse (F:\\agi\\experiments\\undirected\\model.py:471)",
+        "samples": 2,
+        "percent": 0.20304568527918782
+      },
+      {
+        "frame": "observe (F:\\agi\\experiments\\continuity\\world.py:439)",
+        "samples": 2,
+        "percent": 0.20304568527918782
+      }
+    ]
+  }
+}

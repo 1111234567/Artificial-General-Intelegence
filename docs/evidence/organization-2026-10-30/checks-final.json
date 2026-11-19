@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-30T04:07:10.358788+00:00",
+  "results": [
+    {
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "scripts/check_docs.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS：45 份现行文档，624 个本地链接，0 个问题\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'scripts/check_docs.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/README.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'test/run.py', LF will be replaced by CRLF the next time Git touches it\n"
+    }
+  ]
+}

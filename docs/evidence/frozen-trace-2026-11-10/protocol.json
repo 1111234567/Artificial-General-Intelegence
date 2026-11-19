@@ -1,0 +1,197 @@
+{
+  "created_utc": "2026-11-10T15:23:31.589281+00:00",
+  "settings": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "training_streams": 16,
+    "train_batch": 32,
+    "train_ticks": 1024,
+    "ce_updates": 512,
+    "dense_updates": 128,
+    "ce_lr": 0.001,
+    "wait_weight": 0.25,
+    "actors": 32,
+    "support_ticks": 4096,
+    "probe_ticks": 2048,
+    "pg_blocks": 32,
+    "pg_ticks": 512,
+    "pg_lr": 0.0001,
+    "gamma": 0.995,
+    "reject_penalty": 0.1,
+    "dtype": "float32",
+    "support_duration": [
+      8.0,
+      16.0
+    ],
+    "support_gap": [
+      16.0,
+      32.0
+    ]
+  },
+  "sources": {
+    "experiments\\learned_binding\\common.py": "9169a7ed76f099eb1c877af0acea0c00f562b3fc399814cf4c9cc3355b4b99ed",
+    "experiments\\learned_binding\\model.py": "7c9e081ce3ec12f334a946a230465c9f7b774802949a7526b156861358f8929b",
+    "experiments\\learned_binding\\data.py": "c4a2d19ced98ad22c8982b6db64e1b36eac777d395a49ed26340dd96ea8573e5",
+    "experiments\\learned_binding\\pretrain.py": "1bbe7d41574ef867e25f3cb3630a0b48fb5250fd34b72ca12deca990b63bc5ff",
+    "experiments\\learned_binding\\interaction.py": "6ebe7079d189eca7c1fabec67d08ac04e3dd8a1ef17ccaed6bb5f3c74e9438b6",
+    "experiments\\learned_binding\\run.py": "9f50fbb9bedff8e7cde33cc27f087cf6dcc7ee791cb781bb95866d828fc72ae1",
+    "experiments\\learned_binding\\analysis-plan.md": "af0e6d8e0fe66c74430f9007c74100382561ffda228750cfb53955926b83f61b",
+    "experiments/associative_state/model.py": "c9a5aa1551a5297a73cf8d098f085c5c4577bc3e281255aa137df587815d782b",
+    "experiments/associative_state/shared.py": "114e34b7ea56edbf958430626ca55768da4f1d38c8fc8bf9692fea9bdaa53e05",
+    "experiments/associative_state/bridge.py": "be4dea11230c3bbd06eafeb52a9e577e49d41df6c8be272dd35956018030087b",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/experience_transfer/train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\learned_binding\\frozen_trace.py": "6a1fd10cb10240681d58dde024bd4cff6c1c3680828dacdbdeb3a63fd02bc9d8",
+    "experiments\\learned_binding\\frozen-trace-plan.md": "238d8b91c4cf802c4582f8776045e3593e7f887d5cabe8c567942c3896bb0e76",
+    "experiments\\learned_binding\\read_first.py": "d84620a3a0489439e145bcc1e151560825e5d72f16e7150af00aefc54dbe0f8f",
+    "experiments\\learned_binding\\audit.py": "4ca45067f8fdc84a31c938253141a16e632ac8b3e2c86f621c03c6b58ed02e34",
+    "data\\learned-binding\\v1\\protocol.json": "996a2fa76a4cb1ec860de4ee8fc1df798f02c23d57dc070c61e944c44f657d9a",
+    "data\\learned-binding\\v1\\data-freeze.json": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66",
+    "data\\learned-binding\\v1\\training-freeze.json": "791ca14b78bc53ad05a4a4042fdb7bce59d6985ffa86156310f11e6d321e4dcb",
+    "data\\learned-binding\\v1\\audit.json": "5e715123045a02f8de86510165b6ffb1cd7e2509966e4e0dac6845aed138e0ce",
+    "data\\learned-binding\\read-first-v2\\protocol.json": "ad5d0c7bfc7e91c077ef9cae05f3161aee8d844aa06780c1951065277b1088a1",
+    "data\\learned-binding\\read-first-v2\\training-freeze.json": "d274a9e966f6d8e3fa0dc9fe38b2f8dff4f77df8f2b08d9b97ab86790291e705",
+    "data\\learned-binding\\read-first-v2\\audit.json": "0c5a74eac792b5ab9d757e8e3e6c798f39a9dbb86a7401fb702435d73d751c04",
+    "data\\learned-binding\\v1\\diagnostics\\action-loss.json": "2c123c057b3b7c353ca90ffcb4ef701fc3d44403c6aeee5819d0a5dc1c489210",
+    "data\\learned-binding\\v1\\diagnostics\\binding-probe.json": "bd383d6e6a2bb88a04e3aabc21cb23b4c09a0710e4dcc30c91cc936ee3e0c578",
+    "data/learned-binding/runtime-2026-11-10/environment.json": "cae815e118444f89c9653863517c0a80cb02c8dd00d28783e26918ee83202b9a",
+    "data/learned-binding/runtime-2026-11-10/baseline_reaudit.json": "740fb44b0531013fdf0c83e627c4330099f530dc2c245b64d2e53d487b73d7fc"
+  },
+  "origins": {
+    "0/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt",
+      "sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084"
+    },
+    "0/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_000\\delta\\final.pt",
+      "sha256": "b10389eab2a0ca1da980d8314ed5d165aa95d464f55a3bb083f5a0292780e242"
+    },
+    "1/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt",
+      "sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c"
+    },
+    "1/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_001\\delta\\final.pt",
+      "sha256": "9aaabc52db0df700811e38f337b30aab0bbe771e4a3490cd53a8209dfddabcf8"
+    },
+    "2/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt",
+      "sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc"
+    },
+    "2/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_002\\delta\\final.pt",
+      "sha256": "caef743914b7ad81c5b4222d1bdb6bed72b0bb74478028b576cbc64430ec60b2"
+    }
+  },
+  "primary": "Self-action acquisition and B-only learning, with frozen-parameter native control and unchanged manual hard/soft references.",
+  "teacher_diagnostic": "Same actual teacher stream, separate from primary own-action acquisition.",
+  "training": "Native action CE, followed by own sampled actions and only scalar public outcome PG. No payload/binding/gate auxiliary loss.",
+  "experiment": "learned-binding-frozen-trace-v3",
+  "read_write_order": "read_then_write_job0_then_job1",
+  "encoder_frozen": true,
+  "trainable_parameters": 2258,
+  "encoder_parameters": 5952,
+  "state_scalars": 320,
+  "trainable_parameter_names": [
+    "gate.bias",
+    "gate.weight",
+    "key.bias",
+    "key.weight",
+    "query.bias",
+    "query.weight",
+    "read_scale_raw",
+    "value.bias",
+    "value.weight"
+  ],
+  "followup": {
+    "parent": "data/learned-binding/read-first-v2",
+    "declared_after_v1_and_v2_results_inspected": true,
+    "disclosure": "Post-hoc encoder-trainability control after inspecting v1/v2 failures and representation diagnostics; the evaluation benchmark is reused.",
+    "only_change_from_read_first": "Freeze the original seeded random encoder parameters; train only query/key/value/gate/read_scale.",
+    "identical_initial_state_dict_and_forward_to_read_first": true,
+    "unchanged_total_parameters_state_and_config": true,
+    "unchanged_training_data_objective_and_512_update_budget": true,
+    "unchanged_32_block_outcome_and_heldout_protocol": true,
+    "binding_labels_used_for_policy_training": false,
+    "parent_artifacts": {
+      "v1/protocol.json": {
+        "path": "data\\learned-binding\\v1\\protocol.json",
+        "sha256": "996a2fa76a4cb1ec860de4ee8fc1df798f02c23d57dc070c61e944c44f657d9a"
+      },
+      "v1/data-freeze.json": {
+        "path": "data\\learned-binding\\v1\\data-freeze.json",
+        "sha256": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66"
+      },
+      "v1/training-freeze.json": {
+        "path": "data\\learned-binding\\v1\\training-freeze.json",
+        "sha256": "791ca14b78bc53ad05a4a4042fdb7bce59d6985ffa86156310f11e6d321e4dcb"
+      },
+      "v1/audit.json": {
+        "path": "data\\learned-binding\\v1\\audit.json",
+        "sha256": "5e715123045a02f8de86510165b6ffb1cd7e2509966e4e0dac6845aed138e0ce"
+      },
+      "read-first-v2/protocol.json": {
+        "path": "data\\learned-binding\\read-first-v2\\protocol.json",
+        "sha256": "ad5d0c7bfc7e91c077ef9cae05f3161aee8d844aa06780c1951065277b1088a1"
+      },
+      "read-first-v2/training-freeze.json": {
+        "path": "data\\learned-binding\\read-first-v2\\training-freeze.json",
+        "sha256": "d274a9e966f6d8e3fa0dc9fe38b2f8dff4f77df8f2b08d9b97ab86790291e705"
+      },
+      "read-first-v2/audit.json": {
+        "path": "data\\learned-binding\\read-first-v2\\audit.json",
+        "sha256": "0c5a74eac792b5ab9d757e8e3e6c798f39a9dbb86a7401fb702435d73d751c04"
+      },
+      "v1/diagnostics/action-loss.json": {
+        "path": "data\\learned-binding\\v1\\diagnostics\\action-loss.json",
+        "sha256": "2c123c057b3b7c353ca90ffcb4ef701fc3d44403c6aeee5819d0a5dc1c489210"
+      },
+      "v1/diagnostics/binding-probe.json": {
+        "path": "data\\learned-binding\\v1\\diagnostics\\binding-probe.json",
+        "sha256": "bd383d6e6a2bb88a04e3aabc21cb23b4c09a0710e4dcc30c91cc936ee3e0c578"
+      }
+    },
+    "parent_audit": {
+      "path": "data\\learned-binding\\v1\\audit.json",
+      "sha256": "5e715123045a02f8de86510165b6ffb1cd7e2509966e4e0dac6845aed138e0ce"
+    },
+    "read_first_audit": {
+      "path": "data\\learned-binding\\read-first-v2\\audit.json",
+      "sha256": "0c5a74eac792b5ab9d757e8e3e6c798f39a9dbb86a7401fb702435d73d751c04"
+    }
+  },
+  "training_data_reuse": {
+    "source": {
+      "path": "data\\learned-binding\\v1\\data-freeze.json",
+      "sha256": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66"
+    },
+    "manifest_byte_identical": true,
+    "paths_remain_original_v1": true,
+    "large_training_streams_copied": false
+  },
+  "manual_behavior_reuse": {
+    "method": "byte-for-byte copytree of completed v1 behavior controls",
+    "kinds": [
+      "manual_hard",
+      "manual_soft"
+    ],
+    "controls_reexecuted": false,
+    "manual_native_training_budget_equal": false,
+    "limitation": "Manual historical pretraining differs from native; the new same-budget native control changes only encoder trainability relative to read-first-v2."
+  },
+  "runtime_restoration": {
+    "environment.json": {
+      "path": "data/learned-binding/runtime-2026-11-10/environment.json",
+      "sha256": "cae815e118444f89c9653863517c0a80cb02c8dd00d28783e26918ee83202b9a"
+    },
+    "baseline_reaudit.json": {
+      "path": "data/learned-binding/runtime-2026-11-10/baseline_reaudit.json",
+      "sha256": "740fb44b0531013fdf0c83e627c4330099f530dc2c245b64d2e53d487b73d7fc"
+    }
+  }
+}

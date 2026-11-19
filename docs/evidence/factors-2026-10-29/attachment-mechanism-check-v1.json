@@ -1,0 +1,66 @@
+{
+  "format": "factors-attachment-mechanism-check-v1",
+  "attachment_sha256": "f1fc962834e3e565d61e451f014ce663f89f74896a30a6099792d0357ec48cc6",
+  "torch_version": "2.11.0+cu130",
+  "birth_examples": [
+    {
+      "shrink_step": 5e-05,
+      "constant_raw_gradient": 1.0,
+      "actual_birth_weight": -0.007600000593811274,
+      "prediction": -0.007599999920000002
+    },
+    {
+      "shrink_step": 5e-05,
+      "constant_raw_gradient": 0.001,
+      "actual_birth_weight": -0.007599919568747282,
+      "prediction": -0.0075999200007999925
+    },
+    {
+      "shrink_step": 5e-05,
+      "constant_raw_gradient": 1e-06,
+      "actual_birth_weight": -0.007520792540162802,
+      "prediction": -0.0075207920792079224
+    },
+    {
+      "shrink_step": 5e-05,
+      "constant_raw_gradient": 1e-10,
+      "actual_birth_weight": 0.0,
+      "prediction": -0.0
+    },
+    {
+      "shrink_step": 0.0002,
+      "constant_raw_gradient": 1.0,
+      "actual_birth_weight": -0.006400000303983688,
+      "prediction": -0.006399999920000002
+    },
+    {
+      "shrink_step": 0.0002,
+      "constant_raw_gradient": 0.001,
+      "actual_birth_weight": -0.006399919278919697,
+      "prediction": -0.006399920000799993
+    },
+    {
+      "shrink_step": 0.0002,
+      "constant_raw_gradient": 1e-06,
+      "actual_birth_weight": -0.0063207922503352165,
+      "prediction": -0.006320792079207923
+    },
+    {
+      "shrink_step": 0.0002,
+      "constant_raw_gradient": 1e-10,
+      "actual_birth_weight": 0.0,
+      "prediction": -0.0
+    }
+  ],
+  "zero_moments_inherited_step": 3072,
+  "first_live_step_abs_over_lr": 3.088346216827631,
+  "scope": "Numerical conditional checks, not proof of failure cause. Constant-gradient shadow examples start fresh; actual sparse B source preserves older dormant shadow history.",
+  "other_verified": [
+    "Existing weighted CE has WAIT weight .1; idle already receives training signal.",
+    "64 ticks at dt.25 equals16 environment time units; 8 proposal updates do not restore cross-chunk truncated derivatives.",
+    "Existing source idle diagnostics condition on termination reason and opportunity counts; complete requests and idle errors have different denominators."
+  ],
+  "not_adopted_as_current_experiments": [
+    "The attachment recommends mixed A+B training and deep factorized transitions; current user-prioritized study tests structural factors and idle penalties."
+  ]
+}

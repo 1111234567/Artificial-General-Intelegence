@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark">
+  <title>连续可塑性训练 · AGI</title>
+  <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/local-rule.css">
+  <script type="module" src="/local-rule.js"></script>
+</head>
+<body>
+  <header class="masthead"><div class="shell masthead-inner">
+    <div class="brand"><span class="brand-symbol" aria-hidden="true"></span><span>AGI <span class="muted">/</span> 有向图实验</span></div>
+    <nav aria-label="控制台导航"><a href="#overview">概览</a><a href="#trends">趋势</a><a href="#holdout">留出评估</a><a href="#logs">日志</a></nav>
+  </div></header>
+
+  <main class="shell">
+    <section class="hero" id="overview" aria-labelledby="title">
+      <div><h1 id="title">局部规则<span class="title-divider"> · </span><span class="title-part">连续可塑性训练</span></h1><div id="run-name" class="run-name mono">正在连接本地运行目录</div></div>
+      <div class="run-meta"><div class="status" id="status" role="status"><span class="status-dot"></span><span id="status-text">等待训练</span></div><div id="run-detail" class="muted mono"></div></div>
+      <p id="notice" class="notice" role="status" hidden></p>
+    </section>
+
+    <section class="card progress-card" aria-labelledby="progress-title">
+      <div class="progress-main"><div class="section-head"><div><h2 id="progress-title">候选搜索进度</h2><p class="muted" id="phase-detail"></p></div><div id="overall-percent" class="progress-percent mono">—</div></div>
+        <div class="progress-row"><label for="overall-bar">全部候选 · 三组合计</label><span id="overall-count" class="count mono">—</span><progress id="overall-bar" max="1" value="0"></progress></div>
+        <div class="progress-row"><label id="group-progress-label" for="generation-bar">当前组 · 本代候选</label><span id="generation-count" class="count mono">—</span><progress id="generation-bar" max="1" value="0"></progress></div>
+      </div>
+      <dl class="run-stats"><div><dt>当前代数</dt><dd id="generation" class="mono">—</dd></div><div><dt>候选速率</dt><dd id="rate" class="mono">—</dd></div><div><dt title="按当前运行期间的平均吞吐估算，后续留出评估耗时会影响实际完成时间">预计剩余时间</dt><dd id="remaining" class="mono">—</dd></div><div><dt>最近写入</dt><dd id="updated" class="mono">—</dd></div></dl>
+    </section>
+
+    <section class="metric-section" aria-labelledby="candidate-title">
+      <div class="metric-header"><div class="local-heading"><h2 id="candidate-title">领先候选</h2>
+        <select class="scope-select" id="inspect-arm" aria-label="查看候选与图结构"><option value="follow">跟随当前训练组</option><option value="control">原规则</option><option value="local">逐步局部规则</option><option value="modulated">接收节点调制</option></select></div>
+        <span class="muted mono" id="candidate-id"></span></div>
+      <div class="private-readings">
+        <section class="card"><h3>请求完成</h3><p class="muted private-reading-note">以 8 个生命的 512 道请求为分母。</p><dl id="completion-cells"></dl></section>
+        <section class="card"><h3>作答时机</h3><p class="muted private-reading-note">抢答和窗口内作答按题统计，空闲动作按端口和时间步统计。</p><dl id="timing-cells"></dl></section>
+        <section class="card"><h3>符号映射与双回访</h3><p class="muted private-reading-note">后半生取第 33–64 题，漏答计错。双回访要求同一符号在 A、B 均严格完成。</p><dl id="symbol-cells"></dl></section>
+      </div>
+    </section>
+
+    <div class="analysis-grid" id="trends">
+      <section class="card trend-card" aria-labelledby="trend-title">
+        <div class="section-head"><div><h2 id="trend-title">历代趋势</h2><p id="trend-detail" class="muted"></p></div></div>
+        <div class="segmented chart-tabs" id="chart-tabs" aria-label="趋势图分类">
+          <button type="button" data-chart="completion">请求完成</button><button type="button" data-chart="score">选拔得分</button><button type="button" data-chart="symbols">符号与回访</button><button type="button" data-chart="timing">作答时机</button><button type="button" data-chart="graph">连接与更新</button><button type="button" id="fit" class="fit-toggle" aria-pressed="false" title="叠加局部线性拟合">拟合线</button>
+        </div>
+        <div class="trend-controls local-filters">
+          <select id="chart-arm" class="scope-select" aria-label="趋势图训练组"><option value="all">三组对比</option><option value="control">原规则</option><option value="local">逐步局部规则</option><option value="modulated">接收节点调制</option></select>
+          <select id="chart-metric" class="scope-select" aria-label="趋势图指标"></select>
+          <select id="chart-scope" class="scope-select" aria-label="趋势图统计对象"><option value="champion">本代冠军</option><option value="mean">全代均值</option><option value="both">冠军与均值</option></select>
+        </div>
+        <div class="plot"><canvas id="chart" role="img" aria-label="历代趋势"></canvas><div id="chart-tooltip" class="chart-tooltip" hidden></div></div>
+        <ul id="chart-legend" class="legend" aria-label="图例"></ul>
+      </section>
+      <section class="card graph-card" aria-labelledby="graph-title">
+        <div class="section-head"><div><h2 id="graph-title">图结构与权重</h2><p id="graph-source" class="muted"></p></div></div>
+        <dl class="graph-stats" id="graph-cells"></dl>
+      </section>
+    </div>
+
+    <section class="card paired-card" id="comparison" aria-labelledby="compare-title">
+      <div class="section-head"><div><h2 id="compare-title">同代三组对比</h2><p id="compare-detail" class="muted"></p></div><select id="compare-gen" class="scope-select" aria-label="选择三组比较代数"></select></div>
+      <div class="table-region" role="region" tabindex="0" aria-label="同代候选成绩"><table><thead><tr><th>训练组</th><th>严格完成率</th><th>补救完成率</th><th>双回访成功率</th><th>选拔得分</th></tr></thead><tbody id="comparison-rows"></tbody></table></div>
+    </section>
+    <section class="card holdout-card" id="holdout" aria-labelledby="holdout-title">
+      <div class="section-head"><div><h2 id="holdout-title">留出评估</h2><p class="muted" id="holdout-detail"></p></div><select id="holdout-gen" class="scope-select" aria-label="选择留出评估代数"></select></div>
+      <div class="table-region" tabindex="0" role="region" aria-label="各组留出成绩"><table><thead><tr><th>训练组</th><th>严格完成率</th><th>总完成率</th><th>首次作答正确率</th><th>双回访成功率</th><th>选拔得分</th></tr></thead><tbody id="holdout-rows"></tbody></table></div>
+    </section>
+    <section class="card holdout-card" id="receipts" aria-labelledby="receipt-title">
+      <div class="section-head"><div><h2 id="receipt-title">回执干预</h2><p class="muted" id="receipt-detail"></p></div><div class="holdout-controls">
+        <select id="receipt-gen" class="scope-select" aria-label="选择回执评估代数"></select><select id="receipt-delay" class="scope-select" aria-label="干扰题数"><option value="0">立即回访</option><option value="1">隔 1 道干扰题</option><option value="8" selected>隔 8 道干扰题</option></select></div></div>
+      <div class="table-region" tabindex="0" role="region" aria-label="真实回执相对颠倒回执的首答正确率变化"><table><thead><tr><th>训练组</th><th>有效教学 / 机会</th><th>原题</th><th>换情境</th><th>换符号</th></tr></thead><tbody id="receipt-rows"></tbody></table></div>
+    </section>
+
+    <section class="card log-card" id="logs" aria-labelledby="log-title">
+      <div class="section-head"><div><h2 id="log-title">运行日志</h2><p class="muted" id="log-detail">标准输出</p></div><div class="segmented" aria-label="日志流"><button type="button" data-stream="stdout" aria-pressed="true">标准输出</button><button type="button" data-stream="stderr" aria-pressed="false">标准错误</button></div></div>
+      <pre id="log-text" tabindex="0" aria-label="日志内容">正在读取日志</pre>
+    </section>
+    <footer class="run-footer"><span>检查点 <code id="checkpoint">—</code></span><span>启动时间 <time id="started" class="mono">—</time></span></footer>
+  </main>
+</body></html>

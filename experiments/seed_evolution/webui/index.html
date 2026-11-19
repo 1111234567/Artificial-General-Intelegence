@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="查看种群规模实验的训练进度、评分速度、硬件和运行日志。">
+  <title>AGI 实验台 · 训练监控</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>AGI 实验台</span></a>
+      <nav aria-label="页面导航">
+        <a href="#overview">概览</a>
+        <a href="#groups">实验组</a>
+        <a href="#resources">硬件</a>
+        <a href="#logs">日志</a>
+      </nav>
+      <div class="topbar-actions">
+        <div class="status-badge" id="statusBadge" data-state="waiting" role="status"><span class="status-dot"></span><span id="statusText">正在连接</span></div>
+        <button type="button" class="icon-button" id="refreshNow" aria-label="立即刷新" title="立即刷新"><span aria-hidden="true">↻</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="run-heading" id="overview" aria-labelledby="run-title">
+      <div>
+        <div class="run-id" id="runId">读取运行编号</div>
+        <h1 id="run-title">种群规模对照实验</h1>
+        <div class="run-config"><span><i></i>BF16 执行器</span><span>GPU 批量训练 · CPU 闭环评分</span></div>
+      </div>
+      <div class="update-controls">
+        <span id="lastUpdated">等待首次更新</span>
+        <button type="button" class="subtle-button" id="pauseRefresh" aria-pressed="false">暂停刷新</button>
+      </div>
+    </section>
+
+    <div class="run-error" id="runError" hidden role="status"></div>
+
+    <div class="dashboard-grid">
+      <section class="card overview-card" aria-labelledby="progress-title">
+        <header class="card-heading">
+          <h2 id="progress-title">训练进度</h2>
+          <span class="phase-tag" id="phaseTag">—</span>
+        </header>
+        <div class="progress-main">
+          <div><div class="progress-number"><strong id="completedCount">—</strong><span class="progress-total">/ <span id="totalCount">—</span></span></div><div class="muted metric-caption">已完成训练和评分</div></div>
+          <div class="progress-percent" id="runPercent">—</div>
+        </div>
+        <div class="progress-track" id="progressBar" role="progressbar" aria-label="候选完成率" aria-valuemin="0" aria-valuemax="100"><div id="progressFill"></div></div>
+        <dl class="stage-details">
+          <div><dt>当前代</dt><dd id="activeRound">—</dd></div>
+          <div><dt>当前重复</dt><dd id="activeRep">—</dd></div>
+          <div><dt>GPU 批次</dt><dd id="activeBatch">—</dd></div>
+          <div><dt>待评分</dt><dd id="pendingScores">—</dd></div>
+          <div><dt>已训练</dt><dd id="trainedCount">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="card hardware-card" id="resources" aria-labelledby="hardware-title">
+        <header class="card-heading"><h2 id="hardware-title">硬件资源</h2><span class="card-caption">本机</span></header>
+        <article class="resource">
+          <div class="resource-top"><div><h3>GPU</h3><p id="gpuName">—</p></div><strong id="gpuValue">—</strong></div>
+          <div class="meter" role="presentation"><div id="gpuMeter"></div></div>
+          <div class="resource-meta" id="gpuDetails">—</div>
+          <div class="memory-label"><span>显存</span><span id="gpuMemory">—</span></div>
+          <div class="meter memory-meter" role="presentation"><div id="gpuMemMeter"></div></div>
+        </article>
+        <article class="resource">
+          <div class="resource-top"><div><h3>CPU</h3><p id="cpuDetails">—</p></div><strong id="cpuValue">—</strong></div>
+          <div class="meter" role="presentation"><div id="cpuMeter"></div></div>
+        </article>
+        <article class="resource">
+          <div class="resource-top"><div><h3>系统内存</h3><p id="ramDetails">—</p></div><strong id="ramValue">—</strong></div>
+          <div class="meter" role="presentation"><div id="ramMeter"></div></div>
+        </article>
+      </section>
+
+      <section class="card throughput-card" aria-labelledby="throughput-title">
+        <header class="card-heading"><h2 id="throughput-title">候选吞吐</h2><span class="card-caption"><span class="legend-line"></span>完成数 / 分钟</span></header>
+        <div class="speed-metrics">
+          <div><div class="speed-number" id="throughputRate">—</div><div class="muted" id="throughputWindow">近期平均</div></div>
+          <dl>
+            <div><dt>预计搜索完成</dt><dd id="etaValue">—</dd></div>
+            <div><dt>运行时长</dt><dd id="elapsedValue">—</dd></div>
+          </dl>
+        </div>
+        <div class="chart" id="throughputChart" aria-label="候选完成速度历史">
+          <div class="chart-empty" id="chartEmpty">等待足够的评分提交记录</div>
+        </div>
+      </section>
+
+      <section class="card arms-card" id="groups" aria-labelledby="arms-title">
+        <header class="card-heading"><h2 id="arms-title">实验组</h2><span class="card-caption">三个配对重复</span></header>
+        <div class="table-wrap" tabindex="0" aria-label="实验组进度表">
+          <table>
+            <thead><tr><th scope="col">组别</th><th scope="col">每代规模</th><th scope="col">已完成代数</th><th scope="col">已评估</th><th scope="col">最佳开发分</th></tr></thead>
+            <tbody id="armsBody"><tr><td colspan="5" class="muted">读取实验组</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card logs-card" id="logs" aria-labelledby="logs-title">
+        <header class="card-heading"><h2 id="logs-title">运行日志</h2><button type="button" class="subtle-button" id="copyLogs">复制</button></header>
+        <div class="log-tabs" aria-label="日志类型">
+          <button type="button" id="logStdout" aria-pressed="true">标准输出</button>
+          <button type="button" id="logStderr" aria-pressed="false">标准错误</button>
+        </div>
+        <pre id="logOutput" tabindex="0" aria-label="最近的运行日志">等待日志</pre>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

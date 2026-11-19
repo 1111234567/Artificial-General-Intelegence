@@ -1,0 +1,54 @@
+{
+  "archive_sha": "c76496156d2d5af29a6390d9f73e89d2bed6554561e85fc0ea69427b78733ca7",
+  "note": "Source process exited. A new process rebuilt the physical request boundary and loaded only the portable agent state.",
+  "checks": {
+    "distributed": {
+      "exact": true,
+      "split": {
+        "saved_requests": 31,
+        "saved_ticks": 496
+      },
+      "trace": {
+        "action_sha": "3888366e52a06b7237607694b9333f10804a3c2819913af209d342e485868e56",
+        "receipt_sha": "3c597fd2a1496fcdf9b8423df6edaed0f2f1f597873668a0a41ea4f2d4888fc9",
+        "touch_sha": "e25282be6a2025be250e22e2ed3cbdfbed4dbf00ea455df8c3fd61b14b69201c",
+        "state_sha": "612a2cf290247e60a20524c971d157f460fb1b4c912db54e15a0d58776e87f53",
+        "actor_ticks": 960,
+        "compared_motor_bits": 7424
+      },
+      "snapshot_bytes": 17377
+    },
+    "local": {
+      "exact": true,
+      "split": {
+        "saved_requests": 31,
+        "saved_ticks": 496
+      },
+      "trace": {
+        "action_sha": "f46b22a4d70bf3f1fba7c2822de7db378f6330ab1eca665581930514e4953309",
+        "receipt_sha": "897c774a508b0b3d7a7f8ea41de2a84d9de428633f6adc0a54b4c65af5dc0564",
+        "touch_sha": "84adf3434fff654d9e6d7a0170e7e90364f742a3449fe6c6fd3339b2a24d6a82",
+        "state_sha": "c627b64c121c7d86dbd32c9478a44334a8ba145da307eec32f32d097543c33c1",
+        "actor_ticks": 960,
+        "compared_motor_bits": 7424
+      },
+      "snapshot_bytes": 17155
+    },
+    "local-selective": {
+      "exact": true,
+      "split": {
+        "saved_requests": 31,
+        "saved_ticks": 496
+      },
+      "trace": {
+        "action_sha": "3c37d0ca8ca236e6a4e6e7dd6ac59d864e80c96ed2cf0b2c179ead5b5e099d9a",
+        "receipt_sha": "2a3aa37dee01d256bab2cb99d52083f0261aed9ca1fa09549923bb9aa4f4469e",
+        "touch_sha": "92629a66c928e27a6fb1bb8bf022276a6c7c56976cc5b5c6be1d55300e31b920",
+        "state_sha": "20cd6850a0015c085e8df4559e956e2aa2bb3385b94f5d5ebd950fbf84121ca9",
+        "actor_ticks": 960,
+        "compared_motor_bits": 7424
+      },
+      "snapshot_bytes": 19023
+    }
+  }
+}

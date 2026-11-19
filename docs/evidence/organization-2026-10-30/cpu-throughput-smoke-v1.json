@@ -1,0 +1,93 @@
+{
+  "created_utc": "2026-10-30T01:20:44.150185+00:00",
+  "purpose": "Operational throughput only; no behavioral outcome selection; measured while nine GPU training processes were active.",
+  "rows": [
+    {
+      "label": "native_cpu",
+      "warmup_updates": 4,
+      "measured_updates": 8,
+      "seconds": 3.756235300010303,
+      "seconds_per_update": 0.4695294125012879,
+      "threads": 1,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cpu",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false
+      }
+    },
+    {
+      "label": "plain_cpu",
+      "warmup_updates": 4,
+      "measured_updates": 8,
+      "seconds": 5.0943443000142,
+      "seconds_per_update": 0.636793037501775,
+      "threads": 1,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cpu",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false
+      }
+    },
+    {
+      "label": "coupled_cpu",
+      "warmup_updates": 4,
+      "measured_updates": 8,
+      "seconds": 5.229160899994895,
+      "seconds_per_update": 0.6536451124993619,
+      "threads": 1,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cpu",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false
+      }
+    }
+  ]
+}

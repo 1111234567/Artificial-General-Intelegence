@@ -1,0 +1,53 @@
+{
+  "format": "credit-study-completion-v1",
+  "complete": true,
+  "completed_utc": "2026-10-27T08:20:16.708033+00:00",
+  "completed_asia_shanghai": "2026-10-27T16:20:16.708033+08:00",
+  "training_runs": 33,
+  "main_autonomous_forks": 165,
+  "main_diagnostic_forks": 60,
+  "revisitation_continuations": 15,
+  "revisitation_checkpoints": 240,
+  "revisitation_primary_cpu_forks": 480,
+  "retained_auxiliary_cuda_forks": 448,
+  "old_source_probe_forks": 75,
+  "independent_training_seeds": 3,
+  "unit_tests": 224,
+  "audit_checks": 6845000,
+  "audit_errors": 0,
+  "audit_warnings": 0,
+  "prior_control_exact_reproductions": 6,
+  "figures_visually_checked": 4,
+  "files": {
+    "docs/credit-experiment-2026-10-27.md": "09fb77fcf84d965caac938b8471b2d00eae38b787b7f57afeff9aeb57f04551d",
+    "docs/evidence/credit-2026-10-27/study-protocol-v1.json": "4e69e51b88157de0f61b1dd33dae66c83a66253c77353fecde439877f136f675",
+    "docs/evidence/credit-2026-10-27/cycle-measurement-revision-v2.json": "0e99003eda6bde6fa3f78ed9aea60907ef66a27e49d52d630dffdf8251b9dd56",
+    "docs/evidence/credit-2026-10-27/aggregate/summary.json": "ab165da3ff28fb277af05a489f37833fcee47cd26c78068e815a47e8c1345b9e",
+    "docs/evidence/credit-2026-10-27/aggregate/audit.json": "d504271d438fd957d347002f2943532061ca7d58b3c7dc4877e2eba3e42ca317",
+    "docs/evidence/credit-2026-10-27/tests-final.xml": "7d54360c85fc03307d0212357c6a2687076a4f49f0303552dde77b49fc866fef",
+    "docs/evidence/credit-2026-10-27/probe-aggregate-v1/summary.json": "2ac40c1c7873431a79da06964f716748581ca8458e489bcd2385e2b1a6e211bb",
+    "docs/evidence/credit-2026-10-27/forward-review-v1.json": "934462cff47d3220bdc535b37c249004d55f5f787e3dfd48e67dcb802e18344a",
+    "docs/evidence/credit-2026-10-27/cycle-review-v2.json": "8f2c6ba7da41dbe7632de12dc13af3356bd4b49dd6867c1a9cd3f480420873ef",
+    "docs/evidence/credit-2026-10-27/topology-design-v1.json": "2b9a4fed573bd34a5be328e9c85a93316fae1744d3567403ddf81d9c16ac2864",
+    "docs/evidence/credit-2026-10-27/figures/independent-readout.data.json": "856dde0e8ecc2d95644f6553305d4a58b0d1b3d3c6579efa1114ffb0e075a1e3",
+    "docs/evidence/credit-2026-10-27/figures/primary-completion.data.json": "dafcc0a1a56539e3e19fc28d8c58c748b88fa05e57b958399cc86d100425132e",
+    "docs/evidence/credit-2026-10-27/figures/revisitation.data.json": "993247f32e912d56de40bb78b09638e3c9f4b1471442232d5370d41026eecf5b",
+    "docs/evidence/credit-2026-10-27/figures/tangent-paths.data.json": "a6e9f1e01d8f23e547d27c0923d4aa8ccbfbf8839d99432888f21c6f89179220"
+  },
+  "execution": {
+    "main-v1": {
+      "jobs": 33,
+      "status_sha256": "b3b417d4e1f089ec206b2c3de4c45cfa83e04fcdc30b679bfa9a22956acd1a95"
+    },
+    "evaluation-v1": {
+      "jobs": 33,
+      "status_sha256": "3b359d9c884ebd2756f702893704cf2fbc519f20228db2c1a88ac605a8332dae"
+    },
+    "cycles-v2": {
+      "jobs": 15,
+      "status_sha256": "17ae97091e5062f46cc8502b09e34887a8d3b6b341762dafeb2f5332bb145bac"
+    }
+  },
+  "topology_followup_status": "Design only; not implemented or trained",
+  "remaining_required_work": []
+}

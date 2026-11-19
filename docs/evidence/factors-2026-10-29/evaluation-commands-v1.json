@@ -1,0 +1,1166 @@
+{
+  "cwd": "F:\\agi",
+  "file_hashes": {
+    "F:\\agi\\experiments\\factors\\__init__.py": "4225b356cc17802ae54645b96cc6e8c1f7d0a2ce8570d8a385fe89808b619918",
+    "F:\\agi\\experiments\\factors\\structure.py": "f8a6a1946fc42a1a1265324d0b4143d3b15045c0cbb1bb34aba2c39638cd1c89",
+    "F:\\agi\\experiments\\factors\\run.py": "5129e5ab90e446b4eb7e3cf5b2b8b9a8a12872e166b426f2900e012ffcdbe79c",
+    "F:\\agi\\experiments\\factors\\test_structure.py": "23953ce735302024befc668b0042c13144a91ab3cc8cd40d57d00757b882cd49",
+    "F:\\agi\\experiments\\factors\\test_run.py": "42202c52e150ffdf2f94afe6daa912ddbe81463a5a5aa0699d16f2ee032a57ec",
+    "F:\\agi\\experiments\\factors\\study.py": "9cef3ad8c95a545f1225ea59567e039d0adc9c52de2f48e329f76bdaceff3fe7",
+    "F:\\agi\\experiments\\factors\\test_study.py": "983bc98cf9b130e858ec5a9572d5b378040d10a4e643b381754779109be9f567",
+    "F:\\agi\\experiments\\factors\\queue.py": "ae32de1f1206dd53f2e69c8472af691f38947984da1a58d3094607c73fa51b7f",
+    "F:\\agi\\experiments\\factors\\test_queue.py": "72f312aa8e4b4d1041030e436057bef1faaacf369ccef0b9e17589142f18222e",
+    "F:\\agi\\experiments\\rewiring\\plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "F:\\agi\\experiments\\rewiring\\run.py": "35b6beaf51115c6f99d95127def4de5b95a78a3c7de8ff66adb741d4ff879c4c",
+    "F:\\agi\\experiments\\rewiring\\test_plasticity.py": "2db336fc41be93118c7e15b4735cf366915ad68d7a85dc1f23960c6f5c57c976",
+    "F:\\agi\\experiments\\rewiring\\test_run.py": "215512037cf33d520a098c08449ed6b694a959de5733c9d8b520d53b73275e71",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\loops\\audit_run.py": "2cc71ebb857be76c769894ec3b355c9aea19c09ebf1826bea9d389f41cbbf9bc",
+    "F:\\agi\\experiments\\loops\\structure.py": "af282d6000adfe37b35da6342c48714a89bacd108ea976cece4a274fc49b0ea6",
+    "F:\\agi\\experiments\\loops\\interventions.py": "15007d06490fcaed6f2956d93294d21f48509c60b676f4009b89f91c328cc452",
+    "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json": "88635f7943b69798dd048a9f4322133dfb1e03d21f65a7e7d23c412dc05033ef"
+  },
+  "jobs": [
+    {
+      "id": "seed_000_dense_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\dense_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_dense_idle_zero.log"
+    },
+    {
+      "id": "seed_000_dense_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\dense_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_dense_idle_small.log"
+    },
+    {
+      "id": "seed_000_dense_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\dense_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_dense_idle_large.log"
+    },
+    {
+      "id": "seed_000_dense_shrink_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense_shrink_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\dense_shrink_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_shrink_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_shrink_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_dense_shrink_idle_zero.log"
+    },
+    {
+      "id": "seed_000_dense_shrink_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense_shrink_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\dense_shrink_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_shrink_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_shrink_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_dense_shrink_idle_small.log"
+    },
+    {
+      "id": "seed_000_dense_shrink_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense_shrink_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\dense_shrink_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_shrink_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_dense_shrink_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_dense_shrink_idle_large.log"
+    },
+    {
+      "id": "seed_000_fixed_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_fixed_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\fixed_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_fixed_idle_zero.log"
+    },
+    {
+      "id": "seed_000_fixed_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_fixed_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\fixed_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_fixed_idle_small.log"
+    },
+    {
+      "id": "seed_000_fixed_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_fixed_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\fixed_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_fixed_idle_large.log"
+    },
+    {
+      "id": "seed_000_fixed_shrink_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_fixed_shrink_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\fixed_shrink_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_shrink_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_shrink_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_fixed_shrink_idle_zero.log"
+    },
+    {
+      "id": "seed_000_fixed_shrink_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_fixed_shrink_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\fixed_shrink_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_shrink_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_shrink_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_fixed_shrink_idle_small.log"
+    },
+    {
+      "id": "seed_000_fixed_shrink_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_fixed_shrink_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\fixed_shrink_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_shrink_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_fixed_shrink_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_fixed_shrink_idle_large.log"
+    },
+    {
+      "id": "seed_000_retire_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_retire_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\retire_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_retire_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_retire_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_retire_idle_zero.log"
+    },
+    {
+      "id": "seed_000_retire_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_retire_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\retire_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_retire_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_retire_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_retire_idle_small.log"
+    },
+    {
+      "id": "seed_000_retire_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_retire_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\retire_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_retire_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_retire_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_retire_idle_large.log"
+    },
+    {
+      "id": "seed_000_grow_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_grow_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\grow_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_grow_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_grow_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_grow_idle_zero.log"
+    },
+    {
+      "id": "seed_000_grow_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_grow_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\grow_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_grow_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_grow_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_grow_idle_small.log"
+    },
+    {
+      "id": "seed_000_grow_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_grow_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_000\\grow_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_grow_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_000_grow_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_000_grow_idle_large.log"
+    },
+    {
+      "id": "seed_001_dense_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\dense_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_dense_idle_zero.log"
+    },
+    {
+      "id": "seed_001_dense_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\dense_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_dense_idle_small.log"
+    },
+    {
+      "id": "seed_001_dense_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\dense_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_dense_idle_large.log"
+    },
+    {
+      "id": "seed_001_dense_shrink_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense_shrink_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\dense_shrink_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_shrink_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_shrink_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_dense_shrink_idle_zero.log"
+    },
+    {
+      "id": "seed_001_dense_shrink_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense_shrink_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\dense_shrink_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_shrink_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_shrink_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_dense_shrink_idle_small.log"
+    },
+    {
+      "id": "seed_001_dense_shrink_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense_shrink_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\dense_shrink_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_shrink_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_dense_shrink_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_dense_shrink_idle_large.log"
+    },
+    {
+      "id": "seed_001_fixed_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_fixed_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\fixed_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_fixed_idle_zero.log"
+    },
+    {
+      "id": "seed_001_fixed_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_fixed_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\fixed_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_fixed_idle_small.log"
+    },
+    {
+      "id": "seed_001_fixed_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_fixed_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\fixed_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_fixed_idle_large.log"
+    },
+    {
+      "id": "seed_001_fixed_shrink_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_fixed_shrink_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\fixed_shrink_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_shrink_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_shrink_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_fixed_shrink_idle_zero.log"
+    },
+    {
+      "id": "seed_001_fixed_shrink_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_fixed_shrink_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\fixed_shrink_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_shrink_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_shrink_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_fixed_shrink_idle_small.log"
+    },
+    {
+      "id": "seed_001_fixed_shrink_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_fixed_shrink_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\fixed_shrink_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_shrink_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_fixed_shrink_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_fixed_shrink_idle_large.log"
+    },
+    {
+      "id": "seed_001_retire_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_retire_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\retire_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_retire_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_retire_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_retire_idle_zero.log"
+    },
+    {
+      "id": "seed_001_retire_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_retire_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\retire_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_retire_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_retire_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_retire_idle_small.log"
+    },
+    {
+      "id": "seed_001_retire_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_retire_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\retire_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_retire_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_retire_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_retire_idle_large.log"
+    },
+    {
+      "id": "seed_001_grow_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_grow_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\grow_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_grow_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_grow_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_grow_idle_zero.log"
+    },
+    {
+      "id": "seed_001_grow_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_grow_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\grow_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_grow_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_grow_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_grow_idle_small.log"
+    },
+    {
+      "id": "seed_001_grow_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_grow_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_001\\grow_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_grow_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_001_grow_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_001_grow_idle_large.log"
+    },
+    {
+      "id": "seed_002_dense_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\dense_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_dense_idle_zero.log"
+    },
+    {
+      "id": "seed_002_dense_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\dense_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_dense_idle_small.log"
+    },
+    {
+      "id": "seed_002_dense_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\dense_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_dense_idle_large.log"
+    },
+    {
+      "id": "seed_002_dense_shrink_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense_shrink_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\dense_shrink_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_shrink_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_shrink_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_dense_shrink_idle_zero.log"
+    },
+    {
+      "id": "seed_002_dense_shrink_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense_shrink_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\dense_shrink_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_shrink_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_shrink_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_dense_shrink_idle_small.log"
+    },
+    {
+      "id": "seed_002_dense_shrink_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense_shrink_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\dense_shrink_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_shrink_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_dense_shrink_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_dense_shrink_idle_large.log"
+    },
+    {
+      "id": "seed_002_fixed_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_fixed_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\fixed_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_fixed_idle_zero.log"
+    },
+    {
+      "id": "seed_002_fixed_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_fixed_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\fixed_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_fixed_idle_small.log"
+    },
+    {
+      "id": "seed_002_fixed_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_fixed_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\fixed_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_fixed_idle_large.log"
+    },
+    {
+      "id": "seed_002_fixed_shrink_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_fixed_shrink_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\fixed_shrink_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_shrink_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_shrink_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_fixed_shrink_idle_zero.log"
+    },
+    {
+      "id": "seed_002_fixed_shrink_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_fixed_shrink_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\fixed_shrink_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_shrink_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_shrink_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_fixed_shrink_idle_small.log"
+    },
+    {
+      "id": "seed_002_fixed_shrink_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_fixed_shrink_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\fixed_shrink_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_shrink_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_fixed_shrink_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_fixed_shrink_idle_large.log"
+    },
+    {
+      "id": "seed_002_retire_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_retire_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\retire_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_retire_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_retire_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_retire_idle_zero.log"
+    },
+    {
+      "id": "seed_002_retire_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_retire_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\retire_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_retire_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_retire_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_retire_idle_small.log"
+    },
+    {
+      "id": "seed_002_retire_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_retire_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\retire_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_retire_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_retire_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_retire_idle_large.log"
+    },
+    {
+      "id": "seed_002_grow_idle_zero",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_grow_idle_zero",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\grow_idle_zero\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_grow_idle_zero.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_grow_idle_zero.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_grow_idle_zero.log"
+    },
+    {
+      "id": "seed_002_grow_idle_small",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_grow_idle_small",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\grow_idle_small\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_grow_idle_small.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_grow_idle_small.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_grow_idle_small.log"
+    },
+    {
+      "id": "seed_002_grow_idle_large",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.factors.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\factors-2026-10-29\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_grow_idle_large",
+        "--checkpoint",
+        "F:\\agi\\data\\factors\\main-v1\\training\\seed_002\\grow_idle_large\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_grow_idle_large.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\factors\\main-v1\\evaluation\\seed_002_grow_idle_large.json"
+      ],
+      "log": "F:\\agi\\data\\factors\\main-v1\\logs\\evaluate_seed_002_grow_idle_large.log"
+    }
+  ]
+}

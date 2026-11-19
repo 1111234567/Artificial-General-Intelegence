@@ -1,0 +1,214 @@
+{
+  "format": "credit-completed-section-readability-audit-v1",
+  "status": "Read-only numerical/provenance/readability review of the recorded draft snapshot; no new aggregation, fitting, evaluation, training, or runtime edit.",
+  "reviewed_document": {
+    "path": "F:\\agi\\docs\\credit-experiment-2026-10-27.md",
+    "sha256": "a55c35d273de79834e040ac78cede78b88adbbca699dd7e233fbbabae0c7c1dc",
+    "scope": [
+      "completed independent-probe section",
+      "local-rule/tangent description",
+      "fixed-feature sufficient-statistics section",
+      "topology design section"
+    ],
+    "excluded_intentional_drafts": [
+      "main/cycle placeholders and progress state",
+      "section4 evaluation-backend sentence pending root CPU-v2 update"
+    ]
+  },
+  "numeric_checks": {
+    "probe_table_cells_exact_to_displayed_precision": 12,
+    "probe_table_populations": [
+      {
+        "arm": "bp64",
+        "scenario": "within/longer",
+        "phase": "cue",
+        "displayed_cells": 3,
+        "n_per_seed": [
+          {
+            "seed": 0,
+            "value": 1042
+          },
+          {
+            "seed": 1,
+            "value": 1045
+          },
+          {
+            "seed": 2,
+            "value": 1023
+          }
+        ]
+      },
+      {
+        "arm": "bp64",
+        "scenario": "within/longer",
+        "phase": "legal",
+        "displayed_cells": 3,
+        "n_per_seed": [
+          {
+            "seed": 0,
+            "value": 1171
+          },
+          {
+            "seed": 1,
+            "value": 1161
+          },
+          {
+            "seed": 2,
+            "value": 1180
+          }
+        ]
+      },
+      {
+        "arm": "replay64",
+        "scenario": "within/long_sparse",
+        "phase": "legal",
+        "displayed_cells": 3,
+        "n_per_seed": [
+          {
+            "seed": 0,
+            "value": 1096
+          },
+          {
+            "seed": 1,
+            "value": 1116
+          },
+          {
+            "seed": 2,
+            "value": 1111
+          }
+        ]
+      },
+      {
+        "arm": "coact_mix",
+        "scenario": "within/longer",
+        "phase": "cue",
+        "displayed_cells": 3,
+        "n_per_seed": [
+          {
+            "seed": 0,
+            "value": 1042
+          },
+          {
+            "seed": 1,
+            "value": 1045
+          },
+          {
+            "seed": 2,
+            "value": 1023
+          }
+        ]
+      }
+    ],
+    "other_probe_text_checks": [
+      "within-longer replay raw legal40.19+/-4.50",
+      "transfer raw legal31.50/35.56",
+      "all-phase no-public-token payload61.08+/-1.71 and64.91+/-3.03",
+      "overall long_sparse active balanced98.07+/-0.90 and98.20+/-0.30",
+      "overall joint negative controls11.76--13.47"
+    ],
+    "statistics": {
+      "jobs": 4,
+      "train_samples_range": [
+        29614,
+        29910
+      ],
+      "heldout_samples_range": [
+        8848,
+        9057
+      ],
+      "maximum_coefficient_difference": 3.1155633628543455e-15,
+      "all_prediction_agreement": 1.0,
+      "statistic_state_bytes_per_job": 143440,
+      "alpha": 0.01,
+      "intercept_penalized": false
+    },
+    "tangent_medians": [
+      {
+        "ticks": 64,
+        "exact_initial_h_direction_norm": 0.022914413805464953,
+        "diagonal_initial_h_direction_norm": 1.1392414351472502e-06
+      },
+      {
+        "ticks": 128,
+        "exact_initial_h_direction_norm": 0.0008545432198294098,
+        "diagonal_initial_h_direction_norm": 5.762607963898256e-12
+      }
+    ],
+    "topology": "H128 K64; all three recurrent counts16384 and totals34348; factorized forcing space<=64, not full Jacobian rank<=64"
+  },
+  "readability_findings": [
+    {
+      "id": "cue_is_immediate_readability",
+      "status_in_reviewed_draft": "recommend explicit input-echo caveat",
+      "anchor": "原动作头的即时内容失败",
+      "evidence": "Within-longer cue obs96 joint accuracy: bp64 99.29 +/- 0.14%, coact_mix 99.58 +/- 0.25%. h is measured after the observation pulse. High cue linear accessibility is not delayed retention or complete encoding proof."
+    },
+    {
+      "id": "native_conditional_head",
+      "status_in_reviewed_draft": "recommend explicit definition near table",
+      "anchor": "原动作头",
+      "evidence": "Native score is argmax restricted to 8 FINISH classes, not 11-action policy accuracy, legal action choice, or a cue-stage task failure."
+    },
+    {
+      "id": "avoid_causal_share",
+      "status_in_reviewed_draft": "recommend softer observational wording",
+      "anchor": "主要是该阶段的读出不适配 / 饱和的tanh明显限制",
+      "evidence": "High independent cue decoding demonstrates readable content for the tested linear family. Raw-vs-exact-tanh gap is consistent with saturation/compression; no intervention estimates a causal share or establishes absence of other information."
+    },
+    {
+      "id": "selected_view_link",
+      "status_in_reviewed_draft": "link label needs selected-view wording",
+      "anchor": "完整汇总",
+      "evidence": "Linked docs JSON now contains 540 selected summary cells, not the 11,880 full cells or 33,660 paired-comparison cells; full aggregate remains in data/credit/probe-aggregate-v1."
+    },
+    {
+      "id": "tangent_object",
+      "status_in_reviewed_draft": "recommend name initial-h unit-direction derivative",
+      "anchor": "完整Heun敏感度范数",
+      "evidence": "The 128 samples share one Aseed101 model and propagate derivatives with respect to initial h along unit directions; these are not parameter E/F norms or Jacobian operator norms."
+    }
+  ],
+  "limits_already_correctly_stated": [
+    "Capped phase marginals are not matched cue-to-first-legal retention and not all-actor matured first-legal scoring.",
+    "No-public-payload-token result mixes phases, not a legal-only intersection.",
+    "Linear failure does not prove absence of all state information.",
+    "Shared train-only preprocessing, fixed features/targets/lambda and two-pass cached ridge algebra do not establish an online controller or adaptive-feature replay equivalence.",
+    "SameXTX and label marginals with differentXTY refute activity-only sufficiency only for the stated supervised objective.",
+    "Fixed-input tangent decay is not forgetting; actions/receipts are not allowed to change in that audit.",
+    "Dense recurrent feedback, within-transition depth, temporal unrolling and graph modularity differ; shallow/deep factor control and rank bottleneck are explicit.",
+    "Architecture followup is untrained and requires coherent own history; current independent contracts do not prove a logical-depth bottleneck."
+  ],
+  "provenance": {
+    "full_aggregate_directory": "F:\\agi\\data\\credit\\probe-aggregate-v1",
+    "full_file_hashes_preserved": {
+      "audit.json": "f35dd96ed7005d50fb6a4078b03d5820956e9c2ee38dd9fddb666a34097ec1b6",
+      "comparisons.csv": "9e4121a81026dfebe2f61bb7c5f19800b1c3e1ce6297c36db19d3df5a5369a61",
+      "per_seed.csv": "88f3efb5844cbfb4d342018ec6b7735aa328cf706075c83f4a2df226f67735a1",
+      "summary.csv": "f2f0dbf3f13aa8b9e6be107573b213b92825ac85195b95a14fb5ec4db2578724",
+      "summary.json": "fe9d97735eda3f84e1c4b030ef4d6c7b21128df60aacb80010caa64f30df34cd"
+    },
+    "full_cases": 15,
+    "full_summary_cells": 11880,
+    "full_comparison_cells": 33660,
+    "compact_summary": "F:\\agi\\docs\\evidence\\credit-2026-10-27\\probe-aggregate-v1\\summary.json",
+    "compact_summary_sha256": "2ac40c1c7873431a79da06964f716748581ca8458e489bcd2385e2b1a6e211bb",
+    "compact_selected_cells": 540,
+    "compact_seed_rows": 1620,
+    "all15_input_hash_records_retained": true,
+    "full_manifest_sha256": "9a17ed5d6e82a49d53f579f8c201c69096fdfc6cd9549aa22b957c74eb221452",
+    "prepackaging_reporter_source_archive": {
+      "found": false,
+      "matches": [],
+      "limitation": "No separate old reporter source snapshot found in evidence/data; no byte-identical semantic reaggregation claim is made. Current full-v1 artifact hashes remain preserved and the 16 functional packaging tests previously passed."
+    },
+    "statistics_artifact": {
+      "path": "F:\\agi\\data\\credit\\statistics-v1\\seed_000_bp64.json",
+      "sha256": "27fd3d87380aad4700fbe0798ed6fe3e8cf9e3c649687ea2403a799d800f1a44"
+    },
+    "tangent_artifact": {
+      "path": "F:\\agi\\docs\\evidence\\credit-2026-10-27\\tangent-audit-v1.json",
+      "sha256": "b68769f432856ee48fa8ffc94d02c9defc1b81d23d96c113069cac6e0cd47998"
+    },
+    "tests": "Previously observed 16 passed for test_probe_report.py; no tests or experiments rerun for this read-only review."
+  }
+}

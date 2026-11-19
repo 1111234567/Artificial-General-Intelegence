@@ -1,0 +1,1316 @@
+{
+  "format": "undirected-interim-interfaces-seed1-v1",
+  "created_utc": "2026-11-01T11:35:22.332347+00:00",
+  "scope": "Only seed_001, recorded512/fixed/warmup, interface x direction, main endpoint196608, four families short/long_both. Descriptive subset only; not the all-42 audit.",
+  "complete_requested_subset": true,
+  "requested_branches": [
+    "seed_001__core__undirected__recorded512__fixed__warmup",
+    "seed_001__core__untied__recorded512__fixed__warmup",
+    "seed_001__ports__undirected__recorded512__fixed__warmup",
+    "seed_001__ports__untied__recorded512__fixed__warmup"
+  ],
+  "available_branches": 4,
+  "pending": [],
+  "branches": [
+    {
+      "id": "seed_001__core__undirected__recorded512__fixed__warmup",
+      "interface": "core",
+      "mode": "undirected",
+      "seed": 1,
+      "trained_seed_count": 1,
+      "tick": 196608,
+      "counts": [
+        {
+          "family": 0,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 338,
+          "clean_completed": 192,
+          "opportunities": 32768,
+          "active_opportunities": 23520,
+          "inactive_opportunities": 9248,
+          "inactive_actions": 387,
+          "completion_rate": 0.3009795191451469,
+          "clean_completion_rate": 0.1709706144256456,
+          "idle_actions_per_1000_actual_idle_opportunities": 41.84688581314879
+        },
+        {
+          "family": 0,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 1,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 66,
+            "first_observed_legal_count": 171
+          }
+        },
+        {
+          "family": 1,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 398,
+          "clean_completed": 208,
+          "opportunities": 32768,
+          "active_opportunities": 23263,
+          "inactive_opportunities": 9505,
+          "inactive_actions": 346,
+          "completion_rate": 0.3544078361531612,
+          "clean_completion_rate": 0.18521816562778273,
+          "idle_actions_per_1000_actual_idle_opportunities": 36.40189374013677
+        },
+        {
+          "family": 1,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 3,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 77,
+            "first_observed_legal_count": 171
+          }
+        },
+        {
+          "family": 2,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 348,
+          "clean_completed": 213,
+          "opportunities": 32768,
+          "active_opportunities": 23544,
+          "inactive_opportunities": 9224,
+          "inactive_actions": 277,
+          "completion_rate": 0.3098842386464826,
+          "clean_completion_rate": 0.18967052537845058,
+          "idle_actions_per_1000_actual_idle_opportunities": 30.030355594102343
+        },
+        {
+          "family": 2,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 1,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 90,
+            "first_observed_legal_count": 171
+          }
+        },
+        {
+          "family": 3,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 277,
+          "clean_completed": 162,
+          "opportunities": 32768,
+          "active_opportunities": 23795,
+          "inactive_opportunities": 8973,
+          "inactive_actions": 437,
+          "completion_rate": 0.2466607301869991,
+          "clean_completion_rate": 0.14425645592163847,
+          "idle_actions_per_1000_actual_idle_opportunities": 48.70166053716706
+        },
+        {
+          "family": 3,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 1,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 56,
+            "first_observed_legal_count": 171
+          }
+        }
+      ],
+      "family_equal_means": {
+        "short": {
+          "completion_rate": 0.30298308103294747,
+          "clean_completion_rate": 0.17252894033837934,
+          "idle_actions_per_1000_actual_idle_opportunities": 39.24519892113874
+        },
+        "long_both": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        }
+      },
+      "long_both_diagnosis_totals": {
+        "requests": 684,
+        "completed": 0,
+        "clean_completed": 0,
+        "began": 684,
+        "with_observed_legal_opportunity": 684,
+        "active_finish_attempts": 6,
+        "legally_timed_finish_attempts": 0,
+        "first_observed_legal_content_correct": 289,
+        "first_observed_legal_count": 684
+      },
+      "provenance": {
+        "training_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "train",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__core__undirected__recorded512__fixed__warmup"
+        ],
+        "training_command_digest": "5ec264cba05df51a6b4c7c6041e1b32ed1dacc0676f9fa04af2e540490ad9067",
+        "training_queue_row": {
+          "started": 1793354057.8707826,
+          "pid": 167900,
+          "returncode": 0,
+          "command_digest": "5ec264cba05df51a6b4c7c6041e1b32ed1dacc0676f9fa04af2e540490ad9067",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\train_seed_001__core__undirected__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793359055.3910625,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\checkpoint_latest.pt": "8bbfecbcd31191e80160bd27acb097086c0776ce49432d8f1016c248ae951668",
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\terminal.json": "b15f01ecac388c7ba38d9a90fadce54d7ec65ce2d99cf738890322016f58ca65"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "terminal_path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\terminal.json",
+        "terminal_sha256": "b15f01ecac388c7ba38d9a90fadce54d7ec65ce2d99cf738890322016f58ca65",
+        "evaluation_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "evaluate",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__core__undirected__recorded512__fixed__warmup",
+          "--checkpoint",
+          "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\checkpoint_latest.pt",
+          "--output",
+          "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__undirected__recorded512__fixed__warmup.json"
+        ],
+        "evaluation_command_digest": "8bb9ba52eb6800e2df8e020ce2c155960c02c84983afe8245892d6c4e0f39ae7",
+        "evaluation_queue_row": {
+          "started": 1793531522.5495229,
+          "pid": 64288,
+          "returncode": 0,
+          "command_digest": "8bb9ba52eb6800e2df8e020ce2c155960c02c84983afe8245892d6c4e0f39ae7",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\evaluate_seed_001__core__undirected__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793532186.897671,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__undirected__recorded512__fixed__warmup.json": "e3877c0f86aaa1411f1b5d73b5bc5d781c3317fee3b5a1394b292071627e762e"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "evaluation_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__undirected__recorded512__fixed__warmup.json",
+        "evaluation_sha256": "e3877c0f86aaa1411f1b5d73b5bc5d781c3317fee3b5a1394b292071627e762e",
+        "evaluation_result_hash": "07c4c9e40c05990013c6e7df507963e39a7ccda765ecfdabf83a6a45d1e21ff2",
+        "checkpoint_at_reported_tick": {
+          "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "sha256": "b5b19e920c81e62e8fe7a86eda68519ef17299edf43de80358ae26c1cfbe6103",
+          "semantic_hash": "a78c46538adc9b1affb60e901d363ec44199b7e1f41e9f159e81682e6b3b4fe1"
+        },
+        "evaluation_state_at_reported_tick": {
+          "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "checkpoint_sha256": "b5b19e920c81e62e8fe7a86eda68519ef17299edf43de80358ae26c1cfbe6103",
+          "state_hash": "a78c46538adc9b1affb60e901d363ec44199b7e1f41e9f159e81682e6b3b4fe1",
+          "credit_age": 1536,
+          "parameter_layout": [
+            [
+              "edge_shared",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "encoder.weight",
+              [
+                80,
+                56
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.weight",
+              [
+                22,
+                80
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.bias",
+              [
+                22
+              ],
+              "torch.float64"
+            ]
+          ],
+          "hidden_hash": "3eca6b56b9dfe3c3dc2f67f729dc73d67034724aa84570eb46163512591cbf93",
+          "world_hash": "5e95cceb8fa9fa071acae6b9b4a11a41a032c3070632d759fc8c68935d9e8269",
+          "model_hash": "ca2235211be15e6e21a971fe83ec4f04d267aecca33794bff91ee988ceebd2d4",
+          "source_continuation_hash": "ad9ae9acde27557f16aabcf16fe04d2a5498075c24c81651544ea3cac128d563"
+        },
+        "actual_evaluator_sources": {
+          "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+          "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+          "experiments/integration/diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+          "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+        },
+        "frozen_validator": "experiments.undirected.study._checked_evaluation",
+        "frozen_validator_passed": true,
+        "checkpoint_files_hashed_only": true,
+        "checkpoint_loads": 0,
+        "evaluation_reruns": 0
+      }
+    },
+    {
+      "id": "seed_001__core__untied__recorded512__fixed__warmup",
+      "interface": "core",
+      "mode": "untied",
+      "seed": 1,
+      "trained_seed_count": 1,
+      "tick": 196608,
+      "counts": [
+        {
+          "family": 0,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 433,
+          "clean_completed": 214,
+          "opportunities": 32768,
+          "active_opportunities": 23211,
+          "inactive_opportunities": 9557,
+          "inactive_actions": 660,
+          "completion_rate": 0.38557435440783616,
+          "clean_completion_rate": 0.19056099732858414,
+          "idle_actions_per_1000_actual_idle_opportunities": 69.05932824107984
+        },
+        {
+          "family": 0,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 2,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.09920142850057041,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 3,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 68,
+            "first_observed_legal_count": 171
+          }
+        },
+        {
+          "family": 1,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 504,
+          "clean_completed": 250,
+          "opportunities": 32768,
+          "active_opportunities": 22727,
+          "inactive_opportunities": 10041,
+          "inactive_actions": 740,
+          "completion_rate": 0.44879786286731965,
+          "clean_completion_rate": 0.2226179875333927,
+          "idle_actions_per_1000_actual_idle_opportunities": 73.69783886067125
+        },
+        {
+          "family": 1,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 2,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.09920142850057041,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 4,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 75,
+            "first_observed_legal_count": 171
+          }
+        },
+        {
+          "family": 2,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 446,
+          "clean_completed": 249,
+          "opportunities": 32768,
+          "active_opportunities": 23207,
+          "inactive_opportunities": 9561,
+          "inactive_actions": 545,
+          "completion_rate": 0.39715048975957257,
+          "clean_completion_rate": 0.22172751558325912,
+          "idle_actions_per_1000_actual_idle_opportunities": 57.00240560610815
+        },
+        {
+          "family": 2,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 2,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.09920142850057041,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 2,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 88,
+            "first_observed_legal_count": 171
+          }
+        },
+        {
+          "family": 3,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 340,
+          "clean_completed": 165,
+          "opportunities": 32768,
+          "active_opportunities": 23556,
+          "inactive_opportunities": 9212,
+          "inactive_actions": 713,
+          "completion_rate": 0.3027604630454141,
+          "clean_completion_rate": 0.14692787177203917,
+          "idle_actions_per_1000_actual_idle_opportunities": 77.39904472427268
+        },
+        {
+          "family": 3,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 2,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.09920142850057041,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 171,
+            "with_observed_legal_opportunity": 171,
+            "active_finish_attempts": 3,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 60,
+            "first_observed_legal_count": 171
+          }
+        }
+      ],
+      "family_equal_means": {
+        "short": {
+          "completion_rate": 0.3835707925200356,
+          "clean_completion_rate": 0.19545859305431879,
+          "idle_actions_per_1000_actual_idle_opportunities": 69.28965435803298
+        },
+        "long_both": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.09920142850057041
+        }
+      },
+      "long_both_diagnosis_totals": {
+        "requests": 684,
+        "completed": 0,
+        "clean_completed": 0,
+        "began": 684,
+        "with_observed_legal_opportunity": 684,
+        "active_finish_attempts": 12,
+        "legally_timed_finish_attempts": 0,
+        "first_observed_legal_content_correct": 291,
+        "first_observed_legal_count": 684
+      },
+      "provenance": {
+        "training_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "train",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__core__untied__recorded512__fixed__warmup"
+        ],
+        "training_command_digest": "c2c0138ca1c5caedfd990816fbe3b9ef1090973b6cd6ea7367e09b8f496680d0",
+        "training_queue_row": {
+          "started": 1793354064.0303667,
+          "pid": 171124,
+          "returncode": 0,
+          "command_digest": "c2c0138ca1c5caedfd990816fbe3b9ef1090973b6cd6ea7367e09b8f496680d0",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\train_seed_001__core__untied__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793359371.763642,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__untied__recorded512__fixed__warmup\\checkpoint_latest.pt": "22908dd0543948d6fd0cd1f10b47e441e357ecef812817d90ac230469340c42d",
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__untied__recorded512__fixed__warmup\\terminal.json": "d1a1ae9348496bf48a140a1f9b064f5cb611368e16e239f071311850f4bfbcf2"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "terminal_path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__untied__recorded512__fixed__warmup\\terminal.json",
+        "terminal_sha256": "d1a1ae9348496bf48a140a1f9b064f5cb611368e16e239f071311850f4bfbcf2",
+        "evaluation_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "evaluate",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__core__untied__recorded512__fixed__warmup",
+          "--checkpoint",
+          "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__untied__recorded512__fixed__warmup\\checkpoint_latest.pt",
+          "--output",
+          "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__untied__recorded512__fixed__warmup.json"
+        ],
+        "evaluation_command_digest": "96350207b2a384c44fa176478fd24b4f08e3684432e84b7185e64feff5e3b1a8",
+        "evaluation_queue_row": {
+          "started": 1793531552.7783866,
+          "pid": 65488,
+          "returncode": 0,
+          "command_digest": "96350207b2a384c44fa176478fd24b4f08e3684432e84b7185e64feff5e3b1a8",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\evaluate_seed_001__core__untied__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793532233.1941447,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__untied__recorded512__fixed__warmup.json": "b4b83b274aa1b4535e4042b02897f23409be0df53559397d37a88ceef7d96c2d"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "evaluation_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__untied__recorded512__fixed__warmup.json",
+        "evaluation_sha256": "b4b83b274aa1b4535e4042b02897f23409be0df53559397d37a88ceef7d96c2d",
+        "evaluation_result_hash": "66784fd58fa7a929c966df54569759d33a7a22f640a18bd9a9b2793b16e20103",
+        "checkpoint_at_reported_tick": {
+          "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "sha256": "a0b72d71e7c1314413570e6f94fbe2a70b1c57f1dd2cd3b9944ef5cf25da0506",
+          "semantic_hash": "5b54019adf87d6ae210cd536de4b549b09002354173bdf1cbef8d8f3fcdc6022"
+        },
+        "evaluation_state_at_reported_tick": {
+          "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "checkpoint_sha256": "a0b72d71e7c1314413570e6f94fbe2a70b1c57f1dd2cd3b9944ef5cf25da0506",
+          "state_hash": "5b54019adf87d6ae210cd536de4b549b09002354173bdf1cbef8d8f3fcdc6022",
+          "credit_age": 1536,
+          "parameter_layout": [
+            [
+              "edge_shared",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "edge_skew",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "encoder.weight",
+              [
+                80,
+                56
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.weight",
+              [
+                22,
+                80
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.bias",
+              [
+                22
+              ],
+              "torch.float64"
+            ]
+          ],
+          "hidden_hash": "9d194cd1062e8371ab6169e3d909bd5cfe07933f040ee466292efb4294c2c2aa",
+          "world_hash": "35a2f985a837da474ac41fda6500b27cdac0a9ba3e00083cb39a639637835de3",
+          "model_hash": "d3c7e85904d70ac5e5b2e77213dec3a385a8e50e99d4f2fc6094d01d9a84e3ec",
+          "source_continuation_hash": "adeefb6c6f514e45b0120489b63c956d7024c5289cf2f919e1551b86c2a7777a"
+        },
+        "actual_evaluator_sources": {
+          "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+          "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+          "experiments/integration/diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+          "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+        },
+        "frozen_validator": "experiments.undirected.study._checked_evaluation",
+        "frozen_validator_passed": true,
+        "checkpoint_files_hashed_only": true,
+        "checkpoint_loads": 0,
+        "evaluation_reruns": 0
+      }
+    },
+    {
+      "id": "seed_001__ports__undirected__recorded512__fixed__warmup",
+      "interface": "ports",
+      "mode": "undirected",
+      "seed": 1,
+      "trained_seed_count": 1,
+      "tick": 196608,
+      "counts": [
+        {
+          "family": 0,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 0,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        },
+        {
+          "family": 1,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 1,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        },
+        {
+          "family": 2,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 2,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        },
+        {
+          "family": 3,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 3,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        }
+      ],
+      "family_equal_means": {
+        "short": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        "long_both": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        }
+      },
+      "long_both_diagnosis_totals": {
+        "requests": 684,
+        "completed": 0,
+        "clean_completed": 0,
+        "began": 0,
+        "with_observed_legal_opportunity": 0,
+        "active_finish_attempts": 0,
+        "legally_timed_finish_attempts": 0,
+        "first_observed_legal_content_correct": 0,
+        "first_observed_legal_count": 0
+      },
+      "provenance": {
+        "training_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "train",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__ports__undirected__recorded512__fixed__warmup"
+        ],
+        "training_command_digest": "6d5d0a27f02a48b2030553e828fec8a8ed9983c6eeeba09385ad9e05877c217e",
+        "training_queue_row": {
+          "started": 1793354821.2234976,
+          "pid": 172784,
+          "returncode": 0,
+          "command_digest": "6d5d0a27f02a48b2030553e828fec8a8ed9983c6eeeba09385ad9e05877c217e",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\train_seed_001__ports__undirected__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793359739.555756,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\checkpoint_latest.pt": "257b8bcf5e2385da48a9a0a3291aa3a4ca746dd29f6c2f7819ee819cdbcf8a6e",
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\terminal.json": "a519a0bf97d1f77f531fa567e4c0243c331b1108e4786a7142f04f78c8d174b0"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "terminal_path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\terminal.json",
+        "terminal_sha256": "a519a0bf97d1f77f531fa567e4c0243c331b1108e4786a7142f04f78c8d174b0",
+        "evaluation_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "evaluate",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__ports__undirected__recorded512__fixed__warmup",
+          "--checkpoint",
+          "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\checkpoint_latest.pt",
+          "--output",
+          "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__ports__undirected__recorded512__fixed__warmup.json"
+        ],
+        "evaluation_command_digest": "96419e31f99c60000fb847ec5299e3f8adb26b03c2e8f4e84d198af5f313cf97",
+        "evaluation_queue_row": {
+          "started": 1793532135.7468066,
+          "pid": 61152,
+          "returncode": 0,
+          "command_digest": "96419e31f99c60000fb847ec5299e3f8adb26b03c2e8f4e84d198af5f313cf97",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\evaluate_seed_001__ports__undirected__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793532819.131358,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__ports__undirected__recorded512__fixed__warmup.json": "5e004a7187f3aa20b60c7f34035b92454274ee5743befff307dc03b9c78e0702"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "evaluation_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__ports__undirected__recorded512__fixed__warmup.json",
+        "evaluation_sha256": "5e004a7187f3aa20b60c7f34035b92454274ee5743befff307dc03b9c78e0702",
+        "evaluation_result_hash": "249f4ecdf8abcd15dd7603dbd44dc24f74e02a5b3c18ce8b85f6099877a1a7fa",
+        "checkpoint_at_reported_tick": {
+          "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "sha256": "105db6ad0af0030481b5e945ab3806d755d646e25278a3682dc3f8956683456b",
+          "semantic_hash": "c1f3585fb4ddf88ff14bef992f0943c583f251fcafdaca853578f10feb626b44"
+        },
+        "evaluation_state_at_reported_tick": {
+          "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "checkpoint_sha256": "105db6ad0af0030481b5e945ab3806d755d646e25278a3682dc3f8956683456b",
+          "state_hash": "c1f3585fb4ddf88ff14bef992f0943c583f251fcafdaca853578f10feb626b44",
+          "credit_age": 1536,
+          "parameter_layout": [
+            [
+              "edge_shared",
+              [
+                3160
+              ],
+              "torch.float64"
+            ]
+          ],
+          "hidden_hash": "a1304729fd9e1cf0b400f68bae38a87db6be7c38d851dce763be79ffd4dfd655",
+          "world_hash": "4b5f97b4ab24d18179d86c46d6d2749dd388a4a739d3c779ba835d1b362e77bb",
+          "model_hash": "9ea41c045cf9a72dc19be20a536bac62ef5de056c0fe155bf0ce2e5cad004462",
+          "source_continuation_hash": "960cabdde3034e39264c67b5fb1a9d3ac583cad257f3cfe4312da79eb2d0e654"
+        },
+        "actual_evaluator_sources": {
+          "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+          "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+          "experiments/integration/diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+          "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+        },
+        "frozen_validator": "experiments.undirected.study._checked_evaluation",
+        "frozen_validator_passed": true,
+        "checkpoint_files_hashed_only": true,
+        "checkpoint_loads": 0,
+        "evaluation_reruns": 0
+      }
+    },
+    {
+      "id": "seed_001__ports__untied__recorded512__fixed__warmup",
+      "interface": "ports",
+      "mode": "untied",
+      "seed": 1,
+      "trained_seed_count": 1,
+      "tick": 196608,
+      "counts": [
+        {
+          "family": 0,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 0,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        },
+        {
+          "family": 1,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 1,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        },
+        {
+          "family": 2,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 2,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        },
+        {
+          "family": 3,
+          "condition": "short",
+          "matured": 1123,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 24885,
+          "inactive_opportunities": 7883,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 3,
+          "condition": "long_both",
+          "matured": 171,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12607,
+          "inactive_opportunities": 20161,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0,
+          "request_diagnosis_primary": {
+            "requests": 171,
+            "completed": 0,
+            "clean_completed": 0,
+            "began": 0,
+            "with_observed_legal_opportunity": 0,
+            "active_finish_attempts": 0,
+            "legally_timed_finish_attempts": 0,
+            "first_observed_legal_content_correct": 0,
+            "first_observed_legal_count": 0
+          }
+        }
+      ],
+      "family_equal_means": {
+        "short": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        "long_both": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        }
+      },
+      "long_both_diagnosis_totals": {
+        "requests": 684,
+        "completed": 0,
+        "clean_completed": 0,
+        "began": 0,
+        "with_observed_legal_opportunity": 0,
+        "active_finish_attempts": 0,
+        "legally_timed_finish_attempts": 0,
+        "first_observed_legal_content_correct": 0,
+        "first_observed_legal_count": 0
+      },
+      "provenance": {
+        "training_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "train",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__ports__untied__recorded512__fixed__warmup"
+        ],
+        "training_command_digest": "1cc84feafadf08798fb555a18ead9ccec5098b456222290e4fdb399607ec2631",
+        "training_queue_row": {
+          "started": 1793355053.8258011,
+          "pid": 130080,
+          "returncode": 0,
+          "command_digest": "1cc84feafadf08798fb555a18ead9ccec5098b456222290e4fdb399607ec2631",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\train_seed_001__ports__untied__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793360334.717547,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__untied__recorded512__fixed__warmup\\checkpoint_latest.pt": "f5e2d7edae87349d1289871349c4c350aea708d6c1905d3412aad771ef852147",
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__untied__recorded512__fixed__warmup\\terminal.json": "c93c50843ecdb0633f9749843ae7ca7f861c2f76271c1e419a0d437f803a4a95"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "terminal_path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__untied__recorded512__fixed__warmup\\terminal.json",
+        "terminal_sha256": "c93c50843ecdb0633f9749843ae7ca7f861c2f76271c1e419a0d437f803a4a95",
+        "evaluation_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "evaluate",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_001__ports__untied__recorded512__fixed__warmup",
+          "--checkpoint",
+          "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__untied__recorded512__fixed__warmup\\checkpoint_latest.pt",
+          "--output",
+          "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__ports__untied__recorded512__fixed__warmup.json"
+        ],
+        "evaluation_command_digest": "261715ab774d1433f5f277acc90c87f0fa49f0d27492f9074cb92b109e993ec9",
+        "evaluation_queue_row": {
+          "started": 1793532188.0484252,
+          "pid": 18816,
+          "returncode": 0,
+          "command_digest": "261715ab774d1433f5f277acc90c87f0fa49f0d27492f9074cb92b109e993ec9",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\evaluate_seed_001__ports__untied__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793532875.3038123,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__ports__untied__recorded512__fixed__warmup.json": "e46d1415c2c8866f7b9a405e39a5c3c3ef4217015d32df67d76df993247c6c58"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "evaluation_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__ports__untied__recorded512__fixed__warmup.json",
+        "evaluation_sha256": "e46d1415c2c8866f7b9a405e39a5c3c3ef4217015d32df67d76df993247c6c58",
+        "evaluation_result_hash": "3ffac9cb8b06ed3de734de13e81c12457a085974a5b3d38249ad451ac93a0168",
+        "checkpoint_at_reported_tick": {
+          "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "sha256": "aa6b650206a03e75f02e02238d951aa5204871f6f8ae74fd8dcf0779ec8cb8c3",
+          "semantic_hash": "bdef9a85ba25c8a68448147fefe74ea6fa8e5144e4d78a93a375ba28f5904fa1"
+        },
+        "evaluation_state_at_reported_tick": {
+          "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "checkpoint_sha256": "aa6b650206a03e75f02e02238d951aa5204871f6f8ae74fd8dcf0779ec8cb8c3",
+          "state_hash": "bdef9a85ba25c8a68448147fefe74ea6fa8e5144e4d78a93a375ba28f5904fa1",
+          "credit_age": 1536,
+          "parameter_layout": [
+            [
+              "edge_shared",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "edge_skew",
+              [
+                3160
+              ],
+              "torch.float64"
+            ]
+          ],
+          "hidden_hash": "62478f7661aff8950c834f2d6c55c18e61f9afcf56e9cd8627db8c90f01c7049",
+          "world_hash": "3b18c1298ebee5286ae26933423e4c9c43ab7b21fb60fb7399cf3d89b4048242",
+          "model_hash": "c5cc76642ac9bd9104e8433d649b9c9b3be879d97e905addc50c889ffeb70e72",
+          "source_continuation_hash": "feb2ccd21ed2665e1dc575ddf7f2d94ed80ef056dffcbd64f46d498618ff3e7a"
+        },
+        "actual_evaluator_sources": {
+          "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+          "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+          "experiments/integration/diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+          "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+        },
+        "frozen_validator": "experiments.undirected.study._checked_evaluation",
+        "frozen_validator_passed": true,
+        "checkpoint_files_hashed_only": true,
+        "checkpoint_loads": 0,
+        "evaluation_reruns": 0
+      }
+    }
+  ],
+  "aggregation": "Arithmetic mean of four family-specific rates per condition. One trained seed per variant; no across-seed mean/SD/CI or winner declaration.",
+  "protocol": {
+    "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+    "sha256": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc"
+  },
+  "declared_source_hashes": {
+    "F:\\agi\\experiments\\undirected\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\test_model.py": "636ad022366233cdf414a09313b02bfe9484b090dae7620782f9e035028428a1",
+    "F:\\agi\\experiments\\undirected\\credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "F:\\agi\\experiments\\undirected\\test_credit.py": "4ce8cd859ad99b05239958fbc38cc869dee890d791d3360e2238302da05b63cd",
+    "F:\\agi\\experiments\\undirected\\plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7",
+    "F:\\agi\\experiments\\undirected\\test_plasticity.py": "bf7f0984474990b4a82fb3ab3abb0402414b2da20dfa8432921f359f7065072d",
+    "F:\\agi\\experiments\\undirected\\run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "F:\\agi\\experiments\\undirected\\test_run.py": "e6981df9823fbc56b95ec1b8562c5028d40eda672bac9236a984f0d3a754f855",
+    "F:\\agi\\experiments\\undirected\\study.py": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+    "F:\\agi\\experiments\\undirected\\test_study.py": "71b162f4eeb1318c8ef1acfc70bf2041f2d75d15f1c83efc52cc9157ddb12a88",
+    "F:\\agi\\experiments\\undirected\\queue.py": "863371fa5fb1ab70e896eb1a936f1fda01af06f3a67b59bed2fb5f4ca540bb33",
+    "F:\\agi\\experiments\\undirected\\test_queue.py": "d3dfab0ad05f812a7800dc0134ead83ab02a354e8cc03389f446b6638af48bdc",
+    "F:\\agi\\experiments\\undirected\\ledger.py": "8b0f5284a9a5e53d14af9081e6d95f83cb4f854523d431a475edc2e65d76080a",
+    "F:\\agi\\experiments\\undirected\\test_ledger.py": "1fb9180ce0af912b49265b3df0408d38b4575d8559002da0fd4d5995022d794e",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852"
+  },
+  "queue_provenance": {
+    "training": {
+      "command_manifest": {
+        "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\training-commands-v1.json",
+        "sha256": "bbc782b301ec923ba11131fd8283e46d6bee33a4979ea9e6ba9a48633e9903f0"
+      },
+      "execution_snapshot": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training-execution.json",
+        "sha256": "fa970d902fc024523a931307b7b95034011b35721b0aab036ed4bd0387b08195",
+        "note": "Mutable queue file: hash binds these captured bytes only."
+      }
+    },
+    "evaluation": {
+      "command_manifest": {
+        "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\evaluation-commands-v1.json",
+        "sha256": "ec254901da5d7a67421684f69f5e89964260af574da2d468ed92cd4869be3851"
+      },
+      "execution_snapshot": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\evaluation-execution.json",
+        "sha256": "7a5328a530bd44af037231daf5360c398e9382b9818bec1b3502803836327451",
+        "note": "Mutable queue file: hash binds these captured bytes only."
+      }
+    }
+  },
+  "extractor": {
+    "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\interim-interfaces-seed1.py",
+    "sha256": "c00e361c6647dc48a7a3636a909c27a9ab3cdfe7e9e854a9435a5014f86fef6b"
+  },
+  "limitations": [
+    "Frozen validator checks JSON provenance, not an independent replay of behavior.",
+    "Checkpoint bytes were stream-hashed, not loaded; no model/world/training/evaluation was run.",
+    "Main endpoint196608 is before withdrawal/return; results do not measure final retention.",
+    "Family-average rates are not pooled request rates. Idle denominator is actual inactive opportunities.",
+    "First-legal content readout uses the existing eight FINISH logits on the actual state, independently of the executed eleven-way argmax; it is not a state-information upper bound or overall behavior."
+  ]
+}

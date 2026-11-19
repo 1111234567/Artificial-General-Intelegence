@@ -1,0 +1,467 @@
+{
+  "cwd": "F:\\agi",
+  "file_hashes": {
+    "F:\\agi\\experiments\\rewiring\\__init__.py": "1720878f474fe7007b6f59d0dbe3ca37f315e23ce6609d622e4861e71d9ac323",
+    "F:\\agi\\experiments\\rewiring\\plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "F:\\agi\\experiments\\rewiring\\run.py": "35b6beaf51115c6f99d95127def4de5b95a78a3c7de8ff66adb741d4ff879c4c",
+    "F:\\agi\\experiments\\rewiring\\test_plasticity.py": "2db336fc41be93118c7e15b4735cf366915ad68d7a85dc1f23960c6f5c57c976",
+    "F:\\agi\\experiments\\rewiring\\test_run.py": "215512037cf33d520a098c08449ed6b694a959de5733c9d8b520d53b73275e71",
+    "F:\\agi\\experiments\\rewiring\\study.py": "9c713624d9ec5d9a46f4ccd19aa418427fc856261ab512b5d7668e50125417fb",
+    "F:\\agi\\experiments\\rewiring\\test_study.py": "214fe2714feec61dec6dd65eb4f97554105b4d07a3e87492fd6c0e52436e0728",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374",
+    "F:\\agi\\experiments\\credit\\evaluate_ready.py": "2f622036799f5770d896a4665f036e0db07366cc280183f43f00f342ba380f4e",
+    "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json": "ebb35d430e4ec69e618b754137e749e3f73fbb52a9592c9b80ea16ab8bc4c7c7"
+  },
+  "jobs": [
+    {
+      "id": "seed_000_dense",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_dense",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\dense\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_dense.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_dense.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_dense.log"
+    },
+    {
+      "id": "seed_000_retire_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_retire_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\retire_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_retire_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_retire_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_retire_low.log"
+    },
+    {
+      "id": "seed_000_learned_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_learned_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\learned_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_learned_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_learned_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_learned_low.log"
+    },
+    {
+      "id": "seed_000_random_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_random_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\random_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_random_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_random_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_random_low.log"
+    },
+    {
+      "id": "seed_000_retire_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_retire_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\retire_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_retire_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_retire_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_retire_high.log"
+    },
+    {
+      "id": "seed_000_learned_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_learned_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\learned_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_learned_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_learned_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_learned_high.log"
+    },
+    {
+      "id": "seed_000_random_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_000_random_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\random_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_random_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_000_random_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_000_random_high.log"
+    },
+    {
+      "id": "seed_001_dense",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_dense",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\dense\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_dense.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_dense.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_dense.log"
+    },
+    {
+      "id": "seed_001_retire_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_retire_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\retire_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_retire_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_retire_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_retire_low.log"
+    },
+    {
+      "id": "seed_001_learned_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_learned_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\learned_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_learned_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_learned_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_learned_low.log"
+    },
+    {
+      "id": "seed_001_random_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_random_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\random_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_random_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_random_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_random_low.log"
+    },
+    {
+      "id": "seed_001_retire_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_retire_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\retire_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_retire_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_retire_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_retire_high.log"
+    },
+    {
+      "id": "seed_001_learned_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_learned_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\learned_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_learned_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_learned_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_learned_high.log"
+    },
+    {
+      "id": "seed_001_random_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_001_random_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\random_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_random_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_001_random_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_001_random_high.log"
+    },
+    {
+      "id": "seed_002_dense",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_dense",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\dense\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_dense.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_dense.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_dense.log"
+    },
+    {
+      "id": "seed_002_retire_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_retire_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\retire_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_retire_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_retire_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_retire_low.log"
+    },
+    {
+      "id": "seed_002_learned_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_learned_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\learned_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_learned_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_learned_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_learned_low.log"
+    },
+    {
+      "id": "seed_002_random_low",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_random_low",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\random_low\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_random_low.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_random_low.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_random_low.log"
+    },
+    {
+      "id": "seed_002_retire_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_retire_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\retire_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_retire_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_retire_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_retire_high.log"
+    },
+    {
+      "id": "seed_002_learned_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_learned_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\learned_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_learned_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_learned_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_learned_high.log"
+    },
+    {
+      "id": "seed_002_random_high",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.rewiring.study",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\rewiring-2026-10-28\\study-protocol-v1.json",
+        "--branch-id",
+        "seed_002_random_high",
+        "--checkpoint",
+        "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\random_high\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_random_high.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\rewiring\\main-v1\\evaluation\\seed_002_random_high.json"
+      ],
+      "log": "F:\\agi\\data\\rewiring\\main-v1\\logs\\evaluate_seed_002_random_high.log"
+    }
+  ]
+}

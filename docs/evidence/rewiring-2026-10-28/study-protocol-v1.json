@@ -1,0 +1,370 @@
+{
+  "format": "rewiring-study-protocol-v1",
+  "created_utc": "2026-10-28T14:13:42.823765+00:00",
+  "sources": {
+    "F:\\agi\\experiments\\rewiring\\__init__.py": "1720878f474fe7007b6f59d0dbe3ca37f315e23ce6609d622e4861e71d9ac323",
+    "F:\\agi\\experiments\\rewiring\\plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "F:\\agi\\experiments\\rewiring\\run.py": "35b6beaf51115c6f99d95127def4de5b95a78a3c7de8ff66adb741d4ff879c4c",
+    "F:\\agi\\experiments\\rewiring\\test_plasticity.py": "2db336fc41be93118c7e15b4735cf366915ad68d7a85dc1f23960c6f5c57c976",
+    "F:\\agi\\experiments\\rewiring\\test_run.py": "215512037cf33d520a098c08449ed6b694a959de5733c9d8b520d53b73275e71",
+    "F:\\agi\\experiments\\rewiring\\study.py": "9c713624d9ec5d9a46f4ccd19aa418427fc856261ab512b5d7668e50125417fb",
+    "F:\\agi\\experiments\\rewiring\\test_study.py": "214fe2714feec61dec6dd65eb4f97554105b4d07a3e87492fd6c0e52436e0728",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374",
+    "F:\\agi\\experiments\\credit\\evaluate_ready.py": "2f622036799f5770d896a4665f036e0db07366cc280183f43f00f342ba380f4e"
+  },
+  "branches": [
+    {
+      "id": "seed_000_dense",
+      "seed": 0,
+      "condition_id": "dense",
+      "arm": "dense",
+      "shrink_step": 0.0,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\dense"
+    },
+    {
+      "id": "seed_000_retire_low",
+      "seed": 0,
+      "condition_id": "retire_low",
+      "arm": "retire",
+      "shrink_step": 5e-05,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\retire_low"
+    },
+    {
+      "id": "seed_000_learned_low",
+      "seed": 0,
+      "condition_id": "learned_low",
+      "arm": "learned",
+      "shrink_step": 5e-05,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\learned_low"
+    },
+    {
+      "id": "seed_000_random_low",
+      "seed": 0,
+      "condition_id": "random_low",
+      "arm": "random",
+      "shrink_step": 5e-05,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\random_low"
+    },
+    {
+      "id": "seed_000_retire_high",
+      "seed": 0,
+      "condition_id": "retire_high",
+      "arm": "retire",
+      "shrink_step": 0.0002,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\retire_high"
+    },
+    {
+      "id": "seed_000_learned_high",
+      "seed": 0,
+      "condition_id": "learned_high",
+      "arm": "learned",
+      "shrink_step": 0.0002,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\learned_high"
+    },
+    {
+      "id": "seed_000_random_high",
+      "seed": 0,
+      "condition_id": "random_high",
+      "arm": "random",
+      "shrink_step": 0.0002,
+      "structural_seed": 91000,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_000\\random_high"
+    },
+    {
+      "id": "seed_001_dense",
+      "seed": 1,
+      "condition_id": "dense",
+      "arm": "dense",
+      "shrink_step": 0.0,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\dense"
+    },
+    {
+      "id": "seed_001_retire_low",
+      "seed": 1,
+      "condition_id": "retire_low",
+      "arm": "retire",
+      "shrink_step": 5e-05,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\retire_low"
+    },
+    {
+      "id": "seed_001_learned_low",
+      "seed": 1,
+      "condition_id": "learned_low",
+      "arm": "learned",
+      "shrink_step": 5e-05,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\learned_low"
+    },
+    {
+      "id": "seed_001_random_low",
+      "seed": 1,
+      "condition_id": "random_low",
+      "arm": "random",
+      "shrink_step": 5e-05,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\random_low"
+    },
+    {
+      "id": "seed_001_retire_high",
+      "seed": 1,
+      "condition_id": "retire_high",
+      "arm": "retire",
+      "shrink_step": 0.0002,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\retire_high"
+    },
+    {
+      "id": "seed_001_learned_high",
+      "seed": 1,
+      "condition_id": "learned_high",
+      "arm": "learned",
+      "shrink_step": 0.0002,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\learned_high"
+    },
+    {
+      "id": "seed_001_random_high",
+      "seed": 1,
+      "condition_id": "random_high",
+      "arm": "random",
+      "shrink_step": 0.0002,
+      "structural_seed": 91001,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_001\\random_high"
+    },
+    {
+      "id": "seed_002_dense",
+      "seed": 2,
+      "condition_id": "dense",
+      "arm": "dense",
+      "shrink_step": 0.0,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\dense"
+    },
+    {
+      "id": "seed_002_retire_low",
+      "seed": 2,
+      "condition_id": "retire_low",
+      "arm": "retire",
+      "shrink_step": 5e-05,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\retire_low"
+    },
+    {
+      "id": "seed_002_learned_low",
+      "seed": 2,
+      "condition_id": "learned_low",
+      "arm": "learned",
+      "shrink_step": 5e-05,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\learned_low"
+    },
+    {
+      "id": "seed_002_random_low",
+      "seed": 2,
+      "condition_id": "random_low",
+      "arm": "random",
+      "shrink_step": 5e-05,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\random_low"
+    },
+    {
+      "id": "seed_002_retire_high",
+      "seed": 2,
+      "condition_id": "retire_high",
+      "arm": "retire",
+      "shrink_step": 0.0002,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\retire_high"
+    },
+    {
+      "id": "seed_002_learned_high",
+      "seed": 2,
+      "condition_id": "learned_high",
+      "arm": "learned",
+      "shrink_step": 0.0002,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\learned_high"
+    },
+    {
+      "id": "seed_002_random_high",
+      "seed": 2,
+      "condition_id": "random_high",
+      "arm": "random",
+      "shrink_step": 0.0002,
+      "structural_seed": 91002,
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\rewiring\\main-v1\\training\\seed_002\\random_high"
+    }
+  ],
+  "arms": [
+    {
+      "id": "dense",
+      "arm": "dense",
+      "shrink_step": 0.0
+    },
+    {
+      "id": "retire_low",
+      "arm": "retire",
+      "shrink_step": 5e-05
+    },
+    {
+      "id": "learned_low",
+      "arm": "learned",
+      "shrink_step": 5e-05
+    },
+    {
+      "id": "random_low",
+      "arm": "random",
+      "shrink_step": 5e-05
+    },
+    {
+      "id": "retire_high",
+      "arm": "retire",
+      "shrink_step": 0.0002
+    },
+    {
+      "id": "learned_high",
+      "arm": "learned",
+      "shrink_step": 0.0002
+    },
+    {
+      "id": "random_high",
+      "arm": "random",
+      "shrink_step": 0.0002
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "phase_ticks": 65536,
+  "target_ticks": 131072,
+  "window_updates": 8,
+  "chunk_ticks": 64,
+  "training_device": "cuda",
+  "evaluation_device": "cpu",
+  "evaluation_steps": 2048,
+  "dt": 0.25,
+  "conditions": [
+    "iid",
+    "long_wait",
+    "longer",
+    "sparse",
+    "long_sparse"
+  ],
+  "phases": [
+    "B",
+    "A2"
+  ],
+  "historical_bp64_checkpoints": [
+    {
+      "seed": 0,
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64\\checkpoint.pt",
+      "sha256": "ff650b5bd59fd9a244021be0faea2eefe5a3bae15899e1c3e5a947822e137845"
+    },
+    {
+      "seed": 1,
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64\\checkpoint.pt",
+      "sha256": "7f20081d8e03898ef5f01319d11566fdf0943ec9dac19f850c190443308f6a52"
+    },
+    {
+      "seed": 2,
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64\\checkpoint.pt",
+      "sha256": "4781fcbb2c68779ad93475b835b01d35ae94b98500bd2da938efa29f7c04d264"
+    }
+  ],
+  "regimes": {
+    "B": {
+      "duration": [
+        4.0,
+        8.0
+      ],
+      "gap": [
+        4.0,
+        12.0
+      ]
+    },
+    "A2": {
+      "duration": [
+        1.0,
+        4.0
+      ],
+      "gap": [
+        0.5,
+        2.0
+      ]
+    }
+  },
+  "primary": "Strict clean completion of mature post-fork final-valid requests; inherited/carryover/censored separate.",
+  "hypothesis": "Gradient-directed independent births improve adaptation and return learning relative to the same shrink-only and random-placement rules.",
+  "dose_policy": "Both predeclared absolute shrink steps are reported; no dose selected using evaluation outcomes.",
+  "controls": "Dense is the maximum-capacity envelope. Retire shares shrink but disallows births. Random relocates its own proposed count and signed magnitudes within each recipient row; later capacity trajectories are not forced equal.",
+  "limits": [
+    "Every source starts fully connected; first births reactivate previously retired pairs.",
+    "Fixed-sparse or peak-static initialization would change inherited functions; no hard source pruning is introduced.",
+    "No extra neurons or allowed edge positions; graph support within 128 by 128 changes.",
+    "Adam followed by Euclidean soft threshold is a specified heuristic, not exact proximal Adam for one L1 objective.",
+    "Dormant shadow Adam stores candidate evidence, using inherited lr/betas/eps; candidate storage and dense arithmetic are counted separately from active edges.",
+    "Structural window and shrink strengths are experimental choices, not learned birth/death rules.",
+    "Three training seeds and a synthetic control task do not establish general intelligence or lifelong plasticity."
+  ]
+}

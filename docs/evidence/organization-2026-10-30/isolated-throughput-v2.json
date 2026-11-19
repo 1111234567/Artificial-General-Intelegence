@@ -1,0 +1,651 @@
+{
+  "start_utc": "2026-10-30T01:38:39.089125+00:00",
+  "active": false,
+  "targets": [
+    {
+      "pid": 46232,
+      "created": 1793321829.5681832,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/acquisition-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/acquisition-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/acquisition-baseline-commands-v1.json --status-root data/organization/acquisition-v1 --limits data/organization/acquisition-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 117804,
+      "created": 1793321829.5774596,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/acquisition-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/acquisition-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/acquisition-baseline-commands-v1.json --status-root data/organization/acquisition-v1 --limits data/organization/acquisition-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 147368,
+      "created": 1793323663.4514563,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/organization-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/organization-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/organization-baseline-commands-v1.json --status-root data/organization/main-v1 --limits data/organization/main-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 169092,
+      "created": 1793323663.4376442,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/organization-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/organization-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/organization-baseline-commands-v1.json --status-root data/organization/main-v1 --limits data/organization/main-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 29912,
+      "created": 1793321831.4168954,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 36548,
+      "created": 1793323665.983536,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__passive",
+      "queue": false
+    },
+    {
+      "pid": 101808,
+      "created": 1793321831.409812,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 108232,
+      "created": 1793321831.423898,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 108432,
+      "created": 1793321831.4462874,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 108992,
+      "created": 1793321831.4464777,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 109636,
+      "created": 1793323666.0020463,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__coupled__passive",
+      "queue": false
+    },
+    {
+      "pid": 115688,
+      "created": 1793321831.4725316,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 121756,
+      "created": 1793321831.4797046,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 124968,
+      "created": 1793321831.4384048,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 129300,
+      "created": 1793321831.4303906,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 129312,
+      "created": 1793321831.4547822,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 129924,
+      "created": 1793323665.9910047,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__parallel__passive",
+      "queue": false
+    },
+    {
+      "pid": 132112,
+      "created": 1793323870.1831589,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__functional_fixed",
+      "queue": false
+    },
+    {
+      "pid": 139680,
+      "created": 1793321831.4305289,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 143428,
+      "created": 1793321831.4638052,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 143800,
+      "created": 1793321831.4652867,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 147812,
+      "created": 1793323870.1359365,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__functional_fixed",
+      "queue": false
+    },
+    {
+      "pid": 149764,
+      "created": 1793323665.955433,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__passive",
+      "queue": false
+    },
+    {
+      "pid": 154628,
+      "created": 1793321831.401348,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 157008,
+      "created": 1793323665.9736,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__coupled__passive",
+      "queue": false
+    },
+    {
+      "pid": 167168,
+      "created": 1793321831.4545488,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 167816,
+      "created": 1793321831.4380126,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 168216,
+      "created": 1793321831.4239757,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 168708,
+      "created": 1793321831.4886005,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 169740,
+      "created": 1793323665.9645507,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__parallel__passive",
+      "queue": false
+    }
+  ],
+  "suspended": [
+    {
+      "pid": 46232,
+      "created": 1793321829.5681832,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/acquisition-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/acquisition-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/acquisition-baseline-commands-v1.json --status-root data/organization/acquisition-v1 --limits data/organization/acquisition-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 117804,
+      "created": 1793321829.5774596,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/acquisition-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/acquisition-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/acquisition-baseline-commands-v1.json --status-root data/organization/acquisition-v1 --limits data/organization/acquisition-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 147368,
+      "created": 1793323663.4514563,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/organization-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/organization-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/organization-baseline-commands-v1.json --status-root data/organization/main-v1 --limits data/organization/main-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 169092,
+      "created": 1793323663.4376442,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.lifelong.queue --training-plan docs/evidence/organization-2026-10-30/organization-training-commands-v1.json --evaluation-plan docs/evidence/organization-2026-10-30/organization-evaluation-commands-v1.json --baseline-plan docs/evidence/organization-2026-10-30/organization-baseline-commands-v1.json --status-root data/organization/main-v1 --limits data/organization/main-v1/worker-limits.json",
+      "queue": true
+    },
+    {
+      "pid": 29912,
+      "created": 1793321831.4168954,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 36548,
+      "created": 1793323665.983536,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__passive",
+      "queue": false
+    },
+    {
+      "pid": 101808,
+      "created": 1793321831.409812,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 108232,
+      "created": 1793321831.423898,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 108432,
+      "created": 1793321831.4462874,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 108992,
+      "created": 1793321831.4464777,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 109636,
+      "created": 1793323666.0020463,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__coupled__passive",
+      "queue": false
+    },
+    {
+      "pid": 115688,
+      "created": 1793321831.4725316,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 121756,
+      "created": 1793321831.4797046,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 124968,
+      "created": 1793321831.4384048,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 129300,
+      "created": 1793321831.4303906,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 129312,
+      "created": 1793321831.4547822,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 129924,
+      "created": 1793323665.9910047,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__parallel__passive",
+      "queue": false
+    },
+    {
+      "pid": 132112,
+      "created": 1793323870.1831589,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__functional_fixed",
+      "queue": false
+    },
+    {
+      "pid": 139680,
+      "created": 1793321831.4305289,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 143428,
+      "created": 1793321831.4638052,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 143800,
+      "created": 1793321831.4652867,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 147812,
+      "created": 1793323870.1359365,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__functional_fixed",
+      "queue": false
+    },
+    {
+      "pid": 149764,
+      "created": 1793323665.955433,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__plain__passive",
+      "queue": false
+    },
+    {
+      "pid": 154628,
+      "created": 1793321831.401348,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 157008,
+      "created": 1793323665.9736,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__coupled__passive",
+      "queue": false
+    },
+    {
+      "pid": 167168,
+      "created": 1793321831.4545488,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 167816,
+      "created": 1793321831.4380126,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 168216,
+      "created": 1793321831.4239757,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 168708,
+      "created": 1793321831.4886005,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.acquisition train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json --branch-id seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "queue": false
+    },
+    {
+      "pid": 169740,
+      "created": 1793323665.9645507,
+      "command": "F:\\agi\\.venv\\Scripts\\python.exe -m experiments.organization.study train --protocol F:\\agi\\docs\\evidence\\organization-2026-10-30\\organization-protocol-v1.json --branch-id seed_000__parallel__passive",
+      "queue": false
+    }
+  ],
+  "resumed": [
+    169740,
+    168708,
+    168216,
+    167816,
+    167168,
+    157008,
+    154628,
+    149764,
+    147812,
+    143800,
+    143428,
+    139680,
+    132112,
+    129924,
+    129312,
+    129300,
+    124968,
+    121756,
+    115688,
+    109636,
+    108992,
+    108432,
+    108232,
+    101808,
+    36548,
+    29912,
+    169092,
+    147368,
+    117804,
+    46232
+  ],
+  "rows": [
+    {
+      "model": "native",
+      "device": "cpu",
+      "threads": 1,
+      "seed": 999,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "warmup_updates": 4,
+      "measured_updates": 12,
+      "seconds_per_update_by_block": [
+        0.3024343750003027,
+        0.3116332749996218,
+        0.35566724999807775
+      ],
+      "seconds_per_update": 0.3232449666660007,
+      "initial_parameter_hash": "6f2a4ebaf3d2f48ab2ed7eef102452a44bae9b61d12d223b494d3771bd150ddc",
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cpu",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false
+      },
+      "cuda_visible_devices": "-1",
+      "gpu_peak_allocated_bytes": 0
+    },
+    {
+      "model": "native",
+      "device": "cuda",
+      "threads": 1,
+      "seed": 999,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "warmup_updates": 4,
+      "measured_updates": 12,
+      "seconds_per_update_by_block": [
+        0.5126260000033653,
+        0.5078661000006832,
+        0.5994817500031786
+      ],
+      "seconds_per_update": 0.5399912833357424,
+      "initial_parameter_hash": "6f2a4ebaf3d2f48ab2ed7eef102452a44bae9b61d12d223b494d3771bd150ddc",
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cuda",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "gpu": "NVIDIA GeForce RTX 4060 Ti",
+        "gpu_memory_bytes": 8585216000,
+        "compute_capability": [
+          8,
+          9
+        ]
+      },
+      "cuda_visible_devices": null,
+      "gpu_peak_allocated_bytes": 81055232
+    },
+    {
+      "model": "plain",
+      "device": "cpu",
+      "threads": 1,
+      "seed": 999,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "warmup_updates": 4,
+      "measured_updates": 12,
+      "seconds_per_update_by_block": [
+        0.4200659749985789,
+        0.4203120000020135,
+        0.4154333749975194
+      ],
+      "seconds_per_update": 0.4186037833327039,
+      "initial_parameter_hash": "6b9dd052c977e08c00161b7f2ede385ec095675b8094dd1e782d2044789c604c",
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cpu",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false
+      },
+      "cuda_visible_devices": "-1",
+      "gpu_peak_allocated_bytes": 0
+    },
+    {
+      "model": "plain",
+      "device": "cuda",
+      "threads": 1,
+      "seed": 999,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "warmup_updates": 4,
+      "measured_updates": 12,
+      "seconds_per_update_by_block": [
+        0.9938835249995464,
+        1.0765451999977813,
+        1.058016700000735
+      ],
+      "seconds_per_update": 1.042815141666021,
+      "initial_parameter_hash": "6b9dd052c977e08c00161b7f2ede385ec095675b8094dd1e782d2044789c604c",
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cuda",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "gpu": "NVIDIA GeForce RTX 4060 Ti",
+        "gpu_memory_bytes": 8585216000,
+        "compute_capability": [
+          8,
+          9
+        ]
+      },
+      "cuda_visible_devices": null,
+      "gpu_peak_allocated_bytes": 81055232
+    },
+    {
+      "model": "coupled",
+      "device": "cpu",
+      "threads": 1,
+      "seed": 999,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "warmup_updates": 4,
+      "measured_updates": 12,
+      "seconds_per_update_by_block": [
+        0.4414245499938261,
+        0.45287802499660756,
+        0.4400029250027728
+      ],
+      "seconds_per_update": 0.4447684999977355,
+      "initial_parameter_hash": "6b9dd052c977e08c00161b7f2ede385ec095675b8094dd1e782d2044789c604c",
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cpu",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false
+      },
+      "cuda_visible_devices": "-1",
+      "gpu_peak_allocated_bytes": 0
+    },
+    {
+      "model": "coupled",
+      "device": "cuda",
+      "threads": 1,
+      "seed": 999,
+      "batch_size": 32,
+      "width": 128,
+      "chunk_ticks": 128,
+      "warmup_updates": 4,
+      "measured_updates": 12,
+      "seconds_per_update_by_block": [
+        1.0940551250023418,
+        1.1099718750047032,
+        1.1324399250006536
+      ],
+      "seconds_per_update": 1.1121556416692329,
+      "initial_parameter_hash": "6b9dd052c977e08c00161b7f2ede385ec095675b8094dd1e782d2044789c604c",
+      "finite": true,
+      "runtime": {
+        "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26300-SP0",
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "torch": "2.11.0+cu130",
+        "numpy": "2.5.1",
+        "cuda_runtime": "13.0",
+        "cudnn": 91900,
+        "device": "cuda",
+        "cpu_threads": 1,
+        "cpu_interop_threads": 14,
+        "deterministic_algorithms": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "gpu": "NVIDIA GeForce RTX 4060 Ti",
+        "gpu_memory_bytes": 8585216000,
+        "compute_capability": [
+          8,
+          9
+        ]
+      },
+      "cuda_visible_devices": null,
+      "gpu_peak_allocated_bytes": 85249536
+    }
+  ],
+  "end_utc": "2026-10-30T01:40:01.366363+00:00",
+  "elapsed_seconds": 82.27661650002119,
+  "interpretation": "Single model, one thread, same workload; only this study's processes suspended. Desktop and unrelated apps remained. Paused CUDA allocations stayed resident. Scientific training-time counters can include this operational pause."
+}

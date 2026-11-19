@@ -1,0 +1,310 @@
+{
+  "generation": 88,
+  "genomes_per_batch": 16,
+  "requests_per_life": 64,
+  "actors": 8,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "development_seed": 120261226,
+  "arms": {
+    "local": {
+      "ids": [
+        "g087-i00-c0000",
+        "g087-i01-c0068",
+        "g087-i02-c0136",
+        "g087-i03-c0204",
+        "g087-i00-c0273",
+        "g087-i01-c0341",
+        "g087-i02-c0409",
+        "g087-i03-c0477",
+        "g087-i00-c0546",
+        "g087-i01-c0614",
+        "g087-i02-c0682",
+        "g087-i03-c0750",
+        "g087-i00-c0819",
+        "g087-i01-c0887",
+        "g087-i02-c0955",
+        "g087-i03-c1023"
+      ],
+      "checks": {
+        "120261226": {
+          "primary_actions": 147456,
+          "state_fields": 23,
+          "metrics": 35,
+          "trace_sha256": "a99ace47618c2c2c2eb9d758c86d56558fd3258f38fe9761d79b726d956b6f26",
+          "variants": {
+            "chunks-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-1": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-2": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            }
+          }
+        },
+        "430261229": {
+          "primary_actions": 147456,
+          "state_fields": 23,
+          "metrics": 36,
+          "trace_sha256": "92661b315e57e557b15e6f89fa5e1b75889a267f7ac9e832f1cde0de2162ab79",
+          "variants": {
+            "chunks-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-1": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-2": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            }
+          }
+        }
+      },
+      "timings": {
+        "reference": {
+          "seconds": [
+            0.28004990000044927,
+            0.30341009999392554,
+            0.3970460999989882,
+            0.3118426000000909
+          ],
+          "candidates_per_second": 52.011149240484784,
+          "paired_speed_ratio_and_ci95": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "chunks-4": {
+          "seconds": [
+            0.3967321000236552,
+            0.38542320000124164,
+            0.4032195000036154,
+            0.293144499999471
+          ],
+          "candidates_per_second": 40.91259114268152,
+          "paired_speed_ratio_and_ci95": [
+            0.8859512948006643,
+            0.7058917087469132,
+            1.0637845840554867
+          ]
+        },
+        "arcs-1": {
+          "seconds": [
+            0.34488070002407767,
+            0.3573503000079654,
+            0.2774883000238333,
+            0.3570460000191815
+          ],
+          "candidates_per_second": 45.588805779902465,
+          "paired_speed_ratio_and_ci95": [
+            0.8612256298895231,
+            0.8120196345602921,
+            1.4308570846586548
+          ]
+        },
+        "arcs-2": {
+          "seconds": [
+            0.34717340001952834,
+            0.3577731999976095,
+            0.3419839999987744,
+            0.3514298000081908
+          ],
+          "candidates_per_second": 45.80568769042327,
+          "paired_speed_ratio_and_ci95": [
+            0.8677026963629653,
+            0.8066571344022803,
+            1.1610078249286844
+          ]
+        },
+        "arcs-4": {
+          "seconds": [
+            0.526027999992948,
+            0.4663987999956589,
+            0.469236600009026,
+            0.4758672000025399
+          ],
+          "candidates_per_second": 33.858714777793075,
+          "paired_speed_ratio_and_ci95": [
+            0.6529261242741775,
+            0.5323859186282929,
+            0.8461533051585295
+          ]
+        }
+      }
+    },
+    "modulated": {
+      "ids": [
+        "g087-i00-c0000",
+        "g087-i01-c0068",
+        "g087-i02-c0136",
+        "g087-i03-c0204",
+        "g087-i00-c0273",
+        "g087-i01-c0341",
+        "g087-i02-c0409",
+        "g087-i03-c0477",
+        "g087-i00-c0546",
+        "g087-i01-c0614",
+        "g087-i02-c0682",
+        "g087-i03-c0750",
+        "g087-i00-c0819",
+        "g087-i01-c0887",
+        "g087-i02-c0955",
+        "g087-i03-c1023"
+      ],
+      "checks": {
+        "120261226": {
+          "primary_actions": 147456,
+          "state_fields": 23,
+          "metrics": 35,
+          "trace_sha256": "6bc519de840289ce9618d0c3bd047e399d1cd257362b0ea085e49d5032515ae9",
+          "variants": {
+            "chunks-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-1": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-2": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            }
+          }
+        },
+        "430261229": {
+          "primary_actions": 147456,
+          "state_fields": 23,
+          "metrics": 35,
+          "trace_sha256": "d5ebfe7967873378fdf3a2ae58195f2524a5834a79cb7483ef3044de60d2c04b",
+          "variants": {
+            "chunks-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-1": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-2": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            },
+            "arcs-4": {
+              "mismatched_metrics": [],
+              "mismatched_states": [],
+              "mismatched_primary_actions": 0
+            }
+          }
+        }
+      },
+      "timings": {
+        "reference": {
+          "seconds": [
+            0.40299010000308044,
+            0.20775119998143055,
+            0.22039429997676052,
+            0.22558510000817478
+          ],
+          "candidates_per_second": 71.75219304093625,
+          "paired_speed_ratio_and_ci95": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "chunks-4": {
+          "seconds": [
+            0.29325829999288544,
+            0.33769030001712963,
+            0.21249509998597205,
+            0.22077129999524914
+          ],
+          "candidates_per_second": 62.25322432937453,
+          "paired_speed_ratio_and_ci95": [
+            1.02948901384964,
+            0.6152122224739419,
+            1.3741813957622244
+          ]
+        },
+        "arcs-1": {
+          "seconds": [
+            0.37276500000734814,
+            0.19307570002274588,
+            0.15181280000251718,
+            0.1975803000095766
+          ],
+          "candidates_per_second": 81.91349933791456,
+          "paired_speed_ratio_and_ci95": [
+            1.1114111758232004,
+            1.0760090470056862,
+            1.451750445108095
+          ]
+        },
+        "arcs-2": {
+          "seconds": [
+            0.3733953000046313,
+            0.37472180000622757,
+            0.19967600001837127,
+            0.18684860001667403
+          ],
+          "candidates_per_second": 55.83947407367207,
+          "paired_speed_ratio_and_ci95": [
+            1.0915091102553003,
+            0.5544145015795129,
+            1.2073149062291286
+          ]
+        },
+        "arcs-4": {
+          "seconds": [
+            0.4780888000095729,
+            0.2649188000068534,
+            0.2728849000122864,
+            0.22973260001162998
+          ],
+          "candidates_per_second": 59.50126412083286,
+          "paired_speed_ratio_and_ci95": [
+            0.8252822857420636,
+            0.7842070852504844,
+            0.981946402020239
+          ]
+        }
+      }
+    }
+  }
+}

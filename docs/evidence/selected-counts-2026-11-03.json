@@ -1,0 +1,498 @@
+{
+  "format": "selected-local-counts-v1",
+  "date": "2026-11-03",
+  "sources": [
+    {
+      "source": "data/action-return/refit-policy-v1/summary.json",
+      "source_sha256": "aa91a6dc0f9b88a97443262a0b4dfbc971598cd4c44c16597bc075e17011562c",
+      "section": "heldout",
+      "selection": "long_both, equal-budget assisted_archive and own_policy arms, decoder-heldout actors",
+      "rows": [
+        {
+          "seed": 0,
+          "condition": "long_both",
+          "arm": "assisted_archive",
+          "counts": {
+            "primary_matured": 344,
+            "primary_feasible_began": 275,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 38507,
+            "idle_opportunities": 41028
+          }
+        },
+        {
+          "seed": 0,
+          "condition": "long_both",
+          "arm": "own_policy",
+          "counts": {
+            "primary_matured": 344,
+            "primary_feasible_began": 337,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 1077,
+            "idle_opportunities": 41028
+          }
+        },
+        {
+          "seed": 1,
+          "condition": "long_both",
+          "arm": "assisted_archive",
+          "counts": {
+            "primary_matured": 360,
+            "primary_feasible_began": 188,
+            "primary_completed": 22,
+            "primary_clean_completed": 0,
+            "idle_actions": 39823,
+            "idle_opportunities": 40061
+          }
+        },
+        {
+          "seed": 1,
+          "condition": "long_both",
+          "arm": "own_policy",
+          "counts": {
+            "primary_matured": 360,
+            "primary_feasible_began": 359,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 1290,
+            "idle_opportunities": 39944
+          }
+        },
+        {
+          "seed": 2,
+          "condition": "long_both",
+          "arm": "assisted_archive",
+          "counts": {
+            "primary_matured": 340,
+            "primary_feasible_began": 71,
+            "primary_completed": 17,
+            "primary_clean_completed": 0,
+            "idle_actions": 40104,
+            "idle_opportunities": 41300
+          }
+        },
+        {
+          "seed": 2,
+          "condition": "long_both",
+          "arm": "own_policy",
+          "counts": {
+            "primary_matured": 340,
+            "primary_feasible_began": 313,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 686,
+            "idle_opportunities": 41204
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/content-timing/onset-v1/summary.json",
+      "source_sha256": "2d5cf15b319e2a32f3fb61167629aa83ca76af0de6c79049389d306fedc4de47",
+      "section": "seeds",
+      "selection": "all seeds, held-out raw and mapped four-way probes one tick after the cue",
+      "rows": [
+        {
+          "seed": 0,
+          "anchors": 192,
+          "groups_cue_invariant": 192,
+          "groups_onset_nonzero": 192,
+          "probe": {
+            "pooled": [
+              {
+                "label": "raw",
+                "correct": 644,
+                "total": 768,
+                "null_correct": 192
+              },
+              {
+                "label": "mapped",
+                "correct": 332,
+                "total": 768,
+                "null_correct": 192
+              }
+            ]
+          }
+        },
+        {
+          "seed": 1,
+          "anchors": 192,
+          "groups_cue_invariant": 192,
+          "groups_onset_nonzero": 192,
+          "probe": {
+            "pooled": [
+              {
+                "label": "raw",
+                "correct": 712,
+                "total": 768,
+                "null_correct": 192
+              },
+              {
+                "label": "mapped",
+                "correct": 364,
+                "total": 768,
+                "null_correct": 192
+              }
+            ]
+          }
+        },
+        {
+          "seed": 2,
+          "anchors": 192,
+          "groups_cue_invariant": 192,
+          "groups_onset_nonzero": 192,
+          "probe": {
+            "pooled": [
+              {
+                "label": "raw",
+                "correct": 689,
+                "total": 768,
+                "null_correct": 192
+              },
+              {
+                "label": "mapped",
+                "correct": 362,
+                "total": 768,
+                "null_correct": 192
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/wait-content/long-v1/summary.json",
+      "source_sha256": "926f68bacfdda0768186592f45a139b8702f0f7ef93c1a733e83f734b92f9bf3",
+      "section": "heldout",
+      "selection": "all arms, additional 6144-tick long-task suffix, excludes the 2048-tick prefix",
+      "rows": [
+        {
+          "seed": 0,
+          "arm": "untrained_anchor",
+          "counts": {
+            "primary_matured": 1000,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 3774,
+            "idle_opportunities": 124996,
+            "legal_finish_attempts": 45
+          }
+        },
+        {
+          "seed": 0,
+          "arm": "end_only",
+          "counts": {
+            "primary_matured": 1000,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 29,
+            "idle_opportunities": 124996,
+            "legal_finish_attempts": 0
+          }
+        },
+        {
+          "seed": 0,
+          "arm": "wait_mixed",
+          "counts": {
+            "primary_matured": 1000,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 0,
+            "idle_opportunities": 124996,
+            "legal_finish_attempts": 0
+          }
+        },
+        {
+          "seed": 1,
+          "arm": "untrained_anchor",
+          "counts": {
+            "primary_matured": 1060,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 3840,
+            "idle_opportunities": 122428,
+            "legal_finish_attempts": 32
+          }
+        },
+        {
+          "seed": 1,
+          "arm": "end_only",
+          "counts": {
+            "primary_matured": 1060,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 6320,
+            "idle_opportunities": 122428,
+            "legal_finish_attempts": 2
+          }
+        },
+        {
+          "seed": 1,
+          "arm": "wait_mixed",
+          "counts": {
+            "primary_matured": 1060,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 23,
+            "idle_opportunities": 122428,
+            "legal_finish_attempts": 0
+          }
+        },
+        {
+          "seed": 2,
+          "arm": "untrained_anchor",
+          "counts": {
+            "primary_matured": 1020,
+            "primary_completed": 1,
+            "primary_clean_completed": 0,
+            "idle_actions": 2304,
+            "idle_opportunities": 124176,
+            "legal_finish_attempts": 1
+          }
+        },
+        {
+          "seed": 2,
+          "arm": "end_only",
+          "counts": {
+            "primary_matured": 1020,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 4367,
+            "idle_opportunities": 124176,
+            "legal_finish_attempts": 0
+          }
+        },
+        {
+          "seed": 2,
+          "arm": "wait_mixed",
+          "counts": {
+            "primary_matured": 1020,
+            "primary_completed": 0,
+            "primary_clean_completed": 0,
+            "idle_actions": 4725,
+            "idle_opportunities": 124176,
+            "legal_finish_attempts": 0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/learn-remember/state-transfer-v1/seed_000.json",
+      "source_sha256": "d19e31606f80803176c0eb6bccd8b7245a67f69c3a608f2d07480d112220a91f",
+      "section": null,
+      "selection": "both architectures, same held-out world; original vs transplanted h, full fork and second-half new requests",
+      "rows": [
+        {
+          "seed": 0,
+          "arch": "plain",
+          "counts_original": {
+            "matured": 174,
+            "completed": 90,
+            "clean_completed": 36,
+            "idle_actions": 22,
+            "idle_opportunities": 20244
+          },
+          "counts_transplant": {
+            "matured": 174,
+            "completed": 90,
+            "clean_completed": 37,
+            "idle_actions": 27,
+            "idle_opportunities": 20243
+          },
+          "original_suffix": {
+            "matured": 84,
+            "completed": 42,
+            "clean_completed": 14,
+            "idle_actions": 7,
+            "idle_opportunities": 10146
+          },
+          "transplant_suffix": {
+            "matured": 84,
+            "completed": 42,
+            "clean_completed": 14,
+            "idle_actions": 7,
+            "idle_opportunities": 10146
+          }
+        },
+        {
+          "seed": 0,
+          "arch": "symmetric",
+          "counts_original": {
+            "matured": 174,
+            "completed": 94,
+            "clean_completed": 34,
+            "idle_actions": 7332,
+            "idle_opportunities": 20272
+          },
+          "counts_transplant": {
+            "matured": 174,
+            "completed": 141,
+            "clean_completed": 56,
+            "idle_actions": 21,
+            "idle_opportunities": 20372
+          },
+          "original_suffix": {
+            "matured": 84,
+            "completed": 44,
+            "clean_completed": 18,
+            "idle_actions": 3641,
+            "idle_opportunities": 10162
+          },
+          "transplant_suffix": {
+            "matured": 84,
+            "completed": 68,
+            "clean_completed": 30,
+            "idle_actions": 7,
+            "idle_opportunities": 10218
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/learn-remember/state-transfer-v1/seed_001.json",
+      "source_sha256": "9b5e0b0a3eb2f69b3a9e5a22941c59d83451d10e2d20c071db1df4ff2aaa3bf3",
+      "section": null,
+      "selection": "both architectures, same held-out world; original vs transplanted h, full fork and second-half new requests",
+      "rows": [
+        {
+          "seed": 1,
+          "arch": "plain",
+          "counts_original": {
+            "matured": 170,
+            "completed": 113,
+            "clean_completed": 43,
+            "idle_actions": 54,
+            "idle_opportunities": 20569
+          },
+          "counts_transplant": {
+            "matured": 170,
+            "completed": 112,
+            "clean_completed": 45,
+            "idle_actions": 57,
+            "idle_opportunities": 20572
+          },
+          "original_suffix": {
+            "matured": 81,
+            "completed": 50,
+            "clean_completed": 22,
+            "idle_actions": 26,
+            "idle_opportunities": 10346
+          },
+          "transplant_suffix": {
+            "matured": 81,
+            "completed": 50,
+            "clean_completed": 22,
+            "idle_actions": 26,
+            "idle_opportunities": 10346
+          }
+        },
+        {
+          "seed": 1,
+          "arch": "symmetric",
+          "counts_original": {
+            "matured": 170,
+            "completed": 21,
+            "clean_completed": 0,
+            "idle_actions": 20395,
+            "idle_opportunities": 20395
+          },
+          "counts_transplant": {
+            "matured": 170,
+            "completed": 136,
+            "clean_completed": 73,
+            "idle_actions": 92,
+            "idle_opportunities": 20571
+          },
+          "original_suffix": {
+            "matured": 81,
+            "completed": 10,
+            "clean_completed": 0,
+            "idle_actions": 10288,
+            "idle_opportunities": 10288
+          },
+          "transplant_suffix": {
+            "matured": 81,
+            "completed": 65,
+            "clean_completed": 36,
+            "idle_actions": 33,
+            "idle_opportunities": 10363
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/learn-remember/state-transfer-v1/seed_002.json",
+      "source_sha256": "6054ce627fee72119fd4757ffba684e7def26c6a5c7e7e7a8e452c642de2f7ab",
+      "section": null,
+      "selection": "both architectures, same held-out world; original vs transplanted h, full fork and second-half new requests",
+      "rows": [
+        {
+          "seed": 2,
+          "arch": "plain",
+          "counts_original": {
+            "matured": 171,
+            "completed": 144,
+            "clean_completed": 83,
+            "idle_actions": 17,
+            "idle_opportunities": 20796
+          },
+          "counts_transplant": {
+            "matured": 171,
+            "completed": 144,
+            "clean_completed": 82,
+            "idle_actions": 25,
+            "idle_opportunities": 20793
+          },
+          "original_suffix": {
+            "matured": 81,
+            "completed": 67,
+            "clean_completed": 36,
+            "idle_actions": 10,
+            "idle_opportunities": 10449
+          },
+          "transplant_suffix": {
+            "matured": 81,
+            "completed": 67,
+            "clean_completed": 36,
+            "idle_actions": 10,
+            "idle_opportunities": 10449
+          }
+        },
+        {
+          "seed": 2,
+          "arch": "symmetric",
+          "counts_original": {
+            "matured": 171,
+            "completed": 18,
+            "clean_completed": 11,
+            "idle_actions": 5236,
+            "idle_opportunities": 20394
+          },
+          "counts_transplant": {
+            "matured": 171,
+            "completed": 17,
+            "clean_completed": 13,
+            "idle_actions": 147,
+            "idle_opportunities": 20378
+          },
+          "original_suffix": {
+            "matured": 81,
+            "completed": 10,
+            "clean_completed": 6,
+            "idle_actions": 2641,
+            "idle_opportunities": 10234
+          },
+          "transplant_suffix": {
+            "matured": 81,
+            "completed": 10,
+            "clean_completed": 7,
+            "idle_actions": 66,
+            "idle_opportunities": 10226
+          }
+        }
+      ]
+    }
+  ]
+}

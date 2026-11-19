@@ -1,0 +1,48 @@
+{
+  "format": "undirected-interim-subset-verification-v1",
+  "created_utc": "2026-11-01T11:14:17.415640+00:00",
+  "files": {
+    "interim-interfaces-seed0.py": "14791a917064eced53d40730ac72d6c046be8c8557258d9dcd3f4c412a843aba",
+    "interim-interfaces-seed0-2026-11-01.json": "52200f8d9197a64b93d9ceb0b45e2f2184af88cbd355f8b606c159a72633a668",
+    "interim-interfaces-seed0-2026-11-01.md": "5c50c6771cd9187c7b6ae4338d3098ba17827f140279a6eb8d015e4563766470",
+    "interim-interfaces-seed0-2026-11-01-final.log": "a1364eb86166cd313410dfe6cfa222d48026d3c3e3747bedf08f2b6583679ec2"
+  },
+  "source_convention": "experiments/undirected/run.py:749 verifies world.tick == native ticks - 1 after a completed action.",
+  "checks": {
+    "exact_requested_subset": true,
+    "frozen_validator_passed_all4": true,
+    "checkpoint_loads": 0,
+    "evaluation_reruns": 0,
+    "analysis_v2_plan_unchanged": true
+  },
+  "branches": [
+    {
+      "id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "forks": 8,
+      "native_checkpoint_tick": 196608,
+      "world_fork_tick": 196607,
+      "continuation_steps": 2048
+    },
+    {
+      "id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "forks": 8,
+      "native_checkpoint_tick": 196608,
+      "world_fork_tick": 196607,
+      "continuation_steps": 2048
+    },
+    {
+      "id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "forks": 8,
+      "native_checkpoint_tick": 196608,
+      "world_fork_tick": 196607,
+      "continuation_steps": 2048
+    },
+    {
+      "id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "forks": 8,
+      "native_checkpoint_tick": 196608,
+      "world_fork_tick": 196607,
+      "continuation_steps": 2048
+    }
+  ]
+}

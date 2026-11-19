@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-30T01:51:20.122598+00:00",
+  "branch": "seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+  "old_execution": {
+    "started": 1793321831.445055,
+    "pid": 124968,
+    "returncode": null,
+    "command_digest": "595be639cd8971b15eb7195dc31d4959cbdb30b635cf0bbe54c26475176919e0",
+    "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\train_seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0.log"
+  },
+  "actual_worker_pid": 143800,
+  "actual_worker_created": 1793321831.4652867,
+  "actual_command": [
+    "F:\\agi\\.venv\\Scripts\\python.exe",
+    "-m",
+    "experiments.organization.acquisition",
+    "train",
+    "--protocol",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+    "--branch-id",
+    "seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0"
+  ],
+  "checkpoint": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow__shrink0\\latest.pt",
+  "checkpoint_sha256": "4aa8d0325c8377b4f6402cd1d493257055d36871ae9fdf1f3851aa7887f1a059",
+  "last_recorded_ticks": 0,
+  "reason": "This worker alone remained at its birth checkpoint while eight siblings reached98304+. CPU time increased with only one thread; py-spy could read a progressing Python3.14.5 sibling but found no interpreter in this worker. Treat as an execution failure, not an experimental outcome. Restart only from its existing full checkpoint.",
+  "stack_evidence": [
+    "stalled-acquisition-seed1-narrow-stack.txt",
+    "progressing-acquisition-seed0-wide-stack.txt"
+  ]
+}

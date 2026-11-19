@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>可塑性进化训练 · AGI</title>
+  <link rel="stylesheet" href="/local-rule-legacy/styles.css">
+  <script defer src="/local-rule-legacy/adapter.js"></script>
+  <script defer src="/local-rule-legacy/audits.js"></script>
+  <script defer src="/local-rule-legacy/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <div class="brand"><span class="brand-symbol" aria-hidden="true"></span><span>AGI <span class="muted">/</span> <span id="experiment-label">无向图实验</span></span></div>
+      <nav aria-label="控制台导航">
+        <a href="#overview">概览</a>
+        <a href="#holdout">留出评估</a>
+        <a href="#logs">日志</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="title" id="overview">
+      <div>
+        <h1 id="title">可塑性进化训练</h1>
+        <div id="run-name" class="run-name mono">正在连接本地运行目录</div>
+      </div>
+      <div class="run-meta">
+        <div class="status" id="status" data-tone="waiting" role="status"><span class="status-dot" aria-hidden="true"></span><span id="status-text">等待训练</span></div>
+        <div id="run-detail" class="muted mono">设备 — · PID —</div>
+      </div>
+      <p class="notice" id="notice" role="status" hidden></p>
+    </section>
+
+    <section class="card progress-card" aria-labelledby="progress-title">
+      <div class="progress-main">
+        <div class="section-head">
+          <div>
+            <h2 id="progress-title">候选搜索进度</h2>
+            <p class="muted" id="phase-detail">正在读取训练进度</p>
+          </div>
+          <div id="overall-percent" class="progress-percent mono">—</div>
+        </div>
+        <div class="progress-row">
+          <label id="overall-label" for="overall-bar">全部候选</label><span id="overall-count" class="count mono">—</span>
+          <progress id="overall-bar" max="1" value="0"></progress>
+        </div>
+        <div class="progress-row">
+          <label id="generation-label" for="generation-bar">本代候选</label><span id="gen-count" class="count mono">—</span>
+          <progress id="generation-bar" max="1" value="0"></progress>
+        </div>
+      </div>
+      <dl class="run-stats">
+        <div id="private-branch-stat" hidden><dt id="private-branch-label">当前分支</dt><dd id="private-branch">—</dd></div>
+        <div><dt>当前代数</dt><dd id="generation" class="mono">—</dd></div>
+        <div><dt>候选速率</dt><dd id="rate" class="mono">—</dd></div>
+        <div title="按剩余候选数和当前候选速率估算"><dt>预计剩余时间</dt><dd id="remaining-time" class="mono">—</dd></div>
+        <div><dt>最近写入</dt><dd><time id="updated" class="mono">—</time></dd></div>
+      </dl>
+    </section>
+
+    <section class="card curriculum-card" aria-labelledby="stage-title" id="curriculum" hidden>
+      <div class="section-head">
+        <div><h2 id="stage-title">课程阶段</h2><p class="muted" id="stage-detail"></p></div>
+      </div>
+      <ol class="stage-list" id="stage-list">
+        <li data-stage="timing"><span>完成时机</span><span class="stage-range mono"></span></li>
+        <li data-stage="version"><span>版本辨识</span><span class="stage-range mono"></span></li>
+        <li data-stage="symbol"><span>符号映射</span><span class="stage-range mono"></span></li>
+        <li data-stage="conflict"><span>干扰与冲突</span><span class="stage-range mono"></span></li>
+      </ol>
+    </section>
+
+    <section class="card paired-card" aria-labelledby="paired-title" id="paired" hidden>
+      <div class="section-head">
+        <div><h2 id="paired-title">训练组对比</h2><p class="muted" id="paired-detail">各组适应度领先候选的评估指标</p></div>
+      </div>
+      <div class="table-region" role="region" aria-label="训练组指标" tabindex="0">
+        <table class="paired-table" aria-label="训练组指标">
+          <thead><tr>
+            <th scope="col">指标</th>
+            <th scope="col" class="full-arm">完整可塑性<span id="full-count" class="paired-count mono" hidden></span></th>
+            <th scope="col" class="weights-arm">仅权重更新<span id="weights-count" class="paired-count mono" hidden></span></th>
+          </tr></thead>
+          <tbody id="paired-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="metric-section" aria-labelledby="metric-title" id="legacy-metrics">
+      <div class="metric-header"><h2 id="metric-title">适应度领先候选</h2><div class="trend-controls"><span id="candidate" class="muted mono"></span><button type="button" class="scope-select" id="candidate-details" aria-expanded="false" aria-controls="private-readout">请求明细</button></div></div>
+      <div class="metrics" id="candidate-metrics">
+        <div class="metric primary" data-legacy-metric><span>最优适应度</span><strong class="mono" id="best-fitness">—</strong></div>
+        <div class="metric primary" data-uncapped-metric hidden><span title="成功完成且之前没有无效动作的请求占比">严格完成率</span><strong class="mono" id="strict">—</strong></div>
+        <div class="metric"><span>完成率</span><strong class="mono" id="completion">—</strong></div>
+        <div class="metric" data-legacy-metric><span>严格 A</span><strong class="mono" id="strict-a">—</strong></div>
+        <div class="metric" data-legacy-metric><span>严格 B</span><strong class="mono" id="strict-b">—</strong></div>
+        <div class="metric" data-uncapped-metric hidden><span title="至少在有效窗口内尝试完成一次的请求占比">就绪覆盖率</span><strong class="mono" id="ready-coverage">—</strong></div>
+        <div class="metric" data-uncapped-metric hidden><span title="窗口内首次回答正确的请求占所有请求的比例，漏答计错">首答正确率</span><strong class="mono" id="first-finish-correct">—</strong></div>
+        <div class="metric" data-uncapped-metric hidden><span title="同一符号的两次回访在 A、B 均严格完成的配对数占合格配对的比例">双回访成功率</span><strong class="mono" id="pair-strict-rate">—</strong></div>
+        <div class="metric" id="score-stat"><span title="按每个候选的全部请求归一化">选拔得分</span><strong class="mono" id="selection-score">—</strong></div>
+      </div>
+      <div class="candidate-errors muted" id="candidate-errors" hidden></div>
+    </section>
+
+    <section class="metric-section" aria-labelledby="private-metric-title" id="private-readout" hidden>
+      <div class="metric-header"><h2 id="private-metric-title">当前分支领先候选</h2><span id="private-candidate" class="muted mono"></span></div>
+      <div class="private-readings">
+        <section class="card" aria-labelledby="private-results-title">
+          <h3 id="private-results-title">请求完成</h3>
+          <p class="muted private-reading-note">在就绪窗口内答对计完成。此前无被拒绝的作答计严格完成，有过抢答或答错再补对计补救。三项均占全部请求。</p>
+          <dl>
+            <div><dt>严格完成率</dt><dd class="mono private-primary" data-private-value="strict">—</dd></div>
+            <div><dt>补救完成率</dt><dd class="mono" data-private-value="recovered_completion_rate">—</dd></div>
+            <div><dt>总完成率</dt><dd class="mono" data-private-value="completion">—</dd></div>
+          </dl>
+        </section>
+        <section class="card" aria-labelledby="private-timing-title">
+          <h3 id="private-timing-title">作答时机</h3>
+          <p class="muted private-reading-note">抢答与窗口内作答均按请求计。同一请求可以先抢答，到了窗口内再作答。</p>
+          <dl>
+            <div><dt title="至少在请求发出后、就绪窗口打开前提交过一次答案的请求占比">抢答请求率</dt><dd class="mono" data-private-value="premature_request_rate">—</dd></div>
+            <div><dt title="至少在就绪窗口内提交过一次答案的请求占比">窗口内作答率</dt><dd class="mono" data-private-value="ready_coverage">—</dd></div>
+            <div><dt title="按空闲端口的时间步统计，含备用端口。">空闲端口动作率</dt><dd class="mono" data-private-value="idle">—</dd></div>
+          </dl>
+        </section>
+        <section class="card" aria-labelledby="private-answers-title">
+          <h3 id="private-answers-title">后半程首答正确率</h3>
+          <p class="muted private-reading-note" id="private-answers-note"></p>
+          <dl>
+            <div><dt>A、B 等权平均</dt><dd class="mono" data-private-value="symbol_late_mean">—</dd></div>
+            <div><dt>情境 A</dt><dd class="mono" data-private-value="symbol_late_a">—</dd></div>
+            <div><dt>情境 B</dt><dd class="mono" data-private-value="symbol_late_b">—</dd></div>
+          </dl>
+        </section>
+      </div>
+    </section>
+
+    <div class="analysis-grid" id="analysis">
+      <section class="card trend-card" aria-labelledby="trend-title">
+        <div class="section-head">
+          <h2 id="trend-title">历代趋势</h2>
+          <div class="trend-controls">
+            <select id="private-chart-scope" class="scope-select" aria-label="趋势图训练组" hidden></select>
+            <select id="private-answer-view" class="scope-select" aria-label="首答正确率分组" hidden>
+              <option value="overall">整体和种群均值</option>
+              <option value="contexts">分情境 A、B</option>
+              <option value="revisits">双回访成功率</option>
+            </select>
+            <div class="segmented" aria-label="趋势图选项">
+              <button type="button" data-chart="fitness" aria-pressed="true" id="fitness-chart-button">适应度</button>
+              <button type="button" data-chart="score" aria-pressed="false" id="score-chart-button" hidden>选拔得分</button>
+              <button type="button" data-chart="symbols" aria-pressed="false" id="symbol-chart-button" hidden>后半程首答</button>
+              <button type="button" data-chart="behavior" aria-pressed="false" id="behavior-chart-button">行为率</button>
+              <button type="button" data-chart="edges" aria-pressed="false" id="edge-chart-button" hidden>活跃边</button>
+              <button type="button" id="chart-fit-button" class="fit-toggle" aria-pressed="false">拟合线</button>
+            </div>
+          </div>
+        </div>
+        <p class="muted chart-note" id="trend-detail">每个点对应一代已完成的评估。</p>
+        <div class="plot" id="plot">
+          <canvas id="chart" role="img" aria-label="历代适应度" aria-describedby="trend-detail chart-legend"></canvas>
+          <div class="plot-empty muted" id="plot-empty">等待首代评估完成</div>
+          <div class="chart-tooltip" id="chart-tooltip" hidden></div>
+        </div>
+        <ul class="legend" id="chart-legend" aria-label="图例"></ul>
+        <p class="muted chart-note" id="score-phase-note" hidden></p>
+      </section>
+
+      <section class="card graph-card" aria-labelledby="graph-title" id="legacy-graph">
+        <div class="section-head">
+          <div><h2 id="graph-title">图结构与权重</h2><p class="muted" id="graph-detail">适应度领先候选的实测图变化</p></div>
+        </div>
+        <dl class="graph-stats">
+          <div><dt title="所有独立生命的累计权重更新次数" id="weight-updates-label">权重更新</dt><dd id="weight-updates" class="mono">—</dd></div>
+          <div><dt title="每个 actor 的最终活跃边数均值" id="active-edges-label">活跃边</dt><dd id="active-edges" class="mono">—</dd></div>
+          <div id="average-edges-stat" hidden><dt title="跨时间步和 actor 的平均活跃边数" id="average-edges-label">时均活跃边</dt><dd id="average-edges" class="mono">—</dd></div>
+          <div id="initial-edges-stat" hidden><dt title="每个生命刚初始化时开启的连接方向数" id="initial-edges-label">出生时连接数</dt><dd id="initial-edges" class="mono">—</dd></div>
+          <div id="sparsity-stat" hidden><dt title="1 − 时均活跃边数 / 3160；在严格完成率、严格返回和完成率相同时用于排序">稀疏分数</dt><dd id="sparsity" class="mono">—</dd></div>
+          <div class="births"><dt title="所有独立生命的累计新增连接次数" id="births-label">新增边</dt><dd id="births" class="mono">—</dd></div>
+          <div class="deaths"><dt title="所有独立生命的累计退出连接次数" id="deaths-label">退出边</dt><dd id="deaths" class="mono">—</dd></div>
+          <div><dt title="所有独立生命的累计偏置改动次数">偏置改动</dt><dd id="bias-updates" class="mono">—</dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <section class="card holdout-card" aria-labelledby="holdout-title" id="holdout">
+      <div class="section-head">
+        <div><h2 id="holdout-title">留出评估</h2><p class="muted" id="holdout-detail">评估完成后显示候选与各对照模式的结果。</p></div>
+        <div class="holdout-controls" id="private-holdout-controls" hidden>
+          <select id="private-holdout-branch" class="scope-select" aria-label="评估项目"></select>
+          <select id="private-holdout-clock" class="scope-select" aria-label="评估代数"></select>
+          <select id="receipt-delay" class="scope-select" aria-label="回执干预等待间隔" hidden></select>
+        </div>
+      </div>
+      <div class="table-region" hidden id="holdout-data" role="region" aria-label="留出评估结果" tabindex="0">
+        <table aria-label="留出评估结果">
+          <thead><tr id="holdout-columns"></tr></thead>
+          <tbody id="holdout-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card log-card" aria-labelledby="logs-title" id="logs">
+      <div class="section-head">
+        <div><h2 id="logs-title">运行日志</h2><p class="muted" id="log-detail">标准输出</p></div>
+        <div class="segmented" aria-label="日志流">
+          <button type="button" data-stream="stdout" aria-pressed="true">标准输出</button>
+          <button type="button" data-stream="stderr" aria-pressed="false">标准错误</button>
+        </div>
+      </div>
+      <pre id="log-text" tabindex="0" aria-label="日志内容">等待日志写入</pre>
+    </section>
+    <footer class="run-footer"><span>检查点 <code id="checkpoint">—</code></span><span id="candidate-journal-stat" hidden>候选批次 <code id="candidate-journal">—</code></span><span>启动时间 <time id="started" class="mono">—</time></span></footer>
+  </main>
+</body>
+</html>

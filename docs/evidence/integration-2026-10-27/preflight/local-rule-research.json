@@ -1,0 +1,77 @@
+{
+  "status": "Design and helper unit validation only; no training result is claimed.",
+  "checked_on": "2026-10-27",
+  "primary_sources": [
+    {
+      "title": "Simplified neuron model as a principal component analyzer",
+      "authors": "Erkki Oja",
+      "year": 1982,
+      "url": "https://link.springer.com/article/10.1007/BF00275687",
+      "doi": "10.1007/BF00275687",
+      "verified_scope": "The publisher abstract analyzes a linear neuron with Hebbian modification and a stationary input sequence, with principal-component extraction as the result.",
+      "qualification": "The implemented temporal trace and nonlinear recurrent activity are an Oja-style adaptation, not the analyzed linear setting. No PCA, convergence, recurrent stability or semantic-integration guarantee is transferred. The publisher abstract was inspected; full subscription text was not available."
+    },
+    {
+      "title": "A solution to the learning dilemma for recurrent networks of spiking neurons",
+      "authors": "Bellec et al.",
+      "year": 2020,
+      "url": "https://www.nature.com/articles/s41467-020-17236-y",
+      "doi": "10.1038/s41467-020-17236-y",
+      "verified_scope": "Equations 1-4 factor recurrent loss gradients into local derivative eligibility and learning signals. The exact signal generally includes future influences; an online approximation routes current output errors to neurons.",
+      "qualification": "An EMA of past activity alone is not that derivative eligibility and supplies no task credit. A supervised forward-eligibility alternative would need a separate derivation for the existing Heun ODE solver plus input pulse, followed by approximation and numerical checks. It is not implemented or claimed here."
+    }
+  ],
+  "implemented_rule": {
+    "name": "temporal Oja-style coactivity",
+    "orientation": "W[post, pre] matches torch.nn.functional.linear(tanh(h), W)",
+    "trace": "q <- exp(-dt/tau)*q + (1-exp(-dt/tau))*tanh(h_before_step)",
+    "source_statistic": "C = sum_t dt*mean_batch[tanh(h_after_step) outer q] / sum_t dt; s = sum_t dt*mean_batch[tanh(h_after_step)^2] / sum_t dt",
+    "local_update": "delta W = eta*(C - s[:,None]*W)",
+    "source_mixture": "Normalize each source separately, then use 0.5*C_live+0.5*C_old and 0.5*s_live+0.5*s_old in ONE update at the same eta.",
+    "timing": "Collect forward activity before the associated BP update; apply once after live BP and any extra BP, using then-current W in the decay term.",
+    "tau_environment_units": 16.0,
+    "pilot_eta_candidates": [0.0001, 0.001],
+    "pilot_seed": 101,
+    "normalization": "Time average per application. Eta is not a per-unit-time coefficient. Increasing application frequency changes total plasticity budget.",
+    "supervision": "The coactivity helper receives no targets or reward. A BP-plus-coactivity arm remains a supervised hybrid. A coactivity-only continuation has no BP in that continuation, but inherits previously supervised encoder/head/initial recurrent weights."
+  },
+  "control": {
+    "transformation": "At every contributing tick, draw a nonzero cyclic shift in [1,batch_size) from a private checkpointed CPU RNG, and pair the post activity with shifted presynaptic traces.",
+    "preserves": "For the activity sample being transformed, preserves exact pre/post marginal multisets, time exposure, and the post-squared decay term. It removes same-trajectory pre/post matching and retains common batch/time structure.",
+    "qualification": "Arms with different weights and actions can subsequently generate different activities and action receipts. Preservation is within the transformed sample, not an assertion that diverging trained arms have identical lifetime neural marginals. Equal learning rate and update calls do not ensure matched delta norm."
+  },
+  "continuation": {
+    "live": "Retain live q, accumulated statistics, counters, and private RNG in complete checkpoints. Applying a chunk update clears only the consumed C/s accumulators; q never replaces the live hidden state.",
+    "history": "Use a separate replay collector, zero its q for each disconnected historical block while preserving its RNG/counters, then reconstruct through the saved 64-tick burn-in before collecting the final 64 ticks. Never carry q between unrelated sampled blocks.",
+    "historical_approximation": "At dt=0.25 and tau=16, 64-tick burn-in leaves exp(-1)=0.367879 of an initial q mismatch even under an identical activity path. Re-evolving historical h with changed weights adds another approximation. This is not exact historical auxiliary-state reconstruction."
+  },
+  "numerical_budget_at_batch64_width128": {
+    "one_float32_collector": {
+      "trace_bytes": 32768,
+      "coactivity_accumulator_bytes": 65536,
+      "post_second_accumulator_bytes": 512,
+      "tensor_buffer_bytes": 98816,
+      "private_rng_bytes_in_this_pytorch_runtime": 5056
+    },
+    "two_collectors_tensor_plus_rng_bytes": 207744,
+    "metadata_excluded": true,
+    "single64tick_source_outer_product_scalar_terms": 67108864,
+    "two64tick_sources_outer_product_scalar_terms": 134217728,
+    "compute_qualification": "These are scalar products entering the coactivity sums, not full FLOPs. Trace updates, nonlinearities, ODE forward passes, gradient computation, optimizer steps and diagnostics are additional. The first world tick can have dt=0 and contributes no plasticity mass.",
+    "required_update_audit": "Report source exposure and local matrix writes, local delta Frobenius/max norms and relative weight change, and actual BP weight-change norms separately from pre-Adam gradient norms."
+  },
+  "helper_validation": {
+    "command": ".venv/Scripts/python.exe -m unittest experiments.integration.test_local -v",
+    "tests_passed": 13,
+    "devices": ["cpu", "cuda"],
+    "coverage": [
+      "hand-computed post-by-pre update without autograd",
+      "time weighting, tau in environment units, and trace preservation across chunks",
+      "independent source normalization followed by one mixture write",
+      "shuffled marginal/decay preservation and private-RNG isolation",
+      "exact resume with pending accumulators and private RNG on CPU and CUDA",
+      "historical trace isolation and zero-eta recurrent/encoder/head identity",
+      "invalid/nonfinite states rejected before a weight update"
+    ]
+  }
+}

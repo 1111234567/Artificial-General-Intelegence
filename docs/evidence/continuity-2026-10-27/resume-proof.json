@@ -1,0 +1,285 @@
+{
+  "format": "continuity-real-checkpoint-resume-proof-v1",
+  "created_utc": "2026-10-26T16:55:59.357392+00:00",
+  "formal_study": false,
+  "purpose": "Exact CUDA continuation verification; these branches are excluded from study training and scores",
+  "procedure": "Original checkpoint -> two updates, versus original -> one update -> full checkpoint -> reload -> one update",
+  "status": "passed",
+  "checks": {
+    "same_original_start": true,
+    "full_midpoint_reload_exact": true,
+    "full_two_update_semantic_state_exact": true,
+    "every_semantic_component_exact": true,
+    "final_counts_equal": true,
+    "original_checkpoint_unchanged": true,
+    "training_sources_unchanged": true,
+    "all_audited_source_files_unchanged": true
+  },
+  "original_checkpoint": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+  "original_sha256_before": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+  "original_sha256_after": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+  "verification_checkpoint": "F:\\agi\\data\\continuity\\resume-proof-seed0\\after_one_update.pt",
+  "verification_checkpoint_sha256": "75c37afbc35a9ac6459bf06fd5b1f6f1b7873bbd2c33adb2aa073e2609af90cc",
+  "start_semantic_hash": "24459c3803de6cb7e59faa4bc82fbe8e685e228f2e30c5218950d48881294523",
+  "split_start_semantic_hash": "24459c3803de6cb7e59faa4bc82fbe8e685e228f2e30c5218950d48881294523",
+  "midpoint_semantic_hash": "37c7219ec9a091eebe5081b0bfefff35b77570d9cd9c52e592c6302f77f4d789",
+  "reloaded_midpoint_semantic_hash": "37c7219ec9a091eebe5081b0bfefff35b77570d9cd9c52e592c6302f77f4d789",
+  "uninterrupted_final_semantic_hash": "56e4d8618ae901a96f049a4408facd478a05de8dda43754b7a98cb0e01010288",
+  "resumed_final_semantic_hash": "56e4d8618ae901a96f049a4408facd478a05de8dda43754b7a98cb0e01010288",
+  "start_counts": {
+    "updates": 2048,
+    "gradient_updates": 2048,
+    "ticks": 131072,
+    "world_tick": 131071,
+    "now": 32767.75,
+    "batch_size": 64,
+    "tbptt": 64,
+    "stage": "A",
+    "replay_blocks_seen": 1024,
+    "replay_stored_blocks": 32,
+    "hidden_resets": 0
+  },
+  "midpoint_counts": {
+    "updates": 2049,
+    "gradient_updates": 2049,
+    "ticks": 131136,
+    "world_tick": 131135,
+    "now": 32783.75,
+    "batch_size": 64,
+    "tbptt": 64,
+    "stage": "A",
+    "replay_blocks_seen": 1024,
+    "replay_stored_blocks": 32,
+    "hidden_resets": 0
+  },
+  "uninterrupted_final_counts": {
+    "updates": 2050,
+    "gradient_updates": 2050,
+    "ticks": 131200,
+    "world_tick": 131199,
+    "now": 32799.75,
+    "batch_size": 64,
+    "tbptt": 64,
+    "stage": "A",
+    "replay_blocks_seen": 1025,
+    "replay_stored_blocks": 32,
+    "hidden_resets": 0
+  },
+  "resumed_final_counts": {
+    "updates": 2050,
+    "gradient_updates": 2050,
+    "ticks": 131200,
+    "world_tick": 131199,
+    "now": 32799.75,
+    "batch_size": 64,
+    "tbptt": 64,
+    "stage": "A",
+    "replay_blocks_seen": 1025,
+    "replay_stored_blocks": 32,
+    "hidden_resets": 0
+  },
+  "additional_observations_per_actor": 128,
+  "additional_batch_observations": 8192,
+  "additional_gradient_updates": 2,
+  "component_hashes": {
+    "format": {
+      "uninterrupted": "982f6bbc1039e52604bdb8d3faddcc72312e456f6c0d877f645e15b874be90a6",
+      "resumed": "982f6bbc1039e52604bdb8d3faddcc72312e456f6c0d877f645e15b874be90a6",
+      "equal": true
+    },
+    "config": {
+      "uninterrupted": "5cfd7ad881968c14bc0fbd66ad4b809f896d1015134cb6222dfd63f62c90487a",
+      "resumed": "5cfd7ad881968c14bc0fbd66ad4b809f896d1015134cb6222dfd63f62c90487a",
+      "equal": true
+    },
+    "variant": {
+      "uninterrupted": "d6e159909194e1f33f2da040189396171c28ebfdc4967052d4d0557d7099ba6a",
+      "resumed": "d6e159909194e1f33f2da040189396171c28ebfdc4967052d4d0557d7099ba6a",
+      "equal": true
+    },
+    "model": {
+      "uninterrupted": "fd0924d01e45717faf405326317517f06bf02562e7f7240e856549849ae50245",
+      "resumed": "fd0924d01e45717faf405326317517f06bf02562e7f7240e856549849ae50245",
+      "equal": true
+    },
+    "optimizer": {
+      "uninterrupted": "3fa7c7b56413a26cfee41b3576e340911ba8ac9ae818ab2b905348704b4236ee",
+      "resumed": "3fa7c7b56413a26cfee41b3576e340911ba8ac9ae818ab2b905348704b4236ee",
+      "equal": true
+    },
+    "hidden": {
+      "uninterrupted": "1ea3cee27845639f580768da99fee7bebd52e9dc0f12f445a4f9aa4d68a97444",
+      "resumed": "1ea3cee27845639f580768da99fee7bebd52e9dc0f12f445a4f9aa4d68a97444",
+      "equal": true
+    },
+    "world": {
+      "uninterrupted": "2d7c6e361e3e43bce6b23f9c507b795803d6b5e83ebf208dd979d6758ee8fea4",
+      "resumed": "2d7c6e361e3e43bce6b23f9c507b795803d6b5e83ebf208dd979d6758ee8fea4",
+      "equal": true
+    },
+    "replay": {
+      "uninterrupted": "035b59bd5348dcaefc177c27135d87f85bc3610de9a357f4fa755b7c0820a746",
+      "resumed": "035b59bd5348dcaefc177c27135d87f85bc3610de9a357f4fa755b7c0820a746",
+      "equal": true
+    },
+    "rng": {
+      "uninterrupted": "8b79754ffaed394f3b8ad2487db4dedde51043d6c0c935ac73c6d907680b3c6d",
+      "resumed": "8b79754ffaed394f3b8ad2487db4dedde51043d6c0c935ac73c6d907680b3c6d",
+      "equal": true
+    },
+    "stats": {
+      "uninterrupted": "cc2214187b74153bdf87f43112081b4c5e5315a1034d4c39dad9fd2d6e31c45e",
+      "resumed": "cc2214187b74153bdf87f43112081b4c5e5315a1034d4c39dad9fd2d6e31c45e",
+      "equal": true
+    },
+    "updates": {
+      "uninterrupted": "147da47f6826b81f2d717cb668197fc7b68a3e142f901f59d9234e762ae00148",
+      "resumed": "147da47f6826b81f2d717cb668197fc7b68a3e142f901f59d9234e762ae00148",
+      "equal": true
+    },
+    "ticks": {
+      "uninterrupted": "9fe3f08ddb2b6c516ec53c202dfc4236fe509f26ebdf238c578f17e8bb8a674b",
+      "resumed": "9fe3f08ddb2b6c516ec53c202dfc4236fe509f26ebdf238c578f17e8bb8a674b",
+      "equal": true
+    },
+    "gradient_updates": {
+      "uninterrupted": "147da47f6826b81f2d717cb668197fc7b68a3e142f901f59d9234e762ae00148",
+      "resumed": "147da47f6826b81f2d717cb668197fc7b68a3e142f901f59d9234e762ae00148",
+      "equal": true
+    },
+    "hidden_resets": {
+      "uninterrupted": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "resumed": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "equal": true
+    },
+    "stage": {
+      "uninterrupted": "1c5c2cc7a1a52b7f401f00b77a782cc3a2831f1ba1bd8d2163541ec64c3ec929",
+      "resumed": "1c5c2cc7a1a52b7f401f00b77a782cc3a2831f1ba1bd8d2163541ec64c3ec929",
+      "equal": true
+    },
+    "adaptation_mode": {
+      "uninterrupted": "163816be288b23f98660309556ea15bf49b66d0ef23f488ec9efec7e080863c1",
+      "resumed": "163816be288b23f98660309556ea15bf49b66d0ef23f488ec9efec7e080863c1",
+      "equal": true
+    },
+    "phase_start_update": {
+      "uninterrupted": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "resumed": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "equal": true
+    },
+    "phase_start_tick": {
+      "uninterrupted": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "resumed": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "equal": true
+    },
+    "phase_start_gradient": {
+      "uninterrupted": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "resumed": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "equal": true
+    },
+    "adaptation_origin": {
+      "uninterrupted": "163816be288b23f98660309556ea15bf49b66d0ef23f488ec9efec7e080863c1",
+      "resumed": "163816be288b23f98660309556ea15bf49b66d0ef23f488ec9efec7e080863c1",
+      "equal": true
+    },
+    "dt_index": {
+      "uninterrupted": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "resumed": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+      "equal": true
+    },
+    "dt_history": {
+      "uninterrupted": "f3939fac9b249044f9874602884dbbb32ef83188d2c0a6b1d9c144c3bb78d9ff",
+      "resumed": "f3939fac9b249044f9874602884dbbb32ef83188d2c0a6b1d9c144c3bb78d9ff",
+      "equal": true
+    },
+    "initialization_seed": {
+      "uninterrupted": "6f88205fa65802fad425f4b60e957acec34d840a89df62572713f5b9af7210d7",
+      "resumed": "6f88205fa65802fad425f4b60e957acec34d840a89df62572713f5b9af7210d7",
+      "equal": true
+    },
+    "data_seed": {
+      "uninterrupted": "416af03b52413152d98c1e3982a677e89e8ccff8b850a2cad3cc24cdc8835e4d",
+      "resumed": "416af03b52413152d98c1e3982a677e89e8ccff8b850a2cad3cc24cdc8835e4d",
+      "equal": true
+    },
+    "initial_parameter_hash": {
+      "uninterrupted": "bd645bd6f36a95da83512343ff1b20ff6b65015bdc2c0b871dc0e855ad0d1cd5",
+      "resumed": "bd645bd6f36a95da83512343ff1b20ff6b65015bdc2c0b871dc0e855ad0d1cd5",
+      "equal": true
+    },
+    "action_hash": {
+      "uninterrupted": "35ede644edabd281364a3fd4cf540d50556c78934cca5480b77599c7ed5d33e0",
+      "resumed": "35ede644edabd281364a3fd4cf540d50556c78934cca5480b77599c7ed5d33e0",
+      "equal": true
+    },
+    "data_hash": {
+      "uninterrupted": "fd6ac151dc645a56cb3510f3f490c991dcabfb8a4eebdc2be4a738adb26d1b17",
+      "resumed": "fd6ac151dc645a56cb3510f3f490c991dcabfb8a4eebdc2be4a738adb26d1b17",
+      "equal": true
+    },
+    "trace": {
+      "uninterrupted": "c38ce5c7602471afd8a926a5283a5e189b71209f7f468421dd0dc06e28b7d160",
+      "resumed": "c38ce5c7602471afd8a926a5283a5e189b71209f7f468421dd0dc06e28b7d160",
+      "equal": true
+    }
+  },
+  "checkpoint_source_hashes": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+  },
+  "current_source_hashes_before": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+  },
+  "current_source_hashes_after": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+  },
+  "audited_source_file_sha256_before": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "report.py": "518120709c4b48533368189e1dfa52e6de954de4186e5b1e146ab4c9a582bdaa"
+  },
+  "audited_source_file_sha256_after": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "report.py": "518120709c4b48533368189e1dfa52e6de954de4186e5b1e146ab4c9a582bdaa"
+  },
+  "verification_script": "F:\\agi\\data\\continuity\\resume-proof-seed0\\verify_resume.py",
+  "verification_script_sha256": "be6a8a66befcc66219e8126d2f5dac17ad1f0aea56481033419b672ecde64add",
+  "runtime": {
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.5.1",
+    "cuda_runtime": "13.0",
+    "cudnn": 91900,
+    "device": "cuda",
+    "cpu_threads": 1,
+    "cpu_interop_threads": 14,
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8",
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpu_memory_bytes": 8585216000,
+    "compute_capability": [
+      8,
+      9
+    ]
+  },
+  "seconds": 7.856256200000644,
+  "scope": "Same machine/software/deterministic CUDA environment; bitwise semantic replay, excluding elapsed wall time and appended runtime-history metadata"
+}

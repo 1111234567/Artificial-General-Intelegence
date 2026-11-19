@@ -1,0 +1,97 @@
+{
+  "title": "Loss of plasticity: paper evidence, CBP code, and limits for the integration study",
+  "date": "2026-10-27",
+  "scope": "Read-only research note; no extra experiment or frozen runtime change",
+  "paper": {
+    "title": "Loss of plasticity in deep continual learning",
+    "authors": "Dohare et al.",
+    "doi": "10.1038/s41586-024-07711-7",
+    "publisher_url": "https://www.nature.com/articles/s41586-024-07711-7",
+    "primary_full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11338828/",
+    "access_note": "Publisher HTML/PDF redirected to an inaccessible Nature login endpoint. The paper text, Fig. 1 caption and extended discussion were read through indexed PMC full text, an official primary-article mirror.",
+    "evidence": [
+      {
+        "location": "Fig. 1 and Continual ImageNet discussion",
+        "claim": "Sequences of binary ImageNet tasks measure held-out accuracy after training each new class pair. Thirty runs report means and standard errors."
+      },
+      {
+        "location": "Fig. 1b,c",
+        "claim": "Standard backpropagation loses new-task performance across many step sizes by about 2,000 tasks. CBP, L2 and Shrink and Perturb continue over 5,000 tasks."
+      },
+      {
+        "location": "Extended discussion",
+        "claim": "Future learning differs from old-task retention. The authors explicitly say current CBP does not solve forgetting; utility focuses on current data."
+      },
+      {
+        "location": "Interpretation of the finite experiments",
+        "claim": "Empirical degradation and mitigation are not universal impossibility or indefinite-success theorems. Fig. 1 does not test persistent recurrent-state memory, long-wait control or biological equivalence."
+      }
+    ]
+  },
+  "official_implementation": {
+    "repository": "https://github.com/shibhansh/loss-of-plasticity",
+    "inspected_commit": "3138c5556859e0e2918d40f113b40699b6575cfa",
+    "commit_url": "https://github.com/shibhansh/loss-of-plasticity/commit/3138c5556859e0e2918d40f113b40699b6575cfa",
+    "snapshot_scope": "Current official repository snapshot, not asserted to be the exact 2024 publication commit",
+    "sources": [
+      {
+        "path": "lop/algos/README.md",
+        "url": "https://github.com/shibhansh/loss-of-plasticity/blob/3138c5556859e0e2918d40f113b40699b6575cfa/lop/algos/README.md",
+        "git_blob_sha": "74ab11e9c0f4ac3b497224401e30100f8410ccab",
+        "evidence": "The paper implementations are cbp.py, convCBP.py and res_gnt.py. Newer CBPLinear/CBPConv wrappers are explicitly described as less thoroughly tested; these are not interchangeable reproduction claims."
+      },
+      {
+        "path": "lop/algos/convCBP.py",
+        "url": "https://github.com/shibhansh/loss-of-plasticity/blob/3138c5556859e0e2918d40f113b40699b6575cfa/lop/algos/convCBP.py#L41-L64",
+        "git_blob_sha": "9e08806845ae4930f1ee5fabd7e18bbf7d9bd260",
+        "evidence": "learn performs a labelled forward pass, loss.backward, optimizer.step, then generate-and-test. CBP augments backpropagation; it is not a forward-only learning rule."
+      },
+      {
+        "path": "lop/algos/convGnT.py",
+        "url": "https://github.com/shibhansh/loss-of-plasticity/blob/3138c5556859e0e2918d40f113b40699b6575cfa/lop/algos/convGnT.py",
+        "git_blob_sha": "10caaebae507c1fed74ae966b0d3571391c3f80c",
+        "evidence": "Activity/weight statistics estimate unit utility with EMA bias correction. The adaptable-contribution option scales outgoing-weight magnitude times centred absolute activity by inverse incoming-weight magnitude. Mature units with lowest estimated utility are selected at a small accumulated replacement rate. Incoming weights are randomly reinitialized; outgoing weights and ages are zeroed. AdamGnT-specific optimizer entries are reset; do not assume every optimizer variant receives identical treatment."
+      },
+      {
+        "path": "lop/imagenet/cfg/cbp.json",
+        "url": "https://github.com/shibhansh/loss-of-plasticity/blob/3138c5556859e0e2918d40f113b40699b6575cfa/lop/imagenet/cfg/cbp.json",
+        "git_blob_sha": "aeb88ccd2e0f1e5c42e26a5f89f4adfead159c9f",
+        "evidence": "The checked ImageNet config selects adaptable_contribution, SGD with momentum, replacement_rate=3e-4, maturity_threshold=100 and decay_rate=0.99. These are paper-repository settings, not settings adopted by our experiment."
+      }
+    ]
+  },
+  "comparison_with_current_rule": {
+    "local_source": "experiments/integration/local.py",
+    "protocol": "docs/evidence/integration-2026-10-27/main-study-v1.json",
+    "classification": "Own analysis from the inspected code, not a claim established by the Nature experiments",
+    "cbp": "Ranks units using current-use utility, temporarily protects immature units and injects random features through replacement. It neither permanently protects all useful historical units nor directly solves forgetting.",
+    "temporal_oja": "Maintains a per-actor activity EMA in physical time and applies dense recurrent-weight updates proportional to post-activity outer lagged pre-activity minus a post-squared weight decay. It has no unit ranking, maturity gate, replacement or random feature generation.",
+    "shared_limit": "Activity statistics are heuristic signals. Neither a CBP utility score nor this Oja-like coactivity proves a unit is globally important to all past tasks.",
+    "continuous_state_limit": "Porting unit replacement to this recurrent controller would require an explicit policy for recurrent rows/columns, encoder/head connections, Adam state, live h and local q. Feed-forward CBP supplies no guarantee that such surgery preserves concurrent unfinished requests.",
+    "credit_limit": "Our supervised hybrids still receive temporal credit through truncated BPTT. The local trace is activity, not a loss derivative or e-prop eligibility trace; its Oja-style name does not confer linear stationary PCA guarantees.",
+    "current_study_limit": "Frozen long-wait errors, forgetting old conditions and slower acquisition are different measurements. The present fixed-exposure stage is not by itself a repeated equal-difficulty new-task plasticity benchmark."
+  },
+  "future_measurements": [
+    {
+      "priority": 1,
+      "proposal": "Read-only activity health at fixed checkpoints",
+      "details": "On complete frozen own-action forks, report centred activation variance, covariance spectrum/effective or stable rank, and tanh derivative/saturation distributions. Balance active/idle phases and task ages; use fixed thresholds and independent training seeds. A quiet idle unit is not automatically dormant, and ReLU dead-unit thresholds do not transfer directly to tanh."
+    },
+    {
+      "priority": 2,
+      "proposal": "Read-only optimization sensitivity",
+      "details": "In detached shadow copies, measure loss-gradient norms and layerwise proposed/actual update-to-weight ratios on matched causal data; retain existing Adam/local update counters. Separate optimizer scale, saturation and representation collapse. Do not update production weights or interpret a large gradient as proof of useful learning."
+    },
+    {
+      "priority": 3,
+      "proposal": "Future learning-curve challenge under a separate frozen protocol",
+      "details": "At several saved life stages, fork full state into matched frozen and learning branches facing the same specified new regime. Compare loss reduction and held-out own-action clean completion per fixed examples, gradient updates and local writes. Across life stages, report changed request populations; never attach an arbitrary fresh world to old h. Measure old-condition retention separately."
+    },
+    {
+      "priority": 4,
+      "proposal": "Measure utility before proposing replacement",
+      "details": "Collect current-versus-old-data unit-use scores without replacing units, alongside cue/first-legal readability transitions and inactive-action histories. If replacement is later tested, preregister random-replacement and norm/shrink controls plus disruption of in-flight requests, optimizer state and auxiliary trace handling. No such intervention is part of the current 12 arms."
+    }
+  ],
+  "formal_results": "Intentionally omitted; this note does not report unfinished main-study outcomes"
+}

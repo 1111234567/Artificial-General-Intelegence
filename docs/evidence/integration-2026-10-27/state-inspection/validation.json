@@ -1,0 +1,70 @@
+{
+  "classification": "Post-hoc terminal-state description; no model selection, extra rollout or causal plasticity claim.",
+  "completed_utc": "2026-10-27T04:51:44.792554+00:00",
+  "unit_command": ".venv/Scripts/python.exe -m unittest experiments.integration.test_inspect_state -v",
+  "unit_tests_passed": 12,
+  "real_inspection_command": ".venv/Scripts/python.exe -m experiments.integration.inspect_state",
+  "real_checkpoints": 36,
+  "arithmetic_consistency_checks": 288,
+  "arithmetic_consistency_passed": true,
+  "all_checkpoint_bytes_unchanged": true,
+  "all_frozen_sources_unchanged": true,
+  "main_manifest_unchanged": true,
+  "inspection_plan_unchanged": true,
+  "cpu_rng_unchanged": true,
+  "no_forward_or_optimizer": true,
+  "inspector_sources": {
+    "experiments\\integration\\inspect_state.py": "ce9d19e6363765133fdaef8b3ba31bcb6bda7472102ae8b203a09240a6a03eaf",
+    "experiments\\integration\\test_inspect_state.py": "8452a86be9af6a52be064afd8864c7f65fa2e48a863cbdd3f75f47dc1f368b9d"
+  },
+  "plan_sha256": "15f1dc2b4c31bbc7ba1efe9e397707b16bdf51f341f54c42104dd971ca4b74e7",
+  "initial_attempt_metadata_erratum": {
+    "reason": "Native checkpoint dataclass tuple ranges compared against JSON list ranges caused a false metadata rejection before any numerical state metric was computed.",
+    "repair": "JSON-normalize only the inspector config comparison; no statistical formula, plan or main source changed.",
+    "preserved_before_fix_source": "sources/inspect_state.pre-json-config-normalization.py",
+    "preserved_before_fix_sha256": "824bb0ef74ba2bdc92bcc774ae402f5458e76c2f7298bc00270ce78b10192b1f",
+    "regression": "Synthetic checkpoint/report tuple-list compatibility and checkpoint/RNG nonmutation test passed.",
+    "ast_proof_only_json_config_normalization_changed": true
+  },
+  "output_files": [
+    {
+      "path": "summary.json",
+      "sha256": "84dac3dbb0dee7fdadbb361c19845f3131110164c73158a282730232ed11d609",
+      "bytes": 559279
+    },
+    {
+      "path": "audit.json",
+      "sha256": "da42083dec0ceaaeca9261cb3c36a6b84144340a3c44fd93cba56a9a79f34a9d",
+      "bytes": 2737
+    },
+    {
+      "path": "per_seed.csv",
+      "sha256": "450863e17f1b922facfeb1672bf3778132ed5ad3cee01a8ff035b178ab70d31c",
+      "bytes": 15868
+    },
+    {
+      "path": "seed_summary.csv",
+      "sha256": "3b3b5343881c32deec6a088d6fa345e5a9881bbfd41cb31ce87508ff5fbeaeb0",
+      "bytes": 30603
+    },
+    {
+      "path": "overview.csv",
+      "sha256": "f4fac7be9b27dd88f56545a7ad73f366a5293c609653c49e7860d8f53d617ba4",
+      "bytes": 5670
+    },
+    {
+      "path": "paired_comparisons.csv",
+      "sha256": "c236503055b3ffcf015465f7b02fe3d89684580fa7b09c55eac43708012ed114",
+      "bytes": 17180
+    },
+    {
+      "path": "paired_comparisons.json",
+      "sha256": "85367814f5a738746619effc1f83f77d7d35907f9991ac5c3fdfef414a2024cb",
+      "bytes": 76116
+    }
+  ],
+  "source_snapshot_checks": {
+    "inspect_state.py": true,
+    "test_inspect_state.py": true
+  }
+}

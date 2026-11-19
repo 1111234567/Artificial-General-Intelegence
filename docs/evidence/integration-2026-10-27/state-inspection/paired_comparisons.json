@@ -1,0 +1,2910 @@
+{
+  "classification": "Post-hoc descriptive comparisons, separate from frozen main outcomes; seed paired, heterogeneous terminal phases remain.",
+  "roster": "All 11 existing main-reporter contrasts; no statistical significance claims.",
+  "comparisons": [
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": -0.7100349190383799,
+      "sample_sd_delta": 0.04217540779260946,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.7138466437604158
+        },
+        {
+          "seed": 1,
+          "value": -0.6660830332214456
+        },
+        {
+          "seed": 2,
+          "value": -0.7501750801332783
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": -0.3328058425229476,
+      "sample_sd_delta": 0.07466381004675315,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.41364590913953414
+        },
+        {
+          "seed": 1,
+          "value": -0.26643687373038016
+        },
+        {
+          "seed": 2,
+          "value": -0.3183347446989284
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": -0.00982374679989447,
+      "sample_sd_delta": 0.012027401510140385,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.007473121091283952
+        },
+        {
+          "seed": 1,
+          "value": -0.0228529326993121
+        },
+        {
+          "seed": 2,
+          "value": 0.0008548133909126454
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.006429036458333333,
+      "sample_sd_delta": 0.004152783470759464,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.008056640625
+        },
+        {
+          "seed": 1,
+          "value": 0.009521484375
+        },
+        {
+          "seed": 2,
+          "value": 0.001708984375
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.00928748432015066,
+      "sample_sd_delta": 0.012162627835499012,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.005962689837871876
+        },
+        {
+          "seed": 1,
+          "value": 0.02276676871920147
+        },
+        {
+          "seed": 2,
+          "value": -0.0008670055966213674
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.0381196034352179,
+      "sample_sd_delta": 0.0039448560380254535,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.042663031194682705
+        },
+        {
+          "seed": 1,
+          "value": -0.03613044451764216
+        },
+        {
+          "seed": 2,
+          "value": -0.035565334593328835
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.18184183765315814,
+      "sample_sd_delta": 0.03496734533286079,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.20368219160310702
+        },
+        {
+          "seed": 1,
+          "value": 0.20033193854380843
+        },
+        {
+          "seed": 2,
+          "value": 0.14151138281255898
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": 2.0592504429375516,
+      "sample_sd_delta": 1.238400034369394,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 3.097323856734251
+        },
+        {
+          "seed": 1,
+          "value": 2.3919398280444106
+        },
+        {
+          "seed": 2,
+          "value": 0.6884876440339927
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": 1.545325107106977,
+      "sample_sd_delta": 1.1731919621915137,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 2.135050356259466
+        },
+        {
+          "seed": 1,
+          "value": 2.3066572931763822
+        },
+        {
+          "seed": 2,
+          "value": 0.19426767188508265
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": -8.0,
+      "sample_sd_delta": 8.18535277187245,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -1.0
+        },
+        {
+          "seed": 1,
+          "value": -17.0
+        },
+        {
+          "seed": 2,
+          "value": -6.0
+        }
+      ]
+    },
+    {
+      "arm": "bp64",
+      "reference": "frozen",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 0.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0
+        },
+        {
+          "seed": 1,
+          "value": 1.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.04531897694912187,
+      "sample_sd_delta": 0.0189183039950231,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.025669919520176165
+        },
+        {
+          "seed": 1,
+          "value": 0.06341019379510193
+        },
+        {
+          "seed": 2,
+          "value": 0.0468768175320875
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": -0.001587856002426354,
+      "sample_sd_delta": 0.025830946491073856,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.03004052914985067
+        },
+        {
+          "seed": 1,
+          "value": 0.004887878033476234
+        },
+        {
+          "seed": 2,
+          "value": 0.020389083109095374
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": -0.009107543851915034,
+      "sample_sd_delta": 0.0032906775282521127,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.0054387719993023165
+        },
+        {
+          "seed": 1,
+          "value": -0.01179845964638182
+        },
+        {
+          "seed": 2,
+          "value": -0.010085399910060966
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.005045572916666667,
+      "sample_sd_delta": 0.0016483259359154536,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.00341796875
+        },
+        {
+          "seed": 1,
+          "value": 0.0067138671875
+        },
+        {
+          "seed": 2,
+          "value": 0.0050048828125
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.009560354021094406,
+      "sample_sd_delta": 0.0024477740994108092,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.006836120367206516
+        },
+        {
+          "seed": 1,
+          "value": 0.011574783112996534
+        },
+        {
+          "seed": 2,
+          "value": 0.010270158583080169
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.016769987220009358,
+      "sample_sd_delta": 0.005222543845383985,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.011028558167665264
+        },
+        {
+          "seed": 1,
+          "value": 0.021238186814854204
+        },
+        {
+          "seed": 2,
+          "value": 0.018043216677508606
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.040803988766529665,
+      "sample_sd_delta": 0.008834833995084595,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.03093570003809132
+        },
+        {
+          "seed": 1,
+          "value": -0.04797798801440423
+        },
+        {
+          "seed": 2,
+          "value": -0.04349827824709346
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": 1.6884646387725113,
+      "sample_sd_delta": 0.2668560592695446,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 1.9689113487926448
+        },
+        {
+          "seed": 1,
+          "value": 1.6588052403578608
+        },
+        {
+          "seed": 2,
+          "value": 1.4376773271670285
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": 1.6540813620895787,
+      "sample_sd_delta": 0.3569438834046985,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 2.064130352317221
+        },
+        {
+          "seed": 1,
+          "value": 1.4851651085556945
+        },
+        {
+          "seed": 2,
+          "value": 1.4129486253958206
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": -3.3333333333333335,
+      "sample_sd_delta": 3.511884584284246,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -7.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": -3.0
+        }
+      ]
+    },
+    {
+      "arm": "repeat64",
+      "reference": "bp64",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 0.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 1.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.6374380870834168,
+      "sample_sd_delta": 0.022701106571078274,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.6294019952417145
+        },
+        {
+          "seed": 1,
+          "value": 0.6198481215158118
+        },
+        {
+          "seed": 2,
+          "value": 0.6630641444927239
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.15193463804203203,
+      "sample_sd_delta": 0.03953901490412163,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.19620844389930836
+        },
+        {
+          "seed": 1,
+          "value": 0.1394520753690771
+        },
+        {
+          "seed": 2,
+          "value": 0.12014339485771064
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": 0.00681476271000551,
+      "sample_sd_delta": 0.002851263278814821,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0054495097601797715
+        },
+        {
+          "seed": 1,
+          "value": 0.010091953805883125
+        },
+        {
+          "seed": 2,
+          "value": 0.004902824563953634
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.0020345052083333335,
+      "sample_sd_delta": 0.0010665154965886357,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0023193359375
+        },
+        {
+          "seed": 1,
+          "value": 0.0029296875
+        },
+        {
+          "seed": 2,
+          "value": 0.0008544921875
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.007882255992704887,
+      "sample_sd_delta": 0.002021268931397039,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.007856334468186926
+        },
+        {
+          "seed": 1,
+          "value": -0.009916361022193676
+        },
+        {
+          "seed": 2,
+          "value": -0.0058740724877340555
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.010008301618045418,
+      "sample_sd_delta": 0.011815178719117922,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.003408550855913267
+        },
+        {
+          "seed": 1,
+          "value": -0.018859039791629367
+        },
+        {
+          "seed": 2,
+          "value": -0.014574415918420153
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.018761282593849755,
+      "sample_sd_delta": 0.04156115638603083,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.029227961034218986
+        },
+        {
+          "seed": 1,
+          "value": 0.04243327125938734
+        },
+        {
+          "seed": 2,
+          "value": 0.043078537556380914
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": -2.2529263248611398,
+      "sample_sd_delta": 0.6128783018200673,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -2.5923087911404323
+        },
+        {
+          "seed": 1,
+          "value": -2.621040325080642
+        },
+        {
+          "seed": 2,
+          "value": -1.5454298583623451
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": -1.8777182286387735,
+      "sample_sd_delta": 0.7086336488888852,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -2.387690773965737
+        },
+        {
+          "seed": 1,
+          "value": -2.1769048988344046
+        },
+        {
+          "seed": 2,
+          "value": -1.0685590131161788
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": 0.0,
+      "sample_sd_delta": 1.0,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -1.0
+        },
+        {
+          "seed": 1,
+          "value": 1.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "replay64",
+      "reference": "repeat64",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 0.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.0890996318020137,
+      "sample_sd_delta": 0.008186433058816478,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.09040050826976831
+        },
+        {
+          "seed": 1,
+          "value": 0.08034065013924518
+        },
+        {
+          "seed": 2,
+          "value": 0.09655773699702763
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.0299403505386772,
+      "sample_sd_delta": 0.01913572373790995,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.05113466860294125
+        },
+        {
+          "seed": 1,
+          "value": 0.013932407430579996
+        },
+        {
+          "seed": 2,
+          "value": 0.024753975582510357
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": -0.002429504298910312,
+      "sample_sd_delta": 0.0023354646344978945,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.004852095451945204
+        },
+        {
+          "seed": 1,
+          "value": -0.00019220475655346014
+        },
+        {
+          "seed": 2,
+          "value": -0.002244212688232272
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.00016276041666666666,
+      "sample_sd_delta": 0.000994205055572153,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0006103515625
+        },
+        {
+          "seed": 1,
+          "value": -0.0009765625
+        },
+        {
+          "seed": 2,
+          "value": 0.0008544921875
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.0022397751224658147,
+      "sample_sd_delta": 0.0020912022893066796,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.00453407402013431
+        },
+        {
+          "seed": 1,
+          "value": 0.00044049728066025695
+        },
+        {
+          "seed": 2,
+          "value": 0.0017447540666028771
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.00062025208234745,
+      "sample_sd_delta": 0.0015435925459729182,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0024026375085851037
+        },
+        {
+          "seed": 1,
+          "value": -0.0002687976807325687
+        },
+        {
+          "seed": 2,
+          "value": -0.000273083580810185
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.0031386905230878317,
+      "sample_sd_delta": 0.0026615693674264898,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0018322195242290729
+        },
+        {
+          "seed": 1,
+          "value": 0.0013828179625749448
+        },
+        {
+          "seed": 2,
+          "value": 0.006201034082459478
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": -0.800679553380748,
+      "sample_sd_delta": 0.21546194555428597,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.9469417781388856
+        },
+        {
+          "seed": 1,
+          "value": -0.9018452315304728
+        },
+        {
+          "seed": 2,
+          "value": -0.5532516504728857
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": -0.9160137212210463,
+      "sample_sd_delta": 0.15745869180462843,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.9814366207070755
+        },
+        {
+          "seed": 1,
+          "value": -1.0302142273970638
+        },
+        {
+          "seed": 2,
+          "value": -0.7363903155589995
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": -1.6666666666666667,
+      "sample_sd_delta": 3.7859388972001824,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -6.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "arm": "accum128",
+      "reference": "bp64",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 0.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 1.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": -0.0007942597127102621,
+      "sample_sd_delta": 0.014964959265727214,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.006719060420476097
+        },
+        {
+          "seed": 1,
+          "value": -0.011889688432152212
+        },
+        {
+          "seed": 2,
+          "value": 0.016225969714497523
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.012393792847785523,
+      "sample_sd_delta": 0.013047901287029005,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.027408275323869802
+        },
+        {
+          "seed": 1,
+          "value": 0.0038040937687298104
+        },
+        {
+          "seed": 2,
+          "value": 0.005969009450756957
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": 0.004360502375361526,
+      "sample_sd_delta": 0.002114377972588403,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0057130995765686254
+        },
+        {
+          "seed": 1,
+          "value": 0.005444446604435771
+        },
+        {
+          "seed": 2,
+          "value": 0.0019239609450801831
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.0005289713541666666,
+      "sample_sd_delta": 0.0011342252494113245,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0
+        },
+        {
+          "seed": 1,
+          "value": -0.0018310546875
+        },
+        {
+          "seed": 2,
+          "value": 0.000244140625
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.004624871448992328,
+      "sample_sd_delta": 0.002609091016452495,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.006395278459957909
+        },
+        {
+          "seed": 1,
+          "value": -0.005850734070795949
+        },
+        {
+          "seed": 2,
+          "value": -0.0016286018162231242
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.006112319246296044,
+      "sample_sd_delta": 0.0008358699238382314,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.006395574580326774
+        },
+        {
+          "seed": 1,
+          "value": -0.0051716275384274535
+        },
+        {
+          "seed": 2,
+          "value": -0.006769755620133905
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.013643500760032031,
+      "sample_sd_delta": 0.00852296017793262,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.01233267014439321
+        },
+        {
+          "seed": 1,
+          "value": 0.005851896326105055
+        },
+        {
+          "seed": 2,
+          "value": 0.022745935809597828
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": -0.3903869651640897,
+      "sample_sd_delta": 0.17862010424287236,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.2796062484177604
+        },
+        {
+          "seed": 1,
+          "value": -0.29510925712100367
+        },
+        {
+          "seed": 2,
+          "value": -0.5964453899535052
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": -0.27328594730175954,
+      "sample_sd_delta": 0.19527065938339794,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.2472650321636607
+        },
+        {
+          "seed": 1,
+          "value": -0.09233039135926902
+        },
+        {
+          "seed": 2,
+          "value": -0.48026241838234895
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": -0.3333333333333333,
+      "sample_sd_delta": 3.511884584284246,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 3.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": -4.0
+        }
+      ]
+    },
+    {
+      "arm": "bp128",
+      "reference": "accum128",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": -0.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -1.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 36.38835801261911,
+      "sample_sd_delta": 0.17036964834903393,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 36.191988909637956
+        },
+        {
+          "seed": 1,
+          "value": 36.47628592604661
+        },
+        {
+          "seed": 2,
+          "value": 36.49679920217276
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 47.81989089803853,
+      "sample_sd_delta": 0.24688987277261465,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 47.542133127087745
+        },
+        {
+          "seed": 1,
+          "value": 48.01438070676661
+        },
+        {
+          "seed": 2,
+          "value": 47.903158860261236
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": -0.7209404090333572,
+      "sample_sd_delta": 0.010884077756717356,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.7300411251839944
+        },
+        {
+          "seed": 1,
+          "value": -0.708883662160926
+        },
+        {
+          "seed": 2,
+          "value": -0.7238964397551513
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.9201253255208334,
+      "sample_sd_delta": 0.008726391049815084,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.912353515625
+        },
+        {
+          "seed": 1,
+          "value": 0.9295654296875
+        },
+        {
+          "seed": 2,
+          "value": 0.91845703125
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.7212043079069197,
+      "sample_sd_delta": 0.013315014486413609,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.7311061081353649
+        },
+        {
+          "seed": 1,
+          "value": 0.7060673695564457
+        },
+        {
+          "seed": 2,
+          "value": 0.7264394460289485
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.1430480557055208,
+      "sample_sd_delta": 0.015702930428559535,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.12688117926868908
+        },
+        {
+          "seed": 1,
+          "value": -0.15824177547612167
+        },
+        {
+          "seed": 2,
+          "value": -0.14402121237175158
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.6198113389077905,
+      "sample_sd_delta": 0.024889119238841278,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.592632235770461
+        },
+        {
+          "seed": 1,
+          "value": 0.6253113589094816
+        },
+        {
+          "seed": 2,
+          "value": 0.6414904220434289
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": -12.732516101949715,
+      "sample_sd_delta": 1.8612183645276152,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -13.50698523982356
+        },
+        {
+          "seed": 1,
+          "value": -14.081450293910061
+        },
+        {
+          "seed": 2,
+          "value": -10.609112772115523
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": -18.43170652273382,
+      "sample_sd_delta": 1.9667467769964155,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -18.74777097059689
+        },
+        {
+          "seed": 1,
+          "value": -20.22128060743438
+        },
+        {
+          "seed": 2,
+          "value": -16.326067990170184
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": 18.333333333333332,
+      "sample_sd_delta": 6.429100507328637,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 11.0
+        },
+        {
+          "seed": 1,
+          "value": 23.0
+        },
+        {
+          "seed": 2,
+          "value": 21.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_live",
+      "reference": "bp64",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": -3.0,
+      "sample_sd_delta": 0.0,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -3.0
+        },
+        {
+          "seed": 1,
+          "value": -3.0
+        },
+        {
+          "seed": 2,
+          "value": -3.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": -17.402111229124145,
+      "sample_sd_delta": 2.0806926088780404,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -18.26973426404006
+        },
+        {
+          "seed": 1,
+          "value": -18.908584338879983
+        },
+        {
+          "seed": 2,
+          "value": -15.028015084452392
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": -18.27277856073015,
+      "sample_sd_delta": 2.330498894908203,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -19.220836556616774
+        },
+        {
+          "seed": 1,
+          "value": -19.979830631086436
+        },
+        {
+          "seed": 2,
+          "value": -15.617668494487233
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": 0.07473799830678247,
+      "sample_sd_delta": 0.029811425725847666,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.09105354912478268
+        },
+        {
+          "seed": 1,
+          "value": 0.09283042680054608
+        },
+        {
+          "seed": 2,
+          "value": 0.040330018995018646
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.098876953125,
+      "sample_sd_delta": 0.04143005982083682,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.115966796875
+        },
+        {
+          "seed": 1,
+          "value": -0.1290283203125
+        },
+        {
+          "seed": 2,
+          "value": -0.0516357421875
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.08169336639939191,
+      "sample_sd_delta": 0.03247949019496601,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.09396867656034602
+        },
+        {
+          "seed": 1,
+          "value": -0.1062461797686498
+        },
+        {
+          "seed": 2,
+          "value": -0.04486524286917992
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.013225481535930186,
+      "sample_sd_delta": 0.00625467034763493,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.013273611763574247
+        },
+        {
+          "seed": 1,
+          "value": 0.019455947880856594
+        },
+        {
+          "seed": 2,
+          "value": 0.006946884963359719
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.016370774369940316,
+      "sample_sd_delta": 0.007831076167395572,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.01703349723224523
+        },
+        {
+          "seed": 1,
+          "value": -0.023849429119653598
+        },
+        {
+          "seed": 2,
+          "value": -0.008229396757922114
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": 3.06726855175987,
+      "sample_sd_delta": 0.9827047134332692,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 2.9329130915550348
+        },
+        {
+          "seed": 1,
+          "value": 4.11023827380464
+        },
+        {
+          "seed": 2,
+          "value": 2.1586542899199355
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": 3.979094231308425,
+      "sample_sd_delta": 1.6503410658370958,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 4.009444526158055
+        },
+        {
+          "seed": 1,
+          "value": 5.61405082962097
+        },
+        {
+          "seed": 2,
+          "value": 2.31378733814625
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": 0.0,
+      "sample_sd_delta": 0.0,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix",
+      "reference": "coact_live",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 0.0,
+      "sample_sd_delta": 0.0,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0
+        },
+        {
+          "seed": 1,
+          "value": 0.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": -6.635964089778959,
+      "sample_sd_delta": 3.4402031900879275,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -8.361751281881471
+        },
+        {
+          "seed": 1,
+          "value": -2.6744834101084045
+        },
+        {
+          "seed": 2,
+          "value": -8.871657577347001
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": -7.140888484565164,
+      "sample_sd_delta": 3.841624705398535,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -9.085765459100056
+        },
+        {
+          "seed": 1,
+          "value": -2.715745181856441
+        },
+        {
+          "seed": 2,
+          "value": -9.621154812738997
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": 0.03314990568886512,
+      "sample_sd_delta": 0.031704535302731825,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.02628393480273683
+        },
+        {
+          "seed": 1,
+          "value": 0.005440935644110301
+        },
+        {
+          "seed": 2,
+          "value": 0.06772484661974823
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.046346028645833336,
+      "sample_sd_delta": 0.04495641513841686,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.0384521484375
+        },
+        {
+          "seed": 1,
+          "value": -0.005859375
+        },
+        {
+          "seed": 2,
+          "value": -0.0947265625
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.03203889267900839,
+      "sample_sd_delta": 0.036957010366792324,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.027542481988306444
+        },
+        {
+          "seed": 1,
+          "value": 0.0024641922036938713
+        },
+        {
+          "seed": 2,
+          "value": -0.0710383882524126
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.008344960906790839,
+      "sample_sd_delta": 0.006407487585533755,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.009547399195802421
+        },
+        {
+          "seed": 1,
+          "value": 0.001421439667350928
+        },
+        {
+          "seed": 2,
+          "value": 0.014066043857219167
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.010953639096556408,
+      "sample_sd_delta": 0.008330672128474959,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.012336918925487717
+        },
+        {
+          "seed": 1,
+          "value": -0.002017910342303586
+        },
+        {
+          "seed": 2,
+          "value": -0.01850608802187792
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": 0.7068546660684456,
+      "sample_sd_delta": 0.47342581812217216,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.35717130047986245
+        },
+        {
+          "seed": 1,
+          "value": 0.5177964132518209
+        },
+        {
+          "seed": 2,
+          "value": 1.2455962844736534
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": 1.299654825099929,
+      "sample_sd_delta": 1.1031155901824081,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.7378965333003311
+        },
+        {
+          "seed": 1,
+          "value": 0.5904911832883677
+        },
+        {
+          "seed": 2,
+          "value": 2.5705767587110877
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": -1.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -1.0
+        },
+        {
+          "seed": 1,
+          "value": -2.0
+        },
+        {
+          "seed": 2,
+          "value": -1.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_mix_shuffled",
+      "reference": "coact_mix",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 0.3333333333333333,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.0
+        },
+        {
+          "seed": 1,
+          "value": 1.0
+        },
+        {
+          "seed": 2,
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 53.82468604535188,
+      "sample_sd_delta": 0.22557437519672824,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 53.85918405520184
+        },
+        {
+          "seed": 1,
+          "value": 54.03102419174086
+        },
+        {
+          "seed": 2,
+          "value": 53.583849889112955
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 66.13880358657852,
+      "sample_sd_delta": 0.250946259969519,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 66.04100512743285
+        },
+        {
+          "seed": 1,
+          "value": 66.4239243677385
+        },
+        {
+          "seed": 2,
+          "value": 65.9514812645642
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": -0.7573520667036756,
+      "sample_sd_delta": 0.01230949093170644,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.7711310526108379
+        },
+        {
+          "seed": 1,
+          "value": -0.7474412780801162
+        },
+        {
+          "seed": 2,
+          "value": -0.7534838694200726
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.9708251953125,
+      "sample_sd_delta": 0.0038116442861318347,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.97509765625
+        },
+        {
+          "seed": 1,
+          "value": 0.9677734375
+        },
+        {
+          "seed": 2,
+          "value": 0.9696044921875
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.7552027951905744,
+      "sample_sd_delta": 0.01426677270979678,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.7691132895212247
+        },
+        {
+          "seed": 1,
+          "value": 0.7406046157240502
+        },
+        {
+          "seed": 2,
+          "value": 0.7558904803264485
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.2011706421812508,
+      "sample_sd_delta": 0.013486874263829345,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.18870851688150955
+        },
+        {
+          "seed": 1,
+          "value": -0.21548980424745554
+        },
+        {
+          "seed": 2,
+          "value": -0.19931360541478732
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.8220092870328317,
+      "sample_sd_delta": 0.022520225774319582,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.8159514316052717
+        },
+        {
+          "seed": 1,
+          "value": 0.8469388393870281
+        },
+        {
+          "seed": 2,
+          "value": 0.8031375901061952
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": -14.892533192442292,
+      "sample_sd_delta": 0.4972663520059045,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -15.45103525445465
+        },
+        {
+          "seed": 1,
+          "value": -14.728739555669733
+        },
+        {
+          "seed": 2,
+          "value": -14.497824767202491
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": -22.273176953939924,
+      "sample_sd_delta": 0.4571381287951423,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -22.800118338649927
+        },
+        {
+          "seed": 1,
+          "value": -22.036629329914003
+        },
+        {
+          "seed": 2,
+          "value": -21.98278319325584
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": 10.333333333333334,
+      "sample_sd_delta": 4.509249752822894,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 10.0
+        },
+        {
+          "seed": 1,
+          "value": 6.0
+        },
+        {
+          "seed": 2,
+          "value": 15.0
+        }
+      ]
+    },
+    {
+      "arm": "coact_only_mix",
+      "reference": "frozen",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": -2.6666666666666665,
+      "sample_sd_delta": 0.5773502691896257,
+      "same_training_external_regime": true,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -3.0
+        },
+        {
+          "seed": 1,
+          "value": -2.0
+        },
+        {
+          "seed": 2,
+          "value": -3.0
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.02224134229439656,
+      "sample_sd_delta": 0.020431819284808854,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.04226399332313768
+        },
+        {
+          "seed": 1,
+          "value": 0.0014235685372856466
+        },
+        {
+          "seed": 2,
+          "value": 0.02303646502276635
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.017271555953598455,
+      "sample_sd_delta": 0.017885482827356674,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.013117357598429358
+        },
+        {
+          "seed": 1,
+          "value": 0.0018287386648552229
+        },
+        {
+          "seed": 2,
+          "value": 0.03686857159751078
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": -0.02173199967452651,
+      "sample_sd_delta": 0.011786123761619657,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.013173172421059531
+        },
+        {
+          "seed": 1,
+          "value": -0.01684775844316988
+        },
+        {
+          "seed": 2,
+          "value": -0.03517506815935012
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.006795247395833333,
+      "sample_sd_delta": 0.0065921736244573415,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.003173828125
+        },
+        {
+          "seed": 1,
+          "value": 0.0028076171875
+        },
+        {
+          "seed": 2,
+          "value": 0.014404296875
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.021378943450897147,
+      "sample_sd_delta": 0.010596590955625113,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.013548650143362956
+        },
+        {
+          "seed": 1,
+          "value": 0.01715144803225771
+        },
+        {
+          "seed": 2,
+          "value": 0.03343673217707077
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": 0.019933014771076573,
+      "sample_sd_delta": 0.007786297148194452,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.01144415947638086
+        },
+        {
+          "seed": 1,
+          "value": 0.021612111032566356
+        },
+        {
+          "seed": 2,
+          "value": 0.0267427738042825
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.020158527153251005,
+      "sample_sd_delta": 0.013966040123284057,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.013748849007238773
+        },
+        {
+          "seed": 1,
+          "value": -0.03617887621507848
+        },
+        {
+          "seed": 2,
+          "value": -0.01054785623743576
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": 1.0296844570478967,
+      "sample_sd_delta": 1.8372861144928396,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.7298072708129588
+        },
+        {
+          "seed": 1,
+          "value": 0.8829012608927798
+        },
+        {
+          "seed": 2,
+          "value": 2.935959381063869
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": 0.9709758926702309,
+      "sample_sd_delta": 1.543164471868323,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.4820114831492326
+        },
+        {
+          "seed": 1,
+          "value": 0.8041738000466658
+        },
+        {
+          "seed": 2,
+          "value": 2.5907653611132595
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": 80.66666666666667,
+      "sample_sd_delta": 12.342339054382412,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 84.0
+        },
+        {
+          "seed": 1,
+          "value": 91.0
+        },
+        {
+          "seed": 2,
+          "value": 67.0
+        }
+      ]
+    },
+    {
+      "arm": "coverage_long_dense",
+      "reference": "bp64",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": -6.666666666666667,
+      "sample_sd_delta": 1.1547005383792515,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -8.0
+        },
+        {
+          "seed": 1,
+          "value": -6.0
+        },
+        {
+          "seed": 2,
+          "value": -6.0
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "weight/frobenius_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.720433405760169,
+      "sample_sd_delta": 0.026723303551597043,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.7320319966951825
+        },
+        {
+          "seed": 1,
+          "value": 0.6898704379286436
+        },
+        {
+          "seed": 2,
+          "value": 0.7393977826566811
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "weight/spectral_norm",
+      "n_seeds": 3,
+      "mean_delta": 0.31927891081640186,
+      "sample_sd_delta": 0.09022088578032153,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.4166011814547055
+        },
+        {
+          "seed": 1,
+          "value": 0.23842942419838087
+        },
+        {
+          "seed": 2,
+          "value": 0.3028061267961193
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "activity/mean_tanh_derivative",
+      "n_seeds": 3,
+      "mean_delta": 0.05339267420749435,
+      "sample_sd_delta": 0.01925232548381733,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.04285744423233284
+        },
+        {
+          "seed": 1,
+          "value": 0.07561342263885729
+        },
+        {
+          "seed": 2,
+          "value": 0.04170715575129291
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "activity/saturation_fraction",
+      "n_seeds": 3,
+      "mean_delta": -0.012125651041666666,
+      "sample_sd_delta": 0.008076345064396548,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.011474609375
+        },
+        {
+          "seed": 1,
+          "value": -0.0205078125
+        },
+        {
+          "seed": 2,
+          "value": -0.00439453125
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "activity/within_actor_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.05294227234903259,
+      "sample_sd_delta": 0.01897345567089765,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.04244354712230189
+        },
+        {
+          "seed": 1,
+          "value": -0.07484470064279819
+        },
+        {
+          "seed": 2,
+          "value": -0.0415385692819977
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "activity/within_actor_centred_batch_variance_mean",
+      "n_seeds": 3,
+      "mean_delta": -0.05459978126816086,
+      "sample_sd_delta": 0.016825731583127054,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -0.04575402509163658
+        },
+        {
+          "seed": 1,
+          "value": -0.07400330325301674
+        },
+        {
+          "seed": 2,
+          "value": -0.044042015459829276
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "activity/common_mode_energy_fraction",
+      "n_seeds": 3,
+      "mean_delta": 0.10087657769477675,
+      "sample_sd_delta": 0.021813836819360194,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.09866101515948711
+        },
+        {
+          "seed": 1,
+          "value": 0.12371364654326139
+        },
+        {
+          "seed": 2,
+          "value": 0.08025507138158172
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "covariance/participation_ratio",
+      "n_seeds": 3,
+      "mean_delta": 0.40800005862603744,
+      "sample_sd_delta": 0.696822014830831,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 0.37217178853147104
+        },
+        {
+          "seed": 1,
+          "value": -0.27021666446286474
+        },
+        {
+          "seed": 2,
+          "value": 1.122045051809506
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "covariance/entropy_effective_rank",
+      "n_seeds": 3,
+      "mean_delta": 1.0982686844532985,
+      "sample_sd_delta": 1.4166898819577822,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 1.1243232852419567
+        },
+        {
+          "seed": 1,
+          "value": -0.3312687959167562
+        },
+        {
+          "seed": 2,
+          "value": 2.501751564034695
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "world/active_slots",
+      "n_seeds": 3,
+      "mean_delta": -47.0,
+      "sample_sd_delta": 4.358898943540674,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": -45.0
+        },
+        {
+          "seed": 1,
+          "value": -52.0
+        },
+        {
+          "seed": 2,
+          "value": -44.0
+        }
+      ]
+    },
+    {
+      "arm": "coverage_short_sparse",
+      "reference": "bp64",
+      "metric": "world/actors_without_active_job",
+      "n_seeds": 3,
+      "mean_delta": 10.0,
+      "sample_sd_delta": 0.0,
+      "same_training_external_regime": false,
+      "classification": "post_hoc_descriptive_seed_paired_difference",
+      "per_seed": [
+        {
+          "seed": 0,
+          "value": 10.0
+        },
+        {
+          "seed": 1,
+          "value": 10.0
+        },
+        {
+          "seed": 2,
+          "value": 10.0
+        }
+      ]
+    }
+  ]
+}

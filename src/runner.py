@@ -9,6 +9,7 @@ import numpy as np
 
 from .core import Network, find_edges
 from .env import make_env
+from .neurons.lif import build_network
 from .signal import Signal, steady_gate
 
 
@@ -112,10 +113,7 @@ def _run_world(cfg):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
-    net = Network(cfg.net, rng, out_idx)
-    net.tau_trace = cfg.plast.tau_trace
-    net.trace_decay = cfg.plast.trace_decay
-    net.tau_theta = cfg.plast.tau_theta
+    net = build_network(cfg.net, rng, out_idx, plasticity=cfg.plast)
     N = cfg.net.N
     N_E = net.N_E
     N_IN = cfg.net.n_in
@@ -400,10 +398,7 @@ def _run_goal(cfg):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
-    net = Network(cfg.net, rng, out_idx)
-    net.tau_trace = cfg.plast.tau_trace
-    net.trace_decay = cfg.plast.trace_decay
-    net.tau_theta = cfg.plast.tau_theta
+    net = build_network(cfg.net, rng, out_idx, plasticity=cfg.plast)
 
     N = cfg.net.N
     N_E = net.N_E
@@ -618,10 +613,7 @@ def _run_teach(cfg):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
-    net = Network(cfg.net, rng, out_idx)
-    net.tau_trace = cfg.plast.tau_trace
-    net.trace_decay = cfg.plast.trace_decay
-    net.tau_theta = cfg.plast.tau_theta
+    net = build_network(cfg.net, rng, out_idx, plasticity=cfg.plast)
 
     N = cfg.net.N
     N_E = net.N_E
@@ -977,10 +969,7 @@ def _run_cond(cfg):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
-    net = Network(cfg.net, rng, out_idx)
-    net.tau_trace = cfg.plast.tau_trace
-    net.trace_decay = cfg.plast.trace_decay
-    net.tau_theta = cfg.plast.tau_theta
+    net = build_network(cfg.net, rng, out_idx, plasticity=cfg.plast)
 
     N = cfg.net.N
     N_E = net.N_E
@@ -1217,10 +1206,7 @@ def _run_homeo(cfg, return_net=False):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
-    net = Network(cfg.net, rng, out_idx)
-    net.tau_trace = cfg.plast.tau_trace
-    net.trace_decay = cfg.plast.trace_decay
-    net.tau_theta = cfg.plast.tau_theta
+    net = build_network(cfg.net, rng, out_idx, plasticity=cfg.plast)
 
     N = cfg.net.N
     N_E = net.N_E
@@ -1397,10 +1383,7 @@ def _run_talk(cfg):
     t0 = time.perf_counter()
     rng = np.random.default_rng(cfg.seed)
     out_idx = np.asarray(cfg.readout.out_idx, np.int64)
-    net = Network(cfg.net, rng, out_idx)
-    net.tau_trace = cfg.plast.tau_trace
-    net.trace_decay = cfg.plast.trace_decay
-    net.tau_theta = cfg.plast.tau_theta
+    net = build_network(cfg.net, rng, out_idx, plasticity=cfg.plast)
 
     N = cfg.net.N
     N_E = net.N_E

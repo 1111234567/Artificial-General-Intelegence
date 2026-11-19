@@ -1,0 +1,31 @@
+.local-heading, .local-filters { display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px; }
+.title-part { white-space:nowrap; }
+.metric-header .scope-select { min-height:28px; }
+.local-filters { justify-content:flex-start; margin-top:9px; gap:6px; }
+.chart-tabs { margin-top:13px; width:fit-content; max-width:100%; flex-wrap:wrap; }
+.trend-card .plot { margin-top:12px; height:232px; }
+.chart-tooltip { z-index:1; max-width:calc(100% - 16px); }
+.graph-stats { gap:7px; }
+.graph-stats div { padding:9px 11px; }
+.graph-stats dd { font-size:17px; }
+.local-heading h2 { font-size:16px; }
+#candidate-id { font-variant-numeric:tabular-nums; }
+.chart-tooltip[hidden] { display:none; }
+.legend { min-height:16px; }
+[data-chart][aria-pressed=true], [data-stream][aria-pressed=true] { font-weight:650; }
+tbody td { font-variant-numeric:tabular-nums; }
+.ci-range { margin-top:3px; color:var(--muted); font-size:11px; }
+@media (max-width:600px) {
+  .masthead .brand { white-space:nowrap; }
+  .run-meta { display:flex; flex-wrap:wrap; }
+  .local-heading { gap:8px; }
+  .metric-header { align-items:flex-start; }
+  .section-head, .holdout-controls { flex-wrap:wrap; }
+  .chart-tabs { width:100%; }
+  .local-filters .scope-select { max-width:100%; }
+  .graph-stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .graph-stats dd { font-size:15px; }
+  td, th { padding:8px; }
+}
+@media (max-width:360px) { .brand .muted { display:none; } nav { gap:6px; } }
+@media (max-width:430px) { .title-part { display:block; } .title-divider { display:none; } }

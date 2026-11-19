@@ -1,9 +1,7 @@
-# agi/experiments.py — 实验定义。
-#
-# **这里是唯一一个「声明实验」的地方。** 新增实验 = 在这里加一个 Config。
-# 不在 test/ 下另写脚本——那正是之前 21 个脚本各实现一遍本体的原因。
-#
-# 每个实验都必须说清：这份配置在哪些维度上与基准不同（对照组的差集）。
+# agi/experiments.py — 共享 LIF 框架的实验配置与历史复现配置。
+# 相同 flow 的变体在此声明，独立原型见 experiments/prototypes/。
+# 配置名字和 note 不是机制正确性的证明；已知对照限制见 docs/experiments.md。
+# 本轮整理保留数值配置和执行行为，只纠正具有误导性的说明。
 
 from dataclasses import replace
 
@@ -39,9 +37,9 @@ SIG_NONE = BASE.with_(name="sig_none", note="m 恒 0（比 plast_none 更彻底�
                       plast=Plasticity(weight=False, topology=False, bias=False))
 SIG_RANDOM = BASE.with_(name="sig_random", note="m 随机（检验「有 m 就行吗」）",
                         signal=SignalSpec(source="random"))
-SIG_EPISODE = BASE.with_(name="sig_episode", note="m 只在 episode 末（延迟 = 整个任务）",
+SIG_EPISODE = BASE.with_(name="sig_episode", note="历史配置：任务末权重信号丢失，沉默时仍学 bias；不可作纯延迟反馈对照",
                          signal=SignalSpec(source="episode"))
-SIG_SCALAR = BASE.with_(name="sig_scalar", note="m 是标量（不逐神经元分配）",
+SIG_SCALAR = BASE.with_(name="sig_scalar", note="动作反馈为标量，但沉默提示仍为向量；不可作纯标量反馈对照",
                         signal=SignalSpec(source="action", shape="scalar"))
 SIG_NORPE = BASE.with_(name="sig_norpe", note="m 不用 RPE（直接 r）",
                        signal=SignalSpec(source="action", glob="raw"))
@@ -324,7 +322,7 @@ HO_LONG = Config(name="ho_long", note="grow_homeo 长跑（40000 步；§16.11 �
                  **dict(_HOMEO, steps=40000))
 HO_WARM = Config(name="ho_warm", note="grow_homeo probe 的生长阶段（30000 步）",
                  **dict(_HOMEO, steps=30000))
-HO_FROZEN = Config(name="ho_frozen", note="grow_homeo 关结构可塑性（对照）",
+HO_FROZEN = Config(name="ho_frozen", note="历史配置：同时关闭结构可塑性与 chunk 状态重置；非单变量对照",
                    **dict(_HOMEO, plast=Plasticity(
                        weight=False, topology=False, bias=False,
                        trigger="step", t_s=50, struct_kind="homeo",

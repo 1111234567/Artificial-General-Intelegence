@@ -1,145 +1,36 @@
-# agi
+<a id="agi"></a>
 
-训练一个 AGI（不是一个更好的语言模型）。
+# agi · 持续学习研究
 
-**状态：阶段 0.5 的步 1/2 已成立（RNN 训到 100%，ρ 是任务需求的函数）；**
-**步 3/4（转 SNN）经四次形态全不成立**——用 32 维 RNN 搬权重到 1000 维 SNN 不是转换、是重建（`docs/experiments.md` §16.32）。
-**下一步是方向三选一，未定。**
-阶段 1/2（教）只有 v1 站得住（25% → 65.8%）；阶段 2（巩固）尚未开始。 设计推演已完成（七轮修正），模拟器成本已实测，动力学已标定（rate 1.99%）；结构自生长已跑通（rate **1.55% ± 0.44**）。
+我们想知道，一个智能体能否在时间中持续运行，让自己的行动、反馈和过去的经历改变以后的能力。远期目标是 AGI，眼前的问题是经验如何积累，以及学新事物时怎样保住旧能力。[研究目标与当前判断](agi.md)
 
-**统一框架（`src/`）已建成并与旧脚本对齐（2026-10-24）**：71 个实验声明 + 9 个子命令，
-**已移植 9 个旧脚本 / 201 项，全部逐位一致**（`grow_agent` 9/9、`grow_goal` 6/6、`grow_world` 5/5、`grow_talk` 19/19、`grow_homeo` 12/12、`grow_cond` 22/22、`grow_teach` 11/11、`grow_func` 21/21、`grow_hebb` 96/96）+ **3 个工具子命令**（`scan homeo` / `scan calib` / `bench`）；
-**共 12 项，全部完成**——详见 `docs/experiments.md` §16.18–§16.26 与 `src/README.md` 的「移植覆盖度」。
+<a id="目前测到了什么"></a>
 
-**闭环三步（`grow_goal.py`，§16.13）：当时的阴性结论已不可信 —— 因为它建在一个不可完成的任务上。**
-真正的发现（§16.16）：① **任务在参数上不可完成**——6 个动作 × 1 步 = 6，而目标差距 30~40；
-② **`frozen` 名不副实**——它只关了权重与拓扑，bias 还在学。
+## 最近一次实验
 
-修正后的真读数：
+11 月 19 日，12 个独立出生的网络在 B 连续学 48 对冲突样本后回访 A。使用分布式地址时，首次正确率为 27.3%，用当前情境的局部地址写入时为 90.3%。另一项同预算拓扑对照中，独立训练的感觉单元也能达到有向循环图的水平。[晨间报告](docs/pulse-game-morning-2026-11-19.md) · [结果图](data/pulse-game/morning-20261119/learning-results.png) · [实验对照与证据](docs/pulse-game-evidence-2026-11-19.md)
 
-| 组 | 成功率 |
+<a id="文档与目录"></a>
+
+## 从哪里读起
+
+| 想做什么 | 入口 |
 |---|---|
-| `none`（三层全关） | **5.9%** |
-| random（无网络） | 20.6% |
-| 只学 bias | **42.0%** |
-| bias + 权重 + 拓扑 | 36.2% |
-| linear（非脉冲上界） | 99.8% |
+| 追溯最初的想法和后来的修订 | [10 月 22 日草案](docs/archived/design-memory-learning-2026-10-22.md) · [设计复核](docs/review-2026-10-26.md) · [现行设计](docs/design.md) |
+| 按问题或日期查历轮实验 | [文档目录](docs/README.md) · [分主题报告](docs/reports/README.md) · [实验总索引](docs/experiments.md) · [证据目录](docs/evidence/README.md) · [变更记录](CHANGELOG.md) |
+| 给新任务选神经元、沿用旧训练和加速方式 | [按神经元类型导入，含 LIF 和序列训练示例](src/neurons/README.md) |
+| 找训练、评估、复现代码 | [游戏实验脚本](experiments/pulse_game/INDEX.md) · [全部实验代码](experiments/README.md) |
+| 找结果、检查点或可分发的包 | [本机数据目录](data/README.md) · [CPU 运行包](data/pulse-game/morning-20261119/continuous-learning-cpu.zip) · [运行包用法](data/pulse-game/morning-20261119/README.md) |
+| 查看早期共享 LIF 框架和维护命令 | [共享框架](src/README.md) · [维护工具](scripts/README.md) |
 
-**bias 是学习的全部贡献（+36.1 pp），权重/拓扑是负贡献（−5.8 pp）。**
-**并且 2026-10-24 建立了统一框架（`src/`）**，替代 21 个各实现一遍本体的手写脚本；
-71 个实验声明 + 9 个子命令。**已与旧脚本对齐**（201 项逐位一致，见上），框架现在可以用来复现历史结论。
-阶段 B（真正的真空）未开始。
+<a id="最少命令"></a>
 
-## 文档
+## 本机查看
 
-| 文件 | 内容 |
-|---|---|
-| `agi.md` | 主文档——定位、判据、当前状态、下一步、文档索引 |
-| `docs/design.md` | 设计：判断与机制（§0–§9、§14） |
-| `docs/experiments.md` | 验证：待定项 / 实验设计 / 准则与自评 / 实验记录（§10、§11、§13、§16） |
-| `docs/reference.md` | 参考：文献索引与领域定位（§12、§15） |
-| `src/README.md` | 框架：结构、九个子命令、四个「不能再犯」的机制、**移植覆盖度** |
-| `scripts/check_docs.py` | 文档结构校验：章节完整性 / 引用可解析 / 关键内容逐字存在 / 编码 |
-| `scripts/diff_volumes.py` | 把三卷重建回原文，与 `docs/archived/` 的草案逐行 diff（**只报差异、不区分「新增」与「丢失」**；拆分后新增内容会一起出现，所以**不是无损证明**） |
-| `scripts/align_layers.py` | **移植对齐工具**（17 层）：construct / forward / run / noop / seq / modes / contrib / verify / goal / world / talk / homeo / homeoprobe / cond / teach / func / hebb |
-| `CHANGELOG.md` | 版本历程 |
+在仓库根目录运行以下命令，分别检查文档链接、列出共享框架配置和查看冻结游戏个体的运行参数。
 
-> 原设计草案 `docs/archived/design-memory-learning-2026-10-22.md` 已退役（2026-10-24 拆入三卷，内容逐行迁移）。
-
-## 目录
-
+```powershell
+.\.venv\Scripts\python.exe -B scripts/check_docs.py
+.\.venv\Scripts\python.exe -B scripts/run.py list
+.\.venv\Scripts\python.exe -B -m experiments.pulse_game.lifelong_agent --help
 ```
-F:\agi\
-  agi.md            主文档
-  docs\             设计 / 实验 / 参考（三卷）
-    archived\       已退役文档
-  src\          **统一框架**（config / core / env / signal / runner / store / experiments）
-  scripts\          核验脚本
-  test\
-    run.py          **唯一入口**（9 个子命令：list / show / check / run / results / gaps / align / scan / bench）
-    archived\       18 个退役版本脚本 + README（退役理由）
-    net.py          旧共享参数（框架将其收敛进 config.py）
-    CONSTANTS.md    常数台账 + 场次四 12 条核对表
-    *.py            旧实验脚本（实验记录，不再新增）
-  data\             运行时数据（环境目录 / results.jsonl）
-```
-
-## 运行
-
-**实验一律走框架**（旧脚本保留作实验记录，不再新增）：
-
-```bash
-python test/run.py list           # 有哪些实验，每个开了什么（含指纹）
-python test/run.py check          # 前置检查（任务可行性）—— 不过就不跑
-python test/run.py run base 8 8   # 跑 8 种子并登记到 data/results.jsonl
-test/run.py 另有：show <name> / results / gaps / align
-```
-
-**移植对齐（判据 = 行为一致，全套 28 秒）：**
-
-```bash
-python scripts/align_layers.py modes      # mode → 三层开关（代码 + 实测交叉）
-python scripts/align_layers.py verify     # grow_agent 9 项（动作序列逐项）
-python scripts/align_layers.py goal       # grow_goal 6 项（16 字段逐位）
-python scripts/align_layers.py world      # grow_world 5 项（19 字段逐位）
-python scripts/align_layers.py talk 0 100 4   # grow_talk 4 项（19 项逐位；第2个=seed，3=n_present，4=nproc）
-python scripts/align_layers.py homeo 0    # grow_homeo grow（6000 + 40000 步，hist 逐行）
-python scripts/align_layers.py homeoprobe 0 30000   # grow_homeo --probe（2 seeds，含相似度）
-python scripts/align_layers.py cond 0 400          # grow_cond（teach + punish，22 项）
-python scripts/align_layers.py teach 0 600         # grow_teach（4 modes，11 项）
-python scripts/align_layers.py func 0 3000         # grow_func（闭环/断开/冻结/前史，21 项）
-python scripts/align_layers.py hebb 3000           # grow_hebb（8 case × 12 项）
-
-# 工具类子命令（不是实验，不登记）
-python test/run.py scan homeo 2                     # scan_base 的 14 个组合
-python test/run.py scan calib 1                     # calib5 的 32 个组合
-python test/run.py bench                            # 模拟器成本基准（约 30 s）
-python scripts/align_layers.py contrib    # 单变量消融（从已对齐基准往下关）
-```
-
-**旧脚本（实验记录，可复现历史）：**
-
-```bash
-# 非脉冲线性基线（任务可学性的上界参照）
-python test/baseline_linear.py 400 8 random,greedy,linear
-
-# 模拟器成本基线（约 1 分钟）
-python test/bench_lif2.py
-
-# 动力学标定（五个版本逐次加机制）
-python test/calib5.py
-
-# 闭环实验：输出 -> 世界 -> 输入（五组对照，含五个实现缺陷的修正记录）
-python test/grow_world.py 50000 8 8 closed,open,randact,noise_in,frozen
-
-# 阶段 1/2：教它说话（4 个词 one-hot + 侧抑制，教师信号按神经元分配）
-python test/grow_teach.py 10000 8 8 teach,rand_m,no_teach,frozen
-python test/probe_out.py     # 诊断：输出神经元能不能区分四个词
-
-# 阶段 3：功能测量（不改动力学，只加测量）：预测误差 / 动作增益 / 前史因果
-python test/grow_func.py 50000 8 8 closed,open,frozen   # 三项 + 离线最优读出
-python test/grow_func.py 50000 8 8 --diag                # 因果方向（a 领先还是 o 领先）
-python test/grow_func.py 50000 8 8 --div                 # 前史因果（1e-3 扰动）
-
-# 旧版（结构自生长，已停用——它的 15 版死网已定位为五个实现缺陷，见 experiments.md §16.6）
-# python test/archived/grow_v2.py 50000 8 8
-```
-
-文档校验（章节编号 / 悬空引用 / 表格列数 / 乱码与行尾 / 待定项编号）：
-
-```bash
-# 第一个参数是要检查的卷；其余两卷自动作为交叉引用的底簿（章节号全项目唯一）
-python scripts/check_draft.py docs/design.md docs/experiments.md docs/reference.md
-python scripts/check_draft.py docs/experiments.md docs/design.md docs/reference.md
-python scripts/check_draft.py docs/reference.md docs/design.md docs/experiments.md
-
-# 三卷整合校验（章节归属 / 跨卷引用前缀 / 逐字块 / 编码）
-python scripts/check_docs.py
-
-# 拆分对照（三卷重建回单文件，与归档原件 diff；新增内容与丢失都会报出来）
-python scripts/diff_volumes.py
-```
-
-## 技术栈
-
-Python + numpy（阶段 A/B 的模拟器）。实测：**单个体用 CPU 稀疏实现**（10⁷ 步 / 7.2 min），GPU 只在 batch ≥ 16 时赢。手写 kernel 未做。

@@ -1,0 +1,2479 @@
+{
+  "format": "lifelong-selected-diagnosis-v1",
+  "created_utc": "2026-10-30T00:28:25.750140+00:00",
+  "strict_aggregate_header": {
+    "format": "lifelong-study-summary-v1",
+    "complete": true,
+    "audit.status": "passed",
+    "audit.checks": 15338593
+  },
+  "inputs_sha256": {
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\artifacts.json": "f585873e783c4676088470751245c6a4f8c36a89e6de40c305623efd4b456918",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\content_by_phase_age_per_seed.csv": "bf1d2017c1b4ccfcb41e8ea1d14011fb5b3b13c63824a4ce2b36dcd2ecfb98f7",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\report.json": "3a0a09e3d5bae8d3edbac325742a8cd85087307e50fb5a8d67f80416f69fd760",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\diagnosis_v1.py": "3b8dfd96f3b66cf5db6ff35a1ad1876426ad6d0a72637ba48353cf71132d76ef",
+    "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__narrow.json": "78fd5c0e52b7add2f3ed74891ea71d11091792da793e0e6c99cb2aa8bcbdd6fb",
+    "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__wide.json": "35f129aedfafa771fff3d459efe433fe49c8d233822069b2c306aebf5bda3f0f",
+    "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__narrow.json": "b1ebc8c766943a191123d4276d7a24083a41fbfef6dbd252cdc56660d01d1e9a",
+    "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__wide.json": "23c0215ef13d2ac99c6426d31eaa494fb802273947d8b4c6a9c0659e811b89b6",
+    "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__narrow.json": "729875a175832263c643ddab59c17572188c10085f8a77e59808fa7f7972b571",
+    "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__wide.json": "fc51b2ce460d7c799aa85d5770d6bdd76981f836549dd1f7b4190208e7dab2c8"
+  },
+  "selectors": [
+    {
+      "name": "narrow_short",
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "condition": "short",
+      "tick": 172032,
+      "family": 0,
+      "steps": 2048,
+      "cohort": "primary"
+    },
+    {
+      "name": "wide_short",
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "condition": "short",
+      "tick": 172032,
+      "family": 0,
+      "steps": 2048,
+      "cohort": "primary"
+    },
+    {
+      "name": "wide_long_both",
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "condition": "long_both",
+      "tick": 172032,
+      "family": 0,
+      "steps": 2048,
+      "cohort": "primary"
+    }
+  ],
+  "groups": [
+    {
+      "selector": {
+        "name": "narrow_short",
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "narrow",
+        "condition": "short",
+        "tick": 172032,
+        "family": 0,
+        "steps": 2048,
+        "cohort": "primary"
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "branch": "seed_000__fixed_shrink__mixed__history_replay__narrow",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__narrow.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "short",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 9234,
+          "primary_censored": 81,
+          "primary_request_diagnosis": {
+            "requests": 9234,
+            "completed": 8434,
+            "clean_completed": 3717,
+            "with_recorded_or_inherited_error": 5166,
+            "first_error_patterns": {
+              "wrong_payload": 4902,
+              "early+wrong_payload": 116,
+              "early": 98,
+              "stale_version": 49,
+              "before_begin": 1
+            },
+            "first_error_causes": {
+              "wrong_payload": 4902,
+              "early": 214,
+              "stale_version": 49,
+              "before_begin": 1
+            },
+            "observed_first_error_age_sum": 17125.5,
+            "observed_first_error_age_count": 5166,
+            "began": 9232,
+            "with_observed_legal_opportunity": 9232,
+            "first_observed_legal_count": 9232,
+            "first_observed_legal_content_correct": 3835,
+            "cue_observed_count": 9234,
+            "cue_content_correct_count": 385,
+            "cue_legal_pair_count": 9232,
+            "cue_legal_both_correct": 219,
+            "cue_legal_lost": 166,
+            "cue_legal_gained": 3616,
+            "cue_legal_both_wrong": 5231,
+            "cue_legal_cue_correct": 385,
+            "cue_legal_legal_correct": 3835,
+            "cue_without_legal_count": 2,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 14747,
+            "legally_timed_finish_attempts": 14450,
+            "finish_attempts_with_wrong_content": 6176,
+            "uncompleted_no_begin": 2,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 798,
+            "cue_content_accuracy": 0.04169374052414988,
+            "cue_legal_cue_accuracy": 0.041702772963604855,
+            "cue_legal_legal_accuracy": 0.4154029462738302,
+            "cue_legal_accuracy_given_cue_correct": 0.5688311688311688
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 3,
+            "opportunities": 42872,
+            "model_finish_attempts": 14487,
+            "executed_finish_attempts": 14487,
+            "finish_choice_correct": 20393,
+            "payload_choice_correct": 20787,
+            "version_choice_correct": 41994
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 8434,
+              "denominator": 9234,
+              "value": 91.33636560537145,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 3717,
+              "denominator": 9234,
+              "value": 40.253411306042885,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 9232,
+              "denominator": 9234,
+              "value": 99.97834091401343,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 5166,
+              "denominator": 9234,
+              "value": 55.94541910331384,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 2,
+              "denominator": 9234,
+              "value": 0.021659085986571368,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 798,
+              "denominator": 9234,
+              "value": 8.641975308641975,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 4717,
+              "denominator": 9234,
+              "value": 51.08295429932857,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 4902,
+              "denominator": 9234,
+              "value": 53.08641975308642,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 214,
+              "denominator": 9234,
+              "value": 2.317522200563136,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 49,
+              "denominator": 9234,
+              "value": 0.5306476066709985,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 14747,
+              "denominator": 9234,
+              "value": 1.5970327052198396,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 14487,
+              "denominator": 42872,
+              "value": 33.79128568762829,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 20393,
+              "denominator": 42872,
+              "value": 47.56717671207315,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 20787,
+              "denominator": 42872,
+              "value": 48.48619145362941,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 41994,
+              "denominator": 42872,
+              "value": 97.9520432916589,
+              "unit": "percent"
+            }
+          }
+        },
+        {
+          "seed": 1,
+          "branch": "seed_001__fixed_shrink__mixed__history_replay__narrow",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__narrow.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "short",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 9224,
+          "primary_censored": 79,
+          "primary_request_diagnosis": {
+            "requests": 9224,
+            "completed": 8622,
+            "clean_completed": 3889,
+            "with_recorded_or_inherited_error": 5102,
+            "first_error_patterns": {
+              "wrong_payload": 4914,
+              "early+wrong_payload": 68,
+              "stale_version": 73,
+              "early": 46,
+              "duplicate_begin": 1
+            },
+            "first_error_causes": {
+              "wrong_payload": 4914,
+              "early": 114,
+              "stale_version": 73,
+              "duplicate_begin": 1
+            },
+            "observed_first_error_age_sum": 17096.25,
+            "observed_first_error_age_count": 5102,
+            "began": 9224,
+            "with_observed_legal_opportunity": 9224,
+            "first_observed_legal_count": 9224,
+            "first_observed_legal_content_correct": 3920,
+            "cue_observed_count": 9224,
+            "cue_content_correct_count": 838,
+            "cue_legal_pair_count": 9224,
+            "cue_legal_both_correct": 510,
+            "cue_legal_lost": 328,
+            "cue_legal_gained": 3410,
+            "cue_legal_both_wrong": 4976,
+            "cue_legal_cue_correct": 838,
+            "cue_legal_legal_correct": 3920,
+            "cue_without_legal_count": 0,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 14726,
+            "legally_timed_finish_attempts": 14574,
+            "finish_attempts_with_wrong_content": 6043,
+            "uncompleted_no_begin": 0,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 602,
+            "cue_content_accuracy": 0.09084995663486557,
+            "cue_legal_cue_accuracy": 0.09084995663486557,
+            "cue_legal_legal_accuracy": 0.424978317432784,
+            "cue_legal_accuracy_given_cue_correct": 0.6085918854415274
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 3,
+            "opportunities": 43277,
+            "model_finish_attempts": 14599,
+            "executed_finish_attempts": 14599,
+            "finish_choice_correct": 20825,
+            "payload_choice_correct": 21238,
+            "version_choice_correct": 42271
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 8622,
+              "denominator": 9224,
+              "value": 93.47354726799654,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 3889,
+              "denominator": 9224,
+              "value": 42.16175195143105,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 9224,
+              "denominator": 9224,
+              "value": 100.0,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 5102,
+              "denominator": 9224,
+              "value": 55.3122289679098,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 0,
+              "denominator": 9224,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 602,
+              "denominator": 9224,
+              "value": 6.526452732003469,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 4733,
+              "denominator": 9224,
+              "value": 51.31179531656548,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 4914,
+              "denominator": 9224,
+              "value": 53.27406764960971,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 114,
+              "denominator": 9224,
+              "value": 1.235906331309627,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 73,
+              "denominator": 9224,
+              "value": 0.7914137033824805,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 14726,
+              "denominator": 9224,
+              "value": 1.5964874241110147,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 14599,
+              "denominator": 43277,
+              "value": 33.73385401021328,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 20825,
+              "denominator": 43277,
+              "value": 48.12024863091249,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 21238,
+              "denominator": 43277,
+              "value": 49.074566166786056,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 42271,
+              "denominator": 43277,
+              "value": 97.67543960995448,
+              "unit": "percent"
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "branch": "seed_002__fixed_shrink__mixed__history_replay__narrow",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__narrow.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "short",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 9274,
+          "primary_censored": 94,
+          "primary_request_diagnosis": {
+            "requests": 9274,
+            "completed": 8679,
+            "clean_completed": 3821,
+            "with_recorded_or_inherited_error": 5231,
+            "first_error_patterns": {
+              "wrong_payload": 4962,
+              "early+wrong_payload": 141,
+              "stale_version": 34,
+              "early": 94
+            },
+            "first_error_causes": {
+              "wrong_payload": 4962,
+              "early": 235,
+              "stale_version": 34
+            },
+            "observed_first_error_age_sum": 17068.0,
+            "observed_first_error_age_count": 5231,
+            "began": 9274,
+            "with_observed_legal_opportunity": 9274,
+            "first_observed_legal_count": 9274,
+            "first_observed_legal_content_correct": 3975,
+            "cue_observed_count": 9274,
+            "cue_content_correct_count": 297,
+            "cue_legal_pair_count": 9274,
+            "cue_legal_both_correct": 187,
+            "cue_legal_lost": 110,
+            "cue_legal_gained": 3788,
+            "cue_legal_both_wrong": 5189,
+            "cue_legal_cue_correct": 297,
+            "cue_legal_legal_correct": 3975,
+            "cue_without_legal_count": 0,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 15213,
+            "legally_timed_finish_attempts": 14905,
+            "finish_attempts_with_wrong_content": 6398,
+            "uncompleted_no_begin": 0,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 595,
+            "cue_content_accuracy": 0.032025016174250596,
+            "cue_legal_cue_accuracy": 0.032025016174250596,
+            "cue_legal_legal_accuracy": 0.4286176407159802,
+            "cue_legal_accuracy_given_cue_correct": 0.6296296296296297
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 3,
+            "opportunities": 41246,
+            "model_finish_attempts": 14942,
+            "executed_finish_attempts": 14942,
+            "finish_choice_correct": 19811,
+            "payload_choice_correct": 20048,
+            "version_choice_correct": 40650
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 8679,
+              "denominator": 9274,
+              "value": 93.58421393142117,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 3821,
+              "denominator": 9274,
+              "value": 41.20120767737762,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 9274,
+              "denominator": 9274,
+              "value": 100.0,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 5231,
+              "denominator": 9274,
+              "value": 56.40500323485012,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 0,
+              "denominator": 9274,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 595,
+              "denominator": 9274,
+              "value": 6.415786068578822,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 4858,
+              "denominator": 9274,
+              "value": 52.383006254043565,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 4962,
+              "denominator": 9274,
+              "value": 53.50442096182877,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 235,
+              "denominator": 9274,
+              "value": 2.5339659262454175,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 34,
+              "denominator": 9274,
+              "value": 0.3666163467759327,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 15213,
+              "denominator": 9274,
+              "value": 1.640392495147725,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 14942,
+              "denominator": 41246,
+              "value": 36.22654317994472,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 19811,
+              "denominator": 41246,
+              "value": 48.031324249624205,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 20048,
+              "denominator": 41246,
+              "value": 48.60592542307133,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 40650,
+              "denominator": 41246,
+              "value": 98.55501139504437,
+              "unit": "percent"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ordinary_completion": {
+          "n": 3,
+          "mean": 92.79804226826306,
+          "sample_sd": 1.267057922010604,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 91.33636560537145
+            },
+            {
+              "seed": 1,
+              "value": 93.47354726799654
+            },
+            {
+              "seed": 2,
+              "value": 93.58421393142117
+            }
+          ],
+          "unit": "percent"
+        },
+        "strict_completion": {
+          "n": 3,
+          "mean": 41.20545697828385,
+          "sample_sd": 0.9541774191044208,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 40.253411306042885
+            },
+            {
+              "seed": 1,
+              "value": 42.16175195143105
+            },
+            {
+              "seed": 2,
+              "value": 41.20120767737762
+            }
+          ],
+          "unit": "percent"
+        },
+        "began": {
+          "n": 3,
+          "mean": 99.99278030467114,
+          "sample_sd": 0.012504879124747674,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 99.97834091401343
+            },
+            {
+              "seed": 1,
+              "value": 100.0
+            },
+            {
+              "seed": 2,
+              "value": 100.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "recorded_or_inherited_error": {
+          "n": 3,
+          "mean": 55.88755043535792,
+          "sample_sd": 0.5486806782364231,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 55.94541910331384
+            },
+            {
+              "seed": 1,
+              "value": 55.3122289679098
+            },
+            {
+              "seed": 2,
+              "value": 56.40500323485012
+            }
+          ],
+          "unit": "percent"
+        },
+        "uncompleted_no_begin": {
+          "n": 3,
+          "mean": 0.007219695328857123,
+          "sample_sd": 0.01250487912474823,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.021659085986571368
+            },
+            {
+              "seed": 1,
+              "value": 0.0
+            },
+            {
+              "seed": 2,
+              "value": 0.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "uncompleted_despite_legal": {
+          "n": 3,
+          "mean": 7.194738036408089,
+          "sample_sd": 1.2545650916575113,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 8.641975308641975
+            },
+            {
+              "seed": 1,
+              "value": 6.526452732003469
+            },
+            {
+              "seed": 2,
+              "value": 6.415786068578822
+            }
+          ],
+          "unit": "percent"
+        },
+        "completed_after_error": {
+          "n": 3,
+          "mean": 51.592585289979205,
+          "sample_sd": 0.6940216337527456,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 51.08295429932857
+            },
+            {
+              "seed": 1,
+              "value": 51.31179531656548
+            },
+            {
+              "seed": 2,
+              "value": 52.383006254043565
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_wrong_payload": {
+          "n": 3,
+          "mean": 53.28830278817497,
+          "sample_sd": 0.20936387464172548,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 53.08641975308642
+            },
+            {
+              "seed": 1,
+              "value": 53.27406764960971
+            },
+            {
+              "seed": 2,
+              "value": 53.50442096182877
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_early": {
+          "n": 3,
+          "mean": 2.0291314860393936,
+          "sample_sd": 0.6954254677309807,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 2.317522200563136
+            },
+            {
+              "seed": 1,
+              "value": 1.235906331309627
+            },
+            {
+              "seed": 2,
+              "value": 2.5339659262454175
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_stale_version": {
+          "n": 3,
+          "mean": 0.5628925522764706,
+          "sample_sd": 0.2142265178095432,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.5306476066709985
+            },
+            {
+              "seed": 1,
+              "value": 0.7914137033824805
+            },
+            {
+              "seed": 2,
+              "value": 0.3666163467759327
+            }
+          ],
+          "unit": "percent"
+        },
+        "active_finish_attempts_per_matured_request": {
+          "n": 3,
+          "mean": 1.6113042081595264,
+          "sample_sd": 0.025192670815194596,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 1.5970327052198396
+            },
+            {
+              "seed": 1,
+              "value": 1.5964874241110147
+            },
+            {
+              "seed": 2,
+              "value": 1.640392495147725
+            }
+          ],
+          "unit": "attempts_per_request"
+        },
+        "legal_finish_action": {
+          "n": 3,
+          "mean": 34.58389429259543,
+          "sample_sd": 1.4228654626228978,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 33.79128568762829
+            },
+            {
+              "seed": 1,
+              "value": 33.73385401021328
+            },
+            {
+              "seed": 2,
+              "value": 36.22654317994472
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_finish_readout": {
+          "n": 3,
+          "mean": 47.90624986420328,
+          "sample_sd": 0.296992993635329,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 47.56717671207315
+            },
+            {
+              "seed": 1,
+              "value": 48.12024863091249
+            },
+            {
+              "seed": 2,
+              "value": 48.031324249624205
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_payload_readout": {
+          "n": 3,
+          "mean": 48.722227681162266,
+          "sample_sd": 0.31095154316762896,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 48.48619145362941
+            },
+            {
+              "seed": 1,
+              "value": 49.074566166786056
+            },
+            {
+              "seed": 2,
+              "value": 48.60592542307133
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_version_readout": {
+          "n": 3,
+          "mean": 98.06083143221925,
+          "sample_sd": 0.4497641336595107,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 97.9520432916589
+            },
+            {
+              "seed": 1,
+              "value": 97.67543960995448
+            },
+            {
+              "seed": 2,
+              "value": 98.55501139504437
+            }
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "selector": {
+        "name": "wide_short",
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "condition": "short",
+        "tick": 172032,
+        "family": 0,
+        "steps": 2048,
+        "cohort": "primary"
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "branch": "seed_000__fixed_shrink__mixed__history_replay__wide",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__wide.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "short",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 8997,
+          "primary_censored": 81,
+          "primary_request_diagnosis": {
+            "requests": 8997,
+            "completed": 558,
+            "clean_completed": 412,
+            "with_recorded_or_inherited_error": 3582,
+            "first_error_patterns": {
+              "stale_version": 1615,
+              "wrong_payload": 1234,
+              "duplicate_begin": 3,
+              "early": 175,
+              "early+wrong_payload": 549,
+              "before_begin+wrong_payload": 5,
+              "before_begin": 1
+            },
+            "first_error_causes": {
+              "stale_version": 1615,
+              "wrong_payload": 1234,
+              "duplicate_begin": 3,
+              "early": 724,
+              "before_begin": 6
+            },
+            "observed_first_error_age_sum": 9275.5,
+            "observed_first_error_age_count": 3582,
+            "began": 8981,
+            "with_observed_legal_opportunity": 8981,
+            "first_observed_legal_count": 8981,
+            "first_observed_legal_content_correct": 1385,
+            "cue_observed_count": 8997,
+            "cue_content_correct_count": 1532,
+            "cue_legal_pair_count": 8981,
+            "cue_legal_both_correct": 541,
+            "cue_legal_lost": 988,
+            "cue_legal_gained": 844,
+            "cue_legal_both_wrong": 6608,
+            "cue_legal_cue_correct": 1529,
+            "cue_legal_legal_correct": 1385,
+            "cue_without_legal_count": 16,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 6149,
+            "legally_timed_finish_attempts": 4420,
+            "finish_attempts_with_wrong_content": 5353,
+            "uncompleted_no_begin": 16,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 8423,
+            "cue_content_accuracy": 0.17027898188284984,
+            "cue_legal_cue_accuracy": 0.1702483019708273,
+            "cue_legal_legal_accuracy": 0.1542144527335486,
+            "cue_legal_accuracy_given_cue_correct": 0.3538260300850229
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 3,
+            "opportunities": 69275,
+            "model_finish_attempts": 4426,
+            "executed_finish_attempts": 4426,
+            "finish_choice_correct": 8781,
+            "payload_choice_correct": 16823,
+            "version_choice_correct": 39116
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 558,
+              "denominator": 8997,
+              "value": 6.202067355785262,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 412,
+              "denominator": 8997,
+              "value": 4.579304212515283,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 8981,
+              "denominator": 8997,
+              "value": 99.8221629432033,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 3582,
+              "denominator": 8997,
+              "value": 39.81327109036346,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 16,
+              "denominator": 8997,
+              "value": 0.17783705679671002,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 8423,
+              "denominator": 8997,
+              "value": 93.62009558741804,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 146,
+              "denominator": 8997,
+              "value": 1.622763143269979,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 1234,
+              "denominator": 8997,
+              "value": 13.71568300544626,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 724,
+              "denominator": 8997,
+              "value": 8.047126820051128,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 1615,
+              "denominator": 8997,
+              "value": 17.950427920417916,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 6149,
+              "denominator": 8997,
+              "value": 0.6834500389018562,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 4426,
+              "denominator": 69275,
+              "value": 6.3890292313244315,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 8781,
+              "denominator": 69275,
+              "value": 12.675568386863947,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 16823,
+              "denominator": 69275,
+              "value": 24.284373872248285,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 39116,
+              "denominator": 69275,
+              "value": 56.464814146517504,
+              "unit": "percent"
+            }
+          }
+        },
+        {
+          "seed": 1,
+          "branch": "seed_001__fixed_shrink__mixed__history_replay__wide",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__wide.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "short",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 8996,
+          "primary_censored": 81,
+          "primary_request_diagnosis": {
+            "requests": 8996,
+            "completed": 853,
+            "clean_completed": 383,
+            "with_recorded_or_inherited_error": 4357,
+            "first_error_patterns": {
+              "stale_version": 2001,
+              "wrong_payload": 1144,
+              "early+wrong_payload": 916,
+              "early": 281,
+              "duplicate_begin": 15
+            },
+            "first_error_causes": {
+              "stale_version": 2001,
+              "wrong_payload": 1144,
+              "early": 1197,
+              "duplicate_begin": 15
+            },
+            "observed_first_error_age_sum": 10761.5,
+            "observed_first_error_age_count": 4357,
+            "began": 8983,
+            "with_observed_legal_opportunity": 8983,
+            "first_observed_legal_count": 8983,
+            "first_observed_legal_content_correct": 1331,
+            "cue_observed_count": 8996,
+            "cue_content_correct_count": 1436,
+            "cue_legal_pair_count": 8983,
+            "cue_legal_both_correct": 482,
+            "cue_legal_lost": 954,
+            "cue_legal_gained": 849,
+            "cue_legal_both_wrong": 6698,
+            "cue_legal_cue_correct": 1436,
+            "cue_legal_legal_correct": 1331,
+            "cue_without_legal_count": 13,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 11962,
+            "legally_timed_finish_attempts": 8062,
+            "finish_attempts_with_wrong_content": 10530,
+            "uncompleted_no_begin": 13,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 8130,
+            "cue_content_accuracy": 0.1596265006669631,
+            "cue_legal_cue_accuracy": 0.15985750862740733,
+            "cue_legal_legal_accuracy": 0.14816876321941444,
+            "cue_legal_accuracy_given_cue_correct": 0.33565459610027853
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 3,
+            "opportunities": 68093,
+            "model_finish_attempts": 8094,
+            "executed_finish_attempts": 8094,
+            "finish_choice_correct": 8590,
+            "payload_choice_correct": 16811,
+            "version_choice_correct": 36985
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 853,
+              "denominator": 8996,
+              "value": 9.481991996442863,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 383,
+              "denominator": 8996,
+              "value": 4.257447754557581,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 8983,
+              "denominator": 8996,
+              "value": 99.85549132947978,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 4357,
+              "denominator": 8996,
+              "value": 48.432636727434414,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 13,
+              "denominator": 8996,
+              "value": 0.14450867052023122,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 8130,
+              "denominator": 8996,
+              "value": 90.3734993330369,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 470,
+              "denominator": 8996,
+              "value": 5.224544241885282,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 1144,
+              "denominator": 8996,
+              "value": 12.716763005780347,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 1197,
+              "denominator": 8996,
+              "value": 13.30591373943975,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 2001,
+              "denominator": 8996,
+              "value": 22.243219208537127,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 11962,
+              "denominator": 8996,
+              "value": 1.3297020898176968,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 8094,
+              "denominator": 68093,
+              "value": 11.88668438752882,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 8590,
+              "denominator": 68093,
+              "value": 12.615099936851072,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 16811,
+              "denominator": 68093,
+              "value": 24.688293950920066,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 36985,
+              "denominator": 68093,
+              "value": 54.31542155581337,
+              "unit": "percent"
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "branch": "seed_002__fixed_shrink__mixed__history_replay__wide",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__wide.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "short",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 8995,
+          "primary_censored": 88,
+          "primary_request_diagnosis": {
+            "requests": 8995,
+            "completed": 629,
+            "clean_completed": 414,
+            "with_recorded_or_inherited_error": 4606,
+            "first_error_patterns": {
+              "wrong_payload": 1174,
+              "stale_version": 2087,
+              "duplicate_begin": 56,
+              "early+wrong_payload": 954,
+              "early": 332,
+              "before_begin+wrong_payload": 3
+            },
+            "first_error_causes": {
+              "wrong_payload": 1174,
+              "stale_version": 2087,
+              "duplicate_begin": 56,
+              "early": 1286,
+              "before_begin": 3
+            },
+            "observed_first_error_age_sum": 10756.75,
+            "observed_first_error_age_count": 4606,
+            "began": 8983,
+            "with_observed_legal_opportunity": 8983,
+            "first_observed_legal_count": 8983,
+            "first_observed_legal_content_correct": 1304,
+            "cue_observed_count": 8995,
+            "cue_content_correct_count": 1329,
+            "cue_legal_pair_count": 8983,
+            "cue_legal_both_correct": 385,
+            "cue_legal_lost": 944,
+            "cue_legal_gained": 919,
+            "cue_legal_both_wrong": 6735,
+            "cue_legal_cue_correct": 1329,
+            "cue_legal_legal_correct": 1304,
+            "cue_without_legal_count": 12,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 8127,
+            "legally_timed_finish_attempts": 4999,
+            "finish_attempts_with_wrong_content": 7008,
+            "uncompleted_no_begin": 12,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 8354,
+            "cue_content_accuracy": 0.14774874930516954,
+            "cue_legal_cue_accuracy": 0.1479461204497384,
+            "cue_legal_legal_accuracy": 0.1451630858287877,
+            "cue_legal_accuracy_given_cue_correct": 0.28969149736644095
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 3,
+            "opportunities": 69071,
+            "model_finish_attempts": 5012,
+            "executed_finish_attempts": 5012,
+            "finish_choice_correct": 8764,
+            "payload_choice_correct": 16192,
+            "version_choice_correct": 38553
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 629,
+              "denominator": 8995,
+              "value": 6.992773763201779,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 414,
+              "denominator": 8995,
+              "value": 4.602556976097832,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 8983,
+              "denominator": 8995,
+              "value": 99.86659255141745,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 4606,
+              "denominator": 8995,
+              "value": 51.206225680933855,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 12,
+              "denominator": 8995,
+              "value": 0.13340744858254586,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 8354,
+              "denominator": 8995,
+              "value": 92.87381878821567,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 215,
+              "denominator": 8995,
+              "value": 2.3902167871039466,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 1174,
+              "denominator": 8995,
+              "value": 13.051695386325736,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 1286,
+              "denominator": 8995,
+              "value": 14.296831573096165,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 2087,
+              "denominator": 8995,
+              "value": 23.2017787659811,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 8127,
+              "denominator": 8995,
+              "value": 0.9035019455252918,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 5012,
+              "denominator": 69071,
+              "value": 7.256301486875824,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 8764,
+              "denominator": 69071,
+              "value": 12.688393102749345,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 16192,
+              "denominator": 69071,
+              "value": 23.442544627991488,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 38553,
+              "denominator": 69071,
+              "value": 55.81647869583472,
+              "unit": "percent"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ordinary_completion": {
+          "n": 3,
+          "mean": 7.558944371809968,
+          "sample_sd": 1.7116916429769262,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 6.202067355785262
+            },
+            {
+              "seed": 1,
+              "value": 9.481991996442863
+            },
+            {
+              "seed": 2,
+              "value": 6.992773763201779
+            }
+          ],
+          "unit": "percent"
+        },
+        "strict_completion": {
+          "n": 3,
+          "mean": 4.479769647723566,
+          "sample_sd": 0.1928871195524393,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 4.579304212515283
+            },
+            {
+              "seed": 1,
+              "value": 4.257447754557581
+            },
+            {
+              "seed": 2,
+              "value": 4.602556976097832
+            }
+          ],
+          "unit": "percent"
+        },
+        "began": {
+          "n": 3,
+          "mean": 99.84808227470018,
+          "sample_sd": 0.0231228910619165,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 99.8221629432033
+            },
+            {
+              "seed": 1,
+              "value": 99.85549132947978
+            },
+            {
+              "seed": 2,
+              "value": 99.86659255141745
+            }
+          ],
+          "unit": "percent"
+        },
+        "recorded_or_inherited_error": {
+          "n": 3,
+          "mean": 46.484044499577244,
+          "sample_sd": 5.941179371854448,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 39.81327109036346
+            },
+            {
+              "seed": 1,
+              "value": 48.432636727434414
+            },
+            {
+              "seed": 2,
+              "value": 51.206225680933855
+            }
+          ],
+          "unit": "percent"
+        },
+        "uncompleted_no_begin": {
+          "n": 3,
+          "mean": 0.15191772529982903,
+          "sample_sd": 0.023122891061918314,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.17783705679671002
+            },
+            {
+              "seed": 1,
+              "value": 0.14450867052023122
+            },
+            {
+              "seed": 2,
+              "value": 0.13340744858254586
+            }
+          ],
+          "unit": "percent"
+        },
+        "uncompleted_despite_legal": {
+          "n": 3,
+          "mean": 92.2891379028902,
+          "sample_sd": 1.700436888858016,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 93.62009558741804
+            },
+            {
+              "seed": 1,
+              "value": 90.3734993330369
+            },
+            {
+              "seed": 2,
+              "value": 92.87381878821567
+            }
+          ],
+          "unit": "percent"
+        },
+        "completed_after_error": {
+          "n": 3,
+          "mean": 3.0791747240864025,
+          "sample_sd": 1.8971568332069852,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 1.622763143269979
+            },
+            {
+              "seed": 1,
+              "value": 5.224544241885282
+            },
+            {
+              "seed": 2,
+              "value": 2.3902167871039466
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_wrong_payload": {
+          "n": 3,
+          "mean": 13.161380465850781,
+          "sample_sd": 0.5084126315660821,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 13.71568300544626
+            },
+            {
+              "seed": 1,
+              "value": 12.716763005780347
+            },
+            {
+              "seed": 2,
+              "value": 13.051695386325736
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_early": {
+          "n": 3,
+          "mean": 11.883290710862347,
+          "sample_sd": 3.3589573659303102,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 8.047126820051128
+            },
+            {
+              "seed": 1,
+              "value": 13.30591373943975
+            },
+            {
+              "seed": 2,
+              "value": 14.296831573096165
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_stale_version": {
+          "n": 3,
+          "mean": 21.13180863164538,
+          "sample_sd": 2.7965329478873344,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 17.950427920417916
+            },
+            {
+              "seed": 1,
+              "value": 22.243219208537127
+            },
+            {
+              "seed": 2,
+              "value": 23.2017787659811
+            }
+          ],
+          "unit": "percent"
+        },
+        "active_finish_attempts_per_matured_request": {
+          "n": 3,
+          "mean": 0.9722180247482816,
+          "sample_sd": 0.3285602729881805,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.6834500389018562
+            },
+            {
+              "seed": 1,
+              "value": 1.3297020898176968
+            },
+            {
+              "seed": 2,
+              "value": 0.9035019455252918
+            }
+          ],
+          "unit": "attempts_per_request"
+        },
+        "legal_finish_action": {
+          "n": 3,
+          "mean": 8.510671701909692,
+          "sample_sd": 2.9556956087202653,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 6.3890292313244315
+            },
+            {
+              "seed": 1,
+              "value": 11.88668438752882
+            },
+            {
+              "seed": 2,
+              "value": 7.256301486875824
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_finish_readout": {
+          "n": 3,
+          "mean": 12.659687142154787,
+          "sample_sd": 0.03914246405097759,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 12.675568386863947
+            },
+            {
+              "seed": 1,
+              "value": 12.615099936851072
+            },
+            {
+              "seed": 2,
+              "value": 12.688393102749345
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_payload_readout": {
+          "n": 3,
+          "mean": 24.138404150386613,
+          "sample_sd": 0.635573137938926,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 24.284373872248285
+            },
+            {
+              "seed": 1,
+              "value": 24.688293950920066
+            },
+            {
+              "seed": 2,
+              "value": 23.442544627991488
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_version_readout": {
+          "n": 3,
+          "mean": 55.532238132721865,
+          "sample_sd": 1.102527392191454,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 56.464814146517504
+            },
+            {
+              "seed": 1,
+              "value": 54.31542155581337
+            },
+            {
+              "seed": 2,
+              "value": 55.81647869583472
+            }
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "selector": {
+        "name": "wide_long_both",
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "condition": "long_both",
+        "tick": 172032,
+        "family": 0,
+        "steps": 2048,
+        "cohort": "primary"
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "branch": "seed_000__fixed_shrink__mixed__history_replay__wide",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__wide.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "long_both",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 1344,
+          "primary_censored": 45,
+          "primary_request_diagnosis": {
+            "requests": 1344,
+            "completed": 4,
+            "clean_completed": 4,
+            "with_recorded_or_inherited_error": 31,
+            "first_error_patterns": {
+              "early+wrong_payload": 2,
+              "stale_version": 20,
+              "wrong_payload": 9
+            },
+            "first_error_causes": {
+              "early": 2,
+              "stale_version": 20,
+              "wrong_payload": 9
+            },
+            "observed_first_error_age_sum": 355.5,
+            "observed_first_error_age_count": 31,
+            "began": 1344,
+            "with_observed_legal_opportunity": 1344,
+            "first_observed_legal_count": 1344,
+            "first_observed_legal_content_correct": 176,
+            "cue_observed_count": 1344,
+            "cue_content_correct_count": 268,
+            "cue_legal_pair_count": 1344,
+            "cue_legal_both_correct": 39,
+            "cue_legal_lost": 229,
+            "cue_legal_gained": 137,
+            "cue_legal_both_wrong": 939,
+            "cue_legal_cue_correct": 268,
+            "cue_legal_legal_correct": 176,
+            "cue_without_legal_count": 0,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 37,
+            "legally_timed_finish_attempts": 32,
+            "finish_attempts_with_wrong_content": 33,
+            "uncompleted_no_begin": 0,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 1340,
+            "cue_content_accuracy": 0.19940476190476192,
+            "cue_legal_cue_accuracy": 0.19940476190476192,
+            "cue_legal_legal_accuracy": 0.13095238095238096,
+            "cue_legal_accuracy_given_cue_correct": 0.1455223880597015
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 2,
+            "opportunities": 10740,
+            "model_finish_attempts": 32,
+            "executed_finish_attempts": 32,
+            "finish_choice_correct": 1394,
+            "payload_choice_correct": 2816,
+            "version_choice_correct": 5399
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 4,
+              "denominator": 1344,
+              "value": 0.2976190476190476,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 4,
+              "denominator": 1344,
+              "value": 0.2976190476190476,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 1344,
+              "denominator": 1344,
+              "value": 100.0,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 31,
+              "denominator": 1344,
+              "value": 2.306547619047619,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 0,
+              "denominator": 1344,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 1340,
+              "denominator": 1344,
+              "value": 99.70238095238095,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 0,
+              "denominator": 1344,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 9,
+              "denominator": 1344,
+              "value": 0.6696428571428571,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 2,
+              "denominator": 1344,
+              "value": 0.1488095238095238,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 20,
+              "denominator": 1344,
+              "value": 1.4880952380952381,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 37,
+              "denominator": 1344,
+              "value": 0.027529761904761904,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 32,
+              "denominator": 10740,
+              "value": 0.297951582867784,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 1394,
+              "denominator": 10740,
+              "value": 12.97951582867784,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 2816,
+              "denominator": 10740,
+              "value": 26.21973929236499,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 5399,
+              "denominator": 10740,
+              "value": 50.27001862197393,
+              "unit": "percent"
+            }
+          }
+        },
+        {
+          "seed": 1,
+          "branch": "seed_001__fixed_shrink__mixed__history_replay__wide",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__wide.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "long_both",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 1328,
+          "primary_censored": 38,
+          "primary_request_diagnosis": {
+            "requests": 1328,
+            "completed": 8,
+            "clean_completed": 7,
+            "with_recorded_or_inherited_error": 24,
+            "first_error_patterns": {
+              "stale_version": 7,
+              "wrong_payload": 9,
+              "early+wrong_payload": 7,
+              "early": 1
+            },
+            "first_error_causes": {
+              "stale_version": 7,
+              "wrong_payload": 9,
+              "early": 8
+            },
+            "observed_first_error_age_sum": 314.25,
+            "observed_first_error_age_count": 24,
+            "began": 1328,
+            "with_observed_legal_opportunity": 1328,
+            "first_observed_legal_count": 1328,
+            "first_observed_legal_content_correct": 206,
+            "cue_observed_count": 1328,
+            "cue_content_correct_count": 185,
+            "cue_legal_pair_count": 1328,
+            "cue_legal_both_correct": 40,
+            "cue_legal_lost": 145,
+            "cue_legal_gained": 166,
+            "cue_legal_both_wrong": 977,
+            "cue_legal_cue_correct": 185,
+            "cue_legal_legal_correct": 206,
+            "cue_without_legal_count": 0,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 53,
+            "legally_timed_finish_attempts": 36,
+            "finish_attempts_with_wrong_content": 42,
+            "uncompleted_no_begin": 0,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 1320,
+            "cue_content_accuracy": 0.13930722891566266,
+            "cue_legal_cue_accuracy": 0.13930722891566266,
+            "cue_legal_legal_accuracy": 0.15512048192771086,
+            "cue_legal_accuracy_given_cue_correct": 0.21621621621621623
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 2,
+            "opportunities": 10632,
+            "model_finish_attempts": 36,
+            "executed_finish_attempts": 36,
+            "finish_choice_correct": 1570,
+            "payload_choice_correct": 2952,
+            "version_choice_correct": 5800
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 8,
+              "denominator": 1328,
+              "value": 0.6024096385542169,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 7,
+              "denominator": 1328,
+              "value": 0.5271084337349398,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 1328,
+              "denominator": 1328,
+              "value": 100.0,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 24,
+              "denominator": 1328,
+              "value": 1.8072289156626506,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 0,
+              "denominator": 1328,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 1320,
+              "denominator": 1328,
+              "value": 99.39759036144578,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 1,
+              "denominator": 1328,
+              "value": 0.07530120481927711,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 9,
+              "denominator": 1328,
+              "value": 0.677710843373494,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 8,
+              "denominator": 1328,
+              "value": 0.6024096385542169,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 7,
+              "denominator": 1328,
+              "value": 0.5271084337349398,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 53,
+              "denominator": 1328,
+              "value": 0.039909638554216864,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 36,
+              "denominator": 10632,
+              "value": 0.33860045146726864,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 1570,
+              "denominator": 10632,
+              "value": 14.766741911211437,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 2952,
+              "denominator": 10632,
+              "value": 27.76523702031603,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 5800,
+              "denominator": 10632,
+              "value": 54.5522949586155,
+              "unit": "percent"
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "branch": "seed_002__fixed_shrink__mixed__history_replay__wide",
+          "raw_input": "F:\\agi\\data\\lifelong\\main-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__wide.json",
+          "probe": {
+            "tick": 172032,
+            "family": 0,
+            "condition": "long_both",
+            "steps": 2048,
+            "purpose": "final"
+          },
+          "mature_primary_requests": 1361,
+          "primary_censored": 30,
+          "primary_request_diagnosis": {
+            "requests": 1361,
+            "completed": 0,
+            "clean_completed": 0,
+            "with_recorded_or_inherited_error": 6,
+            "first_error_patterns": {
+              "wrong_payload": 1,
+              "stale_version": 4,
+              "early+wrong_payload": 1
+            },
+            "first_error_causes": {
+              "wrong_payload": 1,
+              "stale_version": 4,
+              "early": 1
+            },
+            "observed_first_error_age_sum": 71.0,
+            "observed_first_error_age_count": 6,
+            "began": 1361,
+            "with_observed_legal_opportunity": 1361,
+            "first_observed_legal_count": 1361,
+            "first_observed_legal_content_correct": 197,
+            "cue_observed_count": 1361,
+            "cue_content_correct_count": 180,
+            "cue_legal_pair_count": 1361,
+            "cue_legal_both_correct": 8,
+            "cue_legal_lost": 172,
+            "cue_legal_gained": 189,
+            "cue_legal_both_wrong": 992,
+            "cue_legal_cue_correct": 180,
+            "cue_legal_legal_correct": 197,
+            "cue_without_legal_count": 0,
+            "legal_without_cue_count": 0,
+            "neither_cue_nor_legal_count": 0,
+            "active_finish_attempts": 7,
+            "legally_timed_finish_attempts": 5,
+            "finish_attempts_with_wrong_content": 7,
+            "uncompleted_no_begin": 0,
+            "uncompleted_began_but_no_legal_opportunity": 0,
+            "uncompleted_despite_legal_opportunity": 1361,
+            "cue_content_accuracy": 0.13225569434239529,
+            "cue_legal_cue_accuracy": 0.13225569434239529,
+            "cue_legal_legal_accuracy": 0.14474650991917706,
+            "cue_legal_accuracy_given_cue_correct": 0.044444444444444446
+          },
+          "pooled_primary_legal_phase": {
+            "age_rows": 2,
+            "opportunities": 10905,
+            "model_finish_attempts": 5,
+            "executed_finish_attempts": 5,
+            "finish_choice_correct": 1547,
+            "payload_choice_correct": 2742,
+            "version_choice_correct": 5632
+          },
+          "metrics": {
+            "ordinary_completion": {
+              "numerator": 0,
+              "denominator": 1361,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "strict_completion": {
+              "numerator": 0,
+              "denominator": 1361,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "began": {
+              "numerator": 1361,
+              "denominator": 1361,
+              "value": 100.0,
+              "unit": "percent"
+            },
+            "recorded_or_inherited_error": {
+              "numerator": 6,
+              "denominator": 1361,
+              "value": 0.440852314474651,
+              "unit": "percent"
+            },
+            "uncompleted_no_begin": {
+              "numerator": 0,
+              "denominator": 1361,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "uncompleted_despite_legal": {
+              "numerator": 1361,
+              "denominator": 1361,
+              "value": 100.0,
+              "unit": "percent"
+            },
+            "completed_after_error": {
+              "numerator": 0,
+              "denominator": 1361,
+              "value": 0.0,
+              "unit": "percent"
+            },
+            "first_error_wrong_payload": {
+              "numerator": 1,
+              "denominator": 1361,
+              "value": 0.07347538574577517,
+              "unit": "percent"
+            },
+            "first_error_early": {
+              "numerator": 1,
+              "denominator": 1361,
+              "value": 0.07347538574577517,
+              "unit": "percent"
+            },
+            "first_error_stale_version": {
+              "numerator": 4,
+              "denominator": 1361,
+              "value": 0.29390154298310067,
+              "unit": "percent"
+            },
+            "active_finish_attempts_per_matured_request": {
+              "numerator": 7,
+              "denominator": 1361,
+              "value": 0.005143277002204262,
+              "unit": "attempts_per_request"
+            },
+            "legal_finish_action": {
+              "numerator": 5,
+              "denominator": 10905,
+              "value": 0.04585052728106373,
+              "unit": "percent"
+            },
+            "legal_conditional_finish_readout": {
+              "numerator": 1547,
+              "denominator": 10905,
+              "value": 14.18615314076112,
+              "unit": "percent"
+            },
+            "legal_conditional_payload_readout": {
+              "numerator": 2742,
+              "denominator": 10905,
+              "value": 25.14442916093535,
+              "unit": "percent"
+            },
+            "legal_conditional_version_readout": {
+              "numerator": 5632,
+              "denominator": 10905,
+              "value": 51.646033929390185,
+              "unit": "percent"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ordinary_completion": {
+          "n": 3,
+          "mean": 0.30000956205775486,
+          "sample_sd": 0.3012119338193904,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.2976190476190476
+            },
+            {
+              "seed": 1,
+              "value": 0.6024096385542169
+            },
+            {
+              "seed": 2,
+              "value": 0.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "strict_completion": {
+          "n": 3,
+          "mean": 0.2749091604513291,
+          "sample_sd": 0.26428702098287615,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.2976190476190476
+            },
+            {
+              "seed": 1,
+              "value": 0.5271084337349398
+            },
+            {
+              "seed": 2,
+              "value": 0.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "began": {
+          "n": 3,
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 100.0
+            },
+            {
+              "seed": 1,
+              "value": 100.0
+            },
+            {
+              "seed": 2,
+              "value": 100.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "recorded_or_inherited_error": {
+          "n": 3,
+          "mean": 1.5182096163949736,
+          "sample_sd": 0.9658435996000022,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 2.306547619047619
+            },
+            {
+              "seed": 1,
+              "value": 1.8072289156626506
+            },
+            {
+              "seed": 2,
+              "value": 0.440852314474651
+            }
+          ],
+          "unit": "percent"
+        },
+        "uncompleted_no_begin": {
+          "n": 3,
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.0
+            },
+            {
+              "seed": 1,
+              "value": 0.0
+            },
+            {
+              "seed": 2,
+              "value": 0.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "uncompleted_despite_legal": {
+          "n": 3,
+          "mean": 99.69999043794225,
+          "sample_sd": 0.3012119338193923,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 99.70238095238095
+            },
+            {
+              "seed": 1,
+              "value": 99.39759036144578
+            },
+            {
+              "seed": 2,
+              "value": 100.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "completed_after_error": {
+          "n": 3,
+          "mean": 0.025100401606425706,
+          "sample_sd": 0.043475170872712784,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.0
+            },
+            {
+              "seed": 1,
+              "value": 0.07530120481927711
+            },
+            {
+              "seed": 2,
+              "value": 0.0
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_wrong_payload": {
+          "n": 3,
+          "mean": 0.47360969542070874,
+          "sample_sd": 0.3465499566220304,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.6696428571428571
+            },
+            {
+              "seed": 1,
+              "value": 0.677710843373494
+            },
+            {
+              "seed": 2,
+              "value": 0.07347538574577517
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_early": {
+          "n": 3,
+          "mean": 0.27489818270317196,
+          "sample_sd": 0.28612344079908103,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.1488095238095238
+            },
+            {
+              "seed": 1,
+              "value": 0.6024096385542169
+            },
+            {
+              "seed": 2,
+              "value": 0.07347538574577517
+            }
+          ],
+          "unit": "percent"
+        },
+        "first_error_stale_version": {
+          "n": 3,
+          "mean": 0.7697017382710929,
+          "sample_sd": 0.6329796828617197,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 1.4880952380952381
+            },
+            {
+              "seed": 1,
+              "value": 0.5271084337349398
+            },
+            {
+              "seed": 2,
+              "value": 0.29390154298310067
+            }
+          ],
+          "unit": "percent"
+        },
+        "active_finish_attempts_per_matured_request": {
+          "n": 3,
+          "mean": 0.024194225820394342,
+          "sample_sd": 0.017621558518442788,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.027529761904761904
+            },
+            {
+              "seed": 1,
+              "value": 0.039909638554216864
+            },
+            {
+              "seed": 2,
+              "value": 0.005143277002204262
+            }
+          ],
+          "unit": "attempts_per_request"
+        },
+        "legal_finish_action": {
+          "n": 3,
+          "mean": 0.22746752053870545,
+          "sample_sd": 0.15859266001162933,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 0.297951582867784
+            },
+            {
+              "seed": 1,
+              "value": 0.33860045146726864
+            },
+            {
+              "seed": 2,
+              "value": 0.04585052728106373
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_finish_readout": {
+          "n": 3,
+          "mean": 13.977470293550132,
+          "sample_sd": 0.9117048127339021,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 12.97951582867784
+            },
+            {
+              "seed": 1,
+              "value": 14.766741911211437
+            },
+            {
+              "seed": 2,
+              "value": 14.18615314076112
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_payload_readout": {
+          "n": 3,
+          "mean": 26.376468491205458,
+          "sample_sd": 1.3174146994302005,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 26.21973929236499
+            },
+            {
+              "seed": 1,
+              "value": 27.76523702031603
+            },
+            {
+              "seed": 2,
+              "value": 25.14442916093535
+            }
+          ],
+          "unit": "percent"
+        },
+        "legal_conditional_version_readout": {
+          "n": 3,
+          "mean": 52.15611583665987,
+          "sample_sd": 2.186231991334174,
+          "per_seed": [
+            {
+              "seed": 0,
+              "value": 50.27001862197393
+            },
+            {
+              "seed": 1,
+              "value": 54.5522949586155
+            },
+            {
+              "seed": 2,
+              "value": 51.646033929390185
+            }
+          ],
+          "unit": "percent"
+        }
+      }
+    }
+  ],
+  "method": "Select exact final2048tick frozen probes. Sum legal_finish count numerators and denominators over age bins within each trained seed, compute that seed's rates, then report the equal-weight mean and sample SD of seeds0,1,2. Request metrics use each seed's mature primary request count. No request-level pseudoreplication.",
+  "limitations": [
+    "Request outcomes and first-error causes concern mature final-effective primary requests; right-censored requests are reported separately.",
+    "The legal-phase table covers policy-dependent active primary opportunities, including possibly right-censored requests; its denominator is not the mature-request denominator.",
+    "Conditional FINISH/payload/version readouts use the existing eight-FINISH head; they do not measure all information recoverable from hidden state and do not establish a chance baseline.",
+    "First-error causes are the evaluator's exclusive attribution; full error patterns and raw counts are retained, and later errors can coexist.",
+    "Low illegal idle action frequency alone does not establish successful active control. Wide probes show acquisition failure before withdrawal, so their floor scores do not demonstrate memory retention.",
+    "Shrink strength, temporal supervision density, old source hidden state with finite current-weight warmup, and capacity are candidate explanations requiring separate interventions; this descriptive analysis identifies none as the unique cause.",
+    "Three independent trained seeds remain the statistical sample size; no new behavior runs or parameter training are performed."
+  ]
+}

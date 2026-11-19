@@ -1,0 +1,54 @@
+{
+  "study": "prior-diagnosis-v1",
+  "role": "exploratory_old_checkpoints_only",
+  "created_utc": "2026-10-27T03:42:02.885835+00:00",
+  "source_sha256": {
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/continuity/model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "experiments/continuity/run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "experiments/integration/run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+    "experiments/integration/local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+    "experiments/integration/diagnose.py": "267d10db504034fba6bd0d9392fc1be40d608e8ac34730b456def839d91f2f73",
+    "experiments/integration/test_diagnose.py": "75d1d8d1e5a06014fd391ba2e80993812ee0a4bfa2e014cdb58fe81c2fd63aa8",
+    "data/integration/prior-diagnosis-v1/worker.py": "af3632499b13b43c046a4ace283aa277d0b0ccaf5c366ebe373c35bd2e79f89b"
+  },
+  "checkpoints": {
+    "A_online128_seed000": {
+      "path": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398"
+    },
+    "A_c256_seed000": {
+      "path": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\c256\\checkpoint.pt",
+      "sha256": "c9f62298bfb460766f75df1bf5ddcdd4b7d0e37ca36fec04ad903170e5f66abb"
+    },
+    "B_current_seed000": {
+      "path": "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_000\\B_current\\checkpoint.pt",
+      "sha256": "363c87174585160d13d175c796d8ff579a25081e997cabb082951a518ac03593"
+    },
+    "B_replay_seed000": {
+      "path": "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_000\\B_replay\\checkpoint.pt",
+      "sha256": "8d659aa9885ca306ddb38e76d046587c9bf2aad68584ea568132f621c37f3d5e"
+    }
+  },
+  "conditions": [
+    "long_wait",
+    "longer",
+    "sparse",
+    "long_sparse"
+  ],
+  "interventions": [
+    "none",
+    "finish_content_oracle",
+    "timing_oracle",
+    "completion_receipt_ablation",
+    "cancel_command_ablation"
+  ],
+  "steps": 1024,
+  "dt": 0.25,
+  "device": "cuda",
+  "torch_threads": 1,
+  "maximum_parallel_workers": 2,
+  "tuning_main_learning_rate": false,
+  "torch_version": "2.11.0+cu130"
+}

@@ -1,0 +1,79 @@
+{
+  "version": "integration-state-inspection-plan-v1",
+  "recorded_utc": "2026-10-27 04:24:01 UTC",
+  "status": "Recorded before inspecting any final checkpoint tensors; synthetic-array validation only until all final runs are ready.",
+  "classification": "Explicitly post-hoc, paper-inspired descriptive inspection, separate from frozen main outcomes, model selection and hyperparameter decisions.",
+  "main_manifest": "F:/agi/docs/evidence/integration-2026-10-27/main-study-v1.json",
+  "main_manifest_sha256": "b6d9bdc3a5cf1f81ff017f8fbd0169e010d6d34ca9d961ec8a5a53a002c56674",
+  "runs": {
+    "seeds": [0, 1, 2],
+    "arms": ["frozen", "bp64", "repeat64", "replay64", "accum128", "bp128", "coact_live", "coact_mix", "coact_mix_shuffled", "coact_only_mix", "coverage_long_dense", "coverage_short_sparse"],
+    "checkpoints": "All 36 final checkpoint.pt files at the exact output paths declared in the main manifest; no intermediate or best checkpoint selection.",
+    "required_stage_ticks": 65536,
+    "batch_size": 64,
+    "width": 128,
+    "total_parameters": 34348,
+    "readiness_gate": "Before loading any real checkpoint, require all 36 checkpoint files and their report.json files to exist, and all reports to match seed, arm, full integration config, final stage_ticks=65536, source hashes and final update budgets. No incomplete inspection is permitted."
+  },
+  "execution": {
+    "device": "CPU only",
+    "arithmetic": "Detached float64 copies for numerical summaries; original saved float32 tensors remain unchanged.",
+    "loading": "Use torch.load(map_location='cpu') on raw checkpoint dictionaries; do not construct Trainer, AgentModel, OnlineWorld or optimizer objects.",
+    "prohibited": ["forward/flow/step calls", "environment advancement", "optimizer or gradient computation", "random draws or RNG restoration", "new training or evaluation", "runtime/source/manifest modification"],
+    "integrity": "SHA256 each checkpoint immediately before and after inspection. Verify the main manifest and all frozen source/test file hashes before and after the complete inspection. Record the inspection plan and new inspector source hashes.",
+    "trigger": "Run only after the coordinating agent confirms all 36 final checkpoints are ready; until then, tests use deterministic synthetic arrays only."
+  },
+  "weight_metrics": {
+    "matrix": "Saved recurrent W, indexed post-by-pre; no learned weights are changed.",
+    "frobenius_norm": "sqrt(sum_ij W_ij^2)",
+    "spectral_norm": "Largest singular value of W, computed on CPU in float64; this is not spectral radius."
+  },
+  "activity_metrics": {
+    "activity": "R_bj=tanh(saved_h_bj), computed in float64 from the single final live hidden snapshot.",
+    "mean": "Overall signed mean and per-unit mean mu_j=mean_b R_bj; also report RMS of mu to avoid cancellation in the signed mean.",
+    "within_actor_variance": "mean_b mean_j (R_bj - mean_k R_bk)^2; population variance across units within each actor, then averaged across actors.",
+    "within_actor_centred_batch_variance": "First A_bj=R_bj-mean_k R_bk. Then mean_j sum_b(A_bj-mean_c A_cj)^2/(B-1). This is distinct from the unmodified R covariance below.",
+    "mean_tanh_derivative": "mean_bj [1-R_bj^2]",
+    "saturation": "Fraction of all B*H activity values with abs(R_bj)>0.95; strict threshold fixed here before inspecting final states.",
+    "common_mode": "mean_vector_energy=sum_j mu_j^2; uncentred_activity_energy=mean_b sum_j R_bj^2; common_mode_energy_fraction=mean_vector_energy/uncentred_activity_energy, defined as 0 when both are zero. Descriptive relevance to the uncentred coactivity rule, not task utility."
+  },
+  "covariance_metrics": {
+    "centering": "Centre R across actors separately for each unit: Z_bj=R_bj-mu_j. Use a reference-row subtraction before mean removal to make identical-row zero variance exact.",
+    "sample_covariance": "C=Z^T Z/(B-1), with B=64, H=128; report its nonnegative eigenvalue spectrum and mean diagonal variance.",
+    "rank_bound": "At most min(H,B-1)=63 for the centred terminal sample, regardless of model capacity.",
+    "roundoff": "Compute eigenvalues in float64, use relative zero tolerance eps64*max(B,H)*largest_eigenvalue, set magnitudes within that tolerance to zero, reject materially negative eigenvalues, and report tolerance and numerical rank.",
+    "participation_ratio": "(sum_i lambda_i)^2/sum_i lambda_i^2; all-zero spectrum gives 0.",
+    "entropy_effective_rank": "exp(-sum_{p_i>0} p_i log p_i), p_i=lambda_i/sum_j lambda_j; all-zero spectrum gives 0. This is entropy rank of the covariance spectrum.",
+    "not_measured": "No trajectory feature matrix or task-conditioned representation rank is computed."
+  },
+  "phase_context": {
+    "source": "Saved world tensor dictionary at the same completed-action boundary as saved_h; no new observation/action is generated.",
+    "timing_alignment": "saved_h has consumed the last observation and generated its action; the saved world flags already reflect that action, but its resulting one-shot receipt has not entered h until the next tick. An inactive world slot can therefore have just completed, rather than implying a quiescent hidden state.",
+    "occupancy": "Count enabled slots, active slots, raw started flags, active-and-started slots, inactive slots, unstarted-feasible, unstarted-missed-start, processing, legal-finish and active-past-deadline categories. Use the frozen world's 1e-6 timing tolerance.",
+    "actor_mixture": "Report histograms across the 64 actors of the number of active jobs and active-and-started jobs, plus actors with no active job. Report raw started flags separately from active-and-started flags; the frozen world clears started on accepted FINISH, while inactivity can also arise through expiry.",
+    "purpose": "Expose quiet/active and heterogeneous task-phase mixtures in the one terminal snapshot; do not treat these actors as 64 independent training replicates."
+  },
+  "summary": {
+    "statistical_unit": "One trained seed; each arm has exactly three terminal snapshots. Report per-seed values and mean +/- sample SD across seeds, never pseudo-replicate across units or actors.",
+    "outputs": "Compact per-seed JSON and scalar CSV, seed-summary CSV/JSON, audit and inspector provenance under docs/evidence/integration-2026-10-27/state-inspection/.",
+    "exploratory_limits": [
+      "These are post-hoc descriptive correlates, not prespecified main outcomes or a selection criterion.",
+      "A single heterogeneous terminal snapshot is not a representation matrix over time or a task-conditioned memory test.",
+      "Lower derivative, saturation, covariance concentration or effective rank alone does not establish causal loss of plasticity, forgetting, useless units or a need for reinitialization.",
+      "Cross-arm state spectra can differ because of their actual task phases and own actions as well as learned weights.",
+      "The common-mode statistic does not measure semantic overlap, cross-experience association or unit importance.",
+      "This does not reproduce the paper's full longitudinal plasticity experiment or infer long-term plasticity loss from one distribution transition."
+    ],
+    "paper_context": "https://www.nature.com/articles/s41586-024-07711-7"
+  },
+  "synthetic_validation": [
+    "Identical and zero activity rows: centred covariance/effective ranks exactly zero.",
+    "A rank-one contrast: participation ratio and covariance entropy rank equal one.",
+    "Diverse equal-energy orthogonal contrasts: equal nonzero covariance eigenvalues and both effective ranks equal the known centred rank.",
+    "Large signed hidden magnitudes: saturation approaches one and mean tanh derivative approaches zero.",
+    "Known diagonal W: spectral and Frobenius norms match hand calculations.",
+    "Within-actor centering removes pure actor-wide offsets while preserving the separately defined original covariance.",
+    "Input tensors and process RNG states are unchanged; no stochastic fixtures are used.",
+    "Incomplete or wrong-stage report sets are rejected before any real checkpoint load."
+  ]
+}

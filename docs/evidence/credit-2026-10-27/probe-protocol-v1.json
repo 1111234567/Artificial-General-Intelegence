@@ -1,0 +1,467 @@
+{
+  "format": "credit-probe-protocol-v1",
+  "config": {
+    "steps": 1024,
+    "dt": 0.25,
+    "samples_per_request_phase": 2,
+    "requests_per_actor_job": 32,
+    "actor_split": [
+      40,
+      12,
+      12
+    ],
+    "seed": 91731,
+    "ridge_alphas": [
+      0.0001,
+      0.01,
+      1.0
+    ]
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "modes": [
+    "frozen",
+    "bp64",
+    "replay64",
+    "bp128",
+    "coact_mix"
+  ],
+  "own_action_forks": 75,
+  "conditions": [
+    "iid",
+    "long_wait",
+    "longer",
+    "sparse",
+    "long_sparse"
+  ],
+  "features": [
+    "raw_h",
+    "exact_model_tanh_h",
+    "actual_obs96"
+  ],
+  "targets": [
+    "payload",
+    "version",
+    "joint",
+    "active",
+    "raw_started",
+    "active_started"
+  ],
+  "controls": [
+    "none",
+    "request_consistent_random_joint_labels",
+    "within_condition_job_split_feature_shuffle"
+  ],
+  "meaning": "Observational independent readouts of existing frozen complete B continuations; no controller update.",
+  "transfer": "Train/validate on four 1--8 conditions, test longer 8--16 on heldout actors; within-longer separate.",
+  "sampling": "Private request/tick hash caps; actor40/12/12 split; unknown inherited/carryover content masked.",
+  "fitting": "Train-only mean/std; per-job one-hot ridge; alpha selected on validation only.",
+  "file_hashes": {
+    "F:\\agi\\experiments\\credit\\probe.py": "b9e903914b3a95d9b583df583a9ed1a2ac79fd2926d1f3b944b27fa9c7db0e85",
+    "F:\\agi\\experiments\\credit\\test_probe.py": "52217de87c81bf8499bb4167e45c679cb910a6d2784f00e2708e4c3bbff44580",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\prepare_probe.py": "fc90aeed7b9f4dfd307214c444842e21c9affddb7facda9dea9c8823ac772b04",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\report.py": "eecf41acb22b955b15995d497bd876750d116c435106ad866f7f37b4ebc52814",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\test_evaluate.py": "8e52c1a303a3aa4af4eeae773b49c7a86502e0009a11d8af95d22e9b8a80a7b3",
+    "F:\\agi\\experiments\\continuity\\test_model.py": "f529f3441af712e7083bf42cb5ed1e80488b66e4b8669889ba8562717a85c8eb",
+    "F:\\agi\\experiments\\continuity\\test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307",
+    "F:\\agi\\experiments\\continuity\\test_world.py": "d5c4c9aac16f7efbc769092e14a55818160c09000977f84dc80c5fd7da09ea5e",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\integration\\__init__.py": "8a072d0d13723b2b090a2b7bb4b0ac8964a2797f40771190403200124b3b3d0b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\integration\\inspect_state.py": "ce9d19e6363765133fdaef8b3ba31bcb6bda7472102ae8b203a09240a6a03eaf",
+    "F:\\agi\\experiments\\integration\\local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+    "F:\\agi\\experiments\\integration\\report.py": "f696ca3955bb73ab8464a84654ec2c5ef44177de5a8b9c44f0048792bd8300e1",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\test_diagnose.py": "1af364f170e556073651e9f7124290b7915f04698805fdf4dab8ee2908b1790c",
+    "F:\\agi\\experiments\\integration\\test_inspect_state.py": "8452a86be9af6a52be064afd8864c7f65fa2e48a863cbdd3f75f47dc1f368b9d",
+    "F:\\agi\\experiments\\integration\\test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5",
+    "F:\\agi\\experiments\\integration\\test_report.py": "4fbb4957f1b6125f449ce4cf6e7dae2997c3c7689b75766d862f3eb006339ea6",
+    "F:\\agi\\experiments\\integration\\test_run.py": "f835758a41deb56427667529516c10cb6b6d5feba90388276aacbdcfc139e02b",
+    "F:\\agi\\data\\integration\\main-v1\\seed_000\\frozen\\checkpoint.pt": "07e26118ddca146740c776ddf6524dc3a3806b82a9086b5da38203efda952631",
+    "F:\\agi\\data\\integration\\main-v1\\seed_000\\bp64\\checkpoint.pt": "7c436033ba8f0c2792dcb59097a2b98ae4722767f0011d71e07e1d4881dbb37a",
+    "F:\\agi\\data\\integration\\main-v1\\seed_000\\replay64\\checkpoint.pt": "b4e39ee4f26a0e973c06f3115a9b635d1c6ed420a79f51a26cd4d498280f8830",
+    "F:\\agi\\data\\integration\\main-v1\\seed_000\\bp128\\checkpoint.pt": "2b8864f1a95892b94f7dfe8224ae8c94ea06d67a1ce204577afa968967f0bb31",
+    "F:\\agi\\data\\integration\\main-v1\\seed_000\\coact_mix\\checkpoint.pt": "e8ae1ad8c458635516994d7b53a7335dcd16ac7461e53b48f0515e90c6f11811",
+    "F:\\agi\\data\\integration\\main-v1\\seed_001\\frozen\\checkpoint.pt": "96fcff41d57aa352b5f09f58856d5c82588defec6b7f0ed4a29984f89c2d7958",
+    "F:\\agi\\data\\integration\\main-v1\\seed_001\\bp64\\checkpoint.pt": "1c698331a64f3bec13e181d50c341b72212a41ba0add4927945533904b6c56de",
+    "F:\\agi\\data\\integration\\main-v1\\seed_001\\replay64\\checkpoint.pt": "5f634031496feb42d3db0fa9291be8e540e0d7137a9c13176f9adb5a7e9fe758",
+    "F:\\agi\\data\\integration\\main-v1\\seed_001\\bp128\\checkpoint.pt": "d619f29a7fbd66cb2a82dc2f777301c601fc22dbe72710dde44f96b45fbde109",
+    "F:\\agi\\data\\integration\\main-v1\\seed_001\\coact_mix\\checkpoint.pt": "20c34eded3ac3b3fb38963b45de822c059a9a67767985d901ccb9de49aebdab9",
+    "F:\\agi\\data\\integration\\main-v1\\seed_002\\frozen\\checkpoint.pt": "6842524dc82ea6dd626f25ae2af71a0b87616b386ac8cb316ac7e4ffc5c966a8",
+    "F:\\agi\\data\\integration\\main-v1\\seed_002\\bp64\\checkpoint.pt": "dd03055f879e77ec4c84b44af8f8c8c1f7c031ad9fd5f8de108c413552210cd6",
+    "F:\\agi\\data\\integration\\main-v1\\seed_002\\replay64\\checkpoint.pt": "75158a18347af885d3595450bf3707dd34480707a21763da6bcfe5eced58701f",
+    "F:\\agi\\data\\integration\\main-v1\\seed_002\\bp128\\checkpoint.pt": "7dda676d8ddbd6d76596a63f6145064ade66a649d99a3af9a671cce579494d00",
+    "F:\\agi\\data\\integration\\main-v1\\seed_002\\coact_mix\\checkpoint.pt": "686ae55c3fd623946c50b813e941408d990a10c4d44c15b0433072eae33eecb3"
+  },
+  "cwd": "F:\\agi",
+  "jobs": [
+    {
+      "id": "seed_000_frozen",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\frozen\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_frozen\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_frozen\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_000_frozen\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_frozen\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_000_bp64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\bp64\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp64\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp64\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp64\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp64\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_000_replay64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\replay64\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_replay64\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_replay64\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_000_replay64\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_replay64\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_000_bp128",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\bp128\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp128\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp128\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp128\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_bp128\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_000_coact_mix",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\coact_mix\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_coact_mix\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_coact_mix\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_000_coact_mix\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_000_coact_mix\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_001_frozen",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\frozen\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_frozen\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_frozen\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_001_frozen\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_frozen\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_001_bp64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\bp64\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp64\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp64\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp64\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp64\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_001_replay64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\replay64\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_replay64\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_replay64\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_001_replay64\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_replay64\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_001_bp128",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\bp128\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp128\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp128\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp128\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_bp128\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_001_coact_mix",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\coact_mix\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_coact_mix\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_coact_mix\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_001_coact_mix\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_001_coact_mix\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_002_frozen",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\frozen\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_frozen\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_frozen\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_002_frozen\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_frozen\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_002_bp64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\bp64\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp64\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp64\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp64\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp64\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_002_replay64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\replay64\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_replay64\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_replay64\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_002_replay64\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_replay64\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_002_bp128",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\bp128\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp128\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp128\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp128\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_bp128\\probe.json"
+      ]
+    },
+    {
+      "id": "seed_002_coact_mix",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.probe",
+        "--checkpoint",
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\coact_mix\\checkpoint.pt",
+        "--output",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_coact_mix\\probe.json",
+        "--dataset-dir",
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_coact_mix\\datasets",
+        "--steps",
+        "1024",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ],
+      "log": "F:\\agi\\data\\credit\\probe-v1\\seed_002_coact_mix\\process.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\probe-v1\\seed_002_coact_mix\\probe.json"
+      ]
+    }
+  ]
+}

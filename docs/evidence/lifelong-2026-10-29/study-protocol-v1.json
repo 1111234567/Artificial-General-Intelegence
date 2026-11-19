@@ -1,0 +1,792 @@
+{
+  "format": "lifelong-study-protocol-v1",
+  "created_utc": "2026-10-29T05:01:10.198398+00:00",
+  "sources": {
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\lifelong\\queue.py": "570fe22b4dbf5b3e24787ee0319576ff819b5523c7a78926993ffc98fa0e0255",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\lifelong\\run.py": "90f0c36313169e5fc7d3534d9971e09a408a1e93d38a388600049d011b3d84ab",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\study.py": "cfa35a1fc8f651c4fc3362279d123a6c9fde51dd277205db3abec3b7f1301634",
+    "F:\\agi\\experiments\\lifelong\\test_queue.py": "eb3fb7ae327c0818c0e6d85396382eb4f06998635e78cbfdcc6e1c4a5ea1e420",
+    "F:\\agi\\experiments\\lifelong\\test_replay.py": "2acb27a9bcc323940e82daa9dcdf6d394702c70a9600d08e3f5e948cf1f2a47f",
+    "F:\\agi\\experiments\\lifelong\\test_run.py": "54a101f1ba61336d32bdf126cc511c4d3d34b6f3ab487a96c02a93fe2346b5b9",
+    "F:\\agi\\experiments\\lifelong\\test_schedule.py": "85018b1a65fcbc83bbeda0db14b27601d1099149f43a2893c1d3eb6964eb7783",
+    "F:\\agi\\experiments\\lifelong\\test_study.py": "27443863c1debfe689b14d2d1eea9ae72fd0dbbb329cb2a88087e9dcd3d4eb94",
+    "F:\\agi\\experiments\\lifelong\\test_world.py": "228f5b0213510bb4fbf760967ffe51d51bf45a05b4e543b0dc82e7d3863ae486",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\factors\\structure.py": "f8a6a1946fc42a1a1265324d0b4143d3b15045c0cbb1bb34aba2c39638cd1c89",
+    "F:\\agi\\experiments\\rewiring\\plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374",
+    "F:\\agi\\experiments\\loops\\audit_run.py": "2cc71ebb857be76c769894ec3b355c9aea19c09ebf1826bea9d389f41cbbf9bc",
+    "F:\\agi\\experiments\\loops\\structure.py": "af282d6000adfe37b35da6342c48714a89bacd108ea976cece4a274fc49b0ea6",
+    "F:\\agi\\experiments\\loops\\interventions.py": "15007d06490fcaed6f2956d93294d21f48509c60b676f4009b89f91c328cc452"
+  },
+  "branches": [
+    {
+      "id": "seed_000__fixed_shrink__blocked__recent_repeat__narrow",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__blocked__recent_repeat__narrow"
+    },
+    {
+      "id": "seed_000__fixed_shrink__blocked__recent_repeat__wide",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__blocked__recent_repeat__wide"
+    },
+    {
+      "id": "seed_000__fixed_shrink__blocked__history_replay__narrow",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__blocked__history_replay__narrow"
+    },
+    {
+      "id": "seed_000__fixed_shrink__blocked__history_replay__wide",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__blocked__history_replay__wide"
+    },
+    {
+      "id": "seed_000__fixed_shrink__mixed__recent_repeat__narrow",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__recent_repeat__narrow"
+    },
+    {
+      "id": "seed_000__fixed_shrink__mixed__recent_repeat__wide",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__recent_repeat__wide"
+    },
+    {
+      "id": "seed_000__fixed_shrink__mixed__history_replay__narrow",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow"
+    },
+    {
+      "id": "seed_000__fixed_shrink__mixed__history_replay__wide",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_000__grow_shrink__mixed__history_replay__wide",
+      "seed": 0,
+      "architecture": "grow_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\grow_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_000__open_shrink__mixed__history_replay__wide",
+      "seed": 0,
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_001__fixed_shrink__blocked__recent_repeat__narrow",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__blocked__recent_repeat__narrow"
+    },
+    {
+      "id": "seed_001__fixed_shrink__blocked__recent_repeat__wide",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__blocked__recent_repeat__wide"
+    },
+    {
+      "id": "seed_001__fixed_shrink__blocked__history_replay__narrow",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__blocked__history_replay__narrow"
+    },
+    {
+      "id": "seed_001__fixed_shrink__blocked__history_replay__wide",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__blocked__history_replay__wide"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__recent_repeat__narrow",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__recent_repeat__narrow"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__recent_repeat__wide",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__recent_repeat__wide"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__history_replay__narrow",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__history_replay__wide",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_001__grow_shrink__mixed__history_replay__wide",
+      "seed": 1,
+      "architecture": "grow_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\grow_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_001__open_shrink__mixed__history_replay__wide",
+      "seed": 1,
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_002__fixed_shrink__blocked__recent_repeat__narrow",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__blocked__recent_repeat__narrow"
+    },
+    {
+      "id": "seed_002__fixed_shrink__blocked__recent_repeat__wide",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__blocked__recent_repeat__wide"
+    },
+    {
+      "id": "seed_002__fixed_shrink__blocked__history_replay__narrow",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__blocked__history_replay__narrow"
+    },
+    {
+      "id": "seed_002__fixed_shrink__blocked__history_replay__wide",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__blocked__history_replay__wide"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__recent_repeat__narrow",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__recent_repeat__narrow"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__recent_repeat__wide",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__recent_repeat__wide"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__history_replay__narrow",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__history_replay__wide",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_002__grow_shrink__mixed__history_replay__wide",
+      "seed": 2,
+      "architecture": "grow_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\grow_shrink__mixed__history_replay__wide"
+    },
+    {
+      "id": "seed_002__open_shrink__mixed__history_replay__wide",
+      "seed": 2,
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "output": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide"
+    }
+  ],
+  "variants": [
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "narrow"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "recent_repeat",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "narrow"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "blocked",
+      "learning": "history_replay",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "narrow"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "recent_repeat",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "grow_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide"
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "target_ticks": 172032,
+  "main_ticks": 131072,
+  "withdrawal_ticks": 32768,
+  "return_ticks": 8192,
+  "chunk_ticks": 128,
+  "batch_size": 32,
+  "width": 128,
+  "initial_fan_in": 32,
+  "dt": 0.25,
+  "training_device": "cuda",
+  "evaluation_device": "cpu",
+  "checkpoint_ticks": [
+    0,
+    1024,
+    32768,
+    33792,
+    65536,
+    66560,
+    98304,
+    99328,
+    131072,
+    163840,
+    164864,
+    167936,
+    172032
+  ],
+  "evaluation_specs": [
+    {
+      "tick": 1024,
+      "family": 0,
+      "condition": "short",
+      "steps": 1024,
+      "purpose": "early_main"
+    },
+    {
+      "tick": 1024,
+      "family": 1,
+      "condition": "short",
+      "steps": 1024,
+      "purpose": "early_main"
+    },
+    {
+      "tick": 1024,
+      "family": 2,
+      "condition": "short",
+      "steps": 1024,
+      "purpose": "early_main"
+    },
+    {
+      "tick": 1024,
+      "family": 3,
+      "condition": "short",
+      "steps": 1024,
+      "purpose": "early_main"
+    },
+    {
+      "tick": 32768,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 32768,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 32768,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 32768,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 65536,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 65536,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 65536,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 65536,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 98304,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 98304,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 98304,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 98304,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 131072,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 131072,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 131072,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 131072,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "main_retention"
+    },
+    {
+      "tick": 163840,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "before_return"
+    },
+    {
+      "tick": 163840,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "before_return"
+    },
+    {
+      "tick": 163840,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "before_return"
+    },
+    {
+      "tick": 163840,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "before_return"
+    },
+    {
+      "tick": 164864,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "return_learning"
+    },
+    {
+      "tick": 167936,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 1024,
+      "purpose": "return_learning"
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "long_wait",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "long_idle",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "far",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "long_wait",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "long_idle",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "far",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "long_wait",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "long_idle",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "far",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "short",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "long_wait",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "long_idle",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 2048,
+      "purpose": "final"
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "far",
+      "steps": 2048,
+      "purpose": "final"
+    }
+  ],
+  "replay_capacity": 32,
+  "replay_block_ticks": 256,
+  "replay_warmup_ticks": 128,
+  "attachment": {
+    "path": "C:\\Users\\Jerry\\.codex\\attachments\\8dccaaef-d964-42c2-b355-70d6ef60c6f3\\已粘贴的文本.txt",
+    "sha256": "803710ab4ed8b926c7321678f9964480df06e6f000d150110abce16fb18f7dfa"
+  },
+  "family_mappings": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      0,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      3,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      0
+    ]
+  ],
+  "timing_coverage": {
+    "narrow": {
+      "duration": [
+        1.0,
+        4.0
+      ],
+      "gap": [
+        0.5,
+        2.0
+      ]
+    },
+    "wide": {
+      "duration": [
+        1.0,
+        16.0
+      ],
+      "gap": [
+        0.5,
+        32.0
+      ]
+    }
+  },
+  "primary": "Frozen-weight function retention before the withheld family receives any new live feedback, followed by matched return learning; strict, ordinary and idle errors all retained.",
+  "learning": "Live128 and auxiliary suffix128 are computed before one shared Adam update; equal normalized gradient mix. Recent reconstruction and historical replay both use128 detached warmup, except matching startup fallback. Admission is nonoverlapping256, after update; retention and sampling RNGs separate.",
+  "native": "All policies operate from random birth. Same initial sparse W/function per seed; fixed/grow/open rules differ from first update, no pretrained graft. Initial fan-in32 scaled by sqrt(128/32); hidden zeros only at birth.",
+  "limits": [
+    "Four observable contexts change payload rules with shared/conflicting cases; the control goals still share the same request protocol, not unrelated real-world domains.",
+    "Main schedule budgets match live ticks, not exact per-family request counts; actual commands and supervised positions are measured.",
+    "Wider time support changes event density as well as coverage under fixed tick budgets.",
+    "History replay processes original own-trajectory observations and labels; it does not recreate a fresh closed-loop world or overwrite the live hidden state.",
+    "All branches have the same dense tensor allocation and one Adam step per live128; auxiliary work is matched, not free.",
+    "Open/grow capacity trajectories can diverge; native structural contrasts test complete update policies, not pure placement at identical live edge counts.",
+    "Native growth retains the previously specified shadow and shared-age Adam handoff; no extra age fix is silently added.",
+    "Recurring task rules and interval control do not yet establish hierarchical composition, general intelligence or unrestricted lifelong learning."
+  ]
+}

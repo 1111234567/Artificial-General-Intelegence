@@ -1,0 +1,49 @@
+{
+  "all_complete_before_scoring": true,
+  "checkpoints": {
+    "data\\learned-binding\\frozen-trace-v3\\seed_000\\pretrain\\final.pt": "462795752c845b05cd3c99deb904162e8b8a338e73066be3546029bea3b7ea0b",
+    "data\\learned-binding\\frozen-trace-v3\\seed_001\\pretrain\\final.pt": "1be2c5e87542a2b3a36fe3a2e0a09b3fab8933ec0098a39884203750aced5332",
+    "data\\learned-binding\\frozen-trace-v3\\seed_002\\pretrain\\final.pt": "b75c715df2d3a6c06d0a798bd27955791ba4befe042897b47db7ab6fc44a4a89"
+  },
+  "model_parameter_hashes": {
+    "data\\learned-binding\\frozen-trace-v3\\seed_000\\pretrain\\final.pt": "4e5f5ee953688b6510b6a39e3e0d29d65c0fe99cee60a7016471a5fdfbdbd0c8",
+    "data\\learned-binding\\frozen-trace-v3\\seed_001\\pretrain\\final.pt": "dce848bc3bb3fef1ccd7863640a100bfb76f3fd048fdc1e06cb26a68be5f0cb4",
+    "data\\learned-binding\\frozen-trace-v3\\seed_002\\pretrain\\final.pt": "427f0b2cd1b675cab52bc40e1f3553f13de5252be599c711e8d5c1cc06cc554a"
+  },
+  "training_metadata": {
+    "0": {
+      "path": "data\\learned-binding\\frozen-trace-v3\\seed_000\\pretrain\\training.json",
+      "sha256": "197873a43fe2132f195dc1c2c498b02e99e454fd1a1bf2e270e4cb3fcca09081"
+    },
+    "1": {
+      "path": "data\\learned-binding\\frozen-trace-v3\\seed_001\\pretrain\\training.json",
+      "sha256": "7463aedd64cdc68f67007bea17c979fcf78b032b538342f4cb3fd1da7fa8dad3"
+    },
+    "2": {
+      "path": "data\\learned-binding\\frozen-trace-v3\\seed_002\\pretrain\\training.json",
+      "sha256": "14ce21af4f90b3d766843705b1117d3e4645e0a315576151f2d85c5ac395c9e4"
+    }
+  },
+  "source_protocol_sha256": "6c6b067bcc5c883c4e56743e4419da632487654ae83dc5c55e86528064ebcf53",
+  "architecture": "FrozenTracePolicy",
+  "encoder_frozen": true,
+  "encoder_hashes": {
+    "0": "f0c47376b90fca93987f01b5445e2d67650dbd033b3648b2e94533763d292cbf",
+    "1": "45ca5b66db5a00b106c1d92371e77acf41dfe7bd6f196116051d945f1024e6bc",
+    "2": "5534295b759a50bf253ec221808e6040434f17e51558969fbb2626c6a1e1142b"
+  },
+  "encoder_matches_seeded_initialization": true,
+  "read_write_order": "read_then_write_job0_then_job1",
+  "trainable_parameters": 2258,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "updates_per_seed": 512,
+  "devices": {
+    "0": "cuda",
+    "1": "cpu",
+    "2": "cpu"
+  }
+}

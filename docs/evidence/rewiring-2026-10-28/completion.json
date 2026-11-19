@@ -1,0 +1,138 @@
+{
+  "format": "rewiring-study-completion-v1",
+  "complete": true,
+  "completed_utc": "2026-10-28T15:23:23.769706+00:00",
+  "completed_asia_shanghai": "2026-10-28T23:23:23.769706+08:00",
+  "training_runs": 21,
+  "phase_checkpoints": 42,
+  "evaluation_forks": 210,
+  "independent_training_seeds": 3,
+  "unique_tests": 517,
+  "test_evidence": {
+    "tests-final.xml": {
+      "tests": 517,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "tests-report-analysis-final.xml": {
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "analysis_tests_rerun_not_added_to_unique_count": 61,
+  "audit_checks": 5302688,
+  "audit_errors": 0,
+  "audited_input_files": 592,
+  "historical_dense_core_exact_reproductions": 3,
+  "exact_reproduction_scope": "Model, Adam, hidden, actions/data. World equality requires removal only of regime name metadata; complete checkpoint bytes differ.",
+  "hidden_resets": 0,
+  "figure_files_visually_checked": 2,
+  "execution": {
+    "training": {
+      "path": "F:\\agi\\data\\rewiring\\main-v1\\training-execution.json",
+      "sha256": "295f7627498c7441a8a9009b40250dac93c72c96856e57ba46e0017daecfb94f",
+      "successful_jobs": 21,
+      "resume_history": [
+        {
+          "archive": "F:\\agi\\data\\rewiring\\main-v1\\training-execution-attempt-001.json",
+          "sha256": "c7d6fe96f96e9809416f87ac18cb2a490a8a8773a7ace2c7558fcf88aff865b7",
+          "resumed_utc": "2026-10-28T14:37:07.821936+00:00",
+          "jobs": [
+            "seed_000_random_high",
+            "seed_001_retire_low",
+            "seed_001_learned_low",
+            "seed_001_random_low",
+            "seed_001_retire_high",
+            "seed_001_learned_high"
+          ],
+          "reason": "coordinator failed; each branch resumes its latest complete checkpoint"
+        },
+        {
+          "archive": "F:\\agi\\data\\rewiring\\main-v1\\training-execution-attempt-002.json",
+          "sha256": "d5b0a21ea16dba8ef60dbe70e872a19395de64920fef174b396546a0438422be",
+          "resumed_utc": "2026-10-28T14:48:48.600449+00:00",
+          "jobs": [
+            "seed_001_learned_high",
+            "seed_001_random_high",
+            "seed_002_dense",
+            "seed_002_retire_low",
+            "seed_002_learned_low",
+            "seed_002_random_low",
+            "seed_002_retire_high",
+            "seed_002_learned_high",
+            "seed_002_random_high"
+          ],
+          "reason": "coordinator failed; each branch resumes its latest complete checkpoint"
+        }
+      ]
+    },
+    "evaluation": {
+      "path": "F:\\agi\\data\\rewiring\\main-v1\\evaluation-execution.json",
+      "sha256": "438e3deb8593fad121871a715bdb383120ea4dab500eb4c109b39191360af6c7",
+      "successful_jobs": 21,
+      "resume_history": []
+    }
+  },
+  "execution_revisions": [
+    "evaluation-coordinator-revision-v1.json",
+    "concurrency-revision-v1.json",
+    "app-interruption-recovery-v1.json"
+  ],
+  "training_worker_limit_final": 10,
+  "cpu_evaluation_worker_limit_final": 12,
+  "files": {
+    "agi.md": "4f76d0cd824a8e7afad63238f5d8677f468c63e2eaf063573d58b1ce4b6325f1",
+    "CHANGELOG.md": "0b82d5f9a5490e710725a2af27f2dc9e755b0fc70929a17ed04ade74e2389a05",
+    "docs/design.md": "dc67fc574f5a2f985d63dbcf12f69e6bbb0f2b800cd262f4b33ad464ea728fc2",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/capacity_trajectory.csv": "1947e3134069e16e54f01d9ca7175521869035f7389e7146fdf7a3dcfc572858",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/contrast_per_seed.csv": "394a52f9b10955347ff538ddcc12f8920cc0b34905645cb5f3c38332eb1d5c8f",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/cost_per_seed.csv": "bdbcdbe93a6b27cf59b8ad3b85d031005c297ecde1152e7280ac8bc5c78050f0",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/cost_summary.csv": "d50ae709e9cdfde5c2b3346c46e40e8e13df5b7c48b9e03cfb9f74b714be71f3",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/input_files.csv": "033ce8302c2c6ceb5b5ebf754e1755c297cc63bac60089ff71060f174129eccf",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/main_summary.csv": "485c8a1910e9f8aeeffca29b622fbe0cf4fb2fc2dd54a6d44672c028062d1239",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/paired_contrasts.csv": "e8aa7193670f63346df7db4003d67f917bc357670a8168296f084dded27417cd",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/per_seed.csv": "784fa4f6407522139e47390b0c0ce8d80657a6b7dba5796b045b4d757e8f135b",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/phase_change_per_seed.csv": "6b337093cfbb17ad9bfbb0f505b043461fe6180e14746fb20da34fdb7b7aca67",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/phase_changes.csv": "13350899cc9ce06544257de6fa051bce9fd96c90d2b8d13dbb2df9a87455797c",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/report.json": "34b3a3f01d76578e5ac54c14bccc2c3088ee7aee0c710865ebc93ca87a5b6284",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/structural_per_seed.csv": "d1924d7311d93fde4fe3382145b0b2cb7bb61d34bb348e7c864c2bd39edb3cb7",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/structural_summary.csv": "cea87b2d9b2db44747f9b1c2d33d6f48435a779bcc62dd426d5a6a15811180c6",
+    "docs/evidence/rewiring-2026-10-28/aggregate-v1/structural_windows.csv": "eac3084693c1871a02cb5b5dd31212ac90e2c20847e4a5fc1090e105e08e4c2a",
+    "docs/evidence/rewiring-2026-10-28/app-interruption-recovery-v1.json": "ccefa2235dbe683346d3ab86c95a548851f80f426ebec9ad3b508322cf606a93",
+    "docs/evidence/rewiring-2026-10-28/concurrency-revision-v1.json": "41a201e562d7588e8af944b2c9a0dfd3d3071fe2496b8e8051187e0dd8bffb4a",
+    "docs/evidence/rewiring-2026-10-28/evaluation-commands-v1.json": "31424ee753a823430d77b014c0b60a2dd78c63f3b0a50af73997db7cb889d1df",
+    "docs/evidence/rewiring-2026-10-28/evaluation-coordinator-revision-v1.json": "9e9bea3629608dc6188f1ca257d3a58b2f64e8eecddedbc314e7b83445d46782",
+    "docs/evidence/rewiring-2026-10-28/figures/connection-history.png": "11b78f876cf34d444155a267e80896c575e7abea2f0854281b539aa39515eb4f",
+    "docs/evidence/rewiring-2026-10-28/figures/connection-history.svg": "04336093155d943cb9defb48c01ba87c33a550f2beb1074d7f9e464c09ae59cd",
+    "docs/evidence/rewiring-2026-10-28/figures/phase-comparison.png": "0df5f04839447797f5f2ddadb630e012a62fa46ce8f711b6a69d79a0edc36f9d",
+    "docs/evidence/rewiring-2026-10-28/figures/phase-comparison.svg": "c06f8d4b85a2186ad7dc22c916f8c11af2836874f4cccafe2d8c07c27360cb8a",
+    "docs/evidence/rewiring-2026-10-28/mechanical-smoke-v1.json": "5c7f732cc250184dd53c3e0f3a06f6c2de3438afb8652794c465c24855030db7",
+    "docs/evidence/rewiring-2026-10-28/study-protocol-v1.json": "ebb35d430e4ec69e618b754137e749e3f73fbb52a9592c9b80ea16ab8bc4c7c7",
+    "docs/evidence/rewiring-2026-10-28/tests-final.xml": "e2dee666684ca20d53b5a488546eb01ffc675163808809610bd1c88b7e582196",
+    "docs/evidence/rewiring-2026-10-28/tests-report-analysis-final.xml": "4a3f2fa17424ac80b4a896caebbf215b94f3f06ca01faa9abdc21eb5201d2a59",
+    "docs/evidence/rewiring-2026-10-28/training-commands-v1.json": "3f9cd1998969f49ed183a79529f3b71a27575ae8aaebcbde978de02a3d4e63dc",
+    "docs/experiments.md": "c0998b2346ba7c94240682fd744f7b2ee958154fc5b3b230fb1cc5327b918e54",
+    "docs/reference.md": "41f2c84e5fcbab40639c4d52a8b0fac609241ab927bbeadad54b14d5644e734c",
+    "docs/rewiring-experiment-2026-10-28.md": "2f2f99655b85eedb089da66787af89619d65dfe347229b7addcbba9963e4db2f",
+    "experiments/README.md": "f9cdd22f5d7eaa72399737d1487206305daa86c5318ee81205b1a7bb09fcdbec",
+    "experiments/rewiring/__init__.py": "1720878f474fe7007b6f59d0dbe3ca37f315e23ce6609d622e4861e71d9ac323",
+    "experiments/rewiring/evaluate_ready.py": "f135288d19cccedcd0eadf67e865506e39cf8a3bc7627f418a1d3df9f46a7a28",
+    "experiments/rewiring/plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "experiments/rewiring/plot_results.py": "2ba1002117b173f2f6e130ef199c232e4e24c5b6ea90132e47aa87a6edfe3588",
+    "experiments/rewiring/README.md": "8b2c5513ea0626579b4e54a1fa4a368a1cdf57707e4d40aab114e46f6311228e",
+    "experiments/rewiring/report.py": "ef39904d560aac1a77dc27ce4314ad1ef553a3a9fa488c4b3c01ce1b3314495f",
+    "experiments/rewiring/run.py": "35b6beaf51115c6f99d95127def4de5b95a78a3c7de8ff66adb741d4ff879c4c",
+    "experiments/rewiring/study.py": "9c713624d9ec5d9a46f4ccd19aa418427fc856261ab512b5d7668e50125417fb",
+    "experiments/rewiring/test_evaluate_ready.py": "07f046cbadca9523606f5511b5b8a64b8329893562111f01a2678d6591fc57d4",
+    "experiments/rewiring/test_plasticity.py": "2db336fc41be93118c7e15b4735cf366915ad68d7a85dc1f23960c6f5c57c976",
+    "experiments/rewiring/test_report.py": "cb22fb9a2bbc9851179bed75e3fe3dc54a77ebf5fa8b6f41a7dc067cbed9c2cc",
+    "experiments/rewiring/test_run.py": "215512037cf33d520a098c08449ed6b694a959de5733c9d8b520d53b73275e71",
+    "experiments/rewiring/test_study.py": "214fe2714feec61dec6dd65eb4f97554105b4d07a3e87492fd6c0e52436e0728",
+    "README.md": "ae8d9508cb36246ecdc8b4d7e2da4276cd32131aac9d3bc670f7e295797172e2"
+  },
+  "scope": "Actual independent connection births and zero-only retirement inside inherited continuous recurrent controller. Full candidate positions and neuron count fixed; dense arithmetic retained.",
+  "remaining_required_work": []
+}

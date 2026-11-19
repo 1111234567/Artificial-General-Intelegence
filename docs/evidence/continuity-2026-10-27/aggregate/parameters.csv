@@ -1,0 +1,8 @@
+﻿variant,policy,hidden_reset_period,kind,input_size,n_jobs,n_actions,state_scalars,total_parameters,trainable_parameters,max_solver_step,time_constant,seeds
+c64,teacher,0,learned,96,4,11,64,13100,13100,0.25,1.0,"[0, 1, 2]"
+c128,teacher,0,learned,96,4,11,128,34348,34348,0.25,1.0,"[0, 1, 2]"
+c256,teacher,0,learned,96,4,11,256,101420,101420,0.25,1.0,"[0, 1, 2]"
+reset128,teacher,512,learned,96,4,11,128,34348,34348,0.25,1.0,"[0, 1, 2]"
+reservoir128,teacher,0,reservoir,96,4,11,128,34348,17964,0.25,1.0,"[0, 1, 2]"
+gru128,teacher,0,gru,96,4,11,128,117420,117420,0.25,,"[0, 1, 2]"
+online128,online,0,learned,96,4,11,128,34348,34348,0.25,1.0,"[0, 1, 2]"

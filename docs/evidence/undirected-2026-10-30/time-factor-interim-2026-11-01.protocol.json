@@ -1,0 +1,580 @@
+{
+  "format": "undirected-interim-time-factor-protocol-v1",
+  "created_utc": "2026-11-01T11:14:54.312220+00:00",
+  "classification": "Post-hoc supplemental measurement, chosen after seeing seed0 core long_both failure; outside the original 42 branches/1680 forks.",
+  "rationale": "Separate future request processing duration from intertask idle after the two core seed0 models made zero legally timed FINISH attempts in formal long_both. No endpoint ranking or pooled-seed inference is authorized.",
+  "original_protocol": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+  "original_protocol_sha256": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc",
+  "sources": {
+    "F:\\agi\\experiments\\undirected\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\test_model.py": "636ad022366233cdf414a09313b02bfe9484b090dae7620782f9e035028428a1",
+    "F:\\agi\\experiments\\undirected\\credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "F:\\agi\\experiments\\undirected\\test_credit.py": "4ce8cd859ad99b05239958fbc38cc869dee890d791d3360e2238302da05b63cd",
+    "F:\\agi\\experiments\\undirected\\plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7",
+    "F:\\agi\\experiments\\undirected\\test_plasticity.py": "bf7f0984474990b4a82fb3ab3abb0402414b2da20dfa8432921f359f7065072d",
+    "F:\\agi\\experiments\\undirected\\run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "F:\\agi\\experiments\\undirected\\test_run.py": "e6981df9823fbc56b95ec1b8562c5028d40eda672bac9236a984f0d3a754f855",
+    "F:\\agi\\experiments\\undirected\\study.py": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+    "F:\\agi\\experiments\\undirected\\test_study.py": "71b162f4eeb1318c8ef1acfc70bf2041f2d75d15f1c83efc52cc9157ddb12a88",
+    "F:\\agi\\experiments\\undirected\\queue.py": "863371fa5fb1ab70e896eb1a936f1fda01af06f3a67b59bed2fb5f4ca540bb33",
+    "F:\\agi\\experiments\\undirected\\test_queue.py": "d3dfab0ad05f812a7800dc0134ead83ab02a354e8cc03389f446b6638af48bdc",
+    "F:\\agi\\experiments\\undirected\\ledger.py": "8b0f5284a9a5e53d14af9081e6d95f83cb4f854523d431a475edc2e65d76080a",
+    "F:\\agi\\experiments\\undirected\\test_ledger.py": "1fb9180ce0af912b49265b3df0408d38b4575d8559002da0fd4d5995022d794e",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\time-factor-interim-2026-11-01.py": "4b9a3563d20a247c0a6397e12f6b3b3982ce5c32beaafe555011064cc638f7c8"
+  },
+  "models": [
+    {
+      "branch": {
+        "id": "seed_000__core__undirected__recorded512__fixed__warmup",
+        "seed": 0,
+        "interface": "core",
+        "mode": "undirected",
+        "credit": "recorded512",
+        "structure": "fixed",
+        "course": "warmup",
+        "native_config": {
+          "seed": 0,
+          "interface": "core",
+          "mode": "undirected",
+          "credit": "recorded512",
+          "course": "warmup",
+          "structure": "fixed",
+          "width": 80,
+          "batch_size": 8,
+          "n_jobs": 2,
+          "chunk_ticks": 128,
+          "dtype": "float64",
+          "device": "cpu",
+          "world_device": "cpu",
+          "cpu_threads": 1,
+          "initial_degree": 16,
+          "birth_gain": 0.6,
+          "pulse_gain": 0.25,
+          "dt": 0.25,
+          "max_step": 0.25,
+          "lr": 0.001,
+          "clip": 1.0,
+          "wait_weight": 0.1,
+          "replay_capacity": 32,
+          "main_ticks": 196608,
+          "withdrawal_ticks": 32768,
+          "return_ticks": 8192,
+          "warmup_ticks": 65536,
+          "macrocycle_ticks": 32768,
+          "block_ticks": 8192,
+          "jacrev_chunk_size": 8,
+          "structural_window_updates": 8,
+          "structural_candidates": 4,
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "deterministic": true
+        },
+        "output": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup"
+      },
+      "checkpoint": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+        "sha256": "d1e575cf1fa156f3a13b25acf1f5233b45bee6dd849ba01f0347769886ab2796",
+        "semantic_hash": "64f60d4878d125e2461323c2f400f4bdbe1477d7eb484d511ee3e43e99f1981d"
+      },
+      "snapshot_index": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\snapshots.json",
+      "snapshot_index_sha256": "1761426233acadbbacf3337ad4534ad161f42f774b3910dff5a8bb52dffea200"
+    },
+    {
+      "branch": {
+        "id": "seed_000__core__untied__recorded512__fixed__warmup",
+        "seed": 0,
+        "interface": "core",
+        "mode": "untied",
+        "credit": "recorded512",
+        "structure": "fixed",
+        "course": "warmup",
+        "native_config": {
+          "seed": 0,
+          "interface": "core",
+          "mode": "untied",
+          "credit": "recorded512",
+          "course": "warmup",
+          "structure": "fixed",
+          "width": 80,
+          "batch_size": 8,
+          "n_jobs": 2,
+          "chunk_ticks": 128,
+          "dtype": "float64",
+          "device": "cpu",
+          "world_device": "cpu",
+          "cpu_threads": 1,
+          "initial_degree": 16,
+          "birth_gain": 0.6,
+          "pulse_gain": 0.25,
+          "dt": 0.25,
+          "max_step": 0.25,
+          "lr": 0.001,
+          "clip": 1.0,
+          "wait_weight": 0.1,
+          "replay_capacity": 32,
+          "main_ticks": 196608,
+          "withdrawal_ticks": 32768,
+          "return_ticks": 8192,
+          "warmup_ticks": 65536,
+          "macrocycle_ticks": 32768,
+          "block_ticks": 8192,
+          "jacrev_chunk_size": 8,
+          "structural_window_updates": 8,
+          "structural_candidates": 4,
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "deterministic": true
+        },
+        "output": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup"
+      },
+      "checkpoint": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+        "sha256": "d7e74c5fa451b5a76c55c2388889e332c2fbfdd9fe0ace7101be8df2d5acddde",
+        "semantic_hash": "c8da85fb2c9190f5044060ac23fcbd2a9c1ddda960f8661b4ab043bbc86b887c"
+      },
+      "snapshot_index": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\snapshots.json",
+      "snapshot_index_sha256": "31c935835169c65518688511349a8251a0abd4b6d6d34a9c26af9592a5147ae3"
+    },
+    {
+      "branch": {
+        "id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+        "seed": 0,
+        "interface": "ports",
+        "mode": "undirected",
+        "credit": "recorded512",
+        "structure": "fixed",
+        "course": "warmup",
+        "native_config": {
+          "seed": 0,
+          "interface": "ports",
+          "mode": "undirected",
+          "credit": "recorded512",
+          "course": "warmup",
+          "structure": "fixed",
+          "width": 80,
+          "batch_size": 8,
+          "n_jobs": 2,
+          "chunk_ticks": 128,
+          "dtype": "float64",
+          "device": "cpu",
+          "world_device": "cpu",
+          "cpu_threads": 1,
+          "initial_degree": 16,
+          "birth_gain": 0.6,
+          "pulse_gain": 0.25,
+          "dt": 0.25,
+          "max_step": 0.25,
+          "lr": 0.001,
+          "clip": 1.0,
+          "wait_weight": 0.1,
+          "replay_capacity": 32,
+          "main_ticks": 196608,
+          "withdrawal_ticks": 32768,
+          "return_ticks": 8192,
+          "warmup_ticks": 65536,
+          "macrocycle_ticks": 32768,
+          "block_ticks": 8192,
+          "jacrev_chunk_size": 8,
+          "structural_window_updates": 8,
+          "structural_candidates": 4,
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "deterministic": true
+        },
+        "output": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__recorded512__fixed__warmup"
+      },
+      "checkpoint": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+        "sha256": "4bbaa88670026816710f6ec3c16881284e600f3d94fcf6233de672c8e54e3a4c",
+        "semantic_hash": "6301588deadd4451966b6644b82c101768240d0fa0e817327ea3b5cd6041aad6"
+      },
+      "snapshot_index": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__recorded512__fixed__warmup\\snapshots.json",
+      "snapshot_index_sha256": "1c7fba055ad6909be11a8c333b55bdd9112aca2d8db26bfcf8da34db8da7bfbd"
+    },
+    {
+      "branch": {
+        "id": "seed_000__ports__untied__recorded512__fixed__warmup",
+        "seed": 0,
+        "interface": "ports",
+        "mode": "untied",
+        "credit": "recorded512",
+        "structure": "fixed",
+        "course": "warmup",
+        "native_config": {
+          "seed": 0,
+          "interface": "ports",
+          "mode": "untied",
+          "credit": "recorded512",
+          "course": "warmup",
+          "structure": "fixed",
+          "width": 80,
+          "batch_size": 8,
+          "n_jobs": 2,
+          "chunk_ticks": 128,
+          "dtype": "float64",
+          "device": "cpu",
+          "world_device": "cpu",
+          "cpu_threads": 1,
+          "initial_degree": 16,
+          "birth_gain": 0.6,
+          "pulse_gain": 0.25,
+          "dt": 0.25,
+          "max_step": 0.25,
+          "lr": 0.001,
+          "clip": 1.0,
+          "wait_weight": 0.1,
+          "replay_capacity": 32,
+          "main_ticks": 196608,
+          "withdrawal_ticks": 32768,
+          "return_ticks": 8192,
+          "warmup_ticks": 65536,
+          "macrocycle_ticks": 32768,
+          "block_ticks": 8192,
+          "jacrev_chunk_size": 8,
+          "structural_window_updates": 8,
+          "structural_candidates": 4,
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "deterministic": true
+        },
+        "output": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__untied__recorded512__fixed__warmup"
+      },
+      "checkpoint": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+        "sha256": "529f8ae51d3fc48e0688d0213986dc27438f1b52c7b01c463bd3a73710b98e9f",
+        "semantic_hash": "7965b1d5553695f0f2054c0c4b46ecfd5b1ddfb151d4cab0338937667f1d6776"
+      },
+      "snapshot_index": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__untied__recorded512__fixed__warmup\\snapshots.json",
+      "snapshot_index_sha256": "c8a88942f28d9bb402d61a0d945daa6fde7715620166741f63b701d1e3d76936"
+    }
+  ],
+  "seed": 0,
+  "independent_trained_seeds": 1,
+  "checkpoint_tick": 196608,
+  "steps_per_fork": 2048,
+  "planned_additional_forks": 32,
+  "grid": [
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_wait",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 0,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 1,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 2,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    },
+    {
+      "branch_id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "family": 3,
+      "condition": "long_idle",
+      "steps": 2048,
+      "tick": 196608
+    }
+  ],
+  "conditions": {
+    "short": {
+      "duration_range": [
+        1.0,
+        4.0
+      ],
+      "gap_range": [
+        0.5,
+        2.0
+      ]
+    },
+    "long_both": {
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "long_wait": {
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        0.5,
+        2.0
+      ]
+    },
+    "long_idle": {
+      "duration_range": [
+        1.0,
+        4.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    }
+  },
+  "dt": 0.25,
+  "output": "F:\\agi\\data\\undirected\\interim-time-factor-v1",
+  "optional_formal_comparators": {
+    "conditions": [
+      "short",
+      "long_both"
+    ],
+    "tick": 196608,
+    "rule": "Reuse matching existing frozen formal outputs only; bind their bytes at extraction and never rerun or modify them."
+  },
+  "resources": {
+    "device": "cpu",
+    "dtype": "float64",
+    "cpu_threads": 1,
+    "own_processes": 1,
+    "loaded_checkpoints_at_once": 1,
+    "min_available_bytes_before_each_model": 2147483648
+  },
+  "frozen_contract": "Existing evaluator/teacher, model eleven-way argmax, copied original world/RNG/contracts and original h; only future NEW duration/gap and family change. No training or formal exposure/parameter changes.",
+  "integrity": "Validate original plan and canonical CP bytes/full restore/semantic digest before each model, before and after every fork; verify source bytes and CP bytes afterward. Preserve all raw fork diagnostics.",
+  "reporting": "Report every planned fork including execution/resource deferral. Four-family rates and raw denominators; actor/family/fork are not independent trained seeds. Primary matured requests and all-opportunity idle diagnostics are separate denominators.",
+  "pre_execution_amendment": "Before any supplemental fork: add live-training action/target class counts over 0-65536,65536-131072,131072-196608 from each already-loaded trainer.trace, checking 2048 positions per block. Actual BEGIN counts attempts; live only, no auxiliary replay or causal claim. Fork grid unchanged.",
+  "operational_clock_binding_correction": {
+    "time_utc": "2026-11-01T11:18:16.105619+00:00",
+    "reason": "Initial unpublished fork rejected by supplementary validator: canonical native tick196608 preserves zero-indexed source world.tick196607. Bind fork_tick to actual validated source world tick. No source model/evaluator/checkpoint or grid change. No supplemental raw record existed before this correction.",
+    "preserved_evidence": "F:/agi/data/undirected/interim-time-factor-v1/operational-recovery-v1",
+    "original_protocol_sha256": "c0cd0567a7579784ed6564ebf0dd8ac344f9c3a08678e2410cd041087294d9a2"
+  }
+}

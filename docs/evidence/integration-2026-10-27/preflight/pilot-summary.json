@@ -1,0 +1,458 @@
+{
+  "format": "integration-pilot-summary-v1",
+  "completed_utc": "2026-10-27T03:47:32.134992+00:00",
+  "plan": {
+    "format": "integration-pilot-plan-v1",
+    "created_utc": "2026-10-27T03:44:09.992721+00:00",
+    "source": "F:\\agi\\data\\integration\\pilot-source-v1\\seed_101\\online128\\checkpoint.pt",
+    "source_seed": 101,
+    "required_source_updates": 2048,
+    "ticks_per_arm": 16384,
+    "tau": 16.0,
+    "max_parallel_pilot_workers": 2,
+    "arms": [
+      {
+        "label": "bp64",
+        "mode": "bp64",
+        "local_lr": 0.001
+      },
+      {
+        "label": "mix_1e4",
+        "mode": "coact_mix",
+        "local_lr": 0.0001
+      },
+      {
+        "label": "mix_1e3",
+        "mode": "coact_mix",
+        "local_lr": 0.001
+      },
+      {
+        "label": "only_1e3",
+        "mode": "coact_only_mix",
+        "local_lr": 0.001
+      }
+    ],
+    "regime": {
+      "duration_range": [
+        4.0,
+        8.0
+      ],
+      "gap_range": [
+        4.0,
+        12.0
+      ]
+    },
+    "decision_before_pilot": ".001 is the formal coefficient if finite and exact-resumable; .0001 is sensitivity only; no task-score selection",
+    "evaluation": "none; own training execution, numerical and update-scale diagnostics only",
+    "frozen_integration_source_hashes": {
+      "run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+      "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+      "test_run.py": "d42f9832c748385e449ca1fd956099293eb5a99ce6ad093d37c94d6afe6fc0ff",
+      "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+    },
+    "orchestrator_sha256": "d90524329039d22123af9aa07a6a47e42ba52b1fdf278124eb7ae2f8451888db"
+  },
+  "source_sha256": "94b40669d7b0010e1d204211e2f20dc19e3a3a5e772cd7baef02f56ffdd0e8ad",
+  "source_and_runtime_unchanged": true,
+  "results": [
+    {
+      "label": "bp64",
+      "checkpoint": "F:\\agi\\data\\integration\\pilot-learning-v1\\bp64\\checkpoint.pt",
+      "checkpoint_sha256": "7db5e5a6e60031a6658d24a99e43aca4bfb9df13f1602fc7e7762f749adc16de",
+      "integration_config": {
+        "mode": "bp64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      },
+      "origin": {
+        "checkpoint": "F:\\agi\\data\\integration\\pilot-source-v1\\seed_101\\online128\\checkpoint.pt",
+        "checkpoint_sha256": "94b40669d7b0010e1d204211e2f20dc19e3a3a5e772cd7baef02f56ffdd0e8ad",
+        "semantic_hash": "1453a8135d200e7c42d495888d523b4040ad2a6eafe1fcca8e9819ee844054c1",
+        "model_hash": "8d5fcb764f917a230a7d0e6ff73e021c671b9d2217c6defac454c49a2de9cdde",
+        "optimizer_hash": "35665fac04da2164814486c94efc388c46e45471d474357d05287f88a9944861",
+        "hidden_hash": "cc0ed79b6f8526524466f0a99c16510b8978d44e1e9c6386d58a7b0ed918abd5",
+        "world_hash": "32e4a10ccc9135c424438d9f8b8f24bcd379fff9283ebb24767bf858aff9f814",
+        "replay_hash": "60164677c8d5f2f9596b8a3c0f3e2207c63f3a4670c50d19ec2913ae4244d283",
+        "rng_hash": "68ed48277552134857195bbf3b7b8d9713d51d5a14c67da2b77f066244dfae05",
+        "tick": 131072,
+        "update": 2048,
+        "inherited_source_hashes": {
+          "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+          "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+          "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+        }
+      },
+      "source_hashes": {
+        "run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+        "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+        "test_run.py": "d42f9832c748385e449ca1fd956099293eb5a99ce6ad093d37c94d6afe6fc0ff",
+        "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+      },
+      "updates": 256,
+      "ticks": 16384,
+      "gradient_updates": 256,
+      "local_updates": 0,
+      "work": {
+        "live_forward_ticks": 16384,
+        "current_reprocess_forward_ticks": 0,
+        "old_forward_ticks": 0,
+        "old_burnin_ticks": 0,
+        "supervised_ticks": 16384,
+        "local_contributing_ticks": 0,
+        "backward_horizon_ticks": 16384,
+        "old_samples": 0
+      },
+      "finite": {
+        "model": true,
+        "optimizer": true,
+        "hidden": true,
+        "local_live": true,
+        "local_replay": true,
+        "update_norms": true,
+        "stage_losses": true,
+        "all_stage_norms": true
+      },
+      "all_finite": true,
+      "loss_first": 1.0877463817596436,
+      "loss_last": 0.3338276743888855,
+      "bp_recurrent_delta_mean": 0.04814140830327908,
+      "bp_all_delta_mean": 0.06108216530153064,
+      "local_recurrent_delta_mean": null,
+      "bp_recurrent_delta_max": 0.07034860564471786,
+      "local_recurrent_delta_max": null,
+      "hidden_frob": 74.73462769716218,
+      "recurrent_frob": 14.999977719685996,
+      "update_norms": {
+        "bp_recurrent_frob_sum": 12.32420052563945,
+        "bp_recurrent_frob_squared_sum": 0.612312538586116,
+        "bp_all_frob_sum": 15.637034317191844,
+        "bp_all_frob_squared_sum": 0.9992309058325247,
+        "local_recurrent_frob_sum": 0.0,
+        "local_recurrent_frob_squared_sum": 0.0
+      },
+      "private_rng_hashes": {},
+      "old_sampler_rng_hash": "f7dc3b83c74e4fdb98ea2521551df4d5e85b70ac0e0280c0a1eec6e99d411d95"
+    },
+    {
+      "label": "mix_1e4",
+      "checkpoint": "F:\\agi\\data\\integration\\pilot-learning-v1\\mix_1e4\\checkpoint.pt",
+      "checkpoint_sha256": "978e7955eada70e918c52cfefb2af37f724ccb246a8f3cb03b7d8d5f219a834f",
+      "integration_config": {
+        "mode": "coact_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.0001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      },
+      "origin": {
+        "checkpoint": "F:\\agi\\data\\integration\\pilot-source-v1\\seed_101\\online128\\checkpoint.pt",
+        "checkpoint_sha256": "94b40669d7b0010e1d204211e2f20dc19e3a3a5e772cd7baef02f56ffdd0e8ad",
+        "semantic_hash": "1453a8135d200e7c42d495888d523b4040ad2a6eafe1fcca8e9819ee844054c1",
+        "model_hash": "8d5fcb764f917a230a7d0e6ff73e021c671b9d2217c6defac454c49a2de9cdde",
+        "optimizer_hash": "35665fac04da2164814486c94efc388c46e45471d474357d05287f88a9944861",
+        "hidden_hash": "cc0ed79b6f8526524466f0a99c16510b8978d44e1e9c6386d58a7b0ed918abd5",
+        "world_hash": "32e4a10ccc9135c424438d9f8b8f24bcd379fff9283ebb24767bf858aff9f814",
+        "replay_hash": "60164677c8d5f2f9596b8a3c0f3e2207c63f3a4670c50d19ec2913ae4244d283",
+        "rng_hash": "68ed48277552134857195bbf3b7b8d9713d51d5a14c67da2b77f066244dfae05",
+        "tick": 131072,
+        "update": 2048,
+        "inherited_source_hashes": {
+          "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+          "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+          "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+        }
+      },
+      "source_hashes": {
+        "run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+        "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+        "test_run.py": "d42f9832c748385e449ca1fd956099293eb5a99ce6ad093d37c94d6afe6fc0ff",
+        "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+      },
+      "updates": 256,
+      "ticks": 16384,
+      "gradient_updates": 256,
+      "local_updates": 256,
+      "work": {
+        "live_forward_ticks": 16384,
+        "current_reprocess_forward_ticks": 0,
+        "old_forward_ticks": 32768,
+        "old_burnin_ticks": 16384,
+        "supervised_ticks": 16384,
+        "local_contributing_ticks": 32768,
+        "backward_horizon_ticks": 16384,
+        "old_samples": 256
+      },
+      "finite": {
+        "model": true,
+        "optimizer": true,
+        "hidden": true,
+        "local_live": true,
+        "local_replay": true,
+        "update_norms": true,
+        "stage_losses": true,
+        "all_stage_norms": true
+      },
+      "all_finite": true,
+      "loss_first": 1.0877463817596436,
+      "loss_last": 0.3006369173526764,
+      "bp_recurrent_delta_mean": 0.048527083939176936,
+      "bp_all_delta_mean": 0.06154101675119845,
+      "local_recurrent_delta_mean": 0.001073283067853481,
+      "bp_recurrent_delta_max": 0.06968641453052045,
+      "local_recurrent_delta_max": 0.0014586936449632049,
+      "hidden_frob": 75.53071270705146,
+      "recurrent_frob": 14.91496469541754,
+      "update_norms": {
+        "bp_recurrent_frob_sum": 12.422933488429301,
+        "bp_recurrent_frob_squared_sum": 0.6200946651774921,
+        "bp_all_frob_sum": 15.754500288306799,
+        "bp_all_frob_squared_sum": 1.0096904162872415,
+        "local_recurrent_frob_sum": 0.27476046537049115,
+        "local_recurrent_frob_squared_sum": 0.000300722627521676
+      },
+      "private_rng_hashes": {
+        "local_live": "777bdf05aa6c064b736ceaf4ecc841067cf4d02afb4f0e7dcdf4b68f68dc94fb",
+        "local_replay": "ed1310faf46d79b20c9156f55ef72777e0be92dfb8272d8fcb729589fc9eda05"
+      },
+      "old_sampler_rng_hash": "3af15ec1a9452f432182b108d725e55a1d0d7137f9f3186b9677af2fe657234d"
+    },
+    {
+      "label": "mix_1e3",
+      "checkpoint": "F:\\agi\\data\\integration\\pilot-learning-v1\\mix_1e3\\checkpoint.pt",
+      "checkpoint_sha256": "b5b1af3efd60a9b60ed5c1098d77b0e6d326cfc0b1faa8f26d9d31ce48be0702",
+      "integration_config": {
+        "mode": "coact_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      },
+      "origin": {
+        "checkpoint": "F:\\agi\\data\\integration\\pilot-source-v1\\seed_101\\online128\\checkpoint.pt",
+        "checkpoint_sha256": "94b40669d7b0010e1d204211e2f20dc19e3a3a5e772cd7baef02f56ffdd0e8ad",
+        "semantic_hash": "1453a8135d200e7c42d495888d523b4040ad2a6eafe1fcca8e9819ee844054c1",
+        "model_hash": "8d5fcb764f917a230a7d0e6ff73e021c671b9d2217c6defac454c49a2de9cdde",
+        "optimizer_hash": "35665fac04da2164814486c94efc388c46e45471d474357d05287f88a9944861",
+        "hidden_hash": "cc0ed79b6f8526524466f0a99c16510b8978d44e1e9c6386d58a7b0ed918abd5",
+        "world_hash": "32e4a10ccc9135c424438d9f8b8f24bcd379fff9283ebb24767bf858aff9f814",
+        "replay_hash": "60164677c8d5f2f9596b8a3c0f3e2207c63f3a4670c50d19ec2913ae4244d283",
+        "rng_hash": "68ed48277552134857195bbf3b7b8d9713d51d5a14c67da2b77f066244dfae05",
+        "tick": 131072,
+        "update": 2048,
+        "inherited_source_hashes": {
+          "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+          "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+          "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+        }
+      },
+      "source_hashes": {
+        "run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+        "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+        "test_run.py": "d42f9832c748385e449ca1fd956099293eb5a99ce6ad093d37c94d6afe6fc0ff",
+        "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+      },
+      "updates": 256,
+      "ticks": 16384,
+      "gradient_updates": 256,
+      "local_updates": 256,
+      "work": {
+        "live_forward_ticks": 16384,
+        "current_reprocess_forward_ticks": 0,
+        "old_forward_ticks": 32768,
+        "old_burnin_ticks": 16384,
+        "supervised_ticks": 16384,
+        "local_contributing_ticks": 32768,
+        "backward_horizon_ticks": 16384,
+        "old_samples": 256
+      },
+      "finite": {
+        "model": true,
+        "optimizer": true,
+        "hidden": true,
+        "local_live": true,
+        "local_replay": true,
+        "update_norms": true,
+        "stage_losses": true,
+        "all_stage_norms": true
+      },
+      "all_finite": true,
+      "loss_first": 1.0877463817596436,
+      "loss_last": 0.42324894666671753,
+      "bp_recurrent_delta_mean": 0.0510662029488501,
+      "bp_all_delta_mean": 0.06403638346270521,
+      "local_recurrent_delta_mean": 0.013994910652399994,
+      "bp_recurrent_delta_max": 0.06953107898750296,
+      "local_recurrent_delta_max": 0.017248056828975677,
+      "hidden_frob": 98.97964278985206,
+      "recurrent_frob": 14.246446510337679,
+      "update_norms": {
+        "bp_recurrent_frob_sum": 13.072947954905631,
+        "bp_recurrent_frob_squared_sum": 0.6806351767420424,
+        "bp_all_frob_sum": 16.39331416645253,
+        "bp_all_frob_squared_sum": 1.0823679494180056,
+        "local_recurrent_frob_sum": 3.5826971270143986,
+        "local_recurrent_frob_squared_sum": 0.051052764504464554
+      },
+      "private_rng_hashes": {
+        "local_live": "777bdf05aa6c064b736ceaf4ecc841067cf4d02afb4f0e7dcdf4b68f68dc94fb",
+        "local_replay": "ed1310faf46d79b20c9156f55ef72777e0be92dfb8272d8fcb729589fc9eda05"
+      },
+      "old_sampler_rng_hash": "3af15ec1a9452f432182b108d725e55a1d0d7137f9f3186b9677af2fe657234d"
+    },
+    {
+      "label": "only_1e3",
+      "checkpoint": "F:\\agi\\data\\integration\\pilot-learning-v1\\only_1e3\\checkpoint.pt",
+      "checkpoint_sha256": "35267efff8d32e68f21db3db0269feea8c9ccbc11eb12df7171ebd3d0c43d9f2",
+      "integration_config": {
+        "mode": "coact_only_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      },
+      "origin": {
+        "checkpoint": "F:\\agi\\data\\integration\\pilot-source-v1\\seed_101\\online128\\checkpoint.pt",
+        "checkpoint_sha256": "94b40669d7b0010e1d204211e2f20dc19e3a3a5e772cd7baef02f56ffdd0e8ad",
+        "semantic_hash": "1453a8135d200e7c42d495888d523b4040ad2a6eafe1fcca8e9819ee844054c1",
+        "model_hash": "8d5fcb764f917a230a7d0e6ff73e021c671b9d2217c6defac454c49a2de9cdde",
+        "optimizer_hash": "35665fac04da2164814486c94efc388c46e45471d474357d05287f88a9944861",
+        "hidden_hash": "cc0ed79b6f8526524466f0a99c16510b8978d44e1e9c6386d58a7b0ed918abd5",
+        "world_hash": "32e4a10ccc9135c424438d9f8b8f24bcd379fff9283ebb24767bf858aff9f814",
+        "replay_hash": "60164677c8d5f2f9596b8a3c0f3e2207c63f3a4670c50d19ec2913ae4244d283",
+        "rng_hash": "68ed48277552134857195bbf3b7b8d9713d51d5a14c67da2b77f066244dfae05",
+        "tick": 131072,
+        "update": 2048,
+        "inherited_source_hashes": {
+          "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+          "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+          "test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307"
+        }
+      },
+      "source_hashes": {
+        "run.py": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+        "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+        "test_run.py": "d42f9832c748385e449ca1fd956099293eb5a99ce6ad093d37c94d6afe6fc0ff",
+        "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+      },
+      "updates": 256,
+      "ticks": 16384,
+      "gradient_updates": 0,
+      "local_updates": 256,
+      "work": {
+        "live_forward_ticks": 16384,
+        "current_reprocess_forward_ticks": 0,
+        "old_forward_ticks": 32768,
+        "old_burnin_ticks": 16384,
+        "supervised_ticks": 0,
+        "local_contributing_ticks": 32768,
+        "backward_horizon_ticks": 0,
+        "old_samples": 256
+      },
+      "finite": {
+        "model": true,
+        "optimizer": true,
+        "hidden": true,
+        "local_live": true,
+        "local_replay": true,
+        "update_norms": true,
+        "stage_losses": true,
+        "all_stage_norms": true
+      },
+      "all_finite": true,
+      "loss_first": 1.0877463817596436,
+      "loss_last": 15.890836715698242,
+      "bp_recurrent_delta_mean": null,
+      "bp_all_delta_mean": null,
+      "local_recurrent_delta_mean": 0.07464643800813064,
+      "bp_recurrent_delta_max": null,
+      "local_recurrent_delta_max": 0.10681512951850891,
+      "hidden_frob": 1700.983574537895,
+      "recurrent_frob": 22.8007777599479,
+      "update_norms": {
+        "bp_recurrent_frob_sum": 0.0,
+        "bp_recurrent_frob_squared_sum": 0.0,
+        "bp_all_frob_sum": 0.0,
+        "bp_all_frob_squared_sum": 0.0,
+        "local_recurrent_frob_sum": 19.109488130081445,
+        "local_recurrent_frob_squared_sum": 1.794083622371214
+      },
+      "private_rng_hashes": {
+        "local_live": "777bdf05aa6c064b736ceaf4ecc841067cf4d02afb4f0e7dcdf4b68f68dc94fb",
+        "local_replay": "ed1310faf46d79b20c9156f55ef72777e0be92dfb8272d8fcb729589fc9eda05"
+      },
+      "old_sampler_rng_hash": "3af15ec1a9452f432182b108d725e55a1d0d7137f9f3186b9677af2fe657234d"
+    }
+  ],
+  "resume_proof": {
+    "format": "integration-real-cuda-resume-proof-v1",
+    "source": "F:\\agi\\data\\integration\\pilot-learning-v1\\mix_1e3\\checkpoint.pt",
+    "source_sha256_before": "b5b1af3efd60a9b60ed5c1098d77b0e6d326cfc0b1faa8f26d9d31ce48be0702",
+    "source_sha256_after": "b5b1af3efd60a9b60ed5c1098d77b0e6d326cfc0b1faa8f26d9d31ce48be0702",
+    "start_semantic_hash": "cfbc88f3ae07f5a584230856309dab03205a42e42dc2d88878d97578b566047e",
+    "interrupted_semantic_hash": "857cecb0def3fd37643406915efd64d4d6a0c9b0c312f5ddadf0efb634afe11d",
+    "reloaded_semantic_hash": "857cecb0def3fd37643406915efd64d4d6a0c9b0c312f5ddadf0efb634afe11d",
+    "continuous_semantic_hash": "c2d83c4db62992d559c1daa6a63c6a14a2b5844eec17171a3650fda012bd2235",
+    "resumed_semantic_hash": "c2d83c4db62992d559c1daa6a63c6a14a2b5844eec17171a3650fda012bd2235",
+    "component_equal": {
+      "format": true,
+      "continuation": true,
+      "integration_config": true,
+      "origin": true,
+      "replay_rng": true,
+      "local_live": true,
+      "local_replay": true,
+      "local_updates": true,
+      "work": true,
+      "update_norms": true
+    },
+    "equal": true,
+    "continuous_stage_ticks": 16512,
+    "resumed_stage_ticks": 16512,
+    "device": "cuda",
+    "original_checkpoint_unchanged": true
+  },
+  "all_finite": true,
+  "formal_coefficient_numeric_gate_passed": true
+}

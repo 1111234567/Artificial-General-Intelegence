@@ -1,0 +1,164 @@
+{
+  "format": "factors-study-completion-v1",
+  "complete": true,
+  "completed_utc": "2026-10-29T03:02:13.421135+00:00",
+  "completed_asia_shanghai": "2026-10-29T11:02:13.421135+08:00",
+  "counts": {
+    "training_runs": 54,
+    "trained_seeds": 3,
+    "checkpoint_sources": 3,
+    "endpoint_checkpoints": 54,
+    "baseline_forks": 15,
+    "endpoint_forks": 270,
+    "total_forks": 285
+  },
+  "independent_training_seeds": 3,
+  "unique_tests": 598,
+  "test_evidence": {
+    "tests-final.xml": {
+      "tests": 598,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "factors-report-tests-v1.xml": {
+      "tests": 40,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "factors-report-retired-match-tests-v1.xml": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "reruns_not_added_to_unique_count": 41,
+  "audit_checks": 8809499,
+  "audit_errors": 0,
+  "audited_input_files": 1547,
+  "historical_retire_zero_exact_reproductions": 3,
+  "historical_scope": "Core model/Adam/h/raw world/replay/RNG/stats/actions/data/global clocks, legacy operator and selected legacy trajectory fields. Factor wrapper/diagnostic metadata differ.",
+  "hidden_resets": 0,
+  "figures_visually_checked": 3,
+  "execution": {
+    "training": {
+      "path": "F:\\agi\\data\\factors\\main-v1\\training-execution.json",
+      "sha256": "a14c861d62e6182ad25cf596324791feb69474de404c4ae37f1fa07b8890afdb",
+      "successful_jobs": 54,
+      "limits_history": [
+        {
+          "time": 1793237647.6959674,
+          "limits": {
+            "training": 10,
+            "cpu": 12,
+            "total": 14,
+            "min_available_bytes": 1073741824
+          }
+        }
+      ],
+      "resume_history": []
+    },
+    "baseline": {
+      "path": "F:\\agi\\data\\factors\\main-v1\\baseline-execution.json",
+      "sha256": "db97c27210f7aac1b4d1a65cd57bce57d9a202791538f1ca692cd4d2fb49d113",
+      "successful_jobs": 3,
+      "limits_history": [
+        {
+          "time": 1793237647.6974585,
+          "limits": {
+            "training": 10,
+            "cpu": 12,
+            "total": 14,
+            "min_available_bytes": 1073741824
+          }
+        }
+      ],
+      "resume_history": []
+    },
+    "evaluation": {
+      "path": "F:\\agi\\data\\factors\\main-v1\\evaluation-execution.json",
+      "sha256": "65008f48007f70bab9efba9caeec2961dd46de3501fb6224c00efb5a55c75322",
+      "successful_jobs": 54,
+      "limits_history": [
+        {
+          "time": 1793237647.6968422,
+          "limits": {
+            "training": 10,
+            "cpu": 12,
+            "total": 14,
+            "min_available_bytes": 1073741824
+          }
+        }
+      ],
+      "resume_history": []
+    }
+  },
+  "subagents": "gpt-6.1-sol ultra, as explicitly requested",
+  "files": {
+    "agi.md": "b1443e7da52e518af295b9b805c1d15f55e1c819728b0e640d9eccc9e04c9b71",
+    "CHANGELOG.md": "bfc5639270d9423152abf4222f04028a24f1bb2c6f8f26cb1b822986b5f06637",
+    "docs/design.md": "62c2aec0be6cdc2d1637c2f48e94a67347d1225ed1167502468fba006c1edff9",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/baseline_change_per_seed.csv": "1b64d9a20b60389e0dbca82ff39ea8a09af34ee57b3b05f0cbeb45f599be0431",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/baseline_per_seed.csv": "337069354c5f6f175daf1d19c6a0319992c7caea9c6159f2990c37c46dd25938",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/capacity_trajectory.csv": "d5df3706e4e80976c90138485296d58457f1e58b685b222be6a0570e76328758",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/contrast_per_seed.csv": "cfe1763d13dc174e1bfef1d5d0e67650e2c62a9ab4feaf9e1bf0a37848d73c38",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/cost_per_seed.csv": "cdd2072efd5317ceeb87393abcbcd01c7c39208d5ab0d4fe29c1c5e39565c351",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/cost_summary.csv": "ba8c41f1e838079da4141941784ace4f41756aa236f1bd56d51bd37792c80c34",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/historical_retire_zero_comparison.csv": "0a60a74f523fe6cd7cb9b82820d955c91a467b3d8e55b90dcb5de61ae1f55648",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/idle_by_history_penalty_effects.csv": "420299e893a139b60b4b378b33b108660335f8a69e0f16d9ced3a9dcd9061804",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/idle_by_history_per_seed.csv": "a993b45c5cc3b76f9da214892a96e0b776f8d350e6f51b7fb7fb859c65bf9588",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/idle_by_history_structural_contrasts.csv": "0ed849bc23b24d5c841b86060996b1588758b2e30a9bc9651e3abc915c960fd9",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/idle_by_history_summary.csv": "13baa45762ae8193765b096f3c59879391bdb8d48123bd1aa28a6ba90cee751a",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/idle_penalty_per_seed.csv": "c2ea420a52a574b7ffde34a47c25daa42237d073a2ae89ebd139e2333debb6f2",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/input_files.csv": "ccbd85a7143b7e0257336d51dccffa4b6d2845d6b3b4b661d07ddb905bab4696",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/main_summary.csv": "ddef460b9527afbed761d247893eee06ade38d7ac7458f81a6cd148c75540c65",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/paired_changes_from_B.csv": "95cf63364aebe889174c65ff895e37d427b37358d9ad6f12b18bc151015305da",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/paired_idle_penalty_effects.csv": "2788462b44732f81812c9cf00984ea3364f4ac4e14e7312143db76c10c460db9",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/paired_structural_contrasts.csv": "f96189be4e8d6f3002038df8f2d0ccfad7ef5096c0018a2b5eb8de5535356b93",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/per_seed.csv": "0b19755c4e00bd331932d007125846c3d9620a899d9c548aa34ce515291fcc8e",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/report.json": "14442f536d4175bc099dd44bda3ebd14dd0c14e7f6993447f37690adadaa770d",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/shared_B_baseline.csv": "5bbfd5af1f4f1503375af15afbecd7092ca57058e855bdccd4c66beb654295a6",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/shared_B_idle_by_history_summary.csv": "4628718a7a20bcba7de886396b31f228293de96b27b2ed5216c5c3836080c862",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/structural_per_seed.csv": "76e042cf38bc15649fbcdd1dcbab54c6e073ca3689784bcce3c02ba920480bd0",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/structural_summary.csv": "4e01df8b4930a8cc30ed3137e13989b2fbd89e97bac65eabc115e28c8689f9d0",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/training_per_seed.csv": "cf29b4614d8b72a79580fedc835f97635f9fd2503e59a09e0d8612b2708ca5f1",
+    "docs/evidence/factors-2026-10-29/aggregate-v1/training_summary.csv": "cca7979d3c9fca79d0fc16611b83cd0242ad3f3a91d8212051eecf6d95aa6564",
+    "docs/evidence/factors-2026-10-29/attachment-mechanism-check-v1.json": "716c5c9685541fc214edb1293206d484e2681e73284649a638ec75165376a38a",
+    "docs/evidence/factors-2026-10-29/baseline-commands-v1.json": "b28c46ff5a22e806531e84b1bc3bdd961fef1d7dd544825ab1ab1c1ce28fd776",
+    "docs/evidence/factors-2026-10-29/evaluation-commands-v1.json": "d5c43c4f424bda5e805a0c2e6dd6971b26f12bfb0c3e56f75689ca0f207b9fce",
+    "docs/evidence/factors-2026-10-29/factors-report-retired-match-tests-v1.xml": "c744c6ca18be96e5619a760d11fc6c21bbece8db8b4f6ca6b33c3da5880431ae",
+    "docs/evidence/factors-2026-10-29/factors-report-tests-v1.xml": "d30232c3b41a12e3bacedd6519449a72bdecb339e45b46d246c7ced898d34f15",
+    "docs/evidence/factors-2026-10-29/figures/completion-idle-tradeoff.png": "8410d61eff70883aabd00a2cdaa98ee436e81416af1d53c5c9c7fef89a8d31b4",
+    "docs/evidence/factors-2026-10-29/figures/completion-idle-tradeoff.svg": "ed34ce4d7eed8848274b0afcd3694b57fc502a5d07325a72dae99b7cbfc62490",
+    "docs/evidence/factors-2026-10-29/figures/factorial-outcomes.png": "5cd9f839c018d0d05bb5b4002eb347bba6cfe10b029b20339e82e77408c77c59",
+    "docs/evidence/factors-2026-10-29/figures/factorial-outcomes.svg": "73141c9c79a6306b8ec23da3b79be42d092ab4f432f8f42e66b3e2c771c79661",
+    "docs/evidence/factors-2026-10-29/figures/idle-age-diagnosis.png": "985ec488f485e5dfea754bbd1d17218dfceb27d070d99dc45655a30a2399583c",
+    "docs/evidence/factors-2026-10-29/figures/idle-age-diagnosis.svg": "aa9d01302ae872022949b6bc9c67ff08303acedf541a72c9fab92c2420dd8c0b",
+    "docs/evidence/factors-2026-10-29/mechanical-smoke-v1.json": "f09c47727e8d0f8791ab5e9fe3800b469232fb733e731af54113f25768ad49fe",
+    "docs/evidence/factors-2026-10-29/study-protocol-v1.json": "88635f7943b69798dd048a9f4322133dfb1e03d21f65a7e7d23c412dc05033ef",
+    "docs/evidence/factors-2026-10-29/tests-factors-initial.xml": "bb3f9cfccc28765e7aaedb2b6b2a0617c0dc18ee129afe5c6b75e3683ac0767a",
+    "docs/evidence/factors-2026-10-29/tests-final.xml": "5a394da647b775af7a55bdb448ce1323ccb5a3ba863580cd0b906ea4a8c942b2",
+    "docs/evidence/factors-2026-10-29/training-commands-v1.json": "279499c2d33fc6b7b28b220cc8a82f95bc1b75b5cffcc166a6ff1a0b24bb61dd",
+    "docs/experiments.md": "886a90f73ae5cf900794b44678ef8d2d71f41b8d9226b4fc8bb8b46a0b466f07",
+    "docs/factors-experiment-2026-10-29.md": "89528d2221c10d35763799d878d8be7729a3ee66556b49006bc980a85c058c2d",
+    "docs/reference.md": "3025638e60a612c9d0c79b52adc57e45f79a9355b7a976cd656b95374b9193da",
+    "experiments/factors/__init__.py": "4225b356cc17802ae54645b96cc6e8c1f7d0a2ce8570d8a385fe89808b619918",
+    "experiments/factors/plot_results.py": "07e31cffa708d9b5bde977233e4a7e2a9db47ffcf67e7b7713b5aa12c0bc2264",
+    "experiments/factors/queue.py": "ae32de1f1206dd53f2e69c8472af691f38947984da1a58d3094607c73fa51b7f",
+    "experiments/factors/README.md": "1fd0e506144dd46f042de8714fdea000141ed078b154f640bcbea344eeb7639f",
+    "experiments/factors/report.py": "bd15cbe60adceec481efcad047b96cfd2d4aca1348f74aa4305395af43c4a0e4",
+    "experiments/factors/run.py": "5129e5ab90e446b4eb7e3cf5b2b8b9a8a12872e166b426f2900e012ffcdbe79c",
+    "experiments/factors/structure.py": "f8a6a1946fc42a1a1265324d0b4143d3b15045c0cbb1bb34aba2c39638cd1c89",
+    "experiments/factors/study.py": "9cef3ad8c95a545f1225ea59567e039d0adc9c52de2f48e329f76bdaceff3fe7",
+    "experiments/factors/test_queue.py": "72f312aa8e4b4d1041030e436057bef1faaacf369ccef0b9e17589142f18222e",
+    "experiments/factors/test_report.py": "8534da86b81933e50d0403cc703a582939df52888f12e199e3f7442178fcfcaf",
+    "experiments/factors/test_run.py": "42202c52e150ffdf2f94afe6daa912ddbe81463a5a5aa0699d16f2ee032a57ec",
+    "experiments/factors/test_structure.py": "23953ce735302024befc668b0042c13144a91ab3cc8cd40d57d00757b882cd49",
+    "experiments/factors/test_study.py": "983bc98cf9b130e858ec5a9572d5b378040d10a4e643b381754779109be9f567",
+    "experiments/README.md": "c636852fd86903fd67407481e86a3cb37ff4931cf7e7f57469067281baf628fc",
+    "README.md": "5e445a31c6c6e8c1b7856e591713d8e048961244b6a45a9582caa639ee0d9a61"
+  },
+  "remaining_required_work": []
+}

@@ -1,0 +1,859 @@
+{
+  "format": "integration-main-execution-v1",
+  "manifest": "F:\\agi\\docs\\evidence\\integration-2026-10-27\\main-study-v1.json",
+  "manifest_sha256": "b6d9bdc3a5cf1f81ff017f8fbd0169e010d6d34ca9d961ec8a5a53a002c56674",
+  "orchestrator_sha256": "bc21d991833e506cbd00a3a4e5bed67cec8c4db1273dd4628bceb6ddea0632a4",
+  "created_utc": "2026-10-27T04:01:34.284326+00:00",
+  "workers": 8,
+  "stage_ticks": 65536,
+  "integration_source_hashes": {
+    "run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd"
+  },
+  "continuity_source_hashes": {
+    "world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7"
+  },
+  "raw_source_hashes": {
+    "experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "experiments\\integration\\local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+    "experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "experiments\\integration\\test_run.py": "f835758a41deb56427667529516c10cb6b6d5feba90388276aacbdcfc139e02b",
+    "experiments\\integration\\test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5",
+    "experiments\\integration\\test_diagnose.py": "1af364f170e556073651e9f7124290b7915f04698805fdf4dab8ee2908b1790c"
+  },
+  "specs": [
+    {
+      "seed": 0,
+      "mode": "frozen",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\frozen",
+      "integration_config": {
+        "mode": "frozen",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "bp64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\bp64",
+      "integration_config": {
+        "mode": "bp64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "repeat64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\repeat64",
+      "integration_config": {
+        "mode": "repeat64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "replay64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\replay64",
+      "integration_config": {
+        "mode": "replay64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "accum128",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\accum128",
+      "integration_config": {
+        "mode": "accum128",
+        "live_ticks": 128,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "bp128",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\bp128",
+      "integration_config": {
+        "mode": "bp128",
+        "live_ticks": 128,
+        "gradient_horizon": 128,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "coact_live",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coact_live",
+      "integration_config": {
+        "mode": "coact_live",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "coact_mix",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coact_mix",
+      "integration_config": {
+        "mode": "coact_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "coact_mix_shuffled",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coact_mix_shuffled",
+      "integration_config": {
+        "mode": "coact_mix_shuffled",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "coact_only_mix",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coact_only_mix",
+      "integration_config": {
+        "mode": "coact_only_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "coverage_long_dense",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coverage_long_dense",
+      "integration_config": {
+        "mode": "coverage_long_dense",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          0.5,
+          2.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 0,
+      "mode": "coverage_short_sparse",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coverage_short_sparse",
+      "integration_config": {
+        "mode": "coverage_short_sparse",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          1.0,
+          4.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "frozen",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\frozen",
+      "integration_config": {
+        "mode": "frozen",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "bp64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\bp64",
+      "integration_config": {
+        "mode": "bp64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "repeat64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\repeat64",
+      "integration_config": {
+        "mode": "repeat64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "replay64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\replay64",
+      "integration_config": {
+        "mode": "replay64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "accum128",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\accum128",
+      "integration_config": {
+        "mode": "accum128",
+        "live_ticks": 128,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "bp128",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\bp128",
+      "integration_config": {
+        "mode": "bp128",
+        "live_ticks": 128,
+        "gradient_horizon": 128,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "coact_live",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coact_live",
+      "integration_config": {
+        "mode": "coact_live",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "coact_mix",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coact_mix",
+      "integration_config": {
+        "mode": "coact_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "coact_mix_shuffled",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coact_mix_shuffled",
+      "integration_config": {
+        "mode": "coact_mix_shuffled",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "coact_only_mix",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coact_only_mix",
+      "integration_config": {
+        "mode": "coact_only_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "coverage_long_dense",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coverage_long_dense",
+      "integration_config": {
+        "mode": "coverage_long_dense",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          0.5,
+          2.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "coverage_short_sparse",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coverage_short_sparse",
+      "integration_config": {
+        "mode": "coverage_short_sparse",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          1.0,
+          4.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "frozen",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\frozen",
+      "integration_config": {
+        "mode": "frozen",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "bp64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\bp64",
+      "integration_config": {
+        "mode": "bp64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "repeat64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\repeat64",
+      "integration_config": {
+        "mode": "repeat64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "replay64",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\replay64",
+      "integration_config": {
+        "mode": "replay64",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "accum128",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\accum128",
+      "integration_config": {
+        "mode": "accum128",
+        "live_ticks": 128,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "bp128",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\bp128",
+      "integration_config": {
+        "mode": "bp128",
+        "live_ticks": 128,
+        "gradient_horizon": 128,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "coact_live",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coact_live",
+      "integration_config": {
+        "mode": "coact_live",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "coact_mix",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coact_mix",
+      "integration_config": {
+        "mode": "coact_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "coact_mix_shuffled",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coact_mix_shuffled",
+      "integration_config": {
+        "mode": "coact_mix_shuffled",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "coact_only_mix",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coact_only_mix",
+      "integration_config": {
+        "mode": "coact_only_mix",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "coverage_long_dense",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coverage_long_dense",
+      "integration_config": {
+        "mode": "coverage_long_dense",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          4.0,
+          8.0
+        ],
+        "gap_range": [
+          0.5,
+          2.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "coverage_short_sparse",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coverage_short_sparse",
+      "integration_config": {
+        "mode": "coverage_short_sparse",
+        "live_ticks": 64,
+        "gradient_horizon": 64,
+        "duration_range": [
+          1.0,
+          4.0
+        ],
+        "gap_range": [
+          4.0,
+          12.0
+        ],
+        "local_lr": 0.001,
+        "local_tau": 16.0,
+        "regime_name": "integration"
+      }
+    }
+  ],
+  "expected_evaluation_jobs": 72,
+  "expected_evaluation_records": 288,
+  "queue_policy": "prefer pending training; then ready final-checkpoint baselines; then selected diagnostic groups"
+}

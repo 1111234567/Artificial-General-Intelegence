@@ -1,0 +1,970 @@
+{
+  "format": "credit-commands-v1",
+  "cwd": "F:\\agi",
+  "protocol": "F:\\agi\\docs\\evidence\\credit-2026-10-27\\study-protocol-v1.json",
+  "protocol_sha256": "4e69e51b88157de0f61b1dd33dae66c83a66253c77353fecde439877f136f675",
+  "file_hashes": {
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\evaluate.py": "d9a6d993fb9afc8a7dd7f534c32d86683224319266574faf6c8d63e5e2809240",
+    "F:\\agi\\experiments\\credit\\cycle.py": "9381def26ec96c4387961de00715f0442e25f23582d72fe33c51c2c64c88b020",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\launch.py": "2dc8fdd15c3c365d49b967bf27ff2776f44b3e29098b8d6883b291f5e31abfd1",
+    "F:\\agi\\experiments\\credit\\prepare_study.py": "2952f3de400b3aa95da6ef54957092be885c4fb015b102c239ba782d585fc627",
+    "F:\\agi\\experiments\\credit\\test_run.py": "7380f2a68653c99bd3f96d34fa02257829f5b8ee9d63cf1f57b1a65521f0387b",
+    "F:\\agi\\experiments\\credit\\test_local.py": "7c1be0655952f3901428107617f207c387017e409d81709b1c968f8ef4d433a6",
+    "F:\\agi\\experiments\\credit\\test_evaluate.py": "df61114e68d5e2740f72ff6f22a51c725c6c1e9f30b3240e26654ea35c85390f",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\report.py": "eecf41acb22b955b15995d497bd876750d116c435106ad866f7f37b4ebc52814",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\test_evaluate.py": "8e52c1a303a3aa4af4eeae773b49c7a86502e0009a11d8af95d22e9b8a80a7b3",
+    "F:\\agi\\experiments\\continuity\\test_model.py": "f529f3441af712e7083bf42cb5ed1e80488b66e4b8669889ba8562717a85c8eb",
+    "F:\\agi\\experiments\\continuity\\test_run.py": "aa7297c67d197a776447a3daa8ddc06b861bc0963ee47563251387b8f3a57307",
+    "F:\\agi\\experiments\\continuity\\test_world.py": "d5c4c9aac16f7efbc769092e14a55818160c09000977f84dc80c5fd7da09ea5e",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\integration\\__init__.py": "8a072d0d13723b2b090a2b7bb4b0ac8964a2797f40771190403200124b3b3d0b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\integration\\inspect_state.py": "ce9d19e6363765133fdaef8b3ba31bcb6bda7472102ae8b203a09240a6a03eaf",
+    "F:\\agi\\experiments\\integration\\local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+    "F:\\agi\\experiments\\integration\\report.py": "f696ca3955bb73ab8464a84654ec2c5ef44177de5a8b9c44f0048792bd8300e1",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\test_diagnose.py": "1af364f170e556073651e9f7124290b7915f04698805fdf4dab8ee2908b1790c",
+    "F:\\agi\\experiments\\integration\\test_inspect_state.py": "8452a86be9af6a52be064afd8864c7f65fa2e48a863cbdd3f75f47dc1f368b9d",
+    "F:\\agi\\experiments\\integration\\test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5",
+    "F:\\agi\\experiments\\integration\\test_report.py": "4fbb4957f1b6125f449ce4cf6e7dae2997c3c7689b75766d862f3eb006339ea6",
+    "F:\\agi\\experiments\\integration\\test_run.py": "f835758a41deb56427667529516c10cb6b6d5feba90388276aacbdcfc139e02b",
+    "F:\\agi\\data\\credit\\pilot-benchmark-v1\\summary.json": "fdec5826e3b72fa7ad695df36b37240f63c3576b4e697453f48772b3137a05f8",
+    "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+    "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+    "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+    "F:\\agi\\docs\\evidence\\credit-2026-10-27\\study-protocol-v1.json": "4e69e51b88157de0f61b1dd33dae66c83a66253c77353fecde439877f136f675"
+  },
+  "jobs": [
+    {
+      "id": "seed_000_frozen",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "frozen",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\frozen",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_frozen.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\frozen\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\frozen\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\frozen\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_readout_only",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "readout_only",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\readout_only",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_readout_only.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\readout_only\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\readout_only\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\readout_only\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_bp64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "bp64",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_bp64.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_bp_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "bp_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_bp_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_sym",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_sym",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_sym.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_sym_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_sym_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_sym_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_sym_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_random",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_random",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_random.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_random_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_random_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_random_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_random_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_reset64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_reset64",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_reset64",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_reset64.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_reset64\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_reset64\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_reset64\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_instant",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_instant",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_instant",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_instant.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_instant\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_instant\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_instant\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_000_diag_shuffle",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_shuffle",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_shuffle",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_000_diag_shuffle.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_shuffle\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_shuffle\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_000\\diag_shuffle\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_frozen",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "frozen",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\frozen",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_frozen.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\frozen\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\frozen\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\frozen\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_readout_only",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "readout_only",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\readout_only",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_readout_only.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\readout_only\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\readout_only\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\readout_only\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_bp64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "bp64",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_bp64.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_bp_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "bp_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_bp_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_sym",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_sym",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_sym.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_sym_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_sym_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_sym_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_sym_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_random",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_random",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_random.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_random_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_random_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_random_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_random_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_reset64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_reset64",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_reset64",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_reset64.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_reset64\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_reset64\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_reset64\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_instant",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_instant",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_instant",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_instant.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_instant\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_instant\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_instant\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_001_diag_shuffle",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_shuffle",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_shuffle",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_001_diag_shuffle.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_shuffle\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_shuffle\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_001\\diag_shuffle\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_frozen",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "frozen",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\frozen",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_frozen.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\frozen\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\frozen\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\frozen\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_readout_only",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "readout_only",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\readout_only",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_readout_only.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\readout_only\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\readout_only\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\readout_only\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_bp64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "bp64",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_bp64.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_bp_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "bp_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_bp_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_sym",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_sym",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_sym.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_sym_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_sym_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_sym_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_sym_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_random",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_random",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_random.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_random_replay",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_random_replay",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random_replay",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_random_replay.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random_replay\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random_replay\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_random_replay\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_reset64",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_reset64",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_reset64",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_reset64.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_reset64\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_reset64\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_reset64\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_instant",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_instant",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_instant",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_instant.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_instant\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_instant\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_instant\\launch-complete.json"
+      ]
+    },
+    {
+      "id": "seed_002_diag_shuffle",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.credit.launch",
+        "--from-checkpoint",
+        "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+        "--mode",
+        "diag_shuffle",
+        "--output",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_shuffle",
+        "--ticks",
+        "65536",
+        "--device",
+        "cuda",
+        "--threads",
+        "1",
+        "--checkpoint-every",
+        "256"
+      ],
+      "log": "F:\\agi\\data\\credit\\main-v1\\logs\\seed_002_diag_shuffle.log",
+      "outputs": [
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_shuffle\\checkpoint.pt",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_shuffle\\report.json",
+        "F:\\agi\\data\\credit\\main-v1\\seed_002\\diag_shuffle\\launch-complete.json"
+      ]
+    }
+  ]
+}

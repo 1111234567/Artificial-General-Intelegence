@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-27T04:59:19.580138+00:00",
+  "copied_evidence": [
+    {
+      "source": "data/integration/main-v1/execution-plan.json",
+      "copy": "docs/evidence/integration-2026-10-27/execution/execution-plan.json",
+      "sha256": "3c7a6851d19e45ad5ae32f49eb582965a78889cc2278d90f8edb5267b557580f",
+      "bytes": 27026
+    },
+    {
+      "source": "data/integration/main-v1/execution-summary.json",
+      "copy": "docs/evidence/integration-2026-10-27/execution/execution-summary.json",
+      "sha256": "a5750ef735a710b4ee9d68e3b5d9a9dcd4021471652aeac8ac5cb62282478887",
+      "bytes": 222760
+    },
+    {
+      "source": "data/integration/main-v1/final-audit.json",
+      "copy": "docs/evidence/integration-2026-10-27/execution/final-audit.json",
+      "sha256": "2d0eb883a14d220a7dc088f47aa6f0c7cf8e15ccee3efc64bd6399c0b1db02a5",
+      "bytes": 2441
+    },
+    {
+      "source": "data/integration/main-v1/prior-current-control-reproduction.json",
+      "copy": "docs/evidence/integration-2026-10-27/execution/prior-current-control-reproduction.json",
+      "sha256": "fc374c69409a6d970fa5348dc5e90ecdc480a7cd2e5f26060bf940cf3da1bde8",
+      "bytes": 5686
+    },
+    {
+      "source": "data/integration/main-v1/execute_main.py",
+      "copy": "docs/evidence/integration-2026-10-27/execution/execute_main.py",
+      "sha256": "bc21d991833e506cbd00a3a4e5bed67cec8c4db1273dd4628bceb6ddea0632a4",
+      "bytes": 23097
+    },
+    {
+      "source": "data/integration/main-v1/final_audit.py",
+      "copy": "docs/evidence/integration-2026-10-27/execution/final_audit.py",
+      "sha256": "29124a10916c5065850cf57d73e6f9c2dd4bda8a3c26a4a21dabad1fdec633bf",
+      "bytes": 4858
+    },
+    {
+      "source": "data/integration/main-v1/completed.jsonl",
+      "copy": "docs/evidence/integration-2026-10-27/execution/completed.jsonl",
+      "sha256": "469f39d126d7b8b8029630ac65fc28b37d0deece13b0f7d9a9490efc98bec821",
+      "bytes": 119352
+    },
+    {
+      "source": "data/integration/main-v1/evaluated.jsonl",
+      "copy": "docs/evidence/integration-2026-10-27/execution/evaluated.jsonl",
+      "sha256": "ba9866a6e34e95c63610a950644f8b76d35fbfa931a6b10b3f4637286d6fd89d",
+      "bytes": 36822
+    }
+  ],
+  "figures_reviewed": [
+    {
+      "path": "docs/evidence/integration-2026-10-27/aggregate/figures/control_conditions.png",
+      "sha256": "f1d47b65970f3ead9496c526a43ab114ed70695602907dcc680dfbfd525dc700",
+      "visual_review": "Actual final image inspected: readable labels, error bars, legends and diagnostic-only annotations; no clipping found."
+    },
+    {
+      "path": "docs/evidence/integration-2026-10-27/aggregate/figures/error_phases_rescue.png",
+      "sha256": "725869b497e23961dcf4cf25b7aa792333cc34367bf4f619ec440513b78a60b3",
+      "visual_review": "Actual final image inspected: readable labels, error bars, legends and diagnostic-only annotations; no clipping found."
+    },
+    {
+      "path": "docs/evidence/integration-2026-10-27/aggregate/figures/local_tradeoff.png",
+      "sha256": "fca2ef3c86352da37a836547d72b14ac961d3018a0b03a58168a42bf8c6ac804",
+      "visual_review": "Actual final image inspected: readable labels, error bars, legends and diagnostic-only annotations; no clipping found."
+    }
+  ],
+  "tests": {
+    "combined_integration_continuity": "119 passed in 40.05s",
+    "new_read_only_state_inspection": "12 passed; validation.json records details"
+  },
+  "raw_evaluations": "data/integration/evaluation-v1 and data/integration/diagnostics-v1; input SHA256 records in aggregate/summary.json",
+  "formal_state": "36 final training runs;72 evaluation files;288 raw forks;180 unique autonomous plus72 unique diagnostic forks;36 duplicate baselines not pooled"
+}

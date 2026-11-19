@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.tools/Python3145/
+.tools/downloads/python-3.14.5-amd64.exe
 
 # 构建产物
 build/
@@ -11,12 +13,26 @@ build/
 *.dll
 *.exp
 
-# 运行时数据（可重建）
+# 运行时数据与本机原始归档。版本化导航索引和晨间 CPU 分发材料
 data/
+!/data/
+/data/*
+!/data/README.md
+!/data/pulse-game/
+/data/pulse-game/*
+!/data/pulse-game/README.md
+!/data/pulse-game/morning-20261119/
+/data/pulse-game/morning-20261119/*
+!/data/pulse-game/morning-20261119/README.md
+!/data/pulse-game/morning-20261119/*.json
+!/data/pulse-game/morning-20261119/*.png
+!/data/pulse-game/morning-20261119/*.pdf
+!/data/pulse-game/morning-20261119/continuous-learning-cpu.zip
 
 # 实验输出
 *.npy
 *.npz
+!/data/pulse-game/morning-20261119/reference-agent.npz
 *.log
 
 # 编辑器

@@ -1,0 +1,147 @@
+{
+  "created_utc": "2026-11-07T09:17:49.737820+00:00",
+  "settings": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "training_streams": 16,
+    "train_batch": 32,
+    "train_ticks": 1024,
+    "ce_updates": 512,
+    "dense_updates": 128,
+    "ce_lr": 0.001,
+    "wait_weight": 0.25,
+    "actors": 32,
+    "support_ticks": 4096,
+    "probe_ticks": 2048,
+    "pg_blocks": 32,
+    "pg_ticks": 512,
+    "pg_lr": 0.0001,
+    "gamma": 0.995,
+    "reject_penalty": 0.1,
+    "dtype": "float32",
+    "support_duration": [
+      8.0,
+      16.0
+    ],
+    "support_gap": [
+      16.0,
+      32.0
+    ]
+  },
+  "sources": {
+    "experiments\\learned_binding\\common.py": "9169a7ed76f099eb1c877af0acea0c00f562b3fc399814cf4c9cc3355b4b99ed",
+    "experiments\\learned_binding\\model.py": "7c9e081ce3ec12f334a946a230465c9f7b774802949a7526b156861358f8929b",
+    "experiments\\learned_binding\\data.py": "c4a2d19ced98ad22c8982b6db64e1b36eac777d395a49ed26340dd96ea8573e5",
+    "experiments\\learned_binding\\pretrain.py": "1bbe7d41574ef867e25f3cb3630a0b48fb5250fd34b72ca12deca990b63bc5ff",
+    "experiments\\learned_binding\\interaction.py": "6ebe7079d189eca7c1fabec67d08ac04e3dd8a1ef17ccaed6bb5f3c74e9438b6",
+    "experiments\\learned_binding\\run.py": "9f50fbb9bedff8e7cde33cc27f087cf6dcc7ee791cb781bb95866d828fc72ae1",
+    "experiments\\learned_binding\\analysis-plan.md": "af0e6d8e0fe66c74430f9007c74100382561ffda228750cfb53955926b83f61b",
+    "experiments/associative_state/model.py": "c9a5aa1551a5297a73cf8d098f085c5c4577bc3e281255aa137df587815d782b",
+    "experiments/associative_state/shared.py": "114e34b7ea56edbf958430626ca55768da4f1d38c8fc8bf9692fea9bdaa53e05",
+    "experiments/associative_state/bridge.py": "be4dea11230c3bbd06eafeb52a9e577e49d41df6c8be272dd35956018030087b",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/experience_transfer/train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\learned_binding\\read_first.py": "d84620a3a0489439e145bcc1e151560825e5d72f16e7150af00aefc54dbe0f8f",
+    "experiments\\learned_binding\\read-first-plan.md": "773a4094160ca7ced2ad736b2e16d4e503653cb7b6d47b19a39d5c397e9c141c",
+    "data\\learned-binding\\v1\\protocol.json": "996a2fa76a4cb1ec860de4ee8fc1df798f02c23d57dc070c61e944c44f657d9a",
+    "data\\learned-binding\\v1\\data-freeze.json": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66",
+    "data\\learned-binding\\v1\\training-freeze.json": "791ca14b78bc53ad05a4a4042fdb7bce59d6985ffa86156310f11e6d321e4dcb",
+    "data\\learned-binding\\v1\\audit.json": "5e715123045a02f8de86510165b6ffb1cd7e2509966e4e0dac6845aed138e0ce",
+    "data\\learned-binding\\v1\\diagnostics\\action-loss.json": "2c123c057b3b7c353ca90ffcb4ef701fc3d44403c6aeee5819d0a5dc1c489210",
+    "data\\learned-binding\\v1\\diagnostics\\binding-probe.json": "bd383d6e6a2bb88a04e3aabc21cb23b4c09a0710e4dcc30c91cc936ee3e0c578"
+  },
+  "origins": {
+    "0/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt",
+      "sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084"
+    },
+    "0/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_000\\delta\\final.pt",
+      "sha256": "b10389eab2a0ca1da980d8314ed5d165aa95d464f55a3bb083f5a0292780e242"
+    },
+    "1/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt",
+      "sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c"
+    },
+    "1/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_001\\delta\\final.pt",
+      "sha256": "9aaabc52db0df700811e38f337b30aab0bbe771e4a3490cd53a8209dfddabcf8"
+    },
+    "2/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt",
+      "sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc"
+    },
+    "2/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_002\\delta\\final.pt",
+      "sha256": "caef743914b7ad81c5b4222d1bdb6bed72b0bb74478028b576cbc64430ec60b2"
+    }
+  },
+  "primary": "Self-action acquisition and B-only learning, with frozen-parameter native control and unchanged manual hard/soft references.",
+  "teacher_diagnostic": "Same actual teacher stream, separate from primary own-action acquisition.",
+  "training": "Native action CE, followed by own sampled actions and only scalar public outcome PG. No payload/binding/gate auxiliary loss.",
+  "experiment": "learned-binding-read-first-v2",
+  "read_write_order": "read_then_write_job0_then_job1",
+  "followup": {
+    "parent": "data/learned-binding/v1",
+    "declared_after_v1_results_inspected": true,
+    "disclosure": "Post-hoc architecture follow-up after inspecting v1 behavior and representation diagnostics; this is not an unseen new benchmark.",
+    "only_policy_computation_change": "Read the entering matrix before both learned delta writes in each tick.",
+    "unchanged_initialization_parameters_state_config": true,
+    "unchanged_training_data_objective_and_512_update_budget": true,
+    "unchanged_32_block_outcome_and_heldout_protocol": true,
+    "parent_artifacts": {
+      "protocol.json": {
+        "path": "data\\learned-binding\\v1\\protocol.json",
+        "sha256": "996a2fa76a4cb1ec860de4ee8fc1df798f02c23d57dc070c61e944c44f657d9a"
+      },
+      "data-freeze.json": {
+        "path": "data\\learned-binding\\v1\\data-freeze.json",
+        "sha256": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66"
+      },
+      "training-freeze.json": {
+        "path": "data\\learned-binding\\v1\\training-freeze.json",
+        "sha256": "791ca14b78bc53ad05a4a4042fdb7bce59d6985ffa86156310f11e6d321e4dcb"
+      },
+      "audit.json": {
+        "path": "data\\learned-binding\\v1\\audit.json",
+        "sha256": "5e715123045a02f8de86510165b6ffb1cd7e2509966e4e0dac6845aed138e0ce"
+      },
+      "diagnostics/action-loss.json": {
+        "path": "data\\learned-binding\\v1\\diagnostics\\action-loss.json",
+        "sha256": "2c123c057b3b7c353ca90ffcb4ef701fc3d44403c6aeee5819d0a5dc1c489210"
+      },
+      "diagnostics/binding-probe.json": {
+        "path": "data\\learned-binding\\v1\\diagnostics\\binding-probe.json",
+        "sha256": "bd383d6e6a2bb88a04e3aabc21cb23b4c09a0710e4dcc30c91cc936ee3e0c578"
+      }
+    },
+    "parent_audit": {
+      "path": "data\\learned-binding\\v1\\audit.json",
+      "sha256": "5e715123045a02f8de86510165b6ffb1cd7e2509966e4e0dac6845aed138e0ce"
+    }
+  },
+  "training_data_reuse": {
+    "source": {
+      "path": "data\\learned-binding\\v1\\data-freeze.json",
+      "sha256": "a90fd11f3735a120f743a596f72be4ed0b1dfeb739cbc71d07b468892e1b4b66"
+    },
+    "manifest_byte_identical": true,
+    "paths_remain_original_v1": true,
+    "large_training_streams_copied": false
+  },
+  "manual_behavior_reuse": {
+    "method": "byte-for-byte copytree of completed v1 behavior controls",
+    "kinds": [
+      "manual_hard",
+      "manual_soft"
+    ],
+    "controls_reexecuted": false,
+    "manual_native_training_budget_equal": false,
+    "limitation": "Manual historical pretraining differs from native; native v1/v2 is the same-budget read/write-order follow-up."
+  }
+}

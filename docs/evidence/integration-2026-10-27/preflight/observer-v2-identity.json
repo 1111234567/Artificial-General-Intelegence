@@ -1,0 +1,145 @@
+{
+  "old_format": "integration-own-trace-v1",
+  "new_format": "integration-own-trace-v2",
+  "proof": "v2 cue observer leaves v1 trajectories unchanged on full nontrivial forks",
+  "v1_source_sha256": "267d10db504034fba6bd0d9392fc1be40d608e8ac34730b456def839d91f2f73",
+  "v2_source_sha256": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+  "v2_test_sha256": "1af364f170e556073651e9f7124290b7915f04698805fdf4dab8ee2908b1790c",
+  "records": [
+    {
+      "intervention": "none",
+      "identical_hash_fields": [
+        "action_hash",
+        "model_action_hash",
+        "observation_hash",
+        "raw_observation_hash",
+        "end_hidden_hash",
+        "end_world_state_hash",
+        "end_scheduler_hash",
+        "end_event_hash",
+        "parameter_hash",
+        "source_continuation_hash"
+      ],
+      "hashes": {
+        "action_hash": "eaa9958cecff357eeebd4c9cdef9f8f287605c1d377b250c4bb434003bcd097f",
+        "model_action_hash": "eaa9958cecff357eeebd4c9cdef9f8f287605c1d377b250c4bb434003bcd097f",
+        "observation_hash": "ed46fd77fc66ca7309299303c738a224ff7e9bfc67a5382021f6a42fd9dec98e",
+        "raw_observation_hash": "ed46fd77fc66ca7309299303c738a224ff7e9bfc67a5382021f6a42fd9dec98e",
+        "end_hidden_hash": "49a9b4320fc43aeeabd1e5708cf63c832e85c5e61a40a8e1db041962b6b277c2",
+        "end_world_state_hash": "6d3d7c29b2a6c8b186a9425a3feda4f31aff6a50bd82d19a74079e76a47ba620",
+        "end_scheduler_hash": "5e467cca61f6e1c7b16c495f93a14d5428fc4b1e051c5066b6b73f847ae6b23b",
+        "end_event_hash": "2e8cb3fc28178b32ded8315edc5c839683c9972c02918a8587022c34febd35ee",
+        "parameter_hash": "fd0772c26d3ad399e26a0839043acb22a887c3f233dd550343a558282bd90ea8",
+        "source_continuation_hash": "4a4b4915db3aa4148e4f8ae242c39c2f1a71925017bf86fe205a6029a295aebb"
+      }
+    },
+    {
+      "intervention": "finish_content_oracle",
+      "identical_hash_fields": [
+        "action_hash",
+        "model_action_hash",
+        "observation_hash",
+        "raw_observation_hash",
+        "end_hidden_hash",
+        "end_world_state_hash",
+        "end_scheduler_hash",
+        "end_event_hash",
+        "parameter_hash",
+        "source_continuation_hash"
+      ],
+      "hashes": {
+        "action_hash": "eaa9958cecff357eeebd4c9cdef9f8f287605c1d377b250c4bb434003bcd097f",
+        "model_action_hash": "eaa9958cecff357eeebd4c9cdef9f8f287605c1d377b250c4bb434003bcd097f",
+        "observation_hash": "ed46fd77fc66ca7309299303c738a224ff7e9bfc67a5382021f6a42fd9dec98e",
+        "raw_observation_hash": "ed46fd77fc66ca7309299303c738a224ff7e9bfc67a5382021f6a42fd9dec98e",
+        "end_hidden_hash": "49a9b4320fc43aeeabd1e5708cf63c832e85c5e61a40a8e1db041962b6b277c2",
+        "end_world_state_hash": "6d3d7c29b2a6c8b186a9425a3feda4f31aff6a50bd82d19a74079e76a47ba620",
+        "end_scheduler_hash": "5e467cca61f6e1c7b16c495f93a14d5428fc4b1e051c5066b6b73f847ae6b23b",
+        "end_event_hash": "2e8cb3fc28178b32ded8315edc5c839683c9972c02918a8587022c34febd35ee",
+        "parameter_hash": "fd0772c26d3ad399e26a0839043acb22a887c3f233dd550343a558282bd90ea8",
+        "source_continuation_hash": "4a4b4915db3aa4148e4f8ae242c39c2f1a71925017bf86fe205a6029a295aebb"
+      }
+    },
+    {
+      "intervention": "timing_oracle",
+      "identical_hash_fields": [
+        "action_hash",
+        "model_action_hash",
+        "observation_hash",
+        "raw_observation_hash",
+        "end_hidden_hash",
+        "end_world_state_hash",
+        "end_scheduler_hash",
+        "end_event_hash",
+        "parameter_hash",
+        "source_continuation_hash"
+      ],
+      "hashes": {
+        "action_hash": "a5ec2778d3473778bc10bc83cfcb317644106fd32033f3e4fb1059ac28d7996a",
+        "model_action_hash": "bd6cb5bb9087018eb4b3d129296704d9500bcef72d3206509a5294b4b004d9f1",
+        "observation_hash": "ecc71bc9d4e3fb4d2854d676190688cc08d5d3de2d95f32e5a86f248c73398e9",
+        "raw_observation_hash": "ecc71bc9d4e3fb4d2854d676190688cc08d5d3de2d95f32e5a86f248c73398e9",
+        "end_hidden_hash": "ef70fd38f5a753a7f1a1b540f55f414c1710a51c2e858d60278a2bb668fef164",
+        "end_world_state_hash": "aba065da8194e3f887b119899a02a1c585d72bbed93658c4345db75dcae879e8",
+        "end_scheduler_hash": "5e467cca61f6e1c7b16c495f93a14d5428fc4b1e051c5066b6b73f847ae6b23b",
+        "end_event_hash": "2e8cb3fc28178b32ded8315edc5c839683c9972c02918a8587022c34febd35ee",
+        "parameter_hash": "fd0772c26d3ad399e26a0839043acb22a887c3f233dd550343a558282bd90ea8",
+        "source_continuation_hash": "4a4b4915db3aa4148e4f8ae242c39c2f1a71925017bf86fe205a6029a295aebb"
+      }
+    },
+    {
+      "intervention": "completion_receipt_ablation",
+      "identical_hash_fields": [
+        "action_hash",
+        "model_action_hash",
+        "observation_hash",
+        "raw_observation_hash",
+        "end_hidden_hash",
+        "end_world_state_hash",
+        "end_scheduler_hash",
+        "end_event_hash",
+        "parameter_hash",
+        "source_continuation_hash"
+      ],
+      "hashes": {
+        "action_hash": "aa0a7487ad3288ae56060e79e11bdc980899263feea3002b2a1a75ab3b2d246b",
+        "model_action_hash": "aa0a7487ad3288ae56060e79e11bdc980899263feea3002b2a1a75ab3b2d246b",
+        "observation_hash": "ec936579fac2001c0680d555a7533e411771b1353762789c9b2442555be01e28",
+        "raw_observation_hash": "11563af7b82af16a84764228e6358667d21cb68e975d46a2c2b40016ce0267fd",
+        "end_hidden_hash": "d2edee38ee325883d6857473b02baf9a10f60f66db8497fc06157e4b600e906d",
+        "end_world_state_hash": "d339d34af996b0f607fac85e75c788b8627dc38f8b47032fe32ff45a3121f3dc",
+        "end_scheduler_hash": "5e467cca61f6e1c7b16c495f93a14d5428fc4b1e051c5066b6b73f847ae6b23b",
+        "end_event_hash": "2e8cb3fc28178b32ded8315edc5c839683c9972c02918a8587022c34febd35ee",
+        "parameter_hash": "fd0772c26d3ad399e26a0839043acb22a887c3f233dd550343a558282bd90ea8",
+        "source_continuation_hash": "4a4b4915db3aa4148e4f8ae242c39c2f1a71925017bf86fe205a6029a295aebb"
+      }
+    },
+    {
+      "intervention": "cancel_command_ablation",
+      "identical_hash_fields": [
+        "action_hash",
+        "model_action_hash",
+        "observation_hash",
+        "raw_observation_hash",
+        "end_hidden_hash",
+        "end_world_state_hash",
+        "end_scheduler_hash",
+        "end_event_hash",
+        "parameter_hash",
+        "source_continuation_hash"
+      ],
+      "hashes": {
+        "action_hash": "65eb120da9def7508de797cc4dbd07ebb7fa4a18be47fa74977caaccbda69be6",
+        "model_action_hash": "65eb120da9def7508de797cc4dbd07ebb7fa4a18be47fa74977caaccbda69be6",
+        "observation_hash": "08d549af41d9f0e7f64b22aed8d7a4cd239133b9997d67100ce539559ec3e9ad",
+        "raw_observation_hash": "71599fbe0a952029fda5de2dbed99c2228bae9a4f6b85f9f672a8ddb04d4dd63",
+        "end_hidden_hash": "49a9b4320fc43aeeabd1e5708cf63c832e85c5e61a40a8e1db041962b6b277c2",
+        "end_world_state_hash": "779822fe68743f8917c0c0d5a250ff6ed83694c520c400552331398d9a912d26",
+        "end_scheduler_hash": "5e467cca61f6e1c7b16c495f93a14d5428fc4b1e051c5066b6b73f847ae6b23b",
+        "end_event_hash": "2e8cb3fc28178b32ded8315edc5c839683c9972c02918a8587022c34febd35ee",
+        "parameter_hash": "fd0772c26d3ad399e26a0839043acb22a887c3f233dd550343a558282bd90ea8",
+        "source_continuation_hash": "4a4b4915db3aa4148e4f8ae242c39c2f1a71925017bf86fe205a6029a295aebb"
+      }
+    }
+  ]
+}

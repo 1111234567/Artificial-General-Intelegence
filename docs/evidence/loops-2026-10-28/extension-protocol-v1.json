@@ -1,0 +1,167 @@
+{
+  "format": "loops-extension-protocol-v1",
+  "created_utc": "2026-10-28T12:39:41.077855+00:00",
+  "sources": {
+    "F:\\agi\\experiments\\loops\\__init__.py": "8f935e0a8a32caf3aa5f7a7a154c8e76acb02c4b95435711e8d96e6204651160",
+    "F:\\agi\\experiments\\loops\\model.py": "bb7aadce617590d087c0220723d85f1f961f812ae5f5c1e6a6bb94b4ba583ff7",
+    "F:\\agi\\experiments\\loops\\train.py": "8eb994091de623c3f62343ee5adeeb16f26ae0e03b648e65c1d6b4f11ec62bdb",
+    "F:\\agi\\experiments\\loops\\test_model.py": "d00c702e9490752f30004c1bb68a1136fc838a2efbb95fe9157b28c3cb873cf8",
+    "F:\\agi\\experiments\\loops\\test_train.py": "7b813ab66cad435f6b7d62b5f52d5af87a838790a23eea1a676cb8f3c81ae6d9",
+    "F:\\agi\\experiments\\loops\\extension_study.py": "aba51be63434f884e1cac900aaf6b28d41683ade2c11d2b096f9f10153a73d03",
+    "F:\\agi\\experiments\\loops\\audit_run.py": "2cc71ebb857be76c769894ec3b355c9aea19c09ebf1826bea9d389f41cbbf9bc",
+    "F:\\agi\\experiments\\loops\\structure.py": "af282d6000adfe37b35da6342c48714a89bacd108ea976cece4a274fc49b0ea6",
+    "F:\\agi\\experiments\\loops\\interventions.py": "15007d06490fcaed6f2956d93294d21f48509c60b676f4009b89f91c328cc452",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374",
+    "F:\\agi\\experiments\\credit\\evaluate_ready.py": "2f622036799f5770d896a4665f036e0db07366cc280183f43f00f342ba380f4e"
+  },
+  "completed_existing_audit": "F:\\agi\\docs\\evidence\\loops-2026-10-28\\audit-aggregate-v1\\report.json",
+  "completed_existing_audit_sha256": "ad2354a3e1d743bc83523e547df49d74be8ab662debd2ee0f9b0cb5aeb707ba3",
+  "branches": [
+    {
+      "id": "seed_000_baseline",
+      "seed": 0,
+      "arm": "baseline",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_000\\baseline"
+    },
+    {
+      "id": "seed_000_source_square",
+      "seed": 0,
+      "arm": "source_square",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_000\\source_square"
+    },
+    {
+      "id": "seed_000_interaction",
+      "seed": 0,
+      "arm": "interaction",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "source_sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_000\\interaction"
+    },
+    {
+      "id": "seed_001_baseline",
+      "seed": 1,
+      "arm": "baseline",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_001\\baseline"
+    },
+    {
+      "id": "seed_001_source_square",
+      "seed": 1,
+      "arm": "source_square",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_001\\source_square"
+    },
+    {
+      "id": "seed_001_interaction",
+      "seed": 1,
+      "arm": "interaction",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "source_sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_001\\interaction"
+    },
+    {
+      "id": "seed_002_baseline",
+      "seed": 2,
+      "arm": "baseline",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_002\\baseline"
+    },
+    {
+      "id": "seed_002_source_square",
+      "seed": 2,
+      "arm": "source_square",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_002\\source_square"
+    },
+    {
+      "id": "seed_002_interaction",
+      "seed": 2,
+      "arm": "interaction",
+      "source": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "source_sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863",
+      "output": "F:\\agi\\data\\loops\\extension-v1\\training\\seed_002\\interaction"
+    }
+  ],
+  "historical_bp64_checkpoints": [
+    {
+      "seed": 0,
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64\\checkpoint.pt",
+      "sha256": "ff650b5bd59fd9a244021be0faea2eefe5a3bae15899e1c3e5a947822e137845"
+    },
+    {
+      "seed": 1,
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64\\checkpoint.pt",
+      "sha256": "7f20081d8e03898ef5f01319d11566fdf0943ec9dac19f850c190443308f6a52"
+    },
+    {
+      "seed": 2,
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64\\checkpoint.pt",
+      "sha256": "4781fcbb2c68779ad93475b835b01d35ae94b98500bd2da938efa29f7c04d264"
+    }
+  ],
+  "training_device": "cuda",
+  "evaluation_device": "cpu",
+  "target_ticks": 65536,
+  "chunk_ticks": 64,
+  "conditions": [
+    "iid",
+    "long_wait",
+    "longer",
+    "sparse",
+    "long_sparse"
+  ],
+  "evaluation_steps": 2048,
+  "diagnostic_conditions": [
+    "longer",
+    "long_sparse"
+  ],
+  "solver_refinement_max_step": 0.125,
+  "dt": 0.25,
+  "training_time_sampling": {
+    "inherited_train_dts": [
+      0.25
+    ],
+    "dt_every": 512,
+    "note": "Verified in all three bound source checkpoints; no change to inherited clock or dt history."
+  },
+  "equations": {
+    "baseline": "f=-h+W r",
+    "source_square": "f=-h+W r+V(r*r)",
+    "interaction": "f=-h+W r+r*(V r)",
+    "r": "tanh(h)"
+  },
+  "parameters": {
+    "state_scalars": 128,
+    "baseline": 34348,
+    "source_square": 50732,
+    "interaction": 50732
+  },
+  "hypothesis": "Recipient/source products improve learning and transfer relative to a source-square branch with equal added parameters and recurrent matrix arithmetic.",
+  "initialization": "V exactly zero; full inherited W/U/head, h/world/clocks/old Adam/RNG retained. New V has fresh Adam moments and same optimizer hyperparameters.",
+  "learning": "Exact implemented Heun BPTT64; inherited Adam lr, one joint clip and update, external causal teacher labels on own-action history; no replay or local-credit changes.",
+  "limits": [
+    "All arms already have complete directed graphs; this tests richer nonlinear field interactions, not newly invented graph cycles.",
+    "Two extension arms match added scalars and dense MACs; their features, derivatives and conditioning differ.",
+    "Joint clipping includes V, so old parameters can change differently at the first optimizer step.",
+    "Squared features and recipient/source products both break the odd symmetry of the original autonomous field.",
+    "Longer-horizon timing is not general reasoning or continual-learning mastery.",
+    "Setting learned V to zero at evaluation is a counterfactual ablation, not an alternative trained model."
+  ]
+}

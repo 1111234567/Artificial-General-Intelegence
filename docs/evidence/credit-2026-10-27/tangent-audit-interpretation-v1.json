@@ -1,0 +1,36 @@
+{
+  "format": "credit-tangent-audit-interpretation-v1",
+  "created_utc": "2026-10-27T06:13:56.918186+00:00",
+  "status": "post-result interpretation only; no new trajectory, selection, tuning or runtime change",
+  "units": "128 direction trajectories =4 fixed blocks x4 actors x8 unit initial perturbation directions; measured at6 horizons gives768 rows. Shared model/block/actor structure means these are descriptive samples, not128 independent training replicates.",
+  "conclusion": "On this fixed Aseed101 model and preselected recorded-input trajectories, omitted cross-neuron paths preserve more infinitesimal conditional state/readout-feature sensitivity than the stage-wise diagonal homogeneous projection. Both methods decay at the measured horizons.",
+  "critical_caveats": [
+    "Small local perturbation sensitivity can decay while finite discrete memories persist in different attractor basins; even exact tangent decay is not equivalent to forgetting.",
+    "Sensitivity norms do not establish content identity, decodability, action correctness, useful retention or loss of plasticity.",
+    "Recorded observations, including historical policy-dependent receipts, stay fixed; perturbed actions and policy feedback are not simulated.",
+    "This differentiates the fixed-final-weight Heun map from a historical saved initial state. It is not the original changing-weight trajectory and not an online eligibility-gradient fidelity estimate.",
+    "Growth, if observed elsewhere, could reflect instability rather than useful memory. No sampled exact norm exceeded its initial unit norm at the six requested horizons here.",
+    "Float64 is a numerical reference from stored values, not bitwise reproduction of float32 runtime.",
+    "The audit uses only independent Aseed101 and is separate from the33 formal main endpoints and their3-seed statistical comparisons."
+  ],
+  "read_only_checks": {
+    "checkpoint_bytes": true,
+    "protocol_bytes": true,
+    "frozen_runtime_and_protocol_bytes": true,
+    "own_source_bytes": true,
+    "loaded_model_and_selected_inputs": true,
+    "process_torch_cpu_rng": true
+  },
+  "mathematical_tests_passed": 4,
+  "artifact_sha256": {
+    "F:\\agi\\data\\credit\\tangent-audit-v1\\protocol.json": "11f80568a1e1056778312fe457cbd7909c0e81c5b7b2270eb9bdcba89baf0091",
+    "F:\\agi\\data\\credit\\tangent-audit-v1\\summary.json": "9215d0fad90b0264def21d7cc8f638bf22fee5a9b898db5e6b4bded1f128b832",
+    "F:\\agi\\data\\credit\\tangent-audit-v1\\measurements.json": "f67de948341bcdd4072d4809de22f6bfe86a42c100c36a712da29509d7fa4ebb",
+    "F:\\agi\\data\\credit\\tangent-audit-v1\\test-validation.json": "3e2a38c4d4a96647269783f5374ebb40bbb849f4665a2be0b4107b0443dca143",
+    "F:\\agi\\docs\\evidence\\credit-2026-10-27\\tangent-audit-v1.json": "b68769f432856ee48fa8ffc94d02c9defc1b81d23d96c113069cac6e0cd47998"
+  },
+  "audit_source_byte_hashes": {
+    "F:\\agi\\experiments\\credit\\tangent_audit.py": "b33f46695397efe1c4434128e2a8eeefe33d7f2c798efa49d040bd33dde8c08a",
+    "F:\\agi\\experiments\\credit\\test_tangent_audit.py": "10154c1bdadf98307fb9c96a19507aadccc2d91507066778a7fd71f65d284b39"
+  }
+}

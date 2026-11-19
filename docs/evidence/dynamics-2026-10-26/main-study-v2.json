@@ -1,0 +1,69 @@
+{
+  "version": "main-v2",
+  "created_utc": "2026-10-26T14:13:56.315139+00:00",
+  "status": "frozen_before_main_training_and_test",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "kinds": [
+    "reservoir",
+    "learned",
+    "gru"
+  ],
+  "steps": 512,
+  "updates": 2048,
+  "batch": 128,
+  "width": 128,
+  "tbptt": 64,
+  "train_dts": [
+    0.125,
+    0.25,
+    0.5
+  ],
+  "eval_steps": 512,
+  "eval_batch": 128,
+  "eval_dt": 0.25,
+  "unseen_dt": 0.375,
+  "long_factor": 4,
+  "lr": 0.001,
+  "wait_weight": 0.1,
+  "teacher": "immediate BEGIN, midpoint of actual ready/deadline legal FINISH window; no change to environment acceptance",
+  "primary": "closed-loop clean request completion; ordinary completion and FINISH precision separately",
+  "conditions": [
+    "iid",
+    "clock_0375",
+    "overlap",
+    "conflict",
+    "long_gap",
+    "sparse",
+    "long"
+  ],
+  "controls": [
+    "baseline",
+    "small_noise",
+    "reset",
+    "half_step",
+    "clock_half",
+    "clock_double"
+  ],
+  "checkpoint_selection": "final update, not validation best",
+  "pilots": [
+    "data/dynamics/pilot-seed101-v1",
+    "data/dynamics/pilot-seed102-v1"
+  ],
+  "pilot_test_opened": false,
+  "v2_reason": "v1 earliest-boundary teacher caused early submissions and a teacher/autonomous gap. All models now receive a causal demonstration in the middle of the unchanged legal window. This is a data-policy change, not a neural mechanism.",
+  "hardware_execution": "Three seeds run concurrently on same RTX4060Ti; wall-time throughput is contended, not isolated performance benchmark.",
+  "numpy": "2.5.1",
+  "torch": "2.11.0+cu130",
+  "source_hashes": {
+    "world.py": "260e0419c002c5981ed4176dc54cae3b30357daa233d5e4d5835fcc51b3efdb1",
+    "model.py": "cd3a3857733395d2ac42842da0b4d6899c43cefe9661ba728014a6dc8e402fc1",
+    "run.py": "6a41f4de1b1528bc2646622ff17398da1056a99146bfc8f039c61e614a17136d",
+    "test_model.py": "827bf2259692aca253f56f5286d32117b1f5b9f450322e3071512d75b6161a01",
+    "test_world.py": "76800d50fbb46862bef453d7a7bfbbdb77cb96ba1c3a0bf825b9a809b32cce7c",
+    "test_run.py": "de21b7f61f3eb1ff1811e257b640927065e495dc117b676edd6fb09c7aac2ad6"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "reason": "Executor sessions disappeared; verified no matching main/evaluation OS processes despite stale running metadata. Resume from atomic full checkpoints.",
+  "utc": "2026-10-27T07:38:43.828771+00:00",
+  "snapshots": {
+    "main": {
+      "sha256": "e3e2373c144b24e5dfb052ae98f8b8649530f0308bcb5d29516ba357cab37f14",
+      "unconfirmed_running_jobs": [
+        "seed_002_diag_sym_replay",
+        "seed_002_diag_random_replay"
+      ]
+    },
+    "evaluation": {
+      "sha256": "9e5e4c9f5cbd7ccf987bfe66f472f488b00a66b86b05aa5e7471f0bf1d331690",
+      "unconfirmed_running_jobs": [
+        "seed_002_diag_shuffle"
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "format": "loops-existing-audit-protocol-v1",
+  "created_utc": "2026-10-28T12:28:55.790179+00:00",
+  "checkpoints": [
+    {
+      "id": "seed_000_A",
+      "seed": 0,
+      "mode": "A",
+      "path": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_000\\online128\\checkpoint.pt",
+      "sha256": "5c06780eef53f5aca0df1cd472412c9afdb0c01949be8b4491cd062e035ba398"
+    },
+    {
+      "id": "seed_000_bp64",
+      "seed": 0,
+      "mode": "bp64",
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp64\\checkpoint.pt",
+      "sha256": "ff650b5bd59fd9a244021be0faea2eefe5a3bae15899e1c3e5a947822e137845"
+    },
+    {
+      "id": "seed_000_bp_replay",
+      "seed": 0,
+      "mode": "bp_replay",
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_000\\bp_replay\\checkpoint.pt",
+      "sha256": "47ffa16c1b2c7fd41653ea0bcf603256a7bde3942b9a2a3c987e5c5f7301c3aa"
+    },
+    {
+      "id": "seed_001_A",
+      "seed": 1,
+      "mode": "A",
+      "path": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_001\\online128\\checkpoint.pt",
+      "sha256": "5f25e425a0d3dfb191982bc03f1d6f5a311b383b22e154812c741b50ca8d564e"
+    },
+    {
+      "id": "seed_001_bp64",
+      "seed": 1,
+      "mode": "bp64",
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp64\\checkpoint.pt",
+      "sha256": "7f20081d8e03898ef5f01319d11566fdf0943ec9dac19f850c190443308f6a52"
+    },
+    {
+      "id": "seed_001_bp_replay",
+      "seed": 1,
+      "mode": "bp_replay",
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_001\\bp_replay\\checkpoint.pt",
+      "sha256": "2ba863fd1c64f5d1b64839a66540607ba1c39e4b66db76b673226328bccc57a5"
+    },
+    {
+      "id": "seed_002_A",
+      "seed": 2,
+      "mode": "A",
+      "path": "F:\\agi\\data\\continuity\\main-20261027-v1\\seed_002\\online128\\checkpoint.pt",
+      "sha256": "5f769d5b1ab60ef28f4940ee1b7507de6d49d030c438cd9603a2bee59581b863"
+    },
+    {
+      "id": "seed_002_bp64",
+      "seed": 2,
+      "mode": "bp64",
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp64\\checkpoint.pt",
+      "sha256": "4781fcbb2c68779ad93475b835b01d35ae94b98500bd2da938efa29f7c04d264"
+    },
+    {
+      "id": "seed_002_bp_replay",
+      "seed": 2,
+      "mode": "bp_replay",
+      "path": "F:\\agi\\data\\credit\\main-v1\\seed_002\\bp_replay\\checkpoint.pt",
+      "sha256": "fb0d223208ed2d02fabfddba8e35679c794ad3522503d78d0bd5761be87c44a7"
+    }
+  ],
+  "sources": {
+    "F:\\agi\\experiments\\loops\\__init__.py": "8f935e0a8a32caf3aa5f7a7a154c8e76acb02c4b95435711e8d96e6204651160",
+    "F:\\agi\\experiments\\loops\\audit_run.py": "2cc71ebb857be76c769894ec3b355c9aea19c09ebf1826bea9d389f41cbbf9bc",
+    "F:\\agi\\experiments\\loops\\structure.py": "af282d6000adfe37b35da6342c48714a89bacd108ea976cece4a274fc49b0ea6",
+    "F:\\agi\\experiments\\loops\\interventions.py": "15007d06490fcaed6f2956d93294d21f48509c60b676f4009b89f91c328cc452",
+    "F:\\agi\\experiments\\loops\\prepare_audit.py": "2c3d13bb0728e29e48185c3b8a38c19f27d03c03d21ec9802e19d991e6742ba0",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374"
+  },
+  "mask_seeds": [
+    11,
+    29,
+    47
+  ],
+  "conditions": [
+    "iid",
+    "long_sparse",
+    "longer"
+  ],
+  "steps": 1024,
+  "dt": 0.25,
+  "state_samples": 16,
+  "device": "cpu",
+  "parameter_updates": 0,
+  "hypotheses": [
+    "The existing dense recurrent field already has distinct-neuron directed cycles of many lengths.",
+    "Removing all distinct-neuron feedback may change autonomous completion; matched random deletion is a damage comparator, not a perfect topology-only intervention.",
+    "Instantaneous state-conditioned weighted closed walks describe local connectivity, not the causal share or duration of a simple cycle."
+  ],
+  "interpretation": {
+    "dag": "Keep self recurrence and a random-order directed acyclic off-diagonal graph.",
+    "random": "Same per-target retained edge counts as DAG; outgoing degree, spectrum, support and forcing are not matched.",
+    "matched": "DAG/random rows shrink to their shared smaller off-diagonal L2 norm, without amplifying weights; self weights remain exact.",
+    "quarter": "Interpolate 0.75 original + 0.25 matched endpoint. These gentler interventions retain cycles; endpoint row norm matching does not imply interpolated row norm matching.",
+    "continuity": "All forks inherit full h/world/clocks/pending contracts. Only copied recurrent parameters change; these forks are counterfactuals, not resets or training.",
+    "statistics": "Average three fixed mask draws within each trained seed; summarize across three trained seeds. Actors and mask draws are not independent training replicates.",
+    "no_claim": "No inference that a particular cycle length causes a behavior, or that no output under severe deletion means no memory."
+  }
+}

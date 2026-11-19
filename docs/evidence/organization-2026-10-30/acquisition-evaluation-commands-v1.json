@@ -1,0 +1,227 @@
+{
+  "cwd": "F:\\agi",
+  "file_hashes": {
+    "F:\\agi\\experiments\\organization\\acquisition.py": "b98c310d610b164ec18ed3c83ffed09deb91a84a60c43c828811d8eb731b0c7f",
+    "F:\\agi\\experiments\\organization\\test_acquisition.py": "4ba84a0c50b7347948be237deeeee118462fdf9af8c93a3f9538feb802c9d03c",
+    "F:\\agi\\experiments\\lifelong\\run.py": "90f0c36313169e5fc7d3534d9971e09a408a1e93d38a388600049d011b3d84ab",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\factors\\structure.py": "f8a6a1946fc42a1a1265324d0b4143d3b15045c0cbb1bb34aba2c39638cd1c89",
+    "F:\\agi\\experiments\\rewiring\\plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "F:\\agi\\experiments\\organization\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\lifelong\\queue.py": "570fe22b4dbf5b3e24787ee0319576ff819b5523c7a78926993ffc98fa0e0255",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374",
+    "F:\\agi\\experiments\\loops\\audit_run.py": "2cc71ebb857be76c769894ec3b355c9aea19c09ebf1826bea9d389f41cbbf9bc",
+    "F:\\agi\\experiments\\loops\\structure.py": "af282d6000adfe37b35da6342c48714a89bacd108ea976cece4a274fc49b0ea6",
+    "F:\\agi\\experiments\\loops\\interventions.py": "15007d06490fcaed6f2956d93294d21f48509c60b676f4009b89f91c328cc452",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\completion.json": "83fb74ac6910f2d84ca2f9201a16f6f511df0569beb946312bb9430a05cc67fd",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\artifacts.json": "f585873e783c4676088470751245c6a4f8c36a89e6de40c305623efd4b456918",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\checkpoints.csv": "3f2751f0120c2d246cc855ff400143c15f689552f23b51f282fd7d013d2b4021",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\matched_memory_per_seed.csv": "120929abd13d513b8e486f6d00e8ae5ff8f712f495782756feb799c75cfbdd4c",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\per_seed.csv": "18f8b34323f26f23043eed13dec3f76b3ce3b8f1aee574cc5d6eb3fb765b7419",
+    "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\supplement_per_seed.csv": "77050c11e60fa1f18c79bd2e1d77c54e05f505ec48e82de1693dda50318fce3e",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json": "bade208f15831072a0e697a6c3d8f00711e18486c0a24794b59a05e848a5c69e"
+  },
+  "jobs": [
+    {
+      "id": "seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_000__fixed_shrink__mixed__history_replay__wide__shrink0.log"
+    },
+    {
+      "id": "seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_000__open_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_000__open_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_000__open_shrink__mixed__history_replay__wide__shrink0.log"
+    },
+    {
+      "id": "seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0.log"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_001__fixed_shrink__mixed__history_replay__wide__shrink0.log"
+    },
+    {
+      "id": "seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_001__open_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_001__open_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_001__open_shrink__mixed__history_replay__wide__shrink0.log"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0.log"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_002__fixed_shrink__mixed__history_replay__wide__shrink0.log"
+    },
+    {
+      "id": "seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_002__open_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_002__open_shrink__mixed__history_replay__wide__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_002__open_shrink__mixed__history_replay__wide__shrink0.log"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.organization.acquisition",
+        "evaluate",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-protocol-v1.json",
+        "--branch-id",
+        "seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+        "--checkpoint",
+        "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow__shrink0\\latest.pt",
+        "--output",
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0.json"
+      ],
+      "outputs": [
+        "F:\\agi\\data\\organization\\acquisition-v1\\evaluation\\seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0.json"
+      ],
+      "log": "F:\\agi\\data\\organization\\acquisition-v1\\logs\\evaluate_seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0.log"
+    }
+  ]
+}

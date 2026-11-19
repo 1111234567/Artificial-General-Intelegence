@@ -1,0 +1,8 @@
+{
+  "training_device": "cpu",
+  "CUDA_VISIBLE_DEVICES": "-1",
+  "OMP_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1",
+  "reason": "All main variants use the same CPU execution; separate nine paired acquisition controls retain original CUDA training. Hardware scheduling selected from throughput smoke before behavior scores.",
+  "behavior_scores_inspected_before_freeze": false
+}

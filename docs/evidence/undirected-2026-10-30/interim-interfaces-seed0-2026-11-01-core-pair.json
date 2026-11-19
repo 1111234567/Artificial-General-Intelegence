@@ -1,0 +1,623 @@
+{
+  "format": "undirected-interim-interfaces-seed0-v1",
+  "created_utc": "2026-11-01T11:06:03.185630+00:00",
+  "scope": "Only seed_000, recorded512/fixed/warmup, interface x direction, main endpoint196608, four families short/long_both. Descriptive subset only; not the all-42 audit.",
+  "complete_requested_subset": false,
+  "requested_branches": [
+    "seed_000__core__undirected__recorded512__fixed__warmup",
+    "seed_000__core__untied__recorded512__fixed__warmup",
+    "seed_000__ports__undirected__recorded512__fixed__warmup",
+    "seed_000__ports__untied__recorded512__fixed__warmup"
+  ],
+  "available_branches": 2,
+  "pending": [
+    {
+      "id": "seed_000__ports__undirected__recorded512__fixed__warmup",
+      "status": "awaiting_completed_frozen_evaluation",
+      "process_returncode": null
+    },
+    {
+      "id": "seed_000__ports__untied__recorded512__fixed__warmup",
+      "status": "awaiting_completed_frozen_evaluation",
+      "process_returncode": null
+    }
+  ],
+  "branches": [
+    {
+      "id": "seed_000__core__undirected__recorded512__fixed__warmup",
+      "interface": "core",
+      "mode": "undirected",
+      "seed": 0,
+      "trained_seed_count": 1,
+      "tick": 196608,
+      "counts": [
+        {
+          "family": 0,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 326,
+          "clean_completed": 187,
+          "opportunities": 32768,
+          "active_opportunities": 23533,
+          "inactive_opportunities": 9235,
+          "inactive_actions": 514,
+          "completion_rate": 0.29159212880143115,
+          "clean_completion_rate": 0.167262969588551,
+          "idle_actions_per_1000_actual_idle_opportunities": 55.65782349756362
+        },
+        {
+          "family": 0,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 1,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.04849425343096843
+        },
+        {
+          "family": 1,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 310,
+          "clean_completed": 214,
+          "opportunities": 32768,
+          "active_opportunities": 23721,
+          "inactive_opportunities": 9047,
+          "inactive_actions": 376,
+          "completion_rate": 0.2772808586762075,
+          "clean_completion_rate": 0.19141323792486584,
+          "idle_actions_per_1000_actual_idle_opportunities": 41.56073836630927
+        },
+        {
+          "family": 1,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 1,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.04849425343096843
+        },
+        {
+          "family": 2,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 377,
+          "clean_completed": 238,
+          "opportunities": 32768,
+          "active_opportunities": 23278,
+          "inactive_opportunities": 9490,
+          "inactive_actions": 418,
+          "completion_rate": 0.3372093023255814,
+          "clean_completion_rate": 0.21288014311270126,
+          "idle_actions_per_1000_actual_idle_opportunities": 44.0463645943098
+        },
+        {
+          "family": 2,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 1,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.04849425343096843
+        },
+        {
+          "family": 3,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 262,
+          "clean_completed": 178,
+          "opportunities": 32768,
+          "active_opportunities": 23752,
+          "inactive_opportunities": 9016,
+          "inactive_actions": 501,
+          "completion_rate": 0.23434704830053668,
+          "clean_completion_rate": 0.1592128801431127,
+          "idle_actions_per_1000_actual_idle_opportunities": 55.567879325643304
+        },
+        {
+          "family": 3,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 1,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.04849425343096843
+        }
+      ],
+      "family_equal_means": {
+        "short": {
+          "completion_rate": 0.28510733452593917,
+          "clean_completion_rate": 0.1826923076923077,
+          "idle_actions_per_1000_actual_idle_opportunities": 49.2082014459565
+        },
+        "long_both": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.04849425343096843
+        }
+      },
+      "provenance": {
+        "training_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "train",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_000__core__undirected__recorded512__fixed__warmup"
+        ],
+        "training_command_digest": "1d580882f1962a505f03772f9e4f2340b831ae9ba226d25bf15677fb4b336154",
+        "training_queue_row": {
+          "started": 1793350083.8705065,
+          "pid": 105416,
+          "returncode": 0,
+          "command_digest": "1d580882f1962a505f03772f9e4f2340b831ae9ba226d25bf15677fb4b336154",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\train_seed_000__core__undirected__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793355052.68773,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoint_latest.pt": "53c508358781f1d0de6fc417cc17fb28119ba692d2b77704a857e8398a4be5b9",
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\terminal.json": "2a9b51181c8d3ee4a4a87fe21268b1323e44af295e24095160fbc8f2a47a2c16"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "terminal_path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\terminal.json",
+        "terminal_sha256": "2a9b51181c8d3ee4a4a87fe21268b1323e44af295e24095160fbc8f2a47a2c16",
+        "evaluation_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "evaluate",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_000__core__undirected__recorded512__fixed__warmup",
+          "--checkpoint",
+          "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoint_latest.pt",
+          "--output",
+          "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__undirected__recorded512__fixed__warmup.json"
+        ],
+        "evaluation_command_digest": "59560ba4a43221c747e158eca53858d06610cc1101e1e5a6e6fa704cab6ba99f",
+        "evaluation_queue_row": {
+          "started": 1793530246.4961877,
+          "pid": 53464,
+          "returncode": 0,
+          "command_digest": "59560ba4a43221c747e158eca53858d06610cc1101e1e5a6e6fa704cab6ba99f",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\evaluate_seed_000__core__undirected__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793530848.640062,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__undirected__recorded512__fixed__warmup.json": "856dc5df35f5ecb652bd8bcd3b9c91d05441feff939d4fd4eea8ec70fe5ced00"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "evaluation_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__undirected__recorded512__fixed__warmup.json",
+        "evaluation_sha256": "856dc5df35f5ecb652bd8bcd3b9c91d05441feff939d4fd4eea8ec70fe5ced00",
+        "evaluation_result_hash": "b0f4b650c943386983c811f593813242c65e952fd3581381ad3e5e059fbb5576",
+        "checkpoint_at_reported_tick": {
+          "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "sha256": "d1e575cf1fa156f3a13b25acf1f5233b45bee6dd849ba01f0347769886ab2796",
+          "semantic_hash": "64f60d4878d125e2461323c2f400f4bdbe1477d7eb484d511ee3e43e99f1981d"
+        },
+        "evaluation_state_at_reported_tick": {
+          "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "checkpoint_sha256": "d1e575cf1fa156f3a13b25acf1f5233b45bee6dd849ba01f0347769886ab2796",
+          "state_hash": "64f60d4878d125e2461323c2f400f4bdbe1477d7eb484d511ee3e43e99f1981d",
+          "credit_age": 1536,
+          "parameter_layout": [
+            [
+              "edge_shared",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "encoder.weight",
+              [
+                80,
+                56
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.weight",
+              [
+                22,
+                80
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.bias",
+              [
+                22
+              ],
+              "torch.float64"
+            ]
+          ],
+          "hidden_hash": "03ff53ac1c2b6c45d80a1faab2908f5d7abb2c98c0d175ac5ab4217ce0b1a1c9",
+          "world_hash": "98c3d3506c59b49caab96299b260247dda0d38717c23ffd74e9d1b8f3f556dcb",
+          "model_hash": "580a7de7201dfa536aaaaaf1514a3c875bc7180affc1a6d659337395be7fb6c9",
+          "source_continuation_hash": "8481225fafab76156afaea127bfbe41617b1c9485f1ea8fbb14e2ceff2640cbc"
+        },
+        "actual_evaluator_sources": {
+          "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+          "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+          "experiments/integration/diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+          "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+        },
+        "frozen_validator": "experiments.undirected.study._checked_evaluation",
+        "frozen_validator_passed": true,
+        "checkpoint_files_hashed_only": true,
+        "checkpoint_loads": 0,
+        "evaluation_reruns": 0
+      }
+    },
+    {
+      "id": "seed_000__core__untied__recorded512__fixed__warmup",
+      "interface": "core",
+      "mode": "untied",
+      "seed": 0,
+      "trained_seed_count": 1,
+      "tick": 196608,
+      "counts": [
+        {
+          "family": 0,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 381,
+          "clean_completed": 236,
+          "opportunities": 32768,
+          "active_opportunities": 23380,
+          "inactive_opportunities": 9388,
+          "inactive_actions": 447,
+          "completion_rate": 0.3407871198568873,
+          "clean_completion_rate": 0.2110912343470483,
+          "idle_actions_per_1000_actual_idle_opportunities": 47.61397528760119
+        },
+        {
+          "family": 0,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 1,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 356,
+          "clean_completed": 254,
+          "opportunities": 32768,
+          "active_opportunities": 23519,
+          "inactive_opportunities": 9249,
+          "inactive_actions": 415,
+          "completion_rate": 0.3184257602862254,
+          "clean_completion_rate": 0.22719141323792486,
+          "idle_actions_per_1000_actual_idle_opportunities": 44.86971564493459
+        },
+        {
+          "family": 1,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 2,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 418,
+          "clean_completed": 249,
+          "opportunities": 32768,
+          "active_opportunities": 23252,
+          "inactive_opportunities": 9516,
+          "inactive_actions": 422,
+          "completion_rate": 0.3738819320214669,
+          "clean_completion_rate": 0.22271914132379247,
+          "idle_actions_per_1000_actual_idle_opportunities": 44.346364018495166
+        },
+        {
+          "family": 2,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        },
+        {
+          "family": 3,
+          "condition": "short",
+          "matured": 1118,
+          "completed": 291,
+          "clean_completed": 212,
+          "opportunities": 32768,
+          "active_opportunities": 23755,
+          "inactive_opportunities": 9013,
+          "inactive_actions": 426,
+          "completion_rate": 0.26028622540250446,
+          "clean_completion_rate": 0.18962432915921287,
+          "idle_actions_per_1000_actual_idle_opportunities": 47.26506157772107
+        },
+        {
+          "family": 3,
+          "condition": "long_both",
+          "matured": 159,
+          "completed": 0,
+          "clean_completed": 0,
+          "opportunities": 32768,
+          "active_opportunities": 12147,
+          "inactive_opportunities": 20621,
+          "inactive_actions": 0,
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        }
+      ],
+      "family_equal_means": {
+        "short": {
+          "completion_rate": 0.323345259391771,
+          "clean_completion_rate": 0.21265652951699462,
+          "idle_actions_per_1000_actual_idle_opportunities": 46.023779132188004
+        },
+        "long_both": {
+          "completion_rate": 0.0,
+          "clean_completion_rate": 0.0,
+          "idle_actions_per_1000_actual_idle_opportunities": 0.0
+        }
+      },
+      "provenance": {
+        "training_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "train",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_000__core__untied__recorded512__fixed__warmup"
+        ],
+        "training_command_digest": "f50877bdd1df56b7ac70db153e14daac955c705c7780fad249f9a3003f4e0ce6",
+        "training_queue_row": {
+          "started": 1793350083.896064,
+          "pid": 171400,
+          "returncode": 0,
+          "command_digest": "f50877bdd1df56b7ac70db153e14daac955c705c7780fad249f9a3003f4e0ce6",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\train_seed_000__core__untied__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793355336.6119552,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\checkpoint_latest.pt": "861a57de589f5ac492e076b03efabd5a389cea7ea7177cacedeb40d96f10c1d5",
+            "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\terminal.json": "5b55cc81ed19cb30a0ab6595c5764b567e7053a9a682fd97f2d99e77a629ec78"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "terminal_path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\terminal.json",
+        "terminal_sha256": "5b55cc81ed19cb30a0ab6595c5764b567e7053a9a682fd97f2d99e77a629ec78",
+        "evaluation_command": [
+          "F:\\agi\\.venv\\Scripts\\python.exe",
+          "-m",
+          "experiments.undirected.study",
+          "evaluate",
+          "--protocol",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "--branch-id",
+          "seed_000__core__untied__recorded512__fixed__warmup",
+          "--checkpoint",
+          "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\checkpoint_latest.pt",
+          "--output",
+          "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__untied__recorded512__fixed__warmup.json"
+        ],
+        "evaluation_command_digest": "04443193b9fdfafd94a63456bc66ea7683ce95997a50cc0cce8b366303ec2f76",
+        "evaluation_queue_row": {
+          "started": 1793530246.5501156,
+          "pid": 2632,
+          "returncode": 0,
+          "command_digest": "04443193b9fdfafd94a63456bc66ea7683ce95997a50cc0cce8b366303ec2f76",
+          "log": "F:\\agi\\data\\undirected\\main-v1\\logs\\evaluate_seed_000__core__untied__recorded512__fixed__warmup.log",
+          "attempts": [],
+          "process_returncode": 0,
+          "finished": 1793530848.8311186,
+          "missing_outputs": [],
+          "output_hashes": {
+            "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__untied__recorded512__fixed__warmup.json": "dc004366baa7ba4d1d6e68642150f3e987ef4b4640119b61d5b34794e7fcfee8"
+          },
+          "terminal_status": "success",
+          "terminal_last_tick": 237568,
+          "endpoint_comparable": true
+        },
+        "evaluation_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__untied__recorded512__fixed__warmup.json",
+        "evaluation_sha256": "dc004366baa7ba4d1d6e68642150f3e987ef4b4640119b61d5b34794e7fcfee8",
+        "evaluation_result_hash": "36b1000acf264f9a9562f5dabfb5f92fe3b3a96a7b36a715d28e17f0ced456b0",
+        "checkpoint_at_reported_tick": {
+          "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "sha256": "d7e74c5fa451b5a76c55c2388889e332c2fbfdd9fe0ace7101be8df2d5acddde",
+          "semantic_hash": "c8da85fb2c9190f5044060ac23fcbd2a9c1ddda960f8661b4ab043bbc86b887c"
+        },
+        "evaluation_state_at_reported_tick": {
+          "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__untied__recorded512__fixed__warmup\\checkpoints\\tick_196608.pt",
+          "checkpoint_sha256": "d7e74c5fa451b5a76c55c2388889e332c2fbfdd9fe0ace7101be8df2d5acddde",
+          "state_hash": "c8da85fb2c9190f5044060ac23fcbd2a9c1ddda960f8661b4ab043bbc86b887c",
+          "credit_age": 1536,
+          "parameter_layout": [
+            [
+              "edge_shared",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "edge_skew",
+              [
+                3160
+              ],
+              "torch.float64"
+            ],
+            [
+              "encoder.weight",
+              [
+                80,
+                56
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.weight",
+              [
+                22,
+                80
+              ],
+              "torch.float64"
+            ],
+            [
+              "head.bias",
+              [
+                22
+              ],
+              "torch.float64"
+            ]
+          ],
+          "hidden_hash": "ca94fa6ab52b571904b324d0d77445b302ace98d6d1eac491a4e92944750f56b",
+          "world_hash": "4827c492a75cd55f95609bdd36df39cdd74fe21ecef16d2a2a3e4b30da826955",
+          "model_hash": "f06d35bce3d2e6a92bbadfa15590d427a41ee40debfdb3d1bf176da316520e31",
+          "source_continuation_hash": "d3941a34348df74ce6626d7c1fa34e7b277ea8f809823d643940cdebb1f2783d"
+        },
+        "actual_evaluator_sources": {
+          "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+          "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+          "experiments/integration/diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+          "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+          "experiments/continuity/evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+        },
+        "frozen_validator": "experiments.undirected.study._checked_evaluation",
+        "frozen_validator_passed": true,
+        "checkpoint_files_hashed_only": true,
+        "checkpoint_loads": 0,
+        "evaluation_reruns": 0
+      }
+    }
+  ],
+  "aggregation": "Arithmetic mean of four family-specific rates per condition. One trained seed per variant; no across-seed mean/SD/CI or winner declaration.",
+  "protocol": {
+    "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+    "sha256": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc"
+  },
+  "declared_source_hashes": {
+    "F:\\agi\\experiments\\undirected\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\test_model.py": "636ad022366233cdf414a09313b02bfe9484b090dae7620782f9e035028428a1",
+    "F:\\agi\\experiments\\undirected\\credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "F:\\agi\\experiments\\undirected\\test_credit.py": "4ce8cd859ad99b05239958fbc38cc869dee890d791d3360e2238302da05b63cd",
+    "F:\\agi\\experiments\\undirected\\plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7",
+    "F:\\agi\\experiments\\undirected\\test_plasticity.py": "bf7f0984474990b4a82fb3ab3abb0402414b2da20dfa8432921f359f7065072d",
+    "F:\\agi\\experiments\\undirected\\run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "F:\\agi\\experiments\\undirected\\test_run.py": "e6981df9823fbc56b95ec1b8562c5028d40eda672bac9236a984f0d3a754f855",
+    "F:\\agi\\experiments\\undirected\\study.py": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+    "F:\\agi\\experiments\\undirected\\test_study.py": "71b162f4eeb1318c8ef1acfc70bf2041f2d75d15f1c83efc52cc9157ddb12a88",
+    "F:\\agi\\experiments\\undirected\\queue.py": "863371fa5fb1ab70e896eb1a936f1fda01af06f3a67b59bed2fb5f4ca540bb33",
+    "F:\\agi\\experiments\\undirected\\test_queue.py": "d3dfab0ad05f812a7800dc0134ead83ab02a354e8cc03389f446b6638af48bdc",
+    "F:\\agi\\experiments\\undirected\\ledger.py": "8b0f5284a9a5e53d14af9081e6d95f83cb4f854523d431a475edc2e65d76080a",
+    "F:\\agi\\experiments\\undirected\\test_ledger.py": "1fb9180ce0af912b49265b3df0408d38b4575d8559002da0fd4d5995022d794e",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852"
+  },
+  "queue_provenance": {
+    "training": {
+      "command_manifest": {
+        "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\training-commands-v1.json",
+        "sha256": "bbc782b301ec923ba11131fd8283e46d6bee33a4979ea9e6ba9a48633e9903f0"
+      },
+      "execution_snapshot": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training-execution.json",
+        "sha256": "8e60f830ce42a12f2814e84b6e2ec707e193f3f7b5a8dff2bea0e999f2850494",
+        "note": "Mutable queue file: hash binds these captured bytes only."
+      }
+    },
+    "evaluation": {
+      "command_manifest": {
+        "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\evaluation-commands-v1.json",
+        "sha256": "ec254901da5d7a67421684f69f5e89964260af574da2d468ed92cd4869be3851"
+      },
+      "execution_snapshot": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\evaluation-execution.json",
+        "sha256": "ab61fcc7bb9a35823fd514aab379c887baff67ae24481a3b2140e31002c329c9",
+        "note": "Mutable queue file: hash binds these captured bytes only."
+      }
+    }
+  },
+  "extractor": {
+    "path": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\interim-interfaces-seed0.py",
+    "sha256": "ae3175ed76bc3c9b43c388248dbf41d247e3c8a4a30a0da40bb4aa6212498423"
+  },
+  "limitations": [
+    "Frozen validator checks JSON provenance, not an independent replay of behavior.",
+    "Checkpoint bytes were stream-hashed, not loaded; no model/world/training/evaluation was run.",
+    "Main endpoint196608 is before withdrawal/return; results do not measure final retention.",
+    "Family-average rates are not pooled request rates. Idle denominator is actual inactive opportunities."
+  ]
+}

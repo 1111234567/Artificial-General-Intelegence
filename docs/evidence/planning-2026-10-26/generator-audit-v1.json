@@ -1,0 +1,1837 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-26T11:36:47.538842+00:00",
+  "audits": [
+    {
+      "stage": "discarded_protected_resource_template",
+      "source_sha256": "73f4575075a8751f4a3756063fe79b3a1e07b82623e713dae5aaf0cacf360ce0",
+      "source_unchanged_during_test": true,
+      "sample_spec": {
+        "families": [
+          "chain",
+          "fork",
+          "cross"
+        ],
+        "depths": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "per_cell": 50,
+        "seed_formula": "8100000 + family_index*100000 + depth*1000 + j; family_index chain=0,fork=1,cross=2; j=0..49",
+        "generator_kwargs": {
+          "branches": 2,
+          "distractors": 4,
+          "n_items": 40,
+          "max_rules": 32
+        },
+        "policy_max_steps": 32
+      },
+      "policy_implementation": "independent ephemeral Python implementation; equivalent to persisted relaxed/fanout policies; first_legal chooses the lowest applicable action ID",
+      "total_problems": 1650,
+      "total_relaxed_success": 1650,
+      "total_relaxed_optimal": 1650,
+      "total_fanout_success": 1650,
+      "total_fanout_optimal": 1650,
+      "total_first_legal_success": 58,
+      "elapsed_seconds": 26.065,
+      "rows": [
+        {
+          "family": "chain",
+          "depth": 2,
+          "n": 50,
+          "first_legal_success": 6,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 3,
+          "n": 50,
+          "first_legal_success": 5,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 6,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 7,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 8,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 9,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 10,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 11,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "chain",
+          "depth": 12,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 2,
+          "n": 50,
+          "first_legal_success": 9,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 3,
+          "n": 50,
+          "first_legal_success": 4,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 4,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 5,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 6,
+          "n": 50,
+          "first_legal_success": 2,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 7,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 8,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 9,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 10,
+          "n": 50,
+          "first_legal_success": 3,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 11,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "fork",
+          "depth": 12,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 2,
+          "n": 50,
+          "first_legal_success": 10,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 3,
+          "n": 50,
+          "first_legal_success": 4,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 4,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 5,
+          "n": 50,
+          "first_legal_success": 2,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 6,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 7,
+          "n": 50,
+          "first_legal_success": 1,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 8,
+          "n": 50,
+          "first_legal_success": 2,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 9,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 10,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 11,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        },
+        {
+          "family": "cross",
+          "depth": 12,
+          "n": 50,
+          "first_legal_success": 0,
+          "relaxed_success": 50,
+          "relaxed_optimal": 50,
+          "fanout_success": 50,
+          "fanout_optimal": 50
+        }
+      ],
+      "finding": "Single protected resource and unary trap shape permitted a static, no-lookahead structural solution. This generator was discarded before formal model training."
+    },
+    {
+      "stage": "random_allocation_development_snapshot",
+      "source_sha256": "79fdf77896917246be2c9fc0c009558494a01fc075aefd1bce7ca5a99ee2edf5",
+      "source_sha256_at_end": "79fdf77896917246be2c9fc0c009558494a01fc075aefd1bce7ca5a99ee2edf5",
+      "source_unchanged_during_test": true,
+      "heuristics_sha256": "ea03a5a8de94bb682e17b8b19c82a96493bc25cf3dd4c73e2fe7e6d0a58fb14f",
+      "sample_spec": {
+        "families": [
+          "chain",
+          "fork"
+        ],
+        "depths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "base_seeds_per_cell": 5,
+        "goal_variants": [
+          0,
+          1
+        ],
+        "seed_formula": "8200000 + family_index*100000 + depth*1000 + j; family_index chain=0,fork=1; j=0..4",
+        "generator_kwargs": {
+          "branches": 2,
+          "distractors": 4,
+          "n_items": 40,
+          "max_rules": 32
+        },
+        "policy_max_steps": 24
+      },
+      "counterfactual_pairs": 90,
+      "pairs_with_same_inventory_rules_different_goal": 90,
+      "total_problems": 180,
+      "total_relaxed_success": 69,
+      "total_relaxed_optimal": 69,
+      "total_fanout_success": 0,
+      "total_fanout_optimal": 0,
+      "elapsed_seconds": 4.767,
+      "rows": [
+        {
+          "family": "chain",
+          "depth": 4,
+          "n": 10,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 519,
+          "fanout_transitions": 6,
+          "relaxed_rule_checks": 31264
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "n": 10,
+          "relaxed_success": 2,
+          "relaxed_optimal": 2,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 676,
+          "fanout_transitions": 4,
+          "relaxed_rule_checks": 43136
+        },
+        {
+          "family": "chain",
+          "depth": 6,
+          "n": 10,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 543,
+          "fanout_transitions": 10,
+          "relaxed_rule_checks": 39808
+        },
+        {
+          "family": "chain",
+          "depth": 7,
+          "n": 10,
+          "relaxed_success": 3,
+          "relaxed_optimal": 3,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 775,
+          "fanout_transitions": 14,
+          "relaxed_rule_checks": 57536
+        },
+        {
+          "family": "chain",
+          "depth": 8,
+          "n": 10,
+          "relaxed_success": 3,
+          "relaxed_optimal": 3,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 936,
+          "fanout_transitions": 16,
+          "relaxed_rule_checks": 77024
+        },
+        {
+          "family": "chain",
+          "depth": 9,
+          "n": 10,
+          "relaxed_success": 2,
+          "relaxed_optimal": 2,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1009,
+          "fanout_transitions": 22,
+          "relaxed_rule_checks": 84480
+        },
+        {
+          "family": "chain",
+          "depth": 10,
+          "n": 10,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 933,
+          "fanout_transitions": 18,
+          "relaxed_rule_checks": 93536
+        },
+        {
+          "family": "chain",
+          "depth": 11,
+          "n": 10,
+          "relaxed_success": 2,
+          "relaxed_optimal": 2,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 900,
+          "fanout_transitions": 16,
+          "relaxed_rule_checks": 103296
+        },
+        {
+          "family": "chain",
+          "depth": 12,
+          "n": 10,
+          "relaxed_success": 7,
+          "relaxed_optimal": 7,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 940,
+          "fanout_transitions": 18,
+          "relaxed_rule_checks": 122112
+        },
+        {
+          "family": "fork",
+          "depth": 4,
+          "n": 10,
+          "relaxed_success": 5,
+          "relaxed_optimal": 5,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 531,
+          "fanout_transitions": 8,
+          "relaxed_rule_checks": 31200
+        },
+        {
+          "family": "fork",
+          "depth": 5,
+          "n": 10,
+          "relaxed_success": 5,
+          "relaxed_optimal": 5,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 695,
+          "fanout_transitions": 6,
+          "relaxed_rule_checks": 44704
+        },
+        {
+          "family": "fork",
+          "depth": 6,
+          "n": 10,
+          "relaxed_success": 7,
+          "relaxed_optimal": 7,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 714,
+          "fanout_transitions": 8,
+          "relaxed_rule_checks": 50368
+        },
+        {
+          "family": "fork",
+          "depth": 7,
+          "n": 10,
+          "relaxed_success": 2,
+          "relaxed_optimal": 2,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1019,
+          "fanout_transitions": 16,
+          "relaxed_rule_checks": 73696
+        },
+        {
+          "family": "fork",
+          "depth": 8,
+          "n": 10,
+          "relaxed_success": 2,
+          "relaxed_optimal": 2,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1116,
+          "fanout_transitions": 14,
+          "relaxed_rule_checks": 86720
+        },
+        {
+          "family": "fork",
+          "depth": 9,
+          "n": 10,
+          "relaxed_success": 6,
+          "relaxed_optimal": 6,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1120,
+          "fanout_transitions": 20,
+          "relaxed_rule_checks": 89600
+        },
+        {
+          "family": "fork",
+          "depth": 10,
+          "n": 10,
+          "relaxed_success": 1,
+          "relaxed_optimal": 1,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1207,
+          "fanout_transitions": 20,
+          "relaxed_rule_checks": 115232
+        },
+        {
+          "family": "fork",
+          "depth": 11,
+          "n": 10,
+          "relaxed_success": 6,
+          "relaxed_optimal": 6,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1130,
+          "fanout_transitions": 8,
+          "relaxed_rule_checks": 109472
+        },
+        {
+          "family": "fork",
+          "depth": 12,
+          "n": 10,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "relaxed_transitions": 1196,
+          "fanout_transitions": 22,
+          "relaxed_rule_checks": 115872
+        }
+      ],
+      "failure_examples": [
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204000,
+          "goal_variant": 0,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            12
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204000,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [
+            12
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204000,
+          "goal_variant": 1,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            12
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204000,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [
+            12
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204001,
+          "goal_variant": 0,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            2
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204001,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [
+            2
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204001,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [
+            2
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204002,
+          "goal_variant": 0,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            1
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204002,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [
+            1
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204002,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [
+            1
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204003,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204003,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204004,
+          "goal_variant": 0,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            2
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204004,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204004,
+          "goal_variant": 1,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            2
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "seed": 8204004,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "seed": 8205000,
+          "goal_variant": 0,
+          "mode": "relaxed",
+          "plan": [
+            0,
+            1,
+            2
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "seed": 8205000,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "seed": 8205000,
+          "goal_variant": 1,
+          "mode": "relaxed",
+          "plan": [
+            1,
+            2,
+            12
+          ],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "seed": 8205000,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        }
+      ],
+      "oracle_policy_calls": 0,
+      "note": "Development diagnostic only; cross generation was still being refined. Policy computation uses only observations; exact solver is used by world generation and final plan checker only."
+    },
+    {
+      "stage": "frozen_random_allocation_final",
+      "created_utc": "2026-10-26T11:42:49.987287+00:00",
+      "source_sha256": "516fdbce0a6a6c2745e30c75b7ee86bf53cbfb76e5ace6b81ac79a177290ee23",
+      "source_sha256_at_end": "516fdbce0a6a6c2745e30c75b7ee86bf53cbfb76e5ace6b81ac79a177290ee23",
+      "source_unchanged_during_test": true,
+      "heuristics_sha256": "ea03a5a8de94bb682e17b8b19c82a96493bc25cf3dd4c73e2fe7e6d0a58fb14f",
+      "heuristics_sha256_at_end": "ea03a5a8de94bb682e17b8b19c82a96493bc25cf3dd4c73e2fe7e6d0a58fb14f",
+      "runtime_sha256_before": {
+        "experiments\\planning\\world.py": "516fdbce0a6a6c2745e30c75b7ee86bf53cbfb76e5ace6b81ac79a177290ee23",
+        "experiments\\planning\\heuristics.py": "ea03a5a8de94bb682e17b8b19c82a96493bc25cf3dd4c73e2fe7e6d0a58fb14f",
+        "experiments\\planning\\model.py": "532b075b011feb41275db1d8507d363d0509101ce104f003535c74fdbaedc975",
+        "experiments\\planning\\run.py": "52f9034a53b2ef44c1521fca3461e56cb7c0bc2789147d9ab0b3950498fcc57f",
+        "experiments\\planning\\__init__.py": "d2d8e324e3cba92b64f9f35fbf962f44fcb7cb97476fc76f418f8fad64fac211"
+      },
+      "runtime_sha256_after": {
+        "experiments\\planning\\world.py": "516fdbce0a6a6c2745e30c75b7ee86bf53cbfb76e5ace6b81ac79a177290ee23",
+        "experiments\\planning\\heuristics.py": "ea03a5a8de94bb682e17b8b19c82a96493bc25cf3dd4c73e2fe7e6d0a58fb14f",
+        "experiments\\planning\\model.py": "532b075b011feb41275db1d8507d363d0509101ce104f003535c74fdbaedc975",
+        "experiments\\planning\\run.py": "52f9034a53b2ef44c1521fca3461e56cb7c0bc2789147d9ab0b3950498fcc57f",
+        "experiments\\planning\\__init__.py": "d2d8e324e3cba92b64f9f35fbf962f44fcb7cb97476fc76f418f8fad64fac211"
+      },
+      "sample_spec": {
+        "families": [
+          "chain",
+          "fork",
+          "cross"
+        ],
+        "depths": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "valid_depths": {
+          "chain": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "fork": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "cross": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        "base_seeds_per_cell": 10,
+        "goal_variants": [
+          0,
+          1
+        ],
+        "seed_formula": "8300000 + family_index*100000 + depth*1000 + j; family_index chain=0,fork=1,cross=2; j=0..9",
+        "generator_kwargs": {
+          "branches": 2,
+          "distractors": 4,
+          "n_items": 40,
+          "max_rules": 32
+        },
+        "policy_max_steps": 24
+      },
+      "counterfactual_pairs": 310,
+      "pairs_with_same_inventory_rules_different_goal": 310,
+      "pairs_with_optimal_to_dead_end_role_reversal": 310,
+      "total_problems": 620,
+      "total_relaxed_success": 292,
+      "total_relaxed_optimal": 292,
+      "total_fanout_success": 0,
+      "total_fanout_optimal": 0,
+      "total_first_legal_success": 64,
+      "total_relaxed_transition_calls": 47554,
+      "total_fanout_transition_calls": 758,
+      "hall_conflict_problems_checked": 504,
+      "hall_conflict_problems_with_relaxed_alive_dead_end_first_action": 504,
+      "max_states_explored": 11972,
+      "max_states_example": {
+        "family": "cross",
+        "depth": 12,
+        "seed": 8512007,
+        "goal_variant": 0
+      },
+      "elapsed_seconds": 22.137,
+      "rows": [
+        {
+          "family": "chain",
+          "depth": 2,
+          "n": 20,
+          "relaxed_success": 20,
+          "relaxed_optimal": 20,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 10,
+          "allocation_counts": [
+            1
+          ],
+          "processing_counts": [
+            0
+          ],
+          "critical_paths": [
+            2
+          ],
+          "max_states_explored": 5
+        },
+        {
+          "family": "chain",
+          "depth": 3,
+          "n": 20,
+          "relaxed_success": 13,
+          "relaxed_optimal": 13,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            2
+          ],
+          "processing_counts": [
+            0
+          ],
+          "critical_paths": [
+            2
+          ],
+          "max_states_explored": 15
+        },
+        {
+          "family": "chain",
+          "depth": 4,
+          "n": 20,
+          "relaxed_success": 12,
+          "relaxed_optimal": 12,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            3
+          ],
+          "processing_counts": [
+            0
+          ],
+          "critical_paths": [
+            2
+          ],
+          "max_states_explored": 41
+        },
+        {
+          "family": "chain",
+          "depth": 5,
+          "n": 20,
+          "relaxed_success": 9,
+          "relaxed_optimal": 9,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            3,
+            4
+          ],
+          "processing_counts": [
+            0,
+            1
+          ],
+          "critical_paths": [
+            2,
+            3
+          ],
+          "max_states_explored": 101
+        },
+        {
+          "family": "chain",
+          "depth": 6,
+          "n": 20,
+          "relaxed_success": 11,
+          "relaxed_optimal": 11,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            3,
+            4,
+            5
+          ],
+          "processing_counts": [
+            0,
+            1,
+            2
+          ],
+          "critical_paths": [
+            2,
+            3,
+            4
+          ],
+          "max_states_explored": 254
+        },
+        {
+          "family": "chain",
+          "depth": 7,
+          "n": 20,
+          "relaxed_success": 7,
+          "relaxed_optimal": 7,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            4,
+            5,
+            6
+          ],
+          "processing_counts": [
+            0,
+            1,
+            2
+          ],
+          "critical_paths": [
+            2,
+            3,
+            4
+          ],
+          "max_states_explored": 718
+        },
+        {
+          "family": "chain",
+          "depth": 8,
+          "n": 20,
+          "relaxed_success": 9,
+          "relaxed_optimal": 9,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            5,
+            6
+          ],
+          "processing_counts": [
+            1,
+            2
+          ],
+          "critical_paths": [
+            3,
+            4
+          ],
+          "max_states_explored": 867
+        },
+        {
+          "family": "chain",
+          "depth": 9,
+          "n": 20,
+          "relaxed_success": 10,
+          "relaxed_optimal": 10,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 1,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            2
+          ],
+          "critical_paths": [
+            4
+          ],
+          "max_states_explored": 953
+        },
+        {
+          "family": "chain",
+          "depth": 10,
+          "n": 20,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            3
+          ],
+          "critical_paths": [
+            5
+          ],
+          "max_states_explored": 956
+        },
+        {
+          "family": "chain",
+          "depth": 11,
+          "n": 20,
+          "relaxed_success": 8,
+          "relaxed_optimal": 8,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            4
+          ],
+          "critical_paths": [
+            6
+          ],
+          "max_states_explored": 905
+        },
+        {
+          "family": "chain",
+          "depth": 12,
+          "n": 20,
+          "relaxed_success": 6,
+          "relaxed_optimal": 6,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            5
+          ],
+          "critical_paths": [
+            7
+          ],
+          "max_states_explored": 873
+        },
+        {
+          "family": "fork",
+          "depth": 2,
+          "n": 20,
+          "relaxed_success": 20,
+          "relaxed_optimal": 20,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 10,
+          "allocation_counts": [
+            1
+          ],
+          "processing_counts": [
+            0
+          ],
+          "critical_paths": [
+            2
+          ],
+          "max_states_explored": 5
+        },
+        {
+          "family": "fork",
+          "depth": 3,
+          "n": 20,
+          "relaxed_success": 13,
+          "relaxed_optimal": 13,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            2
+          ],
+          "processing_counts": [
+            0
+          ],
+          "critical_paths": [
+            2
+          ],
+          "max_states_explored": 15
+        },
+        {
+          "family": "fork",
+          "depth": 4,
+          "n": 20,
+          "relaxed_success": 9,
+          "relaxed_optimal": 9,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 2,
+          "allocation_counts": [
+            3
+          ],
+          "processing_counts": [
+            0
+          ],
+          "critical_paths": [
+            2
+          ],
+          "max_states_explored": 45
+        },
+        {
+          "family": "fork",
+          "depth": 5,
+          "n": 20,
+          "relaxed_success": 11,
+          "relaxed_optimal": 11,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 1,
+          "allocation_counts": [
+            3,
+            4
+          ],
+          "processing_counts": [
+            0,
+            1
+          ],
+          "critical_paths": [
+            2,
+            3
+          ],
+          "max_states_explored": 92
+        },
+        {
+          "family": "fork",
+          "depth": 6,
+          "n": 20,
+          "relaxed_success": 11,
+          "relaxed_optimal": 11,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            3,
+            4,
+            5
+          ],
+          "processing_counts": [
+            0,
+            1,
+            2
+          ],
+          "critical_paths": [
+            2,
+            3
+          ],
+          "max_states_explored": 284
+        },
+        {
+          "family": "fork",
+          "depth": 7,
+          "n": 20,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 2,
+          "allocation_counts": [
+            4,
+            5,
+            6
+          ],
+          "processing_counts": [
+            0,
+            1,
+            2
+          ],
+          "critical_paths": [
+            2,
+            3
+          ],
+          "max_states_explored": 694
+        },
+        {
+          "family": "fork",
+          "depth": 8,
+          "n": 20,
+          "relaxed_success": 12,
+          "relaxed_optimal": 12,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 1,
+          "allocation_counts": [
+            5,
+            6
+          ],
+          "processing_counts": [
+            1,
+            2
+          ],
+          "critical_paths": [
+            3
+          ],
+          "max_states_explored": 1367
+        },
+        {
+          "family": "fork",
+          "depth": 9,
+          "n": 20,
+          "relaxed_success": 6,
+          "relaxed_optimal": 6,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            2
+          ],
+          "critical_paths": [
+            3
+          ],
+          "max_states_explored": 2354
+        },
+        {
+          "family": "fork",
+          "depth": 10,
+          "n": 20,
+          "relaxed_success": 5,
+          "relaxed_optimal": 5,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 2,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            3
+          ],
+          "critical_paths": [
+            4
+          ],
+          "max_states_explored": 3686
+        },
+        {
+          "family": "fork",
+          "depth": 11,
+          "n": 20,
+          "relaxed_success": 10,
+          "relaxed_optimal": 10,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            4
+          ],
+          "critical_paths": [
+            4
+          ],
+          "max_states_explored": 5051
+        },
+        {
+          "family": "fork",
+          "depth": 12,
+          "n": 20,
+          "relaxed_success": 7,
+          "relaxed_optimal": 7,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 1,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            5
+          ],
+          "critical_paths": [
+            5
+          ],
+          "max_states_explored": 7274
+        },
+        {
+          "family": "cross",
+          "depth": 4,
+          "n": 20,
+          "relaxed_success": 15,
+          "relaxed_optimal": 15,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 5,
+          "allocation_counts": [
+            2
+          ],
+          "processing_counts": [
+            1
+          ],
+          "critical_paths": [
+            3
+          ],
+          "max_states_explored": 17
+        },
+        {
+          "family": "cross",
+          "depth": 5,
+          "n": 20,
+          "relaxed_success": 14,
+          "relaxed_optimal": 14,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 5,
+          "allocation_counts": [
+            2,
+            3
+          ],
+          "processing_counts": [
+            1,
+            2
+          ],
+          "critical_paths": [
+            3,
+            4
+          ],
+          "max_states_explored": 51
+        },
+        {
+          "family": "cross",
+          "depth": 6,
+          "n": 20,
+          "relaxed_success": 10,
+          "relaxed_optimal": 10,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 3,
+          "allocation_counts": [
+            3,
+            4
+          ],
+          "processing_counts": [
+            1,
+            2
+          ],
+          "critical_paths": [
+            3,
+            4
+          ],
+          "max_states_explored": 146
+        },
+        {
+          "family": "cross",
+          "depth": 7,
+          "n": 20,
+          "relaxed_success": 4,
+          "relaxed_optimal": 4,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            4,
+            5
+          ],
+          "processing_counts": [
+            1,
+            2
+          ],
+          "critical_paths": [
+            3,
+            4
+          ],
+          "max_states_explored": 395
+        },
+        {
+          "family": "cross",
+          "depth": 8,
+          "n": 20,
+          "relaxed_success": 7,
+          "relaxed_optimal": 7,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 2,
+          "allocation_counts": [
+            5,
+            6
+          ],
+          "processing_counts": [
+            1,
+            2
+          ],
+          "critical_paths": [
+            3,
+            4
+          ],
+          "max_states_explored": 1250
+        },
+        {
+          "family": "cross",
+          "depth": 9,
+          "n": 20,
+          "relaxed_success": 8,
+          "relaxed_optimal": 8,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            2
+          ],
+          "critical_paths": [
+            4
+          ],
+          "max_states_explored": 1808
+        },
+        {
+          "family": "cross",
+          "depth": 10,
+          "n": 20,
+          "relaxed_success": 6,
+          "relaxed_optimal": 6,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            3
+          ],
+          "critical_paths": [
+            4,
+            5
+          ],
+          "max_states_explored": 6106
+        },
+        {
+          "family": "cross",
+          "depth": 11,
+          "n": 20,
+          "relaxed_success": 3,
+          "relaxed_optimal": 3,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 0,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            4
+          ],
+          "critical_paths": [
+            5,
+            6
+          ],
+          "max_states_explored": 6500
+        },
+        {
+          "family": "cross",
+          "depth": 12,
+          "n": 20,
+          "relaxed_success": 8,
+          "relaxed_optimal": 8,
+          "fanout_success": 0,
+          "fanout_optimal": 0,
+          "first_legal_success": 1,
+          "allocation_counts": [
+            6
+          ],
+          "processing_counts": [
+            5
+          ],
+          "critical_paths": [
+            5,
+            6,
+            7
+          ],
+          "max_states_explored": 11972
+        }
+      ],
+      "failure_examples": [
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302000,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302000,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302001,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302001,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302002,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302002,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302003,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302003,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302004,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302004,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302005,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302005,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302006,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302006,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302007,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302007,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302008,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302008,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302009,
+          "goal_variant": 0,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        },
+        {
+          "family": "chain",
+          "depth": 2,
+          "seed": 8302009,
+          "goal_variant": 1,
+          "mode": "fanout",
+          "plan": [],
+          "termination_reason": "filter_rejected_all"
+        }
+      ],
+      "oracle_policy_calls": 0,
+      "note": "Generator diagnostic samples, independent of formal frozen model evaluation sets. Policies receive observable inventory/rules/goal only. Exact solve verifies task length and classifies offline role reversal and Hall conflicts; it is never called by either heuristic policy. All runtime source hashes are identical before and after this audit."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "format": "undirected-credit-path-check-v1",
+  "total_ticks": 1152,
+  "cue_tick": 0,
+  "supervised_suffix": [
+    1024,
+    1152
+  ],
+  "parameter_changes": 8,
+  "update_ticks": 128,
+  "graph": "One shared undirected pair, manually placed near a slow mode; no training/behavior score.",
+  "derivative": "Shared additive perturbation across the recorded changing-parameter path; no derivative through parameter changes or inputs.",
+  "rtrl_full_bptt_max_abs_error": 2.6645352591003757e-15,
+  "primal_max_abs_error": 0.0,
+  "directional_gradient": 0.4162079422189689,
+  "directional_finite_difference": 0.41620794227759106,
+  "encoder_gradient_norm": {
+    "tbptt128": 0.0,
+    "recorded512": 0.0,
+    "recorded1024": 0.0,
+    "rtrl": 0.5886069166534633,
+    "rtrl_reset": 0.0
+  },
+  "credit_path_ticks": {
+    "tbptt128": 128,
+    "recorded512": 512,
+    "recorded1024": 1024,
+    "rtrl": 1152,
+    "rtrl_reset": 128
+  },
+  "sources": {
+    "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\credit-path-check.py": "e04d331e032f72d5c95213727a270089d022045ffc51152673d6c86ecdcde27e",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88"
+  }
+}

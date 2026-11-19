@@ -1,0 +1,33 @@
+{
+  "format": "integration-pilot-report-metadata-errata-v1",
+  "created_utc": "2026-10-27T03:54:15.650397+00:00",
+  "scope": "Only report learning/gradient-semantics prose was made conditional on each arm; training, state, gradients, updates and checkpoint semantics are unchanged.",
+  "old_run_sha256": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+  "new_run_sha256": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+  "preserved_pilot_source": "F:\\agi\\data\\integration\\pilot-learning-v1\\metadata-errata-source\\run.py",
+  "pilot_source_additional_copies": "Each pilot checkpoint.sources and sources/integration/run.py",
+  "algorithm_ast_identical_outside_report": true,
+  "pilot_summary_sha256": "58270d1c0f5fd7271d3760fed301158f7a33035a0c307c9ff1709565c583c8d8",
+  "pilot_artifacts_overwritten": false,
+  "pilot_rerun": false,
+  "pilot_resume_proof_revision": "d1394e8ce297bd39598e0276766863ca1fe01f81c0571bfcc6972e0e670f36db",
+  "pilot_resume_proof_still_applies_to_captured_revision": true,
+  "corrected_metadata": {
+    "frozen": "0 Adam updates; no label-gradient credit; no stage learning.",
+    "coact_only_mix": "0 Adam updates; no target-label gradient; recurrent-only local adaptation; encoder/readout remain supervised pretrained.",
+    "bp64_accum128_bp128_coverage": "1 Adam update per live chunk; live graph horizon stated per arm.",
+    "repeat64_replay64": "2 Adam updates per live chunk; extra pass state separate from live state.",
+    "coact_live_coact_mix_coact_mix_shuffled": "1 Adam update plus one forward coactivity update per live chunk; supervised hybrids."
+  },
+  "tests": {
+    "command": ".venv/Scripts/python -m unittest experiments.integration.test_run -v",
+    "passed": 15,
+    "includes_actual_cuda_resume": true
+  },
+  "new_source_hashes": {
+    "run.py": "d980201722c9446759fc42b8456c1854cbb251ebb6e0e5ef35eed4ecd4b4213b",
+    "local.py": "6001ff6ffb6836ae2f97bf282b8973fe080b2d18af81559e142327ce9ddfd9bd",
+    "test_run.py": "f835758a41deb56427667529516c10cb6b6d5feba90388276aacbdcfc139e02b",
+    "test_local.py": "4c8ac42504227be90e5b30a33985b1f03eac0772e7a7c637e83d1a87f03051b5"
+  }
+}

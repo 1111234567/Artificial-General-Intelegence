@@ -1,0 +1,23 @@
+{
+  "format": "organization-selected-tables-v1",
+  "inputs_sha256": {
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-aggregate-v1\\artifacts.json": "af43108ecffa511d464dc7fde0038d581fbe8a3f7bd16c136b016f6f926cea67",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-aggregate-v1\\per_seed.csv": "364f27c7285e55239e3d6bac5f493bddc1e55ba1f75427fac5a44a666a869be9",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\acquisition-aggregate-v1\\baseline_per_seed.csv": "d21bfb8d62b39ef07093390c6f6ac15a5586551a9f7193a97f59956896176d00",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\aggregate-v1\\artifacts.json": "70fc29e06f4ebd313a21998bd87b5160c930c6d88bc19022db308d8b7ea3feff",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\aggregate-v1\\family_average_summary.csv": "2bd9acc82e284dfe05cdc9ca15564e8aa19949208d357034c8a1d6128654177f",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\aggregate-v1\\training_per_seed.csv": "6c974721a1da20c98b51f28cf03e9e81221e98437a873fdc5b3ef936c5b63344",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\aggregate-v1\\functional_probes.csv": "c423f710277a7997f42f0c9a5920c0ba05dce7a6c117071848ba46591c1a32df",
+    "F:\\agi\\docs\\evidence\\organization-2026-10-30\\report_tables.py": "d9872c80da4e3e138becf0a62da3d93200bb733a530facaa46e71e6131c7616e"
+  },
+  "independent_training_seeds": 3,
+  "note": "Four-family rates averaged within seed before mean/sampleSD. Trial batches are descriptive repeated measurements.",
+  "tables": {
+    "acquisition_table": "| 条件 | 严格：旧→零 | 严格配对差 | 普通：旧→零 | idle：旧→零 |\n|---|---|---|---|---|\n| fixed/wide，short | 3.38 → 4.26 | 0.88 ± 0.32 | 4.79 → 8.66 | 11.15 → 23.26 |\n| fixed/wide，long_both | 0.04 → 1.37 | 1.33 ± 0.72 | 0.04 → 1.58 | 0.02 → 0.25 |\n| open/wide，short | 4.08 → 4.05 | -0.03 ± 1.05 | 6.87 → 9.29 | 13.09 → 31.14 |\n| open/wide，long_both | 0.11 → 2.45 | 2.33 ± 1.13 | 0.12 → 3.59 | 0.06 → 0.67 |\n| fixed/narrow，short | 38.17 → 38.78 | 0.61 ± 0.73 | 84.93 → 87.73 | 32.49 → 23.39 |\n| fixed/narrow，long_both | 0.09 → 0.02 | -0.07 ± 0.05 | 28.11 → 28.98 | 179.12 → 236.94 |",
+    "topology_table": "| 场 | 主训末严格 | 最终严格 | 最终普通 | 最终idle/千机会 |\n|---|---|---|---|---|\n| plain | 3.22 ± 1.12 | 6.11 ± 0.79 | 8.88 ± 0.73 | 0.89 ± 0.16 |\n| parallel | 2.12 ± 1.34 | 5.38 ± 1.50 | 9.45 ± 4.88 | 1.46 ± 0.73 |\n| coupled | 1.96 ± 0.52 | 4.45 ± 0.89 | 5.91 ± 0.84 | 1.34 ± 0.82 |",
+    "functional_table": "| 策略 | 严格完成（%） | 普通完成（%） | idle/千机会 |\n|---|---|---|---|\n| plain/fixed | 5.29 ± 1.19 | 9.36 ± 1.96 | 1.78 ± 0.30 |\n| plain/task | 5.31 ± 1.72 | 12.85 ± 2.18 | 1.08 ± 0.36 |\n| plain/magnitude | 5.19 ± 1.14 | 10.97 ± 1.87 | 1.28 ± 0.26 |\n| plain/random | 5.32 ± 1.89 | 10.32 ± 1.51 | 1.33 ± 0.60 |\n| coupled/fixed | 4.86 ± 1.55 | 9.75 ± 2.15 | 2.11 ± 0.46 |\n| coupled/task | 4.48 ± 1.15 | 8.31 ± 1.62 | 1.20 ± 0.42 |",
+    "capacity_table": "| 策略 | 非零边 | 非零跨部分边 | 累计出生 | 累计退出 |\n|---|---|---|---|---|\n| plain/fixed | 4096.0 ± 0.0 | 0.0 ± 0.0 | 0.0 ± 0.0 | 0.0 ± 0.0 |\n| plain/task | 4252.0 ± 12.0 | 113.3 ± 11.0 | 156.0 ± 12.0 | 0.0 ± 0.0 |\n| plain/magnitude | 4005.3 ± 12.9 | 85.0 ± 9.5 | 182.7 ± 18.5 | 273.3 ± 6.1 |\n| plain/random | 4267.7 ± 45.3 | 124.0 ± 36.6 | 172.0 ± 45.1 | 0.3 ± 0.6 |\n| coupled/fixed | 4096.0 ± 0.0 | 0.0 ± 0.0 | 0.0 ± 0.0 | 0.0 ± 0.0 |\n| coupled/task | 4278.7 ± 12.9 | 124.0 ± 10.5 | 182.7 ± 12.9 | 0.0 ± 0.0 |",
+    "probe_table": "| 策略 | 接受出生 | 接受减弱 | 全删会增加mixed loss | 减弱可接受但全删有害 |\n|---|---|---|---|---|\n| plain/task | 117/501 | 30/501 | 478/501 | 7/30 |\n| plain/magnitude | 137/501 | 210/501 | 291/501 | 0/210 |\n| plain/random | 129/501 | 142/501 | 427/501 | 68/142 |\n| coupled/task | 137/501 | 22/501 | 485/501 | 6/22 |",
+    "history_table": "| 策略 | 已接受出生中历史loss恶化（%） | 已接受减弱中历史loss恶化（%） |\n|---|---|---|\n| plain/task | 24.66 ± 10.02 | 19.32 ± 7.45 |\n| plain/magnitude | 20.49 ± 7.02 | 16.25 ± 2.24 |\n| plain/random | 22.99 ± 2.92 | 19.10 ± 3.95 |\n| coupled/task | 25.79 ± 6.31 | 23.61 ± 10.49 |"
+  }
+}

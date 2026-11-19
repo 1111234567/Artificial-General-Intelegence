@@ -1,0 +1,152 @@
+{
+  "format": "credit-topology-design-v1",
+  "date": "2026-10-27",
+  "status": "Research design only; no architecture implementation, training, checkpoint surgery, or change to frozen studies.",
+  "question": "Does nonlinear computation inside each recurrent vector-field evaluation improve retention and timing beyond a parameter-matched shallow factorization? A separate, deferred question concerns sparse wiring bias.",
+  "current_model": {
+    "source": "experiments/continuity/model.py",
+    "source_sha256": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "equations": [
+      "f(h) = -h + W tanh(h), W:128x128",
+      "h_pre = Heun(f, h_previous, dt); h_post = h_pre + U observation",
+      "logits = V tanh(h_post) + b, reshaped into 4 jobs x 11 actions"
+    ],
+    "physical_and_numerical_time": "External dt=0.25 and maximum Heun step=0.25 currently give one substep, with two vector-field evaluations, before each single observation pulse. More solver evaluations do not mean more physical time has elapsed.",
+    "interpretation": "The dense directed graph already has many feedback cycles, including self-connections. One recurrent state layer does not imply one feedback loop or an inability to learn complex dynamical circuits. The vector field has one tanh-to-matrix stage; transition depth, stacked state layers, unrolling in time, and graph modularity are different properties.",
+    "block_relabeling_sanity": "Writing h_a'=-h_a+sum_b W_ab tanh(h_b) by partitioning a full W changes no dynamics. A simultaneous neuron permutation of h, W, U, and V is also only a relabeling. Neither construction alone creates a hierarchy.",
+    "task_limit": "The present four-job benchmark mostly combines independent BEGIN, waiting, FINISH, CANCEL, and REPLACE contracts. Long-wait failure alone is not evidence that logical computation depth is insufficient. First use the same task to diagnose retention/timing; claims about complex composition need a different controlled task."
+  },
+  "primary_three_arm_screen": {
+    "persistent_state_width_H": 128,
+    "factor_width_K": 64,
+    "factor_bias": false,
+    "shared_input_and_output": "Same U:128x96 without bias, V:44x128 with 44 biases, observation ordering, readout tanh, leak coefficient 1, physical dt, Heun solver, loss, and data budgets.",
+    "counting_convention": "MAC counts below count matrix multiply-accumulates per actor; scalar nonlinearities, additions, optimizer work, and autograd storage are listed separately. One MAC is not asserted to equal one hardware FLOP.",
+    "parameter_state_compute_table": [
+      {
+        "arm": "dense",
+        "vector_field": "-h + W tanh(h)",
+        "recurrent_trainable_scalars": 16384,
+        "other_trainable_scalars": 17964,
+        "total_trainable_scalars": 34348,
+        "persistent_state_scalars": 128,
+        "matrix_products_per_field": 1,
+        "recurrent_MAC_per_field": 16384,
+        "tanh_scalars_per_field": 128,
+        "recurrent_MAC_per_external_tick_at_one_Heun_substep": 32768
+      },
+      {
+        "arm": "factorized_shallow",
+        "vector_field": "-h + Wout Win tanh(h)",
+        "factor_shapes": "Win:64x128; Wout:128x64",
+        "recurrent_trainable_scalars": 16384,
+        "other_trainable_scalars": 17964,
+        "total_trainable_scalars": 34348,
+        "persistent_state_scalars": 128,
+        "temporary_factor_scalars_per_stage": 64,
+        "matrix_products_per_field": 2,
+        "recurrent_MAC_per_field": 16384,
+        "tanh_scalars_per_field": 128,
+        "recurrent_MAC_per_external_tick_at_one_Heun_substep": 32768
+      },
+      {
+        "arm": "factorized_deep",
+        "vector_field": "-h + Wout tanh(Win tanh(h))",
+        "factor_shapes": "Win:64x128; Wout:128x64",
+        "recurrent_trainable_scalars": 16384,
+        "other_trainable_scalars": 17964,
+        "total_trainable_scalars": 34348,
+        "persistent_state_scalars": 128,
+        "temporary_factor_scalars_per_stage": 64,
+        "matrix_products_per_field": 2,
+        "recurrent_MAC_per_field": 16384,
+        "tanh_scalars_per_field": 192,
+        "recurrent_MAC_per_external_tick_at_one_Heun_substep": 32768
+      }
+    ],
+    "common_cost_per_observation": "Encoder:12288 MAC; head:5632 MAC plus 44 bias additions and 128 readout tanh evaluations. These are identical in all three arms.",
+    "paired_depth_control": "Use exactly the same initialized Win, Wout, U, V, and b in the two factorized arms. With zero factor biases their feedback Jacobians at h=0 are both Wout Win. Execute both factor multiplications in the shallow control. Their only vector-field formula difference is the middle tanh. Dense is the context control for rank and factor parameterization, not an equally parameterized full-rank function class.",
+    "jacobians": [
+      "Dense: J=-I+W D1, D1=diag(1-tanh(h)^2).",
+      "Shallow factors: J=-I+Wout Win D1.",
+      "Deep factors: J=-I+Wout D2 Win D1, D2=diag(1-tanh(Win tanh(h))^2)."
+    ],
+    "rank_caveat": "For either factorized arm the recurrent forcing always lies in col(Wout), of dimension at most 64. The full vector-field Jacobian need not be rank 64 because it includes -I. With Wout fixed between updates and no observation pulse, the continuous orthogonal component obeys h_perp'=-h_perp; the actual Heun substep multiplies it by 1-delta+delta^2/2. Input pulses and subsequent changes to Wout invalidate a single fixed projection across the whole learned lifetime. Poorer performance than dense is therefore ambiguous between bottleneck, factor optimization, and depth effects.",
+    "initialization_and_optimization": "A declared initialization may use Var(Win)=1/H and Var(Wout)=g^2/K, g=1.2, giving effective-product entry variance g^2/H, matching dense entry variance in expectation. This does not match the singular spectrum or rank. Pair factors exactly, record initial Jacobian/impulse statistics, and freeze the initialization before outcome evaluation. Equal scalar count is not equal effective capacity: shallow factorization has continuous factor redundancy. Keep leak fixed; extra nonlinear saturation changes effective gains and learned timescales. Optimizer trajectories and wall time can differ despite matched MAC counts.",
+    "compute_caveat": "The deep arm adds 64 tanh evaluations per field, or 128 at the current one-substep Heun tick, and extra derivative/autograd work. Two smaller matrix multiplications have different throughput and intermediate storage from one dense multiplication. Record realized wall time, solver evaluations, activation work, and peak memory; do not advertise equal FLOPs or equal speed."
+  },
+  "training_and_validation_design": {
+    "first_comparison": "Use ordinary supervised truncated BPTT through the exact implemented computation graph in all three architectures; do not cross these architectures with all eleven current credit methods. A proposed starting control is the same live 64-tick chunk, weighted loss, optimizer family, clipping, exposure counts, and three independent seeds; all numerical settings need a new frozen protocol before a run.",
+    "continuous_history": "Each architecture needs its own coherent A pretraining and B continuation under matched external seeds, schedules, and budgets. Preserve its complete world, h, optimizer, scheduler, and RNG across phases and chunk boundaries. Detaching a BPTT graph does not reset h. Different own actions may legitimately create different receipts and future trajectories. Original dense checkpoints are historical context, not valid common hidden states for an arbitrary new architecture. A rank-64 SVD projection would be model surgery and a separate causal control.",
+    "gradient_checks_before_any_run": "Check actual Heun-stage and pulse gradients against finite differences on a small CPU instance, including both factors and the extra tanh derivative. Verify checkpoint resume and state continuity. Current credit/local.py assumes one square recurrent matrix and drops cross-neuron sensitivities at each Heun stage; its existing diagonal eligibility equations do not transfer unchanged to either factorized architecture.",
+    "frozen_helper_source_sha256": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "numerical_control": "Keep the same dt and maximum solver step across main arms. On predeclared heldout forks, halve the internal maximum step to 0.125 while retaining dt=0.25 and observation times. This checks solver sensitivity, not additional available physical computation time; it is not a fourth architecture training arm.",
+    "measurements": [
+      "Strict and ordinary completion, own-action first-error categories, and inactive attempts per idle opportunity and per total opportunity; keep completed/cancelled/expired histories separate.",
+      "Native head versus phase-agnostic raw-h and exact-tanh readouts with the existing heldout-actor/request safeguards; cue and first-legal matched populations require their own explicit exclusions.",
+      "Activation saturation and derivatives, state/update/gradient norms, Jacobian gain and stability indicators, and energy of h and encoded pulses outside col(Wout). These are diagnostics rather than feedback controls.",
+      "Report seed-level paired differences and mean plus sample SD; phase marginal accuracy, high modularity, or a successful linear readout alone is not proof of a mechanism."
+    ]
+  },
+  "deferred_equal_density_wiring_alternative": {
+    "status": "Alternative later comparison, not another axis in the primary three-arm screen.",
+    "arms": "Fixed-mask sparse random versus fixed-mask modular with rewired cross-group shortcuts; optionally display the existing dense model as an unequal-capacity reference.",
+    "matching": "H=128, exactly E=4096 active directed edges, including all 128 self-edges; in-degree=out-degree=32 in both masks. A modular construction can use four randomly relabeled groups of 32, with 28 within-group edges including self and four cross-group edges per unit, respecting both degree constraints. Use degree-preserving rewiring for a random comparator. Freeze masks and draws before outcomes.",
+    "no_manual_roles": "All units retain dense access to the same input/output channels. Do not designate groups as memory, timer, task identity, or output modules; do not add separate time constants. Inspect functional specialization only after learning.",
+    "counts_and_compute": "Each sparse mask has 4096 effective recurrent weights and 22060 total effective trainable weights, versus dense 16384 and 34348. A masked dense Parameter still stores 16384 recurrent scalars and may retain dense optimizer storage and dense GEMM cost. Ideal edge-wise arithmetic is 4096 MAC per field, but an implementation must report actual storage and kernels.",
+    "interpretation": "Equal edge count and degrees reduce capacity/degree confounds. A modular advantage would support a wiring prior in this task and training setting; structural clustering alone does not establish specialized functions. Sparse masks that merely improve scale or regularization require separate interpretation."
+  },
+  "outcome_interpretation": [
+    "Deep greater than paired shallow supports a benefit of the inserted nonlinearity under the stated budget; it is not evidence that arbitrary hierarchy or biological complexity is better.",
+    "Shallow and deep both worse than dense is consistent with a rank bottleneck or factor optimization cost; it does not reject deep transition computation generally.",
+    "Shallow and deep both better than dense, with little deep-minus-shallow difference, points to factor parameterization or regularization rather than the added nonlinear stage.",
+    "An advantage lost under solver refinement raises a numerical explanation. Gains only in cue readability or only in late timing should be described at that measured component.",
+    "No gain on the present independent contracts does not settle performance on compositional tasks; a single dense RNN can already learn intricate dynamical motifs."
+  ],
+  "optional_bounded_composition_task": {
+    "status": "Outline only; requires a separate versioned environment and protocol, not implementation in this study.",
+    "proposal": "Present one-shot descriptions of a small acyclic computation graph with at most eight nodes, four-valued operands, and a fixed small set of non-associative binary operator tables. Learn atomic operators and short compositions, then query a designated terminal after a delay. Hold out graph compositions and longer dependency depths, using new operands and node relabelings. A symbolic evaluator defines the answer.",
+    "controls": "Match node/input-token counts, operator frequencies, presentation duration, retention delay, response window, and solver work across graph families; report ancestor count separately from dependency depth and use matched subsets where feasible. Include within-depth heldout instances to separate generalization from basic task learning. Balance queries and classes; avoid a cue that reveals the answer or persistent rule/phase hints.",
+    "limit": "A recurrent network can perform successive computations over physical time even with a shallow vector field. Keep available time fixed when comparing transition depth, and distinguish depth extrapolation from longer memory load. Success would be evidence on this bounded composition family, not a universal reasoning hierarchy."
+  },
+  "primary_source_evidence": [
+    {
+      "source": "Pascanu et al., How to Construct Deep Recurrent Neural Networks, ICLR 2014",
+      "url": "https://arxiv.org/abs/1312.6026v5",
+      "evidence": "Distinguishes depth in input-to-hidden, hidden-to-hidden transition, and hidden-to-output functions, orthogonal to stacking recurrent layers. Empirical tests use polyphonic music and language prediction.",
+      "limit": "Supports the architectural distinction and precedent, not a prediction that an extra tanh solves this continuous timing task."
+    },
+    {
+      "source": "Chen et al., Neural Ordinary Differential Equations, NeurIPS 2018",
+      "url": "https://arxiv.org/abs/1806.07366",
+      "evidence": "Parameterizes the state derivative with a neural network and separates the vector field from numerical solver evaluation. The retrieved abstract was v6, revised 9 October 2026; this note uses only its basic model formulation.",
+      "limit": "Not evidence for these particular factorized fields, local eligibility rules, or improved autonomous retention. No adjoint-memory or adaptive-solver claim is transferred to our fixed Heun/BPTT setup."
+    },
+    {
+      "source": "Driscoll, Shenoy and Sussillo, Flexible multitask computation in recurrent networks utilizes shared dynamical motifs, Nature Neuroscience 2024",
+      "url": "https://www.nature.com/articles/s41593-024-01668-6",
+      "evidence": "Finds reusable dynamical motifs in multitasking recurrent networks, so a single recurrent layer can support structured effective computation. Methods use leaky RNNs, Adam, trial minibatches, activity/weight L2 regularization, and alternative softplus/tanh/retanh activations.",
+      "limit": "Rule information is continuously available throughout a trial, with fixation/stimulus context and trial initial conditions. This differs from our continuing world, one-shot content pulses, own-action receipts, and no task reset. Its motif results do not establish that manual modules or deeper vector fields are necessary."
+    },
+    {
+      "source": "Bena and Goodman, Dynamics of specialization in neural modules under resource constraints, Nature Communications 2025",
+      "url": "https://www.nature.com/articles/s41467-024-55188-9",
+      "evidence": "In controlled recurrent toy classification tasks, structural modularity does not generally guarantee functional specialization. Separability, resource constraints, and communication timing/bandwidth affect the measured specialization.",
+      "limit": "A context-dependent empirical result, not a theorem that modules never help. Structural metrics, probes, and lesions answer different questions; connectivity clustering alone is insufficient."
+    },
+    {
+      "source": "Wu et al., Task-structured modularity emerges in artificial networks and aligns with brain architecture, Nature Machine Intelligence 2026",
+      "url": "https://www.nature.com/articles/s42256-026-01306-9",
+      "official_code": "https://github.com/brain-intelligence-lab/modular-brain-rnn/tree/94b2381a9b0a9291ebed1a030aa1d56552a56f1e",
+      "inspected_model": "https://github.com/brain-intelligence-lab/modular-brain-rnn/blob/94b2381a9b0a9291ebed1a030aa1d56552a56f1e/models/recurrent_models.py",
+      "author_preprint_v1": "https://assets-eu.researchsquare.com/files/rs-6987147/v1_covered_c794a8d3-86ad-436e-bb45-8a3b91f88609.pdf",
+      "evidence": "The pinned official README reports publication on 28 September 2026 and summarizes greater modularity from multitask/incremental versus single-task learning. Inspected RNN code uses one recurrent matrix, rule/sensory readins, leaky updates, masks, and optional connection growth. Its forward method initializes trial hidden state to zero.",
+      "access_and_version_limit": "Nature full text and the author PDF were not retrieved successfully in this audit, so no unseen figure or quantitative claim is used. The current README was updated by 9 October 2026 and no longer says unpublished; preprint v1 and published paper must not be treated as identical. The code provides precedent for task-driven topology studies, not proof that richer topology solves our benchmark."
+    }
+  ],
+  "frozen_study_reference": {
+    "protocol": "docs/evidence/credit-2026-10-27/study-protocol-v1.json",
+    "protocol_sha256": "4e69e51b88157de0f61b1dd33dae66c83a66253c77353fecde439877f136f675",
+    "unchanged": "All existing continuity/integration/credit runtime, probe sources, checkpoints, results, and formal protocols remain unchanged. This note does not authorize or launch a new run."
+  }
+}

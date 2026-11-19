@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-11-07T08:00:29.442338+00:00",
+  "settings": {
+    "updates": 384,
+    "batch": 64,
+    "events": 48,
+    "lr": 0.003,
+    "key_dim": 16,
+    "online_lr": 0.003,
+    "support_ticks": 1536,
+    "delay_ticks": 4096,
+    "eval_ticks": 2048,
+    "actors": 32,
+    "dtype": "float32"
+  },
+  "arms": [
+    "add",
+    "delta",
+    "recurrent"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "sources": {
+    "experiments\\associative_state\\model.py": "c9a5aa1551a5297a73cf8d098f085c5c4577bc3e281255aa137df587815d782b",
+    "experiments\\associative_state\\bridge.py": "be4dea11230c3bbd06eafeb52a9e577e49d41df6c8be272dd35956018030087b",
+    "experiments\\associative_state\\train.py": "c4fde970a88b3dc0d40ebff60a065906d4dc961025d818313fe65b2406b5fac1",
+    "experiments\\associative_state\\evaluate.py": "cbfd494eb087119a251f1b0483e87840d6151bc8d2072657fbe5f5f02e99fc8c",
+    "experiments\\associative_state\\launch.py": "78ca297cf952296976605e112dba8088c0712db3d612d1d88298d0b6c1e2fa9f",
+    "experiments\\associative_state\\analysis-plan.md": "edcaae1d805e7d11a29af80645c7e6450ec3087426385bcf0b05092a19e05aa6",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/experience_transfer/train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments/coverage_retention/train.py": "688f9e0cc74354acfc40e6216e6bda1f085c484ef259773463e348bb6a154263",
+    "experiments/teacher_timing/data.py": "ad264952c757e77732b2133c753ecffc78b55fe540a5cc6c56302e1676b1a3a6",
+    "experiments/teacher_timing/train.py": "a53f86c11dc8cacba900802919ea991e69839f1f9a27390a5f03e3841a9efb79",
+    "experiments\\associative_state\\shared.py": "114e34b7ea56edbf958430626ca55768da4f1d38c8fc8bf9692fea9bdaa53e05",
+    "experiments\\associative_state\\shared-plan.md": "5e0ad31bbd56c0db4cda3368e97f122c452be7d7613b5f839b422a8715e58463"
+  },
+  "origins": {
+    "0": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt",
+      "sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084"
+    },
+    "1": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt",
+      "sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c"
+    },
+    "2": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt",
+      "sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc"
+    }
+  },
+  "experiment": "associative-state-shared-v2",
+  "encoder": "fixed_codes_shared_linear",
+  "followup": {
+    "parent": "data/associative-state/v1",
+    "declared_after_inspection_of_v1_results": true,
+    "disclosure": "Added after partial or complete v1 results had been inspected; this is not the original v1 preregistration.",
+    "analytical_reason": "Independent v1 embedding rows receive no gradient from other keys, and positive read scale cannot change argmax. A shared projection permits B-only gradients to alter A queries.",
+    "unchanged_sample_update_and_evaluation_budgets": true,
+    "parameter_budget_matched_to_v1": false
+  },
+  "learned_parameters": {
+    "add": 258,
+    "delta": 258,
+    "recurrent": 16769
+  },
+  "fixed_code_scalars": 128,
+  "state_scalars_per_actor": 64
+}

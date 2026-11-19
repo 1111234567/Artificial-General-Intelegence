@@ -1,0 +1,87 @@
+{
+  "timestamp_utc": "2026-11-01T10:53:28.428698+00:00",
+  "status": "passed",
+  "scope": "Source/config arithmetic and a controlled 4-node pulse check only; no formal data read and no study launched",
+  "task_horizon": {
+    "dt": 0.25,
+    "formal_conditions": [
+      "long_both",
+      "short"
+    ],
+    "max_training_duration": 16.0,
+    "max_formal_evaluation_duration": 16.0,
+    "max_window": 2.5,
+    "latest_new_or_replace_cue_to_deadline_time": 18.5,
+    "latest_new_or_replace_cue_to_deadline_ticks": 74.0,
+    "generic_far_condition_ticks": 138.0
+  },
+  "controlled_port_latency": {
+    "input_ports": [
+      0,
+      1
+    ],
+    "output_ports": [
+      2
+    ],
+    "dt": 0.25,
+    "pulse": [
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "current_without_pulse": [
+      [
+        [
+          0.2550980216952283
+        ]
+      ]
+    ],
+    "current_with_pulse": [
+      [
+        [
+          0.2550980216952283
+        ]
+      ]
+    ],
+    "current_logits_exactly_equal": true,
+    "same_tick_observation_to_logit_jacobian_nonzero_elements": 0,
+    "next_without_pulse": [
+      [
+        [
+          0.22274379050949972
+        ]
+      ]
+    ],
+    "next_with_pulse": [
+      [
+        [
+          0.257996907521462
+        ]
+      ]
+    ],
+    "next_tick_difference": [
+      [
+        [
+          0.035253117011962265
+        ]
+      ]
+    ]
+  },
+  "limitations": [
+    "74 ticks applies the frozen undirected training/formal evaluation conditions; generic far is 138 ticks.",
+    "Latest relevant cue is NEW or REPLACE; replacement reissues payload/context and sets a new deadline from delivery time.",
+    "Idle gaps are not extra cue-to-deadline delay, and score maturation may occur later than the action deadline.",
+    "Disjoint ports and flow-before-pulse make the current pulse have zero same-tick logit effect.",
+    "The next tick is the earliest possible effect; a nonzero effect depends on state and graph, so one tick is not a guaranteed propagation delay.",
+    "The controlled example is structural/mechanical evidence, not learned behavior, long-memory use, or credit effectiveness."
+  ],
+  "source_sha256": {
+    "experiments/undirected/model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "experiments/undirected/run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "experiments/undirected/study.py": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/lifelong/evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  }
+}

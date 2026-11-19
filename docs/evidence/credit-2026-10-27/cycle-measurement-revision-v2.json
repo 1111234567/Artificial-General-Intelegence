@@ -1,0 +1,29 @@
+{
+  "format": "credit-cycle-measurement-revision-v2",
+  "revision_id": "cycle-cpu-v2",
+  "created_utc": "2026-10-27T07:40:49.680221+00:00",
+  "base_protocol_sha256": "4e69e51b88157de0f61b1dd33dae66c83a66253c77353fecde439877f136f675",
+  "evaluation_device": "cpu",
+  "training_device": "cuda",
+  "eval_conditions": [
+    "iid",
+    "long_sparse"
+  ],
+  "eval_steps": 512,
+  "dt": 0.25,
+  "adapter_source_sha256": "9f4d92697ed7061fc1ef0f2ff8f362d983224556f670dbee54cae603ff040a45",
+  "frozen_evaluator_sha256": "d9a6d993fb9afc8a7dd7f534c32d86683224319266574faf6c8d63e5e2809240",
+  "frozen_cycle_sha256": "9381def26ec96c4387961de00715f0442e25f23582d72fe33c51c2c64c88b020",
+  "reuse_root": "F:\\agi\\data\\credit\\cycles-v1",
+  "source_cuda_status_sha256": "d6685d60c8a514d5473d69d9c88501ae8aa0db190dae97442d6c3a2f84a5100a",
+  "source_complete_runs": 14,
+  "source_complete_milestones": 224,
+  "reason": "Unify frozen evaluation with main CPU measurements; adapter tests prove unchanged CUDA training semantics. An apparent long stall initially attributed to GPU contention was subsequently diagnosed as executor-session loss, not established GPU slowdown.",
+  "outcome_independent": true,
+  "training_rules_changed": false,
+  "training_budget_changed": false,
+  "scoring_rules_changed": false,
+  "selection": "All 240 predeclared checkpoints and both conditions remeasured on CPU; retained CUDA prefix is auxiliary, never selected by scores.",
+  "state_policy": "Reuse immutable complete CUDA checkpoints and continue exact saved state; no h/world/Adam/E/F/RNG reset.",
+  "preserved_cuda_data": "data/credit/cycles-v1; read-only full prefix, source checkpoint references retained"
+}

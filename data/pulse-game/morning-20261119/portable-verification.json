@@ -1,0 +1,365 @@
+{
+  "identity": {
+    "birth_seed": 433810157,
+    "criterion": "lower median developmental validation",
+    "development_score": 0.8014062643051147,
+    "graph_source": "9b24a836c2c120d7b399314647fae37653f14203b94260440f547a6fdf5b52ae",
+    "address_source": "d3fb91c4aa9e819bf600c51e4953239d74ecef970ab0a296fafa906e3fad10d1",
+    "policy_source": "3ccb4cfd9659267970cfe46a9ac302ab64b5b533213a69c5630fb65bb12fa9a0",
+    "search_generations": 160,
+    "search_width": 1024
+  },
+  "topology": {
+    "recurrent_cells_per_hemisphere": 24,
+    "hemispheres": 2,
+    "motor_cells": 2,
+    "directed_nonself_edges_per_hemisphere": 164,
+    "self_connections_per_hemisphere": 24,
+    "bidirectional_pairs_per_hemisphere": 39,
+    "episodic_slots": 20,
+    "context_weights": 6,
+    "covariance_shape": [
+      6,
+      6
+    ],
+    "input_width": 20,
+    "outputs": 2
+  },
+  "archive_sha256": "c76496156d2d5af29a6390d9f73e89d2bed6554561e85fc0ea69427b78733ca7",
+  "archive_bytes": 45157,
+  "weights_sha256": "25abc04330675cdec115213eb4cdafaa6abfa836d5ebc6386d7604931f7b0b69",
+  "scores": [
+    {
+      "seed": 149132983,
+      "validation": 0.7961719036102295
+    },
+    {
+      "seed": 334996653,
+      "validation": 0.7980729341506958
+    },
+    {
+      "seed": 384361128,
+      "validation": 0.7984375357627869
+    },
+    {
+      "seed": 374853277,
+      "validation": 0.7987500429153442
+    },
+    {
+      "seed": 241766349,
+      "validation": 0.8007291555404663
+    },
+    {
+      "seed": 433810157,
+      "validation": 0.8014062643051147
+    },
+    {
+      "seed": 319591504,
+      "validation": 0.8033594489097595
+    },
+    {
+      "seed": 173169562,
+      "validation": 0.8058594465255737
+    },
+    {
+      "seed": 14775819,
+      "validation": 0.8070573210716248
+    },
+    {
+      "seed": 310208864,
+      "validation": 0.8112239837646484
+    },
+    {
+      "seed": 396730,
+      "validation": 0.8123437166213989
+    },
+    {
+      "seed": 140349813,
+      "validation": 0.8260416984558105
+    }
+  ],
+  "examples": [
+    {
+      "scenario": "transfer",
+      "address": "distributed",
+      "exact_native_aggregate": true,
+      "outcome": {
+        "independent_worlds": 8,
+        "lives": 32,
+        "outcome": {
+          "B_after_0": {
+            "conflicting": 0.0,
+            "same": 1.0
+          },
+          "B_after_12": {
+            "conflicting": 0.875,
+            "same": 0.8125
+          },
+          "B_after_2": {
+            "conflicting": 0.4375,
+            "same": 0.875
+          },
+          "B_after_4": {
+            "conflicting": 0.8125,
+            "same": 1.0
+          },
+          "B_after_8": {
+            "conflicting": 0.9375,
+            "same": 1.0
+          },
+          "both": {
+            "conflicting": 0.375,
+            "same": 0.8125
+          },
+          "coverage": {
+            "conflicting": 0.9895833333333334,
+            "same": 1.0
+          },
+          "return_A": {
+            "conflicting": 0.5,
+            "same": 1.0
+          }
+        },
+        "scenario": "transfer",
+        "trials_per_life": 60
+      }
+    },
+    {
+      "scenario": "long",
+      "address": "distributed",
+      "exact_native_aggregate": true,
+      "outcome": {
+        "independent_worlds": 8,
+        "outcome": {
+          "change_17_9999": {
+            "after": null,
+            "before": null,
+            "opportunities": 0
+          },
+          "change_1_1": {
+            "after": 0.5,
+            "before": 0.375,
+            "opportunities": 8
+          },
+          "change_2_2": {
+            "after": 0.875,
+            "before": 0.375,
+            "opportunities": 8
+          },
+          "change_3_4": {
+            "after": 1.0,
+            "before": 0.875,
+            "opportunities": 16
+          },
+          "change_5_8": {
+            "after": 0.95,
+            "before": 0.95,
+            "opportunities": 20
+          },
+          "change_9_16": {
+            "after": 1.0,
+            "before": 1.0,
+            "opportunities": 5
+          },
+          "old_B": {
+            "after": 0.8888888888888888,
+            "before": 0.8444444444444444,
+            "opportunities": 45
+          },
+          "return_17_9999": {
+            "after": null,
+            "before": null,
+            "opportunities": 0
+          },
+          "return_1_1": {
+            "after": 0.625,
+            "before": 0.375,
+            "opportunities": 8
+          },
+          "return_2_2": {
+            "after": 1.0,
+            "before": 0.875,
+            "opportunities": 8
+          },
+          "return_3_4": {
+            "after": 1.0,
+            "before": 0.9285714285714286,
+            "opportunities": 14
+          },
+          "return_5_8": {
+            "after": 0.9333333333333333,
+            "before": 0.9333333333333333,
+            "opportunities": 15
+          },
+          "return_9_16": {
+            "after": null,
+            "before": null,
+            "opportunities": 0
+          },
+          "stable_A": {
+            "after": 0.9315068493150684,
+            "before": 0.8767123287671232,
+            "opportunities": 73
+          },
+          "whole_after_warmup": {
+            "after": 0.9166666666666666,
+            "before": 0.8333333333333334,
+            "opportunities": 192
+          }
+        },
+        "scenario": "long",
+        "ticks_per_life": 6144,
+        "trials_per_life": 384
+      }
+    },
+    {
+      "scenario": "transfer",
+      "address": "local",
+      "exact_native_aggregate": true,
+      "outcome": {
+        "independent_worlds": 8,
+        "lives": 32,
+        "outcome": {
+          "B_after_0": {
+            "conflicting": 0.0,
+            "same": 1.0
+          },
+          "B_after_12": {
+            "conflicting": 0.8125,
+            "same": 0.8125
+          },
+          "B_after_2": {
+            "conflicting": 0.75,
+            "same": 0.875
+          },
+          "B_after_4": {
+            "conflicting": 1.0,
+            "same": 1.0
+          },
+          "B_after_8": {
+            "conflicting": 1.0,
+            "same": 1.0
+          },
+          "both": {
+            "conflicting": 0.75,
+            "same": 0.8125
+          },
+          "coverage": {
+            "conflicting": 1.0,
+            "same": 1.0
+          },
+          "return_A": {
+            "conflicting": 0.9375,
+            "same": 1.0
+          }
+        },
+        "scenario": "transfer",
+        "trials_per_life": 60
+      }
+    },
+    {
+      "scenario": "long",
+      "address": "local",
+      "exact_native_aggregate": true,
+      "outcome": {
+        "independent_worlds": 8,
+        "outcome": {
+          "change_17_9999": {
+            "after": null,
+            "before": null,
+            "opportunities": 0
+          },
+          "change_1_1": {
+            "after": 0.5,
+            "before": 0.125,
+            "opportunities": 8
+          },
+          "change_2_2": {
+            "after": 1.0,
+            "before": 0.625,
+            "opportunities": 8
+          },
+          "change_3_4": {
+            "after": 1.0,
+            "before": 0.9375,
+            "opportunities": 16
+          },
+          "change_5_8": {
+            "after": 0.95,
+            "before": 0.95,
+            "opportunities": 20
+          },
+          "change_9_16": {
+            "after": 1.0,
+            "before": 1.0,
+            "opportunities": 5
+          },
+          "old_B": {
+            "after": 0.9111111111111111,
+            "before": 0.8444444444444444,
+            "opportunities": 45
+          },
+          "return_17_9999": {
+            "after": null,
+            "before": null,
+            "opportunities": 0
+          },
+          "return_1_1": {
+            "after": 0.625,
+            "before": 0.25,
+            "opportunities": 8
+          },
+          "return_2_2": {
+            "after": 1.0,
+            "before": 0.75,
+            "opportunities": 8
+          },
+          "return_3_4": {
+            "after": 1.0,
+            "before": 1.0,
+            "opportunities": 14
+          },
+          "return_5_8": {
+            "after": 0.9333333333333333,
+            "before": 0.9333333333333333,
+            "opportunities": 15
+          },
+          "return_9_16": {
+            "after": null,
+            "before": null,
+            "opportunities": 0
+          },
+          "stable_A": {
+            "after": 0.9452054794520548,
+            "before": 0.9178082191780822,
+            "opportunities": 73
+          },
+          "whole_after_warmup": {
+            "after": 0.9322916666666666,
+            "before": 0.8489583333333334,
+            "opportunities": 192
+          }
+        },
+        "scenario": "long",
+        "ticks_per_life": 6144,
+        "trials_per_life": 384
+      }
+    },
+    {
+      "scenario": "cross-game",
+      "address": "local-selective",
+      "exact_native_aggregate": true,
+      "outcome": {
+        "address": "local-selective",
+        "initial_both": 0.75,
+        "requests_per_life": 316,
+        "return_to_old_rules": 0.953125,
+        "scenario": "cross-game",
+        "second_choice_new_objects": 0.940625,
+        "worlds": 8
+      }
+    }
+  ],
+  "python": "3.14.5",
+  "numpy": "2.5.4"
+}

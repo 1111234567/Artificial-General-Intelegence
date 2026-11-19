@@ -1,0 +1,109 @@
+{
+  "incident": "Windows PermissionError WinError5 replacing coordinator execution.json while a reader held it; no model numeric failure in observed logs",
+  "archived_status": "F:\\agi\\data\\credit\\main-v1\\execution-attempt-001.json",
+  "archived_sha256": "039f533037e80e5c979f92a3955583771aa47f1250da747396f1d40223718200",
+  "completed_before_incident": 7,
+  "terminated_attempts": [
+    "seed_000_diag_sym_replay",
+    "seed_000_diag_random_replay",
+    "seed_000_diag_instant",
+    "seed_000_diag_shuffle",
+    "seed_001_frozen",
+    "seed_001_readout_only"
+  ],
+  "recovery": "New windows_runner adapter retries status replace only; frozen algorithm/protocol files unchanged; partial compute after saved boundary replayed from complete checkpoint",
+  "resumed_launches": {
+    "seed_000\\diag_instant": [
+      {
+        "utc": "2026-10-27T06:04:19.172041+00:00",
+        "resumed": false,
+        "checkpoint_sha256": "2dbf44d7bcc9ad61a4974b4d22c3487f6d54334f01b78f7adebf3d6ac1ce706f",
+        "stage_ticks": 0,
+        "target": 65536,
+        "device": "cuda"
+      },
+      {
+        "utc": "2026-10-27T06:17:17.218229+00:00",
+        "resumed": true,
+        "checkpoint_sha256": "e411702542f2bc20cffec4d1be8126487ad3adbf1afda617b9ffe213db7089f3",
+        "stage_ticks": 32768,
+        "target": 65536,
+        "device": "cuda"
+      }
+    ],
+    "seed_000\\diag_random_replay": [
+      {
+        "utc": "2026-10-27T06:00:11.133141+00:00",
+        "resumed": false,
+        "checkpoint_sha256": "f43f954959a15eb5a97ac27765a53fac69115e170d2092404d3752f7cf1b92de",
+        "stage_ticks": 0,
+        "target": 65536,
+        "device": "cuda"
+      },
+      {
+        "utc": "2026-10-27T06:17:17.216703+00:00",
+        "resumed": true,
+        "checkpoint_sha256": "e15ed6f3cfa73faa01d5d752c9fd1450db6739f330868f758a72fe6e2fe62d1f",
+        "stage_ticks": 16384,
+        "target": 65536,
+        "device": "cuda"
+      }
+    ],
+    "seed_000\\diag_shuffle": [
+      {
+        "utc": "2026-10-27T06:07:55.427341+00:00",
+        "resumed": false,
+        "checkpoint_sha256": "e3ede61d2faa1fc5adc5fda1ffba20efc1c54673dccd78ada3ded9cd71c711dd",
+        "stage_ticks": 0,
+        "target": 65536,
+        "device": "cuda"
+      },
+      {
+        "utc": "2026-10-27T06:17:17.229782+00:00",
+        "resumed": true,
+        "checkpoint_sha256": "dedc5cd3d437f8412635a58cc8ce9f1d8c468e8f39eaef123be886fbb2b9940b",
+        "stage_ticks": 16384,
+        "target": 65536,
+        "device": "cuda"
+      }
+    ],
+    "seed_000\\diag_sym_replay": [
+      {
+        "utc": "2026-10-27T05:55:23.056967+00:00",
+        "resumed": false,
+        "checkpoint_sha256": "d1734caf29773d781e3bb0938498af28e0575d482cdbe9b12f69df9e360f36ac",
+        "stage_ticks": 0,
+        "target": 65536,
+        "device": "cuda"
+      },
+      {
+        "utc": "2026-10-27T06:17:17.231475+00:00",
+        "resumed": true,
+        "checkpoint_sha256": "36837e4d968c84463e656fe1ea9dcfcabaac5945471306ebf801a6197a108d48",
+        "stage_ticks": 32768,
+        "target": 65536,
+        "device": "cuda"
+      }
+    ],
+    "seed_001\\frozen": [
+      {
+        "utc": "2026-10-27T06:09:21.323091+00:00",
+        "resumed": false,
+        "checkpoint_sha256": "6622f1bbf76e16088a27a92c5f3ac577f7a701b44c0fda3b4e67359b5962c3f5",
+        "stage_ticks": 0,
+        "target": 65536,
+        "device": "cuda"
+      },
+      {
+        "utc": "2026-10-27T06:17:17.087748+00:00",
+        "resumed": true,
+        "checkpoint_sha256": "037d06564571f5760085e286af8910f3aff23db4b5502626cc32bacc614b1e85",
+        "stage_ticks": 16384,
+        "target": 65536,
+        "device": "cuda"
+      }
+    ]
+  },
+  "adapter_sha256": "693b073912ef221499d1e6517b8f8988a94bbc3751de9cd5fcc218d9ed89deb5",
+  "regression_tests": "2 passed; transient write retry and archived retry-state semantics"
+}

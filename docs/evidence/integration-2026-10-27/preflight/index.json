@@ -1,0 +1,64 @@
+{
+  "status": "preflight_only_not_formal_results",
+  "files": [
+    {
+      "source": "data/integration/pilot-learning-v1/plan.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/pilot-plan.json",
+      "sha256": "5133d7dd7e82bc2b7cbe330ec85eeb01a4df92dc39c405debbdba4b37e5fb160",
+      "bytes": 1582
+    },
+    {
+      "source": "data/integration/pilot-learning-v1/pilot-summary.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/pilot-summary.json",
+      "sha256": "58270d1c0f5fd7271d3760fed301158f7a33035a0c307c9ff1709565c583c8d8",
+      "bytes": 19775
+    },
+    {
+      "source": "data/integration/pilot-learning-v1/resume-proof/proof.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/pilot-resume-proof.json",
+      "sha256": "95879b06512f1e2b26923e2aaa62c59cc0f74a630bc96c400c1ccd14faa8b2bd",
+      "bytes": 1250
+    },
+    {
+      "source": "data/integration/pilot-learning-v1/metadata-errata.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/pilot-metadata-errata.json",
+      "sha256": "45cc4b24629b0a4de08ac01f09b46f9e8b2995365c8fd2d975690b4bf2403cbf",
+      "bytes": 2204
+    },
+    {
+      "source": "data/integration/v2-observer-identity.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/observer-v2-identity.json",
+      "sha256": "ccc77801e68343d80a58ec03277531022a6387074aa08343c5e5876fd5892513",
+      "bytes": 7512
+    },
+    {
+      "source": "data/integration/prior-diagnosis-v1/summary.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/prior-diagnosis-summary.json",
+      "sha256": "bacba6786a0be580fbd0b5e1a2e9f7009cdea146116ebb51847fc6c97dbe3823",
+      "bytes": 1137959
+    },
+    {
+      "source": "data/integration/prior-diagnosis-v1/launch-manifest.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/prior-diagnosis-launch.json",
+      "sha256": "22ecb82f3bd943a564a6d8702bead6be3f1715c700048cb46c4e0fb56586a915",
+      "bytes": 2494
+    },
+    {
+      "source": "data/integration/report-validation-v1.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/report-validation.json",
+      "sha256": "ba606b513c966fdd92c78c5231e43a8d22798a2e3cf78bdae334996a9007c3e8",
+      "bytes": 7066
+    },
+    {
+      "source": "data/integration/research-local-2026-10-27.json",
+      "copy": "docs/evidence/integration-2026-10-27/preflight/local-rule-research.json",
+      "sha256": "5362a45f2b213037bcc31af2fb0032a772fea9b5ca8362f41132a9891f484d99",
+      "bytes": 6354
+    }
+  ],
+  "combined_tests": {
+    "command": ".venv/Scripts/python.exe -m pytest experiments/integration experiments/continuity -q",
+    "result": "119 passed in 40.05s",
+    "scope": "integration 64 plus unchanged continuity 55"
+  }
+}

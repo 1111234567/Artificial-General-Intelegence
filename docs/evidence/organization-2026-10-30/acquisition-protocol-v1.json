@@ -1,0 +1,976 @@
+{
+  "format": "organization-acquisition-protocol-v1",
+  "created_utc": "2026-10-30T00:55:39.885772+00:00",
+  "sources": {
+    "F:\\agi\\experiments\\organization\\acquisition.py": "b98c310d610b164ec18ed3c83ffed09deb91a84a60c43c828811d8eb731b0c7f",
+    "F:\\agi\\experiments\\organization\\test_acquisition.py": "4ba84a0c50b7347948be237deeeee118462fdf9af8c93a3f9538feb802c9d03c",
+    "F:\\agi\\experiments\\lifelong\\run.py": "90f0c36313169e5fc7d3534d9971e09a408a1e93d38a388600049d011b3d84ab",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\factors\\structure.py": "f8a6a1946fc42a1a1265324d0b4143d3b15045c0cbb1bb34aba2c39638cd1c89",
+    "F:\\agi\\experiments\\rewiring\\plasticity.py": "63f703f68671e950880f39b57f53ffc785221c45a6761f23866a2d7bf4c049a9",
+    "F:\\agi\\experiments\\organization\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\lifelong\\queue.py": "570fe22b4dbf5b3e24787ee0319576ff819b5523c7a78926993ffc98fa0e0255",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "F:\\agi\\experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "F:\\agi\\experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "F:\\agi\\experiments\\credit\\windows_runner.py": "f16c94f0140d494831a47dcc026a698ca2fb4a73d9d0313ec67474b61db90374",
+    "F:\\agi\\experiments\\loops\\audit_run.py": "2cc71ebb857be76c769894ec3b355c9aea19c09ebf1826bea9d389f41cbbf9bc",
+    "F:\\agi\\experiments\\loops\\structure.py": "af282d6000adfe37b35da6342c48714a89bacd108ea976cece4a274fc49b0ea6",
+    "F:\\agi\\experiments\\loops\\interventions.py": "15007d06490fcaed6f2956d93294d21f48509c60b676f4009b89f91c328cc452"
+  },
+  "raw_root": "F:\\agi\\data\\organization\\acquisition-v1",
+  "branches": [
+    {
+      "id": "seed_000__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 0,
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_000__fixed_shrink__mixed__history_replay__wide",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide__shrink0"
+    },
+    {
+      "id": "seed_000__open_shrink__mixed__history_replay__wide__shrink0",
+      "seed": 0,
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 0,
+        "architecture": "open_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_000__open_shrink__mixed__history_replay__wide",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide__shrink0"
+    },
+    {
+      "id": "seed_000__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "seed": 0,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 0,
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "narrow",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_000__fixed_shrink__mixed__history_replay__narrow",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow__shrink0"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 1,
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_001__fixed_shrink__mixed__history_replay__wide",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide__shrink0"
+    },
+    {
+      "id": "seed_001__open_shrink__mixed__history_replay__wide__shrink0",
+      "seed": 1,
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 1,
+        "architecture": "open_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_001__open_shrink__mixed__history_replay__wide",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide__shrink0"
+    },
+    {
+      "id": "seed_001__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "seed": 1,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 1,
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "narrow",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_001__fixed_shrink__mixed__history_replay__narrow",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow__shrink0"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__history_replay__wide__shrink0",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 2,
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_002__fixed_shrink__mixed__history_replay__wide",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide__shrink0"
+    },
+    {
+      "id": "seed_002__open_shrink__mixed__history_replay__wide__shrink0",
+      "seed": 2,
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 2,
+        "architecture": "open_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "wide",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_002__open_shrink__mixed__history_replay__wide",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide__shrink0"
+    },
+    {
+      "id": "seed_002__fixed_shrink__mixed__history_replay__narrow__shrink0",
+      "seed": 2,
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow",
+      "shrink_step": 0.0,
+      "native_config": {
+        "seed": 2,
+        "architecture": "fixed_shrink",
+        "schedule": "mixed",
+        "learning": "history_replay",
+        "coverage": "narrow",
+        "width": 128,
+        "batch_size": 32,
+        "chunk_ticks": 128,
+        "device": "cuda",
+        "world_device": "cpu",
+        "n_jobs": 4,
+        "dt": 0.25,
+        "max_step": 0.25,
+        "lr": 0.001,
+        "wait_weight": 0.1,
+        "clip": 1.0,
+        "shrink_step": 0.0,
+        "initial_fan_in": 32,
+        "structural_window_updates": 8,
+        "replay_capacity": 32,
+        "main_ticks": 131072,
+        "macrocycle_ticks": 32768,
+        "block_ticks": 8192,
+        "withdrawal_ticks": 32768,
+        "return_ticks": 8192,
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "deterministic": true
+      },
+      "baseline_id": "seed_002__fixed_shrink__mixed__history_replay__narrow",
+      "output": "F:\\agi\\data\\organization\\acquisition-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow__shrink0"
+    }
+  ],
+  "variants": [
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "open_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "wide"
+    },
+    {
+      "architecture": "fixed_shrink",
+      "schedule": "mixed",
+      "learning": "history_replay",
+      "coverage": "narrow"
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "native_template": {
+    "seed": 0,
+    "architecture": "fixed_shrink",
+    "schedule": "blocked",
+    "learning": "recent_repeat",
+    "coverage": "narrow",
+    "width": 128,
+    "batch_size": 32,
+    "chunk_ticks": 128,
+    "device": "cuda",
+    "world_device": "cpu",
+    "n_jobs": 4,
+    "dt": 0.25,
+    "max_step": 0.25,
+    "lr": 0.001,
+    "wait_weight": 0.1,
+    "clip": 1.0,
+    "shrink_step": 0.0002,
+    "initial_fan_in": 32,
+    "structural_window_updates": 8,
+    "replay_capacity": 32,
+    "main_ticks": 131072,
+    "macrocycle_ticks": 32768,
+    "block_ticks": 8192,
+    "withdrawal_ticks": 32768,
+    "return_ticks": 8192,
+    "window_range": [
+      1.5,
+      2.5
+    ],
+    "cancel": 0.2,
+    "replace": 0.3,
+    "deterministic": true
+  },
+  "target_ticks": 172032,
+  "checkpoint_ticks": [
+    0,
+    131072,
+    163840,
+    172032
+  ],
+  "latest_interval_ticks": 32768,
+  "training_device": "cuda",
+  "evaluation_device": "cpu",
+  "threads": 1,
+  "dt": 0.25,
+  "evaluation_specs": [
+    {
+      "tick": 131072,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 1,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 2,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 3,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 131072,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 1,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 2,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 3,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 163840,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 0,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 1,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 2,
+      "condition": "long_both",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "short",
+      "steps": 2048
+    },
+    {
+      "tick": 172032,
+      "family": 3,
+      "condition": "long_both",
+      "steps": 2048
+    }
+  ],
+  "baseline": {
+    "files": {
+      "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\completion.json": "83fb74ac6910f2d84ca2f9201a16f6f511df0569beb946312bb9430a05cc67fd",
+      "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\artifacts.json": "f585873e783c4676088470751245c6a4f8c36a89e6de40c305623efd4b456918",
+      "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\checkpoints.csv": "3f2751f0120c2d246cc855ff400143c15f689552f23b51f282fd7d013d2b4021",
+      "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\matched_memory_per_seed.csv": "120929abd13d513b8e486f6d00e8ae5ff8f712f495782756feb799c75cfbdd4c",
+      "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\per_seed.csv": "18f8b34323f26f23043eed13dec3f76b3ce3b8f1aee574cc5d6eb3fb765b7419",
+      "F:\\agi\\docs\\evidence\\lifelong-2026-10-29\\aggregate-v1\\supplement_per_seed.csv": "77050c11e60fa1f18c79bd2e1d77c54e05f505ec48e82de1693dda50318fce3e"
+    },
+    "branches": {
+      "seed_001__open_shrink__mixed__history_replay__wide": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "bad9b865d1a691056b0051b10ae8cc72c70a4e0c094a69745a9104f19881ba1f",
+          "semantic_hash": "a163be4fa511f2d69f22287f650957f2dfd9be233e7d99389b84ab7a35a9dbbc",
+          "cpu_semantic_hash": "a48b761b85ef342ad95e002000be0b1e2de573e443f071b94ec07ef56382f8ce",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "2a384a23ea690f69d32d185de0cf6d2e1ffe3d5cfa4bcda5a9d8daf711733dcc",
+          "semantic_hash": "7f5ef43df43eda92987085d17e093c43addf5f96cce2b71013a734437099ece3",
+          "cpu_semantic_hash": "5282f9ba6db4288840d9aeb6cf8ac33732ee7dcf580d1a5e589cf5b4dcf2d9c6",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "6e4a72a676589650526a47fe25618158eeca82ae6b57996f4d52e384b4754019",
+          "semantic_hash": "ccc87f83304644199cc637dd47f47a2f73b44e46bba8ba93285515a54153d9f8",
+          "cpu_semantic_hash": "a4f3ad4fe6c3c03eafe16ad84cafa9a150eaf2b99de68f6cf986b94b4961e531",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "1c3e601aeb53eaa25e4cb51825b142ff38c22d33004128d3a4403c8237376606",
+          "semantic_hash": "543361c74f58a773b2d4a69585b6b0c0fa87b5c64c6fae9430a50325a34dda7c",
+          "cpu_semantic_hash": "8a2a45afc660ae71ff2eb0d66ee844107b331dac6818a55ada1b26a784a99bb7",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        }
+      },
+      "seed_001__fixed_shrink__mixed__history_replay__wide": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "dd76ab31f92b7160c16aa5db957fb647813bc9ea8262c0e9c05d3053ec73e29f",
+          "semantic_hash": "021b0d9742ab9bbf891a4131fc630d0df2e91d84a3581c174a4b497f60bafee6",
+          "cpu_semantic_hash": "ce916adbaa41ca2eb90aa2c4fab6772f0e8d7632f10889e2fb9d33e9c0cbbc99",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "fb94bbdbad048e91ab963b918afd9b260df30ec8d71e2e2fb67fb8848520c94b",
+          "semantic_hash": "5e3c0dc1609b2754bd2f92a8cb065ee683a890a38cca759a6b1b3c52370ed87f",
+          "cpu_semantic_hash": "ce116cb49947401ee282eba36a7c2ec2631ceba72d517b172efc58937886e563",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "ad51e7824605f92b1f478cfbc0fd644f273b697b8b25574dba15cff5fbc61e23",
+          "semantic_hash": "ff77c998a7bc980062e3b7dc30ab64a9de68c54674e15ca86d357071463e4713",
+          "cpu_semantic_hash": "08ed8ecf321de369def4a2234fa23d08db5f1c3101ef1fb266eb84677b05797e",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "8e54f12f2dfdacac671d865f6c0498fb09fef608ec623b27aed184884952f360",
+          "semantic_hash": "81d016bb0d435b169a050bfa24f1b0de76f24423063d59e3e943343599061175",
+          "cpu_semantic_hash": "7852886eacc41defd6ec5da8556a24f05abacc17c847b0af878715df6c79cdf5",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        }
+      },
+      "seed_002__open_shrink__mixed__history_replay__wide": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "b32c8404190661b5eae56b599d3ecd4505c22f6e36f1545f567cd01c0c01cebd",
+          "semantic_hash": "aa4c1ec5bfefd2639c6b51cd5ba9692c436b964f54d9edc61d018387c18731ef",
+          "cpu_semantic_hash": "537513a5a17a94a6e956ffe0b81f66e6ba445035e80d1a15d9e89908ed2fd8e4",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "51f189284eec000871684a2aed11ac3e4c76763af42727feaba724e8bc21c601",
+          "semantic_hash": "c4d9a0bf2d24a0bf863bf1f73d0ae45d47c7426cb1730afde2a406e31028cb56",
+          "cpu_semantic_hash": "61ac02a5263091e294d3ac7e5534c483aab8986249c84e1500440035bdfa0003",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "0d98f7f8e220c394a0e2eeeffdb959af04890be4f513942596b06ebed3ef2c85",
+          "semantic_hash": "4c92ee09420a3ed8b5150639c2fadb00244697002345d301b06e2f5fd25b2ecf",
+          "cpu_semantic_hash": "fc90a1df18ac9538dd975e19d7cd5b3851740cf57e1eb181c61c1b808b0add15",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "1ee5840ded101ad3cf4d51fb6f03d40c4d72b6d30f920ec69df4d962e104cf0d",
+          "semantic_hash": "4155842b7bbed1b0b59fe8fdb7a8b3e9f1417ba6ae95255b926e7fd18d3484f8",
+          "cpu_semantic_hash": "2f57b144bec85c2cf353553d9b98739921e52d4a1889096eabe940b1e802679e",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        }
+      },
+      "seed_000__fixed_shrink__mixed__history_replay__narrow": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "0f1e39ae6664185341b700f0c3ed9c752cf094a3d824ee3602db062a0a93a8fa",
+          "semantic_hash": "69c921b51ed950ce9508f31116fb63970419931ada8f3ec42d5dcb9a1306ffc9",
+          "cpu_semantic_hash": "023ea2b035fa97b8c68f003e2d88b9880adae8ac492b55142f0792b1a211c8ba",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "4355ac9fe4d1c10efdc12841097cad86f9e9b71e4b07eeae5811d970250e8ca2",
+          "semantic_hash": "71861120ebd9fd697d8fd899a87de662cac9452ff6e0871b38c52c82f6b70f1a",
+          "cpu_semantic_hash": "ea8a20207130f9d13baccabefa4fb8b7ab22d164026f1b449f17cfdcec605899",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "da72e61f671f92158b10d9a7bb1fcba7d26bf9b6d9c43aabceebb34f44b91173",
+          "semantic_hash": "9b04ed723ad657b29b00c5f7c32126953e71619f5614fc191c01cfbc74ebeea0",
+          "cpu_semantic_hash": "3b6268b420acaba6dc293abbc5d3fbb3bf06e3f74519852d44b9ae7498621536",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "d6821f0c39aa251e85fb9a36e8e7c252018982b996ac88f0eec90e4edf25d196",
+          "semantic_hash": "4370664be13ac51b8922f5c6ec56f7f7ab042b3d25780ab24798d82adf73c56f",
+          "cpu_semantic_hash": "6332dbc15e3355b26cb4deacb2c619f28e87ae4a11a208b70b6b050b07ad4fb2",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        }
+      },
+      "seed_001__fixed_shrink__mixed__history_replay__narrow": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "17204e81bb7ba18074ad0a88ec652787528ea9fa3d51f88468ba35670af8ad44",
+          "semantic_hash": "20c35478f797421c8dd93450070f6946036beab2527edb990e67f55031c834ef",
+          "cpu_semantic_hash": "5e5a504fd4de958f939b6bcaee8bdd46bf4a09ceb46550763f1b9362ccc31bf3",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "7274a99f629deaadd2f202f50f091f88d0e51e55a30f4e7688ab0b9eebc523b5",
+          "semantic_hash": "8b62f2f0e3e2706ed8d7d650ee951cc52d877cf8a98f1e24556aae1bd860b928",
+          "cpu_semantic_hash": "09aacdac20bd197c00f6a1fcd0550c0907e46c67849e6b5ef56cabe3c5707a40",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "c70eb9212dcdfef9b807d4219be87ada479326c418f808ad81a75d34fad360f6",
+          "semantic_hash": "f5c50d1d2d4105b2b05ecf0e9139844d7d2d9a42a6d16fdd1a228445322a4bfc",
+          "cpu_semantic_hash": "f8e6c7b0d8eef32917b96bad815d5f15f2ed69a683f2e4f2fe22c90ffd8cc0a5",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_001\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "f8f502d4c65c114df779ab70ed66b82868abb5ddb3f57691e92c642f07ac6e9e",
+          "semantic_hash": "4f2cfe3b0101b1a531d45985cc23782e0761d05d4366174dc73d5b691a4bce19",
+          "cpu_semantic_hash": "d6e8518829d2aeffab3b68396856b871f1a44fccbb059db771a8b6f312d4fbb4",
+          "initial_parameter_hash": "4f98313ac948744a0e2861336ef7a7e5645f6b08c5cd84ed0dc606e9827269d7",
+          "birth_hash": "09a451a9c6209ed1c071424e9bb504cc7afafad415a2c42ca7ed8376e2fa457b"
+        }
+      },
+      "seed_002__fixed_shrink__mixed__history_replay__narrow": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "05c71adc6dd16c38a9ad488d3099bb4d3d4285f3b010e7a2b14acc45a03e9355",
+          "semantic_hash": "35ec3d449b64fe9b91793fd0d9df20fc59154410d6eb137e83e0aae0e66493a3",
+          "cpu_semantic_hash": "a37eff0a5343b7af4b5a2cb500be945b714ac6c03298d811e72aef31221d1632",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "9692d9ae8c103738411854bbd1645eb65c1073968b5347e13fc92af69a4b62ee",
+          "semantic_hash": "f067dfdaa7326e6fdea73fef34b17815680bc1baccc59639527712e25f8a1170",
+          "cpu_semantic_hash": "b491342668a26980a6fbf7bd6b5f6f0e79c1ae6f367e271bb3cced5fd2001bde",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "891fc08f15fdab137cbc620e5179b431419f13093832b163b0141db017765612",
+          "semantic_hash": "adf6e0da40e286dddab93ff72b7748fa0c5ba91cd95ab532b0f9cbe71fb3cdc3",
+          "cpu_semantic_hash": "7c90210fb4ef2c98b746c9638976141882a89585a0a5f35f23adc42dd9b42136",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__narrow\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "16a9e6f8747fef86b0437d91e19b0718b48a99cc271c08b26b9e7fe6be912d95",
+          "semantic_hash": "cc0f68e8f68daafb3d5517f138470b4eda90194bf5a5da50a483a133f4adf73f",
+          "cpu_semantic_hash": "7edd1ffb6ebe954bc90e6214d6fb76723dd5716ead16462f24dd856a900397a3",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        }
+      },
+      "seed_000__fixed_shrink__mixed__history_replay__wide": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "ba60bfc284dee5b636407bdffab2b5c745b77238e01a27d71a890b9b8e864a58",
+          "semantic_hash": "5830a1e861058e07a40fb589239803f5201b1e4a07a9f408b795a453b0870fab",
+          "cpu_semantic_hash": "56ba20819ad405a9e4742f821072f61df7d9482e8e40b421c20ea5dcad9d5950",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "841c7a87ac445b37447a1332415b4055e6be36dce10f14a891c0836db0b04911",
+          "semantic_hash": "2e1107047e821171c45412a086a34a7c095cbb97986c7a053bc7916bf9628b7a",
+          "cpu_semantic_hash": "1b79298e0c61e5864b6b8b709032fc2e3f133a54bd1c32ad3721a3d73ba499bc",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "14d8c4976e2a976c6fd03e821121607aadf430f6860a23d0a55bd4727e5c870f",
+          "semantic_hash": "c0d3b753355aba2bc1d62708c4195fbe1192a1e94c93ad28da47449cd6dc72fe",
+          "cpu_semantic_hash": "3d5135ce54fecbae0a11ad024be24eefb5310af024f5bb88283f37b6e132b1dc",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "1c761912a86ce450a650b1b96fe783dbc37d5cfef2571d042e5ea8403e31213a",
+          "semantic_hash": "86ef06354965a0d2543e5d30788fb79e9098811f7c49b3c929c2f98fa2b2456a",
+          "cpu_semantic_hash": "99965176a733488b62dfc7b796120011a81c98b41bd59fa25da4d82529c32ded",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        }
+      },
+      "seed_000__open_shrink__mixed__history_replay__wide": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "32d275b9c5ca79ba3baffb7c5c6ab5227bfae7ed6d855461c475cbf6ddb65c86",
+          "semantic_hash": "9b9ba9d2458c1dff77038385dbdebd7224ad32ddc3cb717295bd94b5120c3e3e",
+          "cpu_semantic_hash": "f2a361679e8fc4345c8d753e18f80b0241a43f782cfb07c55d5d214010024f85",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "ca7c4a3f19db40b20468f8b0a1cf7741e1a5ea40d223054bb2b2f484a8a83249",
+          "semantic_hash": "480603c3628fbfbb81c9c7422b35eb862a7d09dcee9d275190d15ea20ee98d51",
+          "cpu_semantic_hash": "158522036651e38bde41171e7ae647f855f80d3fc109a87570387a17ca9a6925",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "c3b6cc708aab6fcc2f5fc9b83642453e03fc59a5c092a9469236fcdb6ae2e3c1",
+          "semantic_hash": "fd481741230d0712003e46ebfd1affa8cfe0d3cf1b2d42b12b035d96e6220c8e",
+          "cpu_semantic_hash": "6e74b5971377b8b3a5f53e308d663db46341c7a78ae9cec40d4607bb2fc9cb9f",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_000\\open_shrink__mixed__history_replay__wide\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "e5ed0f6c75fd8150cb85ee7b09105ea794d8c316b8b3f7b4134cb615c28087ff",
+          "semantic_hash": "77b91730b36785d4df2a0b089de844761b176a932a7a7ce2215fcdae069f99c5",
+          "cpu_semantic_hash": "df646a092d64e3bfa8961b9dd223b542d6b3bce35b50c83946cb37a97f509d3a",
+          "initial_parameter_hash": "67375d086536fc57008e96690c2e81ed64780fb13b3582bdf47ed2723e1603bd",
+          "birth_hash": "4b4b3499d67274ee31851c4e606d2fba139df051e4fa714470c356836d8cb05c"
+        }
+      },
+      "seed_002__fixed_shrink__mixed__history_replay__wide": {
+        "0": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_000000.pt",
+          "checkpoint_sha256": "e6f4477b2afa268053fec01aad0fb709d18d0e4d92df1933b3f8d24598ff5cd4",
+          "semantic_hash": "ba965a6a0259b96615a270f7e32f3e5430be42415106aa7fe21ab27b52045880",
+          "cpu_semantic_hash": "2a21f318a1b5d6bea8600dfa55322a4f1c93674825bd5f7f2282440b7192a55d",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "131072": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_131072.pt",
+          "checkpoint_sha256": "76b13358fef24c73daac29532b3b776587532b46dc94a7994fcb03c6e5207b7b",
+          "semantic_hash": "c12d85b3e19eddc9cdbe7c0c56860d1c0345211a5cca02eaee54dedf3a59090a",
+          "cpu_semantic_hash": "d322dc40cc987b5d19c8547186f1ca52acd7606804934f9beadc49cab9b45142",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "163840": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_163840.pt",
+          "checkpoint_sha256": "b974b501e7f5b33b890c4919dfd63887aecc39d005779f53115ab0e2861e8c38",
+          "semantic_hash": "096cda86da6be14266b18516011e55b810d76451d6b4d91b3e3e61b200eaa12f",
+          "cpu_semantic_hash": "10ae8ec6892c88f55b51e510ec69096356daac5341f1395d6b8e9df3cbb97adb",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        },
+        "172032": {
+          "checkpoint": "F:\\agi\\data\\lifelong\\main-v1\\training\\seed_002\\fixed_shrink__mixed__history_replay__wide\\checkpoints\\tick_172032.pt",
+          "checkpoint_sha256": "a7c180a8bf8eb000e5f378410f07df56cec523ca1309b01fd7c85770dbcef13b",
+          "semantic_hash": "328d10c0d68ec592ad3f4a61742264f5ecf552f210dbeae5e7aca4ae3fcf571e",
+          "cpu_semantic_hash": "7a40ea819c9e5da4634e5035fcb734e4158575f7b1c0b233a2850d0f52b81d30",
+          "initial_parameter_hash": "0e6cb5b74c397c6c12aabcac3e826abe3d5750a09fcf3a1ed8944c93a75136c3",
+          "birth_hash": "f148eb236aca7c4ca2b5e38c779ff154d0eeaaed0d50f38b139000fe2920d22d"
+        }
+      }
+    },
+    "shrink_step": 0.0002,
+    "note": "Read-only existing main-v1 controls; no baseline retraining."
+  },
+  "interpretation": "Paired zero versus 2e-4 shrink acquisition controls; complete native lifetime and state, no causal topology claim."
+}

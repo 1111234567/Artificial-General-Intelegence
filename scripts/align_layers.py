@@ -26,15 +26,14 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
-sys.path.insert(0, os.path.join(ROOT, "test"))
 
 import numpy as np
 
 from src.config import Config
 from src.core import Network as NewNetwork
 
-import net as old_net
-import grow_agent as old_ga
+from experiments.legacy import net as old_net
+from experiments.legacy import grow_agent as old_ga
 
 
 def show(tag, a, b):
@@ -116,7 +115,7 @@ def _load_old_step():
     只做一处语法替换：`nonlocal` -> `global`（因为要 exec 到模块级 dict）。
     逻辑一行未改——这是本探针可信的前提。
     """
-    p = os.path.join(ROOT, "test", "grow_agent.py")
+    p = os.path.join(ROOT, "experiments", "legacy", "grow_agent.py")
     with open(p, encoding="utf-8") as f:
         src = f.read()
     i = src.index("    def net_step(")

@@ -1,0 +1,79 @@
+{
+  "created_utc": "2026-11-07T08:35:38.234215+00:00",
+  "settings": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "training_streams": 16,
+    "train_batch": 32,
+    "train_ticks": 1024,
+    "ce_updates": 512,
+    "dense_updates": 128,
+    "ce_lr": 0.001,
+    "wait_weight": 0.25,
+    "actors": 32,
+    "support_ticks": 4096,
+    "probe_ticks": 2048,
+    "pg_blocks": 32,
+    "pg_ticks": 512,
+    "pg_lr": 0.0001,
+    "gamma": 0.995,
+    "reject_penalty": 0.1,
+    "dtype": "float32",
+    "support_duration": [
+      8.0,
+      16.0
+    ],
+    "support_gap": [
+      16.0,
+      32.0
+    ]
+  },
+  "sources": {
+    "experiments\\learned_binding\\common.py": "9169a7ed76f099eb1c877af0acea0c00f562b3fc399814cf4c9cc3355b4b99ed",
+    "experiments\\learned_binding\\model.py": "7c9e081ce3ec12f334a946a230465c9f7b774802949a7526b156861358f8929b",
+    "experiments\\learned_binding\\data.py": "c4a2d19ced98ad22c8982b6db64e1b36eac777d395a49ed26340dd96ea8573e5",
+    "experiments\\learned_binding\\pretrain.py": "1bbe7d41574ef867e25f3cb3630a0b48fb5250fd34b72ca12deca990b63bc5ff",
+    "experiments\\learned_binding\\interaction.py": "6ebe7079d189eca7c1fabec67d08ac04e3dd8a1ef17ccaed6bb5f3c74e9438b6",
+    "experiments\\learned_binding\\run.py": "9f50fbb9bedff8e7cde33cc27f087cf6dcc7ee791cb781bb95866d828fc72ae1",
+    "experiments\\learned_binding\\analysis-plan.md": "af0e6d8e0fe66c74430f9007c74100382561ffda228750cfb53955926b83f61b",
+    "experiments/associative_state/model.py": "c9a5aa1551a5297a73cf8d098f085c5c4577bc3e281255aa137df587815d782b",
+    "experiments/associative_state/shared.py": "114e34b7ea56edbf958430626ca55768da4f1d38c8fc8bf9692fea9bdaa53e05",
+    "experiments/associative_state/bridge.py": "be4dea11230c3bbd06eafeb52a9e577e49d41df6c8be272dd35956018030087b",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/experience_transfer/train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  },
+  "origins": {
+    "0/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt",
+      "sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084"
+    },
+    "0/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_000\\delta\\final.pt",
+      "sha256": "b10389eab2a0ca1da980d8314ed5d165aa95d464f55a3bb083f5a0292780e242"
+    },
+    "1/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt",
+      "sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c"
+    },
+    "1/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_001\\delta\\final.pt",
+      "sha256": "9aaabc52db0df700811e38f337b30aab0bbe771e4a3490cd53a8209dfddabcf8"
+    },
+    "2/executor": {
+      "path": "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt",
+      "sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc"
+    },
+    "2/manual": {
+      "path": "data\\associative-state\\shared-v2\\seed_002\\delta\\final.pt",
+      "sha256": "caef743914b7ad81c5b4222d1bdb6bed72b0bb74478028b576cbc64430ec60b2"
+    }
+  },
+  "primary": "Self-action acquisition and B-only learning, with frozen-parameter native control and unchanged manual hard/soft references.",
+  "teacher_diagnostic": "Same actual teacher stream, separate from primary own-action acquisition.",
+  "training": "Native action CE, followed by own sampled actions and only scalar public outcome PG. No payload/binding/gate auxiliary loss."
+}

@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-28T14:37:07.209605+00:00",
+  "reason": "User requested full 14-core/20-thread machine utilization. Finite training queue resized from6 to10; same checkpoint paths/source bindings/algorithm/target budgets. In-flight work after latest complete boundary is replayed.",
+  "affected_branches": [
+    "seed_000_random_high",
+    "seed_001_retire_low",
+    "seed_001_learned_low",
+    "seed_001_random_low",
+    "seed_001_retire_high",
+    "seed_001_learned_high"
+  ],
+  "before_status": "data/rewiring/main-v1/training-execution-concurrency-before.json",
+  "before_status_sha256": "13d100f7cc5a6626633666f0c9ade65412f921c1677a1bd6820311f4a36bf055",
+  "process_snapshot": "data/rewiring/concurrency-processes-before.json",
+  "process_snapshot_sha256": "2eb6a189e7a57652f0759b2cadff07620f8b182b322a6117e6269c490aaaf0e3",
+  "old_workers": 6,
+  "new_workers": 10,
+  "evaluation_workers": 12,
+  "protocol_changed": false
+}

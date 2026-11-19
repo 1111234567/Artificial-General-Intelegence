@@ -1,0 +1,233 @@
+{
+  "format": "credit-preflight-local-audit-v1",
+  "created_utc": "2026-10-27T05:55:07.479713+00:00",
+  "status": "pass_with_documented_approximation_and_control_limits",
+  "scope": "Read-only cross-review of new credit runtime/evaluation/revisitation/protocol against its local derivative helper and frozen dependencies. Only this evidence JSON is written.",
+  "sources_inspected": {
+    "experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "experiments\\credit\\evaluate.py": "d9a6d993fb9afc8a7dd7f534c32d86683224319266574faf6c8d63e5e2809240",
+    "experiments\\credit\\cycle.py": "9381def26ec96c4387961de00715f0442e25f23582d72fe33c51c2c64c88b020",
+    "experiments\\credit\\prepare_study.py": "2952f3de400b3aa95da6ef54957092be885c4fb015b102c239ba782d585fc627",
+    "experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "experiments\\credit\\test_local.py": "7c1be0655952f3901428107617f207c387017e409d81709b1c968f8ef4d433a6",
+    "experiments\\credit\\test_run.py": "7380f2a68653c99bd3f96d34fa02257829f5b8ee9d63cf1f57b1a65521f0387b",
+    "experiments\\credit\\test_evaluate.py": "df61114e68d5e2740f72ff6f22a51c725c6c1e9f30b3240e26654ea35c85390f",
+    "experiments\\credit\\launch.py": "2dc8fdd15c3c365d49b967bf27ff2776f44b3e29098b8d6883b291f5e31abfd1"
+  },
+  "checks": [
+    {
+      "id": "actual_heun_tangent",
+      "result": "pass_with_approximation",
+      "evidence": [
+        "credit/local.py:174-208",
+        "credit/test_local.py:test_full_forward_rtrl_matches_bptt_on_dense_heun_with_burnin_graph",
+        "credit/test_local.py:test_diagonal_weight_positive_control_matches_full_gradient"
+      ],
+      "finding": "Each Heun stage drops cross-neuron sensitivities. E has direct recurrent sources at both stages; F has a pulse source only after flow. This is a diagonal forward derivative approximation, not exact dense RTRL or an RFLO/e-prop reproduction. Dense-reference error is explicitly measured in research-forward.json."
+    },
+    {
+      "id": "weighted_objective",
+      "result": "pass",
+      "evidence": [
+        "credit/local.py:analytic_head_gradients",
+        "credit/local.py:normalized_gradients",
+        "credit/run.py:_live_chunk"
+      ],
+      "finding": "Unnormalized weighted CE residuals/head gradients and target-weight mass accumulate over the source chunk. Division occurs once per source. The head gradient is analytic and exact for that source state; core gradients are approximate."
+    },
+    {
+      "id": "live_graph_boundary",
+      "result": "pass",
+      "evidence": [
+        "credit/run.py:_live_chunk",
+        "credit/run.py:train_update"
+      ],
+      "finding": "BP keeps the live chunk graph and detaches live h only after extracting its gradients. Manual modes use no reverse graph. Parameters remain unchanged during all source forward passes. Hidden values are continuous; a 64-tick update does not clear h."
+    },
+    {
+      "id": "replay_graph_and_trace",
+      "result": "pass_with_history_approximation",
+      "evidence": [
+        "credit/run.py:_old_gradients",
+        "credit/test_run.py:test_replay_uses_preupdate_weights_full_old_bp_graph_and_half_normalized_gradients"
+      ],
+      "finding": "BP old graph covers all128 ticks, with loss only on the final64. Diagonal old E/F start zero and evolve through all128, using no warm-up labels. Saved historical h is constant. Neither branch reconstructs a true derivative before the saved boundary. This BP old horizon differs from the prior frozen replay64 experiment."
+    },
+    {
+      "id": "gradient_mixture",
+      "result": "pass",
+      "evidence": [
+        "credit/run.py:347-350",
+        "credit/run.py:_apply_gradients"
+      ],
+      "finding": "Current/old source losses are normalized independently, gradients average0.5/0.5 under the same pre-update weights, then one global clip and one inherited Adam step. This equals differentiating that fixed-source average objective for BP; it is not two sequential optimizer steps."
+    },
+    {
+      "id": "full_continuation",
+      "result": "pass",
+      "evidence": [
+        "credit/run.py:CreditTrainer.__init__",
+        "credit/run.py:semantic_state",
+        "credit/run.py:_from_state",
+        "continuity/run.py:semantic_state"
+      ],
+      "finding": "Nested model, Adam, live hidden, world/receipts/contracts/clocks/scheduler, RNGs, replay bank, tick/update/hash/statistics state continue. Credit adds both E/F collectors, feedback and private RNGs, sampler RNG, work/gain counters and regime history. Old state never overwrites live h; named reset controls affect only E/F."
+    },
+    {
+      "id": "randomness_and_feedback",
+      "result": "pass",
+      "evidence": [
+        "credit/run.py:_make_credit",
+        "credit/local.py:initialize_feedback_",
+        "credit/local.py:state_dict",
+        "credit/test_run.py:test_initial_branch_keeps_complete_source_state"
+      ],
+      "finding": "Live and replay use identical initial fixed B and saved initial row scales. Shuffle uses its own saved RNG; old sampling is independent. No adaptive B rescaling or use of evaluation labels is introduced."
+    },
+    {
+      "id": "readout_control",
+      "result": "pass",
+      "evidence": [
+        "credit/run.py:_apply_gradients",
+        "credit/test_run.py:test_readout_only_skips_core_adam_moments_instead_of_zero_gradient_drift"
+      ],
+      "finding": "Core gradients are None in readout-only, so inherited core Adam moments cannot drift the frozen encoder/recurrence. The head still inherits its optimizer state. This is a pretrained nonspiking reservoir control, not a random LSM replication."
+    },
+    {
+      "id": "source_checkpoint_provenance",
+      "result": "pass",
+      "evidence": [
+        "credit/run.py:source_snapshots",
+        "credit/run.py:dependency_snapshots",
+        "credit/run.py:_from_state",
+        "credit/prepare_study.py"
+      ],
+      "finding": "Credit run/local snapshots and hashes plus frozen integration restoration dependency accompany checkpoints; strict resume checks current and saved core sources. Prepare_study binds all credit/continuity/integration source hashes and origin checkpoint bytes in command manifests."
+    },
+    {
+      "id": "frozen_own_state_evaluation",
+      "result": "pass",
+      "evidence": [
+        "credit/evaluate.py:evaluate_trainer",
+        "credit/evaluate.py:evaluate_checkpoint",
+        "integration/diagnose.py:diagnose_fork",
+        "credit/test_evaluate.py:test_observer_is_identical_and_preserves_complete_local_continuation"
+      ],
+      "finding": "Evaluation clones complete model/world/h, preserves process RNG/settings, checks full continuation and checkpoint bytes unchanged, and pairs interventions on external events/scheduler/cohort fingerprints. Baseline action_policy=model; oracle branches are diagnostic counterfactuals, not autonomous model scores. Matched cue-to-first-legal loss excludes no-legal cases; those counts must remain separate."
+    },
+    {
+      "id": "revisitation_continuity",
+      "result": "pass",
+      "evidence": [
+        "credit/cycle.py:run_cycles",
+        "credit/test_evaluate.py:test_cycle_matches_uninterrupted_manual_schedule_and_resume_is_idempotent"
+      ],
+      "finding": "A/B changes affect future contracts only at complete optimizer boundaries. Milestones save full continuation and evaluate cloned states without altering training. Completed milestone resume validates origin/protocol/last checkpoint hashes. Familiar-regime reacquisition is not a new-task plasticity proof."
+    },
+    {
+      "id": "protocol_arithmetic",
+      "result": "pass_pre_freeze",
+      "evidence": [
+        "credit/prepare_study.py"
+      ],
+      "finding": "11arms x3seeds=33 training endpoints;33x5=165 baseline forks;5selected x3seeds x2conditions x2interventions=60 additional forks;15cycle runs x8segments x2milestones x2conditions=480 forks. Training length65536 and chunk64 give1024 optimizer boundaries per arm, with zero Adam steps for frozen."
+    },
+    {
+      "id": "prior_frozen_sources",
+      "result": "pass",
+      "evidence": [
+        "docs\\evidence\\integration-2026-10-27\\main-study-v1.json"
+      ],
+      "finding": "All nine checked old integration/continuity source/test hashes and the prior main manifest match the frozen values. No audited source or checkpoint was modified by this audit."
+    },
+    {
+      "id": "pilot_external_evidence",
+      "result": "pass_as_reported_not_rerun",
+      "evidence": [
+        "data\\credit\\pilot-benchmark-v1\\summary.json",
+        "data/credit/pilot-benchmark-v1/resume-proof/proof.json"
+      ],
+      "finding": "Existing independent seed101 evidence reports10 branches x256ticks acrossCPU/CUDA, all finite, source/runtime unchanged and exact real CUDA random-replay continuation. This audit did not rerun training or read main test scores."
+    },
+    {
+      "id": "manifest_launcher_resume_resolution",
+      "result": "pass_read_only_review",
+      "evidence": [
+        "credit/launch.py:launch",
+        "credit/prepare_study.py:generated main launch command and completion output",
+        "credit/test_evaluate.py:test_manifest_launcher_resumes_complete_state_and_preserves_attempt_logs"
+      ],
+      "finding": "Reviewed the new launcher and meaningful resumed-versus-uninterrupted semantic-state test. Manifest-owned main retries now use a complete continuation rather than restarting an existing output path. Root reports the three wrapper/cycle/launcher tests passed; this audit did not rerun them."
+    }
+  ],
+  "issues": [
+    {
+      "id": "interrupted_main_batch_retry",
+      "severity": "actionable_operational",
+      "status": "resolved_before_protocol_freeze",
+      "evidence": [
+        "credit/prepare_study.py:generated main command --from-checkpoint",
+        "credit/batch.py:execute retry of unsuccessful exact command",
+        "credit/run.py:534-536"
+      ],
+      "finding": "A failed/interrupted main job leaves an output directory, but retrying its frozen --from-checkpoint command raises FileExistsError. Complete-job skipping works. This does not corrupt a successful model, but advertised main-batch restart does not automatically restore the last complete checkpoint.",
+      "requested_resolution": "Before protocol freeze, choose verified --resume for unfinished jobs with a complete matching checkpoint, or record a concrete restart procedure compatible with the frozen manifest. No source change was made by this audit.",
+      "resolution": "New launch.py is the manifest job entry. It atomically saves a complete initial checkpoint before training, reloads any existing complete checkpoint with strict origin path/SHA/config/target validation, archives previous attempt logs, and emits a required launch-complete.json. The frozen trainer and batch implementations are unchanged.",
+      "resolution_evidence": [
+        "credit/launch.py:launch",
+        "credit/prepare_study.py:generated main launch command and completion output",
+        "credit/test_evaluate.py:test_manifest_launcher_resumes_complete_state_and_preserves_attempt_logs"
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "Forward-only describes new-phase gradient computation. Model features and inherited Adam moments were produced by earlier supervised BPTT; no end-to-end BP-free origin or biological locality claim follows.",
+    "Replaying real old observations/labels also changes the objective, supervised work and historical BP horizon. A replay advantage does not isolate old-content exposure alone or establish semantic fusion.",
+    "Persistent E/F have no hard chunk reset except named controls, but diagonal gains can attenuate old influence rapidly. Gain summaries omit cross-neuron paths and sources; they are not the whole-network memory or a real gradient horizon.",
+    "Live E/F become stale after parameter updates. Exact numerical save/resume is distinct from exact historical sensitivities with respect to current weights.",
+    "diag_instant still includes sensitivity over the current observation flow and reads a history-dependent h. It is an eligibility-history reset control, not a memoryless network.",
+    "diag_shuffle leaves the exact head gradient, inherited Adam moments and shared signal components intact. Its result tests signal pairing under this transformation; it is not no-learning or a proof that all core task signal was removed.",
+    "Joint clipping couples head/core gradient scales. Identical analytic head formulas do not imply identical head optimizer updates across arms.",
+    "The generic report continuity sentence must be interpreted with mode.reset and actual reset counters: diag_reset64/diag_instant intentionally reset only E/F. No live h/world reset occurs.",
+    "CPU and CUDA may differ numerically. Same-device BP-control regression establishes implementation equivalence, not bitwise reproduction of an earlier CUDA score after choosing CPU for the new study.",
+    "First-legal/age-bin readouts are conditional on the cohort actually reaching that opportunity; no-legal and no-cue requests remain separate and must not be counted as forgetting. Oracle rescue remains diagnostic only."
+  ],
+  "prior_manifest_sha256": "b6d9bdc3a5cf1f81ff017f8fbd0169e010d6d34ca9d961ec8a5a53a002c56674",
+  "prior_source_hash_checks": {
+    "experiments\\integration\\run.py": true,
+    "experiments\\integration\\local.py": true,
+    "experiments\\integration\\diagnose.py": true,
+    "experiments\\integration\\test_run.py": true,
+    "experiments\\integration\\test_local.py": true,
+    "experiments\\integration\\test_diagnose.py": true,
+    "experiments\\continuity\\world.py": true,
+    "experiments\\continuity\\model.py": true,
+    "experiments\\continuity\\run.py": true
+  },
+  "existing_pilot_summary_sha256": "fdec5826e3b72fa7ad695df36b37240f63c3576b4e697453f48772b3137a05f8",
+  "validation_performed_during_audit": [
+    "Read source and existing reference tests",
+    "AST parse all nine listed new source/test files",
+    "Recompute nine frozen prior source/test hashes and frozen main manifest hash",
+    "Recompute protocol sample/boundary counts",
+    "Read existing seed101 finite/resume summary only",
+    "Read-only review and AST parse of new launcher plus revised prepare/test files; operational retry issue verified resolved by code path and existing semantic-state test"
+  ],
+  "new_training_or_tests_launched": false,
+  "runtime_sources_modified": false,
+  "main_outcomes_inspected": false,
+  "initial_sources_inspected": {
+    "experiments\\credit\\local.py": "78171b5eeb8125c42e1a46f1a530f123dc4ec64a084cba7924fc74c730ce0d0d",
+    "experiments\\credit\\run.py": "da9dc334924ebb83ccb091550b0ea3d27d937c79b2406a4f508f2025cfdb2c2d",
+    "experiments\\credit\\evaluate.py": "d9a6d993fb9afc8a7dd7f534c32d86683224319266574faf6c8d63e5e2809240",
+    "experiments\\credit\\cycle.py": "9381def26ec96c4387961de00715f0442e25f23582d72fe33c51c2c64c88b020",
+    "experiments\\credit\\prepare_study.py": "2952f3de400b3aa95da6ef54957092be885c4fb015b102c239ba782d585fc627",
+    "experiments\\credit\\batch.py": "a751695cbb2f11bf8b9d3a5ab725f40aff47e8dcdcd67e37abff80571b0bd750",
+    "experiments\\credit\\test_local.py": "7c1be0655952f3901428107617f207c387017e409d81709b1c968f8ef4d433a6",
+    "experiments\\credit\\test_run.py": "7380f2a68653c99bd3f96d34fa02257829f5b8ee9d63cf1f57b1a65521f0387b",
+    "experiments\\credit\\test_evaluate.py": "df61114e68d5e2740f72ff6f22a51c725c6c1e9f30b3240e26654ea35c85390f"
+  },
+  "revised_utc": "2026-10-27T05:55:45.372234+00:00",
+  "execution_selection": "Coordinator selected CUDA for every main arm from independent seed101 execution benchmarks; six finite concurrent workers. All comparisons retain the same chosen device; evaluation remains frozen CPU."
+}

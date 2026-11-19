@@ -1,0 +1,101 @@
+{
+  "format": "integration-prior-dense-current-control-reproduction-v1",
+  "interpretation": "coverage_long_dense continues the same inherited A checkpoint, task stream, exposure and optimizer schedule as the previous continuity B_current control. Identical model/hidden/Adam and action/data hashes establish control reproduction; this is not additional independent training evidence.",
+  "scope": "Exact model, numeric hidden, Adam, actions, observations/labels/time and tick/update counts; whole-world semantic equality is not claimed because regime metadata IDs/names differ.",
+  "rows": [
+    {
+      "seed": 0,
+      "old_checkpoint": "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_000\\B_current\\checkpoint.pt",
+      "new_checkpoint": "F:\\agi\\data\\integration\\main-v1\\seed_000\\coverage_long_dense\\checkpoint.pt",
+      "file_sha256_before": {
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\coverage_long_dense\\checkpoint.pt": "bdc01a1bf073ba1b596caf182d33f277f601dcc340e8d79668f6d41d39e0b954",
+        "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_000\\B_current\\checkpoint.pt": "363c87174585160d13d175c796d8ff579a25081e997cabb082951a518ac03593"
+      },
+      "file_sha256_after": {
+        "F:\\agi\\data\\integration\\main-v1\\seed_000\\coverage_long_dense\\checkpoint.pt": "bdc01a1bf073ba1b596caf182d33f277f601dcc340e8d79668f6d41d39e0b954",
+        "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_000\\B_current\\checkpoint.pt": "363c87174585160d13d175c796d8ff579a25081e997cabb082951a518ac03593"
+      },
+      "files_unchanged": true,
+      "equal": {
+        "model": true,
+        "hidden": true,
+        "optimizer": true,
+        "action_hash": true,
+        "data_hash": true,
+        "ticks": true,
+        "gradient_updates": true
+      },
+      "new_model_hash": "e397a0d9832f43a22c6562c07855bffbf99e4b209a6627e37942fe2a208322ef",
+      "old_model_hash": "e397a0d9832f43a22c6562c07855bffbf99e4b209a6627e37942fe2a208322ef",
+      "new_hidden_hash": "85cb24ffe4ed0ad1be6276efeac82bd54c951b489ad4f103a594c9f64ed9c6fd",
+      "old_hidden_hash": "85cb24ffe4ed0ad1be6276efeac82bd54c951b489ad4f103a594c9f64ed9c6fd",
+      "world_metadata_regime_ids": {
+        "new": 2,
+        "old": 1
+      }
+    },
+    {
+      "seed": 1,
+      "old_checkpoint": "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_001\\B_current\\checkpoint.pt",
+      "new_checkpoint": "F:\\agi\\data\\integration\\main-v1\\seed_001\\coverage_long_dense\\checkpoint.pt",
+      "file_sha256_before": {
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\coverage_long_dense\\checkpoint.pt": "58ab26cee738130920c648aeae11e2882a6c4c6b02a35d5d0703d59d25c13c55",
+        "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_001\\B_current\\checkpoint.pt": "ea3ba09368b8c8544c74abfed1b208ea532514f0b7342b13bc1ffcd0f56846d9"
+      },
+      "file_sha256_after": {
+        "F:\\agi\\data\\integration\\main-v1\\seed_001\\coverage_long_dense\\checkpoint.pt": "58ab26cee738130920c648aeae11e2882a6c4c6b02a35d5d0703d59d25c13c55",
+        "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_001\\B_current\\checkpoint.pt": "ea3ba09368b8c8544c74abfed1b208ea532514f0b7342b13bc1ffcd0f56846d9"
+      },
+      "files_unchanged": true,
+      "equal": {
+        "model": true,
+        "hidden": true,
+        "optimizer": true,
+        "action_hash": true,
+        "data_hash": true,
+        "ticks": true,
+        "gradient_updates": true
+      },
+      "new_model_hash": "8a75052ea035f7f50409e9493df36ff6bf495be902864ec641aef5dc66311b48",
+      "old_model_hash": "8a75052ea035f7f50409e9493df36ff6bf495be902864ec641aef5dc66311b48",
+      "new_hidden_hash": "7bbe32eca62669a226b3bec4a8978ff5bf385d2dfb61eac2a6b8d2db256ab0f9",
+      "old_hidden_hash": "7bbe32eca62669a226b3bec4a8978ff5bf385d2dfb61eac2a6b8d2db256ab0f9",
+      "world_metadata_regime_ids": {
+        "new": 2,
+        "old": 1
+      }
+    },
+    {
+      "seed": 2,
+      "old_checkpoint": "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_002\\B_current\\checkpoint.pt",
+      "new_checkpoint": "F:\\agi\\data\\integration\\main-v1\\seed_002\\coverage_long_dense\\checkpoint.pt",
+      "file_sha256_before": {
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\coverage_long_dense\\checkpoint.pt": "d98662ab784ad675fcfe5de538b40278b141034cfa21501a19d5e76bd86bff3a",
+        "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_002\\B_current\\checkpoint.pt": "1c29de15cdf50c51f0db8623e74523026b6d4ed60e9111fa5b06f09233c6e917"
+      },
+      "file_sha256_after": {
+        "F:\\agi\\data\\integration\\main-v1\\seed_002\\coverage_long_dense\\checkpoint.pt": "d98662ab784ad675fcfe5de538b40278b141034cfa21501a19d5e76bd86bff3a",
+        "F:\\agi\\data\\continuity\\adapt-20261027-v1\\seed_002\\B_current\\checkpoint.pt": "1c29de15cdf50c51f0db8623e74523026b6d4ed60e9111fa5b06f09233c6e917"
+      },
+      "files_unchanged": true,
+      "equal": {
+        "model": true,
+        "hidden": true,
+        "optimizer": true,
+        "action_hash": true,
+        "data_hash": true,
+        "ticks": true,
+        "gradient_updates": true
+      },
+      "new_model_hash": "457c0935e72a59d0327f4d0cf7c539538aceff65a67cad3c4cd1aaa7705f17f7",
+      "old_model_hash": "457c0935e72a59d0327f4d0cf7c539538aceff65a67cad3c4cd1aaa7705f17f7",
+      "new_hidden_hash": "8ac3fd40b99dbcb08ca6a07c09c9c98584ee49706d1329ef95fa6a65e050b37b",
+      "old_hidden_hash": "8ac3fd40b99dbcb08ca6a07c09c9c98584ee49706d1329ef95fa6a65e050b37b",
+      "world_metadata_regime_ids": {
+        "new": 2,
+        "old": 1
+      }
+    }
+  ],
+  "passed": true
+}
