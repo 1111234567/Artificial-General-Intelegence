@@ -1,0 +1,26 @@
+{
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "stages": [
+    0,
+    500,
+    2000,
+    4000,
+    8000,
+    12000
+  ],
+  "batch": 24,
+  "arms": [
+    "fixed",
+    "variable"
+  ],
+  "holdout_domain": 4119751,
+  "tapes_per_birth": 96,
+  "purpose": "After seeing one-polarity specialization at 4000, extend both unchanged fits to 12000. Require original checkpoints through 4000 to replay bit-identically; examine poorer polarity per birth on a separate evaluation tape."
+}

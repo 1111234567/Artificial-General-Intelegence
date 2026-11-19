@@ -1,0 +1,539 @@
+{
+  "primary": {
+    "information_preference": {
+      "mean": -0.017578125,
+      "ci": [
+        -0.1123046875,
+        0.07878011067708357
+      ],
+      "per_birth": [
+        -0.0390625,
+        -0.09375,
+        -0.046875,
+        0.0703125,
+        -0.0390625,
+        0.015625,
+        0.03125,
+        -0.0390625
+      ]
+    },
+    "surprise_minus_positive": {
+      "mean": 0.0302734375,
+      "ci": [
+        -0.021484375,
+        0.10612386067708357
+      ],
+      "per_birth": [
+        0.0859375,
+        0.0,
+        0.015625,
+        0.0234375,
+        0.0,
+        0.0234375,
+        0.0859375,
+        0.0078125
+      ]
+    },
+    "chosen_minus_decoy": {
+      "mean": 0.00244140625,
+      "ci": [
+        -0.009765625,
+        0.0166015625
+      ],
+      "per_birth": [
+        0.01953125,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0078125,
+        0.0078125,
+        0.0
+      ]
+    },
+    "forced_sentinel_minus_decoy": {
+      "mean": 0.00927734375,
+      "ci": [
+        -0.012046305338541667,
+        0.03662109375
+      ],
+      "per_birth": [
+        0.03125,
+        0.0,
+        -0.00390625,
+        0.00390625,
+        -0.00390625,
+        -0.01171875,
+        0.05078125,
+        0.0078125
+      ]
+    },
+    "own_minus_swapped_write": {
+      "mean": 0.0126953125,
+      "ci": [
+        -0.0087890625,
+        0.044921875
+      ],
+      "per_birth": [
+        0.03515625,
+        0.0,
+        -0.0078125,
+        0.01953125,
+        -0.00390625,
+        0.0,
+        0.05078125,
+        0.0078125
+      ]
+    },
+    "own_minus_omitted_write": {
+      "mean": 0.0068359375,
+      "ci": [
+        -0.00927734375,
+        0.0283203125
+      ],
+      "per_birth": [
+        0.0234375,
+        0.0,
+        -0.00390625,
+        0.0078125,
+        -0.0078125,
+        0.00390625,
+        0.03515625,
+        -0.00390625
+      ]
+    }
+  },
+  "actual": {
+    "sentinel/own/carry": {
+      "mean": 0.50927734375,
+      "ci": [
+        0.49365234375,
+        0.5283203125
+      ],
+      "per_birth": [
+        0.53125,
+        0.5,
+        0.49609375,
+        0.50390625,
+        0.49609375,
+        0.48828125,
+        0.55078125,
+        0.5078125
+      ]
+    },
+    "sentinel/own/rest": {
+      "mean": 0.49853515625,
+      "ci": [
+        0.490234375,
+        0.505859375
+      ],
+      "per_birth": [
+        0.5078125,
+        0.5,
+        0.49609375,
+        0.49609375,
+        0.5,
+        0.49609375,
+        0.48828125,
+        0.50390625
+      ]
+    },
+    "sentinel/no_write/carry": {
+      "mean": 0.50244140625,
+      "ci": [
+        0.49072265625,
+        0.51416015625
+      ],
+      "per_birth": [
+        0.5078125,
+        0.5,
+        0.5,
+        0.49609375,
+        0.50390625,
+        0.484375,
+        0.515625,
+        0.51171875
+      ]
+    },
+    "sentinel/no_write/rest": {
+      "mean": 0.5,
+      "ci": [
+        0.5,
+        0.5
+      ],
+      "per_birth": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "sentinel/swapped/carry": {
+      "mean": 0.49658203125,
+      "ci": [
+        0.48388671875,
+        0.5078125
+      ],
+      "per_birth": [
+        0.49609375,
+        0.5,
+        0.50390625,
+        0.484375,
+        0.5,
+        0.48828125,
+        0.5,
+        0.5
+      ]
+    },
+    "sentinel/swapped/rest": {
+      "mean": 0.50146484375,
+      "ci": [
+        0.494140625,
+        0.509765625
+      ],
+      "per_birth": [
+        0.4921875,
+        0.5,
+        0.50390625,
+        0.50390625,
+        0.5,
+        0.50390625,
+        0.51171875,
+        0.49609375
+      ]
+    },
+    "sentinel/blind/carry": {
+      "mean": 0.51025390625,
+      "ci": [
+        0.4951171875,
+        0.52978515625
+      ],
+      "per_birth": [
+        0.52734375,
+        0.5,
+        0.5,
+        0.50390625,
+        0.49609375,
+        0.4921875,
+        0.5546875,
+        0.5078125
+      ]
+    },
+    "sentinel/blind/rest": {
+      "mean": 0.50048828125,
+      "ci": [
+        0.49072265625,
+        0.5087890625
+      ],
+      "per_birth": [
+        0.51171875,
+        0.50390625,
+        0.5,
+        0.49609375,
+        0.5,
+        0.5,
+        0.48828125,
+        0.50390625
+      ]
+    },
+    "sentinel/stale/carry": {
+      "mean": 0.5087890625,
+      "ci": [
+        0.494140625,
+        0.52587890625
+      ],
+      "per_birth": [
+        0.52734375,
+        0.5,
+        0.5,
+        0.50390625,
+        0.49609375,
+        0.48828125,
+        0.54296875,
+        0.51171875
+      ]
+    },
+    "sentinel/stale/rest": {
+      "mean": 0.49951171875,
+      "ci": [
+        0.48974609375,
+        0.50830078125
+      ],
+      "per_birth": [
+        0.51171875,
+        0.50390625,
+        0.49609375,
+        0.5,
+        0.5,
+        0.49609375,
+        0.484375,
+        0.50390625
+      ]
+    },
+    "sentinel/corrupt/carry": {
+      "mean": 0.50927734375,
+      "ci": [
+        0.4931640625,
+        0.52880859375
+      ],
+      "per_birth": [
+        0.5234375,
+        0.5,
+        0.49609375,
+        0.50390625,
+        0.49609375,
+        0.48828125,
+        0.5546875,
+        0.51171875
+      ]
+    },
+    "sentinel/corrupt/rest": {
+      "mean": 0.4990234375,
+      "ci": [
+        0.48974609375,
+        0.50732421875
+      ],
+      "per_birth": [
+        0.5078125,
+        0.50390625,
+        0.5,
+        0.49609375,
+        0.5,
+        0.49609375,
+        0.48828125,
+        0.5
+      ]
+    },
+    "choice/own/carry": {
+      "mean": 0.50244140625,
+      "ci": [
+        0.494140625,
+        0.51220703125
+      ],
+      "per_birth": [
+        0.51953125,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.4921875,
+        0.5078125,
+        0.5
+      ]
+    },
+    "choice/own/rest": {
+      "mean": 0.49853515625,
+      "ci": [
+        0.48974609375,
+        0.50634765625
+      ],
+      "per_birth": [
+        0.51171875,
+        0.5,
+        0.50390625,
+        0.49609375,
+        0.5,
+        0.49609375,
+        0.48046875,
+        0.5
+      ]
+    },
+    "decoy/own/carry": {
+      "mean": 0.5,
+      "ci": [
+        0.5,
+        0.5
+      ],
+      "per_birth": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "decoy/own/rest": {
+      "mean": 0.5,
+      "ci": [
+        0.5,
+        0.5
+      ],
+      "per_birth": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "pre_shock_familiar_B": {
+    "mean": 0.5732421875,
+    "ci": [
+      0.49609375,
+      0.65234375
+    ],
+    "per_birth": [
+      0.7109375,
+      0.46875,
+      0.5625,
+      0.5703125,
+      0.6015625,
+      0.5703125,
+      0.609375,
+      0.4921875
+    ]
+  },
+  "info_by_old_sentinel_valence": {
+    "previously_good": 0.513671875,
+    "previously_bad": 0.451171875
+  },
+  "view_effects": {
+    "effect/0/own/delta_w_rms": 0.0,
+    "effect/0/own/delta_b_rms": 0.0,
+    "effect/0/own/different_support": 0.0,
+    "effect/0/own/birth_asked": 0.0908203125,
+    "effect/0/own/birth_applied": 0.0576171875,
+    "effect/0/own/birth_invalid": 0.033203125,
+    "effect/0/own/birth_guard": 0.0,
+    "effect/0/own/retire_asked": 0.1005859375,
+    "effect/0/own/retire_applied": 0.0390625,
+    "effect/0/own/retire_invalid": 0.0595703125,
+    "effect/0/own/retire_guard": 0.001953125,
+    "effect/0/swapped/delta_w_rms": 0.030542127788066864,
+    "effect/0/swapped/delta_b_rms": 0.016621945425868034,
+    "effect/0/swapped/different_support": 0.04296875,
+    "effect/0/swapped/birth_asked": 0.087890625,
+    "effect/0/swapped/birth_applied": 0.0478515625,
+    "effect/0/swapped/birth_invalid": 0.0400390625,
+    "effect/0/swapped/birth_guard": 0.0,
+    "effect/0/swapped/retire_asked": 0.1015625,
+    "effect/0/swapped/retire_applied": 0.0400390625,
+    "effect/0/swapped/retire_invalid": 0.0615234375,
+    "effect/0/swapped/retire_guard": 0.0,
+    "effect/0/no_write/delta_w_rms": 0.07847242057323456,
+    "effect/0/no_write/delta_b_rms": 0.026429275050759315,
+    "effect/0/no_write/different_support": 0.095703125,
+    "effect/0/no_write/birth_asked": 0.0908203125,
+    "effect/0/no_write/birth_applied": 0.0,
+    "effect/0/no_write/birth_invalid": 0.0,
+    "effect/0/no_write/birth_guard": 0.0,
+    "effect/0/no_write/retire_asked": 0.1005859375,
+    "effect/0/no_write/retire_applied": 0.0,
+    "effect/0/no_write/retire_invalid": 0.0,
+    "effect/0/no_write/retire_guard": 0.0,
+    "effect/0/blind/delta_w_rms": 0.02301199734210968,
+    "effect/0/blind/delta_b_rms": 0.0027748404536396265,
+    "effect/0/blind/different_support": 0.037109375,
+    "effect/0/blind/birth_asked": 0.0908203125,
+    "effect/0/blind/birth_applied": 0.0517578125,
+    "effect/0/blind/birth_invalid": 0.0390625,
+    "effect/0/blind/birth_guard": 0.0,
+    "effect/0/blind/retire_asked": 0.1005859375,
+    "effect/0/blind/retire_applied": 0.0458984375,
+    "effect/0/blind/retire_invalid": 0.0517578125,
+    "effect/0/blind/retire_guard": 0.0029296875,
+    "effect/0/stale/delta_w_rms": 0.01886153221130371,
+    "effect/0/stale/delta_b_rms": 0.0021506850607693195,
+    "effect/0/stale/different_support": 0.03125,
+    "effect/0/stale/birth_asked": 0.0908203125,
+    "effect/0/stale/birth_applied": 0.0517578125,
+    "effect/0/stale/birth_invalid": 0.0390625,
+    "effect/0/stale/birth_guard": 0.0,
+    "effect/0/stale/retire_asked": 0.1005859375,
+    "effect/0/stale/retire_applied": 0.0498046875,
+    "effect/0/stale/retire_invalid": 0.048828125,
+    "effect/0/stale/retire_guard": 0.001953125,
+    "effect/0/corrupt/delta_w_rms": 0.028393730521202087,
+    "effect/0/corrupt/delta_b_rms": 0.003976034000515938,
+    "effect/0/corrupt/different_support": 0.0546875,
+    "effect/0/corrupt/birth_asked": 0.0908203125,
+    "effect/0/corrupt/birth_applied": 0.048828125,
+    "effect/0/corrupt/birth_invalid": 0.0419921875,
+    "effect/0/corrupt/birth_guard": 0.0,
+    "effect/0/corrupt/retire_asked": 0.1005859375,
+    "effect/0/corrupt/retire_applied": 0.0498046875,
+    "effect/0/corrupt/retire_invalid": 0.046875,
+    "effect/0/corrupt/retire_guard": 0.00390625,
+    "effect/1/own/delta_w_rms": 0.0,
+    "effect/1/own/delta_b_rms": 0.0,
+    "effect/1/own/different_support": 0.0,
+    "effect/1/own/birth_asked": 0.087890625,
+    "effect/1/own/birth_applied": 0.0478515625,
+    "effect/1/own/birth_invalid": 0.0400390625,
+    "effect/1/own/birth_guard": 0.0,
+    "effect/1/own/retire_asked": 0.1015625,
+    "effect/1/own/retire_applied": 0.0400390625,
+    "effect/1/own/retire_invalid": 0.0615234375,
+    "effect/1/own/retire_guard": 0.0,
+    "effect/1/swapped/delta_w_rms": 0.030542127788066864,
+    "effect/1/swapped/delta_b_rms": 0.016621945425868034,
+    "effect/1/swapped/different_support": 0.04296875,
+    "effect/1/swapped/birth_asked": 0.0908203125,
+    "effect/1/swapped/birth_applied": 0.0576171875,
+    "effect/1/swapped/birth_invalid": 0.033203125,
+    "effect/1/swapped/birth_guard": 0.0,
+    "effect/1/swapped/retire_asked": 0.1005859375,
+    "effect/1/swapped/retire_applied": 0.0390625,
+    "effect/1/swapped/retire_invalid": 0.0595703125,
+    "effect/1/swapped/retire_guard": 0.001953125,
+    "effect/1/no_write/delta_w_rms": 0.07883069664239883,
+    "effect/1/no_write/delta_b_rms": 0.026483293622732162,
+    "effect/1/no_write/different_support": 0.087890625,
+    "effect/1/no_write/birth_asked": 0.087890625,
+    "effect/1/no_write/birth_applied": 0.0,
+    "effect/1/no_write/birth_invalid": 0.0,
+    "effect/1/no_write/birth_guard": 0.0,
+    "effect/1/no_write/retire_asked": 0.1015625,
+    "effect/1/no_write/retire_applied": 0.0,
+    "effect/1/no_write/retire_invalid": 0.0,
+    "effect/1/no_write/retire_guard": 0.0,
+    "effect/1/blind/delta_w_rms": 0.02253909409046173,
+    "effect/1/blind/delta_b_rms": 0.0027508537750691175,
+    "effect/1/blind/different_support": 0.03125,
+    "effect/1/blind/birth_asked": 0.087890625,
+    "effect/1/blind/birth_applied": 0.04296875,
+    "effect/1/blind/birth_invalid": 0.044921875,
+    "effect/1/blind/birth_guard": 0.0,
+    "effect/1/blind/retire_asked": 0.1015625,
+    "effect/1/blind/retire_applied": 0.0458984375,
+    "effect/1/blind/retire_invalid": 0.0556640625,
+    "effect/1/blind/retire_guard": 0.0,
+    "effect/1/stale/delta_w_rms": 0.018386518582701683,
+    "effect/1/stale/delta_b_rms": 0.0021359119564294815,
+    "effect/1/stale/different_support": 0.0244140625,
+    "effect/1/stale/birth_asked": 0.087890625,
+    "effect/1/stale/birth_applied": 0.041015625,
+    "effect/1/stale/birth_invalid": 0.046875,
+    "effect/1/stale/birth_guard": 0.0,
+    "effect/1/stale/retire_asked": 0.1015625,
+    "effect/1/stale/retire_applied": 0.0498046875,
+    "effect/1/stale/retire_invalid": 0.0517578125,
+    "effect/1/stale/retire_guard": 0.0,
+    "effect/1/corrupt/delta_w_rms": 0.027882948517799377,
+    "effect/1/corrupt/delta_b_rms": 0.0039375158958137035,
+    "effect/1/corrupt/different_support": 0.0439453125,
+    "effect/1/corrupt/birth_asked": 0.087890625,
+    "effect/1/corrupt/birth_applied": 0.041015625,
+    "effect/1/corrupt/birth_invalid": 0.046875,
+    "effect/1/corrupt/birth_guard": 0.0,
+    "effect/1/corrupt/retire_asked": 0.1015625,
+    "effect/1/corrupt/retire_applied": 0.046875,
+    "effect/1/corrupt/retire_invalid": 0.0537109375,
+    "effect/1/corrupt/retire_guard": 0.0009765625
+  },
+  "archive_sha256": "1694171a799bb629a95d1eaca2f115d96f612a830d02012f96b8739393afc28b",
+  "protocol_sha256": "d106c2ed76424adf0dd510bd49dc6b42c75c75cf77bc7f6ba883ed89a7851f43",
+  "source_sha256": "17455f9848a10d692818aaf27e753d8f993c995f185d28b39faab7143be2c61a",
+  "core_sha256": "7c2dff4a3ac46cc3c7e0d2a8a265df82f8f7d16d6a100277fcfe3317f751e0ff"
+}

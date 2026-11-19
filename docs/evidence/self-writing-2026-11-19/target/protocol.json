@@ -1,0 +1,33 @@
+{
+  "study": "endogenous target-value writes",
+  "locked_before_new_experiments": true,
+  "roots": [301, 302, 303, 304, 305, 306, 307, 308],
+  "fixed_config": {
+    "bootstrap_gradient_batches": 500,
+    "bootstrap_batch_size": 96,
+    "edge_target_amplitude": 1.35,
+    "bias_target_amplitude": 0.50,
+    "edge_blend": 0.20,
+    "bias_blend": 0.08,
+    "rule": "Use abs(local signed target command) as the local write-strength gate. Proposed delta is gate times blend times (emitted target - sensed current value). When masked or independently trained blind, sensed numeric value and structural readback are zeros. Structural actions, candidate pool, guards, newborn size, ports and timing are inherited unchanged."
+  },
+  "bootstrap": "Only the original two novel antipodal odors, one self-chosen contact, both future orientations queried silently from rest. Independent matched own/blind bootstrap, no post-bootstrap optimizer.",
+  "unseen_pair": {
+    "seed": 92110420,
+    "worlds_per_root": 96,
+    "stable_contacts": 8,
+    "signals": "One novel antipodal continuous pair per world with independently swapped sides and fixed hidden preference. No taste noise. Silent both-orientations probe from rest after each contact.",
+    "primary": "Post-contact-8 silent physical choice of own-trained own vs same checkpoint with masked readback."
+  },
+  "long_lifetime": {
+    "seed": 92110419,
+    "worlds_per_root": 24,
+    "contacts": 192,
+    "condition": "Three-category stationary-with-taste-noise or reliable-changing from original experiments. Exactly matched coding, timing and paired first surprise, fresh roots and new world seed.",
+    "primary": "Late 24-contact physical correctness, own-trained own vs same checkpoint masked, by regime.",
+    "controls": ["own-trained with writer receiving rows protected and own readback", "own-trained with all writes disabled", "matched bootstrap trained blind, deployed blind"],
+    "secondary": ["earlier branches", "quiet both-orientation probes", "actual ordinary and structural edit counts", "terminal saturation", "writer overlap contrast"]
+  },
+  "inference": "Root-paired mean and descriptive root-paired bootstrap 95% intervals (10,006 resamples). No tuning grid or outcome-based root exclusion.",
+  "endpoint_generalization_addendum_before_lifetime": "On a separate novel pair stream keyed by root, evaluate same-lane final graphs and birth clones from rest before and after one physical contact, using independently assigned preferences. This measures retention of the learned primitive on unseen inputs. No tuning follows this measurement."
+}

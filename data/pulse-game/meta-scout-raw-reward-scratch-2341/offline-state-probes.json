@@ -1,0 +1,81 @@
+{
+  "checkpoint": "data\\pulse-game\\meta-scout-raw-reward-scratch-2341\\frozen-scratch-preview.pt",
+  "sha256": "d54e55bc8d557356aa9e6199a0f1aa0d8ba3b97005e88265145e88f7c95f88f1",
+  "train_seeds": [
+    4348800000,
+    4348800255
+  ],
+  "test_seeds": [
+    4348800256,
+    4348800511
+  ],
+  "condition": "sensitive late trials with tagged prior public receipts for both contexts and actual physical probe",
+  "offline_probes_only": {
+    "0": {
+      "training_rows": 1921,
+      "test_rows": 1870,
+      "direct_motor_correct": 921,
+      "target": {
+        "reads": {
+          "correct": 947,
+          "trials": 1870
+        },
+        "activity": {
+          "correct": 918,
+          "trials": 1870
+        },
+        "both": {
+          "correct": 919,
+          "trials": 1870
+        }
+      },
+      "context": {
+        "reads": {
+          "correct": 1350,
+          "trials": 1870
+        },
+        "activity": {
+          "correct": 1870,
+          "trials": 1870
+        },
+        "both": {
+          "correct": 1870,
+          "trials": 1870
+        }
+      }
+    },
+    "2": {
+      "training_rows": 645,
+      "test_rows": 681,
+      "direct_motor_correct": 344,
+      "target": {
+        "reads": {
+          "correct": 332,
+          "trials": 681
+        },
+        "activity": {
+          "correct": 346,
+          "trials": 681
+        },
+        "both": {
+          "correct": 341,
+          "trials": 681
+        }
+      },
+      "context": {
+        "reads": {
+          "correct": 350,
+          "trials": 681
+        },
+        "activity": {
+          "correct": 596,
+          "trials": 681
+        },
+        "both": {
+          "correct": 642,
+          "trials": 681
+        }
+      }
+    }
+  }
+}

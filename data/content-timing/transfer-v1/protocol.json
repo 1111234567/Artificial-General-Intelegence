@@ -1,0 +1,125 @@
+{
+  "format": "paired-to-natural-transfer-v1",
+  "created_utc": "2026-11-03T05:32:18.067914+00:00",
+  "declaration": "Frozen after natural action-head content results but before viewing any matched/probe accuracy, scores or matched feature/label arrays. The narrow transfer is chosen to distinguish readability only in locked paired forks from readability in real autonomous trajectories. No fitting on natural labels.",
+  "source_files": {
+    "F:\\agi\\experiments\\content_timing\\transfer.py": "c4a51faa8c766ff868de7f2f8cf86fde1fbd744ca504685322d2bd3af7b7def5",
+    "F:\\agi\\experiments\\content_timing\\natural.py": "4206317fe6879b6532680132452bc00641095dba0dbbed48f92a7662ce9519e1",
+    "F:\\agi\\experiments\\content_timing\\probe.py": "2ea9b4cfe9fa967ad0a3e87b1081f5f9af4fada56c37ffd14f7d60d4440404ae",
+    "F:\\agi\\experiments\\content_timing\\probe-plan.md": "047495cc9692a594a37a0cb98c1281fef300c82e16c0eee0946cef9bae4d7875"
+  },
+  "input_files": {
+    "F:\\agi\\data\\content-timing\\natural-v1\\protocol.json": "3b6ba16e3b48cf42413c9fec04f20ccb1304ad49f8af06559ff4663d3df769c6",
+    "F:\\agi\\data\\content-timing\\natural-v1\\summary.json": "ff7f7b92b68642d7cd9230d400295b975627764f18b1625e07691bd854b419c3",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json": "d19db82587e5af48616a530981d7838a1301152812d56381d45b515b63fc9758",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\result.json": "ca5362d2021b13b621beec609c7c93e59b2d2c43168cc819407caa01527e7b7d",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_0.trace.json.gz": "60a2eaef6e0d04adee5ac4762cd5b10a1e9cbd3631eef93ba99798f8c2d15ed3",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_0.raw.pt": "7f7c35e9697d0e4fae6dcb0d45d96b53efc6066b0d50774a4843a9973407a4d4",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_1.trace.json.gz": "1da56a589d3e23c85c2c83dfe9ca038dcb6c26fd90866989e85d41c82f831537",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_1.raw.pt": "4d3aae51f11c6476e152b5b7bba8b870e7c701106abd3e390661f36bc29c6fd6",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_2.trace.json.gz": "b5b6018cdc1dd7428ac78feeb67c1eed040ba4250f25a2a52f32d3d83da8acb0",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_2.raw.pt": "d4142b5fe4f120315d859a5f27f6bec452d0852a32a15506c57b72f3ab5562da",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_3.trace.json.gz": "9c6c667aa26f8c375bba260886cc4a114febccec8e8bd24d9c7ca411c7208bad",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_3.raw.pt": "0a621e1cc52d38173db8c215f7c28d7b3475fd599fe18682d65efe6d4dbb3bf7",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_0.trace.json.gz": "28e26c6465c043176e5978abeab5e9a1af3daabc431a0156ae3702022f181add",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_0.raw.pt": "4cf38c072771205bdd91efe3c8162076174dac56ac6f69554359eaae0b1557c9",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_1.trace.json.gz": "f776a33578930469bde54822e3fa00f2969da7290ffa60d652620ce0be08cebf",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_1.raw.pt": "e6011ae28ef47a08875763dabb9f21e3fc1b3134350ec2b4416bbe305487ac36",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_2.trace.json.gz": "91276622c8ec7fe66ca02153de16b51476b9a92aa8c755a852d9464f19d03ada",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_2.raw.pt": "70b25dbb634bcfaf455e1b77ddc930631adcb46aca875ce9b2388724c5c51460",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_3.trace.json.gz": "5e953783c1e4462e468bc919c4c04d559bc1d6a2283e1f5b3c2f970995e27159",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_3.raw.pt": "7e9c5ebdb32ffd115086a2011369f8758e5c215ab7f258e77186217559bd8e55",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\requests.jsonl": "8ae33ce9dfae96022407c25f9aa53ec4f7e1d849e3cda1f4deab646c2e515342",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\stage_samples.csv": "e530570d57b9494d4cb51c098ee67cc6fb9adaa5716044165bd213e726abd4f9",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\result.json": "1d11b33e49e41ce8dc33904c33d952444e8d70620413b27b7df2879c72ce3f98",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_0.trace.json.gz": "6837059ee7f332c2976662a5eae1f293f1a70fa54ea771a10d69c9452c11e11f",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_0.raw.pt": "24e1fc210bdd4682dfea758e0c8dd3be6cb9b945422c0b437ed14ff541a72c03",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_1.trace.json.gz": "01ebe52b60a7d46353f9106e5a8d06cc8d7850276cd15e05d84d9e33808aef77",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_1.raw.pt": "b469f42e530f7df64fb35b90f7b8962bc2feebc123fe4d95c44560101a193e02",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_2.trace.json.gz": "f1f9fedb48d62196f901e5dceffd48fb21077f1cb071fb351aab1422ca5f87e9",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_2.raw.pt": "0d710cbcd8c0a4a82d71e6583cc67bebf8361d7b9b5672eb73e0e3b0b43c4b88",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_3.trace.json.gz": "f9afaea1414d8a6b03c6f98e5d1c6247e44f6eac16bca3f732f069fce5b4b2a6",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_3.raw.pt": "06943f5320b4cae575f50f04a2eec957f4350fce5bd9f38b42b07c64a02d4b79",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_0.trace.json.gz": "f38444c62da5c01bdcef20ebe23d104784db2a85b43f2568f0f96a3905c77c6a",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_0.raw.pt": "7fe4e563ba7e9492f8599cc3d5dcfdbab82da6ff47c36e09194ea91606e8b76d",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_1.trace.json.gz": "95a77844d2f84428329415b3ffc395ed7f33d7d0e6ef544cb814ec996e6f9284",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_1.raw.pt": "e1ae5502792b89dc926cd2ba9cba9ef44b013bddf5e21f28371b69ae7ee21ca3",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_2.trace.json.gz": "45e6a80d01d4c7745a6cba1bdf673b1af7ba943b6f364bcc2d09471443922f92",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_2.raw.pt": "6e7e8b3cfaeb231bc9878aee3203e1b9cc1dd76e64d20b4db8753dbda275d956",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_3.trace.json.gz": "b30bf11f9c435ddab885d2ac5946ffa169e8ff86d4ceaac849ecd0f84de832da",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_3.raw.pt": "a1044c6683fa757f21e82a225c81999231dcf90ce4f580f9ff14a60f92fb28ae",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\requests.jsonl": "76e3beac4ec06a9c51870fcab0eb7dc6b027d4477fd5582af6e9596912295b8f",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\stage_samples.csv": "d2b07e9ddb23f41801f54c0c3c055ad1f12a337c9e086541d34e4b1d3ff603ea",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\result.json": "70e9efe7b997fd43e2520580e468003b04b7f8c00d6e917c16413150c6ea29eb",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_0.trace.json.gz": "407b60d178a57c3d835b77d3f8ce369ac12cd88f646d7fd6a751fe754cd7b8d4",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_0.raw.pt": "229c2e2cf5a7f820f75bde009ce294c30a5c65cdc181a6769df6467e718d19d1",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_1.trace.json.gz": "1a6372ebe6bbc80120b9263632cdd445cb56a95a678fc7261c9a834ab147dec4",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_1.raw.pt": "7b0e5fd495eb8b70593fc8ffcacd1c10a8ed33dbc565a29f07e65a11091016e9",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_2.trace.json.gz": "cb8065d120a0ecc5581c1dbbc63db57ceed09ff2ed2b2060205142efdfc3cd5e",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_2.raw.pt": "7d0ab8c13dc26ccf2a606a5defac019ffa233a28ceb6def3763072f784a0a96b",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_3.trace.json.gz": "437528a9492401b91b65a9f9dea230dff3fed58b65ee9d642177d1394dc7cdd9",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_3.raw.pt": "704524fe2e643fb3a9e5c4a83afaf4c123e9b246061c1a5a5385a38545f233e0",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_0.trace.json.gz": "107f846cc09469438552e586dcb50e97de2076fbc33787b9ab9731af83455e4b",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_0.raw.pt": "77506e7fe6cf9fc423e748fa74f6b554ba921181dc9ceb451853fc7546eee959",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_1.trace.json.gz": "a5dffebd6280a6a9bc4c92bb926021f1a2278437344da61a6eb4f02b9fa113fe",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_1.raw.pt": "b65468ea0a7665093e6cbea7b1405683367f78f64091c30fde12cab3a7c27d54",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_2.trace.json.gz": "a27247038f74d125b3a8e52f5bafde8b8f4d1b86b4fecb63a3c1bc2650e4620e",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_2.raw.pt": "90df413c6eb57016079e0268b8add66cb4255cfa4501b5a59e3a4e4fb31ecc1f",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_3.trace.json.gz": "06ae0a0f17b201b3fbd4f5670fe9da92038eda012c0c495d366d60f58b4bd340",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_3.raw.pt": "cb73b8c403562bc8a8632b63d6583280654e7792a9568d2439acf46e77d13ecc",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\requests.jsonl": "18dbd448753878a6994bcfd0795bcef83e55a425703713090aab563f52e1b7a4",
+    "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\stage_samples.csv": "ee209ff96fe9b27b537b98ee0541ac885a98518320f4ba22e135dbb39bd721d9",
+    "F:\\agi\\data\\content-timing\\matched-v1\\protocol.json": "0d962ec4c75d783e6aa09d1233be0cf489e56467e7f53c7db2b88a3377d3b301",
+    "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json": "52f910056a5498f3771e8eb91051a0b01bb82fd1ccaf059292f75399cccd88e2"
+  },
+  "natural_protocol_hash": "a3c2802ca8f8fb127ab1338351642f6ef7f91f7deced704ac894d49ca5af38ab",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "conditions": [
+    "short",
+    "long_both"
+  ],
+  "duration_map": {
+    "short": 2,
+    "long_both": 8
+  },
+  "phases": [
+    [
+      "cue",
+      "cue"
+    ],
+    [
+      "processing_mid",
+      "mid"
+    ],
+    [
+      "first_legal",
+      "first_legal"
+    ]
+  ],
+  "replay": "For each of the24 saved full8-actor own_policy forks, start at the seed actual147456 h, consume every saved actual public observation continuously with its original elapsed dt, and run the exact saved own_policy model. Never reset by request, stage or actor. Exact equality of all final11 logits and actions plus every existing trace hidden_hash is required. Preserve source state. Extract only24 non-input h coordinates from this replay.",
+  "training": "Call probe.load_matched on the3 fixed seed records.pt artifacts when complete, and probe.fit_scores directly, with no adaptation. For each seed/duration/job/fold/stage and raw/mapped label, train exclusively on matched factorial data at that same stage. x24 and standardization, unpenalized intercept, ridge=.001*n and4-way one-hot targets exactly follow probe.py. No natural labels are passed into fitting or scaling.",
+  "folds": "Same separate-job cross-actor folds as probe.py: predict natural actors4,5 from matched actors6,7 and natural6,7 from matched4,5. Retain all family/raw variants of a matched anchor together; no cross-fold anchor split. All seeds remain separate fits.",
+  "test": "Primary: identical matured decoder-heldout primary request rows with cue,processing_mid,first_legal present in natural-v1. Each request contributes one heldout prediction per stage and label. Diagnostics: all matured primary rows at every available stage, explicitly different denominators. Natural raw/mapped targets score predictions only after fitting.",
+  "outputs": "Per prediction exact identity, fold, phase, label,4 scores,choice,target; per fold and per seed condition/phase/label population counts,correct,total,4x4 confusion,true-class denominators/correct/recall,macro recall and test majority-class proportion. All four families aggregated inside each seed and retained per-family diagnostics; mean and sampleSD across3 seed rates only.",
+  "matched_artifacts": "Exact3 fixed paths matched-v1/seed_000..002/records.pt. Their SHA256s and matched protocol hash are recorded at application time; fail if expected durations, phases,actors,jobs or complete factorial schema are absent. No result-directed alternative source.",
+  "exclusions": "No retraining action head or backbone, no natural readout fit, no cross-phase transfer arm, no probe-score/threshold/hyperparameter selection, no new control policy or model action execution.",
+  "limits": [
+    "Transfer asks access by a paired-data linear decoder, not endogenous action-head access.",
+    "A failure can reflect train/test distribution mismatch; it does not prove information absence.",
+    "Natural recurrent features include true own actions, feedback and other-slot cues.",
+    "Natural duration is a distribution while paired training uses fixed2 or8; this extrapolation is fixed before scores.",
+    "The same complete-three-stage subset is policy-dependent; report all missing-stage counts from natural-v1.",
+    "Actors4..7 were held out of action-head fitting, not the original backbone."
+  ],
+  "runtime": {
+    "workers": 3,
+    "cpu_threads": 1,
+    "dtype": "float64",
+    "device": "cpu"
+  },
+  "protocol_hash": "9b1e3bb3c6d0e2fe041da7f5171550e53a6caf4bfe825cb1b05fc0d2c4e8fe26"
+}

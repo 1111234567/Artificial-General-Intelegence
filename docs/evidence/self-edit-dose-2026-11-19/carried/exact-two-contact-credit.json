@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "birth": 421,
+      "graph_nodes": 16,
+      "paths": 4224,
+      "mass": 1.0,
+      "expected_loss": 0.27254015394223774,
+      "exact_gradient_norm": 2.4610796625365383,
+      "expected_score_max_error": 1.1102230246251565e-16,
+      "missing_discrete_score_norm": 0.004269104680630744,
+      "stop_payload_missing_norm": 0.012640321536944343,
+      "finite_difference": 0.08107059382977955,
+      "analytic_direction": 0.08107059383082987
+    },
+    {
+      "birth": 422,
+      "graph_nodes": 20,
+      "paths": 6560,
+      "mass": 1.0,
+      "expected_loss": -0.260533856923825,
+      "exact_gradient_norm": 2.350260059604635,
+      "expected_score_max_error": 2.220446049250313e-16,
+      "missing_discrete_score_norm": 0.01090532919564074,
+      "stop_payload_missing_norm": 0.005361075297743811,
+      "finite_difference": -0.11408410524049727,
+      "analytic_direction": -0.11408410524436229
+    }
+  ],
+  "scope": "Two contacts, all sampled motor/address/operation outcomes including refused commands. Executed payloads and carried activity differentiable, initial presence fixed; no numerical cap, SCC guard on, comparison to exact expected taste gradient without baseline.",
+  "code": "68235dbc97e4fb34c9959f606717277274cc8063a8fb023160323f6cea67386d",
+  "writer_source": "70b200e3f595d7be5e69f1a852bfdacc776e1fa175e79d108af18446d2704ef1"
+}

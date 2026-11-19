@@ -1,0 +1,89 @@
+{
+  "checkpoint": "data\\pulse-game\\meta-scout-tried-outcome-2344\\frozen-tried-outcome-1248.pt",
+  "sha256": "1efc75f1cb60d73a09e4202e4ce947de3d342cc7650d22dccc64b4e7f56b502b",
+  "train_seeds": [
+    4349200000,
+    4349200255
+  ],
+  "test_seeds": [
+    4349200256,
+    4349200511
+  ],
+  "condition": "sensitive late trials with tagged prior public receipts for both contexts and actual physical probe",
+  "offline_probes_only": {
+    "0": {
+      "training_rows": 1170,
+      "test_rows": 1222,
+      "direct_motor_correct": 646,
+      "native_endpoint_readout": {
+        "correct": 934,
+        "scored": 1222
+      },
+      "target": {
+        "reads": {
+          "correct": 994,
+          "trials": 1222
+        },
+        "activity": {
+          "correct": 1017,
+          "trials": 1222
+        },
+        "both": {
+          "correct": 1032,
+          "trials": 1222
+        }
+      },
+      "context": {
+        "reads": {
+          "correct": 1205,
+          "trials": 1222
+        },
+        "activity": {
+          "correct": 1222,
+          "trials": 1222
+        },
+        "both": {
+          "correct": 1222,
+          "trials": 1222
+        }
+      }
+    },
+    "2": {
+      "training_rows": 667,
+      "test_rows": 718,
+      "direct_motor_correct": 380,
+      "native_endpoint_readout": {
+        "correct": 581,
+        "scored": 718
+      },
+      "target": {
+        "reads": {
+          "correct": 598,
+          "trials": 718
+        },
+        "activity": {
+          "correct": 605,
+          "trials": 718
+        },
+        "both": {
+          "correct": 605,
+          "trials": 718
+        }
+      },
+      "context": {
+        "reads": {
+          "correct": 717,
+          "trials": 718
+        },
+        "activity": {
+          "correct": 718,
+          "trials": 718
+        },
+        "both": {
+          "correct": 718,
+          "trials": 718
+        }
+      }
+    }
+  }
+}

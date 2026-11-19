@@ -1,0 +1,105 @@
+{
+  "utc": "2026-11-19T06:15:03.616186+00:00",
+  "source_sha256": {
+    "dendrite_ports_graph.py": "30b6d1c3005963967ba20e2c23c5df2c0a98f416e226447efb97539f9ce840c1",
+    "dendrite_ports_study.py": "19a3437a6c6e92ebe95c93e358f76aa089e5942db1807c48eaaf1620889581c8",
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "birth_roots": {
+    "development": [
+      851440,
+      851441,
+      851442
+    ],
+    "confirmation": [
+      851550,
+      851551,
+      851552,
+      851553,
+      851554,
+      851555,
+      851556,
+      851557
+    ]
+  },
+  "world_roots": {
+    "development": [
+      851470,
+      851471,
+      851472,
+      851473,
+      851474,
+      851475
+    ],
+    "confirmation": [
+      851580,
+      851581,
+      851582,
+      851583,
+      851584,
+      851585,
+      851586,
+      851587,
+      851588,
+      851589,
+      851590,
+      851591
+    ]
+  },
+  "scenarios": [
+    "stable",
+    "reverse"
+  ],
+  "arms": [
+    "product",
+    "additive",
+    "tanh",
+    "product_sham",
+    "polynomial"
+  ],
+  "trials": 1280,
+  "silent_tail": 112,
+  "setups": [
+    {
+      "recipe": {
+        "rate": 0.045,
+        "exploration": 0.23,
+        "decay": 0.991,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 0.65,
+      "pair_decay": 0.993
+    },
+    {
+      "recipe": {
+        "rate": 0.07,
+        "exploration": 0.21,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.2,
+      "pair_decay": 0.996
+    },
+    {
+      "recipe": {
+        "rate": 0.11,
+        "exploration": 0.24,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.0,
+      "pair_decay": 0.997
+    }
+  ],
+  "hypothesis": "A graph with pairs of incoming activity taps per receiver can acquire a novel pure interaction rule from stochastic contact tastes. Compare an equal-slot additive graph, no pair parameter tanh graph, and independent fair-taste graph. Include public polynomial preference regression as a visibility calibration.",
+  "matching": "Common densified random graph initialization, each originally absent nonself edge added independently with probability .52; all arms share W/rate/bias, all pair coefficients start at zero. Each pair arm allocates one coefficient per receiver and unordered pair of active incoming arcs. Product uses s_i*s_j, additive uses .36*(s_i+s_j). Same receipt-gated truncated motor objective for W and Q. Same birth/removal rules in both pair arms. All observed foods pass as raw concentration only.",
+  "selection": "Maximize mean of product graph's stable and reversal silent accuracy on development worlds and births. First candidate breaks ties. One recipe shared by all confirmation graph arms; control polynomial is fixed.",
+  "endpoint": "Physical first-contact expected best-food accuracy on fresh final 112 trials, without public taste or motor exploration. Crossed birth and world paired percentile intervals, 95% simultaneous family across stable/reverse product-minus-tanh, additive and fair-taste; add product-minus-.5 as a secondary point with separate interval. Report contact, additions, removals, pure actual pair-gradient writes, newborn pair writes, total pair count."
+}

@@ -1,0 +1,27 @@
+{
+  "study": "related experience, novel transform, and old-rule return",
+  "births": [374853277, 433810157, 241766349, 319591504, 14775819, 140349813],
+  "birth_selection": "First six in the earlier independent development registry, in registry order. A separate new outer optimization per birth. Frozen sensory and motor body shared across experimental arms within each birth.",
+  "development_geometry": "History reflects through a two-dimensional subspace of four-dimensional odors. Target reflects along one line. Related histories share the target plane; unrelated histories have their own plane.",
+  "test_geometry": "History as in development. Target is a proper quarter turn in a hidden two-dimensional plane. No such target in model selection. Old and new reward parities crossed independently within each physical root.",
+  "doses": [0, 2, 4, 8, 16],
+  "history_pairs": 12,
+  "probes_per_dose": 3,
+  "test_worlds": 192,
+  "test_seed": 7428031,
+  "training_worlds_per_round": 16,
+  "validation_worlds": 40,
+  "rounds": 3,
+  "directions_per_round": 3,
+  "perturbation_scales": [1.5, 1.0, 0.65],
+  "selection": "Within each birth, center and three antithetic proposal pairs per round see the same development worlds. Carry forward the best behavioral score. Initial and three round winners compete on independent validation roots. Ties favor earlier candidates.",
+  "objective": "Across both history conditions: one half early B accuracy (mean of doses 2 and 4), one quarter B at 16, one quarter A return at 16. Timeouts count as errors. Selection never rewards damaging the unrelated control.",
+  "estimands": {
+    "primary": "Difference of differences, [(B2+B4)/2 - B0] for related minus unrelated. Both histories learned and balanced. Advantage at B0 alone measures a prior. Require positive lower two-sided 95% interval for evidence of faster early learning.",
+    "retention": "Paired A16 minus A0 after the related history. Noninferiority margin -0.05 absolute, chosen before holdout. To call this retention, also require A0 and A16 lower interval bounds above 0.5.",
+    "sufficiency": "Assess the two behavioral criteria jointly. Also report joint old/new actual success on common cloned lives; coverage, actual teaching tastes and no-feedback return denominator.",
+    "mechanism": "Undo only the fast relation matrix to post-A state after target teaching; keep event, sensory and motor state. Compare matched silent futures. Include original hand-coded local-selective, frozen matrix, and shuffled B teaching tastes. Additional attribution controls declared before target testing: default outer coefficients with lifetime writing, and fitted coefficients with the cross-context covariance contribution removed (local-only)."
+  },
+  "uncertainty": "Pair conditions at the world and birth level. Average four crossed parities within a root; crossed bootstrap of whole births and roots. Multiple secondary curves descriptive.",
+  "holdout_policy": "Freeze all six selected vectors and implementation fingerprints before opening target outcomes. No tuning after the holdout. A failed test or indeterminate interval remains a result."
+}

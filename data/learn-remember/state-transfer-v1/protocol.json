@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-11-03T06:42:43.547589+00:00",
+  "script": "45658ac328ca5f4cc72ad23575acbf6311cec6e2b16c99abc39a032c96e007b9",
+  "reason": "Posthoc: the shared-pair wide checkpoint performed far better from the saved training endpoint than from the heldout comparison worlds. Those endpoints changed both world and hidden state.",
+  "intervention": "Wide checkpoint only, both architectures, all3 seeds. Keep the standard independent WAIT-warmed eight-actor heldout world and exact future stream. Replace only its initial h with the trained agent's first eight real native endpoint lane states, in their original order; do not select or alter them. The donor actors and worlds are unrelated to the new requests.",
+  "sample": "family3 long_both for2048 ticks; ordinary,strict and idle on the standard cases, and an additional suffix cohort issued only in the second1024 ticks and matured by the end. Compare against exact same stage's WAIT baseline. No training, online teacher or subsequent resets.",
+  "limit": "Artificial state transplant, evidence about sensitivity to entry state; not a new deployment success criterion or proof of an attractor."
+}

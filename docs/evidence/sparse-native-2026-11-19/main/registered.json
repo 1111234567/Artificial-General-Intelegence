@@ -1,0 +1,252 @@
+{
+  "created_utc": "2026-11-19T06:33:49.580306+00:00",
+  "source_sha256": {
+    "sparse_pairs_model.py": "2e29f03241258c3edc611ac78e5a03f6271d1ef36dccba1b58f4cbc0d3e68335",
+    "sparse_pairs_study.py": "556da9da1f51707e0d9ca752cd263ef20e19f1e01a84dcfaee2cb2414252ed98",
+    "dendrite_ports_graph.py": "30b6d1c3005963967ba20e2c23c5df2c0a98f416e226447efb97539f9ce840c1",
+    "dendrite_ports_study.py": "19a3437a6c6e92ebe95c93e358f76aa089e5942db1807c48eaaf1620889581c8",
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "roots": {
+    "development": {
+      "birth": [
+        872110,
+        872111,
+        872112
+      ],
+      "world": [
+        872140,
+        872141,
+        872142,
+        872143,
+        872144,
+        872145
+      ]
+    },
+    "confirmation": {
+      "birth": [
+        872210,
+        872211,
+        872212,
+        872213,
+        872214,
+        872215,
+        872216,
+        872217
+      ],
+      "world": [
+        872240,
+        872241,
+        872242,
+        872243,
+        872244,
+        872245,
+        872246,
+        872247,
+        872248,
+        872249,
+        872250,
+        872251
+      ]
+    }
+  },
+  "scenarios": [
+    "stable",
+    "reverse"
+  ],
+  "arms": [
+    "guided",
+    "dense",
+    "sealed_dense",
+    "random",
+    "sham"
+  ],
+  "physical_trials_per_life": 1280,
+  "silent_tail": 112,
+  "candidates": [
+    {
+      "recipe": {
+        "rate": 0.045,
+        "exploration": 0.23,
+        "decay": 0.991,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 0.65,
+      "pair_decay": 0.993,
+      "policy": {
+        "samples": 24,
+        "threshold": 0.035,
+        "floor": 0.075,
+        "grace": 88
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.045,
+        "exploration": 0.23,
+        "decay": 0.991,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 0.65,
+      "pair_decay": 0.993,
+      "policy": {
+        "samples": 48,
+        "threshold": 0.022,
+        "floor": 0.075,
+        "grace": 96
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.045,
+        "exploration": 0.23,
+        "decay": 0.991,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 0.65,
+      "pair_decay": 0.993,
+      "policy": {
+        "samples": 64,
+        "threshold": 0.016,
+        "floor": 0.1,
+        "grace": 112
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.045,
+        "exploration": 0.23,
+        "decay": 0.991,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 0.65,
+      "pair_decay": 0.993,
+      "policy": {
+        "samples": 80,
+        "threshold": 0.01,
+        "floor": 0.105,
+        "grace": 104
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.045,
+        "exploration": 0.23,
+        "decay": 0.991,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 0.65,
+      "pair_decay": 0.993,
+      "policy": {
+        "samples": 96,
+        "threshold": 0.01,
+        "floor": 0.065,
+        "grace": 124
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.07,
+        "exploration": 0.21,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.2,
+      "pair_decay": 0.996,
+      "policy": {
+        "samples": 24,
+        "threshold": 0.035,
+        "floor": 0.075,
+        "grace": 88
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.07,
+        "exploration": 0.21,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.2,
+      "pair_decay": 0.996,
+      "policy": {
+        "samples": 48,
+        "threshold": 0.022,
+        "floor": 0.075,
+        "grace": 96
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.07,
+        "exploration": 0.21,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.2,
+      "pair_decay": 0.996,
+      "policy": {
+        "samples": 64,
+        "threshold": 0.016,
+        "floor": 0.1,
+        "grace": 112
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.07,
+        "exploration": 0.21,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.2,
+      "pair_decay": 0.996,
+      "policy": {
+        "samples": 80,
+        "threshold": 0.01,
+        "floor": 0.105,
+        "grace": 104
+      }
+    },
+    {
+      "recipe": {
+        "rate": 0.07,
+        "exploration": 0.21,
+        "decay": 0.995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "pair_rate": 1.2,
+      "pair_decay": 0.996,
+      "policy": {
+        "samples": 96,
+        "threshold": 0.01,
+        "floor": 0.065,
+        "grace": 124
+      }
+    }
+  ],
+  "baseline": "dense uses the sealed DendriteGraph multiplication, dense pair-gradient update, and support refresh with ordinary Graph.grow and Graph.retire, as used in all sparse arms. sealed_dense uses original sealed base at its historical winner, including its pair-influenced ordinary edits. W is uncapped and updates independently in all arms. Each shares the same birth graph, raw chemical ports, physical body, private motor current, and scenario tape.",
+  "sparse": "Start with zero installed Q and no dormant traces. Allocate proposal samples only when the native taste and contact ports report a signed receipt. Private stateless draws sample unordered physical addresses among all receiver/source combinations, reject duplicates, installed addresses and illegal incoming arcs. A surviving sample with sufficient absolute native receipt gradient receives the signed first update at birth. Later active gradients and decay match dense Q. Remove unsupported Q immediately, and independently retire weak Q once they reach the stated receipt age. No fixed budget, loss replacement, quotas, rank cutoff, or nominated chemical/receiver locations in guided arms.",
+  "controls": "Random gets only the guided arm's current trial's per-life birth and total retirement counts, chooses random legal addresses from the sampled pool with private extra draws to fill the target if needed, uses its own signed gradient at birth and its own later receipts. Support removals take precedence over randomly matching the remainder of the target; a missed receipt, excess independent support losses or insufficient viable samples can give count differences, which are measured. Sham has the whole guided rule with independent fair taste bits replacing shown reward at the same physical contact.",
+  "selection": "Use only development roots. For each candidate use the paired dense with equal W/Q hyperparameters. Calculate per mode each life/time guided/dense installed slots after every trial and from shared birth. Restrict to candidates whose maximum over life/time across both modes is at most 0.23. In that set maximize the unweighted mean of the two silent accuracies. If none reach the buffer, find the smallest peak ratio, permit candidates within .01 absolute of it, then choose highest equal-mode accuracy. Registered order breaks equal scores. Compare confirm only after locking development selection.",
+  "endpoint": "Best expected taste side on the first physical contact, timeout incorrect; final 112 trials have neither public taste nor motor exploration. In both stable/reverse, guided must retain accuracy relative to both dense references, defined by all four lower interval endpoints above -0.03; 95% crossed paired birth/world bootstrap percentile intervals simultaneously Bonferroni-adjusted across four. The per-life/per-time guided/matched-dense installed Q ratio must never exceed 0.25. Report aggregate throughput, life peak/mean/final, and actual nonzero as separate metrics. Secondary guided-minus-random and guided-minus-sham in both scenarios form a separate four-contrast family; verify realized near-count matching and report limits.",
+  "archive": "Each trial records actual contact/tick, taste, expected best, public receipt, ordinary edit addresses and W/Q updates, sampled counts, installed/nonzero counts and pair storage bytes. Each sparse pair birth and exit records address, time, receipt age origin, later write count, signed starting weight and gradient at birth, and exit reason/weight. Final records preserve ages and writes. Static bytes are authoritative+address caches+private random arrays; any RSS is whole-process and reported separately.",
+  "bootstrap": {
+    "draws": 20000,
+    "seed": 29820475
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "full_audit_passed": true,
+  "result": {
+    "output": "F:\\agi\\docs\\evidence\\seed-evolution-2026-11-11-large",
+    "comparisons": [
+      {
+        "step": 0,
+        "condition": "own",
+        "evolution_mean": 0.23009830997775726,
+        "random_mean": 0.2279992958275416,
+        "paired_differences": [
+          -0.002885961562937467,
+          -0.0031645569620253056,
+          0.01234756097560974
+        ]
+      },
+      {
+        "step": 64,
+        "condition": "own",
+        "evolution_mean": 0.22407303266444936,
+        "random_mean": 0.22095598664038632,
+        "paired_differences": [
+          0.01250358886017805,
+          0.0027291549030679374,
+          -0.00588160569105689
+        ]
+      },
+      {
+        "step": 512,
+        "condition": "own",
+        "evolution_mean": 0.25310687282607636,
+        "random_mean": 0.24969576056893894,
+        "paired_differences": [
+          0.0040174514800902505,
+          0.0198210682181513,
+          -0.013605182926829246
+        ]
+      },
+      {
+        "step": 512,
+        "condition": "teacher",
+        "evolution_mean": 0.25184808443198387,
+        "random_mean": 0.23856890222272167,
+        "paired_differences": [
+          0.004217909670239217,
+          0.02854392557543356,
+          0.007075711382113797
+        ]
+      },
+      {
+        "step": 512,
+        "condition": "no_read",
+        "evolution_mean": 0.22316161221930683,
+        "random_mean": 0.22316161221930683,
+        "paired_differences": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 512,
+        "condition": "Bdelay",
+        "evolution_mean": 0.24707636533751695,
+        "random_mean": 0.24078385093288063,
+        "paired_differences": [
+          -0.0039488434127302185,
+          0.013678931197096927,
+          0.00914745542954229
+        ]
+      }
+    ]
+  },
+  "execution_amendment_sha256": "2d2318028e6724857d052d9ef1ec2d29e9c57d80cab90b5cb933f756e450f661",
+  "balanced_schedule_sha256": "263d5b8562ce050f190d0e3d9ffeacfa70fd87b6c3874a501dd9a9a87420f3b9"
+}

@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-11-03T11:18:59.420519+00:00",
+  "source_sha256": "e32e362fcf8f6b789b3dec613eb264aa6529f35c65b09a309be00940147757d9",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "seed_offset": 849230,
+  "actor_ids": [
+    55000,
+    55001,
+    55002,
+    55003,
+    55004,
+    55005,
+    55006,
+    55007,
+    55008,
+    55009,
+    55010,
+    55011,
+    55012,
+    55013,
+    55014,
+    55015
+  ],
+  "families": "A,B",
+  "ages": {
+    "warm": 512,
+    "scored": 4096,
+    "dt": 0.25
+  },
+  "arms": [
+    "A_start",
+    "no_review",
+    "uniform",
+    "conflict",
+    "error"
+  ],
+  "conditions": {
+    "duration_range": [
+      8.0,
+      16.0
+    ],
+    "gap_range": [
+      16.0,
+      32.0
+    ]
+  },
+  "cases": "Native two-slot OnlineWorld timing, versions, controller action receipts and deadlines; no cancellations or replacements for this supplemental paired test. On each slot form nonoverlapping pairs of adjacent NEWs with the same raw. Within blocks randomly permute all4 raws x AA/AB/BA/BB; never expose pair markers.",
+  "allocation": "Same seed/cue table/future commands across all arms. Only ordinary actions/receipts drive the state. Birth h initialized once; 512 free-action warm ticks. No teacher intervention. Score a pair only if both NEWs occurred after warmup and both matured before end.",
+  "primary": "Both requests strictly completed (no errors on either) among AB or BA pairs where A and B demand different mapped outputs. Keep AA/BB and non-conflicting counts as controls, split directions. Independent unit is the training seed.",
+  "controls": "Original learned A and previous A->B no-review endpoints; new trained checkpoints for uniform/conflict/error. Additional mixed schedule's absolute rates have a different testing population from the original random-interleaved benchmark.",
+  "source_world_sha256": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+}

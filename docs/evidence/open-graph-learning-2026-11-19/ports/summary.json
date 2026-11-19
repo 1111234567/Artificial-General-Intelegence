@@ -1,0 +1,490 @@
+{
+  "recipe": {
+    "rate": 0.22,
+    "exploration": 0.28,
+    "decay": 0.995,
+    "grow_every": 19,
+    "retire_every": 17
+  },
+  "means": {
+    "stable": {
+      "joint": {
+        "initial": 0.51416015625,
+        "pre_change": 0.611328125,
+        "initial_post_change": 0.64892578125,
+        "pre_restore": 0.6979166666666666,
+        "tail": 0.838107638888889,
+        "tail_expected_utility": 0.6905796527862549,
+        "contact": 0.9999511718750002,
+        "tail_contact": 1.0,
+        "positive_reward": 0.58896484375,
+        "growth": 31.0,
+        "retirement": 34.0,
+        "newborn_receipt_writes": 7161.041666666667,
+        "newborn_generations_written": 31.0,
+        "effective_arc_delta": 12.861001014709473
+      },
+      "weights": {
+        "initial": 0.5099283854166666,
+        "pre_change": 0.5548502604166666,
+        "initial_post_change": 0.5753580729166666,
+        "pre_restore": 0.5846354166666666,
+        "tail": 0.738498263888889,
+        "tail_expected_utility": 0.6468801498413086,
+        "contact": 0.9999674479166667,
+        "tail_contact": 1.0,
+        "positive_reward": 0.5462727864583333,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 10.142373085021973
+      },
+      "frozen": {
+        "initial": 0.4986979166666667,
+        "pre_change": 0.5071614583333334,
+        "initial_post_change": 0.4991861979166667,
+        "pre_restore": 0.5128580729166666,
+        "tail": 0.5028211805555555,
+        "tail_expected_utility": 0.5036106109619141,
+        "contact": 0.9999511718750002,
+        "tail_contact": 0.9997829861111112,
+        "positive_reward": 0.5013509114583333,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 0.0
+      },
+      "no_receipt": {
+        "initial": 0.4986979166666667,
+        "pre_change": 0.5071614583333334,
+        "initial_post_change": 0.4991861979166667,
+        "pre_restore": 0.5128580729166666,
+        "tail": 0.5028211805555555,
+        "tail_expected_utility": 0.5036106109619141,
+        "contact": 0.9999511718750002,
+        "tail_contact": 0.9997829861111112,
+        "positive_reward": 0.5013509114583333,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 0.0
+      },
+      "independent": {
+        "initial": 0.4990234375,
+        "pre_change": 0.4991861979166667,
+        "initial_post_change": 0.48779296875,
+        "pre_restore": 0.5032552083333334,
+        "tail": 0.4943576388888889,
+        "tail_expected_utility": 0.4936434328556061,
+        "contact": 0.9999837239583332,
+        "tail_contact": 1.0,
+        "positive_reward": 0.49733072916666665,
+        "growth": 31.0,
+        "retirement": 34.0,
+        "newborn_receipt_writes": 6443.8125,
+        "newborn_generations_written": 31.0,
+        "effective_arc_delta": 10.662489891052246
+      }
+    },
+    "reverse": {
+      "joint": {
+        "initial": 0.51416015625,
+        "pre_change": 0.611328125,
+        "initial_post_change": 0.4231770833333333,
+        "pre_restore": 0.6126302083333334,
+        "tail": 0.8235677083333334,
+        "tail_expected_utility": 0.6839292645454407,
+        "contact": 1.0,
+        "tail_contact": 1.0,
+        "positive_reward": 0.5623046875000001,
+        "growth": 31.0,
+        "retirement": 34.0,
+        "newborn_receipt_writes": 6981.864583333333,
+        "newborn_generations_written": 31.0,
+        "effective_arc_delta": 12.59644603729248
+      },
+      "weights": {
+        "initial": 0.5099283854166666,
+        "pre_change": 0.5548502604166666,
+        "initial_post_change": 0.4588216145833333,
+        "pre_restore": 0.5387369791666666,
+        "tail": 0.7259114583333334,
+        "tail_expected_utility": 0.6361886858940125,
+        "contact": 0.9999674479166667,
+        "tail_contact": 1.0,
+        "positive_reward": 0.5316894531249999,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 9.965685844421387
+      },
+      "frozen": {
+        "initial": 0.4986979166666667,
+        "pre_change": 0.5071614583333334,
+        "initial_post_change": 0.5008138020833334,
+        "pre_restore": 0.4871419270833333,
+        "tail": 0.4969618055555556,
+        "tail_expected_utility": 0.4961724281311035,
+        "contact": 0.9999511718750002,
+        "tail_contact": 0.9997829861111112,
+        "positive_reward": 0.5010091145833334,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 0.0
+      },
+      "no_receipt": {
+        "initial": 0.4986979166666667,
+        "pre_change": 0.5071614583333334,
+        "initial_post_change": 0.5008138020833334,
+        "pre_restore": 0.4871419270833333,
+        "tail": 0.4969618055555556,
+        "tail_expected_utility": 0.4961724281311035,
+        "contact": 0.9999511718750002,
+        "tail_contact": 0.9997829861111112,
+        "positive_reward": 0.5010091145833334,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 0.0
+      },
+      "independent": {
+        "initial": 0.4990234375,
+        "pre_change": 0.4991861979166667,
+        "initial_post_change": 0.51220703125,
+        "pre_restore": 0.4967447916666667,
+        "tail": 0.5056423611111112,
+        "tail_expected_utility": 0.5063565373420715,
+        "contact": 0.9999837239583332,
+        "tail_contact": 1.0,
+        "positive_reward": 0.5026367187499999,
+        "growth": 31.0,
+        "retirement": 34.0,
+        "newborn_receipt_writes": 6443.8125,
+        "newborn_generations_written": 31.0,
+        "effective_arc_delta": 10.662489891052246
+      }
+    },
+    "restore": {
+      "joint": {
+        "initial": 0.51416015625,
+        "pre_change": 0.611328125,
+        "initial_post_change": 0.4231770833333333,
+        "pre_restore": 0.6126302083333334,
+        "tail": 0.7078993055555555,
+        "tail_expected_utility": 0.6330450177192688,
+        "contact": 1.0,
+        "tail_contact": 1.0,
+        "positive_reward": 0.5274251302083334,
+        "growth": 31.0,
+        "retirement": 34.0,
+        "newborn_receipt_writes": 6935.833333333333,
+        "newborn_generations_written": 31.0,
+        "effective_arc_delta": 11.218684196472168
+      },
+      "weights": {
+        "initial": 0.5099283854166666,
+        "pre_change": 0.5548502604166666,
+        "initial_post_change": 0.4588216145833333,
+        "pre_restore": 0.5387369791666666,
+        "tail": 0.6382378472222222,
+        "tail_expected_utility": 0.5917791724205017,
+        "contact": 0.9999674479166667,
+        "tail_contact": 1.0,
+        "positive_reward": 0.5138509114583333,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 9.500286102294922
+      },
+      "frozen": {
+        "initial": 0.4986979166666667,
+        "pre_change": 0.5071614583333334,
+        "initial_post_change": 0.5008138020833334,
+        "pre_restore": 0.4871419270833333,
+        "tail": 0.5028211805555555,
+        "tail_expected_utility": 0.5036106109619141,
+        "contact": 0.9999511718750002,
+        "tail_contact": 0.9997829861111112,
+        "positive_reward": 0.4999186197916667,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 0.0
+      },
+      "no_receipt": {
+        "initial": 0.4986979166666667,
+        "pre_change": 0.5071614583333334,
+        "initial_post_change": 0.5008138020833334,
+        "pre_restore": 0.4871419270833333,
+        "tail": 0.5028211805555555,
+        "tail_expected_utility": 0.5036106109619141,
+        "contact": 0.9999511718750002,
+        "tail_contact": 0.9997829861111112,
+        "positive_reward": 0.4999186197916667,
+        "growth": 0.0,
+        "retirement": 0.0,
+        "newborn_receipt_writes": 0.0,
+        "newborn_generations_written": 0.0,
+        "effective_arc_delta": 0.0
+      },
+      "independent": {
+        "initial": 0.4990234375,
+        "pre_change": 0.4991861979166667,
+        "initial_post_change": 0.51220703125,
+        "pre_restore": 0.4967447916666667,
+        "tail": 0.4943576388888889,
+        "tail_expected_utility": 0.4936434328556061,
+        "contact": 0.9999837239583332,
+        "tail_contact": 1.0,
+        "positive_reward": 0.499462890625,
+        "growth": 31.0,
+        "retirement": 34.0,
+        "newborn_receipt_writes": 6443.8125,
+        "newborn_generations_written": 31.0,
+        "effective_arc_delta": 10.662489891052246
+      }
+    }
+  },
+  "primary": {
+    "stable_joint_minus_frozen": [
+      0.3352864583333333,
+      0.27148437499999994,
+      0.4061971028645838
+    ],
+    "stable_joint_minus_independent": [
+      0.34375,
+      0.25526123046875,
+      0.43315972222222215
+    ],
+    "reverse_joint_minus_frozen": [
+      0.32660590277777773,
+      0.23751898871527777,
+      0.40055474175347267
+    ],
+    "reverse_joint_minus_independent": [
+      0.3179253472222222,
+      0.23898518880208333,
+      0.4010416666666667
+    ]
+  },
+  "source_cuts": {
+    "stable": [
+      [
+        {
+          "motor": {
+            "max_other": 0.18451771140098572,
+            "max_motor": 0.040818989276885986,
+            "pulses_changed": 0,
+            "observed_ticks": 68
+          },
+          "taste": {
+            "max_other": 0.13852736353874207,
+            "max_motor": 0.17346322536468506,
+            "pulses_changed": 0,
+            "observed_ticks": 68,
+            "max_receipt_one_hop": 0.1658373475074768,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ],
+      [
+        {
+          "motor": {
+            "max_other": 0.03710529953241348,
+            "max_motor": 0.08830702304840088,
+            "pulses_changed": 0,
+            "observed_ticks": 65
+          },
+          "taste": {
+            "max_other": 0.02934490144252777,
+            "max_motor": 0.02290898561477661,
+            "pulses_changed": 0,
+            "observed_ticks": 65,
+            "max_receipt_one_hop": 0.025884903967380524,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ],
+      [
+        {
+          "motor": {
+            "max_other": 0.010660184547305107,
+            "max_motor": 0.10028916597366333,
+            "pulses_changed": 0,
+            "observed_ticks": 64
+          },
+          "taste": {
+            "max_other": 0.0072936974465847015,
+            "max_motor": 0.012734860181808472,
+            "pulses_changed": 0,
+            "observed_ticks": 64,
+            "max_receipt_one_hop": 0.013605177402496338,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ]
+    ],
+    "reverse": [
+      [
+        {
+          "motor": {
+            "max_other": 0.18451771140098572,
+            "max_motor": 0.040818989276885986,
+            "pulses_changed": 0,
+            "observed_ticks": 68
+          },
+          "taste": {
+            "max_other": 0.13852736353874207,
+            "max_motor": 0.17346322536468506,
+            "pulses_changed": 0,
+            "observed_ticks": 68,
+            "max_receipt_one_hop": 0.1658373475074768,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ],
+      [
+        {
+          "motor": {
+            "max_other": 0.03372925892472267,
+            "max_motor": 0.05804401636123657,
+            "pulses_changed": 0,
+            "observed_ticks": 63
+          },
+          "taste": {
+            "max_other": 0.028345659375190735,
+            "max_motor": 0.027689725160598755,
+            "pulses_changed": 0,
+            "observed_ticks": 63,
+            "max_receipt_one_hop": 0.027665793895721436,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ],
+      [
+        {
+          "motor": {
+            "max_other": 0.047024935483932495,
+            "max_motor": 0.0929521769285202,
+            "pulses_changed": 2,
+            "observed_ticks": 69
+          },
+          "taste": {
+            "max_other": 0.007145434617996216,
+            "max_motor": 0.006818711757659912,
+            "pulses_changed": 0,
+            "observed_ticks": 69,
+            "max_receipt_one_hop": 0.0072876811027526855,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ]
+    ],
+    "restore": [
+      [
+        {
+          "motor": {
+            "max_other": 0.18451771140098572,
+            "max_motor": 0.040818989276885986,
+            "pulses_changed": 0,
+            "observed_ticks": 68
+          },
+          "taste": {
+            "max_other": 0.13852736353874207,
+            "max_motor": 0.17346322536468506,
+            "pulses_changed": 0,
+            "observed_ticks": 68,
+            "max_receipt_one_hop": 0.1658373475074768,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ],
+      [
+        {
+          "motor": {
+            "max_other": 0.03372925892472267,
+            "max_motor": 0.05804401636123657,
+            "pulses_changed": 0,
+            "observed_ticks": 63
+          },
+          "taste": {
+            "max_other": 0.028345659375190735,
+            "max_motor": 0.027689725160598755,
+            "pulses_changed": 0,
+            "observed_ticks": 63,
+            "max_receipt_one_hop": 0.027665793895721436,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ],
+      [
+        {
+          "motor": {
+            "max_other": 0.009939447045326233,
+            "max_motor": 0.051079750061035156,
+            "pulses_changed": 2,
+            "observed_ticks": 66
+          },
+          "taste": {
+            "max_other": 0.007201315835118294,
+            "max_motor": 0.008760690689086914,
+            "pulses_changed": 0,
+            "observed_ticks": 66,
+            "max_receipt_one_hop": 0.009179830551147461,
+            "max_receipt_one_hop_cut": 0.0,
+            "isolated_receipts": 12
+          }
+        },
+        16
+      ]
+    ]
+  },
+  "npz_sha256": {
+    "stable": {
+      "joint": "cf3fa246971cf81d52b8152e235adcd81976e4c325b5f6d9aef2002b820a0bf0",
+      "weights": "8cb348a896ff6ff2a649a5290456175d0f59dc04ce874449c77e491177dc75f4",
+      "frozen": "3c389e023b1f98a3bdf7567976f637b41de7b1a8c53f1ba32f3b88b9fd819ede",
+      "no_receipt": "945275d078775ab8970fed53b9eb3d3829f7798741320278d06415dbc409aead",
+      "independent": "b2736b33dfa92a9039653d76b784c425bc47b285ba5d6d34bd0e042f5b5fc755"
+    },
+    "reverse": {
+      "joint": "0b78a87a8008ca23456d5dbc7435e21d5aed1ce3f1bad2b480f1a48c4987015a",
+      "weights": "da5eeaf242619f5bb637d264e8260222572077cfdf59e55fa8ed3e7365116036",
+      "frozen": "cb8d4406dc34ecd18168ba6d599627661eb0d6872d46d78b0ee936c0544137c7",
+      "no_receipt": "1cb6d489e13fdeda1d61d4c690369c5e871c3e41a420244bebbb5754ce77aefb",
+      "independent": "4a784fe031bd3edefe88963d0b1e2af42db1476e08aae351edefe4154f4b2afa"
+    },
+    "restore": {
+      "joint": "4c1a71ca58b0791d0f58adab904f93850cc3bd1cc54133d64516148f467d8a5c",
+      "weights": "f0f083d148e4bec47379f75bac5b6da82828081eb7db12792b2f6e040606c969",
+      "frozen": "4954badec0a3e3049950275474c26d766de635537bf3569b9e0bd16ae981e578",
+      "no_receipt": "55173b13c8309f259d61136ee00772beb5fa3ebebbb061dff14267af732d3c8e",
+      "independent": "66a64ad3587e3d8c38d570806b7da2dfe91aaff5b52b43e839e8338b417c69a6"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "roots": [421, 422, 423],
+  "iterations": 600,
+  "train_contacts": 6,
+  "train_batch": 48,
+  "lr": 0.009,
+  "holdout_lives": 64,
+  "holdout": [
+    {"name": "short_stable", "seed": 91012001, "odors": 1, "rounds": 8, "phase_length": 8,
+     "noise": 0.0, "arms": ["active", "disabled", "protect_writer", "blind"]},
+    {"name": "short_noisy", "seed": 91012002, "odors": 1, "rounds": 8, "phase_length": 8,
+     "noise": 0.2, "arms": ["active", "disabled", "protect_writer", "blind"]},
+    {"name": "long_stable", "seed": 91012003, "odors": 2, "rounds": 32, "phase_length": 32,
+     "noise": 0.0, "arms": ["active", "disabled", "protect_writer", "blind"]},
+    {"name": "long_noisy", "seed": 91012004, "odors": 2, "rounds": 32, "phase_length": 32,
+     "noise": 0.2, "arms": ["active", "disabled", "protect_writer", "blind"]},
+    {"name": "long_reversal", "seed": 91012005, "odors": 2, "rounds": 32, "phase_length": 8,
+     "noise": 0.2, "arms": ["active", "disabled", "protect_writer", "blind"]}
+  ]
+}

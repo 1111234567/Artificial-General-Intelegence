@@ -1,0 +1,205 @@
+{
+  "utc": "2026-11-19T06:08:36.622478+00:00",
+  "source_sha256": {
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "graph_interactions_study.py": "deafd52a08d07ccbf98e2a846e14bb2073b34012310ef7b636fc4ef52e418f6b",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "world_roots": {
+    "development": [
+      864150,
+      864151,
+      864152,
+      864153,
+      864154,
+      864155,
+      864156,
+      864157
+    ],
+    "confirm": [
+      864250,
+      864251,
+      864252,
+      864253,
+      864254,
+      864255,
+      864256,
+      864257,
+      864258,
+      864259,
+      864260,
+      864261,
+      864262,
+      864263,
+      864264,
+      864265
+    ]
+  },
+  "birth_roots": {
+    "development": [
+      864120,
+      864121,
+      864122,
+      864123
+    ],
+    "confirm": [
+      864200,
+      864201,
+      864202,
+      864203,
+      864204,
+      864205,
+      864206,
+      864207
+    ]
+  },
+  "trials": 960,
+  "tail": 128,
+  "conditions": [
+    "stable",
+    "reverse"
+  ],
+  "candidates": [
+    {
+      "recipe": {
+        "rate": 0.18,
+        "exploration": 0.31,
+        "decay": 0.998,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.0
+    },
+    {
+      "recipe": {
+        "rate": 0.18,
+        "exploration": 0.31,
+        "decay": 0.998,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.45
+    },
+    {
+      "recipe": {
+        "rate": 0.18,
+        "exploration": 0.31,
+        "decay": 0.998,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.85
+    },
+    {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.0
+    },
+    {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.45
+    },
+    {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.85
+    },
+    {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.0
+    },
+    {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.45
+    },
+    {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.85
+    },
+    {
+      "recipe": {
+        "rate": 0.48,
+        "exploration": 0.33,
+        "decay": 0.9995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.0
+    },
+    {
+      "recipe": {
+        "rate": 0.48,
+        "exploration": 0.33,
+        "decay": 0.9995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.45
+    },
+    {
+      "recipe": {
+        "rate": 0.48,
+        "exploration": 0.33,
+        "decay": 0.9995,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.85
+    }
+  ],
+  "world": "Four independent continuous Uniform(-1,1) self-symmetric odor coordinates for each of two novel foods. Their pairwise-products across the {0,1}/{2,3} split, multiplied by fresh per-world unit-norm private coefficients, determine logistic taste probabilities with gain 10. Changing either coordinate block's signs reverses the logit. Each single feature is therefore marginally uninformative for expected taste. Sign inversion is hidden, occurs near the midpoint, affects only taste, and leaves the same observations, geometry and exploratory drive in paired regimes.",
+  "architecture": "Original tanh nodes and a no-added-parameter even residual share all 16 nodes, one directed graph and the same raw observations, initial support, rates, biases, individual weight updates and birth/retirement schedules. Even arm only replaces the activation at 8 odor and 2 interior nodes with (tanh(x) + signed_scale*tanh(x)^2)/(1+abs(scale)), alternating square sign. Motor, contact, taste and actual body stay identical. Base circuit update and uncapped strong support edits run after signed physical receipts. No explicit pair products reach either graph.",
+  "selection": "Rank candidates by average stable and reversed silent tail actual-contact best-food accuracy, separately for original tanh and square nodes. First in registered order breaks ties. Matched tanh at the square winner's learning rate, exploration, decay and initial-weight gain isolates the selected activation change. Sham for each selected graph keeps its own registered configuration, replacing real contact taste by private independent fair signs. All other bodily interactions and scoring unchanged.",
+  "controls": "Random emitted left/right pulses from one private fair choice per request. Linear and polynomial ridge learn from actual contacted chemistry and actual delivered taste on their own matched bodies. Polynomial uses all six cross-products with no knowledge of private nonzero coefficients or switch. Oracle only for scoring visibility uses hidden expected best side plus the same body. Every probe meal is newly sampled; feedback/exploratory drive at the graph and data learners turn off for the last 128 requests.",
+  "endpoints": "Primary across six contrasts (each condition times square-matched tanh, square-square sham, tanh-tanh sham): silent tail best-side contact accuracy with timeout incorrect, simultaneous 95% percentile intervals from 20,000 crossed paired birth/world draws. Diagnostic accuracy conditional on contact, realized/expected utility, graph edits, post-switch/late windows, and visibility controls.",
+  "bootstrap_seed": 304099224
+}

@@ -1,0 +1,139 @@
+{
+  "means": {
+    "A": {
+      "own_initial_rule": {
+        "accuracy": 0.748828125,
+        "coverage": 1.0
+      },
+      "A_before_B": {
+        "accuracy": 0.748828125,
+        "coverage": 1.0
+      },
+      "B0": {
+        "accuracy": 0.47265625,
+        "coverage": 1.0
+      },
+      "B640": {
+        "accuracy": 0.841796875,
+        "coverage": 1.0
+      },
+      "A0": {
+        "accuracy": 0.5068359375,
+        "coverage": 1.0
+      },
+      "A80": {
+        "accuracy": 0.618359375,
+        "coverage": 1.0
+      },
+      "A240": {
+        "accuracy": 0.7455078125000001,
+        "coverage": 0.9998046875
+      },
+      "A640": {
+        "accuracy": 0.801953125,
+        "coverage": 1.0
+      }
+    },
+    "C": {
+      "own_initial_rule": {
+        "accuracy": 0.7798828124999999,
+        "coverage": 1.0
+      },
+      "A_before_B": {
+        "accuracy": 0.5072265625000001,
+        "coverage": 1.0
+      },
+      "B0": {
+        "accuracy": 0.504296875,
+        "coverage": 1.0
+      },
+      "B640": {
+        "accuracy": 0.8244140625,
+        "coverage": 1.0
+      },
+      "A0": {
+        "accuracy": 0.5091796875,
+        "coverage": 0.9998046875
+      },
+      "A80": {
+        "accuracy": 0.614453125,
+        "coverage": 0.9998046875
+      },
+      "A240": {
+        "accuracy": 0.740234375,
+        "coverage": 0.9998046875
+      },
+      "A640": {
+        "accuracy": 0.787109375,
+        "coverage": 1.0
+      }
+    }
+  },
+  "primary": {
+    "A0_prior_A_minus_C": [
+      -0.002343750000000001,
+      -0.034765624999999994,
+      0.02773559570312542
+    ],
+    "A80_prior_A_minus_C": [
+      0.003906250000000007,
+      -0.027343749999999993,
+      0.03281250000000002
+    ],
+    "A240_prior_A_minus_C": [
+      0.005273437500000011,
+      -0.03359374999999999,
+      0.04335937500000001
+    ],
+    "A0_prior_A_minus_chance": [
+      0.0068359374999999965,
+      -0.025,
+      0.03925781249999999
+    ]
+  },
+  "training": {
+    "A": {
+      "shown_receipts": {
+        "first": 40959,
+        "B": 40957,
+        "return80": 5119,
+        "return240": 10240,
+        "return640": 25599
+      },
+      "total_teaching_opportunities": 122880,
+      "final_active_pairs": {
+        "first": 51.765625,
+        "B": 63.671875,
+        "return80": 62.8125,
+        "return240": 56.84375,
+        "return640": 64.796875
+      }
+    },
+    "C": {
+      "shown_receipts": {
+        "first": 40958,
+        "B": 40959,
+        "return80": 5120,
+        "return240": 10240,
+        "return640": 25600
+      },
+      "total_teaching_opportunities": 122880,
+      "final_active_pairs": {
+        "first": 52.9375,
+        "B": 63.09375,
+        "return80": 62.09375,
+        "return240": 58.015625,
+        "return640": 64.671875
+      }
+    }
+  },
+  "zero_taste_retention_supported": false,
+  "registered_sha256": "c44a3aa1304232211535cf078f508e534076b9afa5bf63acb1c03c4f20802712",
+  "raw_sha256": "15d32d5df0015711a5ba62bcfdcdb0fc54722f004f15730a2a7a98c82aa23623",
+  "entries_sha256": {
+    "964800.npz": "b2d024ecf7f623de5e48009b1ab8185db79d4719a0d994b4e2f39e085ffea99f",
+    "964802.npz": "a4ad67b9b3fffbbe65d949889b7a90f737fc943228c93a787d8c845033269325",
+    "964804.npz": "8f4ddf48bfb2fbb8066785b008d9ac7aa76684bd609a1ac3f18d07979fba4b54",
+    "964806.npz": "224499f93f0144503801ebcbb197a3da4f48d088562c785282fbad385e793a39"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "results": {
+    "stable": {
+      "accuracy": {
+        "learned": 0.7325520833333333,
+        "restore_motor": 0.7108072916666667,
+        "restore_core": 0.71015625,
+        "restore_both": 0.6822916666666667
+      },
+      "intact_minus_restored": {
+        "restore_motor": {
+          "mean": 0.021744791666666666,
+          "ci": [
+            0.0007812500000000056,
+            0.04518229166666667
+          ]
+        },
+        "restore_core": {
+          "mean": 0.02239583333333333,
+          "ci": [
+            0.00638020833333333,
+            0.04192708333333334
+          ]
+        }
+      }
+    },
+    "reversal": {
+      "accuracy": {
+        "learned": 0.43619791666666674,
+        "restore_motor": 0.4416666666666667,
+        "restore_core": 0.36992187499999996,
+        "restore_both": 0.371484375
+      },
+      "intact_minus_restored": {
+        "restore_motor": {
+          "mean": -0.00546875,
+          "ci": [
+            -0.025390625000000007,
+            0.014410264756944475
+          ]
+        },
+        "restore_core": {
+          "mean": 0.06627604166666667,
+          "ci": [
+            0.0328125,
+            0.10572916666666668
+          ]
+        }
+      }
+    },
+    "return": {
+      "accuracy": {
+        "learned": 0.6638020833333333,
+        "restore_motor": 0.63984375,
+        "restore_core": 0.6759114583333333,
+        "restore_both": 0.6479166666666667
+      },
+      "intact_minus_restored": {
+        "restore_motor": {
+          "mean": 0.02395833333333333,
+          "ci": [
+            0.0014322916666666713,
+            0.04943630642361114
+          ]
+        },
+        "restore_core": {
+          "mean": -0.012109374999999997,
+          "ci": [
+            -0.03229166666666666,
+            0.004166666666666663
+          ]
+        }
+      }
+    }
+  },
+  "source_run": "joint-live-integrated-20261119",
+  "source_npz": {
+    "stable": "3f0ebb49b0d015decd158e45544df17a70f7953c620e6370de1b729ea17fce34",
+    "reversal": "89d2dc06dae31052617524c90833b4e53bf8303a81a9656f6a9d93cc2645e650",
+    "return": "df267ec692229ec4ce8f2cbe8446b2dfccb5d0d008803497bd53b60f42b1c7cc"
+  },
+  "protocol_sha256": "7184903ba095ca42ef9d7943206182e42100e1005f9fc137f09d8a3eb92eef54",
+  "code_sha256": "daba3c97d965e184314f5514d179df921a4fc0cd29187dd8f5e45ea772e9d4c5",
+  "probe_code_sha256": "4cdf95fae30a3d18b382d85e800e4b63b8b83685389806d6ba63030e6a2367a8",
+  "archive_sha256": "f526f4519ce4b61f2fa3e5b90f7d8e25b9ad999ba193a671d5fc9b497a4b9982"
+}

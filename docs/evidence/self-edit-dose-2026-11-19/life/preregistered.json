@@ -1,0 +1,29 @@
+{
+  "protocol": 1,
+  "created_local_date": "2026-11-19",
+  "birth_checkpoint_template": "docs/evidence/self-writing-2026-11-19/core/bootstrap-own-{root}.npz",
+  "birth_roots": [101, 102, 103, 104, 105, 106, 107, 108],
+  "donor_world_roots": [29101, 29102, 29103, 29104, 29105, 29106, 29107, 29108, 29109, 29110, 29111, 29112],
+  "receiver_world_roots": [67101, 67102, 67103, 67104, 67105, 67106, 67107, 67108, 67109, 67110, 67111, 67112],
+  "doses": [0, 8, 32, 128, 512],
+  "contacts_per_donor_problem": 4,
+  "receiver_receipts_before_action": [0, 1, 2, 4],
+  "ecology": {
+    "reliable": {"radius": 1.35, "noise": 0.02},
+    "noisy": {"radius": 0.85, "noise": 0.35}
+  },
+  "donor_ecology_assignment": "exactly half the problems per prefix dose in each ecology, random order in consecutive 8-problem blocks independently per world root",
+  "receiver_design": "each root supplies one novel antipodal direction per ecology; each direction is crossed with both complementary independently randomized stable good odor identities, with shared side orientations and receipt flips within the complement pair",
+  "runtime": "unmodified dense one-contact core.step, own view, unit write amplitude; all donor weights, support, biases and activity persist across every problem; primitive only for matched protected donor",
+  "payload": "only incoming writer rows including true connectivity flags, weights and biases, expressed as the changes from a bitwise identical receiver birth; all receiver activity starts at rest",
+  "receiver_arms": ["writer", "birth_null", "numeric_scramble"],
+  "numeric_scramble": "preserve intact final support and full numeric delta L2; shuffle bounded numeric increments among compatible active addresses in each writer row and among writer biases; any draw with no feasible change is retained and counted",
+  "disconnected_transplants": "retain in the assigned arm with no repair; report overall and stratified descriptive sensitivity if any",
+  "measurement": "actual argmax action, after zero or exactly the specified number of chosen-side receipts, against latent stable good odor; no teacher action; given side can be reported with physical noise",
+  "primary_endpoints": ["512 writer minus birth_null mean gain after 1, 2, 4 receipts relative to zero", "512 minus 8 change in the writer-minus-null gain", "512 writer minus numeric_scramble mean gain after 1, 2, 4 receipts relative to zero"],
+  "positive_decision_rule": "all three prespecified signed marginal 95% interval lower bounds exceed zero; show the individual intervals and every dose regardless",
+  "secondary": ["per-receipt actual action contrast", "curve by ecology", "hard all-dose contrasts", "controlled next-edit replay on matched cold action with true selected-side receipt versus zero, checking applied weights, bias and support separately for body and writer", "donor action and executed edits, structural connectivity and saturation"],
+  "bootstrap": {"root": 980561, "draws": 10000, "interval": [0.025, 0.975], "paired_units": ["birth_root", "donor_world_root", "receiver_world_root"], "method": "crossed independent root bootstrap preserving all paired contrasts, no contact-level resampling"},
+  "editor_key_roots": {"donor": 93051, "receiver": 93052, "next_edit": 93053, "scramble": 93054},
+  "exclusions": "none; fixed checkpoint step and every root remain even if no changes occur, the graph disconnects on transfer, or acquisition fails"
+}

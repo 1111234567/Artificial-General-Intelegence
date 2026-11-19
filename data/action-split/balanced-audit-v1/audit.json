@@ -1,0 +1,463 @@
+{
+  "format": "action-split-balanced-independent-audit-v1",
+  "passed": true,
+  "created_utc": "2026-11-05T15:45:18.577581+00:00",
+  "device": "cuda",
+  "training_protocol_hash": "ff3c716e8495083e4c79e4e36f870bf8da1a5d7457e8d1ebbe05a9e9a3f52772",
+  "freeze_hash": "4ba50bc8b9d26861deb55eedf1a584ddab98149ec75b35e0c5b3614e42d2fff6",
+  "auditor_sha256": "ac5af9dee4f4bd91c51ffa9d33d4aace07eb9eade06ad469a1634d13f37dd9e9",
+  "reused_readonly_auditor_sha256": "0349182b34af9c8565ea35dd967527e486910e8e53e2a65d84d7a48993d5e07e",
+  "scope": "All6 initial/warm/endpoints and256 update data identities/counts, all18 snapshots; independentfirst2 actual CUDAoptimizersteps perarm using directthreeclassmeans; originaltraining rawbudgets/init/h match; no balanced/model/loss/learner calls",
+  "seeds": [
+    {
+      "seed": 0,
+      "passed": true,
+      "arms": {
+        "frozen": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068337,
+            "mode_BEGIN_rows": 17813,
+            "mode_FINISH_rows": 11002,
+            "mode_weight_sum": 768.0,
+            "begin_rows": 17813,
+            "finish_rows": 704043
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0986119508743286,
+                1.0986123085021973,
+                1.0986123085021973
+              ],
+              "loss": {
+                "total": 3.8712005615234375,
+                "mode": 1.0986121892929077,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 2.209745407104492,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "19179feacec1a667b8b4b14f38254f8d5734a12c0a876830f3a459f01ab4e0cf",
+              "after_sha256": "d7770dbe65a401fd6bd795bd2da5ae0f341a7a7b18eaed0bd1d9b0293ec2d75d",
+              "gradients_sha256": "bed8a207609170a2e87db04532b71bfaed336db3b7e65ddb3517bc2a29a72d80"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0793596506118774,
+                0.9876178503036499,
+                1.0881768465042114
+              ],
+              "loss": {
+                "total": 3.810209274291992,
+                "mode": 1.0517181158065796,
+                "begin": 0.6797680854797363,
+                "finish": 2.0787229537963867
+              },
+              "preclip_grad_norm": 2.1933200359344482,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "7c5eaa5ae4d08f7ddc5e1f39985c48782ed1ff6354d8d2a483b8d1e95efbac2e",
+              "after_sha256": "f714793a5d45a496aa6689fa62060b1d756f8ee00e2b6bdfbc5f6ca81074fbfe",
+              "gradients_sha256": "8860cf4a5c96deff13bc2151ebaf2c39723b86ebefeede6e75d36670a430789c"
+            }
+          ],
+          "frozen_core_equal": true,
+          "final_sha256": "160cf5db1c3e89845a0302a04bd074125b4406075f350a0a23d77a3da7c66e9e"
+        },
+        "full": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068337,
+            "mode_BEGIN_rows": 17813,
+            "mode_FINISH_rows": 11002,
+            "mode_weight_sum": 768.0,
+            "begin_rows": 17813,
+            "finish_rows": 704043
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0986119508743286,
+                1.0986123085021973,
+                1.0986123085021973
+              ],
+              "loss": {
+                "total": 3.8712005615234375,
+                "mode": 1.0986121892929077,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 2.209745407104492,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "f037ecf759ea2ab6db4bbde64370d19f1426eeec1cad239949c3c342acd45d55",
+              "after_sha256": "6dc279b043f17662acebf0b11415e3503217e64f75aac9cb7a8811aba9f8e6b9",
+              "gradients_sha256": "3ef1c6e09256454b4fe3ab27199bc1f3933b06b46ba910572318702ec92a97ce"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0793596506118774,
+                0.9876178503036499,
+                1.0881768465042114
+              ],
+              "loss": {
+                "total": 3.810209274291992,
+                "mode": 1.0517181158065796,
+                "begin": 0.6797680854797363,
+                "finish": 2.0787229537963867
+              },
+              "preclip_grad_norm": 2.1941497325897217,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "272524e56cc38e5910977662b9151e360037be374ac3bb7cb5ffb60c42a08b02",
+              "after_sha256": "1f977eafa8789b9dd37e661f5a25fa25d2a58c59201254f3695640745901788f",
+              "gradients_sha256": "d2eb78f06dbc1cdcd21b878f1685b0596d2017566a1eaace0a8aa1e22709d161"
+            }
+          ],
+          "frozen_core_equal": false,
+          "final_sha256": "ec20a7dbae53b4b9099024e6c7d55d27a236e2a0c7ef4b40e92979f4631c729f"
+        }
+      },
+      "matched_parent": {
+        "frozen": {
+          "passed": true,
+          "original_initial_weights_zerohead_warm_h_Adam_bit_exact": true,
+          "all256_input_identities_and_raw_row_counts_equal_original": true,
+          "all_raw_work_counters_equal_original": true,
+          "mode_reduction_denominator_only_changed_to768": true
+        },
+        "full": {
+          "passed": true,
+          "original_initial_weights_zerohead_warm_h_Adam_bit_exact": true,
+          "all256_input_identities_and_raw_row_counts_equal_original": true,
+          "all_raw_work_counters_equal_original": true,
+          "mode_reduction_denominator_only_changed_to768": true
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "passed": true,
+      "arms": {
+        "frozen": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068355,
+            "mode_BEGIN_rows": 17826,
+            "mode_FINISH_rows": 10971,
+            "mode_weight_sum": 768.0,
+            "begin_rows": 17826,
+            "finish_rows": 703915
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0986120700836182,
+                1.0986123085021973,
+                1.0986123085021973
+              ],
+              "loss": {
+                "total": 3.8712007999420166,
+                "mode": 1.0986123085021973,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794413089752197
+              },
+              "preclip_grad_norm": 2.2237746715545654,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "5778d11588be9950e77b5a6bc543d4aefc33033fa298c7cd7bbc563c32d06740",
+              "after_sha256": "1e181ce187d5407277896663f067528396ac0a4b40e29d274db5ab41daef02ee",
+              "gradients_sha256": "46978f19174536d032ac77a903646bf8c8877a70cd3043da93a32e22e48f30e1"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0841461420059204,
+                0.9857180118560791,
+                1.0855152606964111
+              ],
+              "loss": {
+                "total": 3.808628559112549,
+                "mode": 1.0517932176589966,
+                "begin": 0.6849708557128906,
+                "finish": 2.071864366531372
+              },
+              "preclip_grad_norm": 2.358186960220337,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "37adece4c249ce9eb8058dba300dfd47a263b9b46649f2a72cff31cba328e457",
+              "after_sha256": "a490a36eaf22edda26306b6a45ea0a50651264da5c3590033d9ee9382ec0a7f6",
+              "gradients_sha256": "a267da4bc4e8c40d9dc7ab7911b0f809c77fab5e03568e479c4414e9471afd3a"
+            }
+          ],
+          "frozen_core_equal": true,
+          "final_sha256": "fe3bdca63122689685298fa8aa19bf98fa7bf31570bc3ba94a7994c960957c89"
+        },
+        "full": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068355,
+            "mode_BEGIN_rows": 17826,
+            "mode_FINISH_rows": 10971,
+            "mode_weight_sum": 768.0,
+            "begin_rows": 17826,
+            "finish_rows": 703915
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0986120700836182,
+                1.0986123085021973,
+                1.0986123085021973
+              ],
+              "loss": {
+                "total": 3.8712007999420166,
+                "mode": 1.0986123085021973,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794413089752197
+              },
+              "preclip_grad_norm": 2.2237746715545654,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "ef3dcb4019153145dbbc9c1170095fe397c89795d9d557527cd47bf41205ef7e",
+              "after_sha256": "48c6be4c278bbbfff00189135c7c649cbb29e40f6f2f8ef8f44e8743c99470da",
+              "gradients_sha256": "b0f952069c930f0b2da013c08bfff8fb77100dd900e64be1dd68a799f6003521"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0841461420059204,
+                0.9857180118560791,
+                1.0855152606964111
+              ],
+              "loss": {
+                "total": 3.808628559112549,
+                "mode": 1.0517932176589966,
+                "begin": 0.6849708557128906,
+                "finish": 2.071864366531372
+              },
+              "preclip_grad_norm": 2.3586905002593994,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "6b602179f5dfd614262e4b4fbd161f4d7fafd5cfa27ad8808a9a7e00d640c95c",
+              "after_sha256": "6fc25c15c06e5b3f1e50cd76ed3ca77c7fd7213922ffa3a81689be389df1698c",
+              "gradients_sha256": "8993da80740d803e323ece4d43d8868e3fb4e6ca12c056fd87fbdb118415cd9b"
+            }
+          ],
+          "frozen_core_equal": false,
+          "final_sha256": "a2ab57dbfaa9c7343689860fbbc7c1d1c1f802cc9ab19dbace0c83257edba32a"
+        }
+      },
+      "matched_parent": {
+        "frozen": {
+          "passed": true,
+          "original_initial_weights_zerohead_warm_h_Adam_bit_exact": true,
+          "all256_input_identities_and_raw_row_counts_equal_original": true,
+          "all_raw_work_counters_equal_original": true,
+          "mode_reduction_denominator_only_changed_to768": true
+        },
+        "full": {
+          "passed": true,
+          "original_initial_weights_zerohead_warm_h_Adam_bit_exact": true,
+          "all256_input_identities_and_raw_row_counts_equal_original": true,
+          "all_raw_work_counters_equal_original": true,
+          "mode_reduction_denominator_only_changed_to768": true
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "passed": true,
+      "arms": {
+        "frozen": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068356,
+            "mode_BEGIN_rows": 17854,
+            "mode_FINISH_rows": 10942,
+            "mode_weight_sum": 768.0,
+            "begin_rows": 17854,
+            "finish_rows": 702442
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0986120700836182,
+                1.0986121892929077,
+                1.0986123085021973
+              ],
+              "loss": {
+                "total": 3.8712005615234375,
+                "mode": 1.0986121892929077,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 2.128000020980835,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "1f3a7067983f5c9b052814f17564cd2d7ca1c47159c453b7c7a73b9c7af54aa6",
+              "after_sha256": "9458f638786f25f4a86be82637a096535cd6ba86f84af2ae56e301fbfbae6999",
+              "gradients_sha256": "2dd690f249d18b08f39b85253610399d4c46348f93c5c48cf92ec08532b5cab2"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0856508016586304,
+                0.9905219674110413,
+                1.0878890752792358
+              ],
+              "loss": {
+                "total": 3.8127999305725098,
+                "mode": 1.0546873807907104,
+                "begin": 0.6821016073226929,
+                "finish": 2.0760109424591064
+              },
+              "preclip_grad_norm": 2.224050283432007,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "ce424be039ab578264f1142d1521390a6feeea132ec2b8b847811ba3ce0f26fb",
+              "after_sha256": "b977c38a20114d6db3a79b79ee21d4977e9ded4d8d0ff3c3db1810be43682ac3",
+              "gradients_sha256": "b36e39728d3dc0e611e549273b132bc4f6690790de0c8b46692de724af076a7c"
+            }
+          ],
+          "frozen_core_equal": true,
+          "final_sha256": "4ac422e6b74d063f9e3850c526dbcf6311d83b45fe5785bbc654df919a23a9e1"
+        },
+        "full": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068356,
+            "mode_BEGIN_rows": 17854,
+            "mode_FINISH_rows": 10942,
+            "mode_weight_sum": 768.0,
+            "begin_rows": 17854,
+            "finish_rows": 702442
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0986120700836182,
+                1.0986121892929077,
+                1.0986123085021973
+              ],
+              "loss": {
+                "total": 3.8712005615234375,
+                "mode": 1.0986121892929077,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 2.128000020980835,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "8de08fce63ff09eecad277e7ee6e01e2ca6e74e1380d281d9b66fb1d5d8565e8",
+              "after_sha256": "471f81ad5f83b50e22458402d03e182ee336c810601b89c1ce2574f649075383",
+              "gradients_sha256": "ee86f7a9aa9ad8d013c8debac39bfcc197404841374455832977f109422c350f"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "independent_mode_formula": "(meanCEWAIT + meanCEBEGIN + meanCEFINISH)/3",
+              "perclass_mode_CE": [
+                1.0856508016586304,
+                0.9905219674110413,
+                1.0878890752792358
+              ],
+              "loss": {
+                "total": 3.8127999305725098,
+                "mode": 1.0546873807907104,
+                "begin": 0.6821016073226929,
+                "finish": 2.0760109424591064
+              },
+              "preclip_grad_norm": 2.2243545055389404,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "24de3fe9bd5b5319e5026a6b4ccdbc255ad6d25a82a9ad7b3bd8e93c445eae04",
+              "after_sha256": "6ff5fbf0da50cbc749ccf00571d61440c5588328ec71cc3dd5c0ff03b29aead2",
+              "gradients_sha256": "6e7311ee594455210d904fba0a5d9c0360e584536183927dbda622aa65312fe8"
+            }
+          ],
+          "frozen_core_equal": false,
+          "final_sha256": "da026457b1a6d6a8a154539aa7dff761e1da0679dc42ea5d5e0f6e54fa004f59"
+        }
+      },
+      "matched_parent": {
+        "frozen": {
+          "passed": true,
+          "original_initial_weights_zerohead_warm_h_Adam_bit_exact": true,
+          "all256_input_identities_and_raw_row_counts_equal_original": true,
+          "all_raw_work_counters_equal_original": true,
+          "mode_reduction_denominator_only_changed_to768": true
+        },
+        "full": {
+          "passed": true,
+          "original_initial_weights_zerohead_warm_h_Adam_bit_exact": true,
+          "all256_input_identities_and_raw_row_counts_equal_original": true,
+          "all_raw_work_counters_equal_original": true,
+          "mode_reduction_denominator_only_changed_to768": true
+        }
+      }
+    }
+  ]
+}

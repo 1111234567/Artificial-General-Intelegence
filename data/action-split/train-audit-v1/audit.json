@@ -1,0 +1,342 @@
+{
+  "format": "action-split-independent-training-audit-v1",
+  "passed": true,
+  "created_utc": "2026-11-05T15:26:22.205420+00:00",
+  "device": "cuda",
+  "training_protocol_hash": "6bb754c1145a1ed59d7c9c07272fdf27a718d05afd18b53ccc0ff8e278e21db4",
+  "freeze_hash": "5b01ac53e62b781c24e9187a6a673279cf0750f0b333f6791a656d2fea4bd5a7",
+  "auditor_sha256": "0349182b34af9c8565ea35dd967527e486910e8e53e2a65d84d7a48993d5e07e",
+  "scope": "All6 initial/warm/endpoints and256 update data identities/counts; independent first2 actual optimizer steps perarm; no experiment model/loss/update call",
+  "seeds": [
+    {
+      "seed": 0,
+      "passed": true,
+      "arms": {
+        "frozen": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068337,
+            "mode_BEGIN_rows": 17813,
+            "mode_FINISH_rows": 11002,
+            "mode_weight_sum": 545899.25,
+            "begin_rows": 17813,
+            "finish_rows": 704043
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.8712003231048584,
+                "mode": 1.0986120700836182,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 3.2302558422088623,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "628a9a2a17eac3b4c78467bb61e0abedca6ad156a956556e80d675fbdeffe0a4",
+              "after_sha256": "ea9fc9d700daa34c20af144534109182397c3e16896274aa02f465d2afc32947",
+              "gradients_sha256": "4d1b9bdb11b6ffb14d04a8530a47c918f3038adc054aab5c55c1b16378f2ec1d"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.7868123054504395,
+                "mode": 1.0283209085464478,
+                "begin": 0.6797683238983154,
+                "finish": 2.0787229537963867
+              },
+              "preclip_grad_norm": 3.1573009490966797,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "6db765150b82af08537daf47dbf61c93629b12091ceb7b0b2cc4d2d9d61ed40c",
+              "after_sha256": "5812cf04a785f7a58d94da386ada456e5c7d34cb0b5d95db4d85598d3d61171b",
+              "gradients_sha256": "69491603716f4cdb53dc998de9760635992a8295fccfa2a6d47654fa0d776473"
+            }
+          ],
+          "frozen_core_equal": true,
+          "final_sha256": "50f003fe079bd808e9be43bb8b5e6810febfdf1a5fd6073a34394a525617686e"
+        },
+        "full": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068337,
+            "mode_BEGIN_rows": 17813,
+            "mode_FINISH_rows": 11002,
+            "mode_weight_sum": 545899.25,
+            "begin_rows": 17813,
+            "finish_rows": 704043
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.8712003231048584,
+                "mode": 1.0986120700836182,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 3.2302558422088623,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "9ff62ecd560244f5ccd741fecc7ef8531d0fbb113115deb8afdb34566003f7db",
+              "after_sha256": "417c537172c857c980236aa5766e5430a95b3c772061fd4abed6f6e577ef9a4e",
+              "gradients_sha256": "a58006d7a1e6ac770a08065d275998ba4653c2ff5fc8a524773dd9292aab97c6"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.7868123054504395,
+                "mode": 1.0283209085464478,
+                "begin": 0.6797683238983154,
+                "finish": 2.0787229537963867
+              },
+              "preclip_grad_norm": 3.157754421234131,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "972f686fde95882ec8dc5420df1faa4883986cfcdf32cd7fd40cf32fd5764d23",
+              "after_sha256": "03b7ed01969a332d20ad5ef1df568ae24003a4714a77cc8df9c316ccc02943c7",
+              "gradients_sha256": "ada39c4e33d3762e0211e9b69dd441bf1b10b363bfd7f10b27764078b3f4855f"
+            }
+          ],
+          "frozen_core_equal": false,
+          "final_sha256": "0c9d4200015acb4631cdc2e47ba287e3b7ccd77121bf3bb6b955d2bf01964d0f"
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "passed": true,
+      "arms": {
+        "frozen": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068355,
+            "mode_BEGIN_rows": 17826,
+            "mode_FINISH_rows": 10971,
+            "mode_weight_sum": 545885.75,
+            "begin_rows": 17826,
+            "finish_rows": 703915
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.8712005615234375,
+                "mode": 1.0986119508743286,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794413089752197
+              },
+              "preclip_grad_norm": 3.0507659912109375,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "40a97e5e8c597fb61f87507dab1684e29a51c894feb0f08b8359c07ae59c46f1",
+              "after_sha256": "d6fa7e4fb29c851891d7eea369cee1e79c2c48a64d65ee43ad4c3e2af33387bf",
+              "gradients_sha256": "de66eef125c6d24bebcd5d2118ca0d1d159cb875558ec96ef509a82fed54b362"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.7946064472198486,
+                "mode": 1.0377706289291382,
+                "begin": 0.6849713921546936,
+                "finish": 2.071864366531372
+              },
+              "preclip_grad_norm": 3.1002721786499023,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "1b069e33c79524639750de0b643909587325c13dc05b68cae19cb19e4ff3f96e",
+              "after_sha256": "b16d6f721d3fe2a141d949c9d10e22ce3495df328ed6c65f412f3abfe61cda0e",
+              "gradients_sha256": "6297f389ee8f7ed85b299ad1a721a44a079b93c8e7a02991ada8f6ef607e956a"
+            }
+          ],
+          "frozen_core_equal": true,
+          "final_sha256": "c35c6084b8eb6739bf57f66d81806e0b1044ded001287193d61a2034316528a5"
+        },
+        "full": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068355,
+            "mode_BEGIN_rows": 17826,
+            "mode_FINISH_rows": 10971,
+            "mode_weight_sum": 545885.75,
+            "begin_rows": 17826,
+            "finish_rows": 703915
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.8712005615234375,
+                "mode": 1.0986119508743286,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794413089752197
+              },
+              "preclip_grad_norm": 3.0507659912109375,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "b50c7b9fc393cfff5340def6063e3f06b919915a308a7746a6b398840158f8bc",
+              "after_sha256": "d182dbeb38539e23256272f5eb2c508f9d779719d7fc324a1eb1146812cd41d1",
+              "gradients_sha256": "8ca1806553d2d9c7783b4e8dddab6540a41d2d1a4e8becdba08bcac59feac9ea"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.7946064472198486,
+                "mode": 1.0377706289291382,
+                "begin": 0.6849713921546936,
+                "finish": 2.071864366531372
+              },
+              "preclip_grad_norm": 3.100811004638672,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "8b4bb1673d015426155e04dd3a2e7a8419a3c336766e33fb1a018035312c40ab",
+              "after_sha256": "1557277ed9fa9d2bb00147d642c02011ec1cc3d11f476187d2ef3faf4046120f",
+              "gradients_sha256": "3e59afd482999dc0623dee87a6c38bf27c6ef8360e104a89713c0907d36ddc82"
+            }
+          ],
+          "frozen_core_equal": false,
+          "final_sha256": "3b71ad8207037abcc3abb50f2553d7cac44cc4ac9b6db4c1dbd00056be64e659"
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "passed": true,
+      "arms": {
+        "frozen": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068356,
+            "mode_BEGIN_rows": 17854,
+            "mode_FINISH_rows": 10942,
+            "mode_weight_sum": 545885.0,
+            "begin_rows": 17854,
+            "finish_rows": 702442
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.8712003231048584,
+                "mode": 1.0986120700836182,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 3.053703784942627,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "87936e34d570b9c702e51a1737e1ed12aa6096f9fa4c2bca6b3ae9b5ac7b02c6",
+              "after_sha256": "276151178979cbee75f4a51b96b1476053dfc2b343eb0cf454e7083f2cc0509d",
+              "gradients_sha256": "2ceeb806e34fe33dc4a743d8c20f9abdf4658dadb1e342312d09ffaed6e76aa6"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.797672748565674,
+                "mode": 1.0395604372024536,
+                "begin": 0.6821014881134033,
+                "finish": 2.0760109424591064
+              },
+              "preclip_grad_norm": 3.0389673709869385,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "decc8bc1d1f6b3d1bb34bf26ad6c4fd14414754b1665c1fa2d21190c3a59c8d7",
+              "after_sha256": "67e97be60704ad36016ed0199255668598757e340839135ca373be57aaaaf591",
+              "gradients_sha256": "18c9db79b285519c05d267b5db9a0e79c7ae394f8dffcec214ffb65237c9748b"
+            }
+          ],
+          "frozen_core_equal": true,
+          "final_sha256": "4f8b1e3741b89faebe87d4e479bc17842b80a0acebe94626299edec4bfe1dfb4"
+        },
+        "full": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "mode_rows": 2097152,
+            "mode_WAIT_rows": 2068356,
+            "mode_BEGIN_rows": 17854,
+            "mode_FINISH_rows": 10942,
+            "mode_weight_sum": 545885.0,
+            "begin_rows": 17854,
+            "finish_rows": 702442
+          },
+          "warm_h": "bitwise exact independent512tick reconstruction",
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.8712003231048584,
+                "mode": 1.0986120700836182,
+                "begin": 0.6931471824645996,
+                "finish": 2.0794410705566406
+              },
+              "preclip_grad_norm": 3.053703784942627,
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "4aea39fc04fb91d8e7021423104edace6fb8cec414b1d5aa1abb4f71fb817d34",
+              "after_sha256": "5509eb45289d043e4debb58bc57e5b25f4a948e8bcfb3ca7c5517cf06a76b9bb",
+              "gradients_sha256": "82386572ff33e1af2e995683d530d3ff31e5b7514e22c51269cdefea0730ef8c"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 3.797672748565674,
+                "mode": 1.0395604372024536,
+                "begin": 0.6821014881134033,
+                "finish": 2.0760109424591064
+              },
+              "preclip_grad_norm": 3.0391950607299805,
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "53f4a71a00141f1771583ab550fcfad7693d0f4fecadfcfb35386900cdfd4c76",
+              "after_sha256": "9777af967968068d5fd2528d1de8098dd4977d7ccd002f4334f60e4596504bbd",
+              "gradients_sha256": "072fd2d2f6c0b15e543186c53f5827efe0fc384485e38206a08f9bee6dd7dba7"
+            }
+          ],
+          "frozen_core_equal": false,
+          "final_sha256": "e667621853f23b8fa65d82957aab00060f5a8d4c48dd779d8b6a3415e2c937d1"
+        }
+      }
+    }
+  ]
+}

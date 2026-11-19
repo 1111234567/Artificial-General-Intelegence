@@ -1,0 +1,44 @@
+{
+  "start": 92010001,
+  "worlds": 384,
+  "births": [
+    101,
+    137,
+    173,
+    211
+  ],
+  "interleave": 4,
+  "pairs": 12,
+  "probes": 8,
+  "balanced_stream": true,
+  "criterion": "For each sensory architecture choose by mean actual first B positive reward across the paired family interventions and all three discovery topologies, with physical contact and same-A signed receipt waveform in every world. The no-mirror voltage branch is the primary strict-sensory candidate. The opponent branch is a declared architectural reference.",
+  "discovery_sha256": "667d35c49b9e68e4c42554f63f7ea059f264bacba0fb0210bd3051f0a4b6efad",
+  "code": {
+    "symmetry_spike.py": "29242ab7f3b44d4332494c6aafbe1f4f4ff6314b699231f7d29fdb684f860dd2",
+    "symmetry_spike_run.py": "3e1a7cf00c2150d3db9caf23be8d50007ba469b1f7942e74b9f1c00522af540f",
+    "symmetry_world.py": "a45aed2f6c893b64428e49d9a9ee1ddfc2c73fe9f49de8d3ccde9c5b9c2877e0",
+    "mixture_flash.py": "35161d9cc196060b9bdb3742304b87a5c465fcb42443dc13c22f4afcadceab93"
+  },
+  "endpoint": "The actual contact immediately after the first rewarded B anchor; no query feedback is shown. Reports require both sign histories on at least 99% actual contact, exact A-waveform balance, same-world dual correctness, and hold/frozen-gain and scrambled-A contrasts.",
+  "learning": "Only local Hebbian correlation of signed recall and experienced taste, decays typed context-gated weight vectors. Outer selection uses the actual observed physical query reward, verified equal to correctness in deterministic probe. No learned initialization across evaluated worlds.",
+  "selected": "voltage-update_gain-correlation",
+  "skill": {
+    "encoding": "voltage",
+    "nodes": 32,
+    "recurrence": 0.36,
+    "signal": 1.36,
+    "receptor": 0.45,
+    "feature_trace": 0.67,
+    "leak": 0.55,
+    "read_clock": 5,
+    "memory_hold": 0.84,
+    "gain_hold": 0.965,
+    "gain_rate": 0.3,
+    "update_gain": "correlation",
+    "fixed_gain": null,
+    "share_habitats": false,
+    "address_power": 1,
+    "centering": 0.12,
+    "meta_fast_hold": 0.0
+  }
+}

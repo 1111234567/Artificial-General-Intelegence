@@ -1,0 +1,3981 @@
+{
+  "format": "symmetric-independent-training-audit-v1",
+  "passed": true,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "source": {
+    "path": "F:\\agi\\experiments\\learn_remember\\symmetric_training_audit.py",
+    "sha256": "3ab903eadab7c038299b5a8583059ac983e95fa7d3392569c434f1da031ac96d"
+  },
+  "source_bindings": {
+    "main_protocol_sha256": "34bb9f888062feb0d7d73ce31eb23e425b964a8ea125258e03b9be82d2721866",
+    "review_protocol_sha256": "678d1c90088b024aa77e687daaa926d5b36591a688045ac422b6375c14f70148",
+    "review_amendment_sha256": "88e2b5d46c0b34f1dd435d524b9685a1f63157fc003cf9e9ee34161f1b300be1",
+    "source_bindings": {
+      "F:\\agi\\experiments\\learn_remember\\symmetric_review.py": "79bf95adec6d51cb6b0eeb395a76ce1bf232e227afde93bc02814ff30afd881a",
+      "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+      "F:\\agi\\experiments\\learn_remember\\gru_review.py": "5f02ae3c1503fce63eca97fb7d7e0744723ebd42bc8a7dc4d54ac8ccb4e0a640",
+      "F:\\agi\\experiments\\learn_remember\\symmetric_gru.py": "9634884cc5fdf3e6dfa9d84a183a154444c69265c57b7bf5ab68ace8dac38a31"
+    }
+  },
+  "started_time": 1793687900.357389,
+  "finished_time": 1793688007.301273,
+  "per_seed": {
+    "0": {
+      "seed": 0,
+      "passed": true,
+      "endpoints": {
+        "random": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\random.pt",
+          "sha256": "8fc44024be73e5701a0e9bec654e951cf99d5d6ff2129555302e83b2017ff7f8",
+          "stage": "random",
+          "round": 0,
+          "saved_time": 1793687108.6286786,
+          "world_tick": 0,
+          "world_time": 0.0,
+          "work": {
+            "environment_ticks": 0,
+            "lane_ticks": 0,
+            "gradient_updates": 0,
+            "gradient_lane_ticks": 0,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [],
+          "optimizer_restore_hash": "d48b9a27d4562478aca74e069c2de857993cffbe8fa8fcd57a9579addd998931",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "short_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\short_mid.pt",
+          "sha256": "94be76078a7ab0a599eadf657ecb84c1172dd298bd3743537500dbff034f29b0",
+          "stage": "short",
+          "round": 2,
+          "saved_time": 1793687155.4468517,
+          "world_tick": 3072,
+          "world_time": 768.0,
+          "work": {
+            "environment_ticks": 3072,
+            "lane_ticks": 196608,
+            "gradient_updates": 768,
+            "gradient_lane_ticks": 6291456,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 768
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 768
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 768
+            }
+          ],
+          "optimizer_restore_hash": "5f4f8e0845416e1fce30c319f40a496542d730c369f5a336e2dfe54aac403588",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "short": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\short.pt",
+          "sha256": "ee143df8d5831f42cba456747687d3a5c86a09ebfc8de37c5234395dc28af41e",
+          "stage": "short",
+          "round": 5,
+          "saved_time": 1793687196.0922675,
+          "world_tick": 6144,
+          "world_time": 1536.0,
+          "work": {
+            "environment_ticks": 6144,
+            "lane_ticks": 393216,
+            "gradient_updates": 1536,
+            "gradient_lane_ticks": 12582912,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 1536
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 1536
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 1536
+            }
+          ],
+          "optimizer_restore_hash": "256d19eb652e84af556168410e5540ebeb4727f531d29bdd6d3a83c02ec8dfc8",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "wide_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\wide_mid.pt",
+          "sha256": "01526b626e0a7bc2b3e3af8656de8b844f68b633288b999c9ee943734a940fc1",
+          "stage": "wide",
+          "round": 7,
+          "saved_time": 1793687374.885244,
+          "world_tick": 14336,
+          "world_time": 3584.0,
+          "work": {
+            "environment_ticks": 14336,
+            "lane_ticks": 917504,
+            "gradient_updates": 3584,
+            "gradient_lane_ticks": 29360128,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 3584
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 3584
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 3584
+            }
+          ],
+          "optimizer_restore_hash": "f7a2b9cf5df24f3cab70182f624051c9b109d116dad8110726ed1393853300a2",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "wide": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\wide.pt",
+          "sha256": "cdca2ce11bcc13dbf1e6b058a05bea9e6b296e95cc124e9543e5c7e5068b1dea",
+          "stage": "wide",
+          "round": 15,
+          "saved_time": 1793687506.6474593,
+          "world_tick": 22528,
+          "world_time": 5632.0,
+          "work": {
+            "environment_ticks": 22528,
+            "lane_ticks": 1441792,
+            "gradient_updates": 5632,
+            "gradient_lane_ticks": 46137344,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 5632
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 5632
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 5632
+            }
+          ],
+          "optimizer_restore_hash": "15a5c2ced9482a56c8023e63c1071540f4d4148d1a92aa1a417720b739f810b5",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "withdrawal_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\withdrawal_mid.pt",
+          "sha256": "a8c787b16e51493d9d97cd8ad5f70a8da117abba600308572e228ef2293152b7",
+          "stage": "withdrawal",
+          "round": 5,
+          "saved_time": 1793687592.5866227,
+          "world_tick": 28672,
+          "world_time": 7168.0,
+          "work": {
+            "environment_ticks": 28672,
+            "lane_ticks": 1835008,
+            "gradient_updates": 7168,
+            "gradient_lane_ticks": 58720256,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 19,
+            "withdrawal_residual_family3_active_tick_slots": 537
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 7168
+            }
+          ],
+          "optimizer_restore_hash": "ccc089d81837214041a9c6f9ab797a41e72cf1b4569797675452c5d951f0f1f3",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "withdrawal": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\withdrawal.pt",
+          "sha256": "6a4aad8620e305a2d3302cf333b0ab15980009874cac9aab427d5c0c59b5eaeb",
+          "stage": "withdrawal",
+          "round": 11,
+          "saved_time": 1793687663.433674,
+          "world_tick": 34816,
+          "world_time": 8704.0,
+          "work": {
+            "environment_ticks": 34816,
+            "lane_ticks": 2228224,
+            "gradient_updates": 8704,
+            "gradient_lane_ticks": 71303168,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 19,
+            "withdrawal_residual_family3_active_tick_slots": 537
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 8704
+            }
+          ],
+          "optimizer_restore_hash": "edf25f97b71f18392ee5d5ca598088e7e3cc92f462b50f18bf03125c1fb667c3",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "review_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\review_mid.pt",
+          "sha256": "9406758620f9d7470f02de36542b2641752e75ad1fb6a21c96fb7b7d71a01347",
+          "stage": "review",
+          "round": 5,
+          "saved_time": 1793687800.727412,
+          "world_tick": 28672,
+          "world_time": 7168.0,
+          "work": {
+            "environment_ticks": 28672,
+            "lane_ticks": 1835008,
+            "gradient_updates": 7168,
+            "gradient_lane_ticks": 58720256,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 19,
+            "withdrawal_residual_family3_active_tick_slots": 537,
+            "review_updates": 192,
+            "review_gradient_lane_ticks": 1572864,
+            "review_family3_gradient_tick_slots": 824452,
+            "review_family3_nonwait_labels": 25564
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 7168
+            }
+          ],
+          "optimizer_restore_hash": "53014d395691f5c1220fd1c0df04e277c4f1ec4fb62b574585fade5c0233b762",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": {
+            "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\review_mid.packed.pt",
+            "sha256": "486e0be1fd7e1511b63feb2d08845409f64ce9389a91db43af2483f94051906d",
+            "native_model_optimizer_world_hidden_exact": true
+          }
+        },
+        "review": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\review.pt",
+          "sha256": "1cffec5092f7c41f975d96758d75100a9da6ad1871a35dabb7776f5fdbaf7c41",
+          "stage": "review",
+          "round": 11,
+          "saved_time": 1793687875.4269643,
+          "world_tick": 34816,
+          "world_time": 8704.0,
+          "work": {
+            "environment_ticks": 34816,
+            "lane_ticks": 2228224,
+            "gradient_updates": 8704,
+            "gradient_lane_ticks": 71303168,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 19,
+            "withdrawal_residual_family3_active_tick_slots": 537,
+            "review_updates": 384,
+            "review_gradient_lane_ticks": 3145728,
+            "review_family3_gradient_tick_slots": 1646520,
+            "review_family3_nonwait_labels": 50760
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 8704
+            }
+          ],
+          "optimizer_restore_hash": "501d21531d4eba1c917ea9bcc015ce4db47bde522acf366cf98c7796cd1810b9",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": {
+            "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\review.packed.pt",
+            "sha256": "aa6f9692101a8a3f0e14e320fb35628edfc1d9ed2de8272e40d5689353fbdcf0",
+            "native_model_optimizer_world_hidden_exact": true
+          }
+        }
+      },
+      "stages": {
+        "short": {
+          "environment_ticks": 6144,
+          "physical_world_time": 1536.0,
+          "lane_ticks": 393216,
+          "Adam_updates": 1536,
+          "gradient_lane_ticks": 12582912,
+          "sum_recorded_round_seconds": 87.40950160002103,
+          "checkpoint_elapsed_wall_seconds": 87.46358895301819,
+          "round_count": 6,
+          "full_world_replay_exact": true
+        },
+        "wide": {
+          "environment_ticks": 16384,
+          "physical_world_time": 4096.0,
+          "lane_ticks": 1048576,
+          "Adam_updates": 4096,
+          "gradient_lane_ticks": 33554432,
+          "sum_recorded_round_seconds": 310.3963921999966,
+          "checkpoint_elapsed_wall_seconds": 310.5551917552948,
+          "round_count": 16,
+          "full_world_replay_exact": true
+        },
+        "withdrawal": {
+          "environment_ticks": 12288,
+          "physical_world_time": 3072.0,
+          "lane_ticks": 786432,
+          "Adam_updates": 3072,
+          "gradient_lane_ticks": 25165824,
+          "sum_recorded_round_seconds": 156.663970399939,
+          "checkpoint_elapsed_wall_seconds": 156.7862148284912,
+          "round_count": 12,
+          "full_world_replay_exact": true
+        },
+        "review": {
+          "environment_ticks": 12288,
+          "physical_world_time": 3072.0,
+          "Adam_updates": 3072,
+          "round_count": 12,
+          "sum_recorded_round_seconds": 137.7343458000396,
+          "full_world_replay_exact": true,
+          "all12_external_event_fields_exact": true,
+          "all12_teacher_lane_masks_exact": true,
+          "initial_world_source": "wide.pt exact state used for independent replay",
+          "initial_hidden_bit_exact": true,
+          "reconstructed_source_optimizer_hash": "15a5c2ced9482a56c8023e63c1071540f4d4148d1a92aa1a417720b739f810b5",
+          "initial_optimizer_evidence": "Frozen constructor directly loads wide packed Adam; independent restoration reproduces its entire state exactly and matches recorded initial per-parameter steps. There is no separate raw before-first-update review optimizer snapshot."
+        }
+      },
+      "hidden_boundaries": [
+        {
+          "checkpoint": "random",
+          "next_trajectory": "trajectory_short_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "short_mid",
+          "next_trajectory": "trajectory_short_003.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "short",
+          "next_trajectory": "trajectory_wide_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide_mid",
+          "next_trajectory": "trajectory_wide_008.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide",
+          "next_trajectory": "trajectory_withdrawal_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "withdrawal_mid",
+          "next_trajectory": "trajectory_withdrawal_006.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide",
+          "next_trajectory": "trajectory_review_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "review_mid",
+          "next_trajectory": "trajectory_review_006.pt",
+          "hidden_exact": true
+        }
+      ],
+      "historical_rounds": {
+        "12": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 49673,
+          "family_tick_slots": [
+            31092,
+            31639,
+            33425,
+            34916
+          ],
+          "active_family_tick_slots": [
+            12012,
+            11681,
+            12789,
+            13191
+          ],
+          "nonwait_family_labels": [
+            903,
+            869,
+            930,
+            1013
+          ],
+          "command_families": [
+            382,
+            381,
+            414,
+            428
+          ]
+        },
+        "13": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 50539,
+          "family_tick_slots": [
+            32271,
+            32816,
+            31998,
+            33987
+          ],
+          "active_family_tick_slots": [
+            12360,
+            12435,
+            12470,
+            13274
+          ],
+          "nonwait_family_labels": [
+            1144,
+            1143,
+            1112,
+            1148
+          ],
+          "command_families": [
+            408,
+            380,
+            392,
+            395
+          ]
+        },
+        "14": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 50129,
+          "family_tick_slots": [
+            31026,
+            34219,
+            30554,
+            35273
+          ],
+          "active_family_tick_slots": [
+            11518,
+            13339,
+            12035,
+            13237
+          ],
+          "nonwait_family_labels": [
+            797,
+            915,
+            819,
+            861
+          ],
+          "command_families": [
+            381,
+            425,
+            390,
+            402
+          ]
+        },
+        "15": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 50774,
+          "family_tick_slots": [
+            32647,
+            30377,
+            35014,
+            33034
+          ],
+          "active_family_tick_slots": [
+            12341,
+            11333,
+            13897,
+            13203
+          ],
+          "nonwait_family_labels": [
+            1021,
+            1030,
+            1198,
+            1208
+          ],
+          "command_families": [
+            374,
+            347,
+            428,
+            425
+          ]
+        }
+      },
+      "review_dose": {
+        "review_updates": 384,
+        "live_updates": 2688,
+        "all_historical_tick_slots": 6291456,
+        "family3_historical_tick_slots": 1646520,
+        "active_historical_tick_slots": 2413380,
+        "family3_active_historical_tick_slots": 634860,
+        "historical_nonwait_labels": 193332,
+        "family3_historical_nonwait_labels": 50760,
+        "review_update_fraction": 0.125,
+        "old_family_fraction_of_history_positions": 0.2617073059082031,
+        "old_family_fraction_of_total_gradient_positions": 0.03271341323852539
+      },
+      "no_review_boundary_residual": {
+        "commands": 1,
+        "nonwait_labels": 19,
+        "active_tick_slots": 537,
+        "teacher_nonwait_labels": 19,
+        "labeled_requests": [
+          [
+            6,
+            1,
+            45057
+          ],
+          [
+            14,
+            1,
+            44995
+          ],
+          [
+            17,
+            1,
+            45063
+          ],
+          [
+            20,
+            1,
+            44981
+          ],
+          [
+            28,
+            0,
+            44956
+          ],
+          [
+            28,
+            1,
+            45003
+          ],
+          [
+            30,
+            1,
+            45055
+          ],
+          [
+            32,
+            1,
+            45049
+          ],
+          [
+            37,
+            1,
+            45053
+          ],
+          [
+            38,
+            1,
+            45011
+          ],
+          [
+            42,
+            1,
+            45013
+          ],
+          [
+            46,
+            1,
+            45027
+          ],
+          [
+            48,
+            1,
+            45045
+          ],
+          [
+            50,
+            0,
+            44962
+          ],
+          [
+            54,
+            0,
+            45018
+          ],
+          [
+            58,
+            1,
+            45031
+          ],
+          [
+            60,
+            1,
+            45055
+          ],
+          [
+            62,
+            1,
+            44997
+          ]
+        ],
+        "public_command_requests": [
+          [
+            17,
+            1,
+            45063
+          ]
+        ],
+        "nonwait_gradient_label_repetitions": 608
+      },
+      "review_boundary_residual": {
+        "commands": 1,
+        "nonwait_labels": 19,
+        "active_tick_slots": 537,
+        "teacher_nonwait_labels": 19,
+        "labeled_requests": [
+          [
+            6,
+            1,
+            45057
+          ],
+          [
+            14,
+            1,
+            44995
+          ],
+          [
+            17,
+            1,
+            45063
+          ],
+          [
+            20,
+            1,
+            44981
+          ],
+          [
+            28,
+            0,
+            44956
+          ],
+          [
+            28,
+            1,
+            45003
+          ],
+          [
+            30,
+            1,
+            45055
+          ],
+          [
+            32,
+            1,
+            45049
+          ],
+          [
+            37,
+            1,
+            45053
+          ],
+          [
+            38,
+            1,
+            45011
+          ],
+          [
+            42,
+            1,
+            45013
+          ],
+          [
+            46,
+            1,
+            45027
+          ],
+          [
+            48,
+            1,
+            45045
+          ],
+          [
+            50,
+            0,
+            44962
+          ],
+          [
+            54,
+            0,
+            45018
+          ],
+          [
+            58,
+            1,
+            45031
+          ],
+          [
+            60,
+            1,
+            45055
+          ],
+          [
+            62,
+            1,
+            44997
+          ]
+        ],
+        "public_command_requests": [
+          [
+            17,
+            1,
+            45063
+          ]
+        ],
+        "nonwait_gradient_label_repetitions": 532
+      },
+      "main_trajectories": [
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_short_000.pt",
+          "sha256": "290f341a1e55f44939292fca7fa90f868d81cf11599ffac6e07122b338493592",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_short_001.pt",
+          "sha256": "e69ef533e8078f902a0c5ee68905806ece5c7efab7365bcc67b68a3edea2c076",
+          "teacher_lanes": 48
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_short_002.pt",
+          "sha256": "451d20a33a30af5534a7fc65511bd850550bb26c094dde62e9b9b45affd3b8fd",
+          "teacher_lanes": 25
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_short_003.pt",
+          "sha256": "239cbc8092926acd2cafd90da421c27d26069c3d568f8221b7f52ee135ee21c0",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_short_004.pt",
+          "sha256": "ee74788592d2f0d452bf538cd99369e62a4468c311ee5138a77a6e9f0811583a",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_short_005.pt",
+          "sha256": "b335c5956f5fd15e44d5100f31749f9b607864ae9e9d7e07cf0024d96a0f547b",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_000.pt",
+          "sha256": "501302d71033dd3a3e1512d2f7165a9e72fc9a91d2f58d3c302c07cb8a679e61",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_001.pt",
+          "sha256": "1a8fe3b829257980e3c41367c0b8274ec12c5d0922c62e3e71587cbb643668d9",
+          "teacher_lanes": 57
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_002.pt",
+          "sha256": "27cf2053a9dd3b01fbdc46f3259054f171a358afae6bf289702e1c95a17a825e",
+          "teacher_lanes": 45
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_003.pt",
+          "sha256": "a1a67cfb4ab529debf0b718d12f4722de730f827165c3d4063e6d8852f2bf8b3",
+          "teacher_lanes": 45
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_004.pt",
+          "sha256": "2fcc9a24dbf3b863662e27698d114d81e5f4651c018cba12a2a302e361699384",
+          "teacher_lanes": 33
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_005.pt",
+          "sha256": "2576cad58060a8ff568245883db7e6c0aa1964e69ce7d531cadce6951f980ff9",
+          "teacher_lanes": 25
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_006.pt",
+          "sha256": "2d9b2cb9c8051d2717c6038a1baca7ea47cc75a88e92963450bcc800a856b626",
+          "teacher_lanes": 13
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_007.pt",
+          "sha256": "0c40de8a7b554f1b7f33fc8abf169c32f22979eb226e8242bab1d2b6f7f38245",
+          "teacher_lanes": 10
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_008.pt",
+          "sha256": "594bab138823dc533655ac4daeb82165527758b286e83d2bfa987573a0800511",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_009.pt",
+          "sha256": "cb2c0aff982e0efed5322ff0687a5a0b6a4f476740fb415128aff0d9db87a9dc",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_010.pt",
+          "sha256": "50b5a14c8825ff21803091ab0745aa4c991189e08dd683238b02b56c947d7d71",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_011.pt",
+          "sha256": "373a0d19a167d052ef23f8c55ab72a6b72cd8518588ca18dd7e837a0fb9a90f6",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_012.pt",
+          "sha256": "b7cf877521cd4b8ff0f65f28e8bb2aa0f656397cea9b54425ebc151377556b26",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_013.pt",
+          "sha256": "9cfe9d9bac018090381e114fcbcaa8d540e8569cd06d9fc4e3642dfd65bbd2a3",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_014.pt",
+          "sha256": "7c077fb18ff3724fd74babe6e781cdfbd61037c75e5b116abc2c66acc823db48",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_wide_015.pt",
+          "sha256": "4a71eb83879e2577d6af671c129f8ea0e25b2b1281e1cb7428a3f2913b1344e9",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_000.pt",
+          "sha256": "0a04cefeb4ac721e505a4b8834c2f593844ee85f703763d2845ab909f88686ce",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_001.pt",
+          "sha256": "dc44e8fb3bf42697f3ed7e6535c45c9d1bb2c8cde080c2ad4dd8bfe7cda20892",
+          "teacher_lanes": 57
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_002.pt",
+          "sha256": "f6acdf592d53133f09c04b63d4bb7802852a7b84bc1826820da378e0a5dc6d6e",
+          "teacher_lanes": 41
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_003.pt",
+          "sha256": "40245de20039ee1223fa8c817b4e9436ab876e92136ae78f02852174d7efc913",
+          "teacher_lanes": 36
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_004.pt",
+          "sha256": "32b78291e8aafc170f47753e2df64115338b6bf21a4f916c73da00d0cb360c29",
+          "teacher_lanes": 22
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_005.pt",
+          "sha256": "60a0e26cb162356dc2f128e85f68258fa7fcbb4e98a07fe012ffaf9fe58c7f73",
+          "teacher_lanes": 13
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_006.pt",
+          "sha256": "3e67a91f536073c3c8ea0a4766b5ed94b474a129a51553d376c52c0ea7eec289",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_007.pt",
+          "sha256": "1a214bc76ca77c413eca857b9085e8b032988ebaa38d2d924c00d0b8cc04accc",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_008.pt",
+          "sha256": "967d3b80afd2ec16cae9e898b61b5c8f17280349f0feab1ed7bd2df023e024e7",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_009.pt",
+          "sha256": "fe88aabe953fa6fbe0d1805cc98909ac3c48706a69a29414e796de5a7fc0569d",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_010.pt",
+          "sha256": "4ff1ed4c3461f6c0dec743fcb3e071a808e5cec9c072090a05c47ec835fbaed4",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\trajectory_withdrawal_011.pt",
+          "sha256": "151928e197d6b7a03f226e4ff8d47365465d01b4e209df069209e5421ecaddb9",
+          "teacher_lanes": 0
+        }
+      ],
+      "review_source_audit_sha256": "e5982f3033b53b86acd51ae525cbd320455f5fd3b4ede194fbca3c643de7b1e0",
+      "review_plan_sha256": "b049afdfd8f371e4535ba8223a62f044501370d4a7b91e224665ecc49e9af01b"
+    },
+    "1": {
+      "seed": 1,
+      "passed": true,
+      "endpoints": {
+        "random": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\random.pt",
+          "sha256": "f05ce430bda6743aec74332df79da9d99a25afe6a22734aeeebc0ffc24bf1c1d",
+          "stage": "random",
+          "round": 0,
+          "saved_time": 1793687108.6282542,
+          "world_tick": 0,
+          "world_time": 0.0,
+          "work": {
+            "environment_ticks": 0,
+            "lane_ticks": 0,
+            "gradient_updates": 0,
+            "gradient_lane_ticks": 0,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [],
+          "optimizer_restore_hash": "d48b9a27d4562478aca74e069c2de857993cffbe8fa8fcd57a9579addd998931",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "short_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\short_mid.pt",
+          "sha256": "ef2e6f5368470f973d515154d09229e8194731cc32c936a3f53886dc76f24414",
+          "stage": "short",
+          "round": 2,
+          "saved_time": 1793687155.3575888,
+          "world_tick": 3072,
+          "world_time": 768.0,
+          "work": {
+            "environment_ticks": 3072,
+            "lane_ticks": 196608,
+            "gradient_updates": 768,
+            "gradient_lane_ticks": 6291456,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 768
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 768
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 768
+            }
+          ],
+          "optimizer_restore_hash": "6453d6582cebafd2b64f338a656d071b14829e25841e376b3d3a08131890bfac",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "short": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\short.pt",
+          "sha256": "885fb5a7a274242d110a009520ab161b070fa475c73c51d16803558b053a2fa8",
+          "stage": "short",
+          "round": 5,
+          "saved_time": 1793687191.8157547,
+          "world_tick": 6144,
+          "world_time": 1536.0,
+          "work": {
+            "environment_ticks": 6144,
+            "lane_ticks": 393216,
+            "gradient_updates": 1536,
+            "gradient_lane_ticks": 12582912,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 1536
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 1536
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 1536
+            }
+          ],
+          "optimizer_restore_hash": "a0e00d9e63673ad0ad1a2e3454c1b81f5937e7ff18390bf76d6e74cf00a76d25",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "wide_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\wide_mid.pt",
+          "sha256": "88976f810e23edc094aa9a5b16a9ba1dbf5cc2bb2ee04c48a2caa4570d368c61",
+          "stage": "wide",
+          "round": 7,
+          "saved_time": 1793687356.2183344,
+          "world_tick": 14336,
+          "world_time": 3584.0,
+          "work": {
+            "environment_ticks": 14336,
+            "lane_ticks": 917504,
+            "gradient_updates": 3584,
+            "gradient_lane_ticks": 29360128,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 3584
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 3584
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 3584
+            }
+          ],
+          "optimizer_restore_hash": "37c70aefdab0148fbe8817c40e0cf70061c3c37d4bcac7d134cd7208a52d5cfc",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "wide": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\wide.pt",
+          "sha256": "6351b32a29e28f3bac4dc602597ee256021419b7af59625310e95836231e3bf5",
+          "stage": "wide",
+          "round": 15,
+          "saved_time": 1793687504.6022248,
+          "world_tick": 22528,
+          "world_time": 5632.0,
+          "work": {
+            "environment_ticks": 22528,
+            "lane_ticks": 1441792,
+            "gradient_updates": 5632,
+            "gradient_lane_ticks": 46137344,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 5632
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 5632
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 5632
+            }
+          ],
+          "optimizer_restore_hash": "37b8a8a16c81faf0af3d902ba348538105aa66bf8925b4f2c26fe1c7d50490cb",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "withdrawal_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\withdrawal_mid.pt",
+          "sha256": "2a33bd910aee729d81682acdc628b0702fbf381ed683f59e57a08cabef390b13",
+          "stage": "withdrawal",
+          "round": 5,
+          "saved_time": 1793687591.8036795,
+          "world_tick": 28672,
+          "world_time": 7168.0,
+          "work": {
+            "environment_ticks": 28672,
+            "lane_ticks": 1835008,
+            "gradient_updates": 7168,
+            "gradient_lane_ticks": 58720256,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 11,
+            "withdrawal_residual_family3_active_tick_slots": 266
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 7168
+            }
+          ],
+          "optimizer_restore_hash": "04e80aa9f35c992a6dcf784c273d634c97376c77a10db217c7d84d9efad122ea",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "withdrawal": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\withdrawal.pt",
+          "sha256": "7e80d7c52d7e70cbb8e9a0a21b51326421a53c1c85b15dda7a1eb360d3e49246",
+          "stage": "withdrawal",
+          "round": 11,
+          "saved_time": 1793687660.4428782,
+          "world_tick": 34816,
+          "world_time": 8704.0,
+          "work": {
+            "environment_ticks": 34816,
+            "lane_ticks": 2228224,
+            "gradient_updates": 8704,
+            "gradient_lane_ticks": 71303168,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 11,
+            "withdrawal_residual_family3_active_tick_slots": 266
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 8704
+            }
+          ],
+          "optimizer_restore_hash": "982ba8ee1d0bfaf2ceda4b5ddb5d9175d98bfb3bf4f9bd36e174b8a911046394",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "review_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\review_mid.pt",
+          "sha256": "b91453aa0b01633e08335f316eb5ef544c5cb2d905ec79ed709181621ccbe3c1",
+          "stage": "review",
+          "round": 5,
+          "saved_time": 1793687819.9910824,
+          "world_tick": 28672,
+          "world_time": 7168.0,
+          "work": {
+            "environment_ticks": 28672,
+            "lane_ticks": 1835008,
+            "gradient_updates": 7168,
+            "gradient_lane_ticks": 58720256,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 11,
+            "withdrawal_residual_family3_active_tick_slots": 266,
+            "review_updates": 192,
+            "review_gradient_lane_ticks": 1572864,
+            "review_family3_gradient_tick_slots": 817800,
+            "review_family3_nonwait_labels": 25196
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 7168
+            }
+          ],
+          "optimizer_restore_hash": "bc7543dbc0f879b2fadae07adfb5b061406174dc748a3ef5feba1fea3744afbd",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": {
+            "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\review_mid.packed.pt",
+            "sha256": "60c36a60ee0ee8a51e6c183b584b248b39957f12a946a19f021c685f62c17d9c",
+            "native_model_optimizer_world_hidden_exact": true
+          }
+        },
+        "review": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\review.pt",
+          "sha256": "3d40bb18c948cbb36307863ea31889374ab1e8d180e0a6d894d88b0761ad9f61",
+          "stage": "review",
+          "round": 11,
+          "saved_time": 1793687879.7806656,
+          "world_tick": 34816,
+          "world_time": 8704.0,
+          "work": {
+            "environment_ticks": 34816,
+            "lane_ticks": 2228224,
+            "gradient_updates": 8704,
+            "gradient_lane_ticks": 71303168,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 1,
+            "withdrawal_residual_family3_labels": 11,
+            "withdrawal_residual_family3_active_tick_slots": 266,
+            "review_updates": 384,
+            "review_gradient_lane_ticks": 3145728,
+            "review_family3_gradient_tick_slots": 1638972,
+            "review_family3_nonwait_labels": 49620
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 8704
+            }
+          ],
+          "optimizer_restore_hash": "81735dec73204dee738b8125c69f3f5c0081243fce6bb0cd3c8c2a8198e388b6",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": {
+            "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\review.packed.pt",
+            "sha256": "6330a8a311cdcd08e06f4d10e21f0e3555b59447f69d8635054c677cce625543",
+            "native_model_optimizer_world_hidden_exact": true
+          }
+        }
+      },
+      "stages": {
+        "short": {
+          "environment_ticks": 6144,
+          "physical_world_time": 1536.0,
+          "lane_ticks": 393216,
+          "Adam_updates": 1536,
+          "gradient_lane_ticks": 12582912,
+          "sum_recorded_round_seconds": 83.12968739998178,
+          "checkpoint_elapsed_wall_seconds": 83.18750047683716,
+          "round_count": 6,
+          "full_world_replay_exact": true
+        },
+        "wide": {
+          "environment_ticks": 16384,
+          "physical_world_time": 4096.0,
+          "lane_ticks": 1048576,
+          "Adam_updates": 4096,
+          "gradient_lane_ticks": 33554432,
+          "sum_recorded_round_seconds": 312.6952505999652,
+          "checkpoint_elapsed_wall_seconds": 312.78647017478943,
+          "round_count": 16,
+          "full_world_replay_exact": true
+        },
+        "withdrawal": {
+          "environment_ticks": 12288,
+          "physical_world_time": 3072.0,
+          "lane_ticks": 786432,
+          "Adam_updates": 3072,
+          "gradient_lane_ticks": 25165824,
+          "sum_recorded_round_seconds": 155.75204140003189,
+          "checkpoint_elapsed_wall_seconds": 155.84065341949463,
+          "round_count": 12,
+          "full_world_replay_exact": true
+        },
+        "review": {
+          "environment_ticks": 12288,
+          "physical_world_time": 3072.0,
+          "Adam_updates": 3072,
+          "round_count": 12,
+          "sum_recorded_round_seconds": 136.34661559996312,
+          "full_world_replay_exact": true,
+          "all12_external_event_fields_exact": true,
+          "all12_teacher_lane_masks_exact": true,
+          "initial_world_source": "wide.pt exact state used for independent replay",
+          "initial_hidden_bit_exact": true,
+          "reconstructed_source_optimizer_hash": "37b8a8a16c81faf0af3d902ba348538105aa66bf8925b4f2c26fe1c7d50490cb",
+          "initial_optimizer_evidence": "Frozen constructor directly loads wide packed Adam; independent restoration reproduces its entire state exactly and matches recorded initial per-parameter steps. There is no separate raw before-first-update review optimizer snapshot."
+        }
+      },
+      "hidden_boundaries": [
+        {
+          "checkpoint": "random",
+          "next_trajectory": "trajectory_short_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "short_mid",
+          "next_trajectory": "trajectory_short_003.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "short",
+          "next_trajectory": "trajectory_wide_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide_mid",
+          "next_trajectory": "trajectory_wide_008.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide",
+          "next_trajectory": "trajectory_withdrawal_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "withdrawal_mid",
+          "next_trajectory": "trajectory_withdrawal_006.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide",
+          "next_trajectory": "trajectory_review_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "review_mid",
+          "next_trajectory": "trajectory_review_006.pt",
+          "hidden_exact": true
+        }
+      ],
+      "historical_rounds": {
+        "12": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 48843,
+          "family_tick_slots": [
+            31936,
+            32509,
+            33652,
+            32975
+          ],
+          "active_family_tick_slots": [
+            11313,
+            12533,
+            12975,
+            12022
+          ],
+          "nonwait_family_labels": [
+            966,
+            994,
+            963,
+            1024
+          ],
+          "command_families": [
+            371,
+            388,
+            407,
+            384
+          ]
+        },
+        "13": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 49155,
+          "family_tick_slots": [
+            31584,
+            31051,
+            33543,
+            34894
+          ],
+          "active_family_tick_slots": [
+            11934,
+            11028,
+            12848,
+            13345
+          ],
+          "nonwait_family_labels": [
+            1033,
+            1012,
+            1072,
+            1140
+          ],
+          "command_families": [
+            385,
+            373,
+            390,
+            441
+          ]
+        },
+        "14": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 49953,
+          "family_tick_slots": [
+            32019,
+            33222,
+            30174,
+            35657
+          ],
+          "active_family_tick_slots": [
+            12151,
+            12219,
+            11707,
+            13876
+          ],
+          "nonwait_family_labels": [
+            966,
+            1014,
+            911,
+            1128
+          ],
+          "command_families": [
+            394,
+            412,
+            362,
+            436
+          ]
+        },
+        "15": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 48835,
+          "family_tick_slots": [
+            34091,
+            31401,
+            32525,
+            33055
+          ],
+          "active_family_tick_slots": [
+            12668,
+            12244,
+            12080,
+            11843
+          ],
+          "nonwait_family_labels": [
+            860,
+            773,
+            796,
+            843
+          ],
+          "command_families": [
+            412,
+            389,
+            401,
+            397
+          ]
+        }
+      },
+      "review_dose": {
+        "review_updates": 384,
+        "live_updates": 2688,
+        "all_historical_tick_slots": 6291456,
+        "family3_historical_tick_slots": 1638972,
+        "active_historical_tick_slots": 2361432,
+        "family3_active_historical_tick_slots": 613032,
+        "historical_nonwait_labels": 185940,
+        "family3_historical_nonwait_labels": 49620,
+        "review_update_fraction": 0.125,
+        "old_family_fraction_of_history_positions": 0.26050758361816406,
+        "old_family_fraction_of_total_gradient_positions": 0.03256344795227051
+      },
+      "no_review_boundary_residual": {
+        "commands": 1,
+        "nonwait_labels": 11,
+        "active_tick_slots": 266,
+        "teacher_nonwait_labels": 11,
+        "labeled_requests": [
+          [
+            4,
+            1,
+            45071
+          ],
+          [
+            5,
+            0,
+            45016
+          ],
+          [
+            6,
+            1,
+            45037
+          ],
+          [
+            16,
+            1,
+            45005
+          ],
+          [
+            21,
+            0,
+            44942
+          ],
+          [
+            45,
+            1,
+            45041
+          ],
+          [
+            46,
+            1,
+            45041
+          ],
+          [
+            49,
+            0,
+            45012
+          ],
+          [
+            57,
+            0,
+            45048
+          ],
+          [
+            60,
+            0,
+            44974
+          ]
+        ],
+        "public_command_requests": [
+          [
+            4,
+            1,
+            45071
+          ]
+        ],
+        "nonwait_gradient_label_repetitions": 352
+      },
+      "review_boundary_residual": {
+        "commands": 1,
+        "nonwait_labels": 11,
+        "active_tick_slots": 266,
+        "teacher_nonwait_labels": 11,
+        "labeled_requests": [
+          [
+            4,
+            1,
+            45071
+          ],
+          [
+            5,
+            0,
+            45016
+          ],
+          [
+            6,
+            1,
+            45037
+          ],
+          [
+            16,
+            1,
+            45005
+          ],
+          [
+            21,
+            0,
+            44942
+          ],
+          [
+            45,
+            1,
+            45041
+          ],
+          [
+            46,
+            1,
+            45041
+          ],
+          [
+            49,
+            0,
+            45012
+          ],
+          [
+            57,
+            0,
+            45048
+          ],
+          [
+            60,
+            0,
+            44974
+          ]
+        ],
+        "public_command_requests": [
+          [
+            4,
+            1,
+            45071
+          ]
+        ],
+        "nonwait_gradient_label_repetitions": 308
+      },
+      "main_trajectories": [
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_short_000.pt",
+          "sha256": "7fe7015bc881cb74e2a1530525487d18a493d1e3b83c7e77a535ccf0b592c447",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_short_001.pt",
+          "sha256": "61d6d30ac0aeebc582540825e2dc4a80927051d114f4c820a35f63550634e6e2",
+          "teacher_lanes": 48
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_short_002.pt",
+          "sha256": "33994a3fed1b77994f1847b52fe0ed36d21045b824ad8fae1893d5266ba06739",
+          "teacher_lanes": 20
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_short_003.pt",
+          "sha256": "a0cdf7e341e4788f3bfef5c7629edbd5cbbbe75a4ddcabf90f49a71cf5730dfc",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_short_004.pt",
+          "sha256": "2226a2d48ab6249877c8c61dcb72cc50e93b85b0ba052c9046c2a3a5c49c38ac",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_short_005.pt",
+          "sha256": "007f1e616adca743a55864a00c8cd8332591d2b927836998af1c87fbf7f75c2b",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_000.pt",
+          "sha256": "0340f7eb5ab319ee4d9db58809fbdf3fff81ce7e9024cec23657bd0de9f8a099",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_001.pt",
+          "sha256": "532acf59ea19324afce9910b48a8a49b992659936d68d09e4095f3a6ac484d87",
+          "teacher_lanes": 57
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_002.pt",
+          "sha256": "03510903105af92cd91f08c4c1ca6da389cede40115f10bc67576ab44b90c1d6",
+          "teacher_lanes": 47
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_003.pt",
+          "sha256": "435cfab479ab542a310376c16c4ff9fcf17175aa42bc6dbfbd60be16cccf1664",
+          "teacher_lanes": 41
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_004.pt",
+          "sha256": "4773f13a429c666cb36e4c6856066a3bcd681a686ca6eaf1f0cf2f23004352f5",
+          "teacher_lanes": 39
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_005.pt",
+          "sha256": "3d11769044687b08ae92f8e67af5eba7d1f3bba81315af1bbf947e2d4eb9f2d2",
+          "teacher_lanes": 26
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_006.pt",
+          "sha256": "92d3d002c03b396bad9f286d478dc1e56a494a7ae05519b1983c102e06c4cd07",
+          "teacher_lanes": 17
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_007.pt",
+          "sha256": "547172b5d1d9cbb9bc29b12c148db830d0a0009fe397fe948a46340b9438696a",
+          "teacher_lanes": 10
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_008.pt",
+          "sha256": "adef9a177400814a045880cb391f64ad58d6e1071d97a6ab5b3f1b366d1a43a6",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_009.pt",
+          "sha256": "7a9bbd974710a435b610f3f49be9500e1d0dbda23d640cc6347fe59ab2b680ef",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_010.pt",
+          "sha256": "90eeac2dff8faef63dcfe2245d6f24b99f777957c3ff0db8d023628bab34484a",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_011.pt",
+          "sha256": "9845a2ce24ef1a2b90ab8e0e6cfa6403b8cd95c5f604ee47d212c60cf06e798c",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_012.pt",
+          "sha256": "ab23b9410d9bab5a22bf27774c0dd622bc118c93105a3860dd687d0f81ed64c3",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_013.pt",
+          "sha256": "d15522a4cd4f308035d256fa3c917511eaaa1109d1890909bf777bc6c4afc336",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_014.pt",
+          "sha256": "d44f5348f2cf98704a35892191f13e02dfc5e5240c94dbcb4c6b03979ec38ba3",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_wide_015.pt",
+          "sha256": "a8bc5d021d3115d42f0f5ad0e01cb1620dc44b460c7648e9903e013afb7ab734",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_000.pt",
+          "sha256": "7a388ed47e253baac4d5230135d5b3260f2bf12f15f5bce93aef91dd0bf78148",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_001.pt",
+          "sha256": "dd00f01865e2b062d08863d6c5417d6589d659861f6ce3f836fe5b8ab1522f44",
+          "teacher_lanes": 58
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_002.pt",
+          "sha256": "54339b10648cf9d40a34ab018ccad19a8e96b7070e6dbf4c43672c29a3b4496e",
+          "teacher_lanes": 47
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_003.pt",
+          "sha256": "d35431656aad9c444c948efc5522ae83ff93b6fccef0f3c65ae406c8c5b404cb",
+          "teacher_lanes": 32
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_004.pt",
+          "sha256": "7a91ea74a2ac6d40cf8660f69a8ad63b142126396c815af0a2e69d18fed59f6a",
+          "teacher_lanes": 25
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_005.pt",
+          "sha256": "5b7270f8961bc6ec1afa0fb862b9a547cc0dcc0adba8b27e141762b5d5ecc526",
+          "teacher_lanes": 14
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_006.pt",
+          "sha256": "916650f48475f1b5d35eec8739f7f92354740438a16d677484373cd9119be75e",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_007.pt",
+          "sha256": "661a344e0f5213233d37e1c8a8186489838971bf02bc3a4d10729c1d5b36fe8c",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_008.pt",
+          "sha256": "b6932b11ad318720a422881e56697e08fd10fc62275ac4d1452baa21410cac0c",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_009.pt",
+          "sha256": "efb7f57566d94daedb28ede03300b1dadd8785a55b26fb4c6da7be536c2f6136",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_010.pt",
+          "sha256": "f3943dd4c92d02b205fd4816b6c865249647774614967f8011e9d968d92db999",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\trajectory_withdrawal_011.pt",
+          "sha256": "0ada69a6efce569a4847d5c87b21364e760dca2d41df2c6ccdfd7d0740384e6c",
+          "teacher_lanes": 0
+        }
+      ],
+      "review_source_audit_sha256": "57bcebfd9553715f9d32badcb35e2d99711c961f39bea675991435902effc8d2",
+      "review_plan_sha256": "260324a27ffff7ba2a1043cf31f5c7b8ad4b2066314c9173f1d6b45f81cfbf62"
+    },
+    "2": {
+      "seed": 2,
+      "passed": true,
+      "endpoints": {
+        "random": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\random.pt",
+          "sha256": "4f6ff363b2b1ae8d0ca3fa1ee804a7d0ce34bd2b721a9f6de3af6fd847e0f7cb",
+          "stage": "random",
+          "round": 0,
+          "saved_time": 1793687108.6285825,
+          "world_tick": 0,
+          "world_time": 0.0,
+          "work": {
+            "environment_ticks": 0,
+            "lane_ticks": 0,
+            "gradient_updates": 0,
+            "gradient_lane_ticks": 0,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [],
+          "optimizer_restore_hash": "d48b9a27d4562478aca74e069c2de857993cffbe8fa8fcd57a9579addd998931",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "short_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\short_mid.pt",
+          "sha256": "fe790c9868df5a0128b4cfc37625a9039919d5a54be4049b22089477d73e698f",
+          "stage": "short",
+          "round": 2,
+          "saved_time": 1793687155.196756,
+          "world_tick": 3072,
+          "world_time": 768.0,
+          "work": {
+            "environment_ticks": 3072,
+            "lane_ticks": 196608,
+            "gradient_updates": 768,
+            "gradient_lane_ticks": 6291456,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 768
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 768
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 768
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 768
+            }
+          ],
+          "optimizer_restore_hash": "540a700bc4a1c412b42637b71cda937a7847b144769c4449f83eb5206faabddd",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "short": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\short.pt",
+          "sha256": "a8e33a4c3a0514b78de7ab9f4ffe0e79a810231a7c38c4e73a4004d60e5f465e",
+          "stage": "short",
+          "round": 5,
+          "saved_time": 1793687196.3664598,
+          "world_tick": 6144,
+          "world_time": 1536.0,
+          "work": {
+            "environment_ticks": 6144,
+            "lane_ticks": 393216,
+            "gradient_updates": 1536,
+            "gradient_lane_ticks": 12582912,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 1536
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 1536
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 1536
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 1536
+            }
+          ],
+          "optimizer_restore_hash": "a16f77f6791d6868253142810a12432358c04c7f48fe6542edbd74d6e7cad2c8",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "wide_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\wide_mid.pt",
+          "sha256": "59c5aa25ec61accd4989c1f0ee559c0efe180f868a2bc71f7147b62cb1b2fa3f",
+          "stage": "wide",
+          "round": 7,
+          "saved_time": 1793687361.7206533,
+          "world_tick": 14336,
+          "world_time": 3584.0,
+          "work": {
+            "environment_ticks": 14336,
+            "lane_ticks": 917504,
+            "gradient_updates": 3584,
+            "gradient_lane_ticks": 29360128,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 3584
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 3584
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 3584
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 3584
+            }
+          ],
+          "optimizer_restore_hash": "ea41d51b5e0208df303560c7056f78e3119dcb10d3c2e804c92a0018cfb5e18a",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "wide": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\wide.pt",
+          "sha256": "457a96fb293833249301cc4860d330ad57177d2bc25b2f32539ebd4053fff16e",
+          "stage": "wide",
+          "round": 15,
+          "saved_time": 1793687506.644523,
+          "world_tick": 22528,
+          "world_time": 5632.0,
+          "work": {
+            "environment_ticks": 22528,
+            "lane_ticks": 1441792,
+            "gradient_updates": 5632,
+            "gradient_lane_ticks": 46137344,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 0,
+            "withdrawal_residual_family3_labels": 0,
+            "withdrawal_residual_family3_active_tick_slots": 0
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 5632
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 5632
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 5632
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 5632
+            }
+          ],
+          "optimizer_restore_hash": "548709affdae4a6222ec89197364b13b14757a31c29b954dc4b5f43ff86230a1",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "withdrawal_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\withdrawal_mid.pt",
+          "sha256": "2a5e0acbc5d08da5abcbe6e1aee1234cbad7c96b2a69a08297309182187426e7",
+          "stage": "withdrawal",
+          "round": 5,
+          "saved_time": 1793687591.891134,
+          "world_tick": 28672,
+          "world_time": 7168.0,
+          "work": {
+            "environment_ticks": 28672,
+            "lane_ticks": 1835008,
+            "gradient_updates": 7168,
+            "gradient_lane_ticks": 58720256,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 3,
+            "withdrawal_residual_family3_labels": 15,
+            "withdrawal_residual_family3_active_tick_slots": 361
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 7168
+            }
+          ],
+          "optimizer_restore_hash": "622ab169f26362c3da818b9f244905de9ceeb066577ec909c6dc832e556ab77d",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "withdrawal": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\withdrawal.pt",
+          "sha256": "efbbe671e00683a2b7cdc0b480611013d4a55817db63a268d13c8098dbc074bd",
+          "stage": "withdrawal",
+          "round": 11,
+          "saved_time": 1793687667.6287959,
+          "world_tick": 34816,
+          "world_time": 8704.0,
+          "work": {
+            "environment_ticks": 34816,
+            "lane_ticks": 2228224,
+            "gradient_updates": 8704,
+            "gradient_lane_ticks": 71303168,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 3,
+            "withdrawal_residual_family3_labels": 15,
+            "withdrawal_residual_family3_active_tick_slots": 361
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 8704
+            }
+          ],
+          "optimizer_restore_hash": "799c86546bbc835772db1ff7a11e9cdacd873cbcfffbefcc0c7066a66509f156",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": null
+        },
+        "review_mid": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\review_mid.pt",
+          "sha256": "f6e5a32e837e8df0862ee673cfbfcf5afca8d9f6cd920c76492fbf6e51a72a7c",
+          "stage": "review",
+          "round": 5,
+          "saved_time": 1793687809.2906253,
+          "world_tick": 28672,
+          "world_time": 7168.0,
+          "work": {
+            "environment_ticks": 28672,
+            "lane_ticks": 1835008,
+            "gradient_updates": 7168,
+            "gradient_lane_ticks": 58720256,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 3,
+            "withdrawal_residual_family3_labels": 15,
+            "withdrawal_residual_family3_active_tick_slots": 361,
+            "review_updates": 192,
+            "review_gradient_lane_ticks": 1572864,
+            "review_family3_gradient_tick_slots": 759856,
+            "review_family3_nonwait_labels": 23996
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 7168
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 7168
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 7168
+            }
+          ],
+          "optimizer_restore_hash": "ac6f46b0296cc42340431b90f388085c68e971098f48282605f3d432ae453320",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": {
+            "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\review_mid.packed.pt",
+            "sha256": "9723a818ad54cf31d0e7c5212f29dd73c6db5b46afde23c1593f1188efd945cb",
+            "native_model_optimizer_world_hidden_exact": true
+          }
+        },
+        "review": {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\review.pt",
+          "sha256": "85fed0d6d48fa591fcb312c1dbb719f27a6d5278336c499c9ff507ea27f8c582",
+          "stage": "review",
+          "round": 11,
+          "saved_time": 1793687875.4328501,
+          "world_tick": 34816,
+          "world_time": 8704.0,
+          "work": {
+            "environment_ticks": 34816,
+            "lane_ticks": 2228224,
+            "gradient_updates": 8704,
+            "gradient_lane_ticks": 71303168,
+            "replay_family3_during_withdrawal": 0,
+            "withdrawal_residual_family3_commands": 3,
+            "withdrawal_residual_family3_labels": 15,
+            "withdrawal_residual_family3_active_tick_slots": 361,
+            "review_updates": 384,
+            "review_gradient_lane_ticks": 3145728,
+            "review_family3_gradient_tick_slots": 1524372,
+            "review_family3_nonwait_labels": 47556
+          },
+          "true_trainable_parameters": 93238,
+          "deployed_dense_coordinates": 148246,
+          "independent_pair_coordinates": 55584,
+          "layers": [
+            {
+              "layer": 0,
+              "gates": [
+                "reset",
+                "update",
+                "new"
+              ],
+              "all_three_exactly_symmetric": true,
+              "unique_per_gate": 18528,
+              "unique_diagonal_per_gate": 192,
+              "unique_nondiagonal_per_gate": 18336
+            }
+          ],
+          "packed_Adam": [
+            {
+              "name": "core.weight_ih_l0",
+              "shape": [
+                576,
+                56
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_ih_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.bias_hh_l0",
+              "shape": [
+                576
+              ],
+              "step": 8704
+            },
+            {
+              "name": "core.parametrizations.weight_hh_l0.original",
+              "shape": [
+                3,
+                18528
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.weight",
+              "shape": [
+                22,
+                192
+              ],
+              "step": 8704
+            },
+            {
+              "name": "head.bias",
+              "shape": [
+                22
+              ],
+              "step": 8704
+            }
+          ],
+          "optimizer_restore_hash": "1bdc2c49c2d174b23c8a55afa1d132b58afe7260ce70b282d29421702075e8dc",
+          "dense_packed_next_forward_bit_exact": true,
+          "native_packed_endpoint": {
+            "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\review.packed.pt",
+            "sha256": "dbc6c9a47adf34b215c1ddf1134e29d472a9cacd821d16fc5596efa3fa3f7fa8",
+            "native_model_optimizer_world_hidden_exact": true
+          }
+        }
+      },
+      "stages": {
+        "short": {
+          "environment_ticks": 6144,
+          "physical_world_time": 1536.0,
+          "lane_ticks": 393216,
+          "Adam_updates": 1536,
+          "gradient_lane_ticks": 12582912,
+          "sum_recorded_round_seconds": 87.68346360002761,
+          "checkpoint_elapsed_wall_seconds": 87.737877368927,
+          "round_count": 6,
+          "full_world_replay_exact": true
+        },
+        "wide": {
+          "environment_ticks": 16384,
+          "physical_world_time": 4096.0,
+          "lane_ticks": 1048576,
+          "Adam_updates": 4096,
+          "gradient_lane_ticks": 33554432,
+          "sum_recorded_round_seconds": 310.1779141999723,
+          "checkpoint_elapsed_wall_seconds": 310.27806305885315,
+          "round_count": 16,
+          "full_world_replay_exact": true
+        },
+        "withdrawal": {
+          "environment_ticks": 12288,
+          "physical_world_time": 3072.0,
+          "lane_ticks": 786432,
+          "Adam_updates": 3072,
+          "gradient_lane_ticks": 25165824,
+          "sum_recorded_round_seconds": 160.8418596999254,
+          "checkpoint_elapsed_wall_seconds": 160.98427295684814,
+          "round_count": 12,
+          "full_world_replay_exact": true
+        },
+        "review": {
+          "environment_ticks": 12288,
+          "physical_world_time": 3072.0,
+          "Adam_updates": 3072,
+          "round_count": 12,
+          "sum_recorded_round_seconds": 135.15912709993427,
+          "full_world_replay_exact": true,
+          "all12_external_event_fields_exact": true,
+          "all12_teacher_lane_masks_exact": true,
+          "initial_world_source": "wide.pt exact state used for independent replay",
+          "initial_hidden_bit_exact": true,
+          "reconstructed_source_optimizer_hash": "548709affdae4a6222ec89197364b13b14757a31c29b954dc4b5f43ff86230a1",
+          "initial_optimizer_evidence": "Frozen constructor directly loads wide packed Adam; independent restoration reproduces its entire state exactly and matches recorded initial per-parameter steps. There is no separate raw before-first-update review optimizer snapshot."
+        }
+      },
+      "hidden_boundaries": [
+        {
+          "checkpoint": "random",
+          "next_trajectory": "trajectory_short_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "short_mid",
+          "next_trajectory": "trajectory_short_003.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "short",
+          "next_trajectory": "trajectory_wide_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide_mid",
+          "next_trajectory": "trajectory_wide_008.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide",
+          "next_trajectory": "trajectory_withdrawal_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "withdrawal_mid",
+          "next_trajectory": "trajectory_withdrawal_006.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "wide",
+          "next_trajectory": "trajectory_review_000.pt",
+          "hidden_exact": true
+        },
+        {
+          "checkpoint": "review_mid",
+          "next_trajectory": "trajectory_review_006.pt",
+          "hidden_exact": true
+        }
+      ],
+      "historical_rounds": {
+        "12": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 51353,
+          "family_tick_slots": [
+            35753,
+            31791,
+            33232,
+            30296
+          ],
+          "active_family_tick_slots": [
+            13904,
+            12945,
+            13176,
+            11328
+          ],
+          "nonwait_family_labels": [
+            1204,
+            1148,
+            1149,
+            1037
+          ],
+          "command_families": [
+            416,
+            386,
+            410,
+            369
+          ]
+        },
+        "13": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 50973,
+          "family_tick_slots": [
+            32267,
+            31731,
+            34437,
+            32637
+          ],
+          "active_family_tick_slots": [
+            13302,
+            12378,
+            12747,
+            12546
+          ],
+          "nonwait_family_labels": [
+            1080,
+            1039,
+            1090,
+            999
+          ],
+          "command_families": [
+            405,
+            394,
+            403,
+            390
+          ]
+        },
+        "14": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 51984,
+          "family_tick_slots": [
+            33594,
+            33072,
+            31952,
+            32454
+          ],
+          "active_family_tick_slots": [
+            13885,
+            12783,
+            12444,
+            12872
+          ],
+          "nonwait_family_labels": [
+            1305,
+            1203,
+            1229,
+            1168
+          ],
+          "command_families": [
+            419,
+            402,
+            397,
+            403
+          ]
+        },
+        "15": {
+          "all_tick_slots": 131072,
+          "active_tick_slots": 49243,
+          "family_tick_slots": [
+            32315,
+            34354,
+            32759,
+            31644
+          ],
+          "active_family_tick_slots": [
+            12293,
+            13219,
+            12247,
+            11484
+          ],
+          "nonwait_family_labels": [
+            762,
+            802,
+            754,
+            759
+          ],
+          "command_families": [
+            394,
+            428,
+            389,
+            372
+          ]
+        }
+      },
+      "review_dose": {
+        "review_updates": 384,
+        "live_updates": 2688,
+        "all_historical_tick_slots": 6291456,
+        "family3_historical_tick_slots": 1524372,
+        "active_historical_tick_slots": 2442636,
+        "family3_active_historical_tick_slots": 578760,
+        "historical_nonwait_labels": 200736,
+        "family3_historical_nonwait_labels": 47556,
+        "review_update_fraction": 0.125,
+        "old_family_fraction_of_history_positions": 0.2422924041748047,
+        "old_family_fraction_of_total_gradient_positions": 0.030286550521850586
+      },
+      "no_review_boundary_residual": {
+        "commands": 3,
+        "nonwait_labels": 15,
+        "active_tick_slots": 361,
+        "teacher_nonwait_labels": 15,
+        "labeled_requests": [
+          [
+            4,
+            1,
+            44933
+          ],
+          [
+            5,
+            1,
+            45007
+          ],
+          [
+            6,
+            0,
+            45062
+          ],
+          [
+            9,
+            0,
+            45030
+          ],
+          [
+            18,
+            1,
+            45061
+          ],
+          [
+            20,
+            1,
+            44983
+          ],
+          [
+            22,
+            0,
+            45004
+          ],
+          [
+            38,
+            1,
+            45101
+          ],
+          [
+            40,
+            1,
+            45021
+          ],
+          [
+            49,
+            1,
+            45051
+          ],
+          [
+            57,
+            1,
+            45021
+          ],
+          [
+            63,
+            1,
+            45001
+          ]
+        ],
+        "public_command_requests": [
+          [
+            6,
+            0,
+            45062
+          ],
+          [
+            18,
+            1,
+            45061
+          ],
+          [
+            38,
+            1,
+            45101
+          ]
+        ],
+        "nonwait_gradient_label_repetitions": 480
+      },
+      "review_boundary_residual": {
+        "commands": 3,
+        "nonwait_labels": 15,
+        "active_tick_slots": 361,
+        "teacher_nonwait_labels": 15,
+        "labeled_requests": [
+          [
+            4,
+            1,
+            44933
+          ],
+          [
+            5,
+            1,
+            45007
+          ],
+          [
+            6,
+            0,
+            45062
+          ],
+          [
+            9,
+            0,
+            45030
+          ],
+          [
+            18,
+            1,
+            45061
+          ],
+          [
+            20,
+            1,
+            44983
+          ],
+          [
+            22,
+            0,
+            45004
+          ],
+          [
+            38,
+            1,
+            45101
+          ],
+          [
+            40,
+            1,
+            45021
+          ],
+          [
+            49,
+            1,
+            45051
+          ],
+          [
+            57,
+            1,
+            45021
+          ],
+          [
+            63,
+            1,
+            45001
+          ]
+        ],
+        "public_command_requests": [
+          [
+            6,
+            0,
+            45062
+          ],
+          [
+            18,
+            1,
+            45061
+          ],
+          [
+            38,
+            1,
+            45101
+          ]
+        ],
+        "nonwait_gradient_label_repetitions": 420
+      },
+      "main_trajectories": [
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_short_000.pt",
+          "sha256": "9f576c45caacf49f2d44bab453e95f7a5ad2acaa20637800b3632ac290a825cb",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_short_001.pt",
+          "sha256": "5d335a520c8b857a72c7b097c23875d3af0cb8e103cae5bf784fcc25a020729f",
+          "teacher_lanes": 50
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_short_002.pt",
+          "sha256": "2270209f422c4fb7f7a37d6308d29272073401d52cfedfd0bcb51ae51814a458",
+          "teacher_lanes": 22
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_short_003.pt",
+          "sha256": "342afb06dbff4e833eb98fa52d6c0ad163adfbf7383ef5a217c1db0bb51b07c6",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_short_004.pt",
+          "sha256": "d47aeafa39e751c94ab052c970e77fab3ffc2fb0bee5cb3f4562fa37738a1251",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_short_005.pt",
+          "sha256": "36b49ffe56b0a072e68b51abb7d6d53a41323ec0f0649da1e93c6d90d3722ec7",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_000.pt",
+          "sha256": "642df2a25d6422dc7d143fd649b70b4d90ab273e9244351cb0a02d7ea00a2aa2",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_001.pt",
+          "sha256": "c4963ee7481a06f6828e4d081bda31a02fa1a96121b1fb0099d9bea7a6ce2f44",
+          "teacher_lanes": 54
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_002.pt",
+          "sha256": "8a1fadee01bd6e13e9c5cfd1bf47fd7ec60c7689c760b6942ca24bdd0d46cad2",
+          "teacher_lanes": 40
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_003.pt",
+          "sha256": "e7dafe7383c45e14026f49bd99e94369532292a393a49cde431b71720c997434",
+          "teacher_lanes": 43
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_004.pt",
+          "sha256": "16c951c716626f637a92f3a965d4b30120a2dd84534b946f053d61dff37477df",
+          "teacher_lanes": 26
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_005.pt",
+          "sha256": "ce4ee011e79b98ad691f39748e1498f81c01d995640e0db005f8d618636c982e",
+          "teacher_lanes": 29
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_006.pt",
+          "sha256": "313738df6db5c28bdfe943a1e06690142b7f62f4aa7654c47d89288759a69909",
+          "teacher_lanes": 15
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_007.pt",
+          "sha256": "3a8caace4c149a6b7b341793e3f68161be4cc8edf496bc0e0d13b11d8ab28538",
+          "teacher_lanes": 8
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_008.pt",
+          "sha256": "ecd1ef98ee99da2a9fc6a4373162eab173d7737203fff9765250addaedbf976f",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_009.pt",
+          "sha256": "8ffee929e43717c5a3162b4ff713933fa1163e93d8804b126a88c62027c581e0",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_010.pt",
+          "sha256": "6d4217f81a4bfda09089532759c53db71f5f16b52fa6062ea5e2f6bdfaa6d9d7",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_011.pt",
+          "sha256": "927c02ef490eaba475fe5ec7a6f264fee053ce84c650017624e91c0b6ad8770a",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_012.pt",
+          "sha256": "4fed4392c1861989b43eb3116f8eb925c1e89a146a6411c6f68fee763a535d85",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_013.pt",
+          "sha256": "99cf7e1096fefb97b9036c8c25b812fcfd395a8075c9061b0ca274436760973e",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_014.pt",
+          "sha256": "01e98e57b768701536f0af4ad54e0a1e4c23874a4d41fba47189efc1441cf2f1",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_wide_015.pt",
+          "sha256": "6b1df269553a66610b9fd4a027726914952b29c782ab9a3379aded5ffe25d554",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_000.pt",
+          "sha256": "cc604e80b3e8778fae842c66a56e6644934ed45802bbc88c7f8161c0dd70ef69",
+          "teacher_lanes": 64
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_001.pt",
+          "sha256": "d1c55bc9f698277ca642d03fea298fc4f64571a9d2312892d352442007036c17",
+          "teacher_lanes": 57
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_002.pt",
+          "sha256": "1b4dd27b1b6fd8e88fd6b81b4c601d211a8375889d92f365dcbdb2b0a61e5fb1",
+          "teacher_lanes": 46
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_003.pt",
+          "sha256": "0b5929e6c800e8c1c996a741621c8cc8e7e1832323e0de1f6b301cb7bdd9433c",
+          "teacher_lanes": 30
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_004.pt",
+          "sha256": "89792908f96ff8ae768eb189089af39a5da71efcb7b7e1d7504691670292fd7b",
+          "teacher_lanes": 19
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_005.pt",
+          "sha256": "c1c919152e47c1a17188353af000a3af83e12ed462bd8ba1fc0f35f2159127ba",
+          "teacher_lanes": 9
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_006.pt",
+          "sha256": "8d15895d5eb0a5dde63782374b11b7b447003d5fe7150398078b7b2bdf8f0838",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_007.pt",
+          "sha256": "2b41355b02864b8a40a91a783e6e9812f1ba2d20fb193e588b64ed856b36cd8b",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_008.pt",
+          "sha256": "80fb58c68cc96560f1173c0f775bf3c6ce433d778decb5a1e91c58c98b17ef7d",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_009.pt",
+          "sha256": "9dbd55c704e7d41bd2c81233fcd9a80ea3d7ace9269f269ec5a452b0b8e850c4",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_010.pt",
+          "sha256": "73ab65f7bb400e61a381dc8d870b6412efd9e8aa81b587ceb5ab79fe7175d6e9",
+          "teacher_lanes": 0
+        },
+        {
+          "path": "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\trajectory_withdrawal_011.pt",
+          "sha256": "0601c48df044de32f7b803275b413021ecef9eb7b2e167a3cce240fd02a45430",
+          "teacher_lanes": 0
+        }
+      ],
+      "review_source_audit_sha256": "4bd403bb1a549c20b51ccb8d22089434c944ddce376680368b5a1f4402948679",
+      "review_plan_sha256": "2377012bc4a272057742b8de34ef10577797fec1390081fed22bbb89d5bbf726"
+    }
+  },
+  "scope": "Read-only independent endpoint/optimizer reconstruction; exact detached replay of all recorded34,816 main and12,288 review ticks per seed; no optimizer steps or new training.",
+  "parameter_conclusion": "93,238 genuine trainable scalars;55,584 unique recurrent pair coordinates including576 self weights; three192x192 symmetric gate matrices in one recurrent layer;148,246 coordinates only in the dense deployment representation.",
+  "limits": [
+    "Every historical per-round policy weight was not saved. World replay verifies actual observations, labels, executions and counts; it does not independently regenerate every historical own-action argmax.",
+    "Adam step/moments and constructor restoration are checked. No separate raw optimizer snapshot immediately before the review branch's first update was retained.",
+    "Elapsed round seconds include collection, fitting, I/O and resource scheduling; they are not GPU-only timings.",
+    "Review checkpoint legacy replay_family3_during_withdrawal=0 is inherited main metadata; review_* counters and independently counted review_dose are authoritative.",
+    "Old-task withdrawal stops future NEW family3, while already-issued requests can produce residual public commands and supervised labels. Both residual and explicit historical review are reported separately.",
+    "Historical-position fractions describe sample/update allocation, not measured gradient magnitude. Training used labels from private causal oracle, never private model inputs.",
+    "Symmetric gate matrices do not by themselves imply symmetric effective GRU influences; behavioral reciprocity is audited separately."
+  ]
+}

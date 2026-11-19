@@ -1,0 +1,69 @@
+{
+  "protocol": 1,
+  "created_local_date": "2026-11-19",
+  "bootstrap_checkpoint": "own-view bootstrap root 102",
+  "donor_root": 171100000,
+  "donors_per_regime": 12,
+  "donor_rounds": 40,
+  "donor_regimes": {
+    "stable_noisy": {
+      "noise": 0.25,
+      "switch_every_rounds": 0
+    },
+    "volatile_clean": {
+      "noise": 0.0,
+      "switch_every_rounds": 5
+    }
+  },
+  "recipient_root": 296100000,
+  "fresh_world_pairs_per_donor": 4,
+  "odors_per_recipient": 6,
+  "recipient_noise": [
+    0.0,
+    0.2,
+    0.35
+  ],
+  "contacts_per_odor_per_phase": 6,
+  "phases": 2,
+  "switch_bridge_receipts_noiseless": true,
+  "matched_reversal_repeats_previous_confirmed_action": true,
+  "recipient_policy_modes": [
+    "matched_contact",
+    "free_choice"
+  ],
+  "recipient_conditions": [
+    "naive",
+    "writer_only",
+    "scrambled_writer",
+    "writer_protected",
+    "intact_frozen_writer",
+    "writer_only_no_writes"
+  ],
+  "primary_condition": "matched_contact",
+  "primary_window": "mean sigmoid signed motor score across all odors after each of contacts 1-12 of the new phase, minus the pre-contact mean for that phase",
+  "primary_contrasts": [
+    "writer_only - naive",
+    "writer_only - scrambled_writer"
+  ],
+  "primary_noise": [
+    0.0,
+    0.35
+  ],
+  "primary_phases": [
+    0,
+    1
+  ],
+  "uncertainty_seed": 64570007,
+  "cluster_bootstrap_draws": 6000,
+  "cluster_unit": "donor life, conditional on the single shared bootstrap checkpoint",
+  "secondary": [
+    "zero-contact score",
+    "gain by contact",
+    "hard choice",
+    "free choice and receipt counts",
+    "protected and intact frozen editor controls",
+    "writer parameter delta",
+    "controlled next-edit delta",
+    "no-taste comparison"
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "heldout_cases_per_root": 1536,
+  "roots": [
+    36811,
+    36812,
+    36813,
+    36814,
+    36815
+  ],
+  "views": {
+    "own": {
+      "choices_correct": 0.9706380208333333,
+      "left_correct": 0.968359375,
+      "right_correct": 0.9729166666666667,
+      "both_odors_correct": 0.9412760416666667,
+      "write_rate": 0.8223958333333333,
+      "positive_writes": 0.4446614583333333,
+      "negative_writes": 0.377734375
+    },
+    "bias_only": {
+      "choices_correct": 0.8679036458333333,
+      "left_correct": 0.8631510416666667,
+      "right_correct": 0.87265625,
+      "both_odors_correct": 0.7358072916666667,
+      "write_rate": 0.7385416666666667,
+      "positive_writes": 0.3809895833333333,
+      "negative_writes": 0.3575520833333333
+    },
+    "sham": {
+      "choices_correct": 0.8109375,
+      "left_correct": 0.8123697916666667,
+      "right_correct": 0.8095052083333333,
+      "both_odors_correct": 0.621875,
+      "write_rate": 0.00026041666666666666,
+      "positive_writes": 0.00026041666666666666,
+      "negative_writes": 0.0
+    },
+    "yoked": {
+      "choices_correct": 0.8098958333333334,
+      "left_correct": 0.8091145833333333,
+      "right_correct": 0.8106770833333333,
+      "both_odors_correct": 0.6197916666666666,
+      "write_rate": 0.029166666666666667,
+      "positive_writes": 0.021484375,
+      "negative_writes": 0.007682291666666666
+    },
+    "own_head_bias_only": {
+      "choices_correct": 0.8666015625,
+      "left_correct": 0.8520833333333333,
+      "right_correct": 0.8811197916666667,
+      "both_odors_correct": 0.733203125,
+      "write_rate": 0.7811197916666667,
+      "positive_writes": 0.41796875,
+      "negative_writes": 0.3631510416666667
+    },
+    "own_head_sham": {
+      "choices_correct": 0.8068359375,
+      "left_correct": 0.7923177083333334,
+      "right_correct": 0.8213541666666667,
+      "both_odors_correct": 0.613671875,
+      "write_rate": 0.14244791666666667,
+      "positive_writes": 0.12252604166666667,
+      "negative_writes": 0.019921875
+    },
+    "own_head_yoked": {
+      "choices_correct": 0.7565755208333333,
+      "left_correct": 0.7424479166666667,
+      "right_correct": 0.770703125,
+      "both_odors_correct": 0.5131510416666667,
+      "write_rate": 0.821484375,
+      "positive_writes": 0.44231770833333334,
+      "negative_writes": 0.37916666666666665
+    },
+    "own_writes_blocked": {
+      "choices_correct": 0.8110026041666667,
+      "left_correct": 0.8126302083333333,
+      "right_correct": 0.809375,
+      "both_odors_correct": 0.6220052083333333,
+      "write_rate": 0.0,
+      "positive_writes": 0.0,
+      "negative_writes": 0.0
+    },
+    "bias_only_writes_blocked": {
+      "choices_correct": 0.8108072916666667,
+      "left_correct": 0.81171875,
+      "right_correct": 0.8098958333333334,
+      "both_odors_correct": 0.6216145833333333,
+      "write_rate": 0.0,
+      "positive_writes": 0.0,
+      "negative_writes": 0.0
+    },
+    "sham_writes_blocked": {
+      "choices_correct": 0.8109375,
+      "left_correct": 0.8123697916666667,
+      "right_correct": 0.8095052083333333,
+      "both_odors_correct": 0.621875,
+      "write_rate": 0.0,
+      "positive_writes": 0.0,
+      "negative_writes": 0.0
+    },
+    "yoked_writes_blocked": {
+      "choices_correct": 0.8108072916666667,
+      "left_correct": 0.811328125,
+      "right_correct": 0.8102864583333333,
+      "both_odors_correct": 0.6216145833333333,
+      "write_rate": 0.0,
+      "positive_writes": 0.0,
+      "negative_writes": 0.0
+    },
+    "own_writer_state_transplant": {
+      "choices_correct": 0.9706380208333333,
+      "left_correct": 0.968359375,
+      "right_correct": 0.9729166666666667,
+      "both_odors_correct": 0.9412760416666667,
+      "write_rate": 0.8223958333333333,
+      "positive_writes": 0.4446614583333333,
+      "negative_writes": 0.377734375
+    }
+  },
+  "contrasts_to_own": {
+    "sham": {
+      "all_state_rms": 0.22966773808002472,
+      "writer_state_rms": 0.6277742981910706,
+      "proposal_disagree": 0.822265625,
+      "actual_write_disagree": 0.822265625,
+      "physical_choice_disagree": 0.16165364583333333,
+      "physical_accuracy_gain": {
+        "difference": 0.15970052083333333,
+        "ci95": [
+          0.14811197916666666,
+          0.1705078125
+        ]
+      }
+    },
+    "bias_only": {
+      "all_state_rms": 0.24594247341156006,
+      "writer_state_rms": 0.67726069688797,
+      "proposal_disagree": 0.6509114583333333,
+      "actual_write_disagree": 0.6509114583333333,
+      "physical_choice_disagree": 0.105078125,
+      "physical_accuracy_gain": {
+        "difference": 0.102734375,
+        "ci95": [
+          0.09453125,
+          0.11184895833333333
+        ]
+      }
+    },
+    "yoked": {
+      "all_state_rms": 0.2900114357471466,
+      "writer_state_rms": 0.8010777831077576,
+      "proposal_disagree": 0.8223958333333333,
+      "actual_write_disagree": 0.8223958333333333,
+      "physical_choice_disagree": 0.1626953125,
+      "physical_accuracy_gain": {
+        "difference": 0.1607421875,
+        "ci95": [
+          0.1492822265625,
+          0.17194010416666666
+        ]
+      }
+    },
+    "own_head_sham": {
+      "all_state_rms": 0.1669432520866394,
+      "writer_state_rms": 0.4420129358768463,
+      "proposal_disagree": 0.820703125,
+      "actual_write_disagree": 0.820703125,
+      "physical_choice_disagree": 0.165625,
+      "physical_accuracy_gain": {
+        "difference": 0.16380208333333332,
+        "ci95": [
+          0.15162597656250001,
+          0.1783203125
+        ]
+      }
+    },
+    "own_head_bias_only": {
+      "all_state_rms": 0.15322867035865784,
+      "writer_state_rms": 0.4037873148918152,
+      "proposal_disagree": 0.47265625,
+      "actual_write_disagree": 0.47265625,
+      "physical_choice_disagree": 0.10559895833333334,
+      "physical_accuracy_gain": {
+        "difference": 0.10403645833333333,
+        "ci95": [
+          0.0963525390625,
+          0.112109375
+        ]
+      }
+    },
+    "own_head_yoked": {
+      "all_state_rms": 0.18600299954414368,
+      "writer_state_rms": 0.496211439371109,
+      "proposal_disagree": 0.7984375,
+      "actual_write_disagree": 0.7984375,
+      "physical_choice_disagree": 0.21549479166666666,
+      "physical_accuracy_gain": {
+        "difference": 0.2140625,
+        "ci95": [
+          0.20319010416666666,
+          0.22467610677083333
+        ]
+      }
+    },
+    "own_writes_blocked": {
+      "all_state_rms": 0.0,
+      "writer_state_rms": 0.0,
+      "proposal_disagree": 0.0,
+      "actual_write_disagree": 0.8223958333333333,
+      "physical_choice_disagree": 0.16158854166666667,
+      "physical_accuracy_gain": {
+        "difference": 0.15963541666666667,
+        "ci95": [
+          0.14811197916666666,
+          0.17024739583333334
+        ]
+      }
+    },
+    "own_writer_state_transplant": {
+      "all_state_rms": 0.05872064828872681,
+      "writer_state_rms": 0.0,
+      "proposal_disagree": 0.0,
+      "actual_write_disagree": 0.0,
+      "physical_choice_disagree": 0.0,
+      "physical_accuracy_gain": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "selected_dev_reward_less_write_cost": [
+    {
+      "own": 0.9579166666666666,
+      "bias_only": 0.8589322916666666,
+      "sham": 0.80659375,
+      "yoked": 0.806140625
+    },
+    {
+      "own": 0.9610729166666666,
+      "bias_only": 0.8656302083333334,
+      "sham": 0.8046875,
+      "yoked": 0.8053385416666666
+    },
+    {
+      "own": 0.9515885416666666,
+      "bias_only": 0.8460677083333333,
+      "sham": 0.80078125,
+      "yoked": 0.8026458333333334
+    },
+    {
+      "own": 0.949421875,
+      "bias_only": 0.8518385416666666,
+      "sham": 0.80078125,
+      "yoked": 0.7999427083333334
+    },
+    {
+      "own": 0.9635729166666667,
+      "bias_only": 0.8709270833333334,
+      "sham": 0.8196458333333334,
+      "yoked": 0.8190104166666666
+    }
+  ],
+  "archive_sha256": "bf3c27ef14190f5bd4646deea310c909283afecfccc76c4367e3db79f0a348a2",
+  "source_sha256": {
+    "self_write_look.py": "161ac46d0ecf51b4cced218e93fbfb4b4a3286243cc8c8491f6bbd8da0abcfa9",
+    "self_write_core.py": "8b4c103a8395dbac14f89285d38740c169a0289d89338f1c004a7335772e55a2"
+  }
+}

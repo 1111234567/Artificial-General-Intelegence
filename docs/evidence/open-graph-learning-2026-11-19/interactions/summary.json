@@ -1,0 +1,335 @@
+{
+  "outcomes": {
+    "stable": {
+      "means": {
+        "tanh": {
+          "first64": 0.502197265625,
+          "before_switch64": 0.499267578125,
+          "after_switch64": 0.50732421875,
+          "silent_tail": 0.5025634765625,
+          "whole": 0.5018473307291667,
+          "silent_tail_contact": 0.999755859375,
+          "silent_tail_given_contact": 0.5026923056737049,
+          "silent_tail_expected": 0.5003607869148254,
+          "silent_tail_positive_taste": 0.50299072265625,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60558.3125,
+          "newborn_weight_updates": 8992.0234375,
+          "newborn_generations_trained": 42.8828125
+        },
+        "square": {
+          "first64": 0.515625,
+          "before_switch64": 0.503173828125,
+          "after_switch64": 0.5103759765625,
+          "silent_tail": 0.5062255859375,
+          "whole": 0.5051350911458333,
+          "silent_tail_contact": 0.9998779296875,
+          "silent_tail_given_contact": 0.506285659910187,
+          "silent_tail_expected": 0.4983634352684021,
+          "silent_tail_positive_taste": 0.49932861328125,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60566.4453125,
+          "newborn_weight_updates": 9489.046875,
+          "newborn_generations_trained": 42.984375
+        },
+        "matched_tanh": {
+          "first64": 0.513427734375,
+          "before_switch64": 0.5045166015625,
+          "after_switch64": 0.508544921875,
+          "silent_tail": 0.4925537109375,
+          "whole": 0.5031087239583334,
+          "silent_tail_contact": 0.9998779296875,
+          "silent_tail_given_contact": 0.49262195497047245,
+          "silent_tail_expected": 0.4954844117164612,
+          "silent_tail_positive_taste": 0.49578857421875,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60566.2265625,
+          "newborn_weight_updates": 10716.359375,
+          "newborn_generations_trained": 43.0
+        },
+        "tanh_sham": {
+          "first64": 0.5025634765625,
+          "before_switch64": 0.5069580078125,
+          "after_switch64": 0.506103515625,
+          "silent_tail": 0.4984130859375,
+          "whole": 0.5031982421875,
+          "silent_tail_contact": 0.9998779296875,
+          "silent_tail_given_contact": 0.498472198726624,
+          "silent_tail_expected": 0.4980568289756775,
+          "silent_tail_positive_taste": 0.49884033203125,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60563.9375,
+          "newborn_weight_updates": 8832.078125,
+          "newborn_generations_trained": 42.90625
+        },
+        "square_sham": {
+          "first64": 0.5146484375,
+          "before_switch64": 0.5008544921875,
+          "after_switch64": 0.5008544921875,
+          "silent_tail": 0.49951171875,
+          "whole": 0.5033121744791667,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.49951171875,
+          "silent_tail_expected": 0.49657827615737915,
+          "silent_tail_positive_taste": 0.497802734375,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60568.5078125,
+          "newborn_weight_updates": 9092.9140625,
+          "newborn_generations_trained": 42.9921875
+        },
+        "random": {
+          "first64": 0.5224609375,
+          "before_switch64": 0.5048828125,
+          "after_switch64": 0.4931640625,
+          "silent_tail": 0.51806640625,
+          "whole": 0.5054036458333333,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.51806640625,
+          "silent_tail_expected": 0.5041249394416809,
+          "silent_tail_positive_taste": 0.5048828125
+        },
+        "linear": {
+          "first64": 0.51953125,
+          "before_switch64": 0.5322265625,
+          "after_switch64": 0.5126953125,
+          "silent_tail": 0.53564453125,
+          "whole": 0.5069661458333333,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.53564453125,
+          "silent_tail_expected": 0.5192364454269409,
+          "silent_tail_positive_taste": 0.53173828125
+        },
+        "polynomial": {
+          "first64": 0.78515625,
+          "before_switch64": 0.8740234375,
+          "after_switch64": 0.86328125,
+          "silent_tail": 0.92578125,
+          "whole": 0.8722656249999999,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.92578125,
+          "silent_tail_expected": 0.688149094581604,
+          "silent_tail_positive_taste": 0.69091796875
+        },
+        "oracle": {
+          "first64": 1.0,
+          "before_switch64": 1.0,
+          "after_switch64": 1.0,
+          "silent_tail": 1.0,
+          "whole": 1.0,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 1.0,
+          "silent_tail_expected": 0.6960753202438354,
+          "silent_tail_positive_taste": 0.70361328125
+        }
+      },
+      "paired": {
+        "square_minus_matched_tanh": [
+          0.013671875,
+          -0.01141357421875,
+          0.03948974609375
+        ],
+        "square_minus_square_sham": [
+          0.0067138671875,
+          -0.03035532633463542,
+          0.04380315144856772
+        ],
+        "tanh_minus_tanh_sham": [
+          0.004150390625,
+          -0.0220947265625,
+          0.03287785847981772
+        ]
+      },
+      "npz_sha256": "fb4330472eb73e8288a3f539fcb80e75615939557f63bcf3e291435d32177599",
+      "archive_sha256": "f2b6193e0c3a7613e2bd03c9e25f3b0d65befc57e6266e93eb8cd7f4625f4cdf"
+    },
+    "reverse": {
+      "means": {
+        "tanh": {
+          "first64": 0.502197265625,
+          "before_switch64": 0.499267578125,
+          "after_switch64": 0.4923095703125,
+          "silent_tail": 0.497314453125,
+          "whole": 0.49847005208333334,
+          "silent_tail_contact": 0.99993896484375,
+          "silent_tail_given_contact": 0.49734473040723426,
+          "silent_tail_expected": 0.501412570476532,
+          "silent_tail_positive_taste": 0.500244140625,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60556.8828125,
+          "newborn_weight_updates": 8939.7421875,
+          "newborn_generations_trained": 42.8984375
+        },
+        "square": {
+          "first64": 0.515625,
+          "before_switch64": 0.503173828125,
+          "after_switch64": 0.49267578125,
+          "silent_tail": 0.4989013671875,
+          "whole": 0.5015218098958333,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.4989013671875,
+          "silent_tail_expected": 0.5059632062911987,
+          "silent_tail_positive_taste": 0.50787353515625,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60568.015625,
+          "newborn_weight_updates": 9331.5625,
+          "newborn_generations_trained": 43.0
+        },
+        "matched_tanh": {
+          "first64": 0.513427734375,
+          "before_switch64": 0.5045166015625,
+          "after_switch64": 0.49462890625,
+          "silent_tail": 0.49383544921875,
+          "whole": 0.5000488281250001,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.49383544921875,
+          "silent_tail_expected": 0.49950283765792847,
+          "silent_tail_positive_taste": 0.5009765625,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60569.0546875,
+          "newborn_weight_updates": 10681.875,
+          "newborn_generations_trained": 43.0
+        },
+        "tanh_sham": {
+          "first64": 0.5025634765625,
+          "before_switch64": 0.5069580078125,
+          "after_switch64": 0.4937744140625,
+          "silent_tail": 0.50146484375,
+          "whole": 0.5002278645833333,
+          "silent_tail_contact": 0.9998779296875,
+          "silent_tail_given_contact": 0.5015278012733759,
+          "silent_tail_expected": 0.5018211603164673,
+          "silent_tail_positive_taste": 0.505126953125,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60563.9375,
+          "newborn_weight_updates": 8832.078125,
+          "newborn_generations_trained": 42.90625
+        },
+        "square_sham": {
+          "first64": 0.5146484375,
+          "before_switch64": 0.5008544921875,
+          "after_switch64": 0.4990234375,
+          "silent_tail": 0.50048828125,
+          "whole": 0.5012613932291667,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.50048828125,
+          "silent_tail_expected": 0.5034217238426208,
+          "silent_tail_positive_taste": 0.50775146484375,
+          "births": 43.0,
+          "exits": 48.0,
+          "actual_weight_updates": 60568.5078125,
+          "newborn_weight_updates": 9092.9140625,
+          "newborn_generations_trained": 42.9921875
+        },
+        "random": {
+          "first64": 0.5224609375,
+          "before_switch64": 0.5048828125,
+          "after_switch64": 0.5068359375,
+          "silent_tail": 0.48193359375,
+          "whole": 0.49967447916666663,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.48193359375,
+          "silent_tail_expected": 0.4958750605583191,
+          "silent_tail_positive_taste": 0.4951171875
+        },
+        "linear": {
+          "first64": 0.51953125,
+          "before_switch64": 0.5322265625,
+          "after_switch64": 0.4990234375,
+          "silent_tail": 0.48486328125,
+          "whole": 0.5013671875000001,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.48486328125,
+          "silent_tail_expected": 0.4973931908607483,
+          "silent_tail_positive_taste": 0.49560546875
+        },
+        "polynomial": {
+          "first64": 0.78515625,
+          "before_switch64": 0.8740234375,
+          "after_switch64": 0.408203125,
+          "silent_tail": 0.9365234375,
+          "whole": 0.8331380208333334,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 0.9365234375,
+          "silent_tail_expected": 0.699072539806366,
+          "silent_tail_positive_taste": 0.69970703125
+        },
+        "oracle": {
+          "first64": 1.0,
+          "before_switch64": 1.0,
+          "after_switch64": 1.0,
+          "silent_tail": 1.0,
+          "whole": 1.0,
+          "silent_tail_contact": 1.0,
+          "silent_tail_given_contact": 1.0,
+          "silent_tail_expected": 0.7033478617668152,
+          "silent_tail_positive_taste": 0.701171875
+        }
+      },
+      "paired": {
+        "square_minus_matched_tanh": [
+          0.00506591796875,
+          -0.019775390625,
+          0.03135197957356772
+        ],
+        "square_minus_square_sham": [
+          -0.0015869140625,
+          -0.039306640625,
+          0.033935546875
+        ],
+        "tanh_minus_tanh_sham": [
+          -0.004150390625,
+          -0.03515625,
+          0.019328053792317723
+        ]
+      },
+      "npz_sha256": "5b68570367eb7c4c953829ba4938056732e39c0063f5ac90945054cc634c2cb9",
+      "archive_sha256": "b5036c5eff47368eedbd46519a7790d6b829fc6964a848421fc9a2e639c86963"
+    }
+  },
+  "configurations": {
+    "tanh": {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.0
+    },
+    "square": {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.85
+    },
+    "matched_tanh": {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.0
+    }
+  },
+  "registered_sha256": "05b514feb344d4459e997baa5c95611031c04265787c46696d8849aa69f0d05b",
+  "development_sha256": "3dd4c3b50f97d5b980d5bf2472034f9d7d54a5781786a7e2c4f79e0a937b2955"
+}

@@ -1,0 +1,358 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu130",
+  "python": "3.14.5",
+  "executable": "F:\\agi\\.venv\\Scripts\\python.exe",
+  "cpu_threads": 1,
+  "affinity": [
+    2
+  ],
+  "atol": 1e-10,
+  "rtol": 1e-09,
+  "host_cpu_percent_before": 10.6,
+  "sources": {
+    "F:\\agi\\experiments\\coverage_exit\\benchmark_window.py": "c1279e03af26f8a93cbd5e9c42c372542aef2237a0d73b312491ce3ed4a7eb04",
+    "F:\\agi\\experiments\\coverage_exit\\fast_window.py": "c53e0cf6d4370efa39fb169875dad225ad8a123b5e0b95c304488c15f6012d01"
+  },
+  "cases": [
+    {
+      "interface": "ports",
+      "checkpoint": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+        "sha256": "e02e52071d1fad0c6b8a295059e40ad46dccd37faba5570a1b70def9826b0544",
+        "semantic_hash": "16427fd785231612f82ce332298ea88ef0ce60c4a0a75c62efff6ccd052a1c62"
+      },
+      "warmups": 1,
+      "repeats": 6,
+      "order": "alternating AB/BA",
+      "batch": 8,
+      "tick_per_update": 128,
+      "width": 80,
+      "credit": "recorded512",
+      "dtype": "float64",
+      "first_update_gradient_equivalence": {
+        "live": {
+          "max_absolute_error": 1.5959455978986625e-16,
+          "max_tolerance_ratio": 1.0123717832394861e-06
+        },
+        "auxiliary": {
+          "max_absolute_error": 1.249000902703301e-16,
+          "max_tolerance_ratio": 7.143817826264802e-07
+        },
+        "clipped": {
+          "max_absolute_error": 7.979727989493313e-17,
+          "max_tolerance_ratio": 6.752401905842283e-07
+        }
+      },
+      "all_paired_updates": [
+        {
+          "tick": 131200,
+          "parameters": {
+            "max_absolute_error": 1.734723475976807e-18,
+            "max_tolerance_ratio": 1.5719364258070068e-08
+          },
+          "hidden": {
+            "max_absolute_error": 0.0,
+            "max_tolerance_ratio": 0.0
+          },
+          "adam": {
+            "max_absolute_error": 8.239936510889834e-18,
+            "max_tolerance_ratio": 7.981000939634602e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131328,
+          "parameters": {
+            "max_absolute_error": 1.734723475976807e-18,
+            "max_tolerance_ratio": 1.5726659357850092e-08
+          },
+          "hidden": {
+            "max_absolute_error": 0.0,
+            "max_tolerance_ratio": 0.0
+          },
+          "adam": {
+            "max_absolute_error": 9.107298248878237e-18,
+            "max_tolerance_ratio": 8.793506474446158e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131456,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 1.3616506846303766e-07
+          },
+          "hidden": {
+            "max_absolute_error": 1.1102230246251565e-16,
+            "max_tolerance_ratio": 1.6151138095951678e-07
+          },
+          "adam": {
+            "max_absolute_error": 8.673617379884035e-18,
+            "max_tolerance_ratio": 8.299078457792804e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131584,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 1.3617488991034806e-07
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 5.22978750655421e-07
+          },
+          "adam": {
+            "max_absolute_error": 9.107298248878237e-18,
+            "max_tolerance_ratio": 8.786952585098734e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131712,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 1.3620583456399956e-07
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 2.19320752705605e-07
+          },
+          "adam": {
+            "max_absolute_error": 9.75781955236954e-18,
+            "max_tolerance_ratio": 9.69513557740779e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131840,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 1.679897542466575e-07
+          },
+          "hidden": {
+            "max_absolute_error": 4.440892098500626e-16,
+            "max_tolerance_ratio": 2.0889778710677723e-07
+          },
+          "adam": {
+            "max_absolute_error": 8.998878031629687e-18,
+            "max_tolerance_ratio": 8.943147546344426e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131968,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 1.6822756639457625e-07
+          },
+          "hidden": {
+            "max_absolute_error": 4.440892098500626e-16,
+            "max_tolerance_ratio": 2.0518700133713293e-07
+          },
+          "adam": {
+            "max_absolute_error": 1.0408340855860843e-17,
+            "max_tolerance_ratio": 1.0014606489968298e-07
+          },
+          "combined_loss_abs": 0.0
+        }
+      ],
+      "matched_action_data_world_and_logical_work": true,
+      "seconds": {
+        "reference": [
+          0.4480161999963457,
+          0.4395915000059176,
+          0.44795079999312293,
+          0.4398605000023963,
+          0.443209899996873,
+          0.4562885999912396
+        ],
+        "optimized": [
+          0.3077971000020625,
+          0.3322000000043772,
+          0.3022467999981018,
+          0.2882580000004964,
+          0.3017173999978695,
+          0.29473939999297727
+        ]
+      },
+      "median_seconds": {
+        "reference": 0.44558034999499796,
+        "optimized": 0.30198209999798564
+      },
+      "median_speedup": 1.4755190787731134,
+      "scope": "CPU complete in-memory training updates with native live world, credit, auxiliary, Adam, and trace bookkeeping. External study scheduler, file IO and evaluation are excluded."
+    },
+    {
+      "interface": "core",
+      "checkpoint": {
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+        "sha256": "336b6a34bcf7d32338f29b27f4b4062c8039b06359ef0fad185f1218f92e86ec",
+        "semantic_hash": "68abfa34d6f7e42367e8e86d8bea60872357bc7f9176a7c050d4e401d25850ba"
+      },
+      "warmups": 1,
+      "repeats": 6,
+      "order": "alternating AB/BA",
+      "batch": 8,
+      "tick_per_update": 128,
+      "width": 80,
+      "credit": "recorded512",
+      "dtype": "float64",
+      "first_update_gradient_equivalence": {
+        "live": {
+          "max_absolute_error": 2.220446049250313e-16,
+          "max_tolerance_ratio": 8.990431543222437e-07
+        },
+        "auxiliary": {
+          "max_absolute_error": 9.71445146547012e-17,
+          "max_tolerance_ratio": 6.584997589510343e-07
+        },
+        "clipped": {
+          "max_absolute_error": 6.245004513516506e-17,
+          "max_tolerance_ratio": 4.453802730421653e-07
+        }
+      },
+      "all_paired_updates": [
+        {
+          "tick": 131200,
+          "parameters": {
+            "max_absolute_error": 1.3877787807814457e-17,
+            "max_tolerance_ratio": 7.458000017581976e-08
+          },
+          "hidden": {
+            "max_absolute_error": 0.0,
+            "max_tolerance_ratio": 0.0
+          },
+          "adam": {
+            "max_absolute_error": 6.071532165918825e-18,
+            "max_tolerance_ratio": 5.917170021642487e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131328,
+          "parameters": {
+            "max_absolute_error": 2.7755575615628914e-17,
+            "max_tolerance_ratio": 9.128822494571694e-08
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 7.581557141819245e-07
+          },
+          "adam": {
+            "max_absolute_error": 8.673617379884035e-18,
+            "max_tolerance_ratio": 7.948207908222929e-08
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131456,
+          "parameters": {
+            "max_absolute_error": 2.7755575615628914e-17,
+            "max_tolerance_ratio": 9.14528241725149e-08
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 7.147007170767113e-07
+          },
+          "adam": {
+            "max_absolute_error": 1.0408340855860843e-17,
+            "max_tolerance_ratio": 8.993627762835915e-08
+          },
+          "combined_loss_abs": 1.1102230246251565e-16
+        },
+        {
+          "tick": 131584,
+          "parameters": {
+            "max_absolute_error": 2.7755575615628914e-17,
+            "max_tolerance_ratio": 1.2319158185337796e-07
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 7.148754051212931e-07
+          },
+          "adam": {
+            "max_absolute_error": 1.1275702593849246e-17,
+            "max_tolerance_ratio": 1.1152178236561657e-07
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131712,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 2.274755613297237e-07
+          },
+          "hidden": {
+            "max_absolute_error": 4.440892098500626e-16,
+            "max_tolerance_ratio": 1.43260143978562e-06
+          },
+          "adam": {
+            "max_absolute_error": 1.0408340855860843e-17,
+            "max_tolerance_ratio": 1.0140943894154316e-07
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131840,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 2.2760477181082202e-07
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 1.6455061085437567e-06
+          },
+          "adam": {
+            "max_absolute_error": 1.1275702593849246e-17,
+            "max_tolerance_ratio": 1.1131186395660606e-07
+          },
+          "combined_loss_abs": 0.0
+        },
+        {
+          "tick": 131968,
+          "parameters": {
+            "max_absolute_error": 5.551115123125783e-17,
+            "max_tolerance_ratio": 2.277789287952937e-07
+          },
+          "hidden": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_tolerance_ratio": 9.693707906781106e-07
+          },
+          "adam": {
+            "max_absolute_error": 1.1709383462843448e-17,
+            "max_tolerance_ratio": 1.1509498824705776e-07
+          },
+          "combined_loss_abs": 1.1102230246251565e-16
+        }
+      ],
+      "matched_action_data_world_and_logical_work": true,
+      "seconds": {
+        "reference": [
+          0.4749718999955803,
+          0.47447960000135936,
+          0.4758173000009265,
+          0.45736259999102913,
+          0.45746479999797884,
+          0.4570434000052046
+        ],
+        "optimized": [
+          0.30572010000469163,
+          0.2987733999907505,
+          0.3007791999989422,
+          0.3014465000014752,
+          0.3019314000121085,
+          0.33731360000092536
+        ]
+      },
+      "median_seconds": {
+        "reference": 0.4659721999996691,
+        "optimized": 0.30168895000679186
+      },
+      "median_speedup": 1.5445451349450445,
+      "scope": "CPU complete in-memory training updates with native live world, credit, auxiliary, Adam, and trace bookkeeping. External study scheduler, file IO and evaluation are excluded."
+    }
+  ],
+  "host_cpu_percent_after": 12.0
+}

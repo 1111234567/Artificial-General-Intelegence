@@ -1,0 +1,590 @@
+{
+  "protocol_sha256": "08c4e7812dc578f2351730700184a50a09d8bbc6f675bd7370501545303271c3",
+  "sources": {
+    "self_dose_grad.py": "d99e5044bbbfe2d94a6817f57eb971a949d26cdb490daf957268580ff46d8d75",
+    "self_write_core.py": "8b4c103a8395dbac14f89285d38740c169a0289d89338f1c004a7335772e55a2",
+    "self_write_core_bootstrap.py": "4f484e4c3b174d825624db92bbd4b7529a9a1d8b39e90db93499481a5806f9f2"
+  },
+  "cases": [
+    {
+      "spec": {
+        "label": "birth",
+        "spawn_root": 101,
+        "example_root": 631801,
+        "native_key": 76201
+      },
+      "checkpoint_sha256": null,
+      "expected": 2.3083049452825626,
+      "raw_pairs": 58081,
+      "distinct_applied_graphs": 13407,
+      "positive_applied_probabilities": 13407,
+      "birth_retire_trigger_probabilities": [
+        0.09412103406133714,
+        0.05117106661911937
+      ],
+      "birth_retire_post_activities": [
+        0.5882564628833571,
+        0.2558553330955968
+      ],
+      "retire_rejected_by_scc_probability": 0.0014610320710199305,
+      "base_side": 1,
+      "base_motor": 0.45241289005911045,
+      "base_taste": -1.0,
+      "samples": [
+        {
+          "key": 76201,
+          "applied_birth": 143,
+          "applied_retire": -1,
+          "branch": 10182,
+          "chosen_side": 1,
+          "taste": -1.0,
+          "native_loss": 2.311922788619995,
+          "historical_autograd_loss": 2.311922550201416,
+          "enumerated_branch_loss": 2.3119225338277434
+        },
+        {
+          "key": 76275,
+          "applied_birth": -1,
+          "applied_retire": 50,
+          "branch": 14,
+          "chosen_side": 1,
+          "taste": -1.0,
+          "native_loss": 2.3218841552734375,
+          "historical_autograd_loss": 2.3218839168548584,
+          "enumerated_branch_loss": 2.3218840370609852
+        }
+      ],
+      "directions": {
+        "existing_writer_inputs": {
+          "analytic_score_probability_derivative": -0.00028949753639707205,
+          "analytic_score_probability_components": {
+            "total": -0.00028949753639707205,
+            "gate": -0.0002904757881656943,
+            "address": 9.78251768622121e-07
+          },
+          "historical_native_sampled_derivative": [
+            0.31494470247671846,
+            0.2992125928808599
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.3043218959009053,
+              "expected_fixed_path_derivative": 0.30461139345578986,
+              "score_probability_derivative": -0.00028949756451326653,
+              "decomposition_residual": 9.628711890308228e-12,
+              "native_branch_derivative": [
+                0.3149447109396242,
+                0.2992125839673676
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.3043218947211083,
+              "expected_fixed_path_derivative": 0.3046113928520685,
+              "score_probability_derivative": -0.0002894981104512083,
+              "decomposition_residual": -2.050897797943596e-11,
+              "native_branch_derivative": [
+                0.31494471031123794,
+                0.29921258339153195
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.3043218947729187,
+              "expected_fixed_path_derivative": 0.30461139283464495,
+              "score_probability_derivative": -0.00028949811051724316,
+              "decomposition_residual": 4.879100877659692e-11,
+              "native_branch_derivative": [
+                0.3149447102890335,
+                0.29921258333232004
+              ]
+            }
+          ]
+        },
+        "bias_14": {
+          "analytic_score_probability_derivative": 0.00046470840337574674,
+          "analytic_score_probability_components": {
+            "total": 0.00046470840337574674,
+            "gate": 0.0004274072824098912,
+            "address": 3.730112096585557e-05
+          },
+          "historical_native_sampled_derivative": [
+            -0.10890071094036102,
+            -0.10570387542247772
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.10673911698955152,
+              "expected_fixed_path_derivative": -0.10720382545552282,
+              "score_probability_derivative": 0.00046470847331948114,
+              "decomposition_residual": -7.348183693467458e-12,
+              "native_branch_derivative": [
+                -0.10890069318758577,
+                -0.10570385638786206
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.10673911749285261,
+              "expected_fixed_path_derivative": -0.10720382548839717,
+              "score_probability_derivative": 0.0004647080048143775,
+              "decomposition_residual": -9.269819287172076e-12,
+              "native_branch_derivative": [
+                -0.10890069321867202,
+                -0.1057038564233892
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.10673911534642143,
+              "expected_fixed_path_derivative": -0.10720382548193022,
+              "score_probability_derivative": 0.00046471000251938847,
+              "decomposition_residual": 1.329894033438861e-10,
+              "native_branch_derivative": [
+                -0.10890069319646754,
+                -0.10570385644559364
+              ]
+            }
+          ]
+        },
+        "bias_15": {
+          "analytic_score_probability_derivative": -0.0015460867643639648,
+          "analytic_score_probability_components": {
+            "total": -0.0015460867643639648,
+            "gate": -0.001555275090444054,
+            "address": 9.188326080089141e-06
+          },
+          "historical_native_sampled_derivative": [
+            0.07459481060504913,
+            0.07220076769590378
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.06887084832429835,
+              "expected_fixed_path_derivative": 0.07041693518833933,
+              "score_probability_derivative": -0.00154608687434309,
+              "decomposition_residual": 1.0302110293319844e-11,
+              "native_branch_derivative": [
+                0.07459480550808806,
+                0.07220076709169021
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.06887084850563478,
+              "expected_fixed_path_derivative": 0.07041693535042755,
+              "score_probability_derivative": -0.0015460868339638497,
+              "decomposition_residual": -1.082891588899404e-11,
+              "native_branch_derivative": [
+                0.07459480573975459,
+                0.07220076726118425
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.06887084778028907,
+              "expected_fixed_path_derivative": 0.07041693535794619,
+              "score_probability_derivative": -0.0015460876338568683,
+              "decomposition_residual": 5.619975014872769e-11,
+              "native_branch_derivative": [
+                0.07459480575455757,
+                0.07220076727598723
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "spec": {
+        "label": "historical_one_contact",
+        "checkpoint": "docs/evidence/self-writing-2026-11-19/core/bootstrap-own-101.npz",
+        "example_root": 631802,
+        "native_key": 76202
+      },
+      "checkpoint_sha256": "7adc8b87557b881047767640059ae52c2cbe65a70fec19b574e5d1b57244bb57",
+      "expected": 0.0027415204199640287,
+      "raw_pairs": 58081,
+      "distinct_applied_graphs": 13407,
+      "positive_applied_probabilities": 99,
+      "birth_retire_trigger_probabilities": [
+        0.0,
+        0.001108993495856181
+      ],
+      "birth_retire_post_activities": [
+        -0.9245595034395312,
+        0.0055449674792809045
+      ],
+      "retire_rejected_by_scc_probability": 1.8971432416251533e-05,
+      "base_side": 1,
+      "base_motor": 0.046151273041206115,
+      "base_taste": 1.0,
+      "samples": [
+        {
+          "key": 76202,
+          "applied_birth": -1,
+          "applied_retire": -1,
+          "branch": 0,
+          "chosen_side": 1,
+          "taste": 1.0,
+          "native_loss": 0.00274135684594512,
+          "historical_autograd_loss": 0.002741357544437051,
+          "enumerated_branch_loss": 0.0027413574014613236
+        }
+      ],
+      "directions": {
+        "existing_writer_inputs": {
+          "analytic_score_probability_derivative": 5.6739304984309436e-06,
+          "analytic_score_probability_components": {
+            "total": 5.6739304984309436e-06,
+            "gate": 5.679370309739394e-06,
+            "address": -5.439811308452167e-09
+          },
+          "historical_native_sampled_derivative": [
+            -0.00011099489989764565
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.00010532697066953367,
+              "expected_fixed_path_derivative": -0.00011100090118315841,
+              "score_probability_derivative": 5.67393051346243e-06,
+              "decomposition_residual": 1.6231184148465805e-16,
+              "native_branch_derivative": [
+                -0.00011099483919431094
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.00010532697049606132,
+              "expected_fixed_path_derivative": -0.00011100090100314906,
+              "score_probability_derivative": 5.673930504619128e-06,
+              "decomposition_residual": 2.468606374005089e-15,
+              "native_branch_derivative": [
+                -0.00011099483901433338
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.00010532697071290174,
+              "expected_fixed_path_derivative": -0.00011100090111156243,
+              "score_probability_derivative": 5.673930370399616e-06,
+              "decomposition_residual": 2.8261071326023124e-14,
+              "native_branch_derivative": [
+                -0.00011099483912275358
+              ]
+            }
+          ]
+        },
+        "bias_14": {
+          "analytic_score_probability_derivative": -8.41194716256185e-06,
+          "analytic_score_probability_components": {
+            "total": -8.41194716256185e-06,
+            "gate": -8.412558245760618e-06,
+            "address": 6.110831987661233e-10
+          },
+          "historical_native_sampled_derivative": [
+            5.766662798123434e-05
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 4.9250195107049255e-05,
+              "expected_fixed_path_derivative": 5.766214233096367e-05,
+              "score_probability_derivative": -8.411947218733114e-06,
+              "decomposition_residual": -5.181300538354555e-15,
+              "native_branch_derivative": [
+                5.766694480876383e-05
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 4.925019396213176e-05,
+              "expected_fixed_path_derivative": 5.766214112378007e-05,
+              "score_probability_derivative": -8.411947171663907e-06,
+              "decomposition_residual": 1.0015595395141547e-14,
+              "native_branch_derivative": [
+                5.766694360168541e-05
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 4.925019383202749e-05,
+              "expected_fixed_path_derivative": 5.766214087806271e-05,
+              "score_probability_derivative": -8.411947063122137e-06,
+              "decomposition_residual": 1.70869178181543e-14,
+              "native_branch_derivative": [
+                5.7666943355932914e-05
+              ]
+            }
+          ]
+        },
+        "bias_15": {
+          "analytic_score_probability_derivative": 2.93490256130735e-05,
+          "analytic_score_probability_components": {
+            "total": 2.93490256130735e-05,
+            "gate": 2.9353752544048044e-05,
+            "address": -4.726930974540264e-09
+          },
+          "historical_native_sampled_derivative": [
+            -0.0004084051470272243
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.00037906328044555807,
+              "expected_fixed_path_derivative": -0.0004084123064362718,
+              "score_probability_derivative": 2.9349025993452677e-05,
+              "decomposition_residual": -2.7389521857143495e-15,
+              "native_branch_derivative": [
+                -0.00040840571315873403
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.0003790632911220582,
+              "expected_fixed_path_derivative": -0.0004084123167470132,
+              "score_probability_derivative": 2.934902562347542e-05,
+              "decomposition_residual": 1.4795564946823436e-15,
+              "native_branch_derivative": [
+                -0.00040840572346877385
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.0003790632921050682,
+              "expected_fixed_path_derivative": -0.00040841231770845013,
+              "score_probability_derivative": 2.9349025599770384e-05,
+              "decomposition_residual": 3.611572304239308e-15,
+              "native_branch_derivative": [
+                -0.00040840572443009976
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "spec": {
+        "label": "matched_long",
+        "checkpoint": "docs/evidence/self-edit-dose-2026-11-19/bootstrap/train-2101-high-long.npz",
+        "example_root": 631803,
+        "native_key": 76203
+      },
+      "checkpoint_sha256": "69cc5fbd045f2362d0180556c45f519b85ab7e7d84bac0ca8274217d431ea85f",
+      "expected": 0.06682644325381272,
+      "raw_pairs": 58081,
+      "distinct_applied_graphs": 13532,
+      "positive_applied_probabilities": 133,
+      "birth_retire_trigger_probabilities": [
+        0.047380643258571845,
+        0.0
+      ],
+      "birth_retire_post_activities": [
+        0.296129020366074,
+        -0.09763553622354613
+      ],
+      "retire_rejected_by_scc_probability": 0.0,
+      "base_side": -1,
+      "base_motor": -0.20020907191832835,
+      "base_taste": 1.0,
+      "samples": [
+        {
+          "key": 76203,
+          "applied_birth": -1,
+          "applied_retire": -1,
+          "branch": 0,
+          "chosen_side": -1,
+          "taste": 1.0,
+          "native_loss": 0.06688934564590454,
+          "historical_autograd_loss": 0.06688934564590454,
+          "enumerated_branch_loss": 0.06688934555040185
+        },
+        {
+          "key": 76301,
+          "applied_birth": 148,
+          "applied_retire": -1,
+          "branch": 10680,
+          "chosen_side": -1,
+          "taste": 1.0,
+          "native_loss": 0.044554486870765686,
+          "historical_autograd_loss": 0.044554486870765686,
+          "enumerated_branch_loss": 0.044554491745410194
+        }
+      ],
+      "directions": {
+        "existing_writer_inputs": {
+          "analytic_score_probability_derivative": -3.465245246801575e-05,
+          "analytic_score_probability_components": {
+            "total": -3.465245246801575e-05,
+            "gate": -2.9041448641593807e-05,
+            "address": -5.611003826421941e-06
+          },
+          "historical_native_sampled_derivative": [
+            0.0009864959340934818,
+            0.0009617336255955513
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.0009579293149680757,
+              "expected_fixed_path_derivative": 0.0009925817676503298,
+              "score_probability_derivative": -3.46524525417703e-05,
+              "decomposition_residual": -1.4048382953896904e-13,
+              "native_branch_derivative": [
+                0.000986496026117445,
+                0.0009617334254669041
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.0009579293062481989,
+              "expected_fixed_path_derivative": 0.000992581759266079,
+              "score_probability_derivative": -3.465245274705512e-05,
+              "decomposition_residual": -2.7082496130686334e-13,
+              "native_branch_derivative": [
+                0.000986496017744513,
+                0.0009617334199851779
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.0009579293046291236,
+              "expected_fixed_path_derivative": 0.0009925817576509034,
+              "score_probability_derivative": -3.4652452302349043e-05,
+              "decomposition_residual": -7.19430693133221e-13,
+              "native_branch_derivative": [
+                0.0009864960161254377,
+                0.0009617334189443437
+              ]
+            }
+          ]
+        },
+        "bias_14": {
+          "analytic_score_probability_derivative": -0.00020799449526674575,
+          "analytic_score_probability_components": {
+            "total": -0.00020799449526674575,
+            "gate": -0.00019242987437624896,
+            "address": -1.556462089049683e-05
+          },
+          "historical_native_sampled_derivative": [
+            0.0006832553190179169,
+            0.0008628637297078967
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.0004726856617232045,
+              "expected_fixed_path_derivative": 0.0006806801556154245,
+              "score_probability_derivative": -0.0002079944943774173,
+              "decomposition_residual": 4.851972231108281e-13,
+              "native_branch_derivative": [
+                0.0006832555435321019,
+                0.0008628637070129397
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.0004726856628334275,
+              "expected_fixed_path_derivative": 0.0006806801577896123,
+              "score_probability_derivative": -0.00020799449434917257,
+              "decomposition_residual": -6.070122703094594e-13,
+              "native_branch_derivative": [
+                0.0006832555456600294,
+                0.0008628637096497194
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": 0.00047268566144564867,
+              "expected_fixed_path_derivative": 0.0006806801600740579,
+              "score_probability_derivative": -0.00020799449725976567,
+              "decomposition_residual": -1.3686435340089231e-12,
+              "native_branch_derivative": [
+                0.0006832555479729939,
+                0.000862863709996664
+              ]
+            }
+          ]
+        },
+        "bias_15": {
+          "analytic_score_probability_derivative": 1.3169442594168293e-05,
+          "analytic_score_probability_components": {
+            "total": 1.3169442594168293e-05,
+            "gate": 2.0934991096163253e-07,
+            "address": 1.2960092683206658e-05
+          },
+          "historical_native_sampled_derivative": [
+            -0.0015728449216112494,
+            -0.0019744201563298702
+          ],
+          "central_differences": [
+            {
+              "step": 0.0001,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.0015560575426787349,
+              "expected_fixed_path_derivative": -0.0015692269856876398,
+              "score_probability_derivative": 1.3169443013787881e-05,
+              "decomposition_residual": -4.882989086858747e-15,
+              "native_branch_derivative": [
+                -0.0015728455409619313,
+                -0.0019744201349564117
+              ]
+            },
+            {
+              "step": 3e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.001556057547628479,
+              "expected_fixed_path_derivative": -0.0015692269908852714,
+              "score_probability_derivative": 1.3169443772715626e-05,
+              "decomposition_residual": -5.159233026148964e-13,
+              "native_branch_derivative": [
+                -0.0015728455461661017,
+                -0.0019744201411551567
+              ]
+            },
+            {
+              "step": 1e-05,
+              "local_regime_unchanged": true,
+              "expected_loss_derivative": -0.001556057544621625,
+              "expected_fixed_path_derivative": -0.0015692269874666767,
+              "score_probability_derivative": 1.316944423613205e-05,
+              "decomposition_residual": -1.3910802475474316e-12,
+              "native_branch_derivative": [
+                -0.0015728455426966546,
+                -0.0019744201395360816
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

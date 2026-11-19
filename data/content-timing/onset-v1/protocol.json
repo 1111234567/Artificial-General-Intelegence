@@ -1,0 +1,52 @@
+{
+  "format": "matched-first-propagation-tick-v1",
+  "created_utc": "2026-11-03T05:34:07.932004+00:00",
+  "declaration": "Supplement fixed after seeing the matched-v1 cue invariance and downstream summaries; no onset states or onset probe results were measured before this freeze.",
+  "parent_protocol": {
+    "path": "F:\\agi\\data\\content-timing\\matched-v1\\protocol.json",
+    "sha256": "0d962ec4c75d783e6aa09d1233be0cf489e56467e7f53c7db2b88a3377d3b301",
+    "protocol_hash": "17081cc7d23488c0d148c64c0dc5032192c593f37e114f8f9a3fc7f201bdcfd6"
+  },
+  "pins": {
+    "F:\\agi\\experiments\\content_timing\\onset.py": "0fb28b486dd0c155c4f4f06d96d51a4bfab96de819016f03e446addaca7fff86",
+    "F:\\agi\\experiments\\content_timing\\probe.py": "2ea9b4cfe9fa967ad0a3e87b1081f5f9af4fada56c37ffd14f7d60d4440404ae",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\records.pt": "aabf470b0d98730cd12d7e7609e5710d35e25a02e7f7d5bfe102f0f30fbd4d0d",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\result.json": "b44fef95aac942c13a4a33cccbff5f321f37b5e7671e6e2842fd091992ce2be9",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f0.pt": "9429bd61e0d4c0e720cd55e64d14aedf19a090086d9937146da9327c7ff559db",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f1.pt": "cd0eaa7849708ac58ed80290df09e64136bb87b3f10baaaf2e9666662771ff73",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f2.pt": "3eb0f3f801e880c1126e2e07c6cd6130c7084dfb51c1d517f81c495440b5ebdd",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f3.pt": "ce9610b0e3f446392017726d6a467c018c54e026305c20f875020380b77a60c0",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\records.pt": "3b17d52653ad56961b1fda229e0179e601ad61c21d79189ab984d9cabedf1216",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\result.json": "d5f2b163d18aa3f8b78187fec02d969a2ababab59cea06ca848a5d3b1cd688a6",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f0.pt": "b1944752dff27f48534ea2a6f822ff4a75609fb7fcba1ff14f3fe68af1cc77a1",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f1.pt": "6ac4ed1d2951af401f65a2cdb712dde8d85da9ffbfbc31298846f435972c2e72",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f2.pt": "8612d909a8fd69cf48205eebaf94677beb7fb5a60414ea7d5ebbc9e1cc413b79",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f3.pt": "3a514666aa953db8ab577806cb60be8976802d180fe174c7ec29aa0525f08118",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\records.pt": "fa2cebd5a0cac1afc56734d22e33485650001e11569e49611c9ad5aa366c4864",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\result.json": "5037349219b0dabe23fcfb74a13e18e5cb08d2a5fb9172af8047faa0484d3e5f",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f0.pt": "b5ee80f8419ecb23d7ff837c2800c6ad5c8b7b45f49c686e9ac80f4d121cf47e",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f1.pt": "c187c97771d589722b18d2201178185787c5cd08cd433ca8b6e24f4d2df6f071",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f2.pt": "291f0c4db430145f18b55e4c01954cfd8990165cfacc6e5beca7e78309bd78ff",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f3.pt": "3d47863d65926868517287c5e89054653210f921c2b46754e904ae54bcc20aa9"
+  },
+  "population": "Exactly the existing576 real anchors: all192 per seed, duration8, four raw payloads; no anchor selection or replacement.",
+  "replay": "Use each saved actual full-world post-observe anchor and continuous pre-cue h. Reconstruct the original eight-treatment batch (duration2 and8 x four raw) in original order so the duration8 cue reproduces exactly. Only duration8 onset data are saved. Apply the same original locked target BEGIN and original non-target background actions, observe exactly one0.25s tick, step the unchanged original controller, measure before taking the next action.",
+  "matching": "Require bitwise equality of every duration8 cue state24 and original11 scores versus saved matched-v1 rows. Require exact public-observation equality across all8 variants at onset and source equality at every non-target slot. BEGIN must actually be accepted.",
+  "primary": "For each seed count how many of192 anchor groups have identical four-raw cue non_input24 states but a nonzero FP64 difference at exactly+0.25. Report exact inequality plus L2 and maximum absolute scales; exactnonzero is propagation detection, not necessarily robust decodability.",
+  "probe": {
+    "algorithm": "Import unchanged probe.fit_scores: train-fold mean/std, ridge=.001*n on standardized slopes, unpenalized intercept, four-way one-hot least squares.",
+    "folds": "Within each seed and job, train actors4,5 test6,7 and reverse. All four variants of every anchor remain together; pool all4 families as in the original probe. Fit and test only+1tick, no hyperparameter or stage search.",
+    "labels": [
+      "raw",
+      "mapped"
+    ],
+    "null": "Identical within-anchor mean test state; balanced four variants force25%null. Source controller and backbone weights are never trained."
+  },
+  "outputs": "seed_000/records.pt similarly001,002: rows plus x24, scores11, finish_scores8, cue_x24, cue_scores11, h80, model_obs56; all floating tensors FP64. result.json stores exact cue checks, per-anchor propagation and original-fold probe confusion matrices.",
+  "limits": [
+    "This locates first propagation at the requested observation grid, not continuous-time latency within the interval.",
+    "A trainable external offline probe does not establish that the inherited controller uses the feature for correct autonomous actions.",
+    "Same locked-BEGIN/WAIT controlled-fork interpretation and version-receipt limitation as matched-v1. No additional duration or behavior experiment."
+  ],
+  "protocol_hash": "091a30d53b85ff89843271f4f878e94ee1156fa328d263b21a6c77d618d0bcbf"
+}

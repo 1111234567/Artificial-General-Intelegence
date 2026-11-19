@@ -1,0 +1,51 @@
+{
+  "study": "self-writing core",
+  "amendment": "Initial development pilots had oracle address filtering. Before final training, switch all view variants to the same unrestricted non-diagonal candidate pool, check support only during execution, and rerun development roots before any holdout.",
+  "bootstrap": {
+    "view": "own",
+    "worlds": "iid random unit direction, two opposite novel odors, random physical presentation direction and random good identity, one self-chosen contact, then both orientations queried from rest",
+    "objective": "mean binary cross entropy on the two future choices, plus a small birth-parameter regularizer; differentiate through applied signed ordinary edge and bias writes and newborn values; stop gradient through choice, structure addresses, and guards",
+    "development_roots": [
+      11,
+      19
+    ],
+    "heldout_roots": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "development_world_seed": 1901,
+    "heldout_world_seed": 83231001,
+    "iterations": [
+      500,
+      1100
+    ],
+    "selection": "choose lowest training budget for which both development roots reach mean 0.8 held-out-pair accuracy, otherwise use the larger budget; choose final once, then train all evaluation roots with the selected budget"
+  },
+  "life": {
+    "arms": [
+      "active",
+      "primitive",
+      "none",
+      "shuffle"
+    ],
+    "view": "own",
+    "worlds_per_root_per_regime": 24,
+    "contacts_per_life": 192,
+    "world_generator": "Per world three novel antipodal odor pairs span a random orthonormal basis, with fresh small cue dithering and independent side swap at each contact. Category repeat/order and initial preference signs are yoked across regimes. Both regimes are identical for the first 48 actual-taste contacts. At contact index 48 their shared first surprise is sign-flipped. From index 49, stationary reverts to its original hidden mapping with independent 22% taste flips. Reliable changing retains the reversed mapping, and all signs flip without noise at indices 96 and 144. The graph gets neither regime/phase nor truth.",
+    "donor_transfer": "Save single-graph-per-lane endpoints and every 48-contact checkpoint; record both named regret and world-hidden reports.",
+    "knowledge_assay": "Two silent orientations per category from both rest and retained activity at each 48-contact checkpoint. Knowledge scores use underlying preference, which differs from reported taste in the stationary noisy regime.",
+    "readback": "current weight and presence per candidate and target bias affect edit value and address ranking via endogenous gains; graph support validity and strong connectivity checked separately",
+    "primary": "terminal 24-contact mean correct uncorrupted physical choice, active vs primitive by regime and their interaction",
+    "secondary": "first-three-post-shock and late-post-shock physical choice, signed edge/bias changes, actual births and retirements, writer rows only edits, and per-lifetime realized coverage",
+    "physical_write_amplitude": "Original bootstrap-matched amplitude 1.0 is primary. Preregistered sensitivity uses 0.12x continuous edge and bias magnitudes, with structural probabilities, newborn values, and true per-address guard mechanics unchanged. This amplitude was selected after a separate roots 11 and 19 development sweep {1, 0.42, 0.22, 0.12, 0.06, 0.03}, because it maximized the average terminal physical score across active and protected writers and both conditions. No final lifetime outcomes had been computed.",
+    "inference": "paired root average and descriptive 95% paired root bootstrap intervals, unit is bootstrap root and worlds are averaged within each root"
+  },
+  "bootstrap_locked_before_heldout_training": true,
+  "lifetime_locked_before_heldout_life": true
+}

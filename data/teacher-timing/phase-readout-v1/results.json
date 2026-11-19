@@ -1,0 +1,570 @@
+{
+  "format": "teacher-timing-fixed-phase-posthoc-results-v1",
+  "posthoc": true,
+  "protocol_hash": "6c531f38da33fd53f0398aea311497fc7a7c66a0bd3970bef08277cd24e1aa07",
+  "protocol_sha256": "954669853c2e35d987aba91e8b5fb1a8ec6dd792a341f1eb0482f290a655cf1a",
+  "rows": [
+    {
+      "requests": 1338,
+      "phases": {
+        "first_legal": {
+          "requests": 1338,
+          "conditional8_content_correct": 1253,
+          "native11_correct_FINISH": 805,
+          "native11_WAIT": 512,
+          "native11_wrong_FINISH": 21,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1338,
+          "conditional8_content_correct": 1218,
+          "native11_correct_FINISH": 1158,
+          "native11_WAIT": 66,
+          "native11_wrong_FINISH": 114,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 63,
+        "firstcorrect_laterwrong": 98,
+        "bothcorrect": 1155,
+        "neither": 22
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 397,
+        "firstcorrect_laterwrong": 44,
+        "bothcorrect": 761,
+        "neither": 136
+      },
+      "seed": 0,
+      "policy": "earliest_action"
+    },
+    {
+      "requests": 1338,
+      "phases": {
+        "first_legal": {
+          "requests": 1338,
+          "conditional8_content_correct": 1244,
+          "native11_correct_FINISH": 701,
+          "native11_WAIT": 609,
+          "native11_wrong_FINISH": 28,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1338,
+          "conditional8_content_correct": 1197,
+          "native11_correct_FINISH": 1166,
+          "native11_WAIT": 35,
+          "native11_wrong_FINISH": 137,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 66,
+        "firstcorrect_laterwrong": 113,
+        "bothcorrect": 1131,
+        "neither": 28
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 501,
+        "firstcorrect_laterwrong": 36,
+        "bothcorrect": 665,
+        "neither": 136
+      },
+      "seed": 0,
+      "policy": "earliest_joint"
+    },
+    {
+      "requests": 1338,
+      "phases": {
+        "first_legal": {
+          "requests": 1338,
+          "conditional8_content_correct": 999,
+          "native11_correct_FINISH": 41,
+          "native11_WAIT": 1297,
+          "native11_wrong_FINISH": 0,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1338,
+          "conditional8_content_correct": 1269,
+          "native11_correct_FINISH": 1118,
+          "native11_WAIT": 170,
+          "native11_wrong_FINISH": 50,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 312,
+        "firstcorrect_laterwrong": 42,
+        "bothcorrect": 957,
+        "neither": 27
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 1077,
+        "firstcorrect_laterwrong": 0,
+        "bothcorrect": 41,
+        "neither": 220
+      },
+      "seed": 0,
+      "policy": "midpoint_action"
+    },
+    {
+      "requests": 1338,
+      "phases": {
+        "first_legal": {
+          "requests": 1338,
+          "conditional8_content_correct": 1052,
+          "native11_correct_FINISH": 86,
+          "native11_WAIT": 1252,
+          "native11_wrong_FINISH": 0,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1338,
+          "conditional8_content_correct": 1269,
+          "native11_correct_FINISH": 1122,
+          "native11_WAIT": 156,
+          "native11_wrong_FINISH": 60,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 253,
+        "firstcorrect_laterwrong": 36,
+        "bothcorrect": 1016,
+        "neither": 33
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 1037,
+        "firstcorrect_laterwrong": 1,
+        "bothcorrect": 85,
+        "neither": 215
+      },
+      "seed": 0,
+      "policy": "midpoint_joint"
+    },
+    {
+      "requests": 1363,
+      "phases": {
+        "first_legal": {
+          "requests": 1363,
+          "conditional8_content_correct": 1169,
+          "native11_correct_FINISH": 1052,
+          "native11_WAIT": 149,
+          "native11_wrong_FINISH": 162,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1363,
+          "conditional8_content_correct": 1098,
+          "native11_correct_FINISH": 1084,
+          "native11_WAIT": 21,
+          "native11_wrong_FINISH": 258,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 35,
+        "firstcorrect_laterwrong": 106,
+        "bothcorrect": 1063,
+        "neither": 159
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 141,
+        "firstcorrect_laterwrong": 109,
+        "bothcorrect": 943,
+        "neither": 170
+      },
+      "seed": 1,
+      "policy": "earliest_action"
+    },
+    {
+      "requests": 1363,
+      "phases": {
+        "first_legal": {
+          "requests": 1363,
+          "conditional8_content_correct": 1119,
+          "native11_correct_FINISH": 1095,
+          "native11_WAIT": 48,
+          "native11_wrong_FINISH": 220,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1363,
+          "conditional8_content_correct": 1056,
+          "native11_correct_FINISH": 1048,
+          "native11_WAIT": 9,
+          "native11_wrong_FINISH": 306,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 51,
+        "firstcorrect_laterwrong": 114,
+        "bothcorrect": 1005,
+        "neither": 193
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 68,
+        "firstcorrect_laterwrong": 115,
+        "bothcorrect": 980,
+        "neither": 200
+      },
+      "seed": 1,
+      "policy": "earliest_joint"
+    },
+    {
+      "requests": 1363,
+      "phases": {
+        "first_legal": {
+          "requests": 1363,
+          "conditional8_content_correct": 962,
+          "native11_correct_FINISH": 1,
+          "native11_WAIT": 1362,
+          "native11_wrong_FINISH": 0,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1363,
+          "conditional8_content_correct": 1167,
+          "native11_correct_FINISH": 657,
+          "native11_WAIT": 653,
+          "native11_wrong_FINISH": 53,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 251,
+        "firstcorrect_laterwrong": 46,
+        "bothcorrect": 916,
+        "neither": 150
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 657,
+        "firstcorrect_laterwrong": 1,
+        "bothcorrect": 0,
+        "neither": 705
+      },
+      "seed": 1,
+      "policy": "midpoint_action"
+    },
+    {
+      "requests": 1363,
+      "phases": {
+        "first_legal": {
+          "requests": 1363,
+          "conditional8_content_correct": 1027,
+          "native11_correct_FINISH": 59,
+          "native11_WAIT": 1299,
+          "native11_wrong_FINISH": 5,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1363,
+          "conditional8_content_correct": 1124,
+          "native11_correct_FINISH": 1107,
+          "native11_WAIT": 23,
+          "native11_wrong_FINISH": 233,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 209,
+        "firstcorrect_laterwrong": 112,
+        "bothcorrect": 915,
+        "neither": 127
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 1049,
+        "firstcorrect_laterwrong": 1,
+        "bothcorrect": 58,
+        "neither": 255
+      },
+      "seed": 1,
+      "policy": "midpoint_joint"
+    },
+    {
+      "requests": 1356,
+      "phases": {
+        "first_legal": {
+          "requests": 1356,
+          "conditional8_content_correct": 1222,
+          "native11_correct_FINISH": 911,
+          "native11_WAIT": 352,
+          "native11_wrong_FINISH": 93,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1356,
+          "conditional8_content_correct": 1180,
+          "native11_correct_FINISH": 1177,
+          "native11_WAIT": 3,
+          "native11_wrong_FINISH": 176,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 48,
+        "firstcorrect_laterwrong": 90,
+        "bothcorrect": 1132,
+        "neither": 86
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 327,
+        "firstcorrect_laterwrong": 61,
+        "bothcorrect": 850,
+        "neither": 118
+      },
+      "seed": 2,
+      "policy": "earliest_action"
+    },
+    {
+      "requests": 1356,
+      "phases": {
+        "first_legal": {
+          "requests": 1356,
+          "conditional8_content_correct": 1226,
+          "native11_correct_FINISH": 1126,
+          "native11_WAIT": 112,
+          "native11_wrong_FINISH": 118,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1356,
+          "conditional8_content_correct": 1132,
+          "native11_correct_FINISH": 1119,
+          "native11_WAIT": 18,
+          "native11_wrong_FINISH": 219,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 25,
+        "firstcorrect_laterwrong": 119,
+        "bothcorrect": 1107,
+        "neither": 105
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 95,
+        "firstcorrect_laterwrong": 102,
+        "bothcorrect": 1024,
+        "neither": 135
+      },
+      "seed": 2,
+      "policy": "earliest_joint"
+    },
+    {
+      "requests": 1356,
+      "phases": {
+        "first_legal": {
+          "requests": 1356,
+          "conditional8_content_correct": 832,
+          "native11_correct_FINISH": 24,
+          "native11_WAIT": 1328,
+          "native11_wrong_FINISH": 4,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1356,
+          "conditional8_content_correct": 1209,
+          "native11_correct_FINISH": 1087,
+          "native11_WAIT": 139,
+          "native11_wrong_FINISH": 130,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 427,
+        "firstcorrect_laterwrong": 50,
+        "bothcorrect": 782,
+        "neither": 97
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 1063,
+        "firstcorrect_laterwrong": 0,
+        "bothcorrect": 24,
+        "neither": 269
+      },
+      "seed": 2,
+      "policy": "midpoint_action"
+    },
+    {
+      "requests": 1356,
+      "phases": {
+        "first_legal": {
+          "requests": 1356,
+          "conditional8_content_correct": 750,
+          "native11_correct_FINISH": 10,
+          "native11_WAIT": 1344,
+          "native11_wrong_FINISH": 2,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 1356,
+          "conditional8_content_correct": 1203,
+          "native11_correct_FINISH": 916,
+          "native11_WAIT": 323,
+          "native11_wrong_FINISH": 117,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 491,
+        "firstcorrect_laterwrong": 38,
+        "bothcorrect": 712,
+        "neither": 115
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 906,
+        "firstcorrect_laterwrong": 0,
+        "bothcorrect": 10,
+        "neither": 440
+      },
+      "seed": 2,
+      "policy": "midpoint_joint"
+    }
+  ],
+  "pooled_by_policy": {
+    "earliest_action": {
+      "requests": 4057,
+      "phases": {
+        "first_legal": {
+          "requests": 4057,
+          "conditional8_content_correct": 3644,
+          "native11_correct_FINISH": 2768,
+          "native11_WAIT": 1013,
+          "native11_wrong_FINISH": 276,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 4057,
+          "conditional8_content_correct": 3496,
+          "native11_correct_FINISH": 3419,
+          "native11_WAIT": 90,
+          "native11_wrong_FINISH": 548,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 146,
+        "firstcorrect_laterwrong": 294,
+        "bothcorrect": 3350,
+        "neither": 267
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 865,
+        "firstcorrect_laterwrong": 214,
+        "bothcorrect": 2554,
+        "neither": 424
+      }
+    },
+    "earliest_joint": {
+      "requests": 4057,
+      "phases": {
+        "first_legal": {
+          "requests": 4057,
+          "conditional8_content_correct": 3589,
+          "native11_correct_FINISH": 2922,
+          "native11_WAIT": 769,
+          "native11_wrong_FINISH": 366,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 4057,
+          "conditional8_content_correct": 3385,
+          "native11_correct_FINISH": 3333,
+          "native11_WAIT": 62,
+          "native11_wrong_FINISH": 662,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 142,
+        "firstcorrect_laterwrong": 346,
+        "bothcorrect": 3243,
+        "neither": 326
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 664,
+        "firstcorrect_laterwrong": 253,
+        "bothcorrect": 2669,
+        "neither": 471
+      }
+    },
+    "midpoint_action": {
+      "requests": 4057,
+      "phases": {
+        "first_legal": {
+          "requests": 4057,
+          "conditional8_content_correct": 2793,
+          "native11_correct_FINISH": 66,
+          "native11_WAIT": 3987,
+          "native11_wrong_FINISH": 4,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 4057,
+          "conditional8_content_correct": 3645,
+          "native11_correct_FINISH": 2862,
+          "native11_WAIT": 962,
+          "native11_wrong_FINISH": 233,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 990,
+        "firstcorrect_laterwrong": 138,
+        "bothcorrect": 2655,
+        "neither": 274
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 2797,
+        "firstcorrect_laterwrong": 1,
+        "bothcorrect": 65,
+        "neither": 1194
+      }
+    },
+    "midpoint_joint": {
+      "requests": 4057,
+      "phases": {
+        "first_legal": {
+          "requests": 4057,
+          "conditional8_content_correct": 2829,
+          "native11_correct_FINISH": 155,
+          "native11_WAIT": 3895,
+          "native11_wrong_FINISH": 7,
+          "native11_BEGIN": 0
+        },
+        "teacher_FINISH": {
+          "requests": 4057,
+          "conditional8_content_correct": 3596,
+          "native11_correct_FINISH": 3145,
+          "native11_WAIT": 502,
+          "native11_wrong_FINISH": 410,
+          "native11_BEGIN": 0
+        }
+      },
+      "paired_conditional8_content": {
+        "firstwrong_latercorrect": 953,
+        "firstcorrect_laterwrong": 186,
+        "bothcorrect": 2643,
+        "neither": 275
+      },
+      "paired_native11_correct_FINISH": {
+        "firstwrong_latercorrect": 2992,
+        "firstcorrect_laterwrong": 2,
+        "bothcorrect": 153,
+        "neither": 910
+      }
+    }
+  },
+  "evidence_files": {
+    "F:\\agi\\data\\teacher-timing\\phase-readout-v1\\seed_000_paired_requests.npz": "617e426921872d4525f1b5af2e608ae2e034e95c38a0ad4ab6e6eb687e96bb51",
+    "F:\\agi\\data\\teacher-timing\\phase-readout-v1\\seed_001_paired_requests.npz": "441c9688f665b0cd3721a0814190232b9bdb2b1cfb7e2afc464dd3c69937690b",
+    "F:\\agi\\data\\teacher-timing\\phase-readout-v1\\seed_002_paired_requests.npz": "d32e48567ed967813550af2bb76af5efd3eb10f0cec9f46128a8709240b014fe"
+  },
+  "all_original_inputs_and_sources_unchanged": true,
+  "no_new_model_runs": true,
+  "interpretation": "Paired content/readout counts on one actual midpoint-teacher background, after seeing main outcomes; fixed teacher FINISH is not each tested model's own action time or its autonomous trajectory."
+}

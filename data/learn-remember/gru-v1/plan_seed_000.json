@@ -1,0 +1,22 @@
+{
+  "format": "learn-remember-plain-gru-v1",
+  "config": {
+    "seed": 0,
+    "width": 192,
+    "batch": 64,
+    "ticks_per_round": 1024,
+    "block": 128,
+    "short_rounds": 6,
+    "wide_rounds": 16,
+    "withdrawal_rounds": 12,
+    "epochs": 32,
+    "lr": 0.001,
+    "wait_weight": 0.25,
+    "device": "cuda"
+  },
+  "source_sha256": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+  "planned_seed_selection": "All fixed seeds 0,1,2; no success selection",
+  "model": "nn.GRU public56->192, one layer, Linear22; native11way argmax per slot",
+  "training": "Continuous exact CPU world and hidden, GPU contiguous sequence supervised CE; current-round repeated epochs only; oracle label vs actual execution explicitly retained",
+  "withdrawal": "future NEW families 0,1,2; no family3 historical replay; inherited live pending residual exposures counted separately"
+}

@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-11-03T15:43:52.701210+00:00",
+  "source_sha": "90159121a3911c5944a189cfb10e744816cf0dc418ee3f83f66ea9e2b680aee1",
+  "seed_offset": 630180,
+  "actors": [
+    84300,
+    84301,
+    84302,
+    84303,
+    84304,
+    84305,
+    84306,
+    84307,
+    84308,
+    84309,
+    84310,
+    84311,
+    84312,
+    84313,
+    84314,
+    84315
+  ],
+  "warm": 512,
+  "test": 2048,
+  "stage": "B008",
+  "design": "Same 56-dimensional public history for both frozen models. Real midpoint teacher executes in an independent long mixed two-slot world, including cancellations/replacements. No tested model acts in this auxiliary measurement.",
+  "cases": "New eligible mature conflicting A and B requests after warmup that have last actual processing WAIT, first legal tick and original teacher FINISH; retain full denominator and excluded counts.",
+  "outcomes": "At the same three request times compare eleven-way intents and correct version+payload; estimate how often last WAIT and first legal correct FINISH are both chosen. Also count any premature FINISH intention during processing. This is not closed-loop completion."
+}

@@ -1,0 +1,90 @@
+{
+  "utc": "2026-11-19T06:45:28.354554+00:00",
+  "source_sha256": {
+    "sparse_switch_history.py": "f0a2997af99dba80ed4a3d28cbf7917943193b164f8f348f30a81b4024739057",
+    "sparse_pair_switch.py": "2167ce04dffce6c82430f4a498c445d1dbb274645cc26a5f348d0f7b16ba2671",
+    "sparse_pairs_model.py": "2e29f03241258c3edc611ac78e5a03f6271d1ef36dccba1b58f4cbc0d3e68335",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "dendrite_ports_graph.py": "30b6d1c3005963967ba20e2c23c5df2c0a98f416e226447efb97539f9ce840c1",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "primary_switch_sha256": "ccbc651f1be87362b09279c9d516e60362e2eb756d5c0b17aa53643ad898ba44",
+  "recipe_source_sha256": "a92b48de718a15c62d8b6f848870b19719186de53119f2305e459d95641e1855",
+  "setup": {
+    "recipe": {
+      "rate": 0.045,
+      "exploration": 0.23,
+      "decay": 0.991,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    "pair_rate": 0.65,
+    "pair_decay": 0.993,
+    "policy": {
+      "samples": 48,
+      "threshold": 0.022,
+      "floor": 0.075,
+      "grace": 96
+    }
+  },
+  "births": [
+    964200,
+    964201,
+    964202,
+    964203,
+    964204,
+    964205,
+    964206,
+    964207
+  ],
+  "worlds": [
+    964620,
+    964621,
+    964622,
+    964623,
+    964624,
+    964625,
+    964626,
+    964627
+  ],
+  "arms": [
+    "full",
+    "preserve_a_end",
+    "reuse_a_ever"
+  ],
+  "contrasts": [
+    [
+      "full",
+      "preserve_a_end"
+    ],
+    [
+      "full",
+      "reuse_a_ever"
+    ],
+    [
+      "reuse_a_ever",
+      "preserve_a_end"
+    ]
+  ],
+  "sign_twins": [
+    "B",
+    "minus_B"
+  ],
+  "a_training": 640,
+  "b_training": 640,
+  "b_silent_probe": 80,
+  "bootstrap": {
+    "seed": 675798,
+    "draws": 20000
+  },
+  "design": "Use the primary physical switch tape generator, same birth seed groups, disjoint fresh world roots and architecture recipe selected before this switch. Train A once with the primary guided actor; clone the same state into all B arms and sign twins. At B640 use a fresh silent probe, no extra endpoints or A return.",
+  "full": "Ordinary guided pair proposals and exits continue.",
+  "preserve_a_end": "Disable all B pair births and voluntary evidence-based pair exit, so A-end pairs remain reusable while both incoming W supports remain. W edits and W/Q weight learning continue. Support loss still deletes the relevant Q and that address cannot regrow.",
+  "reuse_a_ever": "Run ordinary B learning, exits and finite random proposals, with the same draw stream and proposal budget. Filter its sampled pair addresses through the complete set born during A in that life. An A address that was lost can be installed again if eligible and responsive. Do not add extra draws or tune the threshold.",
+  "inference": "Physical expected-best first-contact accuracy including timeout as incorrect. Average sign twins first, preserve paired arms, crossed bootstrap over birth groups and independent new world roots. Three two-sided 95% simultaneous percentile contrasts. Describe final counts, birth events inside/outside A ever-set, support/evidence exits, verified address policy, receipt counts and contact rates. No decision based on observed outcomes.",
+  "limits": "B pair stock and birth opportunity can differ across interventions. Effects of prior support retention, recycling and expansion are policy comparisons conditional on their own coadapted W and receipt histories. The full-minus-reuse contrast does not isolate address novelty at a common stock. No decomposition against the historical no-new arm on different worlds."
+}

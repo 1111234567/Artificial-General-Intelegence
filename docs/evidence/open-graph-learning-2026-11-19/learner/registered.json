@@ -1,0 +1,262 @@
+{
+  "created_utc": "2026-11-19T05:59:37Z",
+  "source_sha256": {
+    "live_module_edits_study.py": "8c89318047d95760eef584a8ab6b027ba2890f0cc204482fc45cd00a12f1c3df",
+    "live_module_edits.py": "9d7aba0d7c0466a1815a17a0d642a9132dfcf6137d7b171665e507938d43e74e",
+    "module_graphs.py": "799a74aaa06f34ea80338c9f3d86667b80c395d4e5981a056180473bfed47502",
+    "free_graph_model.py": "b02f96af9622e6b64f1377dca0f102ba92fc06c4acdc299f9fd7f9b4030724dc",
+    "module_graph_study.py": "f97cf970311af4202ae99db2d1c95cfaf266a9e96ebf4b569320bd62c3538655",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+    "joint_live_study.py": "3139b2566961f9343f91593c21bcaed2c1f9f780d8cb296214e90b49d5fbcf9c",
+    "joint_live_model.py": "5a15be1c17a264f52193e986beaed8f5b6bc6d73d8862f8244eb2bd8306ec33b",
+    "open_life_study.py": "f833dd83dc9f9d4bfc510516e3de3fe0eb5f81ddd79c2e792a484a2efa02b314",
+    "open_life_model.py": "80fc210f705e3f62d79e79694791ec6ae4899cb847d5e072b1c8f918ab3385ba",
+    "coupled_birth.py": "d13771b0a7db90fa35f6bb1ebd7921b73cf1f8b8ffbc4b81e42c5c00f470e792",
+    "joint_live_integrated.py": "e02a85184833640c15a91a103f6f34f8467a4d05c1fcd36a0cdb9fa916ec4d8d"
+  },
+  "legacy_recipe_sha256": "e4dcf3a09fe533d014a9fbe9f0f8fc7a8e5f4d764a74ffe1269031600e430ce0",
+  "groups": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      8,
+      9,
+      10,
+      11
+    ],
+    [
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
+    ]
+  ],
+  "world_roots": [
+    [
+      69541000,
+      69541001,
+      69541002,
+      69541003,
+      69541004,
+      69541005,
+      69541006,
+      69541007
+    ],
+    [
+      69542000,
+      69542001,
+      69542002,
+      69542003,
+      69542004,
+      69542005,
+      69542006,
+      69542007
+    ],
+    [
+      69543000,
+      69543001,
+      69543002,
+      69543003,
+      69543004,
+      69543005,
+      69543006,
+      69543007,
+      69543008,
+      69543009,
+      69543010,
+      69543011,
+      69543012,
+      69543013,
+      69543014,
+      69543015,
+      69543016,
+      69543017,
+      69543018,
+      69543019
+    ]
+  ],
+  "arms": [
+    "adaptive",
+    "legacy",
+    "effective",
+    "head_only",
+    "placebo"
+  ],
+  "conditions": [
+    "stable",
+    "reversal",
+    "return",
+    "partial"
+  ],
+  "trials": 120,
+  "schedule": {
+    "growth_every": 9,
+    "retirement_every": 6,
+    "decay": 0.5
+  },
+  "candidates": [
+    {
+      "rate": 0.008,
+      "head_rate": 0.24,
+      "context_gain": 0.95,
+      "memory_decay": 0.9,
+      "kernel_strength": 24.0,
+      "retirement_cost": 0.035,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.42,
+      "context_gain": 0.95,
+      "memory_decay": 0.9,
+      "kernel_strength": 24.0,
+      "retirement_cost": 0.035,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.42,
+      "context_gain": 1.45,
+      "memory_decay": 0.9,
+      "kernel_strength": 24.0,
+      "retirement_cost": 0.035,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.24,
+      "context_gain": 1.45,
+      "memory_decay": 0.86,
+      "kernel_strength": 18.0,
+      "retirement_cost": 0.035,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.42,
+      "context_gain": 1.45,
+      "memory_decay": 0.86,
+      "kernel_strength": 18.0,
+      "retirement_cost": 0.035,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.28,
+      "context_gain": 1.75,
+      "memory_decay": 0.94,
+      "kernel_strength": 24.0,
+      "retirement_cost": 0.065,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.28,
+      "context_gain": 2.25,
+      "memory_decay": 0.92,
+      "kernel_strength": 32.0,
+      "retirement_cost": 0.065,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.02,
+      "head_rate": 0.32,
+      "context_gain": 1.3,
+      "memory_decay": 0.9,
+      "kernel_strength": 24.0,
+      "retirement_cost": 0.065,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.32,
+      "context_gain": 1.3,
+      "memory_decay": 0.9,
+      "kernel_strength": 24.0,
+      "retirement_cost": 0.085,
+      "temperature": 1.4,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.42,
+      "context_gain": 1.75,
+      "memory_decay": 0.94,
+      "kernel_strength": 18.0,
+      "retirement_cost": 0.085,
+      "temperature": 2.2,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.025,
+      "head_rate": 0.42,
+      "context_gain": 1.75,
+      "memory_decay": 0.94,
+      "kernel_strength": 18.0,
+      "retirement_cost": 0.085,
+      "temperature": 2.2,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    },
+    {
+      "rate": 0.008,
+      "head_rate": 0.32,
+      "context_gain": 1.75,
+      "memory_decay": 0.87,
+      "kernel_strength": 16.0,
+      "retirement_cost": 0.085,
+      "temperature": 2.2,
+      "birth_scale": 4.0,
+      "memory_prior": 0.055
+    }
+  ],
+  "learner": "A continuous strongly connected modules64 graph. Start from exactly the same normalized incumbent. Speed of motor-prediction regression and local residual kernel fitted on mixed development lives. Novel connections take a signed sensitivity velocity step on birth, are individually trainable on every subsequent actual receipt, and do not rescale incumbent arcs. Retire any previously existing arc whose receipt-averaged predicted improvement offsets a weight-squared cost and preserves strong connectivity.",
+  "receipt": "Correct-side labels are reconstructed only at first contact from own physical side times delivered taste. Placebo swaps only the delivered sign for an independent externally drawn fair sign at that clone's actual contact; timeout keeps the absence of learning in every arm. Every model drives its own body.",
+  "context": "Regress own bounded motor prediction against the reconstructed label. Learn the residual with a finite evolving kernel over the recurrent innovations at both public marked pulses. Own earlier receipts update kernel targets and decay weights. None of rule, truth table, cell, trial index, or switch phase enters the learner. Marker threshold and ordered encoding are architectural priors.",
+  "arms_notes": {
+    "adaptive": "All mechanisms active.",
+    "legacy": "Exact previously integrated active joint arm with rate .06 and original structural implementation.",
+    "head_only": "All graph mechanisms unchanged, contextual term inactive; scalar regression still active.",
+    "effective": "Same independent effective update graph and retirement cost; fast terms inactive.",
+    "placebo": "Same graph and fast algorithm, fresh fair sign at each own physical contact."
+  },
+  "worlds": "120 requests. Stable A throughout. Full reversal A to inverted A at a root-chosen request 40 or 60. Return to A another 40 requests later. Partial: root/rule-selected equal subsets of previously right and left cases reverse at 40 or 60 in fitting; 10/20 changed cases in development, 12/20 validation, 8/20 confirmation, with held-out confirmation timing 47, 55 or 63. All roots and starting fitted groups for the three stages are disjoint.",
+  "selection": "Maximize equally weighted stable late, full reversal late, return late, and partial late. Partial criterion itself equally weights the changed and unchanged cases. Ties use candidate order. Seal winning recipe on development jointly across varied lives. Validation runs sealed recipe once; it is descriptive and does not change any selection or define exclusion. Confirm with same recipe in held-out groups and roots.",
+  "primary": "Evaluate stable last20, reversal last20, return last20, and partial last40 (balanced in changed and unchanged strata). Stable retention requires a positive simultaneous lower bound against legacy. Learning reversal requires a positive simultaneous lower bound versus .5 chance. Successful return requires a positive simultaneous lower bound versus legacy. Conditional adaptation requires positive simultaneous lower bound versus head-only on changed cells, with unchanged also reported. Also report within-world paired primary improvement against legacy and placebo. 20,000 paired crossed bootstrap samples by starting group and root; fixed rules pooled equally. All 25 prespecified contrasts (four arm contrasts and chance for each of five snapshots) use one simultaneous family across declared comparisons; no post hoc exclusions.",
+  "fast_fields": [
+    "head_step",
+    "context_write",
+    "head_before",
+    "head_feature",
+    "context_prediction",
+    "match_mass"
+  ]
+}

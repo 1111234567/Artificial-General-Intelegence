@@ -1,0 +1,581 @@
+{
+  "format": "action-return-exact-edge-identity-posthoc-v1",
+  "created_utc": "2026-11-03T04:30:49.072520+00:00",
+  "posthoc": true,
+  "timing": "Selected after seeing small whole-system magnitude-minus-signed inherited absence/return differences. Frozen before these instantaneous exact-coordinate ablation results.",
+  "question": "What is the immediate effect of silencing exactly the20/8/36 historically retired coordinates in the unpruned control, at each of the three actual inherited states?",
+  "source": {
+    "path": "F:\\agi\\experiments\\action_return\\edge_identity.py",
+    "sha256": "2660403747f1881ca1b60c1913041b464b4ff6ece6a8c125f687e8e29e959460"
+  },
+  "absence_protocol": {
+    "path": "F:\\agi\\data\\action-return\\absence-v1\\protocol.json",
+    "sha256": "53810264a92dd1beedbcf9d6892783db7f2b180bb2c5d753de4eea1caff04a5a"
+  },
+  "sources": [
+    {
+      "seed": 0,
+      "retired_count": 20,
+      "pair_indices": [
+        85,
+        562,
+        1236,
+        1265,
+        1391,
+        1475,
+        1828,
+        1836,
+        1938,
+        1998,
+        2155,
+        2168,
+        2328,
+        2450,
+        2477,
+        2826,
+        2867,
+        3017,
+        3053,
+        3087
+      ],
+      "node_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          7,
+          38
+        ],
+        [
+          17,
+          47
+        ],
+        [
+          17,
+          76
+        ],
+        [
+          20,
+          22
+        ],
+        [
+          21,
+          48
+        ],
+        [
+          27,
+          74
+        ],
+        [
+          28,
+          31
+        ],
+        [
+          30,
+          34
+        ],
+        [
+          31,
+          46
+        ],
+        [
+          34,
+          65
+        ],
+        [
+          34,
+          78
+        ],
+        [
+          38,
+          68
+        ],
+        [
+          41,
+          73
+        ],
+        [
+          42,
+          63
+        ],
+        [
+          53,
+          71
+        ],
+        [
+          55,
+          63
+        ],
+        [
+          62,
+          73
+        ],
+        [
+          64,
+          78
+        ],
+        [
+          67,
+          73
+        ]
+      ],
+      "magnitude_source": {
+        "seed": 0,
+        "arm": "magnitude",
+        "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_000\\checkpoint_final.pt",
+        "checkpoint_sha256": "7256613333a8295abb93ee64df0bd7147b48eefdfa30f9a749fb6538a4cb6e78",
+        "result": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_000\\result.json",
+        "result_sha256": "5dae4814ff58c84daa68b91623193ac6600c5f13dbeeb7fb75687ea4ce04e355",
+        "endpoint_semantic_hash": "a049804f91eee74b3dbc69e3451db410586e4f330b078527366e10d8b8bf2590"
+      },
+      "signed_source": {
+        "seed": 0,
+        "arm": "signed_full",
+        "checkpoint": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\full_eligible\\checkpoint_final.pt",
+        "checkpoint_sha256": "ce9dfab91cee0c2058eb07f237a56b6f2b82f267789c6ac4bf2e81adc2c9fe20",
+        "result": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\full_eligible\\result.json",
+        "result_sha256": "4b77678a3ff606f38a6c2e773aeb0c7acfaf9630f4a81a1b9a6a1e0bc3bf81ff",
+        "endpoint_semantic_hash": "a1e0865a0ad22b5d1b719ab5fd87b7bf57e14afcc31de22b3b021c0ca84fd5bc"
+      },
+      "baseline_result": {
+        "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_000\\signed_full\\result.json",
+        "sha256": "bc8d1df40d7ee70a35719ad6bba23634e5dd091598722020801f24df685ad10e"
+      },
+      "stages": [
+        {
+          "phase": "initial",
+          "tick": 147456,
+          "checkpoint": {
+            "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\full_eligible\\checkpoint_final.pt",
+            "sha256": "ce9dfab91cee0c2058eb07f237a56b6f2b82f267789c6ac4bf2e81adc2c9fe20",
+            "semantic_hash": "a1e0865a0ad22b5d1b719ab5fd87b7bf57e14afcc31de22b3b021c0ca84fd5bc"
+          }
+        },
+        {
+          "phase": "withdrawal",
+          "tick": 163840,
+          "checkpoint": {
+            "phase": "withdrawal",
+            "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_000\\signed_full\\checkpoint_withdrawal.pt",
+            "sha256": "6b77e62f9bedb5fefc800de112e8e85b6b131d9ecdb048694ee21a6135e7d5dc",
+            "semantic_hash": "4e816dd8a91767b4e305e742e9cb247829bd421a3e1f6d271d1c3cfb5e41b1c3",
+            "roundtrip": true
+          }
+        },
+        {
+          "phase": "return",
+          "tick": 172032,
+          "checkpoint": {
+            "phase": "return",
+            "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_000\\signed_full\\checkpoint_return.pt",
+            "sha256": "873c456c59c16f5606fd3929b9ace8db298a7567bd05dc1cff1d6c1b3589d8a9",
+            "semantic_hash": "1aae4e6fc2ba064a412c02a7b867d8ec2ccc065fcb9922589a24cecc4dff9d56",
+            "roundtrip": true
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "retired_count": 8,
+      "pair_indices": [
+        254,
+        975,
+        1853,
+        1996,
+        2006,
+        2150,
+        2303,
+        2605
+      ],
+      "node_pairs": [
+        [
+          3,
+          24
+        ],
+        [
+          13,
+          40
+        ],
+        [
+          28,
+          48
+        ],
+        [
+          31,
+          44
+        ],
+        [
+          31,
+          54
+        ],
+        [
+          34,
+          60
+        ],
+        [
+          38,
+          43
+        ],
+        [
+          46,
+          53
+        ]
+      ],
+      "magnitude_source": {
+        "seed": 1,
+        "arm": "magnitude",
+        "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_001\\checkpoint_final.pt",
+        "checkpoint_sha256": "19d64564b006fdc284ba0569a68096de84daacbf4da41bf34c65d76cdf1d7504",
+        "result": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_001\\result.json",
+        "result_sha256": "50d36cf265972ef4ee85227d53487b350b70850f2205f98cec2ea7a0a336a73c",
+        "endpoint_semantic_hash": "7a3efe68f9e19ca0b3b2e05de1185f1fe64e6e7612f3acc91d8629a4f65fbda6"
+      },
+      "signed_source": {
+        "seed": 1,
+        "arm": "signed_full",
+        "checkpoint": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\full_eligible\\checkpoint_final.pt",
+        "checkpoint_sha256": "a76273996075db6eb4a156c6be30aeae72d2e600b6780abcbb67a63dbc9cd807",
+        "result": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\full_eligible\\result.json",
+        "result_sha256": "835b1eefcf324e5f8c0993b87a7a34c4963eae48173256a0e133453c84097f84",
+        "endpoint_semantic_hash": "2d7906c6c205e9c924ecc0ccda80ad8ed7ba2f7972ef1ed1fc90f9a5f64e767d"
+      },
+      "baseline_result": {
+        "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_001\\signed_full\\result.json",
+        "sha256": "f933a925c4dc95ca3c8d7222419ac49ecb0ab0abae04681306f7b44742bcf136"
+      },
+      "stages": [
+        {
+          "phase": "initial",
+          "tick": 147456,
+          "checkpoint": {
+            "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\full_eligible\\checkpoint_final.pt",
+            "sha256": "a76273996075db6eb4a156c6be30aeae72d2e600b6780abcbb67a63dbc9cd807",
+            "semantic_hash": "2d7906c6c205e9c924ecc0ccda80ad8ed7ba2f7972ef1ed1fc90f9a5f64e767d"
+          }
+        },
+        {
+          "phase": "withdrawal",
+          "tick": 163840,
+          "checkpoint": {
+            "phase": "withdrawal",
+            "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_001\\signed_full\\checkpoint_withdrawal.pt",
+            "sha256": "b0d97c1ada2f88fa3b7d5bc3c150da1bdd32bcd8d99d9f24e3d968128aae5f7f",
+            "semantic_hash": "fc35d6007ea07e8651c35127092ad5a0bd745c2d6144e8790156c6f5b69d8755",
+            "roundtrip": true
+          }
+        },
+        {
+          "phase": "return",
+          "tick": 172032,
+          "checkpoint": {
+            "phase": "return",
+            "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_001\\signed_full\\checkpoint_return.pt",
+            "sha256": "3256769efd8ee9cfa23519aa70d5ab5b83e468f8e115589479f65f1cfdb059ae",
+            "semantic_hash": "1bb231a53c05511a6f723d46b7e763b1798a3356f52969d2977a6c4a5488439e",
+            "roundtrip": true
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "retired_count": 36,
+      "pair_indices": [
+        199,
+        360,
+        503,
+        525,
+        770,
+        823,
+        872,
+        963,
+        1159,
+        1167,
+        1212,
+        1275,
+        1335,
+        1340,
+        1356,
+        1391,
+        1499,
+        1584,
+        1592,
+        1675,
+        1786,
+        1931,
+        2061,
+        2317,
+        2327,
+        2369,
+        2405,
+        2449,
+        2569,
+        2685,
+        2701,
+        2902,
+        2907,
+        2912,
+        2989,
+        3033
+      ],
+      "node_pairs": [
+        [
+          2,
+          45
+        ],
+        [
+          4,
+          55
+        ],
+        [
+          6,
+          51
+        ],
+        [
+          6,
+          73
+        ],
+        [
+          10,
+          36
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          70
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          16,
+          32
+        ],
+        [
+          16,
+          40
+        ],
+        [
+          17,
+          23
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          19,
+          25
+        ],
+        [
+          19,
+          30
+        ],
+        [
+          19,
+          46
+        ],
+        [
+          20,
+          22
+        ],
+        [
+          21,
+          72
+        ],
+        [
+          23,
+          44
+        ],
+        [
+          23,
+          52
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          27,
+          32
+        ],
+        [
+          29,
+          76
+        ],
+        [
+          32,
+          62
+        ],
+        [
+          38,
+          57
+        ],
+        [
+          38,
+          67
+        ],
+        [
+          39,
+          69
+        ],
+        [
+          40,
+          66
+        ],
+        [
+          41,
+          72
+        ],
+        [
+          45,
+          50
+        ],
+        [
+          48,
+          70
+        ],
+        [
+          49,
+          56
+        ],
+        [
+          56,
+          75
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          57,
+          63
+        ],
+        [
+          61,
+          62
+        ],
+        [
+          63,
+          73
+        ]
+      ],
+      "magnitude_source": {
+        "seed": 2,
+        "arm": "magnitude",
+        "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_002\\checkpoint_final.pt",
+        "checkpoint_sha256": "4a4a4e968f5e15ab4135799aae4599c23b49f78462e54937ba4a5ad0886d58cc",
+        "result": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_002\\result.json",
+        "result_sha256": "b76b820e823bf3d8d0808ddeacd27b8aada16fd1d95f47630431f0aaa6d823d4",
+        "endpoint_semantic_hash": "1ab6ac6648f63cfecd555884dd0bd2e8ee541cebe7cddb0bb2711235c7caa9fa"
+      },
+      "signed_source": {
+        "seed": 2,
+        "arm": "signed_full",
+        "checkpoint": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\full_eligible\\checkpoint_final.pt",
+        "checkpoint_sha256": "387607332c345e4a3f892301e46b611642aee06fdb76f36a83184ed6ef0ed84e",
+        "result": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\full_eligible\\result.json",
+        "result_sha256": "710a90d3d5af657cacad81f708b6eb5c6938dd36ed8398ce3a57109b6e811ded",
+        "endpoint_semantic_hash": "bc16875e75afb6a9d184520898bc8c13b3c8ce77a4dccdfc92139dd8231eeb2b"
+      },
+      "baseline_result": {
+        "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_002\\signed_full\\result.json",
+        "sha256": "2b75ac3e74e07f426f806b5349cd22f9e6912f19854c60c3be55c28bf1ff4aa2"
+      },
+      "stages": [
+        {
+          "phase": "initial",
+          "tick": 147456,
+          "checkpoint": {
+            "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\full_eligible\\checkpoint_final.pt",
+            "sha256": "387607332c345e4a3f892301e46b611642aee06fdb76f36a83184ed6ef0ed84e",
+            "semantic_hash": "bc16875e75afb6a9d184520898bc8c13b3c8ce77a4dccdfc92139dd8231eeb2b"
+          }
+        },
+        {
+          "phase": "withdrawal",
+          "tick": 163840,
+          "checkpoint": {
+            "phase": "withdrawal",
+            "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_002\\signed_full\\checkpoint_withdrawal.pt",
+            "sha256": "4a25a8caa7e1ebfc97c411cab4bd874c17913aa1cd34310c89cbe4563d29e872",
+            "semantic_hash": "8981b0d159d3ade09043c97f9111cbfb8fb7a8eec27b23d1f0fb0a0309aaa1c6",
+            "roundtrip": true
+          }
+        },
+        {
+          "phase": "return",
+          "tick": 172032,
+          "checkpoint": {
+            "phase": "return",
+            "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_002\\signed_full\\checkpoint_return.pt",
+            "sha256": "3beda3f0a2509c5f3b472d276ecdc979dc485a1cc755478de0847ad35ae7d83b",
+            "semantic_hash": "3028d1de1ba6f4fd25bfcff76bed263647e1e347f67e051e98fd25a405775244",
+            "roundtrip": true
+          }
+        }
+      ]
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "phases": [
+    "initial",
+    "withdrawal",
+    "return"
+  ],
+  "ticks": [
+    147456,
+    163840,
+    172032
+  ],
+  "families": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "condition": "short",
+  "steps": 2048,
+  "intervention": "Deepcopy each signed_full model, set precisely the fixed historical pair_indices edge_shared values to0 once before the fork. No new ranking, mask/eligibility editing, state editing, adaptation, training or threshold. Both symmetric physical directions disappear because Wuv=Wvu=edge_shared/sqrt(2).",
+  "identity": "Actual magnitude147456 retirement ledger exact set=initial_mask minus endpoint mask;20/8/36, no births. Canonical node pairs also bound; same fixed identities at all time points.",
+  "baseline": "Reuse36 SHA-bound signed_full short evaluations from absence-v1 result.records[phase]; verify actual source model/world/h hashes, full11 argmax,2048 steps, frozen/no-reset, original evaluator source pins.",
+  "evaluation": "Detached autonomous eleven-action argmax using unchanged original evaluator and exact source world/h at each point. Historical h is retained, including prior influence of these edges. No source continuation is retrained or declared a valid newly pruned checkpoint.",
+  "metrics": {
+    "primary": "family0 per-seed strict/ordinary completed/matured and paired differences in percentage points; idle actions/inactive opportunities and paired difference per1000",
+    "secondary": "all four families separately; equal-family mean of paired rate differences within each seed, then mean/sample SD across three seeds",
+    "weights": "Per selected coordinate actual signed shared weight and physical Wuv; abs mean/min/median/max, RMS, L1/L2, relative selected L2 to complete shared weight L2 at each time. Shared-coordinate L2 equals removed bidirectional matrix Frobenius norm.",
+    "denominators": "Primary matured request counts/fingerprints must match each pair; actual idle opportunity denominators can change with own completion policy and both are saved."
+  },
+  "matching": "source world/h and external scheduler/event/actor/case streams; primary and carryover matured request fingerprints; model copy differs only at fixed shared coordinates; actual source full semantic state unchanged",
+  "limits": [
+    "Instantaneous frozen forward ablation, not online retirement.",
+    "Estimates present-edge reliance given the unpruned inherited world/h; compares neither newly trained pruned systems nor a complete longitudinal mediator.",
+    "The two prior inherited systems had different training histories; this ablation fixes a common unpruned source per time point rather than attributing their total outcome difference.",
+    "Three seeds only; fixed edge identities selected from already observed magnitude exits, not a random subset."
+  ],
+  "new_forks": 36,
+  "reused_baseline_forks": 36,
+  "runtime": {
+    "python": "F:\\agi\\.venv\\Scripts\\python.exe",
+    "torch": "2.11.0+cu130",
+    "dtype": "float64",
+    "cpu_threads": 1,
+    "max_workers": 3,
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "-1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  }
+}

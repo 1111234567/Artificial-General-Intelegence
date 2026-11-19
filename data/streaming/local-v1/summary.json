@@ -1,0 +1,916 @@
+{
+  "config": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "input_dim": 32,
+    "classes": 3,
+    "context_scale": 0.5,
+    "n_train": 4096,
+    "n_val": 1024,
+    "n_test": 2048,
+    "phase_steps": 800,
+    "batch_size": 128,
+    "eval_every": 10,
+    "lr": 0.2,
+    "threads": 1,
+    "pilot": false
+  },
+  "metrics_split": "test",
+  "metrics": {
+    "frozen": {
+      "initial_A": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "A_after_A1": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "A_after_B": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "B_after_B": {
+        "values": [
+          0.31201171875,
+          0.35400390625,
+          0.3134765625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3264973958333333,
+        "std": 0.023832593821899083
+      },
+      "A_after_A2": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "B_after_A2": {
+        "values": [
+          0.31201171875,
+          0.35400390625,
+          0.3134765625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3264973958333333,
+        "std": 0.023832593821899083
+      },
+      "A_forgetting_after_B": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "B_forgetting_after_A2": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "mixed_A": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "mixed_B": {
+        "values": [
+          0.31201171875,
+          0.35400390625,
+          0.3134765625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3264973958333333,
+        "std": 0.023832593821899083
+      },
+      "A1_steps_to_90_val": {
+        "values": [
+          null,
+          null,
+          null
+        ],
+        "reached_count": 0,
+        "seeds": 3,
+        "mean": null,
+        "std": null
+      },
+      "A2_steps_to_90_val": {
+        "values": [
+          null,
+          null,
+          null
+        ],
+        "reached_count": 0,
+        "seeds": 3,
+        "mean": null,
+        "std": null
+      },
+      "fresh_A_steps_to_90_val": {
+        "values": [
+          null,
+          null,
+          null
+        ],
+        "reached_count": 0,
+        "seeds": 3,
+        "mean": null,
+        "std": null
+      },
+      "A2_steps_to_A1_terminal_val": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0,
+        "std": 0.0
+      },
+      "fresh_A_steps_to_A1_terminal_val": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0,
+        "std": 0.0
+      },
+      "sequential_seconds": {
+        "values": [
+          0.7419002999959048,
+          0.8720895000005839,
+          0.7068007999914698
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.7735968666626528,
+        "std": 0.08708382652088982
+      }
+    },
+    "frequency": {
+      "initial_A": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "A_after_A1": {
+        "values": [
+          0.3818359375,
+          0.4306640625,
+          0.35205078125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.38818359375,
+        "std": 0.03968918684130507
+      },
+      "A_after_B": {
+        "values": [
+          0.36474609375,
+          0.41162109375,
+          0.3466796875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3743489583333333,
+        "std": 0.033518768139450816
+      },
+      "B_after_B": {
+        "values": [
+          0.3115234375,
+          0.3662109375,
+          0.3173828125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3317057291666667,
+        "std": 0.030025657702083867
+      },
+      "A_after_A2": {
+        "values": [
+          0.38623046875,
+          0.4365234375,
+          0.35009765625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3909505208333333,
+        "std": 0.04340579552226001
+      },
+      "B_after_A2": {
+        "values": [
+          0.3115234375,
+          0.365234375,
+          0.3232421875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3333333333333333,
+        "std": 0.028241629201489548
+      },
+      "A_forgetting_after_B": {
+        "values": [
+          0.01708984375,
+          0.01904296875,
+          0.00537109375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.013834635416666666,
+        "std": 0.007394411908594106
+      },
+      "B_forgetting_after_A2": {
+        "values": [
+          0.0,
+          0.0009765625,
+          -0.005859375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": -0.0016276041666666667,
+        "std": 0.003697205954297053
+      },
+      "mixed_A": {
+        "values": [
+          0.380859375,
+          0.3994140625,
+          0.3486328125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3763020833333333,
+        "std": 0.025695534989408707
+      },
+      "mixed_B": {
+        "values": [
+          0.3154296875,
+          0.36572265625,
+          0.3173828125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3328450520833333,
+        "std": 0.028489582589455734
+      },
+      "A1_steps_to_90_val": {
+        "values": [
+          null,
+          null,
+          null
+        ],
+        "reached_count": 0,
+        "seeds": 3,
+        "mean": null,
+        "std": null
+      },
+      "A2_steps_to_90_val": {
+        "values": [
+          null,
+          null,
+          null
+        ],
+        "reached_count": 0,
+        "seeds": 3,
+        "mean": null,
+        "std": null
+      },
+      "fresh_A_steps_to_90_val": {
+        "values": [
+          null,
+          null,
+          null
+        ],
+        "reached_count": 0,
+        "seeds": 3,
+        "mean": null,
+        "std": null
+      },
+      "A2_steps_to_A1_terminal_val": {
+        "values": [
+          20,
+          20,
+          0
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 13.333333333333334,
+        "std": 11.547005383792515
+      },
+      "fresh_A_steps_to_A1_terminal_val": {
+        "values": [
+          30,
+          10,
+          0
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 13.333333333333334,
+        "std": 15.275252316519467
+      },
+      "sequential_seconds": {
+        "values": [
+          0.7670276999997441,
+          0.909796699997969,
+          0.9490867999993498
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.8753037333323542,
+        "std": 0.09580554543038211
+      }
+    },
+    "local_delta": {
+      "initial_A": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "A_after_A1": {
+        "values": [
+          0.98828125,
+          0.97900390625,
+          0.9775390625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9816080729166666,
+        "std": 0.005825367893285573
+      },
+      "A_after_B": {
+        "values": [
+          0.517578125,
+          0.52978515625,
+          0.53125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.5262044270833334,
+        "std": 0.007506414425520967
+      },
+      "B_after_B": {
+        "values": [
+          0.97998046875,
+          0.9794921875,
+          0.978515625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9793294270833334,
+        "std": 0.0007458619295175521
+      },
+      "A_after_A2": {
+        "values": [
+          0.98291015625,
+          0.98046875,
+          0.9794921875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.98095703125,
+        "std": 0.001760523083722651
+      },
+      "B_after_A2": {
+        "values": [
+          0.828125,
+          0.822265625,
+          0.8037109375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.8180338541666666,
+        "std": 0.01274529423857545
+      },
+      "A_forgetting_after_B": {
+        "values": [
+          0.470703125,
+          0.44921875,
+          0.4462890625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.4554036458333333,
+        "std": 0.013330465644168796
+      },
+      "B_forgetting_after_A2": {
+        "values": [
+          0.15185546875,
+          0.1572265625,
+          0.1748046875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.16129557291666666,
+        "std": 0.012003511762690294
+      },
+      "mixed_A": {
+        "values": [
+          0.978515625,
+          0.9755859375,
+          0.97119140625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.97509765625,
+        "std": 0.003686442595347046
+      },
+      "mixed_B": {
+        "values": [
+          0.9794921875,
+          0.982421875,
+          0.97021484375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9773763020833334,
+        "std": 0.006372647119287725
+      },
+      "A1_steps_to_90_val": {
+        "values": [
+          20,
+          20,
+          20
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 20,
+        "std": 0.0
+      },
+      "A2_steps_to_90_val": {
+        "values": [
+          50,
+          60,
+          70
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 60,
+        "std": 10.0
+      },
+      "fresh_A_steps_to_90_val": {
+        "values": [
+          20,
+          20,
+          20
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 20,
+        "std": 0.0
+      },
+      "A2_steps_to_A1_terminal_val": {
+        "values": [
+          430,
+          210,
+          310
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 316.6666666666667,
+        "std": 110.15141094572203
+      },
+      "fresh_A_steps_to_A1_terminal_val": {
+        "values": [
+          560,
+          240,
+          310
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 370,
+        "std": 168.2260384126072
+      },
+      "sequential_seconds": {
+        "values": [
+          0.8493852999963565,
+          0.8318539000028977,
+          0.8561840999900596
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.8458077666631046,
+        "std": 0.01255343444706346
+      }
+    },
+    "reward_local": {
+      "initial_A": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "A_after_A1": {
+        "values": [
+          0.9814453125,
+          0.96484375,
+          0.96142578125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.96923828125,
+        "std": 0.010708843847393217
+      },
+      "A_after_B": {
+        "values": [
+          0.54638671875,
+          0.55224609375,
+          0.560546875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.5530598958333334,
+        "std": 0.007115069334112758
+      },
+      "B_after_B": {
+        "values": [
+          0.9716796875,
+          0.966796875,
+          0.9580078125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9654947916666666,
+        "std": 0.006928319223239832
+      },
+      "A_after_A2": {
+        "values": [
+          0.9736328125,
+          0.9716796875,
+          0.96875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9713541666666666,
+        "std": 0.0024576283968980304
+      },
+      "B_after_A2": {
+        "values": [
+          0.798828125,
+          0.80126953125,
+          0.775390625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.7918294270833334,
+        "std": 0.014288659019328511
+      },
+      "A_forgetting_after_B": {
+        "values": [
+          0.43505859375,
+          0.41259765625,
+          0.40087890625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.4161783854166667,
+        "std": 0.017368908296815234
+      },
+      "B_forgetting_after_A2": {
+        "values": [
+          0.1728515625,
+          0.16552734375,
+          0.1826171875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.17366536458333334,
+        "std": 0.00857393697335021
+      },
+      "mixed_A": {
+        "values": [
+          0.9716796875,
+          0.96728515625,
+          0.9599609375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.96630859375,
+        "std": 0.005920095533682686
+      },
+      "mixed_B": {
+        "values": [
+          0.97119140625,
+          0.9658203125,
+          0.9541015625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9637044270833334,
+        "std": 0.008739188644960155
+      },
+      "A1_steps_to_90_val": {
+        "values": [
+          40,
+          40,
+          40
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 40,
+        "std": 0.0
+      },
+      "A2_steps_to_90_val": {
+        "values": [
+          190,
+          210,
+          220
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 206.66666666666666,
+        "std": 15.275252316519467
+      },
+      "fresh_A_steps_to_90_val": {
+        "values": [
+          40,
+          30,
+          50
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 40,
+        "std": 10.0
+      },
+      "A2_steps_to_A1_terminal_val": {
+        "values": [
+          400,
+          370,
+          470
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 413.3333333333333,
+        "std": 51.316014394468844
+      },
+      "fresh_A_steps_to_A1_terminal_val": {
+        "values": [
+          440,
+          260,
+          320
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 340,
+        "std": 91.6515138991168
+      },
+      "sequential_seconds": {
+        "values": [
+          1.0405472999991616,
+          0.9568973999994341,
+          0.877760200004559
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9584016333343849,
+        "std": 0.08140397422489686
+      }
+    },
+    "bp": {
+      "initial_A": {
+        "values": [
+          0.3759765625,
+          0.43115234375,
+          0.34814453125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.3850911458333333,
+        "std": 0.04224785149583346
+      },
+      "A_after_A1": {
+        "values": [
+          0.98828125,
+          0.97900390625,
+          0.9775390625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9816080729166666,
+        "std": 0.005825367893285573
+      },
+      "A_after_B": {
+        "values": [
+          0.517578125,
+          0.52978515625,
+          0.53125
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.5262044270833334,
+        "std": 0.007506414425520967
+      },
+      "B_after_B": {
+        "values": [
+          0.97998046875,
+          0.9794921875,
+          0.978515625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9793294270833334,
+        "std": 0.0007458619295175521
+      },
+      "A_after_A2": {
+        "values": [
+          0.98291015625,
+          0.98046875,
+          0.9794921875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.98095703125,
+        "std": 0.001760523083722651
+      },
+      "B_after_A2": {
+        "values": [
+          0.828125,
+          0.822265625,
+          0.8037109375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.8180338541666666,
+        "std": 0.01274529423857545
+      },
+      "A_forgetting_after_B": {
+        "values": [
+          0.470703125,
+          0.44921875,
+          0.4462890625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.4554036458333333,
+        "std": 0.013330465644168796
+      },
+      "B_forgetting_after_A2": {
+        "values": [
+          0.15185546875,
+          0.1572265625,
+          0.1748046875
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.16129557291666666,
+        "std": 0.012003511762690294
+      },
+      "mixed_A": {
+        "values": [
+          0.978515625,
+          0.9755859375,
+          0.97119140625
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.97509765625,
+        "std": 0.003686442595347046
+      },
+      "mixed_B": {
+        "values": [
+          0.9794921875,
+          0.982421875,
+          0.97021484375
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 0.9773763020833334,
+        "std": 0.006372647119287725
+      },
+      "A1_steps_to_90_val": {
+        "values": [
+          20,
+          20,
+          20
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 20,
+        "std": 0.0
+      },
+      "A2_steps_to_90_val": {
+        "values": [
+          50,
+          60,
+          70
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 60,
+        "std": 10.0
+      },
+      "fresh_A_steps_to_90_val": {
+        "values": [
+          20,
+          20,
+          20
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 20,
+        "std": 0.0
+      },
+      "A2_steps_to_A1_terminal_val": {
+        "values": [
+          430,
+          210,
+          310
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 316.6666666666667,
+        "std": 110.15141094572203
+      },
+      "fresh_A_steps_to_A1_terminal_val": {
+        "values": [
+          560,
+          240,
+          310
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 370,
+        "std": 168.2260384126072
+      },
+      "sequential_seconds": {
+        "values": [
+          1.368009700003313,
+          1.2450928000034764,
+          1.333804499998223
+        ],
+        "reached_count": 3,
+        "seeds": 3,
+        "mean": 1.3156356666683375,
+        "std": 0.06344068848002297
+      }
+    }
+  },
+  "seconds": 34.10938900000474,
+  "sources_unchanged": true
+}

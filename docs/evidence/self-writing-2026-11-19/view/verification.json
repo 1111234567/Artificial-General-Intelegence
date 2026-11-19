@@ -1,0 +1,49 @@
+{
+  "replayed_policy_and_control_rows": 196608,
+  "verified_evidence_sha256": {
+    "holdout.npz": "24670cbec6ceb485e0258087acf8a1f5ae9394bed22b0fd69ebcb0eb215d0d7a",
+    "boot.json": "7fd7de14908fde1481b37321f87cf6e558dfe2d70622c7026efea58e7ed95e85",
+    "weights.npz": "49124a8182e799ac79663bb377ca533f89888a596c9a82a9de60ceb719bf0910",
+    "rounds.npz": "e02d49cffd25d47831faa93e69c1778bf865c14309c6fd2aab1478cafd15fc5a"
+  },
+  "verified_source_sha256": {
+    "self_write_view_study.py": "f45ff503e8a476e45fdfc9ad5b629e61f53d7160742b6d2645114b2708a0b46e",
+    "self_write_view.py": "941166ce2c553294da92de69be7a0b6948a25b4d2a4161db7bc0526fafd55b06"
+  },
+  "palette_subset_audit_exploratory": {
+    "all_values_in_birth_palette": {
+      "trial_count": 1154,
+      "exact_recovery": {
+        "veridical": 0.7264948006932409,
+        "current_only": 0.009423743500866551,
+        "blind": 0.00010831889081455805,
+        "yoked": 0.0,
+        "stale": 0.028704506065857886
+      },
+      "current_only_minus_blind": {
+        "difference": 0.009315424610051993,
+        "ci95": [
+          0.005103863127868802,
+          0.014099024047589878
+        ]
+      }
+    },
+    "any_value_outside_birth_palette": {
+      "trial_count": 475,
+      "exact_recovery": {
+        "veridical": 0.36210526315789476,
+        "current_only": 0.28578947368421054,
+        "blind": 0.0,
+        "yoked": 0.0,
+        "stale": 0.0
+      },
+      "current_only_minus_blind": {
+        "difference": 0.28578947368421054,
+        "ci95": [
+          0.237285419382877,
+          0.3381120066483748
+        ]
+      }
+    }
+  }
+}

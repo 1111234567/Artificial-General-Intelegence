@@ -1,0 +1,960 @@
+{
+  "format": "action-return-readout-v1",
+  "created_utc": "2026-11-03T04:09:58.302951+00:00",
+  "status": "fixed_before_fitting_or_new_autonomous_behavior",
+  "sources": {
+    "0": {
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "8982220e1a81e107d0c59e01d2ca1e069542e2e74711f6c4ddba23f728df6610",
+        "semantic_hash": "8f07a409436aa735e9f39e22aa4c254ee35d5bb90ffd0bfa1cd8aceee1122c11"
+      },
+      "start": {
+        "seed": 0,
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+        "sha256": "e02e52071d1fad0c6b8a295059e40ad46dccd37faba5570a1b70def9826b0544",
+        "semantic_hash": "16427fd785231612f82ce332298ea88ef0ce60c4a0a75c62efff6ccd052a1c62"
+      },
+      "audits": [
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131200.pt.gz",
+          "sha256": "0b06db48aa9500a1e3063265c78b78c795496d65636b8755b758905079b8fa86"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131328.pt.gz",
+          "sha256": "aff037a78a548f34d24d2798c7b11eb729e8537be2d99c2d5eb78c5a8186971e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131456.pt.gz",
+          "sha256": "7f462fe7928e963780b2d27c0a499511e3c9a8515f88e57ee9c42a45ca61d369"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131584.pt.gz",
+          "sha256": "e5c95de2c1afa29c800736051af2b9543e413fc6f12bf45d1efafca934635b90"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131712.pt.gz",
+          "sha256": "bde1e50056b1cdc0f01f6dbb068b47f838f8ed3973e0ba9435c3be2dd813fc87"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131840.pt.gz",
+          "sha256": "49e36928a914e86b941ff09b61465261aff3a055b18468e7810368632fa91494"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_131968.pt.gz",
+          "sha256": "89585e335a7da6d935e0a2f2d4f3d8079568673243e4f50e73bea2325619662f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132096.pt.gz",
+          "sha256": "0dbad36b430d7822b8259ae9b0aa1af65fe305cc71788e8dfc3d97da2bfb4a47"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132224.pt.gz",
+          "sha256": "0cdbd407496e9153bfd2adcb44d14665f6cd5309ce28715979e6d6d9bc337a3d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132352.pt.gz",
+          "sha256": "dad3f6a84dd7fd29f84e19983796e4a2575e4c88dc2925d8fcf56d64c0ed07b1"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132480.pt.gz",
+          "sha256": "b19673464412b6071e785ec5017b142613ad15309b5040322c97b8c94e8d2ea8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132608.pt.gz",
+          "sha256": "08830fcdfad5e8ec03365c4f102d41852f1da53529c520aa9f0f4ef784353156"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132736.pt.gz",
+          "sha256": "3ffbd10938f26b17c1c0d9d9030fb8309c409b0986ed21b0f6f747fd86bd4d96"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132864.pt.gz",
+          "sha256": "0ac47dae91ed588394c7ca79b4f4a1851b995b18d7a62275cc30ec917381647b"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_132992.pt.gz",
+          "sha256": "c3aeae5157ac559feae51e7f682277062ea910aad716bc4140aef1291f94ec65"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133120.pt.gz",
+          "sha256": "8b08cd411ad136a5ac057ed6d5d3183e428ebb62037f255f14c9b877bbf20cf6"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133248.pt.gz",
+          "sha256": "51ecb4f903b1077b7a528a509d7dd8c5c55cd6db174d8d8227754d7d68bd55ba"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133376.pt.gz",
+          "sha256": "a166c3c218185ee1ef64ea96793ec07b448b216c2e4a898e57afebe2f5ff6526"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133504.pt.gz",
+          "sha256": "3d082627cb2deac3af5f861ebde6ee19243ff3418ba48445fea8e4c950157432"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133632.pt.gz",
+          "sha256": "11e77e63bb73c9947fdffe8f0d656d56a0676f22aeaae49701356fe9e862f5e5"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133760.pt.gz",
+          "sha256": "f91f4d4a8c75711c316b06db020518eaea64f5936c699779972d7560e8917a43"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_133888.pt.gz",
+          "sha256": "e4e694eaf6015b7179218c30e751e7a676d81e634c3547db6e1dc50ba3dbba21"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134016.pt.gz",
+          "sha256": "0fcd25be1be1f501ef11a2ab4c1a732514fd2dc608cd2f0c7caff3aa9bec8696"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134144.pt.gz",
+          "sha256": "b9e8d2e5c1ce368b9ed308f1811a38e662d2c95b1ec52c7ab434cd1a8d5ffbee"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134272.pt.gz",
+          "sha256": "90e04c459e02b1eeb8eec0b51b46a104c7199fc876610be52d2072c96cff7811"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134400.pt.gz",
+          "sha256": "6fe64e53827af9581a58d52ad6ae567cf3a78c753be53f5704344c4cab8efb2e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134528.pt.gz",
+          "sha256": "f3cef212d93cc0a9e0bf0367c0c2309455c33de2f1210ca6b051c98edec957b8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134656.pt.gz",
+          "sha256": "20823c84f2fcc8aed4d8f67c803f018d97097e2dfd32fe26b6141ed91b15af1f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134784.pt.gz",
+          "sha256": "f1546f0e8dc3efea5fcbf4d7f767d7935b6a8980277b1dd8081fb4e1c20f9dd7"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_134912.pt.gz",
+          "sha256": "33bd4eab316f93e63d3286ec45d7b832e8aa703e727d15c815bab9820c6c821a"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135040.pt.gz",
+          "sha256": "bc1fbe573e1ea678bbc50a8c283b45d28e4ed0c6218ffd9677a670801037a524"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135168.pt.gz",
+          "sha256": "22eace4980cc684d1efdf936c7a7c8b9249a9ac736ba0364338df681518efb37"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135296.pt.gz",
+          "sha256": "7909eb5becf8db3d3e0a87929970d34b90ff56585fb015c91bd160fdb9de1f3f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135424.pt.gz",
+          "sha256": "1fc4bb379c29d530707a5f033fd29361db253ea9b43b7f98c36d03d55ce0d850"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135552.pt.gz",
+          "sha256": "c2e20fb242fb3becfaa18bae9c6b3016613f9e959358f7b16d9ef148c0f10abe"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135680.pt.gz",
+          "sha256": "45a9c3f6db46c2cc9d3832e73772d70bca3969dadbb43c191bca3cf5859234a1"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135808.pt.gz",
+          "sha256": "857939176eed0953661320b74bb2f54d720aa55f4a9a46f079897b781a60abe4"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_135936.pt.gz",
+          "sha256": "6d42754bd79a906c7286e08315a828ad39f2edaa228cbec630e41732378481f9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136064.pt.gz",
+          "sha256": "32e7ffcc3bdab12d981270da322916521ce9ef30a4dabc5142607b431af4ff5c"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136192.pt.gz",
+          "sha256": "3bec649014218ec402839d977f2135eaafd1c9b5f83ce089af757896c63e9caa"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136320.pt.gz",
+          "sha256": "1b42bf906a864d31def82261ca137c87a6193eba873dc05c1a5b7a786ab03bcf"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136448.pt.gz",
+          "sha256": "76120eec702d2e00edc541a87eee48e6c98304078c75cf30bae127a13369d997"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136576.pt.gz",
+          "sha256": "1342f04ab6bf8b0636cbf614a12ac29d74d248207da619ddcc8a4d4fc551cdc3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136704.pt.gz",
+          "sha256": "018f97773aa53e1ff70a5af70cf553b9fb475ce8fbf65564f77b36477fa16b15"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136832.pt.gz",
+          "sha256": "7e4b1a4a8b926759160a89365db0d1f8fb12aee72cbc3131465688894b8d966e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_136960.pt.gz",
+          "sha256": "f714deb2b9e1d0f0dd437aedbbe8f296eca665c5e9ba31f18ddf0013e472b549"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137088.pt.gz",
+          "sha256": "209522736f15d263914e2dac4f8cbc70219cb2dd78c95394d3542a913258f4cd"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137216.pt.gz",
+          "sha256": "950eeadf665df3d9666a52c25f3c9ce0638105aa77d09b1c6443ca758c6ff157"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137344.pt.gz",
+          "sha256": "939a5d12a99f67e1d9c903752b7f4a27109ed9b09da1408743c2e028001cb547"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137472.pt.gz",
+          "sha256": "e24bb89bc27e65dff497d1f29318f903bcc0fc4f82033483a541188f61984e33"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137600.pt.gz",
+          "sha256": "bd39fb0ee531c13aa6948fa613746a0e70227e115b945818f61773dc35a29efe"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137728.pt.gz",
+          "sha256": "012d518f0db9a38b08b73a6e23f196731800a2064ee13d07e2d2ec5924aecd32"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137856.pt.gz",
+          "sha256": "7485cfdb39cb10224fa0a9250027652bd6a97b66e9b4cf87b5135112c90fa416"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_137984.pt.gz",
+          "sha256": "a5c6fc3f38e501b82fa989dde8c5b00cbd05f866d992b4cf7ff2c51ff01958e0"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138112.pt.gz",
+          "sha256": "e974aba8b8777fef3b9d10c4bf0f7e938b367337834f74cbadc4cc8f205bf9cc"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138240.pt.gz",
+          "sha256": "9bc07e154e7cc9f53c96fbeabfa472008b2244630d1eb24aa8360cf229bbef51"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138368.pt.gz",
+          "sha256": "bb9a764d0d4391ac876818454871da6e57ef97f301d01f4e9c86e11d0308d0f3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138496.pt.gz",
+          "sha256": "eef19fc24de8511a6fefd6353215a547e9a7fbbeb84fe8088683698e99d92446"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138624.pt.gz",
+          "sha256": "5f44f967498fb06712ab2211031c4c174a42d25d91857c2c39120ebd981115ff"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138752.pt.gz",
+          "sha256": "d27e9e4f4dab29d97bb4b214456d08f61cf4101bd692d83477eedb2117d02a21"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_138880.pt.gz",
+          "sha256": "b589a2556a9767892e998f0dd5ca3af59670d6372648fb953c2880b47f493d59"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_139008.pt.gz",
+          "sha256": "038bbcb8a9628b60bdda3a9da3e2571f5f7f37878c774ee32f742607fce73445"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_139136.pt.gz",
+          "sha256": "9b8fbca13b7dc8ca5aef1801c82fe7a947fc675280fee270e8406ed1cb0ae5f7"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\audit\\tick_139264.pt.gz",
+          "sha256": "0e92af5f14800d8b84286876c1498217358d4fb4d67e32f0f582a62ccb659e2e"
+        }
+      ],
+      "native_evaluation": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\evaluation.json",
+        "sha256": "8e8f350b041b8c2be9c9427a8e86715f07c94ddc9a0446abd157f55f0b072862"
+      }
+    },
+    "1": {
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "cd90c6aa7223a6fad13e6e190fffae09343250469bf99d20d8afbbe6a8e6f5aa",
+        "semantic_hash": "17a9d7bea8af3e7862cb9925933f33bcb825d0e4bacdd4852f901154392e74fb"
+      },
+      "start": {
+        "seed": 1,
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+        "sha256": "5202a98982757e688cc57ca44313e6e4b9e339307246e64e6dcba391a8a26530",
+        "semantic_hash": "e9362dc4e786ed7f54428fe8c66f7a49245cacb3ec4fd48c42bd461da3a589d5"
+      },
+      "audits": [
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131200.pt.gz",
+          "sha256": "e7372d345fc4077add47c5490358122ed4b0708144a65fff277552ff57e9c22f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131328.pt.gz",
+          "sha256": "dc0613fcafee42d57a8968ba9a3721aef9315e20d1ec1c72bb1352c0971da4ca"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131456.pt.gz",
+          "sha256": "98f9d298835c76f03b9c3f79f8d2f3c4d140587fd42427d8eaa9a4338b1650d7"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131584.pt.gz",
+          "sha256": "ce880a314d1690d61378038d4cda6a2b833a6745678740ebc75300f54fbd7de1"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131712.pt.gz",
+          "sha256": "2233f32118dcccab254792cbc22b32d853ef1a4afe10ba6109607bd2859ea3b4"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131840.pt.gz",
+          "sha256": "bed711fc49baf642dc8170f8187859111d27cb72dc690516d723974ca3d650d9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_131968.pt.gz",
+          "sha256": "51056d620cd165d94f7605bb60466b2461a62e2ae1094b89cdfb1267968d0977"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132096.pt.gz",
+          "sha256": "079630d04a9a37e8d8075956a051e1906611e0b8831db380791dcd4a9b5fb3f4"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132224.pt.gz",
+          "sha256": "a7b98ddeca912aa172319eb1fd3b668b4d3edc665e6fb8a29d2f801c2ee2b471"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132352.pt.gz",
+          "sha256": "b8f898b566dfbb4a0f3928b8e205e17053b5f535317150af5846d2464584e89c"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132480.pt.gz",
+          "sha256": "78265fb6ae1cbc38dba1d7b8f1a3816418eae8d0f30e68c82955d84294d34294"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132608.pt.gz",
+          "sha256": "d2591e3f684c5f1121fd31aa124b9cdd036cf79ea80af56fc143b2ea157bbe63"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132736.pt.gz",
+          "sha256": "c297f99c33b10a32d5fdfaabc7d3eda93cd6d7b2bb2aaeff2517e9d55dfbb4b2"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132864.pt.gz",
+          "sha256": "64d23dc8af581419229216dfbd589f1ec8ed694618bd97b5274d20a3dfa4fac2"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_132992.pt.gz",
+          "sha256": "d617e94448d9217975dfae292c1f800b5f3af0d49a0141bb37daa4dc1b0160b8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133120.pt.gz",
+          "sha256": "05901e0059d98105fb4fbb26ff0d64c7377f3b4e8cbf7a5c612222c51bd8a4e9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133248.pt.gz",
+          "sha256": "05ec4c8f5f6191bbc360498d10a8c2b8111d8ddb865f76df18e40c819316fb80"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133376.pt.gz",
+          "sha256": "540404c85e84c5c6bb803e400f9c6028f4a20245ba71ba27a1cf389503e0f6a3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133504.pt.gz",
+          "sha256": "48ac4d08bec4a4862c8e048dea588f489897d969ec7f1177b7902b12a49b5bb3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133632.pt.gz",
+          "sha256": "41b4d53a0079fd1dea78d3fee874c1969f84f7d55fbd0ab22283d841e9fffa0d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133760.pt.gz",
+          "sha256": "8e06c085c3a1a90fdffb383acc192086e262c62986105cebfb3d24b3a5ca9bb6"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_133888.pt.gz",
+          "sha256": "e90f5a980e7ac7ff2de444df3ef82fed1396f812ced96e5893cdfd07f79e3824"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134016.pt.gz",
+          "sha256": "831edddbb1f5e6ca196cb5caec035644fdb305f9ca0709a377e8c7e293cbf7c0"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134144.pt.gz",
+          "sha256": "33884c560310ff8dbe6c638a41b5860a403b7ea9bcbd0c94538cd7127d7cb7c4"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134272.pt.gz",
+          "sha256": "62c8a854c00545885296fbdd0e92e1215c56fdf1b6bbcb550ad441ca30866d66"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134400.pt.gz",
+          "sha256": "1ca41af19d3cd9b4b6f60fcb6924cc4b143ccb24b4c0decc33f25686e750e5a8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134528.pt.gz",
+          "sha256": "661743b56b0a773b6049c9657d96a1980d5007f439f7b8214d66e30154bc3364"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134656.pt.gz",
+          "sha256": "7bf777d9f90ef1c144c33bd5513acfc04bb18393f1081c8f94b20edf2b17057a"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134784.pt.gz",
+          "sha256": "154784fc44305f8ba0a16fe78247d4d650be637a7d845b1e0a5b05cc80aacf5f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_134912.pt.gz",
+          "sha256": "f409ac49e2a233e5e20377677379b453e1e596695b05ad150b36671e28b3e769"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135040.pt.gz",
+          "sha256": "a7d0acd3b124991b3ee62ba20bda978e6577b6488bfa33a4c0850a20949f92a2"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135168.pt.gz",
+          "sha256": "d461ad52da34d935014033766e263542b9262e2b8b10aae74567d9125900aada"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135296.pt.gz",
+          "sha256": "6e0ac048d0b3a448f815fb5746d6d11679ebc9a2c8aae68ff0b51d033a049877"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135424.pt.gz",
+          "sha256": "7aa8c0ff1e259f7a7f7bb838d174b25fc9ee52ad4d58016cb057214ed794aeb9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135552.pt.gz",
+          "sha256": "e688cb2da28ab5e8469e4b2f7d3abb2bff9fc25272ac552db65c425a92615058"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135680.pt.gz",
+          "sha256": "a8f7289576b32c63535572042006b55bf903ce77369f4965a3d22e2eb1c15970"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135808.pt.gz",
+          "sha256": "f2abfec640e240bbece5ba043c4dce5ac1fc658ec44ba9d266dca14b01d77b59"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_135936.pt.gz",
+          "sha256": "2c9c2f4e9499c46da1ab6b0905d4eb17bbd15074ba01ab025a64e50c46226b31"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136064.pt.gz",
+          "sha256": "91461ca1f02952e3cf3d8b45ef3c60d45887f0d8267a28f609ca1ec67fae6ee6"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136192.pt.gz",
+          "sha256": "a424812c8bd4186efb58739a37609753f30a3f76c278782de8e778ab1a9ac018"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136320.pt.gz",
+          "sha256": "f17a6a6aca4e5e7601d1ef558c4b027d7c434ce6cd9283718d8e281eeeff2be0"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136448.pt.gz",
+          "sha256": "b78e404f8e1e5cc2b9fa7aac1ff93daa8294bae0012725504c776651f9f22eed"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136576.pt.gz",
+          "sha256": "ae0548fce7ebf99e3ecd2b9ff2690a678eaa629d51c7fd39094720911a79e011"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136704.pt.gz",
+          "sha256": "b529522fe7ecf8714513cf24f21e01906b2b885c0935d816f81197c19bc535be"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136832.pt.gz",
+          "sha256": "e45cb06fda80080257a02925f70d403ed8f83cdfdcbf39a970f8cdbd500d041d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_136960.pt.gz",
+          "sha256": "40fec612412d8b65abf375d358243e36fc6a30660cb98822e489d16914f84341"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137088.pt.gz",
+          "sha256": "3522b4739d2f79988d165d83cb84d5d5108eec305a703965df0457eb10dea480"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137216.pt.gz",
+          "sha256": "02b06968856f4b7e526376aeb6db77654c786b9627feea8b1f56615395845c60"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137344.pt.gz",
+          "sha256": "cf07adc34febcfc68cc4ef3895257314b25904d5ba04b744dd1ff91380a8ec3b"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137472.pt.gz",
+          "sha256": "dd750931c198f8271831fcff2092097df11bd6a531d1243c93f57afe0683c81d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137600.pt.gz",
+          "sha256": "18ac7551193aae3240e6353b2d99b5c07364894d1ae549e203d31b70f270d2f9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137728.pt.gz",
+          "sha256": "a8251f15ad27d3ac661c5ea5797b82cb3cf1093abc187dbbf019d705777f47b2"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137856.pt.gz",
+          "sha256": "084283ad02e27ab95cdba2c278749cb2982e29fa85eef317c7f01c6c61712e4d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_137984.pt.gz",
+          "sha256": "c7046f283b7e67c776c9a6598e7eee02e7083331680035c0e3c8469396be329c"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138112.pt.gz",
+          "sha256": "9ca17e9c66d9cb2fe953875e6fac48060ed328058db9be0e47924dbabdd17ede"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138240.pt.gz",
+          "sha256": "9e83915fc6271a8d364eaaa52d47743c5c401e9b955fa739f5dc958a8c29d237"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138368.pt.gz",
+          "sha256": "c7781ff15d117f61c882d09eb10212b2ad8b2616f84064452a035fb94d0a1501"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138496.pt.gz",
+          "sha256": "a12ac1e81316934d32cbe6838069ebd4112e2d89517537c9e63cd84443dbb3f3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138624.pt.gz",
+          "sha256": "94a87400b0455b6d1fe52dc769789cd38732288516ef143fb7c977883c554162"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138752.pt.gz",
+          "sha256": "e097b1e05b950ad6bad849d33ac445c6327585a4b7dab25a4fcf12e20b804e16"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_138880.pt.gz",
+          "sha256": "544b7b6879074200cc926c65508228dca40f81f888acfe1185e45164303352b7"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_139008.pt.gz",
+          "sha256": "7430d794cc9488bee4a8824144a828a29770b11e83b901c0fc9f6bfa9b93486f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_139136.pt.gz",
+          "sha256": "90a694ca7de2973396608d96dd31198e71f671b9fa0617f04c2e4e47fd1919ec"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\audit\\tick_139264.pt.gz",
+          "sha256": "a6852a59b698392c2a62098c233e8b6d9d90229c586d653518da00ed507e5232"
+        }
+      ],
+      "native_evaluation": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\evaluation.json",
+        "sha256": "f9ba8ef0604cf2fbf2c4f6d09eb73bbf1a3eb5d395daf1f36aec5caa1e16c422"
+      }
+    },
+    "2": {
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "a6eb9a9121adb8f469217998f8ce645b9a0302f74992de6e964844ce2d5f39cf",
+        "semantic_hash": "4b48e11cd0fe861975d36ecd9523324aada413eef2490e7fc4b447049ac65073"
+      },
+      "start": {
+        "seed": 2,
+        "path": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_002\\ports__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+        "sha256": "679ad0235e3b66f534baf570d74718db78be6a8f309c4fd2cb91d2d3a4fe7f43",
+        "semantic_hash": "9da1f872cd61fdfbac39585fa1bc59a0932735bdece6c0fce73fd8e59bcf2a02"
+      },
+      "audits": [
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131200.pt.gz",
+          "sha256": "2af7613a759f4bda67f9940ca594045fe28e8486c7f8309b38f43fc8dfd9cfa7"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131328.pt.gz",
+          "sha256": "67a9f7908304729ef405fd3c76f040b4b80b75b6f060f7928b8c6a5751e28f58"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131456.pt.gz",
+          "sha256": "17ed74669dace117fc5ae29fea44b3edeac86121e89f507d77405fa263760e5a"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131584.pt.gz",
+          "sha256": "a6b1b1c2d3c5973f4c3eaf676dffe81e01d9546a2cb24d3eba20f305feed70fc"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131712.pt.gz",
+          "sha256": "f6f4e2896038d9eec22598744c950ec5f3df9c9c8e225800b4510eeb78bc0ca8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131840.pt.gz",
+          "sha256": "42c153613872a2269fc4711240dfde2975a4c8ec33b581e20e6f4804f7659123"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_131968.pt.gz",
+          "sha256": "007b0ffcf2b33cb7f8da9cacd6df395a2804c32c7cf0b3741d8919e5d141209b"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132096.pt.gz",
+          "sha256": "e3c6a2d5be49aaa0d4f15c2b027da25e419645eafbae74907797053ba97426cd"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132224.pt.gz",
+          "sha256": "31c2905a800815eb1819164a085559f50ce91832879691772eed9c7164785243"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132352.pt.gz",
+          "sha256": "9f99b43518ff5d7122147407e9670bcc33c11ac8a17056a18dafbd1894ed527d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132480.pt.gz",
+          "sha256": "d985ac7dec39dab1db710c3992b77e27a18a0c7046c2ebc2569e411cf7241808"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132608.pt.gz",
+          "sha256": "c0651e638c513b91f993419c1e3ae71ab8e186b000edfa435d1cad1e72a2e97e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132736.pt.gz",
+          "sha256": "cdf94bdb402c83c6b431bb7520e0a6d90138aa2d59c1471803aeb7788e9e5d1b"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132864.pt.gz",
+          "sha256": "944603f633ed3c590587509135f09fee9349f86b16c9f637fdf0c781c20543a3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_132992.pt.gz",
+          "sha256": "1655c812367ab4b01b191c0df68678ec86ee9316bde7b64646a31fafccedb180"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133120.pt.gz",
+          "sha256": "3b166de4fb95994208bdd88aed7560381814904bc156990c06b2469e05e750be"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133248.pt.gz",
+          "sha256": "45b0b2138dce3f88f4355b29e634429b43b0c95278f9e81938b1b5b13188fb9c"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133376.pt.gz",
+          "sha256": "b600473b55b2b61cb49b4660574137349a7057c41fb5861eac28249e0c0e1504"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133504.pt.gz",
+          "sha256": "1dce46ee4ed1f322c7c13ca4e4a4a05a590799ca5c29d2e8b6c1c0a036a7daf3"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133632.pt.gz",
+          "sha256": "23417f610171431052e6ae5d99cf4b0f329879145cb7126b826f2fee9d720c98"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133760.pt.gz",
+          "sha256": "2f1090087b2a2cbe7735c91d503988e5183b4ec7a9e46b5d0d1fed4bc37e0560"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_133888.pt.gz",
+          "sha256": "2d86e187cda3f830a3a68086b25930b4bd46cd50a6d05405cbbce36410c2f08e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134016.pt.gz",
+          "sha256": "12b306325131a5aa066e9d172614a57c61a2cacf8c40d3ecadccea24baf4230e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134144.pt.gz",
+          "sha256": "ee071fc45a97eb6872b0ed1956d637e4426db79ea1a4dcdcf6a491e49bb89b4d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134272.pt.gz",
+          "sha256": "92ec746372e8c263fa23a2f35fef054b7d91e5898f3fecca9cd62a03c9ccfcc6"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134400.pt.gz",
+          "sha256": "78d0d0f25a7a0ebee19c7baaef19037482e8130634391309cc47651dbaff628e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134528.pt.gz",
+          "sha256": "92c04b31b45c09a6ed74860c1dc3e2959ccfea85b80775275aaad81d070c6fc9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134656.pt.gz",
+          "sha256": "732d9a8f4e3f55f8fce3a9bde6e22fc1dd57d9fecc8865f6d3e688611d569700"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134784.pt.gz",
+          "sha256": "35610bd5fe62e366242b8cda60f39bc4685eb1c3df23ef1f50370c42bdabacf1"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_134912.pt.gz",
+          "sha256": "9de387a301d86b33656343892aa7f175b3912b34473300640b994beadcec87df"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135040.pt.gz",
+          "sha256": "81d762228c44492f320f98f5e5a165b683b6ca9ec5de6aef44dc8b8555191dc2"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135168.pt.gz",
+          "sha256": "a4f3e112bc67ca90e6211a206e420d2c84a8899c3439667a17401e739348d197"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135296.pt.gz",
+          "sha256": "b9036d2409ed4ee26fbdeae76ff139cf761bc20a83967d6954eb1d19c5548db5"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135424.pt.gz",
+          "sha256": "e111b2a13dc2e9e7c5b77e5e4624b6b6914ec7188a2eb1e7932ec9f62671439a"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135552.pt.gz",
+          "sha256": "63e81f6a5f62869cc299947d7eb81306afacd99a5be913f3b2c0699b53e3c1f8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135680.pt.gz",
+          "sha256": "dddeda9ea09491273bd0b08ced991b5a175601814f1c8862210363e3f50a0466"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135808.pt.gz",
+          "sha256": "f188dfd29d74a5053363321ba42529b8a03866cdf41ebebd0efdca53561ee8f1"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_135936.pt.gz",
+          "sha256": "dc59edb32568cf6942cb95b33a048f54d61ea434f4b441738d63b6a2cb5a9070"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136064.pt.gz",
+          "sha256": "07e33ce6c3e75e3813126630d4dc3fca095e301a72d25c66f7f3181b68ea0b89"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136192.pt.gz",
+          "sha256": "6d463076699517c1c7814b4e738e42ab016068c7e06e009e3f35cc50644b3060"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136320.pt.gz",
+          "sha256": "91617186f3d20e0d8fc282fb3425eb3ee8c8888027f028308dc6c91b292af9b5"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136448.pt.gz",
+          "sha256": "224d97d1c73c6cd97e79bf97f0111ba4ab3f3555b902a62984fcbca222aacfdb"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136576.pt.gz",
+          "sha256": "4ec93d8db1fe575615ea2a2c70b9eaaddb8eafb8fa3a8e92a13a63cc36913b08"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136704.pt.gz",
+          "sha256": "2c8936803b31170307434af20d99619eb169e7f84e6ad1a001983b4154504f02"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136832.pt.gz",
+          "sha256": "9cf5ca34d9b2d3747c558a2123da845ce160327c835c24c3dac1de3f571fb446"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_136960.pt.gz",
+          "sha256": "167f976366c346942dc39c4b0e10777c616420313e91f262094e392761e04aff"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137088.pt.gz",
+          "sha256": "877cbef9903f0732dacde8070147d9608a737b3ae8df4906733bd76e3bc9d402"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137216.pt.gz",
+          "sha256": "10fa5cb24e2368aef7f6be934f61bf50d360aa15afd4c9ece68f52bf38c5fcc9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137344.pt.gz",
+          "sha256": "8b8f98e7e2c687fe5176865ba85422f766f5094ce866d00ed45fb6bb3360584c"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137472.pt.gz",
+          "sha256": "0b064db65e68da23a80b05f85f5d238c8894ad232db4caeb1d072bb7e893919d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137600.pt.gz",
+          "sha256": "b76905f0f10ff19d9273867647e20d75177c6a768d2b23facb7e9efd87210cb9"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137728.pt.gz",
+          "sha256": "5c86b1e719d41712522b61239378cfba0f1351ed7262645f3ee84bfff1f8b8a2"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137856.pt.gz",
+          "sha256": "15769c3aaa484e51d1a92c49851c4622c28a3433963ea704d922627529d74ffa"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_137984.pt.gz",
+          "sha256": "e6eac1c5af04603d7bbe14d626046712a656d2af129d99401f911691de7cefbe"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138112.pt.gz",
+          "sha256": "1cb2d49db75135cd6933174accceb56e0cc756b958b6179b0a2ca7c2cccf6850"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138240.pt.gz",
+          "sha256": "0c1123c9bf55b78286aa23528b9b718e7127341f8a8fee1abdda0cc9629218d1"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138368.pt.gz",
+          "sha256": "6e15ccc5f3ae8f16b6482dffda7bf88e07b84a5b2182cc39e5419c563cd56d0c"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138496.pt.gz",
+          "sha256": "edcc10499ec1ab262856123f1d4e95fe4a04402e0c937b47af696a2898d6919f"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138624.pt.gz",
+          "sha256": "9d5eec4a1040e163fc489010b8e4dfea6f569c3c49bdcf729866f02a2bf1e6c7"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138752.pt.gz",
+          "sha256": "a82fb3cd5ad1e3a1be48b4110e2259bef9e3942109c4931542a5b92bd1cd581d"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_138880.pt.gz",
+          "sha256": "ff229fe3ca1c82310f26f806b40e03a63f63dd14c141b7cab72b9eaa6987e8d8"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_139008.pt.gz",
+          "sha256": "3a9cbdbf7229b2296f5b723332e3cf7aec04def6e88a7bdd78e128ec280f6532"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_139136.pt.gz",
+          "sha256": "ebfe3951cb9588ad8d88d3c1764439a84dff00f2536a540262652735ced8762e"
+        },
+        {
+          "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\audit\\tick_139264.pt.gz",
+          "sha256": "8fe46f2f4aa5994d41222690ebda504d286b6d758cfde82c9516f93bc1345f22"
+        }
+      ],
+      "native_evaluation": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\evaluation.json",
+        "sha256": "3f24b8cf5bf6c6025fdf1876099f9aca90f9220b2ac973bb508fe0b4cf9c7853"
+      }
+    }
+  },
+  "original_protocol": {
+    "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+    "sha256": "958720cceeab25d6ed3eeedf1afd5f8ca88fe4649886f8611a4e5ba6becde8f4"
+  },
+  "original_source_pins": {
+    "F:\\agi\\experiments\\undirected\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\test_model.py": "636ad022366233cdf414a09313b02bfe9484b090dae7620782f9e035028428a1",
+    "F:\\agi\\experiments\\undirected\\credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "F:\\agi\\experiments\\undirected\\test_credit.py": "4ce8cd859ad99b05239958fbc38cc869dee890d791d3360e2238302da05b63cd",
+    "F:\\agi\\experiments\\undirected\\plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7",
+    "F:\\agi\\experiments\\undirected\\test_plasticity.py": "bf7f0984474990b4a82fb3ab3abb0402414b2da20dfa8432921f359f7065072d",
+    "F:\\agi\\experiments\\undirected\\run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "F:\\agi\\experiments\\undirected\\test_run.py": "e6981df9823fbc56b95ec1b8562c5028d40eda672bac9236a984f0d3a754f855",
+    "F:\\agi\\experiments\\undirected\\study.py": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+    "F:\\agi\\experiments\\undirected\\test_study.py": "71b162f4eeb1318c8ef1acfc70bf2041f2d75d15f1c83efc52cc9157ddb12a88",
+    "F:\\agi\\experiments\\undirected\\queue.py": "863371fa5fb1ab70e896eb1a936f1fda01af06f3a67b59bed2fb5f4ca540bb33",
+    "F:\\agi\\experiments\\undirected\\test_queue.py": "d3dfab0ad05f812a7800dc0134ead83ab02a354e8cc03389f446b6638af48bdc",
+    "F:\\agi\\experiments\\undirected\\ledger.py": "8b0f5284a9a5e53d14af9081e6d95f83cb4f854523d431a475edc2e65d76080a",
+    "F:\\agi\\experiments\\undirected\\test_ledger.py": "1fb9180ce0af912b49265b3df0408d38b4575d8559002da0fd4d5995022d794e",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\coverage_exit\\coverage.py": "2cb8b22972d850a35dff0ac3670c4c55f6b66416a52d0f5f9a609f24f9bf472a"
+  },
+  "source": {
+    "path": "F:\\agi\\experiments\\action_return\\readout.py",
+    "sha256": "0ae3bf65c9600556ad658c685ff73630483e6a3ad5832943105d72b240892b6f"
+  },
+  "prompt": "Can readable version information in frozen ports state drive autonomous BEGIN? Fit causal small action decoder, no oracle/gating/private features at inference, no reset.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "native",
+    "non_input24",
+    "all80",
+    "public_obs56"
+  ],
+  "conditions": [
+    "short",
+    "long_both"
+  ],
+  "families": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "steps": 2048,
+  "source_rule": "Assisted ports/undirected/recorded512/fixed/warmup complete endpoints147456; actual inherited endpoint h and world at every free fork.",
+  "train": {
+    "updates": "original assisted offsets0..63 inclusive",
+    "actors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "positions": "all live tick/job positions, including WAIT/FINISH",
+    "features": "Endpoint-frozen backbone replay over original public observations and actual-action receipts. Initial h is original CP131072 h; continuously replay all8 actors without resets. These features differ from original historical h under changing weights.",
+    "labels": "original midpoint teacher action; collapse1->BEGIN1,2->BEGIN2,everything else->OTHER",
+    "weights": "original eleven-class weights before collapse: teacher WAIT0=.1, every nonWAIT=1; normalize weighted CE by sum of original row weights",
+    "fitting": "separate seed/job affine reference-class softmax, OTHER logit fixed0; train-only population mean/std; zero-variance columns fixed0; squared L2=.001 on standardized slopes only",
+    "optimizer": {
+      "name": "LBFGS",
+      "lr": 1,
+      "max_iter": 120,
+      "max_eval": 180,
+      "history_size": 30,
+      "line_search_fn": "strong_wolfe",
+      "tolerance_grad": 1e-10,
+      "tolerance_change": 1e-12
+    },
+    "initialization": "all decoder coefficients/bias zero; deterministic; no validation or hyperparameter search",
+    "dimensions": {
+      "non_input24": 24,
+      "all80": 80,
+      "public_obs56": 56
+    },
+    "free_parameters_total_both_jobs": {
+      "non_input24": 100,
+      "all80": 324,
+      "public_obs56": 228
+    }
+  },
+  "policy": "For each job, m=max(native WAIT and8 FINISH logits). Replace only BEGINk with m + decoder_logit(BEGINk)-decoder_logit(OTHER). Leave WAIT/FINISH logits unchanged. Eleven-way argmax. Inference features only public current obs or post-step h; no world/scorer labels.",
+  "test": {
+    "primary_actor_positions": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "overlap_diagnostic": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "scope": "full8-actor worlds retained; actors4..7 held out from decoder fitting only (all8 were seen by original backbone training); report0..3 as decoder-training-lane overlap; future request identity sets disjoint from decoder training required",
+    "baseline": "rerun unchanged native evaluator with read-only scorer shadow; entire result must exactly equal saved original endpoint evaluation",
+    "frozen": "same actual endpoint model/world/h; no model learning, resets, cue suppression, state substitution, forced target action or oracle gate"
+  },
+  "metrics": {
+    "primary": "Decoder-fitting-heldout matured primary requests with accepted autonomous BEGIN / matured primary requests, plus feasible-correct accepted BEGIN subset; strict and ordinary completion on same primary request identities",
+    "timing": "all-position teacher-BEGIN sensitivity and begin precision, wrong-version begins, duplicate begins; conditional diagnostic only",
+    "idle": "inactive enabled job opportunities and false BEGIN per1000; all inactive actions separately",
+    "loop": "own-trajectory shadow midpoint FINISH label positions, legal finish opportunities, FINISH attempts, legally timed attempts, accepted FINISH and matured completions",
+    "case_matching": "same primary matured request fingerprints between all four policies; no counterfactual oracle trajectories",
+    "aggregation": "sum four family counts within each seed/condition/group; three independent seeds, descriptive seed SD only"
+  },
+  "limitations": [
+    "Externally supervised affine action controller; no claim native ports learned routing.",
+    "All80 and public_obs56 have greater feature dimension and parameter count than non_input24.",
+    "Replay training receipts arose under original changing-backbone assisted policy; autonomous evaluation distribution may differ.",
+    "No FINISH decoder is trained; OTHER class includes FINISH and native FINISH scores remain available."
+  ]
+}

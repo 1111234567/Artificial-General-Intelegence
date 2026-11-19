@@ -1,0 +1,107 @@
+{
+  "time_utc": "2026-11-19T05:59:51.022167+00:00",
+  "source_sha256": {
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "birth_roots": {
+    "development": [
+      831240,
+      831241,
+      831242,
+      831243
+    ],
+    "confirmation": [
+      831300,
+      831301,
+      831302,
+      831303,
+      831304,
+      831305,
+      831306,
+      831307
+    ]
+  },
+  "world_roots": {
+    "development": [
+      831260,
+      831261,
+      831262,
+      831263,
+      831264,
+      831265
+    ],
+    "confirmation": [
+      831320,
+      831321,
+      831322,
+      831323,
+      831324,
+      831325,
+      831326,
+      831327,
+      831328,
+      831329,
+      831330,
+      831331
+    ]
+  },
+  "trials": 640,
+  "mode": [
+    "stable",
+    "reverse",
+    "restore"
+  ],
+  "arms": [
+    "joint",
+    "weights",
+    "frozen",
+    "no_receipt",
+    "independent"
+  ],
+  "probe_tail": 48,
+  "window": 64,
+  "recipe_candidates": [
+    {
+      "rate": 0.12,
+      "exploration": 0.37,
+      "decay": 0.995,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    {
+      "rate": 0.22,
+      "exploration": 0.28,
+      "decay": 0.995,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    {
+      "rate": 0.32,
+      "exploration": 0.22,
+      "decay": 0.995,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    {
+      "rate": 0.16,
+      "exploration": 0.25,
+      "decay": 0.999,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    {
+      "rate": 0.24,
+      "exploration": 0.34,
+      "decay": 0.999,
+      "grow_every": 19,
+      "retire_every": 17
+    }
+  ],
+  "development_objective": "Maximize mean of stable silent tail accuracy and reversal silent tail accuracy; ties choose first recipe.",
+  "primary_confirmation": "Joint-minus-frozen and joint-minus-independent in stable silent and reversed silent tails. Crossed birth/world paired bootstrap, 95% simultaneous percentile intervals across four contrasts.",
+  "secondary_confirmation": "Initial, pre-change, initial-reversal and restored windows, weight-only, receipt-off; physical realized tastes, contact and expected-best side.",
+  "causal_audit": "Clone identical states/weights/physical observations and silence only source columns of outgoing motor or taste edges. Compare internal nodes, next motor states, and emitted pulses in fixed public replay."
+}

@@ -1,0 +1,152 @@
+{
+  "format": "coverage-exit-retirement-prospective-v1",
+  "created_utc": "2026-11-02T13:58:05.875539+00:00",
+  "output": "F:\\agi\\data\\coverage-exit\\retirement-v1",
+  "execution_files": {
+    "F:\\agi\\experiments\\undirected\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\test_model.py": "636ad022366233cdf414a09313b02bfe9484b090dae7620782f9e035028428a1",
+    "F:\\agi\\experiments\\undirected\\credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "F:\\agi\\experiments\\undirected\\test_credit.py": "4ce8cd859ad99b05239958fbc38cc869dee890d791d3360e2238302da05b63cd",
+    "F:\\agi\\experiments\\undirected\\plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7",
+    "F:\\agi\\experiments\\undirected\\test_plasticity.py": "bf7f0984474990b4a82fb3ab3abb0402414b2da20dfa8432921f359f7065072d",
+    "F:\\agi\\experiments\\undirected\\run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "F:\\agi\\experiments\\undirected\\test_run.py": "e6981df9823fbc56b95ec1b8562c5028d40eda672bac9236a984f0d3a754f855",
+    "F:\\agi\\experiments\\undirected\\study.py": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+    "F:\\agi\\experiments\\undirected\\test_study.py": "71b162f4eeb1318c8ef1acfc70bf2041f2d75d15f1c83efc52cc9157ddb12a88",
+    "F:\\agi\\experiments\\undirected\\queue.py": "863371fa5fb1ab70e896eb1a936f1fda01af06f3a67b59bed2fb5f4ca540bb33",
+    "F:\\agi\\experiments\\undirected\\test_queue.py": "d3dfab0ad05f812a7800dc0134ead83ab02a354e8cc03389f446b6638af48bdc",
+    "F:\\agi\\experiments\\undirected\\ledger.py": "8b0f5284a9a5e53d14af9081e6d95f83cb4f854523d431a475edc2e65d76080a",
+    "F:\\agi\\experiments\\undirected\\test_ledger.py": "1fb9180ce0af912b49265b3df0408d38b4575d8559002da0fd4d5995022d794e",
+    "F:\\agi\\experiments\\lifelong\\__init__.py": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\schedule.py": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+    "F:\\agi\\experiments\\lifelong\\replay.py": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\continuity\\__init__.py": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\model.py": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+    "F:\\agi\\experiments\\integration\\diagnose.py": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+    "F:\\agi\\experiments\\coverage_exit\\retirement.py": "ffd8eec509c1451ad7784eebc1ea28ffcf0d64541e2de8a8ebc2235913822c31",
+    "F:\\agi\\experiments\\coverage_exit\\retirement_run.py": "396b9aeaaeb87ea018143e550410543ec96bff9e7db89491fee86b3355451fcb",
+    "F:\\agi\\experiments\\coverage_exit\\retirement_study.py": "043e8c346e61beb8316defe4e8e7b71e71d59c2d92515d52eb986521422c69fc",
+    "F:\\agi\\experiments\\coverage_exit\\test_retirement.py": "dabc5b07cd6870f57c526bc8cc136b471a85576aba5d5f33a616e5e279a737cd",
+    "F:\\agi\\experiments\\coverage_exit\\fast_window.py": "c53e0cf6d4370efa39fb169875dad225ad8a123b5e0b95c304488c15f6012d01",
+    "F:\\agi\\experiments\\coverage_exit\\test_fast_window.py": "23fc7b9354303c20d7e594870d768468a19680bf058b4efe2a1278d16e6c7ff2",
+    "F:\\agi\\experiments\\coverage_exit\\benchmark_window.py": "c1279e03af26f8a93cbd5e9c42c372542aef2237a0d73b312491ce3ed4a7eb04"
+  },
+  "sources": [
+    {
+      "seed": 0,
+      "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+      "checkpoint_sha256": "336b6a34bcf7d32338f29b27f4b4062c8039b06359ef0fad185f1218f92e86ec",
+      "baseline": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_000__core__undirected__recorded512__fixed__warmup.json",
+      "baseline_sha256": "856dc5df35f5ecb652bd8bcd3b9c91d05441feff939d4fd4eea8ec70fe5ced00"
+    },
+    {
+      "seed": 1,
+      "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_001\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+      "checkpoint_sha256": "25d59e3d941a440c91ce6c24c2b5e61f59927e850bf5845bb8124a107b7f3925",
+      "baseline": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_001__core__undirected__recorded512__fixed__warmup.json",
+      "baseline_sha256": "e3877c0f86aaa1411f1b5d73b5bc5d781c3317fee3b5a1394b292071627e762e"
+    },
+    {
+      "seed": 2,
+      "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_002\\core__undirected__recorded512__fixed__warmup\\checkpoints\\tick_131072.pt",
+      "checkpoint_sha256": "df5282976db12645a6eb4e05d36c27a58c686b8c99d9506820ebe8fc0d8ccd36",
+      "baseline": "F:\\agi\\data\\undirected\\main-v1\\evaluation\\seed_002__core__undirected__recorded512__fixed__warmup.json",
+      "baseline_sha256": "87eb67d28e65c8fa20ded77a80c16612e118c6ab3b0f6b4a57d92a385fea065a"
+    }
+  ],
+  "arms": [
+    "half_only",
+    "full_eligible"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "mechanical_validation": {
+    "path": "F:\\agi\\data\\coverage_exit\\retirement-validation-v1.json",
+    "sha256": "1f846349bd9e2814ff85f250175d6a3addf4da8dfdf2e216b175f49afdab11a0",
+    "scope": "8 retirement tests plus canonical source adoption/actual-update restore and bitwise next-update recovery; excluded from effect estimation"
+  },
+  "source_tick": 131072,
+  "source_updates": 1024,
+  "continuation_updates": 128,
+  "endpoint_tick": 147456,
+  "expected_proposals_generated": 16,
+  "expected_executed_windows": 15,
+  "expected_probe_calls": 60,
+  "runtime": {
+    "device": "cpu",
+    "world_device": "cpu",
+    "dtype": "float64",
+    "cpu_threads": 1,
+    "jobs": 6,
+    "max_concurrent_workers": 3,
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "CUDA_VISIBLE_DEVICES": "-1"
+    },
+    "backend": "install_window in both arms; local constant-parameter matrix hoisting; live world path remains native",
+    "backend_validation_path": "F:\\agi\\data\\coverage-exit\\perf\\recorded-window-cpu-v1.json",
+    "backend_validation_sha256": "17be56f70475880db8ebfc982b8f6909c4febd686cab51b05ead06a56c847974"
+  },
+  "training": {
+    "policy": "retire-only in both arms; no growth",
+    "candidates": 4,
+    "window_updates": 8,
+    "ranking": "unchanged stable signed -weight*raw-gradient mean",
+    "single_switch": "full_eligible commits full zeroing when measured full batch mixed loss is strictly below actual fade baseline; else use old half/threshold strict-loss acceptance",
+    "probe_budget": "same baseline, disabled-birth trial, full-ablation trial, half-fade trial; exactly four forwards per execution",
+    "adoption": "retain all original optimizer moments/age, h, world, replay, credit tape/age, lifetime masks/counters/update ledger and trace; reset only newly activated proposal gradient sum/window/pending at source boundary",
+    "endpoint": "fixed finite horizon; do not stop when deletion count favorable"
+  },
+  "evaluation": {
+    "steps": 2048,
+    "conditions": [
+      "short",
+      "long_both"
+    ],
+    "families": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "action_policy": "unmodified full11 argmax",
+    "primary": "each endpoint complete world/hidden/parameters, detached with no reset and free full11 argmax; paired arms must share external future commands/scheduler and cases while receipts/h follow their own actions",
+    "baseline": "reuse frozen original source evaluation only after SHA and complete parameter/world/h/condition bindings; establishes nonzero source behavior; source-versus-endpoint uses different time boundaries and is descriptive",
+    "metrics": [
+      "strict completion clean_completed/matured",
+      "ordinary completion completed/matured",
+      "inactive_actions/inactive_opportunities"
+    ],
+    "aggregation": "equal family rates within seed; paired full-minus-half per seed; three seeds sample mean/SD only after all finish; raw counts retained"
+  },
+  "structural_endpoints": [
+    "true eligibility deaths",
+    "numeric nonzero pairs",
+    "eligible pairs",
+    "accepted full batches",
+    "accepted half batches",
+    "full mixed improvements",
+    "all per-window live/history/mixed baseline/full/half losses"
+  ],
+  "limits": [
+    "This tests a loss-gated operator in trained core/shared finite-window models, not the zero-behavior ports/RTRL architecture.",
+    "Deletion of a jointly tested batch does not establish that each pair is harmless or identify a disposable memory.",
+    "A lower candidate mixed loss may increase history loss. Equal probe counts and scheduled learning budgets do not force identical trajectories.",
+    "Source-versus-endpoint change is descriptive across time; primary causal contrast is paired full-minus-half complete endpoint systems under matched external commands.",
+    "15 proposals execute inside128 updates; proposal16 is pending and remains unexecuted."
+  ],
+  "protocol_hash": "814be52e0db5a311f940f69ba8f22e20ebdb0c6639a7d75425f41b47dd0511fe"
+}

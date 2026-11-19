@@ -1,0 +1,144 @@
+{
+  "python": "3.14.5",
+  "numpy": "2.5.4",
+  "torch": "2.11.0+cu130",
+  "torch_cuda": "13.0",
+  "sources": [
+    {
+      "path": "experiments/pulse_game/meta_env.py",
+      "sha256": "3435c9e110965d733db10eb61d7603c1318c34e291812e668429ae70494b9d25"
+    },
+    {
+      "path": "experiments/pulse_game/meta_eval.py",
+      "sha256": "707edb4a1dfc2ebdc46bbac4eafdd49f2b7b09741b3b9b6800620f1a8b2ea71b"
+    },
+    {
+      "path": "experiments/pulse_game/meta_model.py",
+      "sha256": "07237aeac4b6da2eb4f059b1d6f9358a30be34a455f50c9cf6be5e194d3d30f9"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_compare.py",
+      "sha256": "bc1c60d1ed839b372af609186effb3e586c636d0546b6415a93a64ca146f719d"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_decode.py",
+      "sha256": "aa2ddcc7f93cc5c6f1e6b616f462506013266c54239742b1cd46403c4e0de29c"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_env.py",
+      "sha256": "54e19083af5d2bcd68d33b91dc906d84b608fa21484e66d24cadb2a86c167c18"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_eval.py",
+      "sha256": "84a28a282ec499f1b669b7e1caa1d5dfbbbd9665ff9e840bdc67286b4645d8c3"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_exposure.py",
+      "sha256": "ce5bcac608de8777ecfa86540df4407bbfb179f484d73fe2d565f4fea798c534"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_geometry.py",
+      "sha256": "b549a9f4a1aa7096f9afac87b6d732b29b342c073e2e9a1be00a520891a50771"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_model.py",
+      "sha256": "82bf02bb7eac14205e147f30e25c6135940fb1a59d60c0024cb8fca1794cdf5f"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_stress.py",
+      "sha256": "9806f6726b4cd3b175b001188f9a7a2d1e3bbc1f117e610007f44e0de937734d"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_train.py",
+      "sha256": "0f19a8b7d5eb8e7e846ffa595646d87f4628298eb537630689d4211a386dc223"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_transfer.py",
+      "sha256": "5e29459bec7fc0b1638f4e8f623fdf962111751b175ccbe171e26f13c2dcc609"
+    },
+    {
+      "path": "experiments/pulse_game/meta_scout_value_relay.py",
+      "sha256": "e77eccee6de7de8021f45feb4abefc65e0f7b8f4cb4209fa024a98484318cdef"
+    },
+    {
+      "path": "experiments/pulse_game/meta_train.py",
+      "sha256": "29bca47f0b4cff33390fcb700b78f4b6897ad13ebd7c0e4a279e726132c16bc3"
+    },
+    {
+      "path": "experiments/pulse_game/scout_world.py",
+      "sha256": "31afcbfbbdf99bba7015cccdafa1ecbf60e282bb6c246be3787a6199cd283ec1"
+    },
+    {
+      "path": "experiments/pulse_game/test_meta.py",
+      "sha256": "6ef8a740accf0d6f5b1bdae22af2b452cab50866a15fc594f866babc77e321b7"
+    },
+    {
+      "path": "experiments/pulse_game/test_meta_scout.py",
+      "sha256": "273a34a24e4ab368ca12acf3ae5c14dbc542c6a7e27900fcdb8888749430736d"
+    },
+    {
+      "path": "experiments/pulse_game/world.py",
+      "sha256": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+    }
+  ],
+  "reference_links": {
+    "audit-boundaries.md": {
+      "checked": 20,
+      "missing": []
+    },
+    "README.md": {
+      "checked": 54,
+      "missing": []
+    },
+    "paired-choice-metric.md": {
+      "checked": 2,
+      "missing": []
+    }
+  },
+  "paired_and_unified_review": [
+    {
+      "path": "experiments/pulse_game/paired_choice.py",
+      "sha256": "67842dab19a31e8c2b6ce2b40a2856aa021d53dfa699a95253433a55c47e3e22"
+    },
+    {
+      "path": "experiments/pulse_game/test_paired_choice.py",
+      "sha256": "184f9264e4670005a4bfb14913d4db181a40b0977fccb7e3e928a4ea0181bc53"
+    },
+    {
+      "path": "experiments/pulse_game/symmetry_audit.py",
+      "sha256": "9ff229961aae57ec200063e614bcb0e1f37047ba54fda15dd80748e94cda46ad"
+    },
+    {
+      "path": "experiments/pulse_game/symmetry_memory_audit.py",
+      "sha256": "a5a20673d45d6f2e085dbf24aba15d763c2167fbc03a43bb89ff58dbbbbdebc1"
+    },
+    {
+      "path": "experiments/pulse_game/recurring_audit.py",
+      "sha256": "31aa46e83d33091546d0b0c72a370345c646878fdcc482b151f0eed58a074d63"
+    },
+    {
+      "path": "experiments/pulse_game/symmetry_policy_confirm.py",
+      "sha256": "58d4a2a19d913a0a15a10d14faadba73ffb34eda72937f50aa0ca84f38e4760e"
+    },
+    {
+      "path": "experiments/pulse_game/recurring_read_write.py",
+      "sha256": "3658cbdbadb48184661c2316cf88719c9cbe44dc7cf323a465b79cb165ab927a"
+    },
+    {
+      "path": "experiments/pulse_game/unified_world.py",
+      "sha256": "ad657ee02cf0be477cf3d59f077d6c45a524fa15f38b017c206832f10f678202"
+    },
+    {
+      "path": "experiments/pulse_game/unified_train.py",
+      "sha256": "066da400354d19fa2bc20309b016d1566b4db351f6f3204dcae300524a589a4e"
+    },
+    {
+      "path": "experiments/pulse_game/unified_physical.py",
+      "sha256": "ddf016775fdf11f88b40107ef5662a081640123c0b18378c7d14e593ae405dff"
+    },
+    {
+      "path": "experiments/pulse_game/unified_confirm.py",
+      "sha256": "78563c9f6c710efc2135882b7ce758b3414c9d5343908f304c20530cc7919489"
+    }
+  ]
+}

@@ -1,0 +1,982 @@
+{
+  "format": "episodic-review-prospective-retention-audit-v1",
+  "passed": true,
+  "created_utc": "2026-11-06T18:28:44.381781+00:00",
+  "device": "cuda",
+  "training_protocol_hash": "8380e6b643480a55b637b702c4d18d9a5efd465453c1f0c79411e86c6eeb8013",
+  "freeze_hash": "1984a122fdb086344ce91c88e0b516c6818aad387fab8b4ddacceeb96a973503",
+  "primary_freeze_hash": "0ab7474eb464c8fb49280919ea2b53b7c3ff375b7b6beea0d21859b9b4c83c14",
+  "audit_plan_sha256": "f3bb114c25bc1a1f93b173e53e41f22295e84a95d1759c46c982585860bb8f57",
+  "auditor_sha256": "2f0466e1c033a921e36b4ea289c27559ef7876b74c793029ce7e7157044a2ea5",
+  "scope": "All9 exact primary256 model/Adam512/h/RNG copies; all576 full B block identities/counts/h chains; all18 snapshots including final Adam576; all18 actual suffix001/002 CUDA updates reconstructed with plain GRU; all3 complete native source-world boundaries; original primary artifacts rehashed after suffix audit",
+  "actual_updates_reconstructed": 18,
+  "snapshots_checked": 18,
+  "original_primary_artifacts_unchanged": true,
+  "cases": [
+    {
+      "seed": 0,
+      "arm": "none",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.018135234713554382,
+            "action": 0.016235310584306717,
+            "time": 0.0018999231979250908
+          },
+          "preclip_grad_norm": {
+            "policy": 1.23491370677948,
+            "time_head": 0.2748660743236542
+          },
+          "artifacts": {
+            "before": "dc7d8eb943f5f91ed2637b19233e2bfb891eee6ecf4b414b30571dbbd13f269b",
+            "after": "e5fb6a15d660041dd0d2e5c77fabc0949e07e0b3803547c293db50a926bb4e44",
+            "gradients": "d80f40bf34ed72c45db030c815df643020ab1ad8e8c8962cecaddd390840501e"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.0225568488240242,
+            "action": 0.021060775965452194,
+            "time": 0.0014960730914026499
+          },
+          "preclip_grad_norm": {
+            "policy": 1.097778558731079,
+            "time_head": 0.21270103752613068
+          },
+          "artifacts": {
+            "before": "2d310abd665312c1abf42f7cad53e2c3d4d889adda6e848a8fb0d4e0df6a9855",
+            "after": "780cdca7ac437828214ed333a2356e488c29d2bd52960dddc4ccf940ad3f173a",
+            "gradients": "0c85c4e08af8e8e4f8561997701397e3517b524c4ffdf6a26e275848d419fbd4"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "604f0861dc3ab98032e75b66ef33b43393dccd5640db1e2756f87bf7b19854f9",
+          "hidden_sha256": "1d66e158aab609583591e636b3368657180a07eeee4bebf41dc84429be2df46f",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "0d0ddcd9c9c28453cb4b8468909e7aec29b493a55060db2af0168be6011fe112",
+          "hidden_sha256": "9f1afad240be919345efee44e6a224d7cfc2fc2f9b8c93343502b7b96d38e633",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517151,
+            "action_BEGIN_rows": 4437,
+            "action_FINISH_rows": 2700,
+            "action_weight_sum": 136424.75,
+            "time_rows": 180367,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 180367
+          }
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "arm": "replay_A",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.016451509669423103,
+            "action": 0.015045227482914925,
+            "time": 0.0014062827685847878
+          },
+          "preclip_grad_norm": {
+            "policy": 0.3353632986545563,
+            "time_head": 0.18696679174900055
+          },
+          "artifacts": {
+            "before": "0caaeec6310fcdb490a53f86a9794d645358ddd9f27195c903bb888e86752527",
+            "after": "11d12006c9c79c97588fcd3200f038f4b6bbfcdf7cbccf8bb87335c871e4e7f1",
+            "gradients": "69a3d7bb58216cc10a34a05ce499f63c1c077084ddfccd4daf359128c618d81b"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.014465192332863808,
+            "action": 0.013450678437948227,
+            "time": 0.0010145138949155807
+          },
+          "preclip_grad_norm": {
+            "policy": 0.19351482391357422,
+            "time_head": 0.07793307304382324
+          },
+          "artifacts": {
+            "before": "28ff0267053a77cb6a4d61bbfadc3f4c0296a3a560083ec9296c39f829beec34",
+            "after": "1eafc3a5027be2d48c5bf9f36c59cc93886c30e3ef60503d5a7d28b9c2a9e289",
+            "gradients": "8b65ae767f0f9105ceaf1a2a7a6fcf057037e05476d550e44d6edff53cf40db8"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "a672fda9000e685b56f2456863a8a6c3a9eaf555e2f045a16bc3a9f2773163c8",
+          "hidden_sha256": "5ed6d46bbee6c40153fdd79c8515196f88053a6d2b343b4dab72ba4412eeb8ee",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "95d07216fa178a6490936fcb9c9647f0c1f154209277da8b8e19138e72a879f8",
+          "hidden_sha256": "a50158a429d6363f824b4a2e7c39fd347040281bad8aebd36a16b67d001bfff8",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517151,
+            "action_BEGIN_rows": 4437,
+            "action_FINISH_rows": 2700,
+            "action_weight_sum": 136424.75,
+            "time_rows": 180367,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 180367
+          }
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "arm": "replay_B",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.01649370603263378,
+            "action": 0.015405437909066677,
+            "time": 0.0010882675414904952
+          },
+          "preclip_grad_norm": {
+            "policy": 0.8197420239448547,
+            "time_head": 0.04687287285923958
+          },
+          "artifacts": {
+            "before": "f7deaf38e981230102e23dbdae399f3d421c7d30538a9f2abc8f37b042e47f00",
+            "after": "ed0e0a7d461b49e262268d54ba0719e369d22494b8a75d39e632d77ee3112820",
+            "gradients": "a97c9c36ae8740382b5c108782859b0d5bd2697aeda64735717e8eaa0564f490"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.012885987758636475,
+            "action": 0.011799277737736702,
+            "time": 0.0010867103701457381
+          },
+          "preclip_grad_norm": {
+            "policy": 0.29904231429100037,
+            "time_head": 0.09785754233598709
+          },
+          "artifacts": {
+            "before": "86f3249a89b2987c7b58d21bb7203ab987bb3cd46c33d7e69a17ee1ed3b29ac3",
+            "after": "69b64e9aae519f51bc378299e400a41a0fd249972490bab69e6b03094b2a5bb1",
+            "gradients": "c582c666938d10fae6b5a65c37d07fb3a28c758adbf0301dedd8faebf99ac820"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "f6d72a7b6e03aa2a9815e3d31d064b4cec30755a0b7ab67217b2a3e1ecfd4ca3",
+          "hidden_sha256": "9ef022efb1c66a79d399accad0c6e9c97a1d9c232e84e9b8861df98a0c7d8963",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "40e7a21e82882ea9e4b1ca3c95540bea5c2927ce18a4442ab0dafe6b3db1b423",
+          "hidden_sha256": "4bb768dba99dd2ed2c61524fa19a5480517c4ba7aee8af1d75b94509e78d37a2",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517151,
+            "action_BEGIN_rows": 4437,
+            "action_FINISH_rows": 2700,
+            "action_weight_sum": 136424.75,
+            "time_rows": 180367,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 180367
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "arm": "none",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.021026212722063065,
+            "action": 0.02035398781299591,
+            "time": 0.0006722249090671539
+          },
+          "preclip_grad_norm": {
+            "policy": 0.6012943983078003,
+            "time_head": 0.07363244146108627
+          },
+          "artifacts": {
+            "before": "02a175766e1a8cc664772afdc582b2a372f5d2e0e63c1dac1b7260f4ea118f1e",
+            "after": "44a9f1f3f0acdfb6cbe205acc332ea0ab6770b66c8f81757366a9121e73616cd",
+            "gradients": "ca72d0ab35c18c4dde57a44d1f11d54c641f028433dd5b31d845c1b63d105520"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.02178136445581913,
+            "action": 0.021094180643558502,
+            "time": 0.0006871840450912714
+          },
+          "preclip_grad_norm": {
+            "policy": 0.7777901291847229,
+            "time_head": 0.059815287590026855
+          },
+          "artifacts": {
+            "before": "ba8a2a7ac6db77fbf07b27674faa64935c48812d4cf7f124fe653aedfe5438e0",
+            "after": "912379100c271d3efead18ae4ce41d82f09972dc39d86b3d46c0c86d39339463",
+            "gradients": "8f31be6a440ceac7c31fb478668c499acfaa9e278b280ab5c8b77c1a106e4ad0"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "a8aa82df10aab15eff7ec7b0f1ee803c216f619ec49f09957af4323da16acf80",
+          "hidden_sha256": "306dd0e9a707f74be5bba8b4de552f1c0a1bfc38a6ef67eecc89c55f41a46691",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "9fe0be0d32c898a3438879d5542c73e4b26e6b41235f7a9a5c7171a141c66da7",
+          "hidden_sha256": "6b0bcfe3b004430072f1e38273397c784ae387d4b00ebba8478786e831f0b888",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517108,
+            "action_BEGIN_rows": 4415,
+            "action_FINISH_rows": 2765,
+            "action_weight_sum": 136457.0,
+            "time_rows": 182228,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 182228
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "arm": "replay_A",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.03239496052265167,
+            "action": 0.030775850638747215,
+            "time": 0.0016191110480576754
+          },
+          "preclip_grad_norm": {
+            "policy": 0.5965263247489929,
+            "time_head": 0.25514546036720276
+          },
+          "artifacts": {
+            "before": "1aac71a029ecd3ac7f5b8be4a43f90c74810dbc0af25a66ea15855e34851dee4",
+            "after": "394628f0a6d367ebaa7eafc471a127ae3ec5c5b87f3cc6c44360c1dfa63e9d4d",
+            "gradients": "fb2630e30716e4a2e59e7100eebd8810fc758ea3b1083836a63cc71d55d2c435"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.02391708269715309,
+            "action": 0.022933777421712875,
+            "time": 0.0009833060903474689
+          },
+          "preclip_grad_norm": {
+            "policy": 0.6353397369384766,
+            "time_head": 0.17267967760562897
+          },
+          "artifacts": {
+            "before": "5854399d3bbab91f2fc65f9e51c28351cb375065c10058ba49b0728ea3b84c7f",
+            "after": "c095f05aa52ab134aab5a78a353cc350b7f6ab7fb2254cfebfba929120e8451e",
+            "gradients": "e9b37834b284c27a687aafbea47aeccc47a60d59411f36c37a96550bab6168a7"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "0379f4fa572af8411b6d64bad0c1b8649e42543f85aea9c9118d51a93c61d8f7",
+          "hidden_sha256": "dd8a38903f72090b23afe0f3be8a286929315ecc668ab8b9757aaa55f2e8b7bb",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "092da96be127e41062de0ddad9f0bf65e6c0347ba5980bf02d62412444b9ca37",
+          "hidden_sha256": "b808646b639fbef6104bab5eb8def8b9891409a084ca526b8759ca96b8b090a4",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517108,
+            "action_BEGIN_rows": 4415,
+            "action_FINISH_rows": 2765,
+            "action_weight_sum": 136457.0,
+            "time_rows": 182228,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 182228
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "arm": "replay_B",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.020648334175348282,
+            "action": 0.019924163818359375,
+            "time": 0.0007241697749122977
+          },
+          "preclip_grad_norm": {
+            "policy": 0.2883046269416809,
+            "time_head": 0.03796645998954773
+          },
+          "artifacts": {
+            "before": "0f9cdc9bafae92fafd6eaf67de0a86b3f3f0f83cbabef6de1cade18f1a04a0d5",
+            "after": "fdbf7d05082a76d0dbeeccceeaaa7034a190b8b2b5af8b7497faf5f83f4e11a3",
+            "gradients": "2329c53a8a6de6ef34b533c418efb7fbe39825d45333600f25fbcf038d066668"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.02221493609249592,
+            "action": 0.02106901817023754,
+            "time": 0.0011459178058430552
+          },
+          "preclip_grad_norm": {
+            "policy": 0.7775606513023376,
+            "time_head": 0.19097523391246796
+          },
+          "artifacts": {
+            "before": "9c12ae10c74bb3a02bb5d2da388bc25ecd4bc5288c885a9d9f2d07d3872f1aaf",
+            "after": "034d33c421047323b46af20f64da095898579381211d16e56a8eabcc5e808db4",
+            "gradients": "367c59c945f3accb311d8a3a127b8a06bc328c711390a2d3d6952cf1bdeb3f8f"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "04387d3a80d501a2e2566d4b773d95637e4fa27aed01964f09daa449e8239e5e",
+          "hidden_sha256": "50d88ba70ef25ed3642dee9f991b16c2c8352d182f7ac7633acec3b70b2dbb8b",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "180c71fcefbd53688cb3d2465952cf19bf1f18c4704bd2a28690fd0979f14bd0",
+          "hidden_sha256": "c3366bfa4c14ca10142ecbf915a99fac291ad9dc5d2062eb2de3945ffa560ba8",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517108,
+            "action_BEGIN_rows": 4415,
+            "action_FINISH_rows": 2765,
+            "action_weight_sum": 136457.0,
+            "time_rows": 182228,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 182228
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "arm": "none",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.017422067001461983,
+            "action": 0.01667580008506775,
+            "time": 0.0007462676730938256
+          },
+          "preclip_grad_norm": {
+            "policy": 0.4233962595462799,
+            "time_head": 0.10906098783016205
+          },
+          "artifacts": {
+            "before": "b95354da94bf89108d7795f5d1d8c99057c8c3c0cda036ff10336b345044b01d",
+            "after": "ce0fc316b31d54f4aa3405392f28c10c28c834e1df1985d0a4465e31b3a902c9",
+            "gradients": "2c6bf701bc5739f4c58509c346bcef968f08204e9b6e28d85b942c741942cb7c"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.016278287395834923,
+            "action": 0.015607262030243874,
+            "time": 0.0006710253073833883
+          },
+          "preclip_grad_norm": {
+            "policy": 0.40996357798576355,
+            "time_head": 0.08636381477117538
+          },
+          "artifacts": {
+            "before": "87b862bd79f2ad9bd43b8e4784689b9108462a1e61906aafd62ec79483cb01c4",
+            "after": "d76db039bee1301f212cca525177f1008401ee8dfb10eb5691659830aced0a47",
+            "gradients": "5447d73621f3749ba6d61a7a7a0061e0a6c96c10f0a1fb41fe399006e9c4719f"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "a6f5bdd8c939d124ff6a2947b906cb09ce1a060e314391a3238b09680faac004",
+          "hidden_sha256": "f9f0cdbc8ba753c310950509c78b5af33e12140827d1b21848fc9fb861420126",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "f81b8a71c635b2a1525a0425619759bdc88a11252bd161bcdfbef67f81a486a0",
+          "hidden_sha256": "78121a7c1658b555abc16288315e985294dd8bdd77408120e39230b022dd3354",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517074,
+            "action_BEGIN_rows": 4456,
+            "action_FINISH_rows": 2758,
+            "action_weight_sum": 136482.5,
+            "time_rows": 183744,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 183744
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "arm": "replay_A",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.018626883625984192,
+            "action": 0.017695240676403046,
+            "time": 0.0009316428913734853
+          },
+          "preclip_grad_norm": {
+            "policy": 0.438106894493103,
+            "time_head": 0.046995148062705994
+          },
+          "artifacts": {
+            "before": "33d860bd0453cf60064e6e36487fe922687d19f3106208c12b4e7b10ed1e85f5",
+            "after": "ddf9f6e02f16f08ed316623b8fad49aae8266bcdc21e12a39136a083b9400ee5",
+            "gradients": "39ad498eae431870648a53eee3221e1c90359f5172f7e4e4c50dde2f721e1b34"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.015335315838456154,
+            "action": 0.014767013490200043,
+            "time": 0.0005683020572178066
+          },
+          "preclip_grad_norm": {
+            "policy": 0.4790697693824768,
+            "time_head": 0.05699371546506882
+          },
+          "artifacts": {
+            "before": "7c12a401fe25be071fc935e8456d1b6d728a7a89caecbd2faa9050260876aaf1",
+            "after": "5f9838e8a616febad0ec66163dc1d87b2c5f98f98664e06c496f95a840dcf42e",
+            "gradients": "b841e479fbe5a1e78de482f7b50c8fff216b25cf45d122e1455308f1124e5ad5"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "e010a69b41e5fb5471ed10db2413f71e2bf6bdf0cd0cba6c602c5d9507c499f8",
+          "hidden_sha256": "03e645d4563f8b951d1c5da03524ec3374295b673cac961d3c96ac19fa0ea7e1",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "76d5f4ada61566cc36fe90bc263e8356ae11be6e046d14e7c3a640acaf0597f5",
+          "hidden_sha256": "5b1238a2ba8910e831896ca0490094743ebb7b1c962c8c45172209456062bd29",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517074,
+            "action_BEGIN_rows": 4456,
+            "action_FINISH_rows": 2758,
+            "action_weight_sum": 136482.5,
+            "time_rows": 183744,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 183744
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "arm": "replay_B",
+      "passed": true,
+      "source_model_Adam512_h_RNG_exact": true,
+      "updates": 64,
+      "replay": false,
+      "actual_update_reconstruction": [
+        {
+          "step": 1,
+          "study_step": 257,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 512,
+          "optimizer_step_after": 513,
+          "loss": {
+            "total": 0.025143682956695557,
+            "action": 0.02386011742055416,
+            "time": 0.0012835661182180047
+          },
+          "preclip_grad_norm": {
+            "policy": 0.3568843603134155,
+            "time_head": 0.18206174671649933
+          },
+          "artifacts": {
+            "before": "887b9bf9ffa0e1961bdb06362118c470a8c0ca28abc611d7d90b7cd4a3865335",
+            "after": "7fcf4555ec5f487b230def3c7bcfe6e031560e31b8f7b39266dea7056ae80278",
+            "gradients": "84072fd7cc6c04041252f374fa384e8a9d45db713a5a7721558b43f22db756c0"
+          }
+        },
+        {
+          "step": 2,
+          "study_step": 258,
+          "passed": true,
+          "tensor_comparison": "bitwise exact",
+          "optimizer_step_before": 513,
+          "optimizer_step_after": 514,
+          "loss": {
+            "total": 0.02385038696229458,
+            "action": 0.023016124963760376,
+            "time": 0.0008342616492882371
+          },
+          "preclip_grad_norm": {
+            "policy": 0.50527024269104,
+            "time_head": 0.10912635177373886
+          },
+          "artifacts": {
+            "before": "44bb56cb2ccf6deee9ec57aa39eda1174e411ded89668a19a13231b9714f9d9a",
+            "after": "0ce9afe04f595a1633d3554e36dddd665691aef72ca693659a9e1ce4e2f35370",
+            "gradients": "d9233520de9da1e267783216c3a7dafd55474a82ccf5857bbbc21291df6fe377"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "step": 0,
+          "study_step": 256,
+          "passed": true,
+          "checkpoint_sha256": "ea6b66efbd31f4932f767b08df35ddfbff7695342951cc0fb4e719516a25ccce",
+          "hidden_sha256": "5ee0f0be50d4542e68dc29f1e80422ec560132dcf93c7c5822df3b4c5802e4d6",
+          "optimizer_step": 512,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 0,
+            "training_ticks": 0,
+            "training_lane_ticks": 0,
+            "action_rows": 0,
+            "action_WAIT_rows": 0,
+            "action_BEGIN_rows": 0,
+            "action_FINISH_rows": 0,
+            "action_weight_sum": 0.0,
+            "time_rows": 0,
+            "action_gradient_rows": 0,
+            "time_gradient_rows": 0
+          }
+        },
+        {
+          "step": 64,
+          "study_step": 320,
+          "passed": true,
+          "checkpoint_sha256": "e94b3805a46ea37ecb649e52b7ae29f26b1da5eb66050f27ac8d00fcb91bd02f",
+          "hidden_sha256": "0d2f06d4332ee48f6dccc417d73310bc4f3581c18fdcbadb142aa2d5b117dc7e",
+          "optimizer_step": 576,
+          "work": {
+            "warm_ticks": 0,
+            "warm_lane_ticks": 0,
+            "warm_loss_rows": 0,
+            "training_updates": 64,
+            "training_ticks": 8192,
+            "training_lane_ticks": 262144,
+            "action_rows": 524288,
+            "action_WAIT_rows": 517074,
+            "action_BEGIN_rows": 4456,
+            "action_FINISH_rows": 2758,
+            "action_weight_sum": 136482.5,
+            "time_rows": 183744,
+            "action_gradient_rows": 524288,
+            "time_gradient_rows": 183744
+          }
+        }
+      ]
+    }
+  ],
+  "native_world_continuity": [
+    {
+      "seed": 0,
+      "passed": true,
+      "complete_native_world_boundary_exact": true,
+      "no_boundary_setters": true,
+      "first_new_tick": 66048,
+      "final_new_tick": 74239,
+      "previous_teacher_action_receipt_carried": true
+    },
+    {
+      "seed": 1,
+      "passed": true,
+      "complete_native_world_boundary_exact": true,
+      "no_boundary_setters": true,
+      "first_new_tick": 66048,
+      "final_new_tick": 74239,
+      "previous_teacher_action_receipt_carried": true
+    },
+    {
+      "seed": 2,
+      "passed": true,
+      "complete_native_world_boundary_exact": true,
+      "no_boundary_setters": true,
+      "first_new_tick": 66048,
+      "final_new_tick": 74239,
+      "previous_teacher_action_receipt_carried": true
+    }
+  ]
+}

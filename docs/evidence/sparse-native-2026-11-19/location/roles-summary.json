@@ -1,0 +1,704 @@
+{
+  "registered_sha256": "96187d2dea170375f1fc2fdcde58914cecc91923637719693dfc8b237a6e369c",
+  "raw_archive_sha256": "2afa7df3ad42a59e97882c110bba9d02c630c205e8936bdbd2d367226ca56cdd",
+  "results": {
+    "stable": {
+      "means": {
+        "intact": {
+          "accuracy": 0.782958984375,
+          "trials": 12288,
+          "correct": 9621,
+          "contacted": 12287,
+          "left": 6228,
+          "right": 6059,
+          "timeout": 1,
+          "changed_side_or_timeout": 0,
+          "accuracy_among_contacts": 0.7830227069260194
+        },
+        "drop_motor": {
+          "accuracy": 0.5008951822916666,
+          "trials": 12288,
+          "correct": 6155,
+          "contacted": 12288,
+          "left": 7917,
+          "right": 4371,
+          "timeout": 0,
+          "changed_side_or_timeout": 5419,
+          "accuracy_among_contacts": 0.5008951822916666
+        },
+        "motor_only": {
+          "accuracy": 0.7843424479166666,
+          "trials": 12288,
+          "correct": 9638,
+          "contacted": 12287,
+          "left": 6217,
+          "right": 6070,
+          "timeout": 1,
+          "changed_side_or_timeout": 207,
+          "accuracy_among_contacts": 0.7844062830634003
+        },
+        "drop_sensory_motor": {
+          "accuracy": 0.5008138020833334,
+          "trials": 12288,
+          "correct": 6154,
+          "contacted": 12288,
+          "left": 7914,
+          "right": 4374,
+          "timeout": 0,
+          "changed_side_or_timeout": 5416,
+          "accuracy_among_contacts": 0.5008138020833334
+        },
+        "sensory_motor_only": {
+          "accuracy": 0.7850748697916666,
+          "trials": 12288,
+          "correct": 9647,
+          "contacted": 12285,
+          "left": 6210,
+          "right": 6075,
+          "timeout": 3,
+          "changed_side_or_timeout": 216,
+          "accuracy_among_contacts": 0.7852665852665852
+        },
+        "zero": {
+          "accuracy": 0.5000813802083334,
+          "trials": 12288,
+          "correct": 6145,
+          "contacted": 12288,
+          "left": 7917,
+          "right": 4371,
+          "timeout": 0,
+          "changed_side_or_timeout": 5425,
+          "accuracy_among_contacts": 0.5000813802083334
+        }
+      },
+      "contrasts": {
+        "intact_minus_zero": [
+          0.2828776041666667,
+          0.2412921142578125,
+          0.3251141357421877
+        ],
+        "intact_minus_drop_motor": [
+          0.2820638020833333,
+          0.24145467122395833,
+          0.323974609375
+        ],
+        "motor_only_minus_zero": [
+          0.2842610677083333,
+          0.24153645833333334,
+          0.3264974975585938
+        ],
+        "intact_minus_motor_only": [
+          -0.0013834635416666667,
+          -0.0067546590169270835,
+          0.004964294433593844
+        ],
+        "drop_motor_minus_zero": [
+          0.0008138020833333334,
+          -0.0018718465169270833,
+          0.004069010416666667
+        ],
+        "intact_minus_drop_sensory_motor": [
+          0.2821451822916667,
+          0.24112945556640625,
+          0.32470733642578153
+        ],
+        "sensory_motor_only_minus_zero": [
+          0.2849934895833333,
+          0.24300130208333334,
+          0.32739318847656307
+        ],
+        "intact_minus_sensory_motor_only": [
+          -0.0021158854166666665,
+          -0.00740570068359375,
+          0.004882914225260511
+        ],
+        "drop_sensory_motor_minus_zero": [
+          0.000732421875,
+          -0.0018717447916666667,
+          0.003662109375
+        ],
+        "motor_only_minus_sensory_motor_only": [
+          -0.000732421875,
+          -0.0030924479166666665,
+          0.0013020833333333333
+        ]
+      },
+      "structure": {
+        "total": {
+          "installed": 5225,
+          "nonzero": 5225,
+          "positive": 2618,
+          "negative": 2607,
+          "signed_sum": 2.3801809416836477,
+          "absolute_sum": 741.2424889492904,
+          "mean_absolute": 0.14186459118646708
+        },
+        "all_motor": {
+          "installed": 3427,
+          "nonzero": 3427,
+          "positive": 1703,
+          "negative": 1724,
+          "signed_sum": -0.6400302383844974,
+          "absolute_sum": 649.6902249623818,
+          "mean_absolute": 0.18957987305584528
+        },
+        "sensory_motor": {
+          "installed": 3125,
+          "nonzero": 3125,
+          "positive": 1561,
+          "negative": 1564,
+          "signed_sum": 1.3161591860261979,
+          "absolute_sum": 635.0398287332355,
+          "mean_absolute": 0.20321274519463536
+        },
+        "other_motor": {
+          "installed": 302,
+          "nonzero": 302,
+          "positive": 142,
+          "negative": 160,
+          "signed_sum": -1.9561894244106952,
+          "absolute_sum": 14.650396229146281,
+          "mean_absolute": 0.0485112457918751
+        },
+        "nonmotor": {
+          "installed": 1798,
+          "nonzero": 1798,
+          "positive": 915,
+          "negative": 883,
+          "signed_sum": 3.020211180068145,
+          "absolute_sum": 91.55226398690866,
+          "mean_absolute": 0.05091894548771338
+        },
+        "by_receiver": [
+          {
+            "index": 0,
+            "role": "left odor 0",
+            "installed": 237,
+            "nonzero": 237,
+            "positive": 104,
+            "negative": 133,
+            "signed_sum": -2.985910208146379,
+            "absolute_sum": 12.425709821683995,
+            "mean_absolute": 0.05242915536575525
+          },
+          {
+            "index": 1,
+            "role": "left odor 1",
+            "installed": 212,
+            "nonzero": 212,
+            "positive": 108,
+            "negative": 104,
+            "signed_sum": 0.21107755391858518,
+            "absolute_sum": 11.879939027829096,
+            "mean_absolute": 0.056037448244476866
+          },
+          {
+            "index": 2,
+            "role": "left odor 2",
+            "installed": 281,
+            "nonzero": 281,
+            "positive": 140,
+            "negative": 141,
+            "signed_sum": 1.1236696621053852,
+            "absolute_sum": 16.734560452925507,
+            "mean_absolute": 0.05955359591788437
+          },
+          {
+            "index": 3,
+            "role": "left odor 3",
+            "installed": 208,
+            "nonzero": 208,
+            "positive": 100,
+            "negative": 108,
+            "signed_sum": -1.5762248007231392,
+            "absolute_sum": 9.73749906179728,
+            "mean_absolute": 0.04681489933556385
+          },
+          {
+            "index": 4,
+            "role": "right odor 0",
+            "installed": 230,
+            "nonzero": 230,
+            "positive": 121,
+            "negative": 109,
+            "signed_sum": 3.138372548506595,
+            "absolute_sum": 12.063926289905794,
+            "mean_absolute": 0.052451853434373016
+          },
+          {
+            "index": 5,
+            "role": "right odor 1",
+            "installed": 177,
+            "nonzero": 177,
+            "positive": 91,
+            "negative": 86,
+            "signed_sum": -0.05727512530575041,
+            "absolute_sum": 7.21921700706298,
+            "mean_absolute": 0.040786536763067684
+          },
+          {
+            "index": 6,
+            "role": "right odor 2",
+            "installed": 233,
+            "nonzero": 233,
+            "positive": 132,
+            "negative": 101,
+            "signed_sum": 1.8128408473567106,
+            "absolute_sum": 10.409442034724634,
+            "mean_absolute": 0.04467571688723019
+          },
+          {
+            "index": 7,
+            "role": "right odor 3",
+            "installed": 220,
+            "nonzero": 220,
+            "positive": 119,
+            "negative": 101,
+            "signed_sum": 1.3536607023561373,
+            "absolute_sum": 11.08197029097937,
+            "mean_absolute": 0.05037259223172441
+          },
+          {
+            "index": 8,
+            "role": "left motor",
+            "installed": 1697,
+            "nonzero": 1697,
+            "positive": 819,
+            "negative": 878,
+            "signed_sum": -15.841306648479076,
+            "absolute_sum": 325.6275641094253,
+            "mean_absolute": 0.19188424520296127
+          },
+          {
+            "index": 9,
+            "role": "right motor",
+            "installed": 1730,
+            "nonzero": 1730,
+            "positive": 884,
+            "negative": 846,
+            "signed_sum": 15.201276410094579,
+            "absolute_sum": 324.06266085295647,
+            "mean_absolute": 0.18731945714043727
+          },
+          {
+            "index": 10,
+            "role": "positive taste",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 11,
+            "role": "negative taste",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 12,
+            "role": "left contact",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 13,
+            "role": "right contact",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 14,
+            "role": "internal 0",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 15,
+            "role": "internal 1",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          }
+        ]
+      },
+      "distinct_probe_foods": 3072,
+      "raw_sha256": "3f532404213c08bb5b69f9d2fa29e37c1d5caaedc42d6642f374875a4da2ff0d"
+    },
+    "reverse": {
+      "means": {
+        "intact": {
+          "accuracy": 0.7713216145833334,
+          "trials": 12288,
+          "correct": 9478,
+          "contacted": 12288,
+          "left": 6588,
+          "right": 5700,
+          "timeout": 0,
+          "changed_side_or_timeout": 0,
+          "accuracy_among_contacts": 0.7713216145833334
+        },
+        "drop_motor": {
+          "accuracy": 0.5013834635416666,
+          "trials": 12288,
+          "correct": 6161,
+          "contacted": 12288,
+          "left": 7873,
+          "right": 4415,
+          "timeout": 0,
+          "changed_side_or_timeout": 5497,
+          "accuracy_among_contacts": 0.5013834635416666
+        },
+        "motor_only": {
+          "accuracy": 0.77294921875,
+          "trials": 12288,
+          "correct": 9498,
+          "contacted": 12287,
+          "left": 6592,
+          "right": 5695,
+          "timeout": 1,
+          "changed_side_or_timeout": 194,
+          "accuracy_among_contacts": 0.77301212663791
+        },
+        "drop_sensory_motor": {
+          "accuracy": 0.5018717447916666,
+          "trials": 12288,
+          "correct": 6167,
+          "contacted": 12288,
+          "left": 7875,
+          "right": 4413,
+          "timeout": 0,
+          "changed_side_or_timeout": 5495,
+          "accuracy_among_contacts": 0.5018717447916666
+        },
+        "sensory_motor_only": {
+          "accuracy": 0.772705078125,
+          "trials": 12288,
+          "correct": 9495,
+          "contacted": 12287,
+          "left": 6595,
+          "right": 5692,
+          "timeout": 1,
+          "changed_side_or_timeout": 197,
+          "accuracy_among_contacts": 0.7727679661430781
+        },
+        "zero": {
+          "accuracy": 0.5009765625,
+          "trials": 12288,
+          "correct": 6156,
+          "contacted": 12288,
+          "left": 7870,
+          "right": 4418,
+          "timeout": 0,
+          "changed_side_or_timeout": 5496,
+          "accuracy_among_contacts": 0.5009765625
+        }
+      },
+      "contrasts": {
+        "intact_minus_zero": [
+          0.2703450520833333,
+          0.2294920857747396,
+          0.3093266805013026
+        ],
+        "intact_minus_drop_motor": [
+          0.2699381510416667,
+          0.228271484375,
+          0.3102216593424482
+        ],
+        "motor_only_minus_zero": [
+          0.27197265625,
+          0.23233998616536458,
+          0.31184916178385436
+        ],
+        "intact_minus_motor_only": [
+          -0.0016276041666666667,
+          -0.007975260416666666,
+          0.0030924479166666665
+        ],
+        "drop_motor_minus_zero": [
+          0.0004069010416666667,
+          -0.0026041666666666665,
+          0.0030924479166666665
+        ],
+        "intact_minus_drop_sensory_motor": [
+          0.2694498697916667,
+          0.22827097574869792,
+          0.3082683308919272
+        ],
+        "sensory_motor_only_minus_zero": [
+          0.271728515625,
+          0.2308741251627604,
+          0.31201171875
+        ],
+        "intact_minus_sensory_motor_only": [
+          -0.0013834635416666667,
+          -0.007080078125,
+          0.0028483072916666665
+        ],
+        "drop_sensory_motor_minus_zero": [
+          0.0008951822916666666,
+          -0.0021158854166666665,
+          0.0036622111002605116
+        ],
+        "motor_only_minus_sensory_motor_only": [
+          0.000244140625,
+          -0.0020345052083333335,
+          0.0026041666666666665
+        ]
+      },
+      "structure": {
+        "total": {
+          "installed": 5100,
+          "nonzero": 5100,
+          "positive": 2541,
+          "negative": 2559,
+          "signed_sum": 1.6925012121500913,
+          "absolute_sum": 733.1255692024424,
+          "mean_absolute": 0.14375011160832205
+        },
+        "all_motor": {
+          "installed": 3422,
+          "nonzero": 3422,
+          "positive": 1736,
+          "negative": 1686,
+          "signed_sum": 3.5341387011285406,
+          "absolute_sum": 649.0406571019266,
+          "mean_absolute": 0.18966705350728422
+        },
+        "sensory_motor": {
+          "installed": 3113,
+          "nonzero": 3113,
+          "positive": 1573,
+          "negative": 1540,
+          "signed_sum": 2.3671680753759574,
+          "absolute_sum": 632.9447634069074,
+          "mean_absolute": 0.20332308493636603
+        },
+        "other_motor": {
+          "installed": 309,
+          "nonzero": 309,
+          "positive": 163,
+          "negative": 146,
+          "signed_sum": 1.1669706257525831,
+          "absolute_sum": 16.095893695019186,
+          "mean_absolute": 0.052090270857667265
+        },
+        "nonmotor": {
+          "installed": 1678,
+          "nonzero": 1678,
+          "positive": 805,
+          "negative": 873,
+          "signed_sum": -1.8416374889784493,
+          "absolute_sum": 84.0849121005158,
+          "mean_absolute": 0.050110197914490937
+        },
+        "by_receiver": [
+          {
+            "index": 0,
+            "role": "left odor 0",
+            "installed": 243,
+            "nonzero": 243,
+            "positive": 134,
+            "negative": 109,
+            "signed_sum": 2.0815050957608037,
+            "absolute_sum": 13.620864340045955,
+            "mean_absolute": 0.05605293967097101
+          },
+          {
+            "index": 1,
+            "role": "left odor 1",
+            "installed": 204,
+            "nonzero": 204,
+            "positive": 92,
+            "negative": 112,
+            "signed_sum": -1.633475796552375,
+            "absolute_sum": 8.695093978196383,
+            "mean_absolute": 0.04262300969704109
+          },
+          {
+            "index": 2,
+            "role": "left odor 2",
+            "installed": 248,
+            "nonzero": 248,
+            "positive": 125,
+            "negative": 123,
+            "signed_sum": 2.1847277801134624,
+            "absolute_sum": 13.851680965453852,
+            "mean_absolute": 0.055853552280055854
+          },
+          {
+            "index": 3,
+            "role": "left odor 3",
+            "installed": 223,
+            "nonzero": 223,
+            "positive": 119,
+            "negative": 104,
+            "signed_sum": 0.42768421641085297,
+            "absolute_sum": 12.114067653543316,
+            "mean_absolute": 0.05432317333427496
+          },
+          {
+            "index": 4,
+            "role": "right odor 0",
+            "installed": 197,
+            "nonzero": 197,
+            "positive": 100,
+            "negative": 97,
+            "signed_sum": -0.1190059841319453,
+            "absolute_sum": 8.979553801502334,
+            "mean_absolute": 0.04558149137818444
+          },
+          {
+            "index": 5,
+            "role": "right odor 1",
+            "installed": 196,
+            "nonzero": 196,
+            "positive": 84,
+            "negative": 112,
+            "signed_sum": -1.3637464950443245,
+            "absolute_sum": 9.642296112666372,
+            "mean_absolute": 0.04919538832993047
+          },
+          {
+            "index": 6,
+            "role": "right odor 2",
+            "installed": 204,
+            "nonzero": 204,
+            "positive": 86,
+            "negative": 118,
+            "signed_sum": -1.6915840712026693,
+            "absolute_sum": 9.569759409700055,
+            "mean_absolute": 0.046910585341666935
+          },
+          {
+            "index": 7,
+            "role": "right odor 3",
+            "installed": 163,
+            "nonzero": 163,
+            "positive": 65,
+            "negative": 98,
+            "signed_sum": -1.7277422343322542,
+            "absolute_sum": 7.611595839407528,
+            "mean_absolute": 0.046696906990230234
+          },
+          {
+            "index": 8,
+            "role": "left motor",
+            "installed": 1731,
+            "nonzero": 1731,
+            "positive": 897,
+            "negative": 834,
+            "signed_sum": 13.006241850438528,
+            "absolute_sum": 327.9259929085383,
+            "mean_absolute": 0.18944309237928267
+          },
+          {
+            "index": 9,
+            "role": "right motor",
+            "installed": 1691,
+            "nonzero": 1691,
+            "positive": 839,
+            "negative": 852,
+            "signed_sum": -9.472103149309987,
+            "absolute_sum": 321.1146641933883,
+            "mean_absolute": 0.18989631235564064
+          },
+          {
+            "index": 10,
+            "role": "positive taste",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 11,
+            "role": "negative taste",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 12,
+            "role": "left contact",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 13,
+            "role": "right contact",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 14,
+            "role": "internal 0",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          },
+          {
+            "index": 15,
+            "role": "internal 1",
+            "installed": 0,
+            "nonzero": 0,
+            "positive": 0,
+            "negative": 0,
+            "signed_sum": 0.0,
+            "absolute_sum": 0.0,
+            "mean_absolute": null
+          }
+        ]
+      },
+      "distinct_probe_foods": 3072,
+      "raw_sha256": "e052ff0865445fed9fcd74d8c671a058a7753c75d59b79401050a1587b742883"
+    }
+  }
+}

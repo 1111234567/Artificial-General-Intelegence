@@ -1,0 +1,43 @@
+{
+  "root": 2113,
+  "protocol_sha256": "e84bd519601329fda42765b720a614ac94429c72725cf5269ddeb29f1d71966e",
+  "sources": {
+    "self_write_core.py": "8b4c103a8395dbac14f89285d38740c169a0289d89338f1c004a7335772e55a2",
+    "self_write_core_bootstrap.py": "4f484e4c3b174d825624db92bbd4b7529a9a1d8b39e90db93499481a5806f9f2",
+    "self_dose_boot.py": "a92c9e8080942c44adb519b36037111ccbd241f73fc734752abe62158117caec"
+  },
+  "root_spawn_sha256": "aa3e489e6f4f3e5c3c7bd7a73dfee385b3351256f8bcb883a3d099d98dac1fe4",
+  "train_receipt_schedule_sha256": "4fb5323e91e5759f68e8d7781a944b6fe6cb86b2dfff52dd674ac08aad6612a0",
+  "train_steps": 240,
+  "train_contacts_per_arm": 69120,
+  "banks": {
+    "low": {
+      "used_histories": 48,
+      "unique_environmental_prefixes": 576,
+      "history_visits": 5760,
+      "repeat_min_max": [
+        97,
+        139
+      ],
+      "tape_sha256": "a49ac8f53d342c30c860b916adf1c5815d1ea03b3523b06d586189142eb9aed8",
+      "schedule_sha256": "0468d927d2a6ef58bafa8fe92989dfbe80cfee199c2c5fc0ac3809ecd75e1e04"
+    },
+    "high": {
+      "used_histories": 5760,
+      "unique_environmental_prefixes": 69120,
+      "history_visits": 5760,
+      "repeat_min_max": [
+        1,
+        1
+      ],
+      "tape_sha256": "2ce78c733b685ac56cb9fa0d15ca6b4885fcc26d8637958a65539f22d74959e7",
+      "schedule_sha256": "f0c3509555fdc31228e8eec703cec65e1af0a95cc09db5e66ae62b90ce83a0c8"
+    }
+  },
+  "checkpoints": {
+    "train-2113-low-short.npz": "4d8abf354533c603f7df98982db4f1da9125326ae8018cbbda17c2694ae92c13",
+    "train-2113-low-long.npz": "ade69e8227f0660dad0cc0901bece9132f56a593bd4464c5b4b83bd3fda22702",
+    "train-2113-high-short.npz": "ee76bd4270c5ceb745f670ffd3a12c4f58167551fda4ad8cc65e84e214ab6a3a",
+    "train-2113-high-long.npz": "25b6cdc36715db8826ac94b358be5834c837fe477da7a35fb354f8aa4bf9b23e"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format": "transfer-replay-serialization-correction-v1",
+  "created_utc": "2026-11-03T05:33:51.163768+00:00",
+  "protocol_hash": "9b1e3bb3c6d0e2fe041da7f5171550e53a6caf4bfe825cb1b05fc0d2c4e8fe26",
+  "reason": "Original replay incorrectly initialized action digest with empty SHA256 rather than lifelong-own-trace-v1/actions prefix. First2048 steps of all3 seeds had already passed exact all11 logits, actions and hidden_hash checks, then failed only the final prefixed digest comparison. No matched/probe scores or feature arrays have been viewed and no transfer fitting has run.",
+  "correction": "Initialize digest with the exact unchanged evaluator TRACE_HASH_VERSION/actions prefix. Replay all24 forks again. Preserve every original transfer/natural source and protocol. Resume only empty seed directories created by the failed attempts; no failed artifact is overwritten.",
+  "source": {
+    "path": "F:\\agi\\experiments\\content_timing\\transfer_replay.py",
+    "sha256": "81b741446a6c3a0ebeae9c100a24e29bba60de156d058caf680f98df7941e2af"
+  },
+  "old_source": {
+    "path": "F:\\agi\\experiments\\content_timing\\transfer.py",
+    "sha256": "c4a51faa8c766ff868de7f2f8cf86fde1fbd744ca504685322d2bd3af7b7def5"
+  },
+  "failed_exit_codes": {
+    "path": "F:\\agi\\data\\content-timing\\transfer-v1\\replay_exit_codes.json",
+    "sha256": "091a6e28c4e1f0dc97b983a356553d56c3302d6c613e6942fdebce24245c2780"
+  },
+  "unchanged": "Actual source h/model, public observations,24 non-input features,train/test folds,matched training rule,duration map,test identities and metrics all unchanged.",
+  "amendment_hash": "8a90849d22ee2a6209b852f2c6b2e93fd91d94ddbf1fc6110a5a639b3681411c"
+}

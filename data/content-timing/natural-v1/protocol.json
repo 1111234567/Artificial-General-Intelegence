@@ -1,0 +1,75 @@
+{
+  "format": "natural-content-timing-v1",
+  "created_utc": "2026-11-03T05:26:35.623214+00:00",
+  "prospective": "Additional diagnostic frozen before collecting its new traces; saved refit outcomes already exist. No refitting, new thresholds or additional policy arms.",
+  "source_files": {
+    "F:\\agi\\experiments\\content_timing\\natural.py": "4206317fe6879b6532680132452bc00641095dba0dbbed48f92a7662ce9519e1",
+    "F:\\agi\\experiments\\action_return\\readout.py": "0ae3bf65c9600556ad658c685ff73630483e6a3ad5832943105d72b240892b6f",
+    "F:\\agi\\experiments\\action_return\\finish_readout.py": "b36122199b29a63b9edde1729b220df6bed956e1617edca8edbd2c0817e25c83",
+    "F:\\agi\\experiments\\action_return\\refit_policy.py": "b4363e02dd701e794de0fa6c1f37cfbd8fc8cb02934333023d4e8b08a88d3352",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  },
+  "input_files": {
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json": "d19db82587e5af48616a530981d7838a1301152812d56381d45b515b63fc9758",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\model_own_policy.pt": "9653c3f48b93619acc1fe7d53879e0cc9b6147110a2a0973c532217654be7ccb",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\result.json": "f0d4b1e49802d2221d7c8ea40ea5a0d296b857e86ad2953238c92856f48bdbed",
+    "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\checkpoint_final.pt": "8982220e1a81e107d0c59e01d2ca1e069542e2e74711f6c4ddba23f728df6610",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\model_own_policy.pt": "544d3b4e5beb0a5c122ff43ed2276a00ff46a77e3e45f0a215c3d52a282e437c",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\result.json": "378c15a960a3c2d7d358d3c33fd99938688321eb4d4fdf5aac64aab8c9adf359",
+    "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\checkpoint_final.pt": "cd90c6aa7223a6fad13e6e190fffae09343250469bf99d20d8afbbe6a8e6f5aa",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\model_own_policy.pt": "db40d52c7230dded80d34b0c99da8b0b692352aaa792f4eed2a47e13bd0e6135",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\result.json": "c806b0539f7a8e6abbd26cd53095fcba45b3d55485f8214ad0f4f084011adeae",
+    "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\checkpoint_final.pt": "a6eb9a9121adb8f469217998f8ce645b9a0302f74992de6e964844ce2d5f39cf"
+  },
+  "parent_protocol_hash": "ad32ec2c6e366deb1121bff5cc8b17c3dabbbde20b87b9812a00cd156daa9b20",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arm": "own_policy",
+  "deployment": "Saved own_policy action head; original real147456 complete endpoint h/world for each seed. Unchanged lifelong.evaluate keep_trace=True; eleven-way argmax actions. Read-only class hooks record final logits, observations and pre-action world metadata.",
+  "forks": {
+    "families": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "conditions": [
+      "short",
+      "long_both"
+    ],
+    "steps": 2048,
+    "total": 24
+  },
+  "population": "Full original8-actor world. Primary tables: decoder-fitting-heldout lanes4..7, event-eligible post-fork requests in evaluation regime, whose deadlines mature within2048 ticks. Separately retain issued but censored requests. Backbone trained on all8 actors.",
+  "identity": "case_id/job/request_id within seed/condition/family fork; NEW/REPLACE create distinct identities; retain actual request family, raw payload, mapped payload and version.",
+  "phases": {
+    "cue": "First NEW/REPLACE observation consumed by normal step, before that tick action. Eligible primary commands all retained, including those never started/legal.",
+    "processing_origin": "Actual accepted BEGIN time, equivalently ready_time-duration. Request issue time is separately retained and never used as processing start.",
+    "processing_mid": "Among actual active+started observations strictly before ready_time-EPS and after accepted BEGIN, choose the one minimizing absolute distance to accepted_BEGIN_time+duration/2; tie chooses earlier observation. Selection never changes the rollout. Record realized fraction, distance, tick and duration. Missing if no actual processing observation.",
+    "first_legal": "First actual active+started observation at now>=ready_time-EPS, before action. Active already excludes now>deadline+EPS. No counterfactual/legal gating reaches model."
+  },
+  "scores": "Rank final deployed controller FINISH logits indices3..10 with stable decreasing score and lower action index on exact ties. Top FINISH class in0..7, rank of correct class, full8 scores, correct-minus-best-wrong margin, version=choice//4 and mapped payload=choice%4. These are deployed external action-head scores, not native ports. Actual full11 action and result are separate.",
+  "pairings": "Within identical matured request identities, report cue->processing_mid, cue->first_legal and processing_mid->first_legal four-cell transitions for exact8-way correctness, version and payload. Report all-stage marginal denominators, paired early marginal and late marginal, and complete three-stage patterns. In particular lost=early correct/late wrong; gained=early wrong/late correct. No comparison of unpaired cue rate with survivor late rate.",
+  "feedback": "At each stage retain previous public action/result from actual observation and pre-stage cumulative within-request BEGIN,FINISH,accepted,rejected counts plus accepted BEGIN time. Natural delayed scores can use own actions and feedback, other-slot cues and full recurrent dynamics; this is descriptive and does not isolate passive retention.",
+  "missing": "Every matured primary row reports cue/mid/first-legal availability, accepted BEGIN, too-late BEGIN, completion, strict completion and missing reason. Stage denominators remain request counts; no substitution of teacher paths or all-position counts.",
+  "equality": "Entire evaluator record after removing only returned trace must equal original saved own_policy record after JSON normalization; original shadow result must also match; request-set fingerprints and action hashes must agree. Source semantic state and model state unchanged.",
+  "aggregation": "Sum family counts within each seed/condition. The3 seeds are independent replication units; family forks never counted as seeds. Retain fork tables and seed tables; give mean and sample SD of seed rates without pooled-binomial uncertainty.",
+  "runtime": {
+    "workers": 3,
+    "cpu_threads": 1,
+    "dtype": "float64",
+    "device": "cpu"
+  },
+  "limits": [
+    "Post-result descriptive diagnostic of3 existing externally supervised heads.",
+    "Survival to actual first legal is policy-dependent; complete three-stage subsets are selected.",
+    "Natural trajectories retain true receipts and cross-slot information; cannot prove passive memory decay or information absence.",
+    "Four family mappings overlap on some raw symbols; preserve raw/mapped labels and family breakdown."
+  ],
+  "protocol_hash": "a3c2802ca8f8fb127ab1338351642f6ef7f91f7deced704ac894d49ca5af38ab"
+}

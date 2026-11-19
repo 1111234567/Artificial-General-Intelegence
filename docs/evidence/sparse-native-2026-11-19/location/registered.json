@@ -1,0 +1,78 @@
+{
+  "utc": "2026-11-19T06:34:15.767062+00:00",
+  "source_sha256": {
+    "sparse_location_study.py": "089eafe60fc86b913f8b8157ba771eac74758546c8a88ecb8e9836dde19f0ec6",
+    "sparse_pairs_study.py": "556da9da1f51707e0d9ca752cd263ef20e19f1e01a84dcfaee2cb2414252ed98",
+    "sparse_pairs_model.py": "2e29f03241258c3edc611ac78e5a03f6271d1ef36dccba1b58f4cbc0d3e68335",
+    "dendrite_ports_graph.py": "30b6d1c3005963967ba20e2c23c5df2c0a98f416e226447efb97539f9ce840c1",
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "primary_registration_sha256": "5b97d584c9035bcdcd6fff2a52518dc88a7c3feb3bcf69e6199ef2b54057f83f",
+  "recipe_selection": "The guided recipe selected by the frozen primary development protocol; no selection on location seeds.",
+  "births": [
+    872310,
+    872311,
+    872312,
+    872313,
+    872314,
+    872315,
+    872316,
+    872317
+  ],
+  "worlds": [
+    872340,
+    872341,
+    872342,
+    872343,
+    872344,
+    872345,
+    872346,
+    872347,
+    872348,
+    872349,
+    872350,
+    872351
+  ],
+  "modes": [
+    "stable",
+    "reverse"
+  ],
+  "trials": 1280,
+  "silent_tail": 112,
+  "arms": [
+    "intact",
+    "selected_shuffle",
+    "eligible_shuffle",
+    "zero"
+  ],
+  "draws": 4,
+  "permutation_seed": 255362911,
+  "bootstrap_seed": 70931602,
+  "bootstrap_draws": 20000,
+  "contrasts": [
+    [
+      "intact",
+      "eligible_shuffle"
+    ],
+    [
+      "selected_shuffle",
+      "eligible_shuffle"
+    ],
+    [
+      "intact",
+      "selected_shuffle"
+    ],
+    [
+      "intact",
+      "zero"
+    ]
+  ],
+  "boundary": "Same mature life at the first tick of the silent tail. All arms start with the same learned ordinary weights, topology, bias, rates, recurrent and body state. Freeze training, hide public taste, disable motor exploration. Each branch makes its own physical contacts.",
+  "placement": "Select a uniformly random subset of eligible pairs of the same size at each receiving vertex, including original addresses in the candidate pool. Independently permute the identical signed Q values to fill either this subset or the original subset. Couple the Q ordering across the two shuffle arms for each fixed draw. Preserve empty receivers and include all lives, even if no move is possible.",
+  "primary": "Expected best-food side among all attempted fresh trials, using physical first contact, with a no-contact scoring zero. Use argmax in a tie. Average the four draws within each life; average matched lifetime differences with a crossed birth/world percentile bootstrap. Two-sided 95% simultaneous family across the four contrasts and two scenarios.",
+  "secondary": "Raw contacts, contact ticks, rewards, no-contact/accuracy among contacts, exact ties, legal and realized intervention denominators, Q intact above chance at nominal 95%, and bit-exact contact replay on the intact training branch. The selected-shuffle minus eligible-shuffle contrast measures placement at fixed receiver and coefficient multiset under randomized assignment."
+}

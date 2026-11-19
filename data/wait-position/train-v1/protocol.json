@@ -1,0 +1,106 @@
+{
+  "format": "wait-position-training-v1",
+  "created_utc": "2026-11-03T14:40:27.952660+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "midpoint",
+    "hard",
+    "random"
+  ],
+  "snapshots": [
+    "B000",
+    "Bfirst002",
+    "Bfirst008",
+    "B001",
+    "B002",
+    "B004",
+    "B008"
+  ],
+  "device": "cuda",
+  "source_sha256": {
+    "F:\\agi\\experiments\\wait_position\\train_review.py": "5f307eb366fef5d17a46dd21971fa81caf04b66c74f4ce0fea4ba9e6f432ded7",
+    "F:\\agi\\experiments\\wait_position\\train_audit.py": "125f8dc35959fcbdae823d0e4d89da551b685e131485efb662562ca7701eedbb",
+    "F:\\agi\\experiments\\review_selection\\train_review.py": "02c3184a66d6570007c32ee406be4b934d8892621c593ae2322924c9aba9c250",
+    "F:\\agi\\experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  },
+  "input_sha256": {
+    "0": {
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B000.pt": "efdbef3bac36b87db79f2440150004628e9c37b5dbccaf56154be34a67313859",
+      "F:\\agi\\data\\wait-position\\bank-v1\\seed_000\\bank.pt": "8936ef590efc237a44a23ea49665beec02809bc12fe88582908d702d2dd3d615",
+      "F:\\agi\\data\\wait-position\\bank-v1\\protocol.json": "03f5aafa7a1d50d72ccbe4968417ff76451eb714bb6b6cf8e8b43a2d054d428a",
+      "F:\\agi\\data\\review-selection\\train-v1\\protocol.json": "81742aac994a74dc3ef0a2b58ec54b8197cf46ffdb5f3bb8d38c1b4a51aa70e7",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\protocol.json": "14467234ef21149a6d951a70806339030fe2809e5ec02212816c5f0ae8ec1b6e",
+      "F:\\agi\\data\\review-selection\\train-v1\\seed_000\\uniform\\B008.pt": "0175450f9ad8fcc148cd185fab8505f392d7b67d33402700e2289987848babfc",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_000.pt": "f036626fb527020d136356f3ed6303a55b93a6622d28c861a7269dc2a6aaefa4",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_001.pt": "e688eb732ae4bc04db3d14de4ce502988625c1ec54afcd83d1040ee27cc1437d",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_002.pt": "00eb7fb9694916682c985236d0783c08cd175b8194096c03441d5d2dd4d65258",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_003.pt": "00a739d8734fee960400f4bc2bdcce0ee8ff938ba83c8ae4b4c96abea6a5839c",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_004.pt": "4cc660158f296770ea50044e0d71c70945dfa9109b363718934da36d97a324d8",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_005.pt": "976fec32d96cfae91cb623ce8cf88cd89a66fa22ca14d374c408f9b8aad8961f",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_006.pt": "f2055d420d344374b991d1755faa47af16928c617b88c137372c639d3e93be01",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\trajectory_B_007.pt": "b5af027815faface0e88407deb4ac6e475256016bc9347cdc2e23b8589c37f58"
+    },
+    "1": {
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B000.pt": "f07c74d4f286fcbd3c56258350e4f1e73b652ad64a2d42e3100c0278bacde978",
+      "F:\\agi\\data\\wait-position\\bank-v1\\seed_001\\bank.pt": "a8d2706015a9526e3e8c6518ad07d816a7dad7fe3d33aafa5490ad602cbace52",
+      "F:\\agi\\data\\wait-position\\bank-v1\\protocol.json": "03f5aafa7a1d50d72ccbe4968417ff76451eb714bb6b6cf8e8b43a2d054d428a",
+      "F:\\agi\\data\\review-selection\\train-v1\\protocol.json": "81742aac994a74dc3ef0a2b58ec54b8197cf46ffdb5f3bb8d38c1b4a51aa70e7",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\protocol.json": "14467234ef21149a6d951a70806339030fe2809e5ec02212816c5f0ae8ec1b6e",
+      "F:\\agi\\data\\review-selection\\train-v1\\seed_001\\uniform\\B008.pt": "545548c6b19415c0cb1bcc0695eba98c44e45bffbf427644607eec4966240492",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_000.pt": "2f1602229fb8d38fd0b884e61321de02b89ae2e14e53451b4bb8ef98e856e37a",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_001.pt": "aa28638cdd5d94a50a645c6afa8eeb4933719898c43f532e06f9ecafdfe60b67",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_002.pt": "ab8ca97113214f4bbabfb8ca8499f75f1d5c8f735c42b4ff3b40652ac862c552",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_003.pt": "791b8d14bac15f79e7f69379ae9aa92e895927acbfb469050a93f213e5b44085",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_004.pt": "3eeef16d7f599e989a98e49d88c66c8cd813d378534838284b309602e0dc43a6",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_005.pt": "f45aed66fdd23ed1ec241496c87e207c8f72d013da2eb7e51bc87e76d82d0c68",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_006.pt": "c61924946ead3c648100a7746efbe9ee5ca4e1cc57134b626bd4661c106021f4",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\trajectory_B_007.pt": "dcb8b5076a620861f7bbcc08e81b6f79254c60bc775dec4eaa1ec663aa6f96fb"
+    },
+    "2": {
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B000.pt": "d881a360621cf63dcb502eda36a11094b268ca0e6eda8fa9af8de2531897158a",
+      "F:\\agi\\data\\wait-position\\bank-v1\\seed_002\\bank.pt": "c506f887da86eee8d0f93f11207ad3ca6c3e848200d16a18f88ff433de7e0187",
+      "F:\\agi\\data\\wait-position\\bank-v1\\protocol.json": "03f5aafa7a1d50d72ccbe4968417ff76451eb714bb6b6cf8e8b43a2d054d428a",
+      "F:\\agi\\data\\review-selection\\train-v1\\protocol.json": "81742aac994a74dc3ef0a2b58ec54b8197cf46ffdb5f3bb8d38c1b4a51aa70e7",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\protocol.json": "14467234ef21149a6d951a70806339030fe2809e5ec02212816c5f0ae8ec1b6e",
+      "F:\\agi\\data\\review-selection\\train-v1\\seed_002\\uniform\\B008.pt": "89de89d9ca1d3d20144ed52ffac820b38a416597b69ed9082bc1edbda08a84a7",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_000.pt": "569bf04e0ad863d709b18e8293195fa45162249cc429cdcacdc9ab41ee53946f",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_001.pt": "cba0ec14e3d2acc44011b2b1380eb09e0a5376a847577e5f65fd39bafbc338e4",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_002.pt": "5e6b4b521020ef1a40597d8def489cfc16a5d82c849b0d3a26fa243734e92e2c",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_003.pt": "3d74eb98de32166befcce13179ba7c7f2f8fbe616297addd143d8ad5f36860b4",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_004.pt": "3ca695739f6b7282115e09dc616abe30792db5d07c860fef33ccaa53cac02a7c",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_005.pt": "367eec2e964061cdff747afdf4358f4aa206752048d232ef066381f60f0dba7c",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_006.pt": "eb752ff22d8230d7f2a8d3a49c6c746916db76f6b893e0724ca88392733339a4",
+      "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\trajectory_B_007.pt": "c3c0e8a4ec6969a454ac00380c62100fe70f5623b2d1f015ba7d94c898c63bbf"
+    }
+  },
+  "original_protocol_sha256": "14467234ef21149a6d951a70806339030fe2809e5ec02212816c5f0ae8ec1b6e",
+  "previous_protocol_sha256": "81742aac994a74dc3ef0a2b58ec54b8197cf46ffdb5f3bb8d38c1b4a51aa70e7",
+  "bank_protocol_sha256": "03f5aafa7a1d50d72ccbe4968417ff76451eb714bb6b6cf8e8b43a2d054d428a",
+  "start": "Each arm restores the exact original related B000 model, Adam, full world, numeric h and RNG. No new A learning or bank-specific warmup is admitted to the live subject.",
+  "B": "Reuse the exact eight archived original related B observation/action/label/mask streams,1024ticks64actors each. One original shared WAIT boundary. Each actual block runs current frozen-block policy on public observations to continue numeric live h, then receives its first B gradient update. Live h is never replaced by a training/review branch. The common world executes archived actions and its observations/labels/masks are checked exactly.",
+  "updates": "Exactly256 optimizer updates per round: first temporal pass8 online B updates; epochs2..32 replay only this current B round. Epochs8,16,24,32 replace all8 B updates by A review:224 B plus32 A updates per round,1792 B plus256 A for8rounds. During each review epoch B branch h still advances in temporal order with no loss or Adam update, so later B chronology is well defined.",
+  "old_bank": "The same256 genuine old-A requests,128tick windows, actual actions, public observations, labels and A anchors as prior uniform arm. Additional eligible mask is actual same request, teacher WAIT, strictly after accepted BEGIN and before ready_time. No hidden-state or receipt editing.",
+  "candidates": "Exactly previous uniform candidate128 and selected64 IDs at every review index. All three arms run the same no_grad128x128 forward and per-tick margin/argmax computation. Scorer input is obs and anchor only; researcher eligibility masks restrict allowable times without becoming model input. No request identity, private time, target content, raw/conflict or B label enters margin.",
+  "selection": {
+    "midpoint": "Keep the original fixed midpoint WAIT row.",
+    "hard": "For each request maximize max(logit FINISH3..10)-max(logit WAIT0,BEGIN1,BEGIN2) over eligible processing WAIT ticks. Highest margin, earliest exact tie. Even when no eligible tick argmax is FINISH, retain nearest-to-FINISH maximum and separately count that case.",
+    "random": "Uniform one eligible processing WAIT tick per candidate using fixed independent numpy RNG seed3140000+seed*10000+review_index, candidate order, one choice each. No model score enters random choice."
+  },
+  "gradient": "All review arms update on128ticks x64samples x2jobs x11actions tensors and exactly192 supervised target-job rows/update. Original weighted CE(wait=.25),Adam,lr andclip1 unchanged. Two non-WAIT plus one WAIT per request gives equal loss denominator144 for all review updates. B update tensors have the same shape but many more supervised rows. Baseline no-review retains256B updates/round; it is equal total Adam update budget, not equal B exposures to gradients or equal supervised row count.",
+  "state": "Only common archived B public inputs/actions advance the actual world/live hidden state. A scoring/gradient anchors and their returned h are disposable branch state. Review does not advance any world or live h.",
+  "evidence": "Keep candidate/selected IDs and hashes, eligible counts, selected and midpoint ticks/margins/argmax intents, window any-FINISH flag, private timing only in audit output, integer budgets, all optimizer-step input identity hashes and actual B exposure. Save first review plus first actual moved update before/after complete checkpoints; independent reconstruction verifies masked loss/Adam/live h/world. Compare rerun midpoint first step and final model/Adam/h per seed against prior uniform.",
+  "limits": [
+    "Supervised prototype with stored teacher labels, not autonomous task choice or reward-only learning.",
+    "Equal candidate scans, tensor shapes, supervised rows and optimizer budgets among three WAIT arms; eligible intervals are researcher-reconstructed.",
+    "Original no-review results can be reused, but their B feedback positions differ from review arms.",
+    "Three seeds and fixed permutations; selection result is conditional on this bank and feedback design."
+  ],
+  "protocol_hash": "90bcba44d0d0667bfdd09d3fc6c6ba92e9d6eba5a61870cee43e5418a6bb8a5c"
+}

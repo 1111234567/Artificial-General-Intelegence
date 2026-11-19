@@ -1,0 +1,1921 @@
+{
+  "format": "teacher-timing-independent-training-audit-v1",
+  "passed": true,
+  "created_utc": "2026-11-06T15:22:28.508195+00:00",
+  "device": "cuda",
+  "training_protocol_hash": "63232645d506f6e8c0838d127915e0c3b7a77d6a2d10389fd1d38ed0c12cfbd4",
+  "freeze_hash": "adc3dfdcc302fac6a9207f6a6ff205bd8c6c9838a70841cac703442ce8e22b0d",
+  "audit_plan_sha256": "2b4e5af88f27697c17ed05ceb0fccd9b6d0b173fa7dd260f937329a0fe0fa349",
+  "auditor_sha256": "9733ddcd2b2f89ff6ff45c53c4c45f81f23134a3ed8be221251784753605a06b",
+  "scope": "All12 warm starts, all3072 block identities/counts/hidden digest chains, all36 named snapshot state and binding checks, all24 actual first/second optimizer steps, within-teacher zero-head first-step equality and all18 earliest historical model/Adam/h/cursor/step/work comparisons",
+  "cases": [
+    {
+      "seed": 0,
+      "teacher": "earliest",
+      "passed": true,
+      "objectives": {
+        "action": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068337,
+            "action_BEGIN_rows": 17813,
+            "action_FINISH_rows": 11002,
+            "action_weight_sum": 545899.25,
+            "time_rows": 686230
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3319648504257202,
+                "action": 0.09069333225488663,
+                "time": 0.24127152562141418
+              },
+              "preclip_grad_norm": {
+                "policy": 3.264702558517456,
+                "time_head": 4.200680255889893
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "45cf9b683ed9079578be9b2c478999940fb168988b39677ed057079f08ca7181",
+              "after_sha256": "8b6e39f97940e2c496a80fa12a6ead186e636312bc410d2dda0d917db26375fc",
+              "gradients_sha256": "0707aa0476c78bfdf438b997e828518bb10701f0b0a4fdb2f046f17985321fce"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.24104920029640198,
+                "action": 0.07026002556085587,
+                "time": 0.1707891821861267
+              },
+              "preclip_grad_norm": {
+                "policy": 1.3891481161117554,
+                "time_head": 3.3200135231018066
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "1f8c5b6277890f7c687a0ba1dcfe4eea387514adffa5c59816a572a3b1d3f0bb",
+              "after_sha256": "070c5c675451ccfffa6bdf7fc079ab08a83716f030340835e969892f1a40493c",
+              "gradients_sha256": "5973add731b2abc70f0574fe16a399628cf5928d5a1ec6b7452a82ec458e0eef"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "17dceae82b228397b4f48e683557a686028faf3a709981accb9c7a0b0f8202aa",
+              "hidden_sha256": "95825674540425342917f02386af9922afe518c4a9a027bfe20721c9821311a7",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "1ced855dd6abb0039a725dab6934193ca1e8e6d59a9a6e6be19098479c10b7a7",
+              "hidden_sha256": "1b6df6e6f940cfcfad7aaebd640995e8a3fdd8d3c0909b9a43efd646235abccc",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517071,
+                "action_BEGIN_rows": 4470,
+                "action_FINISH_rows": 2747,
+                "action_weight_sum": 136484.75,
+                "time_rows": 171676,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 171676
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "c0e9af32c3dd207d6460baf48d4f3569391ae9454ce3cfe4bc5c58298c9d1e46",
+              "hidden_sha256": "9595d71f59d9233367b4c1a65cbe5552e73303ef7ed44c5bc70c5393e448eea9",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068337,
+                "action_BEGIN_rows": 17813,
+                "action_FINISH_rows": 11002,
+                "action_weight_sum": 545899.25,
+                "time_rows": 686230,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 686230
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "c0e9af32c3dd207d6460baf48d4f3569391ae9454ce3cfe4bc5c58298c9d1e46"
+        },
+        "joint": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068337,
+            "action_BEGIN_rows": 17813,
+            "action_FINISH_rows": 11002,
+            "action_weight_sum": 545899.25,
+            "time_rows": 686230
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3319648504257202,
+                "action": 0.09069333225488663,
+                "time": 0.24127152562141418
+              },
+              "preclip_grad_norm": {
+                "policy": 3.264702558517456,
+                "time_head": 4.200680255889893
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "7d48ffe1afa31c02ccde5c22d802a24b574e646a0059ffbc52268ab907fe6e54",
+              "after_sha256": "9c64fdde8a9544a9366db2cb1ba3a5b8ad0b0d9dd72fbe33e5e15b39006778c4",
+              "gradients_sha256": "0707aa0476c78bfdf438b997e828518bb10701f0b0a4fdb2f046f17985321fce"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.24104920029640198,
+                "action": 0.07026002556085587,
+                "time": 0.1707891821861267
+              },
+              "preclip_grad_norm": {
+                "policy": 1.4083828926086426,
+                "time_head": 3.3200135231018066
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "7c6516f388c7c0a976bfde1fd339e00a2dee6383eded37e81be0250886c17e32",
+              "after_sha256": "1a6351cd9828b5d405725e1d02a26bf62e3afaf3cb5082410889245bbef07279",
+              "gradients_sha256": "ac6fa3d00a77b71170667d6912e7a642de37bdc1c434f8ed155cb079790442d4"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "1892a884ccaea4b23da31fa10776bde24175cf115a99d37b6e3a416d1fdfe194",
+              "hidden_sha256": "95825674540425342917f02386af9922afe518c4a9a027bfe20721c9821311a7",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "1a788a815d06907b5c88c8beec1f2709c3735afdf5ee483b43d1be52d9019719",
+              "hidden_sha256": "8c5e95806380d2246ec18eb41209465c7ed9390d8c0200321c2ce3fda69ba04c",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517071,
+                "action_BEGIN_rows": 4470,
+                "action_FINISH_rows": 2747,
+                "action_weight_sum": 136484.75,
+                "time_rows": 171676,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 171676
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "47a8e9992d42d8deff288a59f9ba9a1e43d637f48da4bced25ebfc70a23bf21e",
+              "hidden_sha256": "996ae9e372d6d62f6b1645553e5659a37d7f186b2390d07bfffde1f8fffde012",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068337,
+                "action_BEGIN_rows": 17813,
+                "action_FINISH_rows": 11002,
+                "action_weight_sum": 545899.25,
+                "time_rows": 686230,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 686230
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "47a8e9992d42d8deff288a59f9ba9a1e43d637f48da4bced25ebfc70a23bf21e"
+        }
+      },
+      "paired_initial_and_first_update_bitwise_exact": true,
+      "historical_regression": [
+        {
+          "seed": 0,
+          "objective": "action",
+          "step": 0,
+          "passed": true,
+          "reference_sha256": "c1ce9057a090373027305b4922aebca76f414a13ca3ca7bf3b92543728a33ad4",
+          "new_sha256": "17dceae82b228397b4f48e683557a686028faf3a709981accb9c7a0b0f8202aa",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 0,
+          "objective": "action",
+          "step": 64,
+          "passed": true,
+          "reference_sha256": "b4407d9a0c0522af7ddc77b063192a1c5f7bb8af0bd8f1fc6a1b7a5142785fdc",
+          "new_sha256": "1ced855dd6abb0039a725dab6934193ca1e8e6d59a9a6e6be19098479c10b7a7",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 0,
+          "objective": "action",
+          "step": 256,
+          "passed": true,
+          "reference_sha256": "5a9add54ad94ee025d22fdd42a12006367ff167c374c552337f4a26600060ff2",
+          "new_sha256": "c0e9af32c3dd207d6460baf48d4f3569391ae9454ce3cfe4bc5c58298c9d1e46",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 0,
+          "objective": "joint",
+          "step": 0,
+          "passed": true,
+          "reference_sha256": "6fe8ee80917f0f8ff4b104e994c60549d9a847403ec9aaebc658318807b11d2b",
+          "new_sha256": "1892a884ccaea4b23da31fa10776bde24175cf115a99d37b6e3a416d1fdfe194",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 0,
+          "objective": "joint",
+          "step": 64,
+          "passed": true,
+          "reference_sha256": "0a75335ca0b4818900c9ffeacef85c2a268e661ec5262b3d0900110a65b9f648",
+          "new_sha256": "1a788a815d06907b5c88c8beec1f2709c3735afdf5ee483b43d1be52d9019719",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 0,
+          "objective": "joint",
+          "step": 256,
+          "passed": true,
+          "reference_sha256": "093aa8d76c30b0ef6e7e67e6000597b78479d9f7bd3f071b25cc76dd7cdb71ba",
+          "new_sha256": "47a8e9992d42d8deff288a59f9ba9a1e43d637f48da4bced25ebfc70a23bf21e",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "teacher": "midpoint",
+      "passed": true,
+      "objectives": {
+        "action": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068338,
+            "action_BEGIN_rows": 17813,
+            "action_FINISH_rows": 11001,
+            "action_weight_sum": 545898.5,
+            "time_rows": 730189
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.26914387941360474,
+                "action": 0.04315769672393799,
+                "time": 0.22598616778850555
+              },
+              "preclip_grad_norm": {
+                "policy": 1.0333465337753296,
+                "time_head": 3.9216535091400146
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "301f7ae94e8ff5e9779d8fb9f99b05e126bd4bf67fefc61baacac7d5eb1b7118",
+              "after_sha256": "78ac56073068d94ce984a060594a8801c7419f5e16ba7460f29b768c58ff95fe",
+              "gradients_sha256": "4b828ac84ec8d8bfefc37bb49492bc0ec4503444a4be6bf5f610865e1adc8728"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3077283501625061,
+                "action": 0.15019595623016357,
+                "time": 0.15753237903118134
+              },
+              "preclip_grad_norm": {
+                "policy": 3.051713466644287,
+                "time_head": 3.17154598236084
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "a25095587d66e73bd7c8953722dd8a67906a1a122647a1e8801f660b47f807e1",
+              "after_sha256": "5664ae3ea1ba882066d7146dc1bf937f23d1f51f01185fe2d19eef300995c5c8",
+              "gradients_sha256": "dc30df4d31edc3bf40a9346d0ec8141ff6829044c30012eca2d1d96c8f7b5b74"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "b090ef884f99283c3d548469303edfeb34404b1bf99db33b4c0ee9aa9a08a4f9",
+              "hidden_sha256": "01e629a053a91a3c0a886536307e581e2c9a392f3f5af0a9a07b2cd47011523f",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "abc91bb1ed41efab12c17e2ee66bf4884df75c038f643db95802b308ffc34f2e",
+              "hidden_sha256": "37369f11aff1749e5ac9b64dde777893f7af71663023e0b224ab2da7b36423fa",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517071,
+                "action_BEGIN_rows": 4470,
+                "action_FINISH_rows": 2747,
+                "action_weight_sum": 136484.75,
+                "time_rows": 182673,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 182673
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+              "hidden_sha256": "c1e15ccf6ec816e63c8457150b78d71f79458399f40cf9810ce6dfad2d0fbe09",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068338,
+                "action_BEGIN_rows": 17813,
+                "action_FINISH_rows": 11001,
+                "action_weight_sum": 545898.5,
+                "time_rows": 730189,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 730189
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084"
+        },
+        "joint": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068338,
+            "action_BEGIN_rows": 17813,
+            "action_FINISH_rows": 11001,
+            "action_weight_sum": 545898.5,
+            "time_rows": 730189
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.26914387941360474,
+                "action": 0.04315769672393799,
+                "time": 0.22598616778850555
+              },
+              "preclip_grad_norm": {
+                "policy": 1.0333465337753296,
+                "time_head": 3.9216535091400146
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "43df8bb7dd2a17398c5afe4664b2c5b4c200a8e6e642d2565c0359cabccf4b94",
+              "after_sha256": "64260a4f13251bf9ea5a45780624e846d302ea2e74650854d1774b4f1a0f579f",
+              "gradients_sha256": "4b828ac84ec8d8bfefc37bb49492bc0ec4503444a4be6bf5f610865e1adc8728"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3077283501625061,
+                "action": 0.15019595623016357,
+                "time": 0.15753237903118134
+              },
+              "preclip_grad_norm": {
+                "policy": 3.050055980682373,
+                "time_head": 3.17154598236084
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "e172b26885769ce7fdf43b48ae4bda580a34be2541c9055e375ee4e7b94c8471",
+              "after_sha256": "2ac0391f6582388f897e2b47bffd0b0c2e3054ccdc415c94c6062cf127b444f9",
+              "gradients_sha256": "a199a31ba3319742c9ebddf4fc4776ff7544b1388d77b785e8089dbe9c94b680"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "69705fe87e8c22d966a467cd16b48f7e302d784822e49129a2abbb4f5b4a74cc",
+              "hidden_sha256": "01e629a053a91a3c0a886536307e581e2c9a392f3f5af0a9a07b2cd47011523f",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "a8b639d9ee078ddce1f3b145e0ca0703b65f2c431f36bc071a4b2e99bee5dafc",
+              "hidden_sha256": "cfb26abb62ddfd8f7ddc43fa4430fd110455e11286d919885f7d67e9aed310ef",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517071,
+                "action_BEGIN_rows": 4470,
+                "action_FINISH_rows": 2747,
+                "action_weight_sum": 136484.75,
+                "time_rows": 182673,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 182673
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "2b7330e3f98f8c09521bbb9f1a0bdbffd3bd8fa9cbc8507f4446aaa9a36c79f5",
+              "hidden_sha256": "e64c470984dca82fed4e96eda1bae08c68b9ea387c27a045e0836ec649b908b3",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068338,
+                "action_BEGIN_rows": 17813,
+                "action_FINISH_rows": 11001,
+                "action_weight_sum": 545898.5,
+                "time_rows": 730189,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 730189
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "2b7330e3f98f8c09521bbb9f1a0bdbffd3bd8fa9cbc8507f4446aaa9a36c79f5"
+        }
+      },
+      "paired_initial_and_first_update_bitwise_exact": true,
+      "historical_regression": []
+    },
+    {
+      "seed": 1,
+      "teacher": "earliest",
+      "passed": true,
+      "objectives": {
+        "action": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068355,
+            "action_BEGIN_rows": 17826,
+            "action_FINISH_rows": 10971,
+            "action_weight_sum": 545885.75,
+            "time_rows": 686089
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.41265130043029785,
+                "action": 0.17345547676086426,
+                "time": 0.2391958087682724
+              },
+              "preclip_grad_norm": {
+                "policy": 2.2912397384643555,
+                "time_head": 3.8886020183563232
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "bca64bb670c300c1364d4bbb78f5c59663b09fe1a9e95a6648f5ecf283651604",
+              "after_sha256": "a6fbd1d69d3df423fde13ffa0940b5954c1fad41cfa6a2ed5ce93a101660db21",
+              "gradients_sha256": "1f6dc8970514d45b44336eaca017eb0719db49e443846565b3dab9551a4039ef"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.2671973407268524,
+                "action": 0.08485373854637146,
+                "time": 0.18234360218048096
+              },
+              "preclip_grad_norm": {
+                "policy": 0.8587101101875305,
+                "time_head": 3.278064250946045
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "b62efee9dabdbe8e1085b11580e1ad16fbe31a164e2265b5297f506a8fc95920",
+              "after_sha256": "62bd1d2d96d2764681c31234d0f25fb56cb95d2170ded10417cf7ba7514f718c",
+              "gradients_sha256": "0b05deb82157805f720954e51825514c395a4c96762d43a5b6b985c81d46898e"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "f74829dc408377c4563f7fffae9b783dbc5d5fbb68974d8ffdf094bef21bb752",
+              "hidden_sha256": "c2dcd4c68e106f1c40c02632ac58694af19d3980b666bb57b8c3273aae646b12",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "105c5a01e79d7ba2b888f5f0750b43f2e612a294087eb9dfbb94974063a04a12",
+              "hidden_sha256": "e53275fae245a4fb65b5083a115ca273d96e99165f0155dc3b8cfffa4fce9926",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517086,
+                "action_BEGIN_rows": 4462,
+                "action_FINISH_rows": 2740,
+                "action_weight_sum": 136473.5,
+                "time_rows": 171469,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 171469
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "6fafaec544ae3e81fed6e5920390ef08cab08632e0fbe85f62bfff82f59b182e",
+              "hidden_sha256": "d89ddecdde4877b4c0391580f3af1abb1dda5efdf164d1f6274da369c3911b7a",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068355,
+                "action_BEGIN_rows": 17826,
+                "action_FINISH_rows": 10971,
+                "action_weight_sum": 545885.75,
+                "time_rows": 686089,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 686089
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "6fafaec544ae3e81fed6e5920390ef08cab08632e0fbe85f62bfff82f59b182e"
+        },
+        "joint": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068355,
+            "action_BEGIN_rows": 17826,
+            "action_FINISH_rows": 10971,
+            "action_weight_sum": 545885.75,
+            "time_rows": 686089
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.41265130043029785,
+                "action": 0.17345547676086426,
+                "time": 0.2391958087682724
+              },
+              "preclip_grad_norm": {
+                "policy": 2.2912397384643555,
+                "time_head": 3.8886020183563232
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "5ad0bf7c4756609d5eae84f0117b02f3b7821223af2c07928b5c17a3fbfb2eba",
+              "after_sha256": "0047990600e10bb9490a4ca66ce2950b0323b375a8580f6e050132bfe3c9d6b4",
+              "gradients_sha256": "1f6dc8970514d45b44336eaca017eb0719db49e443846565b3dab9551a4039ef"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.2671973407268524,
+                "action": 0.08485373854637146,
+                "time": 0.18234360218048096
+              },
+              "preclip_grad_norm": {
+                "policy": 0.8684827089309692,
+                "time_head": 3.278064250946045
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "71befa25b7f290ff4ccace263dcdaae7dcdb88dcba6d22a37e0247a2924915f5",
+              "after_sha256": "272c04d56a51a6f1d69e898c55d5f4e00c70cd4223b28db1cfda763cc86a57b3",
+              "gradients_sha256": "52ecefe9c1d244de4781b9566543b9b38e0ca5026a97aa5a6b6312746d5d476e"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "3cae146a814be30c83292b32fdd783fd3e91a2a931c26353c7d9b8269c5ebe9b",
+              "hidden_sha256": "c2dcd4c68e106f1c40c02632ac58694af19d3980b666bb57b8c3273aae646b12",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "6d54fa652e9d91564031ab9fb0a40398d4a56278c9c5b68ae5e530382f96b9b6",
+              "hidden_sha256": "a50bcb9b564a53ee82c08aa032c14283ecf691d915f11ff148db9ab64282c7dd",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517086,
+                "action_BEGIN_rows": 4462,
+                "action_FINISH_rows": 2740,
+                "action_weight_sum": 136473.5,
+                "time_rows": 171469,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 171469
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "a6128b4e22a390fa66ec88267f7b16fc822552b3e9e30a8a8b494f640064d932",
+              "hidden_sha256": "d52d15d3b083c066e85b84a151c2f506e3bdb5b89ca580fb7addc0a17c4a9185",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068355,
+                "action_BEGIN_rows": 17826,
+                "action_FINISH_rows": 10971,
+                "action_weight_sum": 545885.75,
+                "time_rows": 686089,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 686089
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "a6128b4e22a390fa66ec88267f7b16fc822552b3e9e30a8a8b494f640064d932"
+        }
+      },
+      "paired_initial_and_first_update_bitwise_exact": true,
+      "historical_regression": [
+        {
+          "seed": 1,
+          "objective": "action",
+          "step": 0,
+          "passed": true,
+          "reference_sha256": "d9a85eb5c353230f1b5137419515ff55e296113d63c4a4d98d41929e6e537502",
+          "new_sha256": "f74829dc408377c4563f7fffae9b783dbc5d5fbb68974d8ffdf094bef21bb752",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 1,
+          "objective": "action",
+          "step": 64,
+          "passed": true,
+          "reference_sha256": "7ae672257f6a05a72bff54b49b43d180cd0086ba0db91547f9a182801ca94204",
+          "new_sha256": "105c5a01e79d7ba2b888f5f0750b43f2e612a294087eb9dfbb94974063a04a12",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 1,
+          "objective": "action",
+          "step": 256,
+          "passed": true,
+          "reference_sha256": "fd80897bc39f474a4aa16876587c87148208f95c5c4ec66e83d6b6982a1e004b",
+          "new_sha256": "6fafaec544ae3e81fed6e5920390ef08cab08632e0fbe85f62bfff82f59b182e",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 1,
+          "objective": "joint",
+          "step": 0,
+          "passed": true,
+          "reference_sha256": "04e39afd2febed596e183e76a962dc349d65269597faedcbb1c596f8ae861259",
+          "new_sha256": "3cae146a814be30c83292b32fdd783fd3e91a2a931c26353c7d9b8269c5ebe9b",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 1,
+          "objective": "joint",
+          "step": 64,
+          "passed": true,
+          "reference_sha256": "ea86e78d78dba2e4d086a2405e894d64d0a4cb6749ab6967a80de9099e963fe7",
+          "new_sha256": "6d54fa652e9d91564031ab9fb0a40398d4a56278c9c5b68ae5e530382f96b9b6",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 1,
+          "objective": "joint",
+          "step": 256,
+          "passed": true,
+          "reference_sha256": "91f8d0f801856afd9927bc91fa3c60a224f88ecae4d0a2a06ad22b1b4e44fa84",
+          "new_sha256": "a6128b4e22a390fa66ec88267f7b16fc822552b3e9e30a8a8b494f640064d932",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "teacher": "midpoint",
+      "passed": true,
+      "objectives": {
+        "action": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068356,
+            "action_BEGIN_rows": 17826,
+            "action_FINISH_rows": 10970,
+            "action_weight_sum": 545885.0,
+            "time_rows": 729945
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3062640130519867,
+                "action": 0.08197786659002304,
+                "time": 0.22428613901138306
+              },
+              "preclip_grad_norm": {
+                "policy": 0.6761187314987183,
+                "time_head": 3.649461030960083
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "3577a56689b1c63838e491efb4d222852e8246de3a0b0c014d51a7ce4cae18fd",
+              "after_sha256": "bff4edc8534584cd5978f848a48284c71efd806f30e9bf0cd4c4a87f34c01f64",
+              "gradients_sha256": "6d2bdd93c832968911d12485cedb03ca56bccf9ac5a91ef12bdbae0fbe1487d5"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.27428144216537476,
+                "action": 0.10316862165927887,
+                "time": 0.1711128205060959
+              },
+              "preclip_grad_norm": {
+                "policy": 1.4302629232406616,
+                "time_head": 3.0746870040893555
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "5a3aee5ef3ad12de9ba51856f56f2d3e552f4c1ce6a75b5f506b5ce0d7575ebc",
+              "after_sha256": "9d8d1fc8897d6b5ceae8e0b8f22b382016065cfd0c92f67567acee4ee9981aa7",
+              "gradients_sha256": "9a6e9f25d5ad7c85175ad9fd21cc84f6595f16f042b92e775c8dfd7e6e1aae39"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "7fc64369eb3db12ee33422edbbe023ee850bb025e085c7551f9a940a0287d4ad",
+              "hidden_sha256": "2da785b78896739eae1899c9c38800471a4e96ed1fa8891a2c29174a1fb044d6",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "774510593c7ebdbedd2851ff6f4e8635e535292f7aa8ca9509ae160b2c7f4363",
+              "hidden_sha256": "8068acf3d7444c5b68acebb07a70fb72102060ff3808c21fa0bd611131e3e1df",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517087,
+                "action_BEGIN_rows": 4462,
+                "action_FINISH_rows": 2739,
+                "action_weight_sum": 136472.75,
+                "time_rows": 182463,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 182463
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+              "hidden_sha256": "c38f66f330723d3550d722e93db87fb4615285f6a1aa1b02a8824b483759fc6f",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068356,
+                "action_BEGIN_rows": 17826,
+                "action_FINISH_rows": 10970,
+                "action_weight_sum": 545885.0,
+                "time_rows": 729945,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 729945
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c"
+        },
+        "joint": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068356,
+            "action_BEGIN_rows": 17826,
+            "action_FINISH_rows": 10970,
+            "action_weight_sum": 545885.0,
+            "time_rows": 729945
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3062640130519867,
+                "action": 0.08197786659002304,
+                "time": 0.22428613901138306
+              },
+              "preclip_grad_norm": {
+                "policy": 0.6761187314987183,
+                "time_head": 3.649461030960083
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "cc8ffb6f2051a79a07a4b19579cce77fa4163bee87368066021b944a3a3416fb",
+              "after_sha256": "9a5a5bfc90dd13a75a32b28cbe0d020d5b0bafb453931f80b97b154553d33acb",
+              "gradients_sha256": "6d2bdd93c832968911d12485cedb03ca56bccf9ac5a91ef12bdbae0fbe1487d5"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.27428144216537476,
+                "action": 0.10316862165927887,
+                "time": 0.1711128205060959
+              },
+              "preclip_grad_norm": {
+                "policy": 1.4430845975875854,
+                "time_head": 3.0746870040893555
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "7d37df80b348af586b81defbba6357af4c752ed5cbb8d855e757b61baa05bbb6",
+              "after_sha256": "88b309754363ba5780187c35a2c5a9c24326d8e592bbb40cd9c1458cb6146cc9",
+              "gradients_sha256": "0c94f6797aad987cc011a95d729104f8e34de4e97bdb828bacfc3dff49070b45"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "4b4c3d8700fa4432d9c84756fc017f19b2398cd92e583c2fdf40d1b80c8b8468",
+              "hidden_sha256": "2da785b78896739eae1899c9c38800471a4e96ed1fa8891a2c29174a1fb044d6",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "153ca578091f29046f47711e9c4b7db8723da24030b8f728d8fbba71ef36d493",
+              "hidden_sha256": "702923e6c0ac1898daf8bba2803bdce9e28af9e6c015c9d39b7f685337f71d70",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517087,
+                "action_BEGIN_rows": 4462,
+                "action_FINISH_rows": 2739,
+                "action_weight_sum": 136472.75,
+                "time_rows": 182463,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 182463
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "86fbfbe7af31db4eef3e3813e0b852318e592020cbff66de7401908a7c1bee4e",
+              "hidden_sha256": "88c50e494f0092b17c6b20b88ada228b784076cc382cfe22cb71f0e753a71a00",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068356,
+                "action_BEGIN_rows": 17826,
+                "action_FINISH_rows": 10970,
+                "action_weight_sum": 545885.0,
+                "time_rows": 729945,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 729945
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "86fbfbe7af31db4eef3e3813e0b852318e592020cbff66de7401908a7c1bee4e"
+        }
+      },
+      "paired_initial_and_first_update_bitwise_exact": true,
+      "historical_regression": []
+    },
+    {
+      "seed": 2,
+      "teacher": "earliest",
+      "passed": true,
+      "objectives": {
+        "action": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068356,
+            "action_BEGIN_rows": 17854,
+            "action_FINISH_rows": 10942,
+            "action_weight_sum": 545885.0,
+            "time_rows": 684588
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.4882662296295166,
+                "action": 0.27463993430137634,
+                "time": 0.21362628042697906
+              },
+              "preclip_grad_norm": {
+                "policy": 2.1386749744415283,
+                "time_head": 3.737734794616699
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "6adff126c230d208107723085914e9ffb2cc9ee4106a8b575f7998db532cb169",
+              "after_sha256": "724fc8687dc0d15ca96114c5533cc14a743512040160c497704cae8d0ce79a3b",
+              "gradients_sha256": "c5bb0ad18ff29abfc2374d7f77af4f208defc3eff978c3438186621c0cc827b0"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3057219088077545,
+                "action": 0.11481229215860367,
+                "time": 0.19090962409973145
+              },
+              "preclip_grad_norm": {
+                "policy": 1.0261112451553345,
+                "time_head": 3.4752562046051025
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "da00da91e25ba37898c4f872f6257795ef001962578daf20094b58dd3f88ba89",
+              "after_sha256": "8705a4359980ab1f990572ead98eb7041ab88ef1880c59ce2e35a947de54bfe7",
+              "gradients_sha256": "ae3717fa2d34680476063c5390fcf4c68e6163217076edaed3c8b17187379a1f"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "2170060eb84a308511fbd0a371790f35d962c389ae6b5be0f6d6f419085221be",
+              "hidden_sha256": "42261f856ceae59e773c3c1f977d326e99cfadf35e5f1b12e84e3d6c09445eab",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "902a44d4b3249cac65fcf661ae6036a1ef9843cf11db8fac1f01ec4529f42ad3",
+              "hidden_sha256": "5c9ce3315a154ef5bd418cd133f78049c3b0fd980bf0e70e4c1cd4c6c8853cd7",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517097,
+                "action_BEGIN_rows": 4457,
+                "action_FINISH_rows": 2734,
+                "action_weight_sum": 136465.25,
+                "time_rows": 171083,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 171083
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "294e9a0e26df6181437829c001aad62c3361281c1d6384e6adee741c4f68807f",
+              "hidden_sha256": "1c0652e5ae1816ca0b1b5d1ba02e8a1535eac5a357d465a53ab50eadd57021eb",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068356,
+                "action_BEGIN_rows": 17854,
+                "action_FINISH_rows": 10942,
+                "action_weight_sum": 545885.0,
+                "time_rows": 684588,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 684588
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "294e9a0e26df6181437829c001aad62c3361281c1d6384e6adee741c4f68807f"
+        },
+        "joint": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068356,
+            "action_BEGIN_rows": 17854,
+            "action_FINISH_rows": 10942,
+            "action_weight_sum": 545885.0,
+            "time_rows": 684588
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.4882662296295166,
+                "action": 0.27463993430137634,
+                "time": 0.21362628042697906
+              },
+              "preclip_grad_norm": {
+                "policy": 2.1386749744415283,
+                "time_head": 3.737734794616699
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "a15ec602a50222595d0f8ac62370081dd2924324e4d48f9de37792e3bffadc85",
+              "after_sha256": "48dea58566c16dbf436cdbf9c3650fd465330697deadbd84d2bed2d84dd301ed",
+              "gradients_sha256": "c5bb0ad18ff29abfc2374d7f77af4f208defc3eff978c3438186621c0cc827b0"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3057219088077545,
+                "action": 0.11481229215860367,
+                "time": 0.19090962409973145
+              },
+              "preclip_grad_norm": {
+                "policy": 1.0091133117675781,
+                "time_head": 3.4752562046051025
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "dccfa03fb5e758e4e2e1543e694b0090f2c427cb963a2175e5e6c38fc979e147",
+              "after_sha256": "b01218b030d4ce6fe7f975fe078b9cb06754ffda81f4d000515a6936b7d0c32e",
+              "gradients_sha256": "a4650b2758f315138e99c14db07e58e5a255096b1fdcee75dce0a067df745dc0"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "19e326c91fa33431d56c8361326641cecc12bb954db37b224f6b9d3e90cddba7",
+              "hidden_sha256": "42261f856ceae59e773c3c1f977d326e99cfadf35e5f1b12e84e3d6c09445eab",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "9f86e7aeb134ddbc54e62435e599fbb6e25b35f29ccc591139c34430c5f4aaaa",
+              "hidden_sha256": "38b2ad503d3012c6cabaa1db22de19bc7c1fedbadf2053e711a5afb2626bda85",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517097,
+                "action_BEGIN_rows": 4457,
+                "action_FINISH_rows": 2734,
+                "action_weight_sum": 136465.25,
+                "time_rows": 171083,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 171083
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "1282b780ef6449817f0c8bafa90385ebcbfb3be7b867fb14c2fc1c027b8b0bf6",
+              "hidden_sha256": "6ace1e8640c30f2c6c6ffcebd488c7b314f7af1bbb3388e1c20fb0e9c6191999",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068356,
+                "action_BEGIN_rows": 17854,
+                "action_FINISH_rows": 10942,
+                "action_weight_sum": 545885.0,
+                "time_rows": 684588,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 684588
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "1282b780ef6449817f0c8bafa90385ebcbfb3be7b867fb14c2fc1c027b8b0bf6"
+        }
+      },
+      "paired_initial_and_first_update_bitwise_exact": true,
+      "historical_regression": [
+        {
+          "seed": 2,
+          "objective": "action",
+          "step": 0,
+          "passed": true,
+          "reference_sha256": "42e0502d936abe844d76fd2f21bbddd76f5d4456099771fe55f983de5259c8b5",
+          "new_sha256": "2170060eb84a308511fbd0a371790f35d962c389ae6b5be0f6d6f419085221be",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 2,
+          "objective": "action",
+          "step": 64,
+          "passed": true,
+          "reference_sha256": "22b0c7e2aecd9eac29c27fe0b36a10a51bf54bfd313c5728396e5cc7aad2d955",
+          "new_sha256": "902a44d4b3249cac65fcf661ae6036a1ef9843cf11db8fac1f01ec4529f42ad3",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 2,
+          "objective": "action",
+          "step": 256,
+          "passed": true,
+          "reference_sha256": "ed62bedf9655f5f32cd8abde40cfcbb5fee8c6c1e142f0550135f29020c95497",
+          "new_sha256": "294e9a0e26df6181437829c001aad62c3361281c1d6384e6adee741c4f68807f",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 2,
+          "objective": "joint",
+          "step": 0,
+          "passed": true,
+          "reference_sha256": "1b5e93d1b3b09cf3a6d1f7acca016a21df160ac06301a5a28578c3f5455310a4",
+          "new_sha256": "19e326c91fa33431d56c8361326641cecc12bb954db37b224f6b9d3e90cddba7",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 2,
+          "objective": "joint",
+          "step": 64,
+          "passed": true,
+          "reference_sha256": "c3876cfdff07d79fe334f33534120d261dc385a3ff0595f5acdbb64f5474894b",
+          "new_sha256": "9f86e7aeb134ddbc54e62435e599fbb6e25b35f29ccc591139c34430c5f4aaaa",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        },
+        {
+          "seed": 2,
+          "objective": "joint",
+          "step": 256,
+          "passed": true,
+          "reference_sha256": "2402a6da44472be02d91d4fd1e459964e36ff67f3374766a1c8e03f0812993cd",
+          "new_sha256": "1282b780ef6449817f0c8bafa90385ebcbfb3be7b867fb14c2fc1c027b8b0bf6",
+          "fields": [
+            "model",
+            "optimizer",
+            "hidden",
+            "stream_cursor",
+            "step",
+            "work"
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "teacher": "midpoint",
+      "passed": true,
+      "objectives": {
+        "action": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068358,
+            "action_BEGIN_rows": 17854,
+            "action_FINISH_rows": 10940,
+            "action_weight_sum": 545883.5,
+            "time_rows": 728341
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3047339916229248,
+                "action": 0.10441625118255615,
+                "time": 0.20031772553920746
+              },
+              "preclip_grad_norm": {
+                "policy": 1.9251158237457275,
+                "time_head": 3.4952335357666016
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "e3d9b5547596cac3449c56ba89f8df33655b9b5076c301ce796ba658e4e41970",
+              "after_sha256": "c239acbcb6753c09ed641dff7130dfb6f9c0bcf663785012c3c5f9c19c5a1da0",
+              "gradients_sha256": "667cd38ca358a6f2bd4d9321244f6fbce2fee3c2ec77791f8636bc6031333997"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.24673420190811157,
+                "action": 0.06657939404249191,
+                "time": 0.18015480041503906
+              },
+              "preclip_grad_norm": {
+                "policy": 0.7948320508003235,
+                "time_head": 3.2375686168670654
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "b0f3378b09572cb2a82878685677991bb245165d8e0be55a43218034014bfde5",
+              "after_sha256": "96bf83f4d509e944fa56007326e3f0db6af30191e277a6cc15435c4228b2258b",
+              "gradients_sha256": "58d0b2b14407618160bf038df7db89dae4e9a26c6b4fc67d00d87e46962896e4"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "d949ce525380ecd22c0a2a005e0d885e972573e86a172356516e069721834eb8",
+              "hidden_sha256": "27cda9aa56d0a1ffede9089792f2a67895eaf05e02394dcd0b4dd1852cfb8d56",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "3c8d87dd85e7f6f66e26d34f44ce7a7817346242848c34ecff26c206156ce861",
+              "hidden_sha256": "b2758149c8faaf4633f780ee3d64e1c8ea4157d6caaacfbd8e54e64ed5ce90e6",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517096,
+                "action_BEGIN_rows": 4457,
+                "action_FINISH_rows": 2735,
+                "action_weight_sum": 136466.0,
+                "time_rows": 182053,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 182053
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+              "hidden_sha256": "96b1a1d2a210ab49c0294fa3bb8fd10ae40a36830987a304b416b8eeddb6df54",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068358,
+                "action_BEGIN_rows": 17854,
+                "action_FINISH_rows": 10940,
+                "action_weight_sum": 545883.5,
+                "time_rows": 728341,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 728341
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc"
+        },
+        "joint": {
+          "passed": true,
+          "updates": 256,
+          "rows": {
+            "action_rows": 2097152,
+            "action_WAIT_rows": 2068358,
+            "action_BEGIN_rows": 17854,
+            "action_FINISH_rows": 10940,
+            "action_weight_sum": 545883.5,
+            "time_rows": 728341
+          },
+          "actual_update_reconstruction": [
+            {
+              "step": 1,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.3047339916229248,
+                "action": 0.10441625118255615,
+                "time": 0.20031772553920746
+              },
+              "preclip_grad_norm": {
+                "policy": 1.9251158237457275,
+                "time_head": 3.4952335357666016
+              },
+              "start": 512,
+              "stop": 640,
+              "before_sha256": "7f584ae8835527900446239156998551922ee78163ebc40d4e663ef74def36f7",
+              "after_sha256": "57091a91e12dcce03a7980db4149c9032eff4db6081cbf81c28e2ea984572e8d",
+              "gradients_sha256": "667cd38ca358a6f2bd4d9321244f6fbce2fee3c2ec77791f8636bc6031333997"
+            },
+            {
+              "step": 2,
+              "passed": true,
+              "tensor_comparison": "bitwise exact",
+              "loss": {
+                "total": 0.24673420190811157,
+                "action": 0.06657939404249191,
+                "time": 0.18015480041503906
+              },
+              "preclip_grad_norm": {
+                "policy": 0.8111140131950378,
+                "time_head": 3.2375686168670654
+              },
+              "start": 640,
+              "stop": 768,
+              "before_sha256": "7c572c329a8246865fafcf87b8d10026d969c6c21598122f1eafaabb511c6bb6",
+              "after_sha256": "2b35d09937493f12bbb24f66eda77a30bd00260cb61f7060af5fb710f0eea568",
+              "gradients_sha256": "534513544ba4f7fad9dd7bbaf23dd5d4764e79936a79b9dee441106a9f3b4297"
+            }
+          ],
+          "snapshots": [
+            {
+              "step": 0,
+              "passed": true,
+              "checkpoint_sha256": "59142e885d4c6c7ef0fd9087542dc9bffe56893b24781d1015e74ac458618f8e",
+              "hidden_sha256": "27cda9aa56d0a1ffede9089792f2a67895eaf05e02394dcd0b4dd1852cfb8d56",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 0,
+                "training_ticks": 0,
+                "training_lane_ticks": 0,
+                "action_rows": 0,
+                "action_WAIT_rows": 0,
+                "action_BEGIN_rows": 0,
+                "action_FINISH_rows": 0,
+                "action_weight_sum": 0.0,
+                "time_rows": 0,
+                "action_gradient_rows": 0,
+                "time_gradient_rows": 0
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 64,
+              "passed": true,
+              "checkpoint_sha256": "fe6b631d50be2f90aecc6e91509c536b91c5d37edaa98b7b1fe62248e66fce4a",
+              "hidden_sha256": "41fa86830f6d691c250f56cce3d0eb1a5e5166720f97148f491375189fa7b5af",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 64,
+                "training_ticks": 8192,
+                "training_lane_ticks": 262144,
+                "action_rows": 524288,
+                "action_WAIT_rows": 517096,
+                "action_BEGIN_rows": 4457,
+                "action_FINISH_rows": 2735,
+                "action_weight_sum": 136466.0,
+                "time_rows": 182053,
+                "action_gradient_rows": 524288,
+                "time_gradient_rows": 182053
+              },
+              "binding_and_float32_checks": true
+            },
+            {
+              "step": 256,
+              "passed": true,
+              "checkpoint_sha256": "da69628cf09951f6bd325d257bffd7a0825e1c6792d827eee4138aca8721427b",
+              "hidden_sha256": "d3302805687480f5e9eb2d66cb28c904e505865b1182e94d91f7eee7730ced58",
+              "work": {
+                "warm_ticks": 512,
+                "warm_lane_ticks": 16384,
+                "warm_loss_rows": 0,
+                "training_updates": 256,
+                "training_ticks": 32768,
+                "training_lane_ticks": 1048576,
+                "action_rows": 2097152,
+                "action_WAIT_rows": 2068358,
+                "action_BEGIN_rows": 17854,
+                "action_FINISH_rows": 10940,
+                "action_weight_sum": 545883.5,
+                "time_rows": 728341,
+                "action_gradient_rows": 2097152,
+                "time_gradient_rows": 728341
+              },
+              "binding_and_float32_checks": true
+            }
+          ],
+          "final_sha256": "da69628cf09951f6bd325d257bffd7a0825e1c6792d827eee4138aca8721427b"
+        }
+      },
+      "paired_initial_and_first_update_bitwise_exact": true,
+      "historical_regression": []
+    }
+  ],
+  "paired_teacher_budgets": [
+    {
+      "seed": 0,
+      "passed": true,
+      "counts": {
+        "earliest": {
+          "action_rows": 2097152,
+          "action_WAIT_rows": 2068337,
+          "action_BEGIN_rows": 17813,
+          "action_FINISH_rows": 11002,
+          "action_weight_sum": 545899.25,
+          "time_rows": 686230
+        },
+        "midpoint": {
+          "action_rows": 2097152,
+          "action_WAIT_rows": 2068338,
+          "action_BEGIN_rows": 17813,
+          "action_FINISH_rows": 11001,
+          "action_weight_sum": 545898.5,
+          "time_rows": 730189
+        }
+      },
+      "auxiliary_rows_equalized": false
+    },
+    {
+      "seed": 1,
+      "passed": true,
+      "counts": {
+        "earliest": {
+          "action_rows": 2097152,
+          "action_WAIT_rows": 2068355,
+          "action_BEGIN_rows": 17826,
+          "action_FINISH_rows": 10971,
+          "action_weight_sum": 545885.75,
+          "time_rows": 686089
+        },
+        "midpoint": {
+          "action_rows": 2097152,
+          "action_WAIT_rows": 2068356,
+          "action_BEGIN_rows": 17826,
+          "action_FINISH_rows": 10970,
+          "action_weight_sum": 545885.0,
+          "time_rows": 729945
+        }
+      },
+      "auxiliary_rows_equalized": false
+    },
+    {
+      "seed": 2,
+      "passed": true,
+      "counts": {
+        "earliest": {
+          "action_rows": 2097152,
+          "action_WAIT_rows": 2068356,
+          "action_BEGIN_rows": 17854,
+          "action_FINISH_rows": 10942,
+          "action_weight_sum": 545885.0,
+          "time_rows": 684588
+        },
+        "midpoint": {
+          "action_rows": 2097152,
+          "action_WAIT_rows": 2068358,
+          "action_BEGIN_rows": 17854,
+          "action_FINISH_rows": 10940,
+          "action_weight_sum": 545883.5,
+          "time_rows": 728341
+        }
+      },
+      "auxiliary_rows_equalized": false
+    }
+  ],
+  "actual_updates_reconstructed": 24,
+  "snapshots_checked": 36,
+  "historical_snapshots_exact": 18,
+  "implementation_reused": "Immutable independent audit primitives only; no experiment model, targets, learner, loss or update routine called"
+}

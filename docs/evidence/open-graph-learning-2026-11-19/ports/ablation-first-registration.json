@@ -1,0 +1,48 @@
+{
+  "time_utc": "2026-11-19T06:02:54.084979+00:00",
+  "source_sha256": "4b714f3b5644a6352d3c1124bf27e266921bd9e5220c0d3152a0a4592e38e12b",
+  "source_primary_registration_sha256": "4ff3b98de862f779b89bd7a3c1eb4c13c0e0c7a413f763333f710562ea6b85d1",
+  "development_sha256": "10a81eaa6fc38f26f6ae85907e43b410d719140aa0ca3241f2e56bee56e08391",
+  "recipe": {
+    "rate": 0.22,
+    "exploration": 0.28,
+    "decay": 0.995,
+    "grow_every": 19,
+    "retire_every": 17
+  },
+  "births": [
+    831500,
+    831501,
+    831502,
+    831503,
+    831504,
+    831505,
+    831506,
+    831507
+  ],
+  "worlds": [
+    831520,
+    831521,
+    831522,
+    831523,
+    831524,
+    831525,
+    831526,
+    831527,
+    831528,
+    831529,
+    831530,
+    831531
+  ],
+  "modes": [
+    "stable",
+    "reverse"
+  ],
+  "arms": [
+    "matched_random",
+    "cut_motor",
+    "cut_taste"
+  ],
+  "protocol": "Joint donor and matched control have identical birth and physical world. Random edit events follow donor times/types, use independent uniformly drawn valid addresses, initialize from the recipient gradient's sign, and prefer retiring weak edges. Motor or taste cut arms train identically through the last receipt then disable only the named source columns while physically scoring fresh trials.",
+  "endpoint": "Silent tail physical accuracy. Simultaneous crossed percentile intervals across six contrasts (each cut or random arm relative to joint in both modes)."
+}

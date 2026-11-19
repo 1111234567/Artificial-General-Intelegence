@@ -1,0 +1,915 @@
+{
+  "format": "finish-position-autonomous-eval-v1",
+  "created_utc": "2026-11-03T15:45:30.193908+00:00",
+  "declaration": "Frozen before reading any new FINISH-position autonomous outcomes. All seeds, arms and declared snapshots retained. Earlier WAIT experiments and last supplement are known historical references.",
+  "arms": [
+    "midpoint",
+    "first"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "snapshots": [
+    "B000",
+    "Bfirst002",
+    "Bfirst008",
+    "B001",
+    "B002",
+    "B004",
+    "B008"
+  ],
+  "mixed_snapshots": [
+    "B000",
+    "B001",
+    "B002",
+    "B004",
+    "B008"
+  ],
+  "expected_records": 84,
+  "steps": 2048,
+  "batch": 8,
+  "spec": {
+    "0": {
+      "mapping_table": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "history_family": 0,
+      "B_family": 1,
+      "raw_groups": {
+        "all": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shared": [
+          0,
+          2
+        ],
+        "conflict": [
+          1,
+          3
+        ]
+      }
+    },
+    "1": {
+      "mapping_table": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "history_family": 1,
+      "B_family": 2,
+      "raw_groups": {
+        "all": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shared": [
+          1,
+          3
+        ],
+        "conflict": [
+          0,
+          2
+        ]
+      }
+    },
+    "2": {
+      "mapping_table": [
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "history_family": 2,
+      "B_family": 0,
+      "raw_groups": {
+        "all": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shared": [
+          2,
+          3
+        ],
+        "conflict": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "training_protocol_hash": "fff5f5b89a3b908e2a3808f39e3150420b0b3574f0cd8aeb33a4fea5479c396d",
+  "historical_protocol_hash": "ad1724e3f2123001d88496fa27c9edfd3963cf5c04e554b1c962471fc473f703",
+  "frozen_files": {
+    "F:\\agi\\experiments\\finish_position\\eval_finish.py": "de3253baacf11920e1b5d6bf4319da9fa55822e77bd27c6bfc90ac2d846c90aa",
+    "F:\\agi\\experiments\\finish_position\\eval_test.py": "5d8ebbd5c4e8be4d2e072be795f2a9dd551c7f5de397cdeb6088b3c0b0785752",
+    "F:\\agi\\experiments\\wait_position\\eval_position.py": "a7b73696a9e9745929180882bea29b22589a6a9401f2cd124a15063981249272",
+    "F:\\agi\\experiments\\wait_position\\eval_timing.py": "cc820dc717d93e5c1e50c5b1e5145192bb6c516eb2dec33983da69bdef43aa5e",
+    "F:\\agi\\experiments\\experience_transfer\\eval_transfer.py": "2f602b87c20e40d67786bd74a6345e681921e37290ca182770bb425c280b0ef3",
+    "F:\\agi\\experiments\\learn_remember\\evaluate_gru.py": "51bff264fcdcab432e0c06baf907914464adf6da8a065750df1d0c0c035af528",
+    "F:\\agi\\data\\wait-position\\eval-v1\\protocol.json": "5505a918523df22e172a33b78441cd1a92f2fb13d426c6793e702e0756e9fa05",
+    "F:\\agi\\data\\wait-position\\eval-v1\\completion.json": "0708e77b25446772a39d73fc09c1203617c2c7452f4ada0900be054b46075438",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\protocol.json": "6b07c5d5411f567ad5fac7f9cd9599bb34f6689dd2d6acfa534e021d9b87f16f",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\completion.json": "df4e34cb41ee7b0cf45f9a2c1fd81ebf258c43a5164d6f114b710d044bcf5b63",
+    "F:\\agi\\data\\finish-position\\train-v1\\protocol.json": "ef06dd6521765b253fd3996d8276fdd4dc2d4be4c8de52d6ffd8d8c5fd69295a",
+    "F:\\agi\\data\\wait-position\\last-v1\\protocol.json": "55e71a2f12c6da69a708134994bc1eb75d9091fa0c2289b5d0692fcd13d056ad",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B000_B.json": "c21500e91fe0e6d99f3a3ab659ec89926944dd3bba26c33024712ef4f61cf2e4",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B000_mixed.json": "69b45814330f5831092572a1bad252c87c88bb3524987dfa4d0124c132011b59",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B000_history.json": "383e51e630928119b39aec649bc5d9f3a6a512bb9151e5fcae740951ed566ecf",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_Bfirst002_B.json": "11f63e1e60939ad75de4e63c1a18e348a767feab309f5586fee17bdc3956bf75",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_Bfirst008_B.json": "3e28b9f114517744b953764e1dec6aced743eb2e10f9328b7b884900f5d46332",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B001_B.json": "c97f6ef1d8aca480420d42e67daee68aac1f6300b8a8acdc614d766866ec1e34",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B001_mixed.json": "dc0169d34a619d9f44df557118395336c242fb383ccb2328933920576a19f8de",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B002_B.json": "3196889d9326e5b1d5bd4913fc736fbde81f890c1559f20d25664bd3643ff0f2",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B002_mixed.json": "0d044bf4a45b37556cade92bd71e72b591cf0e6a2adb3d6c3b6376f70dbf5fed",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B004_B.json": "3b0b47c2d27cfb3300c2787c259e129c9d5399f9a60c8bb56809e2803368fc51",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B004_mixed.json": "2eb4c59ae7511b691e568cc6f03db362442c927b9a8b863762befeeb26dff77f",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B008_B.json": "eaa1ea1846c3e0c2a8390819fe7fbf280604525223e37453fac98cd3c238383a",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B008_mixed.json": "2fc25fa992520971e96f482e7af528507104b36a697acb5df818b6e996787f33",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B008_history.json": "62b54c85318b17d9f01454e9a9602a8d72f5a2bc47e6dec158c984449e8d00ca",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B000_B.json": "c844501e71b5a38c9caf1faabc4a1a14be687dd4e911dea60130a35962fbe03d",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B001_B.json": "a011b87453db27c8e0036e4e669e34b708efe6f6603d78c6648e75a490fdbcf2",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B002_B.json": "4ce11572ed4d06d224dfd8d7429026f6983d348aec2f79f7b57a3123f52ea479",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B004_B.json": "54e064d7ed94abdc72f6860d6f645b452edb4cd7888574c8d653502d7849dbc4",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_B.json": "5093dbdf9352e32f10c1167e29a55b95b294e812f5690936445a7f0a4fbf8870",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_mixed.json": "3ff3a9054285d7dad33f6af4b5e93bf6c47634a9f104403304a13982be4257b7",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_history.json": "dfbd7312fbf57648b65b048fd196d47fb43b7596281e43817b5828ffc4688894",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B000_B.json": "49b731b442c6e5111acdec21fc960d77f0606db48ce60f70381ea02d5623a7fe",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B000_mixed.json": "35ccaa4ac3cc9e975c320f1818e634cf725ec01943c97034304e17d74668c274",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B000_history.json": "3ebee0a3abec0b8170027ef82aee5692f63eecf325e68c231a43b149051f9cd4",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_Bfirst002_B.json": "bd9601bd56e19233be374f6456d000c11359e11cab0748d154cb5e4445a08d92",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_Bfirst008_B.json": "5c44b5901e201883e8bc7ec4d9bee14ccad6c11e42ca916d12f296c58ab856ed",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B001_B.json": "f344b03948ce02c4e4ca16bfbcbcaa5599e5d29477b450f872bcd57b72a3ef05",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B001_mixed.json": "3cfc52b52de12ebec9e3bfed5aa690434eb70fb74efd748a9937da2b27da316d",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B002_B.json": "fa2ff2fbac79e77f3eb7488b0526714f574ffcf0f32d053f7f1973245ef11c1e",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B002_mixed.json": "65a30bdb17c1a43c9185e08d715298d64edb07585808c6c8beddc0504763f97d",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B004_B.json": "f00e6408eaa011ac980ab5aa7967902b621c8a10e1ec2ce4b776da02f5c66b4b",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B004_mixed.json": "03ecdda0fd303c733f5c1b87a22c4ad5c6290c198f07206f6cf7daa4f890edaf",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B008_B.json": "f9e717353055bbac22764b3f0713aa82ac02f44d1c3118304c323cec3f544bea",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B008_mixed.json": "c9c13e8af38c5d8c55d91a2fe1e875d6e84c4f7104fd2ac4084944f2f59c976d",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B008_history.json": "4cfcde662d3ee7699062111afd62a946a65f9f505c8987debb41eb65ddfe752a",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B000_B.json": "063e49da8f92e4a3098af7929c0389c950d428d4af93e896c0d7b9ce8a3749ba",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B001_B.json": "b15b2c3973f277502fca7bce4d38201ece336f9ba7632200150d2cb43446d598",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B002_B.json": "d894ebd0782020f8dab8ea24bbfe31cbbf02388262b076d1d658f0e635975d99",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B004_B.json": "ef0d46b2f31ff0613439aa1834f8a49b883e75ea8c77f2636276f0464bef9bb1",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_B.json": "873a71b53bfef4460e3bbcdbf258f2921390b487a844fc6c047d6a02eb657605",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_mixed.json": "5bb3750ca27f75470c4729e3986657b472ba2e09eb40cfc17c2cf725d3f316cd",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_history.json": "c5e2a931727f19c0923669085d7d6d3c5ab0e801c941691f50993a8368ecbaaa",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B000_B.json": "9000fe98fe683bc8579872d36da0fb450b0d4f592ed048f357f282d1ea26ae0c",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B000_mixed.json": "b30074d865266b7a214c5d5f56bf1e89b368f608911d65e849fcf95a2524e744",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B000_history.json": "3398f5ac3d212d4f6e633236a101ab4580cb9367986fdecc3ddc95658da6c12f",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_Bfirst002_B.json": "8add8c7567015adea2e2f982634834c9a096c818e8ca4addf07278513cdd9d95",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_Bfirst008_B.json": "586e1bdc90aae313562c96512d59c6d08322f0935490dea913050edda4f32571",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B001_B.json": "19d9557b5eb7e72cf127e04c226426ddfdd0080a4996ac1657d5e590096af551",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B001_mixed.json": "dd9c4fca7cd57370420fcbbf945b6876dff3f26d20e47a244f4813881519a27a",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B002_B.json": "51977dff103bed1a207c2668002f993a54f968afae9a5146af74fb52668abe73",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B002_mixed.json": "80519045157dbbc9ef40c77c52e96f62df19d7848db14aac6f17ff7692530758",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B004_B.json": "6b466bfbb4f1062251dafed43d40db6f72ad31776793254a7e096e5ab687383d",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B004_mixed.json": "04be058623089987b73c1f4863d3d1a2415c0dd3c1aece667f3b1fdcfe7029bf",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B008_B.json": "67fa0390ec48d0c5ff2f3477bdf1f25bed58246e038ffbc4fb5d21d415b8004e",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B008_mixed.json": "dde8df6dd3a7765a1ea9b80f4cf7e9e78d91c54288f9c05944032936254d6f06",
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B008_history.json": "92528a0de808a05c8414850c39c69f0e6cecf47b0649ff7ee82848ac9b01359e",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B000_B.json": "2acba8736809bdc9fa9dc6f0d57c96872c414782d7194d1327f1b4b97c681886",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B001_B.json": "675988ff6f94d8489b272d3d222aef207e6b9cc32dc6e0fe3ff62b7f9a9cc59e",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B002_B.json": "e51597981680102f225f703685a83f48b6caf38661959416a1bde7c89eee6d23",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B004_B.json": "3474e7e27fb6e21e7e7292406458d9a0790cf9dd62709d264d3c071b35ae3aa9",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_B.json": "f1ba9c239f7a14f71f66d11ba926e3b05ef37b3dab2232ad561596df46181c96",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_mixed.json": "55a93a90ab6cbff6ff835aa547c96a1d3ea02a0bbda992da4794490f815bef9d",
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_history.json": "d461587c45de1336838b06b630834b94f3868b96759f10d134428c70b6767cf9",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\common_seed_000_related.pt": "8a35be4f24c88876f723d13eb80fc3525e51dfd7427e8e8d352f3df0aa059e1c",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_B.json": "b74d1ed7a63d958b632c39bdcc9aab3f60cd2d12af8e3b83ba1773efc3092fcc",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_B.npz": "6f7f046f3d2098cab582ffb86681927faa17ffde8870b12619bf0fa3c77c94ca",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_mixed.json": "576b193efa3cdc34a105a47013cd1e6b36c41b1f4c9b5351cdaf81b0d19b11dd",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_mixed.npz": "4f6688471fc34f890ece758b1c22cde82fb7f4de606a5731a68ffa542c2dfcc5",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_history.json": "eb437a781bd0a0ae6237f315e12a0d03dfd3a9d05bbd9b6d76bb64f429947d96",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_history.npz": "b28a571a4e08621f99ae2c53c6965b7bcd77908b7e31e76e11a5c8a929609af1",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\common_seed_001_related.pt": "508fbefc89408d03f35fd4e4f4251c654db5686fb45d2c054c64124893fafe3a",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_B.json": "ec44a17091b25796aa4bf494bc13c658b8beca01d1c5c2503a952277dddcae4c",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_B.npz": "d10aab22d9cec5177be9631ba52c6154bb63fbf9c6b49ae5508dc260e557c750",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_mixed.json": "4edfeeb1ad19d681f1e6d8a496470eec6dff86e9018b6829bb5a101040d8d759",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_mixed.npz": "87e40bb8fb6aed422e753a0474b616f0aa803c8e567211e7177061f379c220e0",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_history.json": "810a227bcf11c8b8f65de95ea9e5aa341ee721a0179996c333fdde86fb5e6d44",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_history.npz": "1299fba6e29f32ca92af4f68b829c9ea1bff560ece48341a7a2b5282bc4d7923",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\common_seed_002_related.pt": "e5de433a618c65737bff890ea2e4f16e7379203adc4eddc3054cb13d3c6696cc",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_B.json": "84212b9a5f46384f6dd5e0678bc9a708ddbec12bbb7485cd805a566fe1c34c60",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_B.npz": "c334e841fda4511873521b106022c84a916a19998a6727c477c0b2e382ea34d1",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_mixed.json": "f19bdca3ed7a1bc763e6eefd0dcf142e74c8e32112bac61cddeaedf688725f7f",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_mixed.npz": "60dbb212a67487eb168366dbb7312442fd79d79dffa0880197d75b6419c2f90f",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_history.json": "fb8c4d893cf2dabb45ef9b43a2e118bb75188712ff8744653fc685a8d776cfc1",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_history.npz": "bbbe7f61c3deb8a3ea28bc4a6bd0f40362d556978fb5cbe6de4d1baeeff5ac32"
+  },
+  "historical_bindings": {
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B000_B.json": {
+      "sha256": "c21500e91fe0e6d99f3a3ab659ec89926944dd3bba26c33024712ef4f61cf2e4",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_B.npz": "cadea97da79aea88c05ebeb0a9ac2b1d1303a5df087b4087e679354f1a6edb40",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_B.pt": "25a50ae9e747e352456c51871c98cbdf4d3847b01529826c3dbe1489a5ac1121",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_B.requests.json": "56dccffcbd7c0fe474e92443d33fcf269a997253734b84cdd23226d4057cd19b"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B000.pt",
+      "checkpoint_sha256": "efdbef3bac36b87db79f2440150004628e9c37b5dbccaf56154be34a67313859"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B000_mixed.json": {
+      "sha256": "69b45814330f5831092572a1bad252c87c88bb3524987dfa4d0124c132011b59",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_mixed.npz": "dd22575427493e063c24c75a9087173aa6bf19f8a19a3da004f69077b71b7a06",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_mixed.pt": "132a1c1a8816afe6656ee8eeb11a6f4c1c37ba1d2095d553221e0a5fbe1d22b0",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_mixed.requests.json": "72eba00b9ce81f410517ca1618ecaa0808f6eb0cdc7ac678a2bd82c4a1528943"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B000.pt",
+      "checkpoint_sha256": "efdbef3bac36b87db79f2440150004628e9c37b5dbccaf56154be34a67313859"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B000_history.json": {
+      "sha256": "383e51e630928119b39aec649bc5d9f3a6a512bb9151e5fcae740951ed566ecf",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_history.npz": "3e0e913835c268568c2f8b0fb1c2c672fc05643a2a4839c4a8ce075324e1b58d",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_history.pt": "8a1d68c20d36a8070b220210446f6220c47ff1897eb60310b2fbd59917af89fd",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_history.requests.json": "576a02a930e23e0c51e0c7155db42c8239eca4927be3912a965006c6a0b0d92b"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B000.pt",
+      "checkpoint_sha256": "efdbef3bac36b87db79f2440150004628e9c37b5dbccaf56154be34a67313859"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_Bfirst002_B.json": {
+      "sha256": "11f63e1e60939ad75de4e63c1a18e348a767feab309f5586fee17bdc3956bf75",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_Bfirst002_B.npz": "2abd8301cf3c303cb68ccf022c94ce6d48f4d56a0b72ea6c2815a3d531ee0cd3",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_Bfirst002_B.pt": "e6173332e71dbe7107675009f1e4785b258ed8aa5ca3f25e3fc966abcddc9518",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_Bfirst002_B.requests.json": "763a3fe1d93c64afc693ba316af9d99a5f60977818d2f91127a9002fde9ae389"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\Bfirst002.pt",
+      "checkpoint_sha256": "9badd5c5bdefd20cddd5207ed12962a09cf959ab82d538ae97a76dfde429d2a1"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_Bfirst008_B.json": {
+      "sha256": "3e28b9f114517744b953764e1dec6aced743eb2e10f9328b7b884900f5d46332",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_Bfirst008_B.npz": "8c5f42b888666b28dafabdd87df87ac57d3616d42d25ccd09632842d65a9a781",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_Bfirst008_B.pt": "ae6a608135acd011cd404c774011ba410d8f472285ecd021f2189c09bf6f7064",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_Bfirst008_B.requests.json": "8f89012af6511d3a1c33b5ebf07421f95c5f9b68f64161a0b71dc886e75d546e"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\Bfirst008.pt",
+      "checkpoint_sha256": "366a0819b5732d007dc58c510ac69c957ee1093fafeb6499c22cfa417c461f10"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B001_B.json": {
+      "sha256": "c97f6ef1d8aca480420d42e67daee68aac1f6300b8a8acdc614d766866ec1e34",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B001_B.npz": "3caa82b4403acc1fd83b88f9d811fd6f37fd96477ac3398147e05a1e29cff22b",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B001_B.pt": "34c605e7cf9822eaae4d70de668062fb3352707cae6d01e551ab330f21705563",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B001_B.requests.json": "b41d24ff55b7250977831604cdbbb6181242e3f4d36c1b7314155f4c494c623f"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B001.pt",
+      "checkpoint_sha256": "6edd3f3759ac4d9ea2e67172618a8ef804a7b4b3ae158e0c24cdf3a8d015bafe"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B001_mixed.json": {
+      "sha256": "dc0169d34a619d9f44df557118395336c242fb383ccb2328933920576a19f8de",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B001_mixed.npz": "b7a81d2779be94e29f413d6f8dc4b417893960f73c608f9fab8bbb319592483a",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B001_mixed.pt": "2aea567e76fcf73e62f76af11720b9b5b5913c1416e8b02a9dda3bcd0f3d6ddb",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B001_mixed.requests.json": "73f38a006abc85605fdddc7d24b078cfd326bdd599dbe5f0d164fd995a172b16"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B001.pt",
+      "checkpoint_sha256": "6edd3f3759ac4d9ea2e67172618a8ef804a7b4b3ae158e0c24cdf3a8d015bafe"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B002_B.json": {
+      "sha256": "3196889d9326e5b1d5bd4913fc736fbde81f890c1559f20d25664bd3643ff0f2",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B002_B.npz": "7475c64982fdfffe194ea20188c0fc38931ac6c78665d8e8a43fc1df856299d6",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B002_B.pt": "6b96f668235b8e4d9a4032fdce977e1752c5e4cfeca56d157261f35aed94bd40",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B002_B.requests.json": "59d8d4eb4e3e4f2fa7b641824c192f6b383587b7998344596f259c82c7881afd"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B002.pt",
+      "checkpoint_sha256": "97f746002d988258e9c17f8af4e4b9225241305a14b6134e1d83c5adc5a1ee0a"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B002_mixed.json": {
+      "sha256": "0d044bf4a45b37556cade92bd71e72b591cf0e6a2adb3d6c3b6376f70dbf5fed",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B002_mixed.npz": "d140109ca400193ee8c57fc312fbc165030600f23c5afbdb9b050a19f6bb7b6e",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B002_mixed.pt": "1c439797a31ef396632871030270f9502d9f791d87cdbb9a2b8a1dfdcfb47b5b",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B002_mixed.requests.json": "79fc2842fcf4983049f25fae0b239c50d5e0b178a1960335926bcafd7f2b97ea"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B002.pt",
+      "checkpoint_sha256": "97f746002d988258e9c17f8af4e4b9225241305a14b6134e1d83c5adc5a1ee0a"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B004_B.json": {
+      "sha256": "3b0b47c2d27cfb3300c2787c259e129c9d5399f9a60c8bb56809e2803368fc51",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B004_B.npz": "4e152edbd36ae10e68b7cc99e1640816aeed7f4e94f8d37a138ae35c531327c6",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B004_B.pt": "b6e0e94dfa1e54cab437ecde60514b772eea768c3cd328728faf8572760fe79f",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B004_B.requests.json": "676a77b6e39a35d7b95323beb3508e0126be75fe72b27c313cd94bf80a05cd12"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B004.pt",
+      "checkpoint_sha256": "c54ffd31f70c8ce2a02d31761a578c79d540999ff69cf809ef9a5f9762a9fd71"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B004_mixed.json": {
+      "sha256": "2eb4c59ae7511b691e568cc6f03db362442c927b9a8b863762befeeb26dff77f",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B004_mixed.npz": "23cef0abf331b54f3c39ebb4bf3d0658a6ebf485ccfdd237bae668b3e909f29c",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B004_mixed.pt": "f15a5c99c0d353845902a00af0e6fa0def55a6dd4b6fbfcf7842ca0f3b18bec5",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_000\\no_review_B004_mixed.requests.json": "c08381ebd8035c78faef8d8726812a44f718470cd8321686aa4966db9a0bf429"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B004.pt",
+      "checkpoint_sha256": "c54ffd31f70c8ce2a02d31761a578c79d540999ff69cf809ef9a5f9762a9fd71"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B008_B.json": {
+      "sha256": "eaa1ea1846c3e0c2a8390819fe7fbf280604525223e37453fac98cd3c238383a",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_B.npz": "7bbe428124f1607740b01451dbff64509e82ebe3e87923c35413c6071086946a",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_B.pt": "2d1779acb9821bc3f6eda2c6035b74145b8f0c693aa99de5b8ca0137a340f5ad",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_B.requests.json": "2a25e29ec957cc400f5b214c3647a0d9cadf7d4f9ba80d63a77833fdb89694f7"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B008.pt",
+      "checkpoint_sha256": "cd62c78e8b0f8552336cfc6a1a0cdd96eb77d9e0de01e685ab3427a2b6fb8add"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B008_mixed.json": {
+      "sha256": "2fc25fa992520971e96f482e7af528507104b36a697acb5df818b6e996787f33",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_mixed.npz": "ddf872a979c9cc3b2bd1b1dd0675e2c10730ad04d013ee87d97b957fdc17fd5c",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_mixed.pt": "eb6663f4b6d465dff7c257761a5a4108000be80ce3f108e0ee7ddae5923ac6d9",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_mixed.requests.json": "6011686a15fb52063bf44f8a51fc07ec06a5636f34747c33846a16b10fbabd7f"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B008.pt",
+      "checkpoint_sha256": "cd62c78e8b0f8552336cfc6a1a0cdd96eb77d9e0de01e685ab3427a2b6fb8add"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_000\\no_review_B008_history.json": {
+      "sha256": "62b54c85318b17d9f01454e9a9602a8d72f5a2bc47e6dec158c984449e8d00ca",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_history.npz": "04038cebcfffc5483dfcfb0cd8a7f5b00c91fd8ad0e0dcfb234290363626da4a",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_history.pt": "41cf49c0aa06bcfe68b33c0eec460c95a27e4128d3b301270018131083444065",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B008_history.requests.json": "ec88ab39731b4d3712ef898f6d06866469560631f823e0bb0668460018d2afc8"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B008.pt",
+      "checkpoint_sha256": "cd62c78e8b0f8552336cfc6a1a0cdd96eb77d9e0de01e685ab3427a2b6fb8add"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B000_B.json": {
+      "sha256": "c844501e71b5a38c9caf1faabc4a1a14be687dd4e911dea60130a35962fbe03d",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_B.npz": "cadea97da79aea88c05ebeb0a9ac2b1d1303a5df087b4087e679354f1a6edb40",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_B.pt": "25a50ae9e747e352456c51871c98cbdf4d3847b01529826c3dbe1489a5ac1121",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_000\\related_B000_B.requests.json": "56dccffcbd7c0fe474e92443d33fcf269a997253734b84cdd23226d4057cd19b"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B000.pt",
+      "checkpoint_sha256": "6cb2beb72b07fb6db2a147c44dfc8563fe21bf70cbb55f575adc1bc385302dfb"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B001_B.json": {
+      "sha256": "a011b87453db27c8e0036e4e669e34b708efe6f6603d78c6648e75a490fdbcf2",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B001_B.npz": "a7e30e30b4c669bd35309b0fa0218702fc1f77dafa1fe588edc3ac50d3a7beea",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B001_B.pt": "448df46981f4479554f4fb27066325c60498546fe1393b6aba4b71b215cc93a9",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B001_B.requests.json": "c663bc17cfad00e1d789c3cb35f4a31c9942753c401c481c69b6708f0aea52d5"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B001.pt",
+      "checkpoint_sha256": "48f8ee111a3cdd4fd0c2d4551b628f14303d9b1aa0725ba65762c1813646d2a5"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B002_B.json": {
+      "sha256": "4ce11572ed4d06d224dfd8d7429026f6983d348aec2f79f7b57a3123f52ea479",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B002_B.npz": "6cf669437cc466ebc71741f602ee0a9c983383c9fe49e9330cb2728a196f47d1",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B002_B.pt": "9ed8754ce05316f7e32bb5bce610bb1e5beeebec18bbf593b0f2da17372b123a",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B002_B.requests.json": "89bdf2a899ff227fe374b8a773fd8ec49bdb6a7815a68d35bcca016d1e150803"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B002.pt",
+      "checkpoint_sha256": "7c4cc4313c00320e278fb612b828c49c93cea3168acf6c054a891ecc25b7f682"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B004_B.json": {
+      "sha256": "54e064d7ed94abdc72f6860d6f645b452edb4cd7888574c8d653502d7849dbc4",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B004_B.npz": "f5e39425abf49ae79f3ccf662a265dad4ffc645293dd46e015ba4f7699205928",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B004_B.pt": "563c493f4a7bf7fba6d600a36ee6545e44eab0643090701c863ae04e69ab44dc",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B004_B.requests.json": "46a969452a643e0d2f15afcfffdf83b65a9952546d34054667c01b499b518028"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B004.pt",
+      "checkpoint_sha256": "82b9244d0addd426dc257d2dcc8f5f58a87a18b7bdcbbff8309c898b41193919"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_B.json": {
+      "sha256": "5093dbdf9352e32f10c1167e29a55b95b294e812f5690936445a7f0a4fbf8870",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_B.npz": "413208985ec0ca0f266f52c0b9ed8f82be180fb73cff3e25c1a0549f03db6437",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_B.pt": "1bbe7c0921ef849f4f9a54fbba0d031063fd78952ff33fab5b3864f30d31ef58",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_B.requests.json": "9dafe531106d549da72a5c189acea3d493b7a7bf1ccd9b46c135bff4699d4654"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B008.pt",
+      "checkpoint_sha256": "f66888b1b89fcb2d75d097599a083b086f5f7aaee7b064a569bf67600ee1b853"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_mixed.json": {
+      "sha256": "3ff3a9054285d7dad33f6af4b5e93bf6c47634a9f104403304a13982be4257b7",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_mixed.npz": "d7b6e9665672358827e989671afa786a636b9e36b60715c80ea9cb827088450f",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_mixed.pt": "63f7ac024be913b2478827f3ec18d75b20439773a5bc8c02e870575a83f5f967",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_mixed.requests.json": "e0f6230adc80c78ae93000181124750cd2c5fbe59ae8f7453db6198915092cf5"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B008.pt",
+      "checkpoint_sha256": "f66888b1b89fcb2d75d097599a083b086f5f7aaee7b064a569bf67600ee1b853"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_history.json": {
+      "sha256": "dfbd7312fbf57648b65b048fd196d47fb43b7596281e43817b5828ffc4688894",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_history.npz": "2750ede3b9104ca67db237ac34432c6a7cc31692a12a9f39ce7409b98afbd295",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_history.pt": "d7f84f99cb3b1a6a3a707a30f09f55e83e6f69f9a4f75848bbd358a7947dedee",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_000\\last_B008_history.requests.json": "de9ae62dc1bee559508c264a701cd36200c6910c77af3516d1bc5ad818af1a83"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_000\\last\\B008.pt",
+      "checkpoint_sha256": "f66888b1b89fcb2d75d097599a083b086f5f7aaee7b064a569bf67600ee1b853"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B000_B.json": {
+      "sha256": "49b731b442c6e5111acdec21fc960d77f0606db48ce60f70381ea02d5623a7fe",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_B.npz": "bd11dce07a1abedac80bfd5e8154a3c655e2036803f99adc82d44ffe4e88dd7d",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_B.pt": "403bf4b9583282a1cb579cf3c4336783950944a3ce8b90b0001048155bbb7af0",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_B.requests.json": "0dc5fdac452a31f1982abad56133f2899ab3ea2ac42d6a61ed68901d832ca453"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B000.pt",
+      "checkpoint_sha256": "f07c74d4f286fcbd3c56258350e4f1e73b652ad64a2d42e3100c0278bacde978"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B000_mixed.json": {
+      "sha256": "35ccaa4ac3cc9e975c320f1818e634cf725ec01943c97034304e17d74668c274",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_mixed.npz": "17644fd200ea86a8cf13dd6bfc4fdcac589c8bd04d03df0e9ba66918ed68b81c",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_mixed.pt": "33754b5a29aac54e1da2dac429c4b46c40be46ba94239551d3297317a8dc0517",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_mixed.requests.json": "c8c7d465a0fcbfbaaa2690828b4826debf81e6a1977a70918f5c1f2f877ff815"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B000.pt",
+      "checkpoint_sha256": "f07c74d4f286fcbd3c56258350e4f1e73b652ad64a2d42e3100c0278bacde978"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B000_history.json": {
+      "sha256": "3ebee0a3abec0b8170027ef82aee5692f63eecf325e68c231a43b149051f9cd4",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_history.npz": "f964982aff14a8905e648241a9ca58fadcfac0ce32065e1ef836f19e0b0c49be",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_history.pt": "acb995de7904a6aec1e2a539e5060ca33aaf0b95ab99afad27037b4a792e1e59",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_history.requests.json": "aa7c5e89a06d42940386e3c04a35e13a46ad501bccb112cbeb4350cb54072e8b"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B000.pt",
+      "checkpoint_sha256": "f07c74d4f286fcbd3c56258350e4f1e73b652ad64a2d42e3100c0278bacde978"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_Bfirst002_B.json": {
+      "sha256": "bd9601bd56e19233be374f6456d000c11359e11cab0748d154cb5e4445a08d92",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_Bfirst002_B.npz": "3e707bf44b1838a9e8cf458ccb0b3ef73b077c251e854f5e328991909787b764",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_Bfirst002_B.pt": "3f29f02706f6b9a93496a9d9aeec5e5154772497a9ec8cf68dd3b53f60c7385e",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_Bfirst002_B.requests.json": "a11527e5b01c0602336fd5434557a96055accc355e10548afd75a2819d52a5b9"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\Bfirst002.pt",
+      "checkpoint_sha256": "f026a5301d496ad0839b8b93ecdadfbb3a4f7173cd5a552d7e248c96333e132f"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_Bfirst008_B.json": {
+      "sha256": "5c44b5901e201883e8bc7ec4d9bee14ccad6c11e42ca916d12f296c58ab856ed",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_Bfirst008_B.npz": "1cc522cb81aba925c2033b4a31483199c49520180bf4f1279e5f49eec99c1c39",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_Bfirst008_B.pt": "8cc95c20a34ceec3bc33bcf86061c5283bb21f6d74de546c784f97340c176e20",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_Bfirst008_B.requests.json": "90a5eea9529ddba4c28b9da3428fd48e5757ce3aae8da2dcb0fabe147fb795ef"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\Bfirst008.pt",
+      "checkpoint_sha256": "972389f2fbddea0cdc0a6c380b7c13f958852929a293cce216fefed7e7621143"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B001_B.json": {
+      "sha256": "f344b03948ce02c4e4ca16bfbcbcaa5599e5d29477b450f872bcd57b72a3ef05",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B001_B.npz": "c4135d5794f2f8a237efbca10306edb58633e6156db4e482bd1cfc86fe90328b",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B001_B.pt": "5172af84d01fc1ab48df9aa13034043c03460bec873a0a9effc8cdbd7303b645",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B001_B.requests.json": "0b54f61e066042843a07af8b932890dc505c95de5affee2706d8fd9137be9789"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B001.pt",
+      "checkpoint_sha256": "03af6506987890f40f2d898c22da02adbe3147a7ba597eb7fad4d9c8ac7e1491"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B001_mixed.json": {
+      "sha256": "3cfc52b52de12ebec9e3bfed5aa690434eb70fb74efd748a9937da2b27da316d",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B001_mixed.npz": "3a92dcf609f5bb852f7749cc30b29bc6ac2b0b9163629e0d2b115052e3607609",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B001_mixed.pt": "766c5360ac5589cd6720531a02593bb167a2c3247dd1d976c0c6edfcb751f246",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B001_mixed.requests.json": "1bbba6daccf0cbb2e86ff1d25d0b499f6718db4628c7c83a0d1232649321db55"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B001.pt",
+      "checkpoint_sha256": "03af6506987890f40f2d898c22da02adbe3147a7ba597eb7fad4d9c8ac7e1491"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B002_B.json": {
+      "sha256": "fa2ff2fbac79e77f3eb7488b0526714f574ffcf0f32d053f7f1973245ef11c1e",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B002_B.npz": "27ee9c77d766a2da2391de5957c42c01b13dd48189e5021e727098f3bf04b4bb",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B002_B.pt": "e2b2fd3b9c596fb309415def1c002d555102e043762739e3f8e3001e0e42df9d",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B002_B.requests.json": "a4892a10d6b0f9917368aa468e4cbb2b28ebd515dbcfee32307566a3d512459d"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B002.pt",
+      "checkpoint_sha256": "7b31b4f6e8d6974fad389faf00f0962b96dad938a57cc9d1ef5f0eaec07b42af"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B002_mixed.json": {
+      "sha256": "65a30bdb17c1a43c9185e08d715298d64edb07585808c6c8beddc0504763f97d",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B002_mixed.npz": "7e605c90048df283604aeb59e7ecad3b2f4808829389e66cfd227b03f0733111",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B002_mixed.pt": "13a88de2b37bd98a5788d9a9dd943da1ad747f6941ef366b6d36e80505bb077b",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B002_mixed.requests.json": "c3ed2ce0aa4a55059c89350bbc2d24786f1f2fc155e920780b5eb9cc07641fe7"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B002.pt",
+      "checkpoint_sha256": "7b31b4f6e8d6974fad389faf00f0962b96dad938a57cc9d1ef5f0eaec07b42af"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B004_B.json": {
+      "sha256": "f00e6408eaa011ac980ab5aa7967902b621c8a10e1ec2ce4b776da02f5c66b4b",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B004_B.npz": "b751ae69c585ef29c2d43e1d97e5ea32dc8c3848b79bcb0cf400fb553553c175",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B004_B.pt": "0f094c16d32027b271fafd3415ecfde19ca55ff9a7f655f9c9814a4740e452e0",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B004_B.requests.json": "1d183fbc200f6136bb41a65f4e51f242f875641fda685a06aca8d61c4435d6e2"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B004.pt",
+      "checkpoint_sha256": "ce88109e1e0e4d83763e1cd9a6836df6b1c96265369b5df8c5b9da0ec64b3df5"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B004_mixed.json": {
+      "sha256": "03ecdda0fd303c733f5c1b87a22c4ad5c6290c198f07206f6cf7daa4f890edaf",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B004_mixed.npz": "5c7f0904ebd61d99a9d6b44f606fe8228b541758f07865ac4a993d5310eb063f",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B004_mixed.pt": "0824ea70a545e1132545ad27f1dc1d567936f61535836724646eeec915e249e6",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_001\\no_review_B004_mixed.requests.json": "60f6f69036c9e85dc50ff4b4d8fbb0b6db89f488cc7cabe30c627bc99d310b1e"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B004.pt",
+      "checkpoint_sha256": "ce88109e1e0e4d83763e1cd9a6836df6b1c96265369b5df8c5b9da0ec64b3df5"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B008_B.json": {
+      "sha256": "f9e717353055bbac22764b3f0713aa82ac02f44d1c3118304c323cec3f544bea",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_B.npz": "ad65567460533331b0574f653ae50f7dd77b8cbe567d66460461e903a8d23dba",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_B.pt": "cb079e42831a7b3bfad1d165e56cd018851d42b2c17094a6be4780d025e22dc8",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_B.requests.json": "271eb2914125027bd994eba58c1f8c08b4dd1fbfc3a610af833c2cbbbfcb3167"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B008.pt",
+      "checkpoint_sha256": "bb6872ad2c159cd9054da85f6e020173bad01ba0debaa2a2392ad8d1ff98518e"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B008_mixed.json": {
+      "sha256": "c9c13e8af38c5d8c55d91a2fe1e875d6e84c4f7104fd2ac4084944f2f59c976d",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_mixed.npz": "4de58d5c406c8fbdaf5b2decdd0fb68d52e6c391075808bd6711d6189b4e0b7b",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_mixed.pt": "b61428bf6acd40af5301960bc043d8aedb5bcfbc13b9711b1bd46d1d5a21e6da",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_mixed.requests.json": "5df41a5748d367941b12199a6946226965d0400174a76494968bb383f431a9ab"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B008.pt",
+      "checkpoint_sha256": "bb6872ad2c159cd9054da85f6e020173bad01ba0debaa2a2392ad8d1ff98518e"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_001\\no_review_B008_history.json": {
+      "sha256": "4cfcde662d3ee7699062111afd62a946a65f9f505c8987debb41eb65ddfe752a",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_history.npz": "84947d9d675387a66109a5143d66e52c0e7dd8d2abf43634ddb8891089da33b5",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_history.pt": "4bc32e60da13748d311365f49df0a8e2da75fa44b9938b9d3393896159cf4555",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B008_history.requests.json": "6297ed2e54a2e6240767d588ec11023ea88adfd3ccf57bd222403570c5245d2e"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B008.pt",
+      "checkpoint_sha256": "bb6872ad2c159cd9054da85f6e020173bad01ba0debaa2a2392ad8d1ff98518e"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B000_B.json": {
+      "sha256": "063e49da8f92e4a3098af7929c0389c950d428d4af93e896c0d7b9ce8a3749ba",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_B.npz": "bd11dce07a1abedac80bfd5e8154a3c655e2036803f99adc82d44ffe4e88dd7d",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_B.pt": "403bf4b9583282a1cb579cf3c4336783950944a3ce8b90b0001048155bbb7af0",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_001\\related_B000_B.requests.json": "0dc5fdac452a31f1982abad56133f2899ab3ea2ac42d6a61ed68901d832ca453"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B000.pt",
+      "checkpoint_sha256": "1dfb63c39295d22e4cd41dca3f0cfad56bfa3f15da118a8e0071d92e2113d586"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B001_B.json": {
+      "sha256": "b15b2c3973f277502fca7bce4d38201ece336f9ba7632200150d2cb43446d598",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B001_B.npz": "e08a3ad8358a652c346ba698ff618d9518f5a68a055b9525b2a42edc67c086e9",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B001_B.pt": "346c6883029e63dc395b145fead2a45a370c4b02d7571fd84bf5e1813eb1605a",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B001_B.requests.json": "a2e93edfe133c51290bb568d790fd836ed7b27b6ac09999566696ce9cac51b14"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B001.pt",
+      "checkpoint_sha256": "69578834bc8e55ae13d4d06a934e6fd46ba453a5c00c836fa9db99cd897237c9"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B002_B.json": {
+      "sha256": "d894ebd0782020f8dab8ea24bbfe31cbbf02388262b076d1d658f0e635975d99",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B002_B.npz": "e63c2568117cbd3c9a851c9593abb3582c80cf827a978a5329b0aed21138fb9f",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B002_B.pt": "83537df53ec68f2f30d6f00805099577bbf18fb37a161ea7effded029c1f8610",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B002_B.requests.json": "7d48cc4ceafb24f2a153c97131f79931251237dc31641a01ff996268bf7ee37f"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B002.pt",
+      "checkpoint_sha256": "197be200841faf9d8c2070c36e9818a18200c3243fb551c48830bd4fb8149299"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B004_B.json": {
+      "sha256": "ef0d46b2f31ff0613439aa1834f8a49b883e75ea8c77f2636276f0464bef9bb1",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B004_B.npz": "53da9073b6261e7e579c155b92c0e97bd64c6feba512cc34f1dba108103b8d56",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B004_B.pt": "2187e889e2cd5a765f89556df468902e315934226a512d9843ab1378f6ba0ac3",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B004_B.requests.json": "8c9badbe09c6f86ff3bf98e59688eec6ceb2960220daa6f97098364301f7948c"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B004.pt",
+      "checkpoint_sha256": "17c5eafb55efc1c56cacdbf21b70a1b5b227876493791cdbb94a0cbc6567bba8"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_B.json": {
+      "sha256": "873a71b53bfef4460e3bbcdbf258f2921390b487a844fc6c047d6a02eb657605",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_B.npz": "1045e1354812ae691f29c7654a5e26463440a7d00c1eef5efffe70ab73207f5d",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_B.pt": "79ae98e9bd8723e5c81ed2f308d345b10ff9dbd42134c35750b0129d095432d3",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_B.requests.json": "2fbfa80d4b07fbc80e544da96a89fb49bb1296365039997de9781f66ba03458d"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B008.pt",
+      "checkpoint_sha256": "9b784531e08ccb018b15c834469ba75608cb671d967d3858e09e3d77a47ebfbc"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_mixed.json": {
+      "sha256": "5bb3750ca27f75470c4729e3986657b472ba2e09eb40cfc17c2cf725d3f316cd",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_mixed.npz": "316d7d17a466520dcf20a31d5b363ea952b595b54e3a2429cc4d3427bbe9f8fa",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_mixed.pt": "226354bb3ab363f27514d4e0afbec8955857583662a959b742762d8e99f17e6d",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_mixed.requests.json": "9a3ddc323d4ef468450775b30ba31daee2646ee9b95b32c5f91ba659467e129d"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B008.pt",
+      "checkpoint_sha256": "9b784531e08ccb018b15c834469ba75608cb671d967d3858e09e3d77a47ebfbc"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_history.json": {
+      "sha256": "c5e2a931727f19c0923669085d7d6d3c5ab0e801c941691f50993a8368ecbaaa",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_history.npz": "76f8260372f4b77b9f4ff95eb60610a4be56b431f3cda710393a852878913c59",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_history.pt": "ed017759849a79d832e2773601be39797593637bd793fe980d7d5402e165e1fb",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_001\\last_B008_history.requests.json": "3377377fc881fa0d8346ae974fd2fc61c791e3ecccc7dc18c719f1d3cf5b9123"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_001\\last\\B008.pt",
+      "checkpoint_sha256": "9b784531e08ccb018b15c834469ba75608cb671d967d3858e09e3d77a47ebfbc"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B000_B.json": {
+      "sha256": "9000fe98fe683bc8579872d36da0fb450b0d4f592ed048f357f282d1ea26ae0c",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_B.npz": "6f46f7d23f649eb59b95591eaed6a8feae104a192e0749b05f6723c5f0e6b239",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_B.pt": "e786aea917881d80c6be02f3e463300234b6233b275b5928aa22548203dcb2f5",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_B.requests.json": "11fa785c502c24154c60a399223cfe9f1751017798573ca5cff8219f35520c21"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B000.pt",
+      "checkpoint_sha256": "d881a360621cf63dcb502eda36a11094b268ca0e6eda8fa9af8de2531897158a"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B000_mixed.json": {
+      "sha256": "b30074d865266b7a214c5d5f56bf1e89b368f608911d65e849fcf95a2524e744",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_mixed.npz": "68ed49375a70c41faac94f2c89c0686ee0dd19d8682da349f37a5df1eb36f785",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_mixed.pt": "52d37458e1e1f403a5b87630d01747c064928f813eb754aade510a17b5119036",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_mixed.requests.json": "5fe4c2dbbc73035edd1419447a3bc7c6025328032577bb44803945ad3fa50fdf"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B000.pt",
+      "checkpoint_sha256": "d881a360621cf63dcb502eda36a11094b268ca0e6eda8fa9af8de2531897158a"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B000_history.json": {
+      "sha256": "3398f5ac3d212d4f6e633236a101ab4580cb9367986fdecc3ddc95658da6c12f",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_history.npz": "32aa79d3d0b45bd7a0d3645070acb23825c8b9879564e3a36e542686e9aa337d",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_history.pt": "bcaf656ee0c165e2c750d88793776b383f4c69a96a95eec4203ac323c514e366",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_history.requests.json": "bb9f1acf1d7dd694a4a546ae0b63d12d20d5921cd2e03eb08dc6d856cc0e5efa"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B000.pt",
+      "checkpoint_sha256": "d881a360621cf63dcb502eda36a11094b268ca0e6eda8fa9af8de2531897158a"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_Bfirst002_B.json": {
+      "sha256": "8add8c7567015adea2e2f982634834c9a096c818e8ca4addf07278513cdd9d95",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_Bfirst002_B.npz": "b874cde38df6c280ca38627a2a45806911fc5b0a03c99e2900ab042e70455233",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_Bfirst002_B.pt": "80912251c75d5f80c1b50adbc2871fd2badc919eb3fc0947bf7b579af43657a2",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_Bfirst002_B.requests.json": "f610a420ee5b23b5f7403ffcf535d5a4318c1e8583dab1aa56f8121a50aa75f3"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\Bfirst002.pt",
+      "checkpoint_sha256": "c240dfca60d12fc841b87fc141ec463637b8069ece9f73892118bda8ac9806a6"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_Bfirst008_B.json": {
+      "sha256": "586e1bdc90aae313562c96512d59c6d08322f0935490dea913050edda4f32571",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_Bfirst008_B.npz": "e87e5c900b1c6109b1459ac0143202dd4eabf360559f03f9846dbfe632d11cd6",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_Bfirst008_B.pt": "ad8a2129c7207cc41895726e518d706e5d6cee4d09a291b1b9ec03544cb0afbf",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_Bfirst008_B.requests.json": "7d60739b4553a013d2f29bc33d5ac3a3672f7ec172515694443bac40fc3f62b5"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\Bfirst008.pt",
+      "checkpoint_sha256": "feb2af8da82415364257404fc7dcc3a89cbd824597aca213fa9e74bf957545d7"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B001_B.json": {
+      "sha256": "19d9557b5eb7e72cf127e04c226426ddfdd0080a4996ac1657d5e590096af551",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B001_B.npz": "68547f5b2e7dea59f8e49a643583a410bcea4456ae06a83aa7ba694c2df79c90",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B001_B.pt": "e0668821b817f51e1a0e61e29e1681cf316a791ce31ce4efbea46a38424cf5c1",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B001_B.requests.json": "e48a5a3a54c4dd2d350a25e29b0e993676ab6aca1a4b9e069c6ab47a616e9f9d"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B001.pt",
+      "checkpoint_sha256": "92f4ebde1e8f38e926299f3e1c4eddf569915dc28022ad591118fdbb144506ef"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B001_mixed.json": {
+      "sha256": "dd9c4fca7cd57370420fcbbf945b6876dff3f26d20e47a244f4813881519a27a",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B001_mixed.npz": "08eaeb300cfdf9767d9fea2f12c4513d8395f717ba7f73d9ca27722fd5786224",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B001_mixed.pt": "9fc35f08a7442c121fb58ef3cc6c31740c2e231d10a96f032fb4e5f3d3130b58",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B001_mixed.requests.json": "f65038e05b4bdbdd9a0a232d20a150d3c212aaad6072aadb44eeeab567f9ecd8"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B001.pt",
+      "checkpoint_sha256": "92f4ebde1e8f38e926299f3e1c4eddf569915dc28022ad591118fdbb144506ef"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B002_B.json": {
+      "sha256": "51977dff103bed1a207c2668002f993a54f968afae9a5146af74fb52668abe73",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B002_B.npz": "95cc28c05949e6732c9240a7abae6e53b8cf097c0c7030fcb3f9c5a816f05833",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B002_B.pt": "5b24142203de6f51160acbdf5a60affe3e691044e8fb6e23d30a2a6a2c723364",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B002_B.requests.json": "db327667998ac68bb41d59877e12efb4c71eabbb88bd9f9d9aafac4756fa8112"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B002.pt",
+      "checkpoint_sha256": "5779e262273a232ffa2d52e830d573be19cb2501565c2d417fa2d9368ccb7f22"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B002_mixed.json": {
+      "sha256": "80519045157dbbc9ef40c77c52e96f62df19d7848db14aac6f17ff7692530758",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B002_mixed.npz": "04fe346870462997cc0a7847cf4902ea65b9d668c96f89684d3674bd27be9489",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B002_mixed.pt": "39b3a699d2d938dd1cb9d485b740975731a677bbeb395155eac734c7648d0446",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B002_mixed.requests.json": "46bb7ff27ed1585430cbdbc64a90c92e9a5fc9810eb155452909091769586bdd"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B002.pt",
+      "checkpoint_sha256": "5779e262273a232ffa2d52e830d573be19cb2501565c2d417fa2d9368ccb7f22"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B004_B.json": {
+      "sha256": "6b466bfbb4f1062251dafed43d40db6f72ad31776793254a7e096e5ab687383d",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B004_B.npz": "abd13a0703d4cdf157fe45794db88bbc0acc4a7719a2a31dc9f7a0a05965b113",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B004_B.pt": "c4e5864ca8c14c9de1a1c672801540a06fec195a795717275bbd9c433f8021e9",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B004_B.requests.json": "41d0cfcca19be9978da9e79772139275de404e7aba9a400006f9eb6d3c02b0b8"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B004.pt",
+      "checkpoint_sha256": "986961bcda59140ae8b1645fcee2117fce96ec78db1fe82bdf983377e972bc0c"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B004_mixed.json": {
+      "sha256": "04be058623089987b73c1f4863d3d1a2415c0dd3c1aece667f3b1fdcfe7029bf",
+      "artifacts": {
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B004_mixed.npz": "dbb86525180832f4c25758e011941e857d35a9a1818f49d4fdda9d3116b219c9",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B004_mixed.pt": "f6d8b9a5ca5148e5c455957c96d2b838eeb1c52727400519250cd7d51b7d4021",
+        "F:\\agi\\data\\review-selection\\eval-v1\\seed_002\\no_review_B004_mixed.requests.json": "dc7088a2c6855c99d7ead8e4c6fed9bd1e74a32dcf49e2d026e7569724fb0d7c"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B004.pt",
+      "checkpoint_sha256": "986961bcda59140ae8b1645fcee2117fce96ec78db1fe82bdf983377e972bc0c"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B008_B.json": {
+      "sha256": "67fa0390ec48d0c5ff2f3477bdf1f25bed58246e038ffbc4fb5d21d415b8004e",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_B.npz": "efdb433661c745a7c13292f401b112a157c73561797f34c9afc37e9d1ba9e3a3",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_B.pt": "d353a1696cfcd91a3fa17af3b868d2462bd65e62e026462eb6936f6578fdca89",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_B.requests.json": "aa6956ab13e3d4e67d449e8ec405b03b2038195e3f529d8a28b0e17362020f0c"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B008.pt",
+      "checkpoint_sha256": "a2cff3ce77ecaa21e5384df64049ba06a2267b1192022bd21808d8524fed32aa"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B008_mixed.json": {
+      "sha256": "dde8df6dd3a7765a1ea9b80f4cf7e9e78d91c54288f9c05944032936254d6f06",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_mixed.npz": "f4d52f113577a8be443e5c8777978332c1951e36cf97a24075ec7321188a1fe3",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_mixed.pt": "1def097d4d2f7c0e7ea61504bcc7e1773ce8c555bbf6da69e12b243468b942b5",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_mixed.requests.json": "8023a7475169c8ca43c427a6495fa74be68341ab75e2836ca9f301980c8048a1"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B008.pt",
+      "checkpoint_sha256": "a2cff3ce77ecaa21e5384df64049ba06a2267b1192022bd21808d8524fed32aa"
+    },
+    "F:\\agi\\data\\wait-position\\eval-v1\\seed_002\\no_review_B008_history.json": {
+      "sha256": "92528a0de808a05c8414850c39c69f0e6cecf47b0649ff7ee82848ac9b01359e",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_history.npz": "5a2044b29276f1662f340b4402e9358ab588c27250cded09a71e453780ec6712",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_history.pt": "db972643d8e22793a388f3e3ca498d0538192967da61ee2646fa4140ba60295c",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B008_history.requests.json": "d2889cb45ead5572479ecdc8b910a64e2a797077b8d98840e8ed6b37114c3c40"
+      },
+      "checkpoint_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B008.pt",
+      "checkpoint_sha256": "a2cff3ce77ecaa21e5384df64049ba06a2267b1192022bd21808d8524fed32aa"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B000_B.json": {
+      "sha256": "2acba8736809bdc9fa9dc6f0d57c96872c414782d7194d1327f1b4b97c681886",
+      "artifacts": {
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_B.npz": "6f46f7d23f649eb59b95591eaed6a8feae104a192e0749b05f6723c5f0e6b239",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_B.pt": "e786aea917881d80c6be02f3e463300234b6233b275b5928aa22548203dcb2f5",
+        "F:\\agi\\data\\experience-transfer\\eval-v1\\seed_002\\related_B000_B.requests.json": "11fa785c502c24154c60a399223cfe9f1751017798573ca5cff8219f35520c21"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B000.pt",
+      "checkpoint_sha256": "1cf36beda69e16475c5f95336c2a4a039cfb3052d0b2e326c19f9c053198eafb"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B001_B.json": {
+      "sha256": "675988ff6f94d8489b272d3d222aef207e6b9cc32dc6e0fe3ff62b7f9a9cc59e",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B001_B.npz": "6e08b01b4c16d462ff3b3be760bc2fc2ccd1b6a1ed9a4693a7ce664aab84d451",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B001_B.pt": "4b0f652026ae29c50a611cbd29ee893e21edc2b85bc8df6eb1ac7db17b6b8114",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B001_B.requests.json": "47dbef19ab792f5351b52ae3be068bdb7f20a5693d2d8500cd24ca01a4df30cc"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B001.pt",
+      "checkpoint_sha256": "bdfe7f782a7b3841012f79803057c1264578a0382e7a00d32e053bd258d6b67d"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B002_B.json": {
+      "sha256": "e51597981680102f225f703685a83f48b6caf38661959416a1bde7c89eee6d23",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B002_B.npz": "255c0c8c6b2c0a90cdcdb8a9a3ff0e8b0d16f2df92fd2d8e6b45061eb47ab489",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B002_B.pt": "198607a9df7cf8c0eb64ebc7716fedc80d91e6d81f6c850473a7c74c83850040",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B002_B.requests.json": "046acc40945fff1bafd1ba8ede39d797239de6112d42a6ac9eef2088c2a3e15a"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B002.pt",
+      "checkpoint_sha256": "e9bfd8d34598c1b4fce31dbf84dac38ae0b415bbfa678a421de6c5150b2c41d4"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B004_B.json": {
+      "sha256": "3474e7e27fb6e21e7e7292406458d9a0790cf9dd62709d264d3c071b35ae3aa9",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B004_B.npz": "0cba896ef4315ebcf30241c0560c407fb1e898429e007c61c8e916f54f3fe1e3",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B004_B.pt": "bbde0e92f1333022441b4c59a11788a2e572ba85576b9d65c0bfe6b467ea86fb",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B004_B.requests.json": "f72c8757ba12c77d0eef6d3ca823197e7e3387a7e0b61924fb9d3e7d534fad51"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B004.pt",
+      "checkpoint_sha256": "362c3d4ec0a0e950474bd5c69d80986a3bf62c72560468aff41a018d912e10aa"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_B.json": {
+      "sha256": "f1ba9c239f7a14f71f66d11ba926e3b05ef37b3dab2232ad561596df46181c96",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_B.npz": "148466a73758ed7b05a0f915772a5d33e04a0910705ad8174cc3ef2c3014205c",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_B.pt": "1edfb03ca5a623777fcca761e1c4c75d0528f81aec5e82b4381288e580759c12",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_B.requests.json": "006bf85f11e61ec4535e9bbbc8c89db0aaf37f812e1833363e2a3f6f3747f360"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B008.pt",
+      "checkpoint_sha256": "34783fbdefbca345c525708e8def3e70d40bff6fb38cf88dacd4232b469f6170"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_mixed.json": {
+      "sha256": "55a93a90ab6cbff6ff835aa547c96a1d3ea02a0bbda992da4794490f815bef9d",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_mixed.npz": "b6d1a937f86605bb46b4feaf2f2bbe3098cecad3ae2b798c07b74b5072496696",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_mixed.pt": "dedb179b53716af392e5d1a1b2984eac8ccf2df3bd16b91dba76a7d206ee4aef",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_mixed.requests.json": "2b734c0408840211b01e713accd7888187c3fa00f8894b994424b38379da5585"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B008.pt",
+      "checkpoint_sha256": "34783fbdefbca345c525708e8def3e70d40bff6fb38cf88dacd4232b469f6170"
+    },
+    "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_history.json": {
+      "sha256": "d461587c45de1336838b06b630834b94f3868b96759f10d134428c70b6767cf9",
+      "artifacts": {
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_history.npz": "e32e9ffe0183c457ea5dd15c81d918951299c7d3a2f9f35ac721a956b5296c5c",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_history.pt": "195ee9e29a63d36a174fc9a42ea7d0c0d93bb90c9eb8620607e54ef4d2b5241b",
+        "F:\\agi\\data\\wait-position\\eval-last-v1\\seed_002\\last_B008_history.requests.json": "3082ad18614e05e4c6d311913ff031a9576ab51e6f559bcefc4bf7bab4644fe0"
+      },
+      "checkpoint_path": "F:\\agi\\data\\wait-position\\last-v1\\seed_002\\last\\B008.pt",
+      "checkpoint_sha256": "34783fbdefbca345c525708e8def3e70d40bff6fb38cf88dacd4232b469f6170"
+    }
+  },
+  "tests": "2048-tick actual long_both B-only at B0/first2/first8/B1/B2/B4/B8; random per-NEW per-job A/B interleaving at B0/1/2/4/8; auxiliary A-only at B0/B8. Native eleven-action argmax, no learning, gating, oracle or hidden reset within each fork. Common original1024 WAIT warmup.",
+  "primary": "Mixed old-A conflict cohort and new-B conflict cohort separately, with all matured denominators, each conflict raw and each seed. Frozen heldout identities, external events and scheduler must match original references.",
+  "timing_early": "Actual early FINISH requires original world active & started & now < ready_time-eps, irrespective of action version/content. Earliest active rejection is stored with all overlapping flags; primary exclusive category puts this actual-early flag first. Thus wrong-version early FINISH cannot disappear into wrong-version bins. Report both all matured and completed-but-nonstrict cohorts, early lead=ready_time-now in seconds.",
+  "timing_legal": "Original pre-action world active & started & ready_time-eps <= now <= deadline+eps. First FINISH inside this actual window is classified correct version/content, other-context content, or other error. Retain no-BEGIN, no-window, and window-but-no-FINISH separately.",
+  "timing_denominator": "All eligible postfork requests in evaluation regime that mature within rollout; inherited and censored excluded. Diagnose both A and B and each conflicting raw separately at every mixed checkpoint.",
+  "distinction": "Not-started, started-without-legal-window and legal-window-without-FINISH remain distinct. Time error is actual active+started before-ready FINISH, independent of version/content. Legal first-FINISH correctness is separately assessed. Idle errors use actual enabled inactive opportunities.",
+  "calibration": "midpoint must match historical last model/Adam/hidden/world bit-for-bit at all seven stages. Reuse raw evidence only on exact model-hash equality, then retain source and artifact hashes. Existing no_review42 and last21 result rows are immutable bound references.",
+  "analysis": "Per-seed integer counts and equal-seed mean/sample SD; B learning gains relative to B0 and early first2/first8 snapshots. No pooled A/B rate, no causal rate or general meta-learning inference.",
+  "write_policy": "Only data/finish-position/eval-v1 may be written. Imported original evaluator write functions are disabled during rollout and its output path points to an unused experiment-local path. Source files and historical frozen directories remain unchanged.",
+  "protocol_hash": "6ee002de06e9e25593e8cd147bcd600acd7df2dfba5661f8a893f4412ae6540a"
+}

@@ -1,0 +1,122 @@
+{
+  "started_utc": "2026-11-11T10:57:55.828881+00:00",
+  "elapsed_seconds": 48.26980029999686,
+  "torch": "2.11.0+cu130",
+  "device": "cpu",
+  "torch_threads": 1,
+  "archive": {
+    "path": "data\\seed-evolution\\2026-11-11-large-v1\\search\\rep_0\\shared_g00_i00",
+    "artifacts": {
+      "initial.pt": "f6cb0ce5b4440da07bf5a98c4c4d62bc6d748dcbd59e67b12bc6cb3c9b51e6ed",
+      "inner64.pt": "4ae0d266436ac7e15eb3b924fec0d9e04926c67348dc41be9ee76a2205078d4c",
+      "score.json": "7434e7cd21f3f7ee94d5aa9068fd46dc915e6caa21cde6c5028fc62240613a2e",
+      "training.json": "320a3802c3b3ff27147296d6e720cb3ffb282dd412f0aab23c89395cf8c7e2a1"
+    }
+  },
+  "checkpoint_and_log_bits_match": true,
+  "training_streams": {
+    "source_seed": 0,
+    "loaded_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "loaded_streams": 8,
+    "file_reads": 8,
+    "bytes": 62914560
+  },
+  "encoder_cache": {
+    "hits": 56,
+    "misses": 8,
+    "bypasses": 0,
+    "streams": 8,
+    "bytes": 67174400,
+    "peak_bytes": 67174400
+  },
+  "peak_rss_before_bytes": 535040000,
+  "peak_rss_after_bytes": 1318211584,
+  "earlier_eager_encoder_cache_64": {
+    "loaded_streams": 16,
+    "stream_bytes": 125829120,
+    "steps": 64,
+    "mode": "cache",
+    "started_utc": "2026-11-11T10:42:49.554025+00:00",
+    "elapsed_seconds": 77.39245979999941,
+    "updates_per_second": 0.8269539457124282,
+    "peak_rss_before_bytes": 654942208,
+    "peak_rss_after_bytes": 1369198592,
+    "cache": {
+      "hits": 56,
+      "misses": 8,
+      "bypasses": 0,
+      "streams": 8,
+      "bytes": 67174400,
+      "peak_bytes": 67174400
+    },
+    "matches_archived_cpu": true
+  },
+  "timing_scope": "The lazy measurement includes cold stream verification and loading. The earlier eager measurement preloaded streams outside the timer.",
+  "rss_scope": "Process-lifetime peak resident/working set. The two samples are from separate process launches with uncontrolled background load.",
+  "estimated_retained_stream_bytes_3_eager_sources": 377487360,
+  "latest_search_progress_utc": "2026-11-11T10:55:05.560524+00:00",
+  "three_source_cache_probe": {
+    "scope": "Data-only probe with no training. Each mode used a separate fresh process.",
+    "samples": [
+      {
+        "mode": "eager",
+        "elapsed_seconds": 0.525445999999647,
+        "peak_rss_before_bytes": 525852672,
+        "sources": [
+          {
+            "source_seed": 0,
+            "streams_loaded_for_source": 16,
+            "total_retained_stream_bytes": 125829120,
+            "peak_rss_bytes": 653889536
+          },
+          {
+            "source_seed": 1,
+            "streams_loaded_for_source": 16,
+            "total_retained_stream_bytes": 251658240,
+            "peak_rss_bytes": 780165120
+          },
+          {
+            "source_seed": 2,
+            "streams_loaded_for_source": 16,
+            "total_retained_stream_bytes": 377487360,
+            "peak_rss_bytes": 906313728
+          }
+        ]
+      },
+      {
+        "mode": "lazy",
+        "elapsed_seconds": 0.2532684999969206,
+        "peak_rss_before_bytes": 525348864,
+        "sources": [
+          {
+            "source_seed": 0,
+            "streams_loaded_for_source": 8,
+            "total_retained_stream_bytes": 62914560,
+            "peak_rss_bytes": 589959168
+          },
+          {
+            "source_seed": 1,
+            "streams_loaded_for_source": 8,
+            "total_retained_stream_bytes": 62914560,
+            "peak_rss_bytes": 598728704
+          },
+          {
+            "source_seed": 2,
+            "streams_loaded_for_source": 8,
+            "total_retained_stream_bytes": 62914560,
+            "peak_rss_bytes": 598773760
+          }
+        ]
+      }
+    ]
+  }
+}

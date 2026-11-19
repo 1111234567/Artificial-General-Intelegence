@@ -1,0 +1,142 @@
+{
+  "config": {
+    "rate": 0.025,
+    "head_rate": 0.42,
+    "context_gain": 1.75,
+    "memory_decay": 0.94,
+    "kernel_strength": 18.0,
+    "retirement_cost": 0.085,
+    "temperature": 2.2,
+    "birth_scale": 4.0,
+    "memory_prior": 0.055
+  },
+  "accuracy": {
+    "stable": {
+      "late": 0.7901041666666666
+    },
+    "reversal": {
+      "late": 0.775
+    },
+    "return": {
+      "late": 0.6015625
+    },
+    "partial": {
+      "changed": 0.7317708333333334,
+      "unchanged": 0.6881510416666666
+    }
+  },
+  "score": 0.7191569010416666,
+  "heads": [
+    [
+      8,
+      1,
+      282384961,
+      0,
+      "modules64"
+    ],
+    [
+      8,
+      0,
+      1801295816,
+      1,
+      "modules64"
+    ],
+    [
+      8,
+      0,
+      1801295816,
+      2,
+      "modules64"
+    ],
+    [
+      9,
+      0,
+      117422985,
+      0,
+      "modules64"
+    ],
+    [
+      9,
+      0,
+      117422985,
+      1,
+      "modules64"
+    ],
+    [
+      9,
+      0,
+      117422985,
+      2,
+      "modules64"
+    ],
+    [
+      10,
+      0,
+      1140598952,
+      0,
+      "modules64"
+    ],
+    [
+      10,
+      1,
+      1948984705,
+      1,
+      "modules64"
+    ],
+    [
+      10,
+      1,
+      1948984705,
+      2,
+      "modules64"
+    ],
+    [
+      11,
+      0,
+      2091100368,
+      0,
+      "modules64"
+    ],
+    [
+      11,
+      0,
+      2091100368,
+      1,
+      "modules64"
+    ],
+    [
+      11,
+      1,
+      1987270603,
+      2,
+      "modules64"
+    ]
+  ],
+  "checkpoints": [
+    {
+      "group": 8,
+      "record_sha256": "256e4eba46de9af0f1048974579f26384592463250e86207fe4880a6287b8640",
+      "weights": "group-08-1200.npz",
+      "weight_sha256": "64a72475e7e657f73e4d3628dc966c649fe4d682dce2ec8349ec63539e4e43ed"
+    },
+    {
+      "group": 9,
+      "record_sha256": "5b97cf1a68b43e9a5829f354c7d2627e0a57e50c0afa6a4a5b2fa7a56a8060b1",
+      "weights": "group-09-1200.npz",
+      "weight_sha256": "65b7b52363f5f286079fb53452d0504b5a3a71ef84ac439bc02ea6b65ed65034"
+    },
+    {
+      "group": 10,
+      "record_sha256": "82aa8cff910e70f0f17faaf7d0ce731bb9ca2bcd861e62e764e0a3cca1fee12f",
+      "weights": "group-10-1200.npz",
+      "weight_sha256": "6d90331fdd173adeebd62ab5d95bb1617e40ca33ca15acc30c3b32055a418f90"
+    },
+    {
+      "group": 11,
+      "record_sha256": "048b9452b3b44f724d8321b3dd809d9c25b103d8a6c152e5da78cdbaf61eb5b2",
+      "weights": "group-11-1200.npz",
+      "weight_sha256": "17c853036bc0aa4927fec7e025f4eb920b5219a81ecde6a639aa3189573fb223"
+    }
+  ],
+  "recipe_sha256": "1164f5dfe941c6555351da83b6260e36e5a75f17252f5577b7f4de9e630d32bb"
+}

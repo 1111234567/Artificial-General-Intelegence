@@ -1,0 +1,381 @@
+{
+  "format": "remaining-time-common-native-teacher-v1",
+  "created_utc": "2026-11-05T16:18:32.226091+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "probe",
+    "time",
+    "action",
+    "joint"
+  ],
+  "conditions": [
+    "long",
+    "longer"
+  ],
+  "warm": 512,
+  "test": 4096,
+  "batch": 32,
+  "dt": 0.25,
+  "world_configs": {
+    "0:long": {
+      "seed": 853000,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        98000,
+        98001,
+        98002,
+        98003,
+        98004,
+        98005,
+        98006,
+        98007,
+        98008,
+        98009,
+        98010,
+        98011,
+        98012,
+        98013,
+        98014,
+        98015,
+        98016,
+        98017,
+        98018,
+        98019,
+        98020,
+        98021,
+        98022,
+        98023,
+        98024,
+        98025,
+        98026,
+        98027,
+        98028,
+        98029,
+        98030,
+        98031
+      ],
+      "family_allowed": [
+        0,
+        1
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "0:longer": {
+      "seed": 853000,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        98000,
+        98001,
+        98002,
+        98003,
+        98004,
+        98005,
+        98006,
+        98007,
+        98008,
+        98009,
+        98010,
+        98011,
+        98012,
+        98013,
+        98014,
+        98015,
+        98016,
+        98017,
+        98018,
+        98019,
+        98020,
+        98021,
+        98022,
+        98023,
+        98024,
+        98025,
+        98026,
+        98027,
+        98028,
+        98029,
+        98030,
+        98031
+      ],
+      "family_allowed": [
+        0,
+        1
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        16.0,
+        32.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "1:long": {
+      "seed": 853001,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        98000,
+        98001,
+        98002,
+        98003,
+        98004,
+        98005,
+        98006,
+        98007,
+        98008,
+        98009,
+        98010,
+        98011,
+        98012,
+        98013,
+        98014,
+        98015,
+        98016,
+        98017,
+        98018,
+        98019,
+        98020,
+        98021,
+        98022,
+        98023,
+        98024,
+        98025,
+        98026,
+        98027,
+        98028,
+        98029,
+        98030,
+        98031
+      ],
+      "family_allowed": [
+        1,
+        2
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "1:longer": {
+      "seed": 853001,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        98000,
+        98001,
+        98002,
+        98003,
+        98004,
+        98005,
+        98006,
+        98007,
+        98008,
+        98009,
+        98010,
+        98011,
+        98012,
+        98013,
+        98014,
+        98015,
+        98016,
+        98017,
+        98018,
+        98019,
+        98020,
+        98021,
+        98022,
+        98023,
+        98024,
+        98025,
+        98026,
+        98027,
+        98028,
+        98029,
+        98030,
+        98031
+      ],
+      "family_allowed": [
+        1,
+        2
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        16.0,
+        32.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "2:long": {
+      "seed": 853002,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        98000,
+        98001,
+        98002,
+        98003,
+        98004,
+        98005,
+        98006,
+        98007,
+        98008,
+        98009,
+        98010,
+        98011,
+        98012,
+        98013,
+        98014,
+        98015,
+        98016,
+        98017,
+        98018,
+        98019,
+        98020,
+        98021,
+        98022,
+        98023,
+        98024,
+        98025,
+        98026,
+        98027,
+        98028,
+        98029,
+        98030,
+        98031
+      ],
+      "family_allowed": [
+        2,
+        0
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "2:longer": {
+      "seed": 853002,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        98000,
+        98001,
+        98002,
+        98003,
+        98004,
+        98005,
+        98006,
+        98007,
+        98008,
+        98009,
+        98010,
+        98011,
+        98012,
+        98013,
+        98014,
+        98015,
+        98016,
+        98017,
+        98018,
+        98019,
+        98020,
+        98021,
+        98022,
+        98023,
+        98024,
+        98025,
+        98026,
+        98027,
+        98028,
+        98029,
+        98030,
+        98031
+      ],
+      "family_allowed": [
+        2,
+        0
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        16.0,
+        32.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    }
+  },
+  "source_sha256": {
+    "experiments\\remaining_time\\common_history.py": "a86fa14790304c3471eb6e6db785bc5ac657d5ac108fa3f93cebb93f29d73195",
+    "experiments\\remaining_time\\common_history_test.py": "1d90ebe0087a0a00d98659392d61bd706dbcedf8109fae28d0bc6b450c3a9100",
+    "experiments\\remaining_time\\evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments\\remaining_time\\model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "experiments\\action_split\\evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments\\timing_boundary\\data.py": "e9e9a238b2955b498c6e3c5d4d0142927190d54ff8163101133b068f8eeb4a74",
+    "experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3"
+  },
+  "checkpoints": {
+    "data\\remaining-time\\train-v1\\seed_000\\probe\\step256.pt": "94ba0bec1e2af7055a465a208aacee0614cd6fbbef04cefb12c1cfa3fc5966f9",
+    "data\\remaining-time\\train-v1\\seed_000\\time\\step256.pt": "0b6739bd3765c7ac59f0d4b36fcbde4ce3b01318ace2b20bee8a3607449ef376",
+    "data\\remaining-time\\train-v1\\seed_000\\action\\step256.pt": "5a9add54ad94ee025d22fdd42a12006367ff167c374c552337f4a26600060ff2",
+    "data\\remaining-time\\train-v1\\seed_000\\joint\\step256.pt": "093aa8d76c30b0ef6e7e67e6000597b78479d9f7bd3f071b25cc76dd7cdb71ba",
+    "data\\remaining-time\\train-v1\\seed_001\\probe\\step256.pt": "aae0df96b11f126563a8145fd5c6b15feb014445871c508fbc075214ba5d7d52",
+    "data\\remaining-time\\train-v1\\seed_001\\time\\step256.pt": "b71d3db978344290e676c880f592fea19fde96ebebcaee89cac6c9f74a357f0a",
+    "data\\remaining-time\\train-v1\\seed_001\\action\\step256.pt": "fd80897bc39f474a4aa16876587c87148208f95c5c4ec66e83d6b6982a1e004b",
+    "data\\remaining-time\\train-v1\\seed_001\\joint\\step256.pt": "91f8d0f801856afd9927bc91fa3c60a224f88ecae4d0a2a06ad22b1b4e44fa84",
+    "data\\remaining-time\\train-v1\\seed_002\\probe\\step256.pt": "14b06cd54171b22f6a8863e3b6e6d772cdbc8d284f8fbd1701c8ccdd8a23fe57",
+    "data\\remaining-time\\train-v1\\seed_002\\time\\step256.pt": "28f9192635e94289eb2dd0baf7d3cfd3fddc07b58bd0c9bcf4a35c6bb562f71e",
+    "data\\remaining-time\\train-v1\\seed_002\\action\\step256.pt": "ed62bedf9655f5f32cd8abde40cfcbb5fee8c6c1e142f0550135f29020c95497",
+    "data\\remaining-time\\train-v1\\seed_002\\joint\\step256.pt": "2402a6da44472be02d91d4fd1e459964e36ff67f3374766a1c8e03f0812993cd"
+  },
+  "training_protocol_hash": "fecd4bdfc84fd7689f7563231de580df43aa90361cc75c78b156065c6eaf537e",
+  "training_freeze_sha256": "6ffe33dc43d761a14c7ed232bcedaae40b517332419c3252f314caa31a078e68",
+  "collection": "Six independent ContextWorld origins; exact same seed853000+seed, actors98000..98031, duration conditions and gap16..32 as autonomous eval. Every tick observe, native oracle('earliest'), archive current facts, act(actual teacher labels), archive actual receipts. No tested policy acts in these worlds.",
+  "history_freeze": "Archive all six actual histories, native receipt/request audit and initial/final world states; hash-freeze all files before first test-model replay.",
+  "inputs": "Only original public56 observation; no clock, private readiness, targets or oracle labels enter tested models.",
+  "replay": "Load all4 fixedstep256 models with original native GRU core+11-action head; .eval().requires_grad_(False), CPU float32 torch.inference_mode; native step once per archived observation; h=0 only at origin and continuous across all4608 steps. Record normalized time_head(h) and unchanged native_logits. Model actions never feed teacher worlds.",
+  "metrics": "Reuse frozen evaluate.time_statistics: physical prediction=time_prediction*16, signed target ready-now; postwarm active&started&finite ready rows only; absolute/squared/signed sums and MAE/RMSE/bias for all_valid,processing,legal,remaining>4,1<remaining<=4,0<remaining<=1,abs(remaining)<=.25,overdue<-.25. Fixed predicted-ready sign<=0 with no calibration.",
+  "boundary": "For every postwarm eligible NEW/REPLACE matured request in shared teacher report, pair consecutive last-illegal/first-legal valid rows when present; retain full matured denominator and pair counts; both signs, direction, early/missed first, 8-way conditional-content accuracy at first legal and all legal rows.",
+  "interpretation": "Diagnostic availability on common observations, not autonomous completion or deployment. Teacher summary reports only teacher request coverage. No optimizer, adaptation, threshold fitting, step064 selection or extra model sweep.",
+  "protocol_hash": "61d6fd4d37752f5af4ee1fb3508ded9439c2b84e21564110cf55060c15fc65cb"
+}

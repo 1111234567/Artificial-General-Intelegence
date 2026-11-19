@@ -1,0 +1,178 @@
+{
+  "format": "episodic-review-paired-past-teacher-bank-v1",
+  "created_utc": "2026-11-06T17:20:21.947208+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "source_sha256": {
+    "F:\\agi\\experiments\\episodic_review\\bank.py": "eae11b84a46ba0b5cbd65abeb9cbb2891725aaa237cdef09f132fbbbd69438b4",
+    "F:\\agi\\experiments\\episodic_review\\bank_test.py": "a8519ef67e6aa26510f9c8f99f9ffe51f93c77cddec7abb1fb879f927942fadd",
+    "F:\\agi\\experiments\\teacher_timing\\data.py": "ad264952c757e77732b2133c753ecffc78b55fe540a5cc6c56302e1676b1a3a6",
+    "F:\\agi\\experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "F:\\agi\\experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638"
+  },
+  "input_sha256": {
+    "0": {
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\stream.npz": "38a612b7ec6bad4ab19cd73e260e668575d411b4bd31f3e9ff3eae9e4af43891",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\stream.json": "03ea0605a17365e7d9599694e3f9e2134175fd7db9f22ef8a2d8cbec0b8b13dc",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\raw_audit.json": "07ef980493891b573841d4bf6911a4fbaa9533376105d18aee696c0200d00a16",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\protocol.json": "6fc9305cea79ba9062764b6c34d0c856c0b843ab1810016ee5dd2999b432a52b",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\audit_completion.json": "34065300f89bce7feca935cc8887cee20733e849e4a1336161746ae6d10ef90c",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\completion.json": "7c00f1c82e5a8503f56a6ea9c611089348cff5beb78d609b6ca50c2c261d2a57"
+    },
+    "1": {
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\stream.npz": "d2a59bfbb00872d26fcf1c98560340097a696f649a49c87356a2838ab15231f3",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\stream.json": "879dbee566b1ff1fd9fbf89614254e7c21b8724b4e993623ad6ebc810f91afc7",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\raw_audit.json": "5628bc2ae0b32baf7147bddd68be04625c5d2d0247d291db2f0cba62a09756ac",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\protocol.json": "6fc9305cea79ba9062764b6c34d0c856c0b843ab1810016ee5dd2999b432a52b",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\audit_completion.json": "34065300f89bce7feca935cc8887cee20733e849e4a1336161746ae6d10ef90c",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\completion.json": "7c00f1c82e5a8503f56a6ea9c611089348cff5beb78d609b6ca50c2c261d2a57"
+    },
+    "2": {
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\stream.npz": "aa3bf2b71e326a4825bb36ee9221a4ba618abb6057d10e85cca4a73efc62c659",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\stream.json": "d1f61dd1b9b74f950df9e0c630a47ff05ad17f4cb8158bbc20df0052516f8f30",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\raw_audit.json": "c8de5c63804e0149120a12397ece2e4df797b4a7c317d61173a3d69ce4596539",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\protocol.json": "6fc9305cea79ba9062764b6c34d0c856c0b843ab1810016ee5dd2999b432a52b",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\audit_completion.json": "34065300f89bce7feca935cc8887cee20733e849e4a1336161746ae6d10ef90c",
+      "F:\\agi\\data\\teacher-timing\\streams-v1\\completion.json": "7c00f1c82e5a8503f56a6ea9c611089348cff5beb78d609b6ca50c2c261d2a57"
+    }
+  },
+  "teacher": "actual executed midpoint teacher; immutable pre-withdraw archive only",
+  "source_stream": {
+    "total_ticks": 33280,
+    "warm_ticks": 512,
+    "learned_ticks": 32768,
+    "batch": 32,
+    "public_width": 56
+  },
+  "selection_seed_base": 936000,
+  "schedule_seed_base": 937000,
+  "pairs": 256,
+  "pairs_per_raw": 64,
+  "window": 128,
+  "prelude": 32,
+  "pair_key": [
+    "target_slot",
+    "raw",
+    "version",
+    "cue_kind",
+    "supervised_length",
+    "first_legal_offset"
+  ],
+  "family_specs": {
+    "0": {
+      "history_cue": 0,
+      "B_cue": 1,
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "B": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "C": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "conflict_raw": [
+        1,
+        3
+      ],
+      "shared_raw": [
+        0,
+        2
+      ]
+    },
+    "1": {
+      "history_cue": 1,
+      "B_cue": 2,
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "B": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "C": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "conflict_raw": [
+        0,
+        2
+      ],
+      "shared_raw": [
+        1,
+        3
+      ]
+    },
+    "2": {
+      "history_cue": 2,
+      "B_cue": 0,
+      "A": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "B": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "C": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "conflict_raw": [
+        0,
+        1
+      ],
+      "shared_raw": [
+        2,
+        3
+      ]
+    }
+  },
+  "selection": "For each unique actual NEW/REPLACE identity issued at tick>=512: accepted BEGIN exactly at cue, one accepted correct native FINISH, entire128 window in old archive. Match strata, shuffle each family's candidates, pair without replacement, random-rank matched pairs and select64/raw; final shared random-rank bank order. No policy instantiated or model-prediction selection.",
+  "past_outcome": "This is an intentional library of already completed past teacher experiences. Canceled, replaced-before-completion, and other noncomplete commands are excluded. The outcome is known before continuation training; no future continuation/test events or future-eligibility flags select labels.",
+  "action_supervision": "Only target slot at all96 postcue positions32..127; all prelude and other-slot rows masked. Native accepted BEGIN, processing WAIT, correct FINISH, and actual inactive post-FINISH WAIT tail are supervised. Assert no external event or active task in tail. Native full-window labels remain archived but only action_mask contributes. WAIT=.25, BEGIN/FINISH=1 remains trainer objective.",
+  "time_supervision": "action_mask & current active & started & finite reconstructed ready; signed float32(ready-now)/16. No eligibility/outcome filter within selected episode; exactly L-1 rows. first_legal_offset pairing also matches positive/negative row signs.",
+  "replay_state": "No hidden/anchor values stored. At every replay update, reconstruct current-model h from h0 on old public observations [0:anchor_start] for each selected actor lane, detach then run selected128 window. Replay h never overwrites live h.",
+  "schedule": {
+    "updates": 32,
+    "every_nth_update": 8,
+    "batch": 32,
+    "construction": "four independently shuffled permutations of256 pair IDs, concatenated and reshaped32x32; A/B share indices",
+    "presentations_per_pair": 4
+  },
+  "native_provenance": "Pinned old raw stream, metadata, initial/final world state and already completed full native replay audit. Every selected request is separately rechecked by accepted-BEGIN command ledger and actual correct FINISH receipt.",
+  "no_hidden_arrays": true,
+  "inputs": "public56 observations only; clocks and request facts only labels/audit metadata",
+  "protocol_hash": "81d187bb46e337ca8fc59e7aa51b84e452df66eca4b22337bc9eed5b826ed54f"
+}

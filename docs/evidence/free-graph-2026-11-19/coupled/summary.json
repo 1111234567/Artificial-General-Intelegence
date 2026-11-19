@@ -1,0 +1,262 @@
+{
+  "results": {
+    "stable": {
+      "arms": {
+        "signed": {
+          "accuracy": {
+            "before": 0.7052083333333332,
+            "first20": 0.6654947916666667,
+            "last20": 0.6162760416666666
+          },
+          "timeout": 0.00030381944444444445,
+          "lifetime_edge_range": [
+            57,
+            64
+          ],
+          "grows": 4992,
+          "retires": 7667,
+          "retired_birth_arcs": 7164,
+          "retired_newborns": 503,
+          "surviving_newborns": 4489,
+          "final_edges": [
+            57,
+            57.033854166666664,
+            58
+          ],
+          "median_abs_birth_weight": 0.005334005691111088,
+          "median_abs_end_weight": 0.027941759675741196,
+          "median_total_weight_change_after_birth": 0.09978689253330231,
+          "newborns_with_followup": 4992,
+          "fraction_changed": 1.0,
+          "newborns_with_two_followups": 4991,
+          "fraction_changed_twice": 1.0,
+          "observed_loss_decline": 0.992988782051282,
+          "observed_loss_increase": 0.00020032051282051281,
+          "mean_actual_surrogate_loss_reduction": 0.04160042107105255,
+          "mean_predicted_surrogate_loss_reduction": 0.04348772391676903
+        },
+        "independent_birth_sign": {
+          "accuracy": {
+            "before": 0.702734375,
+            "first20": 0.6658854166666667,
+            "last20": 0.6217447916666666
+          },
+          "timeout": 0.00028211805555555553,
+          "lifetime_edge_range": [
+            57,
+            64
+          ],
+          "grows": 4992,
+          "retires": 7668,
+          "retired_birth_arcs": 7142,
+          "retired_newborns": 526,
+          "surviving_newborns": 4466,
+          "final_edges": [
+            57,
+            57.03125,
+            58
+          ],
+          "median_abs_birth_weight": 0.005262058228254318,
+          "median_abs_end_weight": 0.02625153958797455,
+          "median_total_weight_change_after_birth": 0.0970233902335167,
+          "newborns_with_followup": 4992,
+          "fraction_changed": 1.0,
+          "newborns_with_two_followups": 4991,
+          "fraction_changed_twice": 1.0,
+          "observed_loss_decline": 0.5128205128205128,
+          "observed_loss_increase": 0.4797676282051282,
+          "mean_actual_surrogate_loss_reduction": -0.0014575272798538208,
+          "mean_predicted_surrogate_loss_reduction": 0.0006714600021950901
+        }
+      },
+      "last20_contrast": {
+        "delta": -0.005468750000000001,
+        "simultaneous_95pct": [
+          -0.017578125,
+          0.00794270833333333
+        ],
+        "delta_by_group": [
+          -0.012499999999999997,
+          -0.020833333333333332,
+          -0.008333333333333326,
+          -0.004166666666666672,
+          0.005208333333333336,
+          -0.006249999999999999,
+          -0.009375000000000008,
+          0.012499999999999997
+        ]
+      },
+      "first_birth": {
+        "counted_lives": 384,
+        "first_trial_index_range": [
+          8,
+          9
+        ],
+        "number_of_opposite_birth_signs": 187,
+        "next_request_contact_side_changes": 2,
+        "next_request_contact_side_changes_in_opposite_sign_lives": 2,
+        "next_request_accuracy": {
+          "signed": 0.8385416666666666,
+          "independent_birth_sign": 0.84375
+        },
+        "next_request_contrast": {
+          "delta": -0.005208333333333333,
+          "simultaneous_95pct": [
+            -0.031249999999999997,
+            0.0
+          ],
+          "delta_by_group": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.041666666666666664,
+            0.0
+          ]
+        },
+        "same_receipt_mean_exact_loss_reduction": {
+          "signed": 0.022136026993393898,
+          "independent_birth_sign": -0.005749145522713661
+        }
+      }
+    },
+    "reversal": {
+      "arms": {
+        "signed": {
+          "accuracy": {
+            "before": 0.7052083333333332,
+            "first20": 0.2921875,
+            "last20": 0.3760416666666666
+          },
+          "timeout": 0.00030381944444444445,
+          "lifetime_edge_range": [
+            57,
+            64
+          ],
+          "grows": 4992,
+          "retires": 7666,
+          "retired_birth_arcs": 7163,
+          "retired_newborns": 503,
+          "surviving_newborns": 4489,
+          "final_edges": [
+            57,
+            57.036458333333336,
+            58
+          ],
+          "median_abs_birth_weight": 0.031463250517845154,
+          "median_abs_end_weight": 0.03777637332677841,
+          "median_total_weight_change_after_birth": 0.14686310291290283,
+          "newborns_with_followup": 4992,
+          "fraction_changed": 1.0,
+          "newborns_with_two_followups": 4992,
+          "fraction_changed_twice": 1.0,
+          "observed_loss_decline": 0.9961939102564102,
+          "observed_loss_increase": 0.0,
+          "mean_actual_surrogate_loss_reduction": 0.0691547766327858,
+          "mean_predicted_surrogate_loss_reduction": 0.06933530420064926
+        },
+        "independent_birth_sign": {
+          "accuracy": {
+            "before": 0.702734375,
+            "first20": 0.2932291666666667,
+            "last20": 0.372265625
+          },
+          "timeout": 0.0001953125,
+          "lifetime_edge_range": [
+            57,
+            64
+          ],
+          "grows": 4992,
+          "retires": 7672,
+          "retired_birth_arcs": 7123,
+          "retired_newborns": 549,
+          "surviving_newborns": 4443,
+          "final_edges": [
+            57,
+            57.020833333333336,
+            58
+          ],
+          "median_abs_birth_weight": 0.0320807620882988,
+          "median_abs_end_weight": 0.03780796378850937,
+          "median_total_weight_change_after_birth": 0.1523239016532898,
+          "newborns_with_followup": 4992,
+          "fraction_changed": 1.0,
+          "newborns_with_two_followups": 4991,
+          "fraction_changed_twice": 1.0,
+          "observed_loss_decline": 0.49819711538461536,
+          "observed_loss_increase": 0.4987980769230769,
+          "mean_actual_surrogate_loss_reduction": -0.0009206441463902593,
+          "mean_predicted_surrogate_loss_reduction": -0.0008631142554804683
+        }
+      },
+      "last20_contrast": {
+        "delta": 0.0037760416666666667,
+        "simultaneous_95pct": [
+          -0.004427083333333333,
+          0.01341145833333333
+        ],
+        "delta_by_group": [
+          -0.003125,
+          -0.0020833333333333346,
+          0.008333333333333331,
+          3.2526065174565133e-18,
+          0.007291666666666665,
+          0.011458333333333334,
+          0.0010416666666666677,
+          0.007291666666666663
+        ]
+      },
+      "first_birth": {
+        "counted_lives": 384,
+        "first_trial_index_range": [
+          8,
+          9
+        ],
+        "number_of_opposite_birth_signs": 187,
+        "next_request_contact_side_changes": 2,
+        "next_request_contact_side_changes_in_opposite_sign_lives": 2,
+        "next_request_accuracy": {
+          "signed": 0.8385416666666666,
+          "independent_birth_sign": 0.84375
+        },
+        "next_request_contrast": {
+          "delta": -0.005208333333333333,
+          "simultaneous_95pct": [
+            -0.031249999999999997,
+            0.0
+          ],
+          "delta_by_group": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.041666666666666664,
+            0.0
+          ]
+        },
+        "same_receipt_mean_exact_loss_reduction": {
+          "signed": 0.022136026993393898,
+          "independent_birth_sign": -0.005749145522713661
+        }
+      }
+    }
+  },
+  "config": {
+    "rate": 0.015,
+    "birth_scale": 4.0
+  },
+  "validation": {
+    "global_birth_manifest_verified": true,
+    "pre_change_histories_equal": true,
+    "structural_replay": true,
+    "paired_first_birth_matches": true
+  },
+  "scores_sha256": {
+    "stable": "f2cd6dd40a6f9f9e7e203971cb10200bec9e077f2958f7398d5c23879cb93550",
+    "reversal": "7bf5056a3656187bf7f65277dd0f23594d5312ad7f19246206cf715c540606bf"
+  }
+}

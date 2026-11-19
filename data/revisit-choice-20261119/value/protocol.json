@@ -1,0 +1,29 @@
+{
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "arms": [
+    "fixed",
+    "variable"
+  ],
+  "steps": [
+    0,
+    500,
+    2000,
+    4000
+  ],
+  "batch": 24,
+  "pairs": 64,
+  "code_hashes": {
+    "revisit_choice_graph.py": "eef973f7c6c9c002dcd247e802da86c57647e3a10125e9f99eac6e036aa6c507",
+    "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "edit_receipt_graph.py": "41b3fd80a2191958355970867cdc0f84b4a56f4f672d8f5bef4c7f57bd9a9ace",
+    "revisit_choice_value.py": "3a201e450864e6e248b314d82472a2b88df60f0f2c4337de98898c53a5723105"
+  },
+  "design": "Each life sees both marked feeders separately with opposing unit resource changes, then chooses between marks. Terminal utility is externally defined. Fixed law or independent +/- law per life. Order, test side and random draws are balanced on evaluation."
+}

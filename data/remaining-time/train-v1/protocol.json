@@ -1,0 +1,164 @@
+{
+  "format": "remaining-time-native-policy-training-v1",
+  "created_utc": "2026-11-05T16:11:20.166128+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "probe",
+    "time",
+    "action",
+    "joint"
+  ],
+  "snapshots": [
+    0,
+    64,
+    256
+  ],
+  "runtime": {
+    "executable": "F:\\agi\\.venv\\Scripts\\python.exe",
+    "torch_version": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "cudnn_version": 91900,
+    "GPU_name": "NVIDIA GeForce RTX 4060 Ti",
+    "GPU_total_memory": 8585216000,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "deterministic_algorithms": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "matmul_TF32": false,
+    "cudnn_TF32": false,
+    "dtype": "float32",
+    "AMP": false
+  },
+  "source_sha256": {
+    "F:\\agi\\experiments\\remaining_time\\train.py": "fb660574f9f38e5f03b8625b71d13042811e555af36481bbbd791b4afd869b54",
+    "F:\\agi\\experiments\\remaining_time\\train_test.py": "376600603041d09f711eebf3712ba0304801756a2276af339f75b9f1d4c13345",
+    "F:\\agi\\experiments\\remaining_time\\model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "F:\\agi\\experiments\\remaining_time\\model_test.py": "5e527b965634b1950352bcb15b94ddabf6a88ac9600b3643e09e411235679a2d",
+    "F:\\agi\\experiments\\remaining_time\\targets.py": "83f2e66044cb2bf3e623dd452d81c1c426d8521f79e7fb63a1d6d5a400403cfa",
+    "F:\\agi\\experiments\\remaining_time\\targets_test.py": "25a28fcaa319dc22beb843439921bb82729f8ebe3d9c2d5725f4569d8a2421fc",
+    "F:\\agi\\experiments\\action_split\\train.py": "5d322b8adb84e719d8151cccfb45ebc50b50b5cb6362c001a085cd165d898cdd",
+    "F:\\agi\\experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "experiments\\remaining_time\\train_audit.py": "d80c3275882ae66a830fb45c473b9a4a5c637c937fdc0844852b3234be8fbf86"
+  },
+  "input_sha256": {
+    "0": {
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.npz": "e3e7df907ad5e078baddee42f10e0910511a298653183275aa627ef10e02feb6",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.json": "bc93de46678b5fac52c34aba4a702ebceb91736efa18511594fda0852751e33b",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\world_states.pt": "c3cb65cebf7066868edeba34051701be8f81fef8fe83f36c65f2d3d578ec6ee5",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\raw_audit.json": "edcf9a7d68ab08b85c3f0d6ac708c399bc1a80e05b050d6ae8da4f247e35fcb6",
+      "F:\\agi\\data\\remaining-time\\targets-v1\\seed_000\\targets.npz": "1906f72d6a421eec8625618293be1cbcefa6aac99a96f323e7b048dd4e0877b3",
+      "F:\\agi\\data\\remaining-time\\targets-v1\\seed_000\\targets.json": "edff842825cb38d6405f47694828be7e109db465899478282e8a6aeb877a1513",
+      "F:\\agi\\data\\finish-position\\train-v1\\seed_000\\midpoint\\B008.pt": "4dd973d8d42f6c0a929e03f6f818d47aa2382d3ea9d62e75bbaddc8c7b4063ca"
+    },
+    "1": {
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.npz": "b02acb269cd541565e90be2db2e43bdc06e579d91def28aa5adf4374f4c6b379",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.json": "45a85266413a982efec54e7930ad0d10dffb3b852e875bc5c75a12da634da8a8",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\world_states.pt": "ad87db3e8e709b179bb8f035ff4a88143050f19d315dcfa5ebac07a84721279a",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\raw_audit.json": "98d0cd934cb0899e2c4ebca7ed21df73e5a125e6f44e5cea4ea42ba7e2679e0e",
+      "F:\\agi\\data\\remaining-time\\targets-v1\\seed_001\\targets.npz": "8ca99ab37ac5fb63efd5a76969169e73289c24b1928cf972f56f971c976a6d39",
+      "F:\\agi\\data\\remaining-time\\targets-v1\\seed_001\\targets.json": "f047259a78c8deff0e8fffc81d7783ee1da3c50503b251646108830ee405fef7",
+      "F:\\agi\\data\\finish-position\\train-v1\\seed_001\\midpoint\\B008.pt": "c509e3d4ed769c58aca724a08713fd8b1bbfa13d60d1b1051cef1eba8ed491b6"
+    },
+    "2": {
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.npz": "e197c3628ef63260c837bb5fd73fc9cb087e918f2b847ff0f7afc51e2d337d2d",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.json": "f07d2194782f6cd0bf48e470fd6ccc1e9de83c0a8f53008b739d4c900c851615",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\world_states.pt": "0abe3037ba7878e0dd4cf27f947839b0ee467d3fd70d4a1237337e469e456602",
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\raw_audit.json": "feae060d4be39825e99d7710a85e0f461ffeca6c52722ac366b636c4abcca87c",
+      "F:\\agi\\data\\remaining-time\\targets-v1\\seed_002\\targets.npz": "4a3ae3a9913ae26710efcd908ad9c2b45a92fa5ccaf917ff294f8dd2695e0b17",
+      "F:\\agi\\data\\remaining-time\\targets-v1\\seed_002\\targets.json": "12028fff1ddd8a20e313f704da5c56210039de9fbe15f6e32a94c601c69a92da",
+      "F:\\agi\\data\\finish-position\\train-v1\\seed_002\\midpoint\\B008.pt": "7fa455af80b35eb8a6048b49f2e0e10ba4f00a23dcf6d552f57ac9df91478ebf"
+    }
+  },
+  "raw_protocol_sha256": "687d36349861a871a11f6c678f22c7789748d53e75c34a787444b3414b4564a2",
+  "target_protocol_sha256": "313733631bf081d5bc5a14c48c6fa519af7ece42de8198cfec2283c7820d1904",
+  "target_protocol_hash": null,
+  "source_policy": "Seed-matched original midpoint B008; both native core and 11-action head copied bit-exact; original artifacts untouched",
+  "initial_model": {
+    "width": 192,
+    "input_size": 56,
+    "n_jobs": 2,
+    "n_actions": 11,
+    "total_parameters": 148632,
+    "original_total_parameters": 148246,
+    "increase": 386,
+    "time_head": "new linear192->2 weights and biases exactly zero; diagnostic only",
+    "preserved_native_function": "forward and step inherit original GRU operations; native argmax unchanged in all4 arms"
+  },
+  "optimizer": {
+    "kind": "Adam",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "reset_for_all_arms": true,
+    "single_optimizer_per_arm": true,
+    "clipping": "separate clip_grad_norm_(trainable core+native head,1) and clip_grad_norm_(time head,1); time-head gradients never rescale native-policy group"
+  },
+  "loss": {
+    "action": "native11 CE every tick and slot; WAIT weight .25, all other classes1; weighted mean divides by sum of target class weights",
+    "time": "MSE prediction vs signed (ready-now)/16 in physical time units; mean over active & started & finite ready rows; exactly zero otherwise; no eligibility or future-outcome selection",
+    "coefficients": {
+      "action": 1.0,
+      "time": 1.0
+    },
+    "time_prediction_never_controls_action": true,
+    "no_oracle_in_inputs": true
+  },
+  "arms_detail": {
+    "probe": "freeze core+native action head; train only time head by MSE",
+    "time": "train core+time head by MSE only; native action head frozen",
+    "action": "train core+native action head by native weighted CE; concurrently train time head by MSE on detached h; independent gradient clipping",
+    "joint": "train core+native action head+time head by CE+MSE"
+  },
+  "first_update": "zero time head makes auxiliary core gradient exactly zero; action/joint core can move immediately through preserved native CE",
+  "stream": {
+    "warm_ticks": 512,
+    "training_ticks": 32768,
+    "batch": 32,
+    "slots": 2,
+    "block": 128,
+    "updates": 256,
+    "replay_epochs": 0,
+    "same_raw_obs_actions_all4": true,
+    "inputs": "original public56 observation only; constant dt accepted by native API but not appended",
+    "recurrent_state": "zero only at independent stream origin; first512 warm with no loss/grad; carry numerical h across every update; detach graph at128; never recompute h after update"
+  },
+  "expected_training_rows": {
+    "0": {
+      "action_rows": 2097152,
+      "action_WAIT_rows": 2068337,
+      "action_BEGIN_rows": 17813,
+      "action_FINISH_rows": 11002,
+      "action_weight_sum": 545899.25,
+      "time_rows": 686230
+    },
+    "1": {
+      "action_rows": 2097152,
+      "action_WAIT_rows": 2068355,
+      "action_BEGIN_rows": 17826,
+      "action_FINISH_rows": 10971,
+      "action_weight_sum": 545885.75,
+      "time_rows": 686089
+    },
+    "2": {
+      "action_rows": 2097152,
+      "action_WAIT_rows": 2068356,
+      "action_BEGIN_rows": 17854,
+      "action_FINISH_rows": 10942,
+      "action_weight_sum": 545885.0,
+      "time_rows": 684588
+    }
+  },
+  "checkpoint": "step000 after warm, step064, step256: full model, Adam, live h, cursor, work, RNG, protocol/source/input hashes; first two actual updates before/after+preclip/clipped gradients",
+  "no_adaptation": "Exactly four arms x three seeds, fixed256 updates; no sweep, repeated epochs, best-snapshot selection or heldout-directed change; freeze all12 endpoints and36 snapshots before any heldout scoring",
+  "protocol_hash": "fecd4bdfc84fd7689f7563231de580df43aa90361cc75c78b156065c6eaf537e"
+}

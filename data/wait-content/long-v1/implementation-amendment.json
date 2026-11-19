@@ -1,0 +1,16 @@
+{
+  "format": "implementation-only-followup-amendment-v1",
+  "created_utc": "2026-11-03T06:03:21.618819+00:00",
+  "protocol_hash": "38cc823f958fe46cc2eb5db8ae3c83d6f45e684722c6f63f8caa22a141313951",
+  "reason": "The first fixed attempt failed on numpy.int64 lane/job JSON serialization before any complete fork artifact, result, summary, or trained-arm behavior was inspected. Preserve the original source, frozen design and all9 failure logs. Convert issued request lane/job/tick to native int; add a fabricated request-serialization regression test. Also restrict exported rates to behavior quantities actually measured, following blind read-only reviewer feedback; no false zero content-readout rate. Add explicit original-snapshot/amended-source validation. No trajectory, model, inputs, cohort boundary, action definition, run count or budget changed. Rerun the same36 continuations to8192 unconditionally.",
+  "changed_sources": [
+    {
+      "path": "F:\\agi\\experiments\\wait_content\\long_followup.py",
+      "original_sha256": "67116ddb7f405d25048a902231602b6e70a59fb32652ad0718ed9e8062e02035",
+      "original_snapshot": "F:\\agi\\data\\wait-content\\long-v1\\original_frozen_source.py",
+      "amended_sha256": "12d9b00d2fef1834b66b1f473860f359b47b70abb986c7845121a9e969a79cdd"
+    }
+  ],
+  "failure_evidence": "F:\\agi\\data\\wait-content\\long-v1\\failed-attempt-1",
+  "self_tests_passed": 3
+}

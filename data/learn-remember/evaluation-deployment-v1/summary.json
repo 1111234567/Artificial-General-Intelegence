@@ -1,0 +1,2266 @@
+{
+  "protocol_hash": "38ee2c6c883ded17b080e57162dd12bf03641b041819f4f981f2658c4e7933f4",
+  "rows": [
+    {
+      "arch": "plain",
+      "stage": "wide",
+      "history": "wait_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 90,
+            "clean_completed": 36,
+            "primary_issued": 181,
+            "idle_opportunities": 20244,
+            "idle_actions": 22,
+            "idle_begin": 0,
+            "idle_finish": 22,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5172413793103449,
+            "strict_completion_rate": 0.20689655172413793,
+            "idle_actions_per1000": 1.0867417506421655
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10786,
+            "idle_actions": 5,
+            "idle_begin": 0,
+            "idle_finish": 5,
+            "matured": 94,
+            "completed": 45,
+            "clean_completed": 12,
+            "ordinary_completion_rate": 0.4787234042553192,
+            "strict_completion_rate": 0.1276595744680851,
+            "idle_actions_per1000": 0.4635638791025403
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 113,
+            "clean_completed": 43,
+            "primary_issued": 172,
+            "idle_opportunities": 20569,
+            "idle_actions": 54,
+            "idle_begin": 0,
+            "idle_finish": 54,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.6647058823529411,
+            "strict_completion_rate": 0.2529411764705882,
+            "idle_actions_per1000": 2.6253099324225775
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8482,
+            "idle_actions": 30,
+            "idle_begin": 0,
+            "idle_finish": 30,
+            "matured": 69,
+            "completed": 41,
+            "clean_completed": 11,
+            "ordinary_completion_rate": 0.5942028985507246,
+            "strict_completion_rate": 0.15942028985507245,
+            "idle_actions_per1000": 3.536901674133459
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 144,
+            "clean_completed": 83,
+            "primary_issued": 175,
+            "idle_opportunities": 20796,
+            "idle_actions": 17,
+            "idle_begin": 0,
+            "idle_finish": 17,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8421052631578947,
+            "strict_completion_rate": 0.4853801169590643,
+            "idle_actions_per1000": 0.8174648970955953
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10656,
+            "idle_actions": 11,
+            "idle_begin": 0,
+            "idle_finish": 11,
+            "matured": 90,
+            "completed": 67,
+            "clean_completed": 28,
+            "ordinary_completion_rate": 0.7444444444444445,
+            "strict_completion_rate": 0.3111111111111111,
+            "idle_actions_per1000": 1.0322822822822824
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.6746841749403936,
+        "sample_sd": 0.1626616442169118
+      },
+      "strict_completion_rate": {
+        "mean": 0.3150726150512635,
+        "sample_sd": 0.1492766250005909
+      },
+      "idle_actions_per1000": {
+        "mean": 1.509838860053446,
+        "sample_sd": 0.9753636711161844
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "wide",
+      "history": "own_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 90,
+            "clean_completed": 36,
+            "primary_issued": 181,
+            "idle_opportunities": 20253,
+            "idle_actions": 22,
+            "idle_begin": 0,
+            "idle_finish": 22,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5172413793103449,
+            "strict_completion_rate": 0.20689655172413793,
+            "idle_actions_per1000": 1.08625882585296
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10786,
+            "idle_actions": 5,
+            "idle_begin": 0,
+            "idle_finish": 5,
+            "matured": 94,
+            "completed": 45,
+            "clean_completed": 12,
+            "ordinary_completion_rate": 0.4787234042553192,
+            "strict_completion_rate": 0.1276595744680851,
+            "idle_actions_per1000": 0.4635638791025403
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 113,
+            "clean_completed": 43,
+            "primary_issued": 172,
+            "idle_opportunities": 20577,
+            "idle_actions": 53,
+            "idle_begin": 0,
+            "idle_finish": 53,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.6647058823529411,
+            "strict_completion_rate": 0.2529411764705882,
+            "idle_actions_per1000": 2.575691305826894
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8487,
+            "idle_actions": 29,
+            "idle_begin": 0,
+            "idle_finish": 29,
+            "matured": 69,
+            "completed": 41,
+            "clean_completed": 11,
+            "ordinary_completion_rate": 0.5942028985507246,
+            "strict_completion_rate": 0.15942028985507245,
+            "idle_actions_per1000": 3.416990691646047
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 144,
+            "clean_completed": 83,
+            "primary_issued": 175,
+            "idle_opportunities": 20821,
+            "idle_actions": 16,
+            "idle_begin": 0,
+            "idle_finish": 16,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8421052631578947,
+            "strict_completion_rate": 0.4853801169590643,
+            "idle_actions_per1000": 0.768454925315787
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10667,
+            "idle_actions": 11,
+            "idle_begin": 0,
+            "idle_finish": 11,
+            "matured": 90,
+            "completed": 67,
+            "clean_completed": 28,
+            "ordinary_completion_rate": 0.7444444444444445,
+            "strict_completion_rate": 0.3111111111111111,
+            "idle_actions_per1000": 1.0312177744445485
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.6746841749403936,
+        "sample_sd": 0.1626616442169118
+      },
+      "strict_completion_rate": {
+        "mean": 0.3150726150512635,
+        "sample_sd": 0.1492766250005909
+      },
+      "idle_actions_per1000": {
+        "mean": 1.4768016856652135,
+        "sample_sd": 0.9648412448550652
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "wide",
+      "history": "endpoint",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 1313,
+            "completed": 672,
+            "clean_completed": 296,
+            "primary_issued": 1357,
+            "idle_opportunities": 167231,
+            "idle_actions": 178,
+            "idle_begin": 0,
+            "idle_finish": 178,
+            "primary_censored": 44
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5118050266565118,
+            "strict_completion_rate": 0.22543792840822544,
+            "idle_actions_per1000": 1.06439595529537
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 80083,
+            "idle_actions": 104,
+            "idle_begin": 0,
+            "idle_finish": 104,
+            "matured": 637,
+            "completed": 291,
+            "clean_completed": 75,
+            "ordinary_completion_rate": 0.45682888540031397,
+            "strict_completion_rate": 0.11773940345368916,
+            "idle_actions_per1000": 1.2986526478778269
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 1330,
+            "completed": 802,
+            "clean_completed": 294,
+            "primary_issued": 1367,
+            "idle_opportunities": 166504,
+            "idle_actions": 542,
+            "idle_begin": 0,
+            "idle_finish": 542,
+            "primary_censored": 37
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.6030075187969924,
+            "strict_completion_rate": 0.22105263157894736,
+            "idle_actions_per1000": 3.2551770528035364
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 84417,
+            "idle_actions": 325,
+            "idle_begin": 0,
+            "idle_finish": 325,
+            "matured": 670,
+            "completed": 385,
+            "clean_completed": 109,
+            "ordinary_completion_rate": 0.5746268656716418,
+            "strict_completion_rate": 0.1626865671641791,
+            "idle_actions_per1000": 3.8499354395441676
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 1349,
+            "completed": 1239,
+            "clean_completed": 698,
+            "primary_issued": 1390,
+            "idle_opportunities": 167222,
+            "idle_actions": 86,
+            "idle_begin": 0,
+            "idle_finish": 86,
+            "primary_censored": 41
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.9184581171237954,
+            "strict_completion_rate": 0.5174203113417346,
+            "idle_actions_per1000": 0.5142863977227877
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 85548,
+            "idle_actions": 50,
+            "idle_begin": 0,
+            "idle_finish": 50,
+            "matured": 684,
+            "completed": 607,
+            "clean_completed": 238,
+            "ordinary_completion_rate": 0.8874269005847953,
+            "strict_completion_rate": 0.347953216374269,
+            "idle_actions_per1000": 0.5844671997007528
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.6777568875257666,
+        "sample_sd": 0.21338295407707913
+      },
+      "strict_completion_rate": {
+        "mean": 0.32130362377630245,
+        "sample_sd": 0.16985618641456135
+      },
+      "idle_actions_per1000": {
+        "mean": 1.6112864686072315,
+        "sample_sd": 1.4499783863699927
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "withdrawal",
+      "history": "wait_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 91,
+            "clean_completed": 39,
+            "primary_issued": 181,
+            "idle_opportunities": 20204,
+            "idle_actions": 70,
+            "idle_begin": 0,
+            "idle_finish": 70,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5229885057471264,
+            "strict_completion_rate": 0.22413793103448276,
+            "idle_actions_per1000": 3.464660463274599
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10751,
+            "idle_actions": 55,
+            "idle_begin": 0,
+            "idle_finish": 55,
+            "matured": 94,
+            "completed": 22,
+            "clean_completed": 9,
+            "ordinary_completion_rate": 0.23404255319148937,
+            "strict_completion_rate": 0.09574468085106383,
+            "idle_actions_per1000": 5.115803181099433
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 87,
+            "clean_completed": 50,
+            "primary_issued": 172,
+            "idle_opportunities": 20609,
+            "idle_actions": 14,
+            "idle_begin": 0,
+            "idle_finish": 14,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5117647058823529,
+            "strict_completion_rate": 0.29411764705882354,
+            "idle_actions_per1000": 0.6793148624387404
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8451,
+            "idle_actions": 6,
+            "idle_begin": 0,
+            "idle_finish": 6,
+            "matured": 69,
+            "completed": 18,
+            "clean_completed": 13,
+            "ordinary_completion_rate": 0.2608695652173913,
+            "strict_completion_rate": 0.18840579710144928,
+            "idle_actions_per1000": 0.7099751508697195
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 57,
+            "clean_completed": 29,
+            "primary_issued": 175,
+            "idle_opportunities": 20530,
+            "idle_actions": 19,
+            "idle_begin": 0,
+            "idle_finish": 19,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.3333333333333333,
+            "strict_completion_rate": 0.1695906432748538,
+            "idle_actions_per1000": 0.9254749147588894
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10505,
+            "idle_actions": 14,
+            "idle_begin": 0,
+            "idle_finish": 14,
+            "matured": 90,
+            "completed": 14,
+            "clean_completed": 5,
+            "ordinary_completion_rate": 0.15555555555555556,
+            "strict_completion_rate": 0.05555555555555555,
+            "idle_actions_per1000": 1.3326987148976677
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.45602884832093754,
+        "sample_sd": 0.10640552367901858
+      },
+      "strict_completion_rate": {
+        "mean": 0.2292820737893867,
+        "sample_sd": 0.06242267473735267
+      },
+      "idle_actions_per1000": {
+        "mean": 1.6898167468240763,
+        "sample_sd": 1.5419796873524283
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "withdrawal",
+      "history": "own_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 91,
+            "clean_completed": 39,
+            "primary_issued": 181,
+            "idle_opportunities": 20214,
+            "idle_actions": 70,
+            "idle_begin": 0,
+            "idle_finish": 70,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5229885057471264,
+            "strict_completion_rate": 0.22413793103448276,
+            "idle_actions_per1000": 3.462946472741664
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10751,
+            "idle_actions": 54,
+            "idle_begin": 0,
+            "idle_finish": 54,
+            "matured": 94,
+            "completed": 22,
+            "clean_completed": 9,
+            "ordinary_completion_rate": 0.23404255319148937,
+            "strict_completion_rate": 0.09574468085106383,
+            "idle_actions_per1000": 5.022788577806716
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 87,
+            "clean_completed": 51,
+            "primary_issued": 172,
+            "idle_opportunities": 20628,
+            "idle_actions": 13,
+            "idle_begin": 0,
+            "idle_finish": 13,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5117647058823529,
+            "strict_completion_rate": 0.3,
+            "idle_actions_per1000": 0.6302113631956564
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8458,
+            "idle_actions": 5,
+            "idle_begin": 0,
+            "idle_finish": 5,
+            "matured": 69,
+            "completed": 18,
+            "clean_completed": 13,
+            "ordinary_completion_rate": 0.2608695652173913,
+            "strict_completion_rate": 0.18840579710144928,
+            "idle_actions_per1000": 0.5911563017261764
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 57,
+            "clean_completed": 29,
+            "primary_issued": 175,
+            "idle_opportunities": 20556,
+            "idle_actions": 19,
+            "idle_begin": 0,
+            "idle_finish": 19,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.3333333333333333,
+            "strict_completion_rate": 0.1695906432748538,
+            "idle_actions_per1000": 0.9243043393656354
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10514,
+            "idle_actions": 14,
+            "idle_begin": 0,
+            "idle_finish": 14,
+            "matured": 90,
+            "completed": 14,
+            "clean_completed": 5,
+            "ordinary_completion_rate": 0.15555555555555556,
+            "strict_completion_rate": 0.05555555555555555,
+            "idle_actions_per1000": 1.3315579227696406
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.45602884832093754,
+        "sample_sd": 0.10640552367901858
+      },
+      "strict_completion_rate": {
+        "mean": 0.23124285810311218,
+        "sample_sd": 0.06549435144998778
+      },
+      "idle_actions_per1000": {
+        "mean": 1.672487391767652,
+        "sample_sd": 1.5575398743338345
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "withdrawal",
+      "history": "endpoint",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 1344,
+            "completed": 656,
+            "clean_completed": 278,
+            "primary_issued": 1384,
+            "idle_opportunities": 165120,
+            "idle_actions": 509,
+            "idle_begin": 0,
+            "idle_finish": 509,
+            "primary_censored": 40
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.4880952380952381,
+            "strict_completion_rate": 0.20684523809523808,
+            "idle_actions_per1000": 3.0826065891472867
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 81489,
+            "idle_actions": 325,
+            "idle_begin": 0,
+            "idle_finish": 325,
+            "matured": 686,
+            "completed": 149,
+            "clean_completed": 62,
+            "ordinary_completion_rate": 0.21720116618075802,
+            "strict_completion_rate": 0.09037900874635568,
+            "idle_actions_per1000": 3.98826835523813
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 1329,
+            "completed": 672,
+            "clean_completed": 431,
+            "primary_issued": 1362,
+            "idle_opportunities": 166188,
+            "idle_actions": 60,
+            "idle_begin": 0,
+            "idle_finish": 60,
+            "primary_censored": 33
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5056433408577878,
+            "strict_completion_rate": 0.32430398796087284,
+            "idle_actions_per1000": 0.36103689797097266
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 82397,
+            "idle_actions": 21,
+            "idle_begin": 0,
+            "idle_finish": 21,
+            "matured": 670,
+            "completed": 200,
+            "clean_completed": 166,
+            "ordinary_completion_rate": 0.29850746268656714,
+            "strict_completion_rate": 0.24776119402985075,
+            "idle_actions_per1000": 0.25486364794834765
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 1350,
+            "completed": 544,
+            "clean_completed": 311,
+            "primary_issued": 1389,
+            "idle_opportunities": 166470,
+            "idle_actions": 103,
+            "idle_begin": 0,
+            "idle_finish": 103,
+            "primary_censored": 39
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.40296296296296297,
+            "strict_completion_rate": 0.23037037037037036,
+            "idle_actions_per1000": 0.6187301015197934
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 85403,
+            "idle_actions": 69,
+            "idle_begin": 0,
+            "idle_finish": 69,
+            "matured": 701,
+            "completed": 167,
+            "clean_completed": 82,
+            "ordinary_completion_rate": 0.23823109843081314,
+            "strict_completion_rate": 0.11697574893009986,
+            "idle_actions_per1000": 0.8079341475123825
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.465567180638663,
+        "sample_sd": 0.05492221800629571
+      },
+      "strict_completion_rate": {
+        "mean": 0.25383986547549375,
+        "sample_sd": 0.062147022296860664
+      },
+      "idle_actions_per1000": {
+        "mean": 1.3541245295460176,
+        "sample_sd": 1.5024443815201272
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "review",
+      "history": "wait_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 154,
+            "clean_completed": 73,
+            "primary_issued": 181,
+            "idle_opportunities": 20675,
+            "idle_actions": 2,
+            "idle_begin": 0,
+            "idle_finish": 2,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8850574712643678,
+            "strict_completion_rate": 0.41954022988505746,
+            "idle_actions_per1000": 0.09673518742442563
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10989,
+            "idle_actions": 2,
+            "idle_begin": 0,
+            "idle_finish": 2,
+            "matured": 94,
+            "completed": 77,
+            "clean_completed": 20,
+            "ordinary_completion_rate": 0.8191489361702128,
+            "strict_completion_rate": 0.2127659574468085,
+            "idle_actions_per1000": 0.182000182000182
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 137,
+            "clean_completed": 91,
+            "primary_issued": 172,
+            "idle_opportunities": 20556,
+            "idle_actions": 41,
+            "idle_begin": 0,
+            "idle_finish": 41,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8058823529411765,
+            "strict_completion_rate": 0.5352941176470588,
+            "idle_actions_per1000": 1.9945514691574235
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8490,
+            "idle_actions": 23,
+            "idle_begin": 0,
+            "idle_finish": 23,
+            "matured": 69,
+            "completed": 50,
+            "clean_completed": 36,
+            "ordinary_completion_rate": 0.7246376811594203,
+            "strict_completion_rate": 0.5217391304347826,
+            "idle_actions_per1000": 2.7090694935217905
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 165,
+            "clean_completed": 135,
+            "primary_issued": 175,
+            "idle_opportunities": 20894,
+            "idle_actions": 5,
+            "idle_begin": 0,
+            "idle_finish": 5,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.9649122807017544,
+            "strict_completion_rate": 0.7894736842105263,
+            "idle_actions_per1000": 0.23930314922944387
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10734,
+            "idle_actions": 2,
+            "idle_begin": 0,
+            "idle_finish": 2,
+            "matured": 90,
+            "completed": 86,
+            "clean_completed": 57,
+            "ordinary_completion_rate": 0.9555555555555556,
+            "strict_completion_rate": 0.6333333333333333,
+            "idle_actions_per1000": 0.1863238308179616
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.8852840349690996,
+        "sample_sd": 0.07951520596224274
+      },
+      "strict_completion_rate": {
+        "mean": 0.5814360105808809,
+        "sample_sd": 0.18923397123648455
+      },
+      "idle_actions_per1000": {
+        "mean": 0.7768632686037643,
+        "sample_sd": 1.056955449041735
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "review",
+      "history": "own_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 154,
+            "clean_completed": 73,
+            "primary_issued": 181,
+            "idle_opportunities": 20699,
+            "idle_actions": 2,
+            "idle_begin": 0,
+            "idle_finish": 2,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8850574712643678,
+            "strict_completion_rate": 0.41954022988505746,
+            "idle_actions_per1000": 0.09662302526692111
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10989,
+            "idle_actions": 2,
+            "idle_begin": 0,
+            "idle_finish": 2,
+            "matured": 94,
+            "completed": 77,
+            "clean_completed": 20,
+            "ordinary_completion_rate": 0.8191489361702128,
+            "strict_completion_rate": 0.2127659574468085,
+            "idle_actions_per1000": 0.182000182000182
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 138,
+            "clean_completed": 91,
+            "primary_issued": 172,
+            "idle_opportunities": 20566,
+            "idle_actions": 34,
+            "idle_begin": 0,
+            "idle_finish": 34,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8117647058823529,
+            "strict_completion_rate": 0.5352941176470588,
+            "idle_actions_per1000": 1.6532140425945736
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8500,
+            "idle_actions": 19,
+            "idle_begin": 0,
+            "idle_finish": 19,
+            "matured": 69,
+            "completed": 50,
+            "clean_completed": 36,
+            "ordinary_completion_rate": 0.7246376811594203,
+            "strict_completion_rate": 0.5217391304347826,
+            "idle_actions_per1000": 2.235294117647059
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 165,
+            "clean_completed": 135,
+            "primary_issued": 175,
+            "idle_opportunities": 20917,
+            "idle_actions": 5,
+            "idle_begin": 0,
+            "idle_finish": 5,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.9649122807017544,
+            "strict_completion_rate": 0.7894736842105263,
+            "idle_actions_per1000": 0.23904001529856098
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10743,
+            "idle_actions": 2,
+            "idle_begin": 0,
+            "idle_finish": 2,
+            "matured": 90,
+            "completed": 86,
+            "clean_completed": 57,
+            "ordinary_completion_rate": 0.9555555555555556,
+            "strict_completion_rate": 0.6333333333333333,
+            "idle_actions_per1000": 0.18616773713115517
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.8872448192828251,
+        "sample_sd": 0.07659721461503302
+      },
+      "strict_completion_rate": {
+        "mean": 0.5814360105808809,
+        "sample_sd": 0.18923397123648455
+      },
+      "idle_actions_per1000": {
+        "mean": 0.6629590277200186,
+        "sample_sd": 0.8605372714912306
+      }
+    },
+    {
+      "arch": "plain",
+      "stage": "review",
+      "history": "endpoint",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 1344,
+            "completed": 1149,
+            "clean_completed": 591,
+            "primary_issued": 1384,
+            "idle_opportunities": 168705,
+            "idle_actions": 23,
+            "idle_begin": 0,
+            "idle_finish": 23,
+            "primary_censored": 40
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8549107142857143,
+            "strict_completion_rate": 0.43973214285714285,
+            "idle_actions_per1000": 0.136332651670075
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 83093,
+            "idle_actions": 10,
+            "idle_begin": 0,
+            "idle_finish": 10,
+            "matured": 686,
+            "completed": 524,
+            "clean_completed": 156,
+            "ordinary_completion_rate": 0.7638483965014577,
+            "strict_completion_rate": 0.22740524781341107,
+            "idle_actions_per1000": 0.1203470809815508
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 1329,
+            "completed": 1101,
+            "clean_completed": 743,
+            "primary_issued": 1362,
+            "idle_opportunities": 165994,
+            "idle_actions": 275,
+            "idle_begin": 0,
+            "idle_finish": 275,
+            "primary_censored": 33
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8284424379232506,
+            "strict_completion_rate": 0.5590669676448458,
+            "idle_actions_per1000": 1.6566863862549248
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 82804,
+            "idle_actions": 176,
+            "idle_begin": 0,
+            "idle_finish": 176,
+            "matured": 670,
+            "completed": 514,
+            "clean_completed": 375,
+            "ordinary_completion_rate": 0.7671641791044777,
+            "strict_completion_rate": 0.5597014925373134,
+            "idle_actions_per1000": 2.1255011835177045
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 1350,
+            "completed": 1341,
+            "clean_completed": 1096,
+            "primary_issued": 1389,
+            "idle_opportunities": 169088,
+            "idle_actions": 12,
+            "idle_begin": 0,
+            "idle_finish": 12,
+            "primary_censored": 39
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.9933333333333333,
+            "strict_completion_rate": 0.8118518518518518,
+            "idle_actions_per1000": 0.07096896290688873
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 86928,
+            "idle_actions": 12,
+            "idle_begin": 0,
+            "idle_finish": 12,
+            "matured": 701,
+            "completed": 696,
+            "clean_completed": 468,
+            "ordinary_completion_rate": 0.992867332382311,
+            "strict_completion_rate": 0.6676176890156919,
+            "idle_actions_per1000": 0.13804527885146328
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.8922288285140993,
+        "sample_sd": 0.08855356054082077
+      },
+      "strict_completion_rate": {
+        "mean": 0.6035503207846135,
+        "sample_sd": 0.19000617354574215
+      },
+      "idle_actions_per1000": {
+        "mean": 0.6213293336106295,
+        "sample_sd": 0.8972409223822743
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "wide",
+      "history": "wait_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 94,
+            "clean_completed": 34,
+            "primary_issued": 181,
+            "idle_opportunities": 20272,
+            "idle_actions": 7332,
+            "idle_begin": 3561,
+            "idle_finish": 3771,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5402298850574713,
+            "strict_completion_rate": 0.19540229885057472,
+            "idle_actions_per1000": 361.681136543015
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10797,
+            "idle_actions": 3638,
+            "idle_begin": 1568,
+            "idle_finish": 2070,
+            "matured": 94,
+            "completed": 46,
+            "clean_completed": 13,
+            "ordinary_completion_rate": 0.48936170212765956,
+            "strict_completion_rate": 0.13829787234042554,
+            "idle_actions_per1000": 336.94544780957676
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 21,
+            "clean_completed": 0,
+            "primary_issued": 172,
+            "idle_opportunities": 20395,
+            "idle_actions": 20395,
+            "idle_begin": 3137,
+            "idle_finish": 17258,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.12352941176470589,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8403,
+            "idle_actions": 8403,
+            "idle_begin": 1296,
+            "idle_finish": 7107,
+            "matured": 69,
+            "completed": 5,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.07246376811594203,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 18,
+            "clean_completed": 11,
+            "primary_issued": 175,
+            "idle_opportunities": 20394,
+            "idle_actions": 5236,
+            "idle_begin": 4031,
+            "idle_finish": 1205,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.10526315789473684,
+            "strict_completion_rate": 0.06432748538011696,
+            "idle_actions_per1000": 256.74217907227614
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10471,
+            "idle_actions": 2943,
+            "idle_begin": 2358,
+            "idle_finish": 585,
+            "matured": 90,
+            "completed": 7,
+            "clean_completed": 1,
+            "ordinary_completion_rate": 0.07777777777777778,
+            "strict_completion_rate": 0.011111111111111112,
+            "idle_actions_per1000": 281.0619807086238
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.2563408182389713,
+        "sample_sd": 0.24602472579381038
+      },
+      "strict_completion_rate": {
+        "mean": 0.0865765947435639,
+        "sample_sd": 0.09958303946768393
+      },
+      "idle_actions_per1000": {
+        "mean": 539.4744385384304,
+        "sample_sd": 402.2634593999085
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "wide",
+      "history": "own_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 62,
+            "clean_completed": 23,
+            "primary_issued": 181,
+            "idle_opportunities": 20194,
+            "idle_actions": 12652,
+            "idle_begin": 3188,
+            "idle_finish": 9464,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.3563218390804598,
+            "strict_completion_rate": 0.13218390804597702,
+            "idle_actions_per1000": 626.5227295236209
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10765,
+            "idle_actions": 6713,
+            "idle_begin": 1759,
+            "idle_finish": 4954,
+            "matured": 94,
+            "completed": 31,
+            "clean_completed": 7,
+            "ordinary_completion_rate": 0.32978723404255317,
+            "strict_completion_rate": 0.07446808510638298,
+            "idle_actions_per1000": 623.5949837436135
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 42,
+            "clean_completed": 18,
+            "primary_issued": 172,
+            "idle_opportunities": 20431,
+            "idle_actions": 15263,
+            "idle_begin": 366,
+            "idle_finish": 14897,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.24705882352941178,
+            "strict_completion_rate": 0.10588235294117647,
+            "idle_actions_per1000": 747.0510498751896
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8425,
+            "idle_actions": 6046,
+            "idle_begin": 103,
+            "idle_finish": 5943,
+            "matured": 69,
+            "completed": 16,
+            "clean_completed": 5,
+            "ordinary_completion_rate": 0.2318840579710145,
+            "strict_completion_rate": 0.07246376811594203,
+            "idle_actions_per1000": 717.6261127596439
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 13,
+            "clean_completed": 4,
+            "primary_issued": 175,
+            "idle_opportunities": 20414,
+            "idle_actions": 15362,
+            "idle_begin": 11775,
+            "idle_finish": 3587,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.07602339181286549,
+            "strict_completion_rate": 0.023391812865497075,
+            "idle_actions_per1000": 752.5227784853532
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10503,
+            "idle_actions": 7762,
+            "idle_begin": 5954,
+            "idle_finish": 1808,
+            "matured": 90,
+            "completed": 9,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.1,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 739.0269446824717
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.22646801814091236,
+        "sample_sd": 0.14127912384731997
+      },
+      "strict_completion_rate": {
+        "mean": 0.08715269128421685,
+        "sample_sd": 0.05676292947670856
+      },
+      "idle_actions_per1000": {
+        "mean": 708.6988526280546,
+        "sample_sd": 71.2191783149181
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "wide",
+      "history": "endpoint",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 1313,
+            "completed": 1005,
+            "clean_completed": 416,
+            "primary_issued": 1357,
+            "idle_opportunities": 168112,
+            "idle_actions": 158,
+            "idle_begin": 0,
+            "idle_finish": 158,
+            "primary_censored": 44
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.7654226961157654,
+            "strict_completion_rate": 0.31683168316831684,
+            "idle_actions_per1000": 0.9398496240601504
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 80369,
+            "idle_actions": 97,
+            "idle_begin": 0,
+            "idle_finish": 97,
+            "matured": 637,
+            "completed": 404,
+            "clean_completed": 126,
+            "ordinary_completion_rate": 0.6342229199372057,
+            "strict_completion_rate": 0.1978021978021978,
+            "idle_actions_per1000": 1.2069330214386145
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 1330,
+            "completed": 1133,
+            "clean_completed": 510,
+            "primary_issued": 1367,
+            "idle_opportunities": 166999,
+            "idle_actions": 459,
+            "idle_begin": 0,
+            "idle_finish": 459,
+            "primary_censored": 37
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.8518796992481203,
+            "strict_completion_rate": 0.38345864661654133,
+            "idle_actions_per1000": 2.748519452212289
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 84560,
+            "idle_actions": 344,
+            "idle_begin": 0,
+            "idle_finish": 344,
+            "matured": 670,
+            "completed": 544,
+            "clean_completed": 173,
+            "ordinary_completion_rate": 0.8119402985074626,
+            "strict_completion_rate": 0.2582089552238806,
+            "idle_actions_per1000": 4.068117313150426
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 1349,
+            "completed": 124,
+            "clean_completed": 83,
+            "primary_issued": 1390,
+            "idle_opportunities": 163429,
+            "idle_actions": 1124,
+            "idle_begin": 0,
+            "idle_finish": 1124,
+            "primary_censored": 41
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.09191994069681246,
+            "strict_completion_rate": 0.061527057079318014,
+            "idle_actions_per1000": 6.877604341946656
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 83844,
+            "idle_actions": 681,
+            "idle_begin": 0,
+            "idle_finish": 681,
+            "matured": 684,
+            "completed": 39,
+            "clean_completed": 9,
+            "ordinary_completion_rate": 0.05701754385964912,
+            "strict_completion_rate": 0.013157894736842105,
+            "idle_actions_per1000": 8.122226992986976
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.5697407786868994,
+        "sample_sd": 0.4160568089345717
+      },
+      "strict_completion_rate": {
+        "mean": 0.25393912895472537,
+        "sample_sd": 0.1699311393392128
+      },
+      "idle_actions_per1000": {
+        "mean": 3.521991139406365,
+        "sample_sd": 3.0435056449124587
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "wide",
+      "history": "wait_world_own_h",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 62,
+            "clean_completed": 23,
+            "primary_issued": 181,
+            "idle_opportunities": 20190,
+            "idle_actions": 12650,
+            "idle_begin": 3381,
+            "idle_finish": 9269,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.3563218390804598,
+            "strict_completion_rate": 0.13218390804597702,
+            "idle_actions_per1000": 626.5477959385835
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10766,
+            "idle_actions": 6713,
+            "idle_begin": 1920,
+            "idle_finish": 4793,
+            "matured": 94,
+            "completed": 31,
+            "clean_completed": 7,
+            "ordinary_completion_rate": 0.32978723404255317,
+            "strict_completion_rate": 0.07446808510638298,
+            "idle_actions_per1000": 623.5370611183355
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 42,
+            "clean_completed": 18,
+            "primary_issued": 172,
+            "idle_opportunities": 20429,
+            "idle_actions": 15266,
+            "idle_begin": 440,
+            "idle_finish": 14826,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.24705882352941178,
+            "strict_completion_rate": 0.10588235294117647,
+            "idle_actions_per1000": 747.2710362719663
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8425,
+            "idle_actions": 6046,
+            "idle_begin": 88,
+            "idle_finish": 5958,
+            "matured": 69,
+            "completed": 16,
+            "clean_completed": 5,
+            "ordinary_completion_rate": 0.2318840579710145,
+            "strict_completion_rate": 0.07246376811594203,
+            "idle_actions_per1000": 717.6261127596439
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 13,
+            "clean_completed": 4,
+            "primary_issued": 175,
+            "idle_opportunities": 20417,
+            "idle_actions": 15365,
+            "idle_begin": 11791,
+            "idle_finish": 3574,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.07602339181286549,
+            "strict_completion_rate": 0.023391812865497075,
+            "idle_actions_per1000": 752.5591418915609
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10506,
+            "idle_actions": 7765,
+            "idle_begin": 5962,
+            "idle_finish": 1803,
+            "matured": 90,
+            "completed": 9,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.1,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 739.1014658290501
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.22646801814091236,
+        "sample_sd": 0.14127912384731997
+      },
+      "strict_completion_rate": {
+        "mean": 0.08715269128421685,
+        "sample_sd": 0.05676292947670856
+      },
+      "idle_actions_per1000": {
+        "mean": 708.7926580340369,
+        "sample_sd": 71.27519920060631
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "wide",
+      "history": "own_world_wait_h",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 94,
+            "clean_completed": 34,
+            "primary_issued": 181,
+            "idle_opportunities": 20278,
+            "idle_actions": 7334,
+            "idle_begin": 3528,
+            "idle_finish": 3806,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.5402298850574713,
+            "strict_completion_rate": 0.19540229885057472,
+            "idle_actions_per1000": 361.67274879179405
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10796,
+            "idle_actions": 3638,
+            "idle_begin": 1530,
+            "idle_finish": 2108,
+            "matured": 94,
+            "completed": 46,
+            "clean_completed": 13,
+            "ordinary_completion_rate": 0.48936170212765956,
+            "strict_completion_rate": 0.13829787234042554,
+            "idle_actions_per1000": 336.9766580214894
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 25,
+            "clean_completed": 0,
+            "primary_issued": 172,
+            "idle_opportunities": 20423,
+            "idle_actions": 20423,
+            "idle_begin": 3045,
+            "idle_finish": 17378,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.14705882352941177,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8424,
+            "idle_actions": 8424,
+            "idle_begin": 1372,
+            "idle_finish": 7052,
+            "matured": 69,
+            "completed": 9,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.13043478260869565,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 17,
+            "clean_completed": 11,
+            "primary_issued": 175,
+            "idle_opportunities": 20388,
+            "idle_actions": 5229,
+            "idle_begin": 4032,
+            "idle_finish": 1197,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.09941520467836257,
+            "strict_completion_rate": 0.06432748538011696,
+            "idle_actions_per1000": 256.4743967039435
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10470,
+            "idle_actions": 2941,
+            "idle_begin": 2359,
+            "idle_finish": 582,
+            "matured": 90,
+            "completed": 7,
+            "clean_completed": 1,
+            "ordinary_completion_rate": 0.07777777777777778,
+            "strict_completion_rate": 0.011111111111111112,
+            "idle_actions_per1000": 280.8978032473735
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.2622346377550819,
+        "sample_sd": 0.24192663504943704
+      },
+      "strict_completion_rate": {
+        "mean": 0.0865765947435639,
+        "sample_sd": 0.09958303946768393
+      },
+      "idle_actions_per1000": {
+        "mean": 539.3823818319125,
+        "sample_sd": 402.35943625772137
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "withdrawal",
+      "history": "wait_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 8,
+            "clean_completed": 0,
+            "primary_issued": 181,
+            "idle_opportunities": 20105,
+            "idle_actions": 20105,
+            "idle_begin": 10907,
+            "idle_finish": 9198,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.04597701149425287,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10723,
+            "idle_actions": 10723,
+            "idle_begin": 5721,
+            "idle_finish": 5002,
+            "matured": 94,
+            "completed": 2,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.02127659574468085,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 19,
+            "clean_completed": 0,
+            "primary_issued": 172,
+            "idle_opportunities": 20392,
+            "idle_actions": 20392,
+            "idle_begin": 336,
+            "idle_finish": 20056,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.11176470588235295,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8384,
+            "idle_actions": 8384,
+            "idle_begin": 150,
+            "idle_finish": 8234,
+            "matured": 69,
+            "completed": 1,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.014492753623188406,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 36,
+            "clean_completed": 9,
+            "primary_issued": 175,
+            "idle_opportunities": 20483,
+            "idle_actions": 12802,
+            "idle_begin": 7089,
+            "idle_finish": 5713,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.21052631578947367,
+            "strict_completion_rate": 0.05263157894736842,
+            "idle_actions_per1000": 625.0061026216863
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10504,
+            "idle_actions": 6529,
+            "idle_begin": 3673,
+            "idle_finish": 2856,
+            "matured": 90,
+            "completed": 8,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.08888888888888889,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 621.5727341964965
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.12275601105535983,
+        "sample_sd": 0.08282345668990711
+      },
+      "strict_completion_rate": {
+        "mean": 0.017543859649122806,
+        "sample_sd": 0.030386856273138196
+      },
+      "idle_actions_per1000": {
+        "mean": 875.0020342072288,
+        "sample_sd": 216.50282759583632
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "withdrawal",
+      "history": "own_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 22,
+            "clean_completed": 2,
+            "primary_issued": 181,
+            "idle_opportunities": 20152,
+            "idle_actions": 17724,
+            "idle_begin": 4693,
+            "idle_finish": 13031,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.12643678160919541,
+            "strict_completion_rate": 0.011494252873563218,
+            "idle_actions_per1000": 879.5156808257245
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10762,
+            "idle_actions": 9745,
+            "idle_begin": 2464,
+            "idle_finish": 7281,
+            "matured": 94,
+            "completed": 7,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.07446808510638298,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 905.5008362757852
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 35,
+            "clean_completed": 9,
+            "primary_issued": 172,
+            "idle_opportunities": 20462,
+            "idle_actions": 12670,
+            "idle_begin": 36,
+            "idle_finish": 12634,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.20588235294117646,
+            "strict_completion_rate": 0.052941176470588235,
+            "idle_actions_per1000": 619.196559476102
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8402,
+            "idle_actions": 5262,
+            "idle_begin": 12,
+            "idle_finish": 5250,
+            "matured": 69,
+            "completed": 3,
+            "clean_completed": 2,
+            "ordinary_completion_rate": 0.043478260869565216,
+            "strict_completion_rate": 0.028985507246376812,
+            "idle_actions_per1000": 626.279457272078
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 35,
+            "clean_completed": 7,
+            "primary_issued": 175,
+            "idle_opportunities": 20495,
+            "idle_actions": 15386,
+            "idle_begin": 8729,
+            "idle_finish": 6657,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.2046783625730994,
+            "strict_completion_rate": 0.04093567251461988,
+            "idle_actions_per1000": 750.7196877287143
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10490,
+            "idle_actions": 7735,
+            "idle_begin": 4327,
+            "idle_finish": 3408,
+            "matured": 90,
+            "completed": 8,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.08888888888888889,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 737.3689227836035
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.17899916570782376,
+        "sample_sd": 0.04552434035546708
+      },
+      "strict_completion_rate": {
+        "mean": 0.03512370061959044,
+        "sample_sd": 0.021325949730219902
+      },
+      "idle_actions_per1000": {
+        "mean": 749.810642676847,
+        "sample_sd": 130.16194146999965
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "withdrawal",
+      "history": "endpoint",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 1344,
+            "completed": 596,
+            "clean_completed": 227,
+            "primary_issued": 1384,
+            "idle_opportunities": 165136,
+            "idle_actions": 670,
+            "idle_begin": 0,
+            "idle_finish": 670,
+            "primary_censored": 40
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.44345238095238093,
+            "strict_completion_rate": 0.16889880952380953,
+            "idle_actions_per1000": 4.0572618932274
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 81279,
+            "idle_actions": 562,
+            "idle_begin": 0,
+            "idle_finish": 562,
+            "matured": 686,
+            "completed": 2,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.0029154518950437317,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 6.914455148316293
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 1329,
+            "completed": 631,
+            "clean_completed": 159,
+            "primary_issued": 1362,
+            "idle_opportunities": 166243,
+            "idle_actions": 127,
+            "idle_begin": 0,
+            "idle_finish": 127,
+            "primary_censored": 33
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.4747930775018811,
+            "strict_completion_rate": 0.11963882618510158,
+            "idle_actions_per1000": 0.7639419404125286
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 82222,
+            "idle_actions": 88,
+            "idle_begin": 0,
+            "idle_finish": 88,
+            "matured": 670,
+            "completed": 101,
+            "clean_completed": 58,
+            "ordinary_completion_rate": 0.15074626865671642,
+            "strict_completion_rate": 0.08656716417910448,
+            "idle_actions_per1000": 1.0702731629004403
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 1350,
+            "completed": 452,
+            "clean_completed": 201,
+            "primary_issued": 1389,
+            "idle_opportunities": 165570,
+            "idle_actions": 278,
+            "idle_begin": 0,
+            "idle_finish": 278,
+            "primary_censored": 39
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.3348148148148148,
+            "strict_completion_rate": 0.14888888888888888,
+            "idle_actions_per1000": 1.6790481367397476
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 84734,
+            "idle_actions": 204,
+            "idle_begin": 0,
+            "idle_finish": 204,
+            "matured": 701,
+            "completed": 1,
+            "clean_completed": 1,
+            "ordinary_completion_rate": 0.0014265335235378032,
+            "strict_completion_rate": 0.0014265335235378032,
+            "idle_actions_per1000": 2.407534165742205
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.41768675775635894,
+        "sample_sd": 0.07346005043717214
+      },
+      "strict_completion_rate": {
+        "mean": 0.1458088415326,
+        "sample_sd": 0.0247740087272969
+      },
+      "idle_actions_per1000": {
+        "mean": 2.1667506567932255,
+        "sample_sd": 1.699964525792236
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "review",
+      "history": "wait_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 47,
+            "clean_completed": 17,
+            "primary_issued": 181,
+            "idle_opportunities": 20125,
+            "idle_actions": 12570,
+            "idle_begin": 4315,
+            "idle_finish": 8255,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.27011494252873564,
+            "strict_completion_rate": 0.09770114942528736,
+            "idle_actions_per1000": 624.5962732919255
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10729,
+            "idle_actions": 6630,
+            "idle_begin": 1910,
+            "idle_finish": 4720,
+            "matured": 94,
+            "completed": 20,
+            "clean_completed": 3,
+            "ordinary_completion_rate": 0.2127659574468085,
+            "strict_completion_rate": 0.031914893617021274,
+            "idle_actions_per1000": 617.9513468170379
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 19,
+            "clean_completed": 0,
+            "primary_issued": 172,
+            "idle_opportunities": 20382,
+            "idle_actions": 20382,
+            "idle_begin": 2934,
+            "idle_finish": 17448,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.11176470588235295,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8455,
+            "idle_actions": 8455,
+            "idle_begin": 1167,
+            "idle_finish": 7288,
+            "matured": 69,
+            "completed": 14,
+            "clean_completed": 0,
+            "ordinary_completion_rate": 0.2028985507246377,
+            "strict_completion_rate": 0.0,
+            "idle_actions_per1000": 1000.0
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 68,
+            "clean_completed": 27,
+            "primary_issued": 175,
+            "idle_opportunities": 20522,
+            "idle_actions": 10215,
+            "idle_begin": 8320,
+            "idle_finish": 1895,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.39766081871345027,
+            "strict_completion_rate": 0.15789473684210525,
+            "idle_actions_per1000": 497.7585030698762
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10521,
+            "idle_actions": 5287,
+            "idle_begin": 4537,
+            "idle_finish": 750,
+            "matured": 90,
+            "completed": 25,
+            "clean_completed": 8,
+            "ordinary_completion_rate": 0.2777777777777778,
+            "strict_completion_rate": 0.08888888888888889,
+            "idle_actions_per1000": 502.5187719798498
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.2598468223748463,
+        "sample_sd": 0.14322437834252907
+      },
+      "strict_completion_rate": {
+        "mean": 0.08519862875579753,
+        "sample_sd": 0.07968639625386308
+      },
+      "idle_actions_per1000": {
+        "mean": 707.4515921206006,
+        "sample_sd": 261.1711760575886
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "review",
+      "history": "own_warm",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 174,
+            "completed": 42,
+            "clean_completed": 16,
+            "primary_issued": 181,
+            "idle_opportunities": 20114,
+            "idle_actions": 12692,
+            "idle_begin": 2956,
+            "idle_finish": 9736,
+            "primary_censored": 7
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.2413793103448276,
+            "strict_completion_rate": 0.09195402298850575,
+            "idle_actions_per1000": 631.0032812966093
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10737,
+            "idle_actions": 6746,
+            "idle_begin": 1596,
+            "idle_finish": 5150,
+            "matured": 94,
+            "completed": 22,
+            "clean_completed": 5,
+            "ordinary_completion_rate": 0.23404255319148937,
+            "strict_completion_rate": 0.05319148936170213,
+            "idle_actions_per1000": 628.2946819409518
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 170,
+            "completed": 55,
+            "clean_completed": 23,
+            "primary_issued": 172,
+            "idle_opportunities": 20477,
+            "idle_actions": 15188,
+            "idle_begin": 3088,
+            "idle_finish": 12100,
+            "primary_censored": 2
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.3235294117647059,
+            "strict_completion_rate": 0.13529411764705881,
+            "idle_actions_per1000": 741.7102114567564
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 8465,
+            "idle_actions": 6373,
+            "idle_begin": 1231,
+            "idle_finish": 5142,
+            "matured": 69,
+            "completed": 24,
+            "clean_completed": 3,
+            "ordinary_completion_rate": 0.34782608695652173,
+            "strict_completion_rate": 0.043478260869565216,
+            "idle_actions_per1000": 752.8647371529829
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 171,
+            "completed": 46,
+            "clean_completed": 19,
+            "primary_issued": 175,
+            "idle_opportunities": 20473,
+            "idle_actions": 12755,
+            "idle_begin": 10973,
+            "idle_finish": 1782,
+            "primary_censored": 4
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.26900584795321636,
+            "strict_completion_rate": 0.1111111111111111,
+            "idle_actions_per1000": 623.0156791872222
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 10493,
+            "idle_actions": 6177,
+            "idle_begin": 5350,
+            "idle_finish": 827,
+            "matured": 90,
+            "completed": 16,
+            "clean_completed": 3,
+            "ordinary_completion_rate": 0.17777777777777778,
+            "strict_completion_rate": 0.03333333333333333,
+            "idle_actions_per1000": 588.6781663966453
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.27797152335424996,
+        "sample_sd": 0.04180247950028319
+      },
+      "strict_completion_rate": {
+        "mean": 0.1127864172488919,
+        "sample_sd": 0.021718562089709105
+      },
+      "idle_actions_per1000": {
+        "mean": 665.2430573135293,
+        "sample_sd": 66.34281946026645
+      }
+    },
+    {
+      "arch": "symmetric",
+      "stage": "review",
+      "history": "endpoint",
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "counts": {
+            "matured": 1344,
+            "completed": 908,
+            "clean_completed": 447,
+            "primary_issued": 1384,
+            "idle_opportunities": 165072,
+            "idle_actions": 725,
+            "idle_begin": 0,
+            "idle_finish": 725,
+            "primary_censored": 40
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.6755952380952381,
+            "strict_completion_rate": 0.3325892857142857,
+            "idle_actions_per1000": 4.392022874866725
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 81606,
+            "idle_actions": 480,
+            "idle_begin": 0,
+            "idle_finish": 480,
+            "matured": 686,
+            "completed": 353,
+            "clean_completed": 78,
+            "ordinary_completion_rate": 0.5145772594752187,
+            "strict_completion_rate": 0.11370262390670553,
+            "idle_actions_per1000": 5.881920447025954
+          }
+        },
+        {
+          "seed": 1,
+          "counts": {
+            "matured": 1329,
+            "completed": 1214,
+            "clean_completed": 610,
+            "primary_issued": 1362,
+            "idle_opportunities": 167000,
+            "idle_actions": 141,
+            "idle_begin": 0,
+            "idle_finish": 141,
+            "primary_censored": 33
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.9134687735139202,
+            "strict_completion_rate": 0.45899172310007524,
+            "idle_actions_per1000": 0.844311377245509
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 83042,
+            "idle_actions": 100,
+            "idle_begin": 0,
+            "idle_finish": 100,
+            "matured": 670,
+            "completed": 578,
+            "clean_completed": 199,
+            "ordinary_completion_rate": 0.8626865671641791,
+            "strict_completion_rate": 0.29701492537313434,
+            "idle_actions_per1000": 1.2042099178728836
+          }
+        },
+        {
+          "seed": 2,
+          "counts": {
+            "matured": 1350,
+            "completed": 944,
+            "clean_completed": 503,
+            "primary_issued": 1389,
+            "idle_opportunities": 166738,
+            "idle_actions": 276,
+            "idle_begin": 0,
+            "idle_finish": 276,
+            "primary_censored": 39
+          },
+          "metrics": {
+            "ordinary_completion_rate": 0.6992592592592592,
+            "strict_completion_rate": 0.3725925925925926,
+            "idle_actions_per1000": 1.6552915352229245
+          },
+          "unique_raw_1_3": {
+            "idle_opportunities": 85507,
+            "idle_actions": 215,
+            "idle_begin": 0,
+            "idle_finish": 215,
+            "matured": 701,
+            "completed": 361,
+            "clean_completed": 129,
+            "ordinary_completion_rate": 0.514978601997147,
+            "strict_completion_rate": 0.1840228245363766,
+            "idle_actions_per1000": 2.514414024582783
+          }
+        }
+      ],
+      "ordinary_completion_rate": {
+        "mean": 0.7627744236228059,
+        "sample_sd": 0.13104040137011944
+      },
+      "strict_completion_rate": {
+        "mean": 0.38805786713565116,
+        "sample_sd": 0.06460476051953326
+      },
+      "idle_actions_per1000": {
+        "mean": 2.297208595778386,
+        "sample_sd": 1.8589263976991035
+      }
+    }
+  ],
+  "new_forks": 42
+}

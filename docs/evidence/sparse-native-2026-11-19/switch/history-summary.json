@@ -1,0 +1,94 @@
+{
+  "a_mean_end_stock": 48.859375,
+  "a_mean_ever_installed": 98.21875,
+  "means": {
+    "full": {
+      "accuracy": 0.8103515625,
+      "trials": 10240,
+      "contacted": 10239,
+      "sign_accuracy": [
+        0.8005859375,
+        0.8201171875000001
+      ],
+      "mean_end_stock": 54.75,
+      "min_end_stock": 26,
+      "max_end_stock": 89,
+      "zero_end_stock": 0,
+      "mean_peak_stock": 66.1171875,
+      "births_at_A_history": 19706,
+      "births_outside_A_history": 10262,
+      "support_exits": 111,
+      "evidence_exits": 29103,
+      "end_addresses_in_A_history": 4962,
+      "end_addresses_outside_A_history": 2046,
+      "B_receipts_shown": 81914
+    },
+    "preserve_a_end": {
+      "accuracy": 0.7041992187499999,
+      "trials": 10240,
+      "contacted": 10239,
+      "sign_accuracy": [
+        0.69921875,
+        0.7091796875
+      ],
+      "mean_end_stock": 47.71875,
+      "min_end_stock": 26,
+      "max_end_stock": 76,
+      "zero_end_stock": 0,
+      "mean_peak_stock": 48.859375,
+      "births_at_A_history": 0,
+      "births_outside_A_history": 0,
+      "support_exits": 146,
+      "evidence_exits": 0,
+      "end_addresses_in_A_history": 6108,
+      "end_addresses_outside_A_history": 0,
+      "B_receipts_shown": 81913
+    },
+    "reuse_a_ever": {
+      "accuracy": 0.81708984375,
+      "trials": 10240,
+      "contacted": 10239,
+      "sign_accuracy": [
+        0.8099609375000001,
+        0.82421875
+      ],
+      "mean_end_stock": 38.015625,
+      "min_end_stock": 24,
+      "max_end_stock": 63,
+      "zero_end_stock": 0,
+      "mean_peak_stock": 51.5859375,
+      "births_at_A_history": 19716,
+      "births_outside_A_history": 0,
+      "support_exits": 111,
+      "evidence_exits": 20993,
+      "end_addresses_in_A_history": 4866,
+      "end_addresses_outside_A_history": 0,
+      "B_receipts_shown": 81915
+    }
+  },
+  "primary": {
+    "full_minus_preserve_a_end": [
+      0.10615234375000002,
+      0.07018147786458337,
+      0.144921875
+    ],
+    "full_minus_reuse_a_ever": [
+      -0.006738281249999993,
+      -0.028906249999999977,
+      0.014746093750000019
+    ],
+    "reuse_a_ever_minus_preserve_a_end": [
+      0.11289062500000001,
+      0.07900390625000003,
+      0.1513671875
+    ]
+  },
+  "raw_archive_sha256": "3e47580440b50ad14a06d41e49965ca5446fc9eff9fbd8690d4342eff2b93acf",
+  "entry_sha256": {
+    "964200.npz": "6827a38e961d49ed87ced1843463f33e5914e40dc4afd7b8cc709063ee9d0e79",
+    "964202.npz": "b8adb3728ce4a40f2dd20fcb6e9cbfa0ce78430838dedd9ec0a900a45cdb00bc",
+    "964204.npz": "b90eb428a2253b2bfd797c8b28dd8a8c1c740f5dd089811fd4b378865e6cca25",
+    "964206.npz": "4f66c8deeffaf106e31e31e51b2f025824e17feb750d18637e827848993cd033"
+  },
+  "registered_sha256": "defaf8f204c35c7da68a0fac278d74bcacd8ef5148263485ebb37ac057c8b7c4"
+}

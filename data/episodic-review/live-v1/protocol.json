@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-11-06T17:46:24.220441+00:00",
+  "mode": "live",
+  "sources": {
+    "experiments/episodic_review/evaluate.py": "39d31d1f4c0843a70a673d3bb9bd610f8b71e128ddfbd9ac8b3ee6f1b7fab9d4",
+    "experiments/episodic_review/eval_test.py": "4f3cc40f9eec874bcb96c6b6b12f4463dec8e55c5b4e687fcbda6ac32c7edbac",
+    "experiments/episodic_review/eval_audit.py": "59b6ab6dbc9f863849b22e398619d40a58dca7e15e0bda307676011cb0c6daf6",
+    "experiments/episodic_review/analysis-plan.md": "15a75b01fdbecdccfa7e145463be5708c38c0b8b30253e4cca896aff9ba6e24c",
+    "experiments/episodic_review/retention-plan.md": "6e6e4ca1a0a068e992ef9bb19e21742d8b4fe09540d5576961f1012d1a3b3486",
+    "experiments/remaining_time/evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments/remaining_time/model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/coverage_retention/error_signature.py": "853a9eaebfc58932119c282b3af7d6a77fec9c8a8b861f1898cb73c1e8f460ec",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "none256",
+    "replay_A256",
+    "replay_B256",
+    "none320",
+    "replay_A320",
+    "replay_B320"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "primary": "Fixedstudy256: replay_A versus equallymasked replay_B, withnone andsourcebaseline references. Nativewholewindow strictAconflict/Bconflict/shared plusidle/timingfailures.",
+  "retention": "Study320 means64furtherB-onlyupdates withno replay, fixedbeforeanyheldoutscore. Report256and320, neverpickbest.",
+  "initialization": "Eachstage restores its actualB-onlyworldfinalandownh; futurefamilyABonly, no h/clock/receipt/request/RNG reset; evaluate18continuousreturns.",
+  "endpoint_worlds": "study256 usesoldwithdrawfinaltick66047, study320 usessuffixfinal74239; livestageshavedifferentcases andarenotpairedacrossstages.",
+  "action": "Originalnative11argmaxonly. Auxiliarytimeprediction/logits archivedandnevercontrolaction.",
+  "denominator": "Everypostwarm actualNEW/REPLACE eligiblemature request. Include noBEGIN/no-window/noFINISH. Inheritedpendingrequests separatelyvalidated, notnewtestdenominator.",
+  "rule_signature": "PREDECLARED read-only classification of firstactualFINISH inlegalwindow: currentrule, literalotherruleforconflicts, otherpayload,wrongversion,noattempt. Usesalready-audited priorclassifier; no outputsselectdata.",
+  "classifier_implementation": {
+    "path": "experiments/coverage_retention/error_signature.py",
+    "sha256": "853a9eaebfc58932119c282b3af7d6a77fec9c8a8b861f1898cb73c1e8f460ec",
+    "parent_parser_amendment_sha256": "b503b3c97071a3cbb02b1a6ec1c34cdad86e1c2dac7f8d54778ec7be0a270ec4"
+  },
+  "limits": "Validtimerowsdependonactualhistory; legacyoverdue_beyond_training isonly remaining<-.25 andwaspartlycoveredbymidpointteacher. Fixed2durations, no extrapolationclaimfromreplay."
+}

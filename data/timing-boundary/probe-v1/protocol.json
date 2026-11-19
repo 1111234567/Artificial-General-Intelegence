@@ -1,0 +1,93 @@
+{
+  "created_utc": "2026-11-04T03:19:37.738956+00:00",
+  "version": 1,
+  "script_sha256": "9b930221691117ebcc76de34ccd62e853fd4a0a2ed6ca54cc5a77ba257a18015",
+  "data_protocol_path": "data/timing-boundary/v1/protocol.json",
+  "data_protocol_sha256": "fa5a72e0b3cb53b97eed3ee1cd3dccfb1e15cce6646b9801e07daff02c65c0ad",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "midpoint",
+    "first",
+    "interior",
+    "random"
+  ],
+  "question": "Can fixed frozen recurrent state decode the consecutive last-illegal / first-legal boundary independently of FINISH content?",
+  "data": "New teacher trajectories only for fitting; disjoint actor train/validation/test. Each model receives identical teacher histories. Own-policy test uses the same frozen teacher-fitted probes, with no own-policy fitting. Random192 is an untrained generic reservoir on teacher histories only.",
+  "units": "One paired request; endpoints offset -1 (last actual illegal) and 0 (first actual legal), exactly consecutive ticks, are mandatory. All metrics retain request and row denominators.",
+  "representation": "h is shared 192-dimensional POST-current-observation hidden state used by original head. obs is the complete 56-dimensional current observation. logits feature is target-slot 11 original logits in native action order 0..10. Fit each job/slot separately, pool A/B and raw codes.",
+  "timing": {
+    "training_rows": [
+      -1,
+      0
+    ],
+    "target": "actual legal bool",
+    "features": [
+      "h",
+      "obs",
+      "logits",
+      "h_shuffled",
+      "h_mlp64"
+    ],
+    "logistic": {
+      "C": 1.0,
+      "penalty": "L2",
+      "l1_ratio": 0.0,
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "tol": 1e-08,
+      "class_weight": null
+    },
+    "standardization": "mean and population standard deviation fitted on teacher TRAIN rows only; zero scale becomes 1",
+    "threshold": 0.5,
+    "threshold_rule": "p>=0.5 predicts legal",
+    "rank": "score(first legal)>score(last illegal); exact ties count 0.5; strict wins and ties also reported",
+    "shuffled": "h-only logistic with TRAIN labels swapped within exactly floor(P/2) pairs per slot; RNG 928000+100*modelseed+slot, same flips across arms. Real labels retained for all evaluation.",
+    "nonlinear": {
+      "kind": "MLPClassifier",
+      "hidden_layer_sizes": [
+        64
+      ],
+      "activation": "tanh",
+      "solver": "adam",
+      "alpha": 0.0001,
+      "batch_size": 256,
+      "learning_rate_init": 0.001,
+      "max_iter": 400,
+      "early_stopping": false,
+      "n_iter_no_change": 401,
+      "tol": 0.0,
+      "shuffle": true,
+      "random_state": "910000+100*modelseed+slot",
+      "budget": "fixed 400 epochs, no sweep"
+    }
+  },
+  "content": {
+    "rows": [
+      -1,
+      0
+    ],
+    "target": "target action minus 3, eight FINISH classes 0..7",
+    "features": [
+      "h",
+      "obs"
+    ],
+    "model": "same fixed L2 multinomial logistic; independent from timing; no timing label in content fit",
+    "baseline": "original conditional argmax(logits[target slot,3:11])+3"
+  },
+  "remaining": {
+    "rows": "all retained available offsets -8,-4,-2,-1,0,1,2",
+    "target": "(ready_time-now)/0.25 in ticks; first legal may be slightly negative",
+    "features": [
+      "h",
+      "obs"
+    ],
+    "model": "Ridge(alpha=1,fit_intercept=True,solver=cholesky), train-only standardization",
+    "boundary": "predict legal iff predicted remaining_ticks<=0; report sign row and both-correct as well as boundary rank predicted_remaining(last)>predicted_remaining(first)"
+  },
+  "evaluation": "Validation only diagnostic; no feature/hyperparameter/threshold/epoch/model selection. Freeze every coefficient/scaler artifact for all seeds/arms before any test or own test scoring. Family A/B, raw, conflict/shared, slot, duration [8,12) / [12,16] strata; modelseed-level summaries. Probe predictions never become world actions. Free-policy outcomes are separate data artifacts.",
+  "uncertainty": "Linear failure does not establish absence of information. Fixed tiny nonlinear h-only timing probe is a limited capacity control. Random GRU tests generic reservoir decodability. No significance claim from treating rows as independent model seeds."
+}

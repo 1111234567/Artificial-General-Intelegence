@@ -1,0 +1,37 @@
+{
+  "primary": {
+    "joint_totals": {
+      "lives": 288,
+      "contacts": 184317,
+      "growth": 8928,
+      "retirement": 9792,
+      "newborn_written": 8928
+    },
+    "exploratory_weights_comparisons": {
+      "stable_joint_minus_weights": [
+        0.099609375,
+        0.03515625,
+        0.16710069444444442
+      ],
+      "reverse_joint_minus_weights": [
+        0.09765625,
+        0.036892361111111105,
+        0.17437337239583425
+      ]
+    },
+    "masked_and_independent_controls_trajectory_invariant": true,
+    "worlds_identical_before_each_switch": true
+  },
+  "ablation": {
+    "stable": {
+      "matched_growth": 2976,
+      "matched_retirement": 3264,
+      "raw_sha256_identical_after_summary_fix": true
+    },
+    "reverse": {
+      "matched_growth": 2976,
+      "matched_retirement": 3264,
+      "raw_sha256_identical_after_summary_fix": true
+    }
+  }
+}

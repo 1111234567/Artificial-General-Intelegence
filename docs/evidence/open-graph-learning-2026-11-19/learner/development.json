@@ -1,0 +1,464 @@
+{
+  "heads": [
+    [
+      0,
+      0,
+      1290199101,
+      0,
+      "modules64"
+    ],
+    [
+      0,
+      1,
+      1254770876,
+      1,
+      "modules64"
+    ],
+    [
+      0,
+      0,
+      1290199101,
+      2,
+      "modules64"
+    ],
+    [
+      1,
+      0,
+      1206642576,
+      0,
+      "modules64"
+    ],
+    [
+      1,
+      1,
+      853188230,
+      1,
+      "modules64"
+    ],
+    [
+      1,
+      1,
+      853188230,
+      2,
+      "modules64"
+    ],
+    [
+      2,
+      0,
+      1072750145,
+      0,
+      "modules64"
+    ],
+    [
+      2,
+      1,
+      1527812090,
+      1,
+      "modules64"
+    ],
+    [
+      2,
+      1,
+      1527812090,
+      2,
+      "modules64"
+    ],
+    [
+      3,
+      0,
+      1587942537,
+      0,
+      "modules64"
+    ],
+    [
+      3,
+      1,
+      2057194896,
+      1,
+      "modules64"
+    ],
+    [
+      3,
+      0,
+      1587942537,
+      2,
+      "modules64"
+    ]
+  ],
+  "checkpoints": [
+    {
+      "group": 0,
+      "record_sha256": "2b797651666d8142add87a77b8e4c521fd5f3e8810e539afc288f08753a32c69",
+      "weights": "group-00-1200.npz",
+      "weight_sha256": "5995c1f3995257b5abe6b85d15de68be05e4d27d42c889a6aa01ca7a1176390d"
+    },
+    {
+      "group": 1,
+      "record_sha256": "c8fc010966e89f4d6427876b8dba7571724b87d53f87e1ee509f1088e9251e84",
+      "weights": "group-01-1200.npz",
+      "weight_sha256": "a7981ed46a59352b94a1cd83e7ce405d822308145cdd2d070ce829b80647aa9b"
+    },
+    {
+      "group": 2,
+      "record_sha256": "cc549212f595627ddce7a0b9c86f7347eee6bd5c5a464e6f6041fec13d502d57",
+      "weights": "group-02-1200.npz",
+      "weight_sha256": "33319187bdbe11e8a2366726803a80bc4ae4e29ca452a7f165df9d14ff5974eb"
+    },
+    {
+      "group": 3,
+      "record_sha256": "5d351a77687f2108e97cc32ef10f1d4b76552d706718740da672969f0d4a4cda",
+      "weights": "group-03-1200.npz",
+      "weight_sha256": "d85366098939a1b762768ecd22cdc567cf1dc5c1fe2c7cecbb0b1d6fc9bc8140"
+    }
+  ],
+  "results": [
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.24,
+        "context_gain": 0.95,
+        "memory_decay": 0.9,
+        "kernel_strength": 24.0,
+        "retirement_cost": 0.035,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7270833333333333
+        },
+        "reversal": {
+          "late": 0.7223958333333335
+        },
+        "return": {
+          "late": 0.6572916666666667
+        },
+        "partial": {
+          "changed": 0.5692708333333333,
+          "unchanged": 0.6083333333333334
+        }
+      },
+      "score": 0.6738932291666667
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.42,
+        "context_gain": 0.95,
+        "memory_decay": 0.9,
+        "kernel_strength": 24.0,
+        "retirement_cost": 0.035,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7072916666666668
+        },
+        "reversal": {
+          "late": 0.7010416666666668
+        },
+        "return": {
+          "late": 0.6479166666666667
+        },
+        "partial": {
+          "changed": 0.5625,
+          "unchanged": 0.6005208333333333
+        }
+      },
+      "score": 0.6594401041666668
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.42,
+        "context_gain": 1.45,
+        "memory_decay": 0.9,
+        "kernel_strength": 24.0,
+        "retirement_cost": 0.035,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.709375
+        },
+        "reversal": {
+          "late": 0.7026041666666666
+        },
+        "return": {
+          "late": 0.6395833333333333
+        },
+        "partial": {
+          "changed": 0.584375,
+          "unchanged": 0.6098958333333333
+        }
+      },
+      "score": 0.6621744791666666
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.24,
+        "context_gain": 1.45,
+        "memory_decay": 0.86,
+        "kernel_strength": 18.0,
+        "retirement_cost": 0.035,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7119791666666666
+        },
+        "reversal": {
+          "late": 0.709375
+        },
+        "return": {
+          "late": 0.6609375000000001
+        },
+        "partial": {
+          "changed": 0.5604166666666667,
+          "unchanged": 0.5885416666666666
+        }
+      },
+      "score": 0.6641927083333334
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.42,
+        "context_gain": 1.45,
+        "memory_decay": 0.86,
+        "kernel_strength": 18.0,
+        "retirement_cost": 0.035,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.6916666666666668
+        },
+        "reversal": {
+          "late": 0.6932291666666668
+        },
+        "return": {
+          "late": 0.6604166666666668
+        },
+        "partial": {
+          "changed": 0.5494791666666666,
+          "unchanged": 0.5755208333333334
+        }
+      },
+      "score": 0.6519531250000001
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.28,
+        "context_gain": 1.75,
+        "memory_decay": 0.94,
+        "kernel_strength": 24.0,
+        "retirement_cost": 0.065,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7687499999999999
+        },
+        "reversal": {
+          "late": 0.7604166666666666
+        },
+        "return": {
+          "late": 0.6432291666666666
+        },
+        "partial": {
+          "changed": 0.6604166666666665,
+          "unchanged": 0.7057291666666666
+        }
+      },
+      "score": 0.7138671875
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.28,
+        "context_gain": 2.25,
+        "memory_decay": 0.92,
+        "kernel_strength": 32.0,
+        "retirement_cost": 0.065,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7729166666666667
+        },
+        "reversal": {
+          "late": 0.7635416666666668
+        },
+        "return": {
+          "late": 0.6546875
+        },
+        "partial": {
+          "changed": 0.6083333333333333,
+          "unchanged": 0.6651041666666667
+        }
+      },
+      "score": 0.7069661458333334
+    },
+    {
+      "config": {
+        "rate": 0.02,
+        "head_rate": 0.32,
+        "context_gain": 1.3,
+        "memory_decay": 0.9,
+        "kernel_strength": 24.0,
+        "retirement_cost": 0.065,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7442708333333332
+        },
+        "reversal": {
+          "late": 0.7302083333333332
+        },
+        "return": {
+          "late": 0.6557291666666667
+        },
+        "partial": {
+          "changed": 0.5807291666666666,
+          "unchanged": 0.6130208333333332
+        }
+      },
+      "score": 0.6817708333333332
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.32,
+        "context_gain": 1.3,
+        "memory_decay": 0.9,
+        "kernel_strength": 24.0,
+        "retirement_cost": 0.085,
+        "temperature": 1.4,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7567708333333334
+        },
+        "reversal": {
+          "late": 0.7546874999999998
+        },
+        "return": {
+          "late": 0.6802083333333334
+        },
+        "partial": {
+          "changed": 0.5854166666666667,
+          "unchanged": 0.609375
+        }
+      },
+      "score": 0.697265625
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.42,
+        "context_gain": 1.75,
+        "memory_decay": 0.94,
+        "kernel_strength": 18.0,
+        "retirement_cost": 0.085,
+        "temperature": 2.2,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7598958333333333
+        },
+        "reversal": {
+          "late": 0.7479166666666667
+        },
+        "return": {
+          "late": 0.6598958333333332
+        },
+        "partial": {
+          "changed": 0.6875,
+          "unchanged": 0.6994791666666668
+        }
+      },
+      "score": 0.7152994791666667
+    },
+    {
+      "config": {
+        "rate": 0.025,
+        "head_rate": 0.42,
+        "context_gain": 1.75,
+        "memory_decay": 0.94,
+        "kernel_strength": 18.0,
+        "retirement_cost": 0.085,
+        "temperature": 2.2,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7682291666666666
+        },
+        "reversal": {
+          "late": 0.7604166666666666
+        },
+        "return": {
+          "late": 0.6791666666666667
+        },
+        "partial": {
+          "changed": 0.6880208333333334,
+          "unchanged": 0.6880208333333333
+        }
+      },
+      "score": 0.7239583333333334
+    },
+    {
+      "config": {
+        "rate": 0.008,
+        "head_rate": 0.32,
+        "context_gain": 1.75,
+        "memory_decay": 0.87,
+        "kernel_strength": 16.0,
+        "retirement_cost": 0.085,
+        "temperature": 2.2,
+        "birth_scale": 4.0,
+        "memory_prior": 0.055
+      },
+      "accuracy": {
+        "stable": {
+          "late": 0.7333333333333334
+        },
+        "reversal": {
+          "late": 0.7317708333333334
+        },
+        "return": {
+          "late": 0.6833333333333332
+        },
+        "partial": {
+          "changed": 0.5729166666666666,
+          "unchanged": 0.5911458333333334
+        }
+      },
+      "score": 0.6826171875
+    }
+  ]
+}

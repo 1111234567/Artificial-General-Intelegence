@@ -1,0 +1,56 @@
+{
+  "config": {
+    "updates": 8000,
+    "pairs": 16,
+    "min_wait": 0,
+    "max_wait": 8,
+    "world_seed": 43197,
+    "lr": 0.003,
+    "grad_clip": 2.0,
+    "controller": "local"
+  },
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "tasks": [
+    "odor",
+    "feeder"
+  ],
+  "arms": [
+    "active",
+    "independent"
+  ],
+  "checkpoints": [
+    0,
+    1000,
+    4000,
+    8000
+  ],
+  "metrics": [
+    "terminal_resource",
+    "terminal_positive",
+    "positive_law_success",
+    "negative_law_success",
+    "both_twin_positive",
+    "terminal_motor_score_loss",
+    "support_motor_score_loss",
+    "edit_score_loss",
+    "contacts_with_numeric_change",
+    "edges_born_per_life",
+    "edges_retired_per_life",
+    "grad_norm"
+  ],
+  "episodes_per_fit": 256000,
+  "target": "Sampled terminal resource, leave-own-pair-out baseline. Sum the log probabilities of all sampled actions and edits; the earlier observed taste enters the graph only.",
+  "sources": {
+    "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "local_trace_graph.py": "8bdd13b8a6954fae00d27ae56b585cc8073442221929a510813d0b10e728b31a",
+    "revisit_choice_graph.py": "eef973f7c6c9c002dcd247e802da86c57647e3a10125e9f99eac6e036aa6c507",
+    "local_trace_train.py": "666eac678846ec83410e1dd6c879a4b9a925fc5fab190a1eb89525f0627a3a6f"
+  }
+}

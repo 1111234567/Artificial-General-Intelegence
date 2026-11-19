@@ -1,0 +1,23 @@
+{
+  "protocol": 1,
+  "date": "2026-11-19",
+  "roots": [101, 102, 103, 104],
+  "checkpoint_rule": "Take the final iteration at every prospectively fixed root. Compare with the existing one-contact, own-view core checkpoint of the same root.",
+  "train_iterations": 500,
+  "batch": 64,
+  "train_contacts": 6,
+  "train_relation": "A single two-odor private relation fixed within each example, evenly averaged across post-write probes. Random orientation at every contact, fresh relation per example, no noise or rule changes.",
+  "training_rng_offset": 6841009,
+  "evaluation_root": 14421009,
+  "evaluation_lives": 192,
+  "evaluation_contacts": 64,
+  "novel_pairs": 3,
+  "novel_noise": 0.20,
+  "novel_switch_contact": 32,
+  "primary_windows": [[1, 8], [25, 32], [33, 40], [57, 64]],
+  "arms": ["active", "primitive", "none"],
+  "paired_comparisons": ["repeated active minus one-contact active", "repeated active minus repeated primitive"],
+  "bootstrap_draws": 5000,
+  "uncertainty_seed": 771009,
+  "selection": "No learning rate, feature, window, root or training length selection on validation data. Keep all results. Evaluation uses unmodified full-amplitude deployment."
+}

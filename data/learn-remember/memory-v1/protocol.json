@@ -1,0 +1,16 @@
+{
+  "format": 1,
+  "created_utc": "2026-11-03T06:20:25.849770+00:00",
+  "goal": "Does a single raw/context cue causally change the later content decisions when every subsequent observation and feedback is held identical?",
+  "inputs": {
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f3.pt": "ce9610b0e3f446392017726d6a467c018c54e026305c20f875020380b77a60c0",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f3.pt": "3a514666aa953db8ab577806cb60be8976802d180fe174c7ec29aa0525f08118",
+    "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f3.pt": "3d47863d65926868517287c5e89054653210f921c2b46754e904ae54bcc20aa9"
+  },
+  "anchors": "All previously saved family3 backgrounds with at least128 ticks of continuous public history; selection is independent of new model scores. The learner never fits these assay variants.",
+  "conditions": "For every real background keep its original slot/version/window and other-slot observations, vary public raw payload0..3 and family0..3 at its cue. Fix duration8. Lock target correct-version BEGIN at cue and WAIT thereafter. The only new feedback is the accepted BEGIN, which reveals version but not payload or family.",
+  "phases": "Measure conditional 8-way/version+mapped payload ranking and 11-way FINISH choice at the first midpoint-teacher FINISH opportunity. These are scores under fixed actions, not free completions. Report any autonomous success independently.",
+  "state_intervention": "After processing tick16 copy the entire hidden state between two matched branches with identical family/version/world suffix but raw=(raw+1) mod4. At the final read, compare against the recipient and donor labels. Require donor score equality within dtype tolerance.",
+  "aggregation": "Each target/family has one variant per anchor. Family3 raw1 and raw3 targets differ from every retained family's target. Group by independent model seed. A rule-blind oracle that knows raw and version can get at most50% across the balanced four families.",
+  "stages": "Compare untrained initialization, end of acquisition and end of withdrawal; include previous undirected end_only as a diagnostic comparator. Each candidate receives its own hidden state on the same reference history; no shared hidden dimensions required."
+}

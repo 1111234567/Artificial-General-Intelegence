@@ -1,0 +1,390 @@
+{
+  "format": "coverage-retention-learned-endpoint-continuation-v1",
+  "created_utc": "2026-11-06T16:35:03.551942+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "control",
+    "wide",
+    "withdraw"
+  ],
+  "snapshots": [
+    0,
+    64,
+    256
+  ],
+  "runtime": {
+    "executable": "F:\\agi\\.venv\\Scripts\\python.exe",
+    "torch_version": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "cudnn_version": 91900,
+    "GPU_name": "NVIDIA GeForce RTX 4060 Ti",
+    "GPU_total_memory": 8585216000,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "deterministic_algorithms": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "matmul_TF32": false,
+    "cudnn_TF32": false,
+    "dtype": "float32",
+    "AMP": false
+  },
+  "source_sha256": {
+    "F:\\agi\\experiments\\coverage_retention\\train.py": "688f9e0cc74354acfc40e6216e6bda1f085c484ef259773463e348bb6a154263",
+    "F:\\agi\\experiments\\coverage_retention\\train_test.py": "c303b669e76180e4c651e85f3f7d2e2915f4ba922cb2b6609094b2b25dc01d0f",
+    "F:\\agi\\experiments\\coverage_retention\\train_audit.py": "2436f21f2cd16e9a0517e795ae9a8a2db318dcd49c9c383e28da038f5b107426",
+    "F:\\agi\\experiments\\teacher_timing\\train.py": "a53f86c11dc8cacba900802919ea991e69839f1f9a27390a5f03e3841a9efb79",
+    "F:\\agi\\experiments\\remaining_time\\train.py": "fb660574f9f38e5f03b8625b71d13042811e555af36481bbbd791b4afd869b54",
+    "F:\\agi\\experiments\\remaining_time\\train_test.py": "376600603041d09f711eebf3712ba0304801756a2276af339f75b9f1d4c13345",
+    "F:\\agi\\experiments\\remaining_time\\model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "F:\\agi\\experiments\\remaining_time\\model_test.py": "5e527b965634b1950352bcb15b94ddabf6a88ac9600b3643e09e411235679a2d",
+    "F:\\agi\\experiments\\remaining_time\\targets.py": "83f2e66044cb2bf3e623dd452d81c1c426d8521f79e7fb63a1d6d5a400403cfa",
+    "F:\\agi\\experiments\\remaining_time\\targets_test.py": "25a28fcaa319dc22beb843439921bb82729f8ebe3d9c2d5725f4569d8a2421fc",
+    "F:\\agi\\experiments\\action_split\\train.py": "5d322b8adb84e719d8151cccfb45ebc50b50b5cb6362c001a085cd165d898cdd",
+    "F:\\agi\\experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\coverage_retention\\data.py": "87c15b05282a96b050467a4110c1aead91b20f1edcd99df1b9554947a58559d4",
+    "F:\\agi\\experiments\\coverage_retention\\data_test.py": "c2c81a713a7b4e187be28a1cd0aeaa7dc747da9f33bd5d5a8c2704d2cbed5b9e",
+    "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_raw.py": "5d7bea5a16a72d76695f86ea78451ce52409fa4ae78eaf3663e84297863cf2b5",
+    "F:\\agi\\experiments\\teacher_timing\\data.py": "ad264952c757e77732b2133c753ecffc78b55fe540a5cc6c56302e1676b1a3a6",
+    "F:\\agi\\experiments\\teacher_timing\\data_test.py": "70a06704ef1bb35a166e3f9db253507a183788a19bfaecafc4660a2051a67d17",
+    "F:\\agi\\data\\teacher-timing\\streams-v1\\audit_raw.py": "4bef4fe797cdc3247785244adcee9b7738198397263acb12c3948367b1c266a1",
+    "F:\\agi\\experiments\\action_split\\data_test.py": "e61a4d97cc91ab22899f9a523534a9bc7c28dde016507226e69a22edf84e7ce5",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "F:\\agi\\data\\action-split\\streams-v1\\audit_raw.py": "d0abd06ef948ae764eb476e599d8c5662716aa79cc59a198c6f425346e0cd517",
+    "experiments\\coverage_retention\\analysis-plan.md": "57955a12155119d9d699a682c7bf903dbaf82938851b3966d84f03981fab250e"
+  },
+  "input_sha256": {
+    "0": {
+      "control": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.json": "d290979a1c252fcdb11a273d806cb20f57a64ceb6a1c923c3ceba4ec4f1331cc",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control\\stream.npz": "b3cb18341808046756af09067a62f15218a83d6d38c1b5180d06c3634518b037",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control\\stream.json": "e25522c9901cc71304c7d685edf014d9b414ad4eb181ff87451d25877d41c1c3",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control\\world_states.pt": "07fc93b1eba46634e31233e3adebe9ecb398d3ddadd9e824e716304aeec79948",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control\\raw_audit.json": "6dd60b58cc54be24da4d0b6c173f4f625cb713c5604387a74911553623f6bc90",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control_withdraw_pair.json": "8ffda3cc79663bf498a7bfc8b7b33540e474a0295f5d4737eb5c4872dc4b68a0"
+      },
+      "wide": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.json": "d290979a1c252fcdb11a273d806cb20f57a64ceb6a1c923c3ceba4ec4f1331cc",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\wide\\stream.npz": "99970c0f6d9c9c84ee77cccb65178cdee338d717cc41800b561866f486200ebd",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\wide\\stream.json": "5d8975e8849f229a00b24527cb44779eeef293df9c9a6a78457dfc5ab1b64395",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\wide\\world_states.pt": "2f74884006f8a33b5bbe20073541192a1aa88183009f46ec10913840591fd5f0",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\wide\\raw_audit.json": "670d0ce37aa7f6371396bda37447b67fe560513c0ca3901f0241735dcbde2ed3",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control_withdraw_pair.json": "8ffda3cc79663bf498a7bfc8b7b33540e474a0295f5d4737eb5c4872dc4b68a0"
+      },
+      "withdraw": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.json": "d290979a1c252fcdb11a273d806cb20f57a64ceb6a1c923c3ceba4ec4f1331cc",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\withdraw\\stream.npz": "b677627edb64597e1b2b55a90cf3e2d15d14c7e6a8ecbd020741090829e9dcec",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\withdraw\\stream.json": "296f84a0a2cad6ea68f4b8d051deff3dae3a789a8c51d1089ecf074b5cdd5182",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\withdraw\\world_states.pt": "4d68d8ae413695f6f2f25b96166e0ba10718eb91b0d32c8d84f5e8afdb6a2e1b",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\withdraw\\raw_audit.json": "12782daf0ea629e1918bbf7f3c49da2bc9225fb6a7a14f68ca64ee165022aa30",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_000\\control_withdraw_pair.json": "8ffda3cc79663bf498a7bfc8b7b33540e474a0295f5d4737eb5c4872dc4b68a0"
+      }
+    },
+    "1": {
+      "control": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.json": "754693026574a3f856af041db69c9467b32904cfed0821c446c22c5232ef8435",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control\\stream.npz": "cbb148f69b8b48cc8a500a05b089f101174ff4110923e7b362bb2fe17878a0eb",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control\\stream.json": "b08964042b9c2bfdbb71fb626e86a399a2ee77826af9822ab0fbf7669a50d76f",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control\\world_states.pt": "4e3208ba277379b819394b6567521574301bb985359596d1e3637637a3d83719",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control\\raw_audit.json": "87759bad794d8fb5c6a95529362dcff3d460b672bad037262ed0c577d3b53f33",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control_withdraw_pair.json": "2b1c87dd8a36aaf5668637dfa525af2f34b4efe0a942b1c8c5a11d5f885e8efa"
+      },
+      "wide": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.json": "754693026574a3f856af041db69c9467b32904cfed0821c446c22c5232ef8435",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\wide\\stream.npz": "98a8dd4ac17746691bd05b44b55843628973dd3c15ecaf1d48b53d40a7154e2b",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\wide\\stream.json": "180821b7b2d869d09929eb59077c27a2ca2e2fd5b44b726dce2bbb93e2fa3e51",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\wide\\world_states.pt": "d05ad22c360bde0cc3a61df4baa6750c435db2a4f3be9f560c40e029d37d28ea",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\wide\\raw_audit.json": "77876988c208403baa300550271d7d7320e525b0a8837ff82fc11b19ed904710",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control_withdraw_pair.json": "2b1c87dd8a36aaf5668637dfa525af2f34b4efe0a942b1c8c5a11d5f885e8efa"
+      },
+      "withdraw": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.json": "754693026574a3f856af041db69c9467b32904cfed0821c446c22c5232ef8435",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\withdraw\\stream.npz": "7500fb5d4ca4a2648cee1f129e3a5e97d20fabd6a886de8549c648ed825ea72e",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\withdraw\\stream.json": "b041fffc02f996b5e70a55abb0b06eca27915ad9ef1dce658dec554561935ae5",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\withdraw\\world_states.pt": "8fbc7a571e1411e3441b22d6249c9fd8061a8f4cf0a59dfbf05386c48667cb95",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\withdraw\\raw_audit.json": "7ed60c26b5ac57005f9ed86e45c637e2552372184605277b54e8318fe9116636",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_001\\control_withdraw_pair.json": "2b1c87dd8a36aaf5668637dfa525af2f34b4efe0a942b1c8c5a11d5f885e8efa"
+      }
+    },
+    "2": {
+      "control": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.json": "65aa8286caec595a1b2180f452e581e34fd2dd795785c0d11c09d14b977225fd",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control\\stream.npz": "a8f9dbf518377ad548fe55443d878ce758935aec68590b3d233812507eb3a1e8",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control\\stream.json": "90f4dda7244ceaf816b46ef221234d70add8ab0a410ea85d34939cb2193b9f21",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control\\world_states.pt": "a97b846f52e1b303cf6442f0e0e44284df767f68b43a591269868a7e29d06dab",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control\\raw_audit.json": "bb328ac115f1cc6849bc4b8f9a1dc34bd3faa13b0a147c61eb0986e57efd10fb",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control_withdraw_pair.json": "24809824a6252e1113344052c94b24c035ba37673bcf812aa68148a58d8e2093"
+      },
+      "wide": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.json": "65aa8286caec595a1b2180f452e581e34fd2dd795785c0d11c09d14b977225fd",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\wide\\stream.npz": "3e4d562a3f0648e829c9c82b7298453f3703314699004380d69462bdf3d870f4",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\wide\\stream.json": "82ef00a3e38d3dd1246476fa42f87b6bf983d1833261698af3281fcdf86d7bb4",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\wide\\world_states.pt": "d893e022855443ee29bd3f3855d4c0f58da7b53fb0334f7d0381947321e48adb",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\wide\\raw_audit.json": "2344b09b96a6123631c4730f29bfae2a2dc852010c18ac18fc5c826b3344f4fa",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control_withdraw_pair.json": "24809824a6252e1113344052c94b24c035ba37673bcf812aa68148a58d8e2093"
+      },
+      "withdraw": {
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+        "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.json": "65aa8286caec595a1b2180f452e581e34fd2dd795785c0d11c09d14b977225fd",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\completion.json": "eac3b209fab1a87fe272aa13522dbde96d96a6824269ace80f0a6a331d712dde",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\audit_completion.json": "a2da93eb59548d12bcb3fc9fa34adc9f9e7d34572b0cdb20f36af5a830359570",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\withdraw\\stream.npz": "b845833f22e6242af260aef199e6d27d7fec8d584ed997667fc1532b3e6b4b66",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\withdraw\\stream.json": "463f41546e5f9e830be0d4bff57d5ce7c9a55513143210e9021dec0b099ecaa4",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\withdraw\\world_states.pt": "88bc6462f721b455116cf6aad46222444860e5eb9e0d1dca42cd65e6307709c7",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\withdraw\\raw_audit.json": "6de997d2561d789105cfd5018a0e5e9268163c09d7276f9084a1dc1b7e327fa3",
+        "F:\\agi\\data\\coverage-retention\\streams-v1\\seed_002\\control_withdraw_pair.json": "24809824a6252e1113344052c94b24c035ba37673bcf812aa68148a58d8e2093"
+      }
+    }
+  },
+  "data_protocol_path": "F:\\agi\\data\\coverage-retention\\streams-v1\\protocol.json",
+  "data_protocol_sha256": "676cf822ef4c09c89f0b8b0ad9bbff2905cb96daa62be700a8118621b62e3857",
+  "data_protocol_hash": "676cf822ef4c09c89f0b8b0ad9bbff2905cb96daa62be700a8118621b62e3857",
+  "source_training_protocol_path": "F:\\agi\\data\\teacher-timing\\train-v1\\protocol.json",
+  "source_training_protocol_sha256": "1e1f4652bcc2407ed98b3d4f150492c282af4511259a06ea22198b31fe4d1066",
+  "source_freeze_path": "F:\\agi\\data\\teacher-timing\\train-v1\\globalfreeze.json",
+  "source_freeze_sha256": "c3e58222ec7cc8c5813d314aa7893d77424e55189aef73db8ff0144e9d502d30",
+  "source_policy": "seed-matched learned midpoint/action step256; core+native11+trained time head, existing Adam step256 moments, live numerical h and RNG copied exactly to all3 arms",
+  "initial_model": {
+    "width": 192,
+    "input_size": 56,
+    "n_jobs": 2,
+    "n_actions": 11,
+    "total_parameters": 148632,
+    "core": "exact learned source GRU",
+    "native_head": "exact learned source11-way native head",
+    "time_head": "exact learned source linear192->2; already trained, never reset or zeroed",
+    "requires_grad": "all source action parameters trainable; diagnostic time features detached",
+    "new_parameters": 0
+  },
+  "initial_states": {
+    "0": {
+      "source_checkpoint": "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt",
+      "source_checkpoint_sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+      "source_world_path": "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt",
+      "source_world_stage": "final",
+      "state_sha256": {
+        "model": "dc57be027d0ddea2109958f47d9141228846235410ba7a5b6efcb9c6295ac65d",
+        "optimizer": "399b4e872a6d26bff830292de469f9c7612d22be656096893b52fcb74374237e",
+        "hidden": "c1e15ccf6ec816e63c8457150b78d71f79458399f40cf9810ce6dfad2d0fbe09",
+        "torch_rng": "50b07d3ef12a99fc31aefc862f27656f2b3133e17f5de50889dce96118582f7e",
+        "cuda_rng": "c79e04e320d2134b8e12b12cc054a3425930c7216e7a7f5d42a53d1d031a6c77",
+        "numpy_rng": "9f992bda03bccbb4216fc6abf55ea9df9fc7128cce9949a9f94cccf01f944368"
+      },
+      "source_optimizer_step": 256,
+      "source_stream_cursor": 33280
+    },
+    "1": {
+      "source_checkpoint": "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt",
+      "source_checkpoint_sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+      "source_world_path": "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt",
+      "source_world_stage": "final",
+      "state_sha256": {
+        "model": "73caee2eba47760dd184a55785ebbb110623310e42c57539a25991259c7944aa",
+        "optimizer": "a923a882bc95b2ab6b85482bad63433f1b8aca930dc445c710cfa2781d13bf98",
+        "hidden": "c38f66f330723d3550d722e93db87fb4615285f6a1aa1b02a8824b483759fc6f",
+        "torch_rng": "127c0b0ec110ddc2a6174db74d6ebeb56913472648228a30a28e8b22e0278649",
+        "cuda_rng": "475e12f61f96bf10859b4c7151cee1f0e56ef9aee4e19c463ecf75a23f829668",
+        "numpy_rng": "fb22bd261e144a35675df5d86ea697468c3c940d793789b0f63a52818726ff7d"
+      },
+      "source_optimizer_step": 256,
+      "source_stream_cursor": 33280
+    },
+    "2": {
+      "source_checkpoint": "F:\\agi\\data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt",
+      "source_checkpoint_sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+      "source_world_path": "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt",
+      "source_world_stage": "final",
+      "state_sha256": {
+        "model": "9e895e8152ed7e1da5914b48becfa9fa6548141ebcf3cb5005610e63f7d3948b",
+        "optimizer": "ad00a00e6054d06331c7aa7161855df70cf73b1a150637eecda8cf6656a74698",
+        "hidden": "96b1a1d2a210ab49c0294fa3bb8fd10ae40a36830987a304b416b8eeddb6df54",
+        "torch_rng": "f42c62ad1593ecbe83b316b6cca183be1c3e3d4a88216d3d1d02ab97622fa84c",
+        "cuda_rng": "702abb12dbfe633a5a531d7522da031c1b9999f0b6984301df6d1eda9396d85f",
+        "numpy_rng": "e021fe9dd3843b21b30a9a0505c522e9c9f0afdf3888ae15663fb975ceb66391"
+      },
+      "source_optimizer_step": 256,
+      "source_stream_cursor": 33280
+    }
+  },
+  "optimizer": {
+    "kind": "Adam",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "reset": false,
+    "source_step": 256,
+    "final_step": 512,
+    "clipping": "separate policy(core+native head) norm1 and time-head norm1; one existing Adam"
+  },
+  "loss": {
+    "action": "native11 CE every tick and slot; WAIT weight .25, all other classes1; weighted mean divides by sum of target class weights",
+    "time": "MSE prediction vs signed (ready-now)/16 in physical time units; mean over active & started & finite ready rows; exactly zero otherwise; no eligibility or future-outcome selection",
+    "coefficients": {
+      "action": 1.0,
+      "time": 1.0
+    },
+    "time_prediction_never_controls_action": true,
+    "no_oracle_in_inputs": true
+  },
+  "objective": "action",
+  "objective_detail": "train core+native action head by native weighted CE; concurrently train time head by MSE on detached h; independent gradient clipping",
+  "implementation": "frozen remaining_time.Learner.update verbatim; constructor warm=0, no warm_start; only full source state and local counters overridden",
+  "stream": {
+    "warm_ticks": 0,
+    "training_ticks": 32768,
+    "batch": 32,
+    "slots": 2,
+    "block": 128,
+    "updates": 256,
+    "replay_epochs": 0,
+    "new_stream_cursor_at_source": 0,
+    "source_stream_cursor": 33280,
+    "inputs": "public56 only; no oracle or time prediction in control",
+    "recurrent_state": "source h copied exactly at local000; never reset/recomputed; numerical pre-update h carried; only graph detached at128"
+  },
+  "expected_training_rows": {
+    "0": {
+      "control": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068285,
+        "action_BEGIN_rows": 17900,
+        "action_FINISH_rows": 10967,
+        "action_weight_sum": 545938.25,
+        "time_rows": 731847
+      },
+      "wide": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2073457,
+        "action_BEGIN_rows": 14690,
+        "action_FINISH_rows": 9005,
+        "action_weight_sum": 542059.25,
+        "time_rows": 974976
+      },
+      "withdraw": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068285,
+        "action_BEGIN_rows": 17900,
+        "action_FINISH_rows": 10967,
+        "action_weight_sum": 545938.25,
+        "time_rows": 731847
+      }
+    },
+    "1": {
+      "control": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068329,
+        "action_BEGIN_rows": 17883,
+        "action_FINISH_rows": 10940,
+        "action_weight_sum": 545905.25,
+        "time_rows": 729919
+      },
+      "wide": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2073443,
+        "action_BEGIN_rows": 14715,
+        "action_FINISH_rows": 8994,
+        "action_weight_sum": 542069.75,
+        "time_rows": 974209
+      },
+      "withdraw": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068329,
+        "action_BEGIN_rows": 17883,
+        "action_FINISH_rows": 10940,
+        "action_weight_sum": 545905.25,
+        "time_rows": 729919
+      }
+    },
+    "2": {
+      "control": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068273,
+        "action_BEGIN_rows": 17856,
+        "action_FINISH_rows": 11023,
+        "action_weight_sum": 545947.25,
+        "time_rows": 730293
+      },
+      "wide": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2073401,
+        "action_BEGIN_rows": 14668,
+        "action_FINISH_rows": 9083,
+        "action_weight_sum": 542101.25,
+        "time_rows": 974358
+      },
+      "withdraw": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068273,
+        "action_BEGIN_rows": 17856,
+        "action_FINISH_rows": 11023,
+        "action_weight_sum": 545947.25,
+        "time_rows": 730293
+      }
+    }
+  },
+  "full_stream_identity": {
+    "0": {
+      "control": "4ee3f10868b6d2db90627f0049c3798bbda1d153b8c2b5b61fe76ef315df5a4a",
+      "wide": "a492e89714df2435f915e1a2276cdeb157f8e653fddc6bb8adcbd4d1c931dfbd",
+      "withdraw": "4f8f880dfb399c6cbd0973f92f7e50d3a8130939a4d035a0178b736fd1ddb8a2"
+    },
+    "1": {
+      "control": "7ab443821acf0de5599ed38d9139cee445a88f4841db2fb64c47b6e4aa9f1f8b",
+      "wide": "4d6fb5668c1f658af9124f1b4c67e93edb2311f8b5089399dfd9521bdee8a241",
+      "withdraw": "d4fc291f1ba806163af1e887743d1b31032452ad7225c82108a500154a274177"
+    },
+    "2": {
+      "control": "86de26ba53119784bb55d8aab89f6cf76ab14b4d7fd9b39bb82d22a91c0845f4",
+      "wide": "cafcf0bbc717dfb1e87795368cd918c0c2e8adf584c6e6dc3b73747ab88946c5",
+      "withdraw": "3161cc34c662a953fa9b6764936ed33bc232e8a36070131fee02d501f249d179"
+    }
+  },
+  "work_accounting": "work is new local work only; source_work copied independently; cumulative_work is their exact sum, including preexisting warm work; optimizer step is source256+local updates, independent of new label counts",
+  "checkpoint": "local000 before first new observation,064,256 full model+Adam+h+RNG+local/source/cumulative work; actual first2 updates before/after and preclip/clipped gradients",
+  "no_adaptation": "exactly control/wide/withdraw x3 seeds,256 new updates; no new head, no mechanism, no sweep, replay, warm, repeated epochs or heldout-directed selection; globally freeze all9 endpoints and27 snapshots before heldout scoring",
+  "protocol_hash": "89e43d6ce95685d39fc0fff5591615a76f7f9af0772cc09252d41f738512177f"
+}

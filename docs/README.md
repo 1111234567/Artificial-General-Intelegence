@@ -2,6 +2,7 @@
 
 | 要找的内容 | 入口 |
 |---|---|
+| 参数的统一含义、写入对象和权限边界 | [图模型参数术语](graph-parameter-terms.md) |
 | 研究问题、开放的设计选择 | [现行设计](design.md) |
 | 逐轮结果与适用边界 | [实验总览](experiments.md) · [分主题报告](reports/README.md) |
 | 协议、汇总、留出结果与原始档案 | [研究证据](evidence/README.md) · [本机数据入口](../data/README.md) |

@@ -1,0 +1,76 @@
+{
+  "stage": "descriptive post-confirmation control",
+  "source_sha256": "1414058d1c448550d62606c9a5aaf862b08ba8f1376720c0994f97084188a245",
+  "selection_source": {
+    "graph": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "study": "deafd52a08d07ccbf98e2a846e14bb2073b34012310ef7b636fc4ef52e418f6b",
+    "summary": "cce0e9ae02f59b0c3599574b39f906b65d68a0fb2f6bcfd951ac12437795950c"
+  },
+  "procedure": "For each graph, train ridge controls exclusively on public raw mixtures and the one tasted side/sign actually collected by that graph. Measure these controls on the same novel silent tail with their own real physical pulses. No private taste used in fitting.",
+  "results": {
+    "stable": {
+      "tanh": {
+        "training_receipts": 106475,
+        "methods": {
+          "linear": {
+            "accuracy": 0.49920654296875,
+            "contact": 1.0,
+            "expected_taste": 0.4970146417617798
+          },
+          "polynomial": {
+            "accuracy": 0.9285888671875,
+            "contact": 1.0,
+            "expected_taste": 0.6898064613342285
+          }
+        }
+      },
+      "square": {
+        "training_receipts": 106490,
+        "methods": {
+          "linear": {
+            "accuracy": 0.49688720703125,
+            "contact": 1.0,
+            "expected_taste": 0.4977527856826782
+          },
+          "polynomial": {
+            "accuracy": 0.9288330078125,
+            "contact": 1.0,
+            "expected_taste": 0.6895714998245239
+          }
+        }
+      }
+    },
+    "reverse": {
+      "tanh": {
+        "training_receipts": 106472,
+        "methods": {
+          "linear": {
+            "accuracy": 0.490478515625,
+            "contact": 1.0,
+            "expected_taste": 0.49993184208869934
+          },
+          "polynomial": {
+            "accuracy": 0.9281005859375,
+            "contact": 1.0,
+            "expected_taste": 0.6977159976959229
+          }
+        }
+      },
+      "square": {
+        "training_receipts": 106493,
+        "methods": {
+          "linear": {
+            "accuracy": 0.49462890625,
+            "contact": 1.0,
+            "expected_taste": 0.5037941932678223
+          },
+          "polynomial": {
+            "accuracy": 0.92156982421875,
+            "contact": 1.0,
+            "expected_taste": 0.6965092420578003
+          }
+        }
+      }
+    }
+  }
+}

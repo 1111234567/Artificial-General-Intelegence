@@ -14,8 +14,21 @@
 
 ## 按研究问题找代码
 
+局部可塑图从实际终局收益学习。[训练](local_trace_train.py) · [冻结评估](local_trace_eval.py) · [等时读出](local_trace_timing.py) · [物理分量消融](local_trace_components.py)
+
 | 研究问题 | 环境或机制 | 实验与测量 |
 |---|---|---|
+| 多经历能否积累更好的写入方法 | [全参数写入](self_param_writer.py) · [连续活动](self_dose_continuous.py) | [连续生命](self_dose_life.py) · [启蒙样本与时间](self_dose_boot.py) · [梯度精确枚举](self_dose_expected_credit.py) |
+| 图能否在启蒙后生成对自身边、偏置与写入端的修改 | [原生写入和读回](self_write_core.py) · [梯度启蒙](self_write_core_bootstrap.py) | [长生命](self_write_core_lifetime.py) · [写入器移植](self_write_transfer.py) · [信息选择](self_write_inquiry.py) · [局部自我探测](self_write_view_probe.py) |
+| 无端图能否在生命中形成少量有用的入边交互 | [稀疏系数与候选采样](sparse_pairs_model.py) · [多次回执印证](sparse_alt_model.py) | [出生起训练](sparse_pairs_study.py) · [切换化学关系](sparse_pair_switch.py) · [成熟功能定位](sparse_location_roles.py) |
+| 一张内部没有端点的图能否从反馈学习新规律 | [统一感觉动作图](unified_live_graph.py) · [连续图和快速回执学习器](open_life_model.py) | [改变偏好方向并移植突触图](open_graph_orthogonal.py) · [同一气味对在两条生命里有相反答案](open_graph_remap.py) |
+| 出生图能否自由分配入边、出边，或先在多个环内独立循环 | [自由强连通图](free_graph_model.py) · [分环和随机跨环边](module_graphs.py) | [自由图对照](free_graph_study.py) · [分环对照](module_graph_study.py) · [集中输出干预](free_hub_audit.py) |
+| 模型能否依据实际行动结果修改接线 | [训练期选择增退边](plastic_topology_modules.py) · [生内接线变化](live_module_edits.py) | [稳定与反转世界的同出生对照](live_module_edits_study.py) |
+| 生长、调权和退出能否在同一生命中协作 | [所有活跃参数的回执更新](joint_live_model.py) · [从零决定新边的位置与首个权重](coupled_birth.py) | [联合模型选参和确认](joint_live_integrated.py) · [新生边的数值干预](live_edge_probe.py) |
+| 能否按近期证据决定旧经验的共享强度 | [共享系数](trust_gate.py) · [真实回执重放](trust_replay.py) | [训练和留出](trust_study.py) · [连续改变旧经历的相似程度](transfer_overlap.py) |
+| 自环、单环、多环分别如何处理顺序和对称规则 | [图结构和训练](ring_logic_model.py) · [20 项输入表](ring_logic_world.py) | [等预算对照](ring_logic_study.py) · [固定端口的表达能力](ring_witness.py) |
+| 相关经历能否加快陌生关系的生内学习 | [配对世界](relation_world.py) · [快矩阵学习器](relation_learner.py) | [训练与封存](relation_study.py) · [逐世界分析](relation_analysis.py) |
+| 需要辨认脉冲顺序时，有向环能带来什么 | [顺序游戏](order_world.py) · [两种拓扑](order_model.py) | [原试验](order_study.py) · [独立复测](order_replication.py) · [动作重放核验](order_verify.py) |
 | 脉冲如何改变运动并产生实际接触 | [world.py](world.py)、[mixture_world.py](mixture_world.py)、[mixture_flash.py](mixture_flash.py) | [paired_choice.py](paired_choice.py)、[mixture_benchmark.py](mixture_benchmark.py) |
 | 固定网络能否在不同任务里保留能力 | [motor_lif.py](motor_lif.py)、[spike_policy.py](spike_policy.py)、[attractor_motif.py](attractor_motif.py) | [transfer.py](transfer.py)、[confirm_spiking.py](confirm_spiking.py)、[attractor_motif_find.py](attractor_motif_find.py) |
 | 旧控制器如何接入真实回执和新动作 | [legacy_bridge.py](legacy_bridge.py)、[legacy_grounded.py](legacy_grounded.py) | [legacy_bridge_fork.py](legacy_bridge_fork.py)、[legacy_grounded_outcomes.py](legacy_grounded_outcomes.py)、[legacy_grounded_graph_control.py](legacy_grounded_graph_control.py) |

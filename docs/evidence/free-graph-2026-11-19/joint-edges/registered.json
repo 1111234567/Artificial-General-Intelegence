@@ -1,0 +1,75 @@
+{
+  "registered_code_sha256": {
+    "live_edge_probe.py": "4cdf95fae30a3d18b382d85e800e4b63b8b83685389806d6ba63030e6a2367a8",
+    "live_edge_probe_history.py": "ece59458036f4505f6b632a498a5f2bc88a7664a7cfd9b02640dcb5427f0de05",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+    "live_module_edits.py": "9d7aba0d7c0466a1815a17a0d642a9132dfcf6137d7b171665e507938d43e74e",
+    "live_module_edits_study.py": "8c89318047d95760eef584a8ab6b027ba2890f0cc204482fc45cd00a12f1c3df"
+  },
+  "cohort_role": "Confirmatory audit on sealed joint lives and fresh queries",
+  "starts": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "life_roots": [
+    69023000,
+    69023001,
+    69023002,
+    69023003,
+    69023004,
+    69023005,
+    69023006,
+    69023007,
+    69023008,
+    69023009,
+    69023010,
+    69023011,
+    69023012,
+    69023013,
+    69023014,
+    69023015
+  ],
+  "probe_roots": [
+    69043000,
+    69043001,
+    69043002,
+    69043003,
+    69043004,
+    69043005,
+    69043006,
+    69043007,
+    69043008,
+    69043009,
+    69043010,
+    69043011,
+    69043012,
+    69043013,
+    69043014,
+    69043015
+  ],
+  "conditions": [
+    "stable",
+    "reversal"
+  ],
+  "arms": [
+    "learned",
+    "reset_newborn",
+    "reset_initial",
+    "reset_all",
+    "reset_first_novel"
+  ],
+  "rule": "Use every head/root/rule combination in the main jointly trained feedback arm, with no post hoc selection, for stable and reversed labels.",
+  "identity": "Endpoints are receiver/sender matrix indices. Each growth event starts a fresh generation. Preserve untreated initial generations, novel addresses in their first generation, novel addresses regrown later, and regrown initial addresses as separate cohorts. Surviving within-life generations form the newborn intervention.",
+  "replacement": "Use the true stored, unnormalized coefficient of each surviving generation at birth. Learned, reset newborn, reset initial, reset both, and reset only novel addresses in their first generation differ only in the selected raw scalars; graph, degree, hidden state, drive, bias, readout and offset agree before each fork.",
+  "evaluation": "Fork each saved endpoint into 20 independent physical requests with all ordered odor pairs. Each fork starts from the identical saved state. One new probe root per paired life root, common within all rule, condition, and intervention comparisons; no visible signs, learning or edits. Score actual first contact against the terminal rule, timeouts as incorrect.",
+  "primary": "Learned minus reset newborn in both stable and reversal, with simultaneous 95% Bonferroni percentile intervals. Positive difference means resetting newborn coefficients lowers physical performance with all other endpoint data fixed.",
+  "secondary": "Learned minus reset initial, learned minus reset both, and learned minus reset first novel, plus the two-by-two reset interaction, in each condition. Simultaneous 95% Bonferroni percentile intervals in this separate eight-contrast family.",
+  "inference": "20000 paired crossed bootstrap draws of independent head groups and root blocks (each maps one life root to one fresh probe root), with rules and odor pairs fixed."
+}

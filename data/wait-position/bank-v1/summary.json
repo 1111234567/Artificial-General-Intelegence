@@ -1,0 +1,526 @@
+{
+  "format": "wait-position-fixed-A-bank-protocol-v1",
+  "protocol_sha256": "03f5aafa7a1d50d72ccbe4968417ff76451eb714bb6b6cf8e8b43a2d054d428a",
+  "all_three_native_audits_passed": true,
+  "seeds": {
+    "0": {
+      "files": {
+        "data\\wait-position\\bank-v1\\seed_000\\bank.pt": "8936ef590efc237a44a23ea49665beec02809bc12fe88582908d702d2dd3d615",
+        "data\\wait-position\\bank-v1\\seed_000\\manifest.json": "7e3542273bf0c019af5429c9d29690fcf5bd9f27b877d68711391c02bff7e56b",
+        "data\\wait-position\\bank-v1\\seed_000\\audit.json": "6a838222dcbe9ea5a6fd58530445efa9b251b429026abd6e3e1faaaabaf5a1f6",
+        "data\\wait-position\\bank-v1\\seed_000\\eligible_metadata.json": "5f653bc62fdec4d11963de4e15f1d700e80ef9c1157683d2d60fc796b160fe46"
+      },
+      "original_bank": "data\\review-selection\\bank-v1\\seed_000\\bank.pt",
+      "original_bank_sha256": "16fddf023f542b56c880eccbae5002e3f37c769668d71bb223b488aa0e731b04",
+      "distribution": {
+        "total_candidates": 8165,
+        "candidates_per_request": {
+          "n": 256,
+          "min": 4.0,
+          "q25": 19.0,
+          "median": 31.0,
+          "mean": 31.89453125,
+          "q75": 45.0,
+          "max": 63.0
+        },
+        "candidate_count_histogram": {
+          "4": 6,
+          "5": 8,
+          "6": 3,
+          "7": 3,
+          "8": 2,
+          "9": 3,
+          "10": 3,
+          "11": 5,
+          "12": 2,
+          "13": 1,
+          "14": 5,
+          "15": 3,
+          "16": 2,
+          "17": 10,
+          "18": 4,
+          "19": 5,
+          "20": 7,
+          "21": 6,
+          "22": 1,
+          "23": 6,
+          "24": 8,
+          "25": 4,
+          "26": 5,
+          "27": 4,
+          "28": 8,
+          "29": 2,
+          "30": 7,
+          "31": 7,
+          "32": 4,
+          "33": 7,
+          "34": 6,
+          "35": 7,
+          "36": 5,
+          "37": 3,
+          "38": 4,
+          "39": 3,
+          "40": 4,
+          "41": 2,
+          "42": 8,
+          "43": 4,
+          "44": 3,
+          "45": 5,
+          "46": 5,
+          "47": 6,
+          "48": 1,
+          "49": 4,
+          "50": 4,
+          "51": 3,
+          "52": 5,
+          "53": 3,
+          "54": 2,
+          "55": 4,
+          "56": 4,
+          "57": 6,
+          "58": 1,
+          "59": 2,
+          "60": 3,
+          "61": 3,
+          "62": 3,
+          "63": 2
+        },
+        "time_to_ready": {
+          "n": 8165,
+          "min": 0.00012063980102539062,
+          "q25": 2.050004005432129,
+          "median": 4.373723030090332,
+          "mean": 4.999365717811374,
+          "q75": 7.385281562805176,
+          "max": 15.591752052307129
+        },
+        "processing_fraction": {
+          "n": 8165,
+          "min": 0.015781082747320933,
+          "q25": 0.2614847316204021,
+          "median": 0.5074122540992461,
+          "mean": 0.5077324023301721,
+          "q75": 0.7541347345672497,
+          "max": 0.9999798937707643
+        },
+        "midpoint_fraction": {
+          "n": 256,
+          "min": 0.5000389353831971,
+          "q25": 0.5073540160698566,
+          "median": 0.5153491796260788,
+          "mean": 0.5242425813890645,
+          "q75": 0.5267909458962114,
+          "max": 0.7352552907431161
+        },
+        "per_raw": {
+          "0": {
+            "requests": 64,
+            "total_candidates": 2002,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 20.75,
+              "median": 30.0,
+              "mean": 31.28125,
+              "q75": 42.5,
+              "max": 62.0
+            }
+          },
+          "1": {
+            "requests": 64,
+            "total_candidates": 2142,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 23.25,
+              "median": 32.0,
+              "mean": 33.46875,
+              "q75": 46.0,
+              "max": 63.0
+            }
+          },
+          "2": {
+            "requests": 64,
+            "total_candidates": 2139,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 20.0,
+              "median": 30.0,
+              "mean": 33.421875,
+              "q75": 47.25,
+              "max": 63.0
+            }
+          },
+          "3": {
+            "requests": 64,
+            "total_candidates": 1882,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 16.25,
+              "median": 30.0,
+              "mean": 29.40625,
+              "q75": 42.0,
+              "max": 60.0
+            }
+          }
+        }
+      },
+      "audit_checks": {
+        "native_world_ticks": 4096,
+        "native_obs_label_rows": 524288,
+        "numeric_anchor_rebuilt_exact": 256,
+        "requests": 256,
+        "eligible_processing_WAIT": 8165,
+        "original_midpoint_included": 256,
+        "BEGIN_FINISH_excluded": 512
+      }
+    },
+    "1": {
+      "files": {
+        "data\\wait-position\\bank-v1\\seed_001\\bank.pt": "a8d2706015a9526e3e8c6518ad07d816a7dad7fe3d33aafa5490ad602cbace52",
+        "data\\wait-position\\bank-v1\\seed_001\\manifest.json": "ea5e35943a9b957074850b4bffae3f48c530628055ba67d8f62121a9e14294bd",
+        "data\\wait-position\\bank-v1\\seed_001\\audit.json": "6b016e75330324d52f0152f3ceeae3ffc287125e87e65ff5c81cb820fca2f343",
+        "data\\wait-position\\bank-v1\\seed_001\\eligible_metadata.json": "25056c2f9a10a0be131e8194ffd73800abc1c8ce093e7978bc52947362a79900"
+      },
+      "original_bank": "data\\review-selection\\bank-v1\\seed_001\\bank.pt",
+      "original_bank_sha256": "1d33a18a38abd7711a1ae668d6192b9d378f40f3765880aa32e7bde957f88760",
+      "distribution": {
+        "total_candidates": 7685,
+        "candidates_per_request": {
+          "n": 256,
+          "min": 4.0,
+          "q25": 15.0,
+          "median": 28.0,
+          "mean": 30.01953125,
+          "q75": 46.0,
+          "max": 63.0
+        },
+        "candidate_count_histogram": {
+          "4": 4,
+          "5": 6,
+          "6": 8,
+          "7": 7,
+          "8": 6,
+          "9": 6,
+          "10": 4,
+          "11": 4,
+          "12": 2,
+          "13": 5,
+          "14": 7,
+          "15": 8,
+          "16": 6,
+          "17": 6,
+          "18": 10,
+          "19": 5,
+          "20": 1,
+          "21": 4,
+          "22": 7,
+          "23": 4,
+          "24": 3,
+          "25": 6,
+          "26": 4,
+          "28": 6,
+          "29": 3,
+          "30": 4,
+          "31": 7,
+          "32": 2,
+          "33": 5,
+          "34": 4,
+          "35": 4,
+          "36": 3,
+          "37": 3,
+          "38": 6,
+          "39": 4,
+          "40": 2,
+          "41": 4,
+          "42": 4,
+          "43": 2,
+          "44": 1,
+          "45": 4,
+          "46": 3,
+          "47": 5,
+          "48": 6,
+          "49": 4,
+          "50": 2,
+          "51": 7,
+          "52": 3,
+          "53": 5,
+          "54": 5,
+          "55": 2,
+          "56": 5,
+          "57": 4,
+          "58": 1,
+          "59": 2,
+          "60": 1,
+          "61": 4,
+          "62": 3,
+          "63": 3
+        },
+        "time_to_ready": {
+          "n": 7685,
+          "min": 2.6941299438476562e-05,
+          "q25": 1.9139118194580078,
+          "median": 4.248888969421387,
+          "mean": 4.984949039637305,
+          "q75": 7.511955261230469,
+          "max": 15.72074031829834
+        },
+        "processing_fraction": {
+          "n": 7685,
+          "min": 0.0156536262576109,
+          "q25": 0.26253020380731756,
+          "median": 0.5075722675339522,
+          "mean": 0.5085235981678417,
+          "q75": 0.7545967561728671,
+          "max": 0.9999865295317367
+        },
+        "midpoint_fraction": {
+          "n": 256,
+          "min": 0.5000694490561665,
+          "q25": 0.5072419188924328,
+          "median": 0.5160882491462241,
+          "mean": 0.5277236325525769,
+          "q75": 0.5327970930755329,
+          "max": 0.7425187891082006
+        },
+        "per_raw": {
+          "0": {
+            "requests": 64,
+            "total_candidates": 2060,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 5.0,
+              "q25": 15.75,
+              "median": 33.0,
+              "mean": 32.1875,
+              "q75": 48.25,
+              "max": 63.0
+            }
+          },
+          "1": {
+            "requests": 64,
+            "total_candidates": 1776,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 16.0,
+              "median": 25.0,
+              "mean": 27.75,
+              "q75": 36.5,
+              "max": 62.0
+            }
+          },
+          "2": {
+            "requests": 64,
+            "total_candidates": 2020,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 5.0,
+              "q25": 15.75,
+              "median": 30.0,
+              "mean": 31.5625,
+              "q75": 47.25,
+              "max": 63.0
+            }
+          },
+          "3": {
+            "requests": 64,
+            "total_candidates": 1829,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 13.0,
+              "median": 26.0,
+              "mean": 28.578125,
+              "q75": 43.0,
+              "max": 61.0
+            }
+          }
+        }
+      },
+      "audit_checks": {
+        "native_world_ticks": 4096,
+        "native_obs_label_rows": 524288,
+        "numeric_anchor_rebuilt_exact": 256,
+        "requests": 256,
+        "eligible_processing_WAIT": 7685,
+        "original_midpoint_included": 256,
+        "BEGIN_FINISH_excluded": 512
+      }
+    },
+    "2": {
+      "files": {
+        "data\\wait-position\\bank-v1\\seed_002\\bank.pt": "c506f887da86eee8d0f93f11207ad3ca6c3e848200d16a18f88ff433de7e0187",
+        "data\\wait-position\\bank-v1\\seed_002\\manifest.json": "0181c8ac7b40276670f86267e5157e6e9571ac08030e87e4d05d7ea839eac775",
+        "data\\wait-position\\bank-v1\\seed_002\\audit.json": "b7b4a6ef4157dbd0e688f2dc93e616e9f1608708d26446714b256423bc340d4f",
+        "data\\wait-position\\bank-v1\\seed_002\\eligible_metadata.json": "7fdfd3bcfca032c3b9945e2df9a9e021b6a14f60634bdaabdc11b304ed5adc87"
+      },
+      "original_bank": "data\\review-selection\\bank-v1\\seed_002\\bank.pt",
+      "original_bank_sha256": "a37047cd651a6ee15c15504618966925d83669d3eaac1e04cb69e60f5c8a0963",
+      "distribution": {
+        "total_candidates": 7588,
+        "candidates_per_request": {
+          "n": 256,
+          "min": 4.0,
+          "q25": 15.0,
+          "median": 26.0,
+          "mean": 29.640625,
+          "q75": 45.0,
+          "max": 63.0
+        },
+        "candidate_count_histogram": {
+          "4": 9,
+          "5": 7,
+          "6": 7,
+          "7": 3,
+          "8": 5,
+          "9": 3,
+          "10": 10,
+          "11": 5,
+          "12": 4,
+          "13": 7,
+          "14": 3,
+          "15": 6,
+          "16": 3,
+          "17": 8,
+          "18": 4,
+          "19": 10,
+          "20": 7,
+          "21": 7,
+          "22": 6,
+          "23": 5,
+          "24": 3,
+          "25": 3,
+          "26": 7,
+          "27": 4,
+          "28": 6,
+          "29": 1,
+          "30": 3,
+          "31": 4,
+          "32": 3,
+          "34": 2,
+          "35": 4,
+          "36": 4,
+          "37": 3,
+          "38": 7,
+          "40": 2,
+          "41": 3,
+          "42": 2,
+          "43": 1,
+          "44": 4,
+          "45": 8,
+          "46": 1,
+          "47": 2,
+          "48": 5,
+          "49": 3,
+          "50": 3,
+          "51": 9,
+          "52": 3,
+          "53": 3,
+          "54": 1,
+          "55": 6,
+          "56": 2,
+          "57": 4,
+          "58": 5,
+          "59": 3,
+          "60": 3,
+          "61": 2,
+          "62": 6,
+          "63": 2
+        },
+        "time_to_ready": {
+          "n": 7588,
+          "min": 0.0033369064331054688,
+          "q25": 1.9185950756072998,
+          "median": 4.2365264892578125,
+          "mean": 5.045782515703532,
+          "q75": 7.631812691688538,
+          "max": 15.708975791931152
+        },
+        "processing_fraction": {
+          "n": 7588,
+          "min": 0.015665165688539977,
+          "q25": 0.2624187139088409,
+          "median": 0.5079572470719576,
+          "mean": 0.5082311431323675,
+          "q75": 0.7537137766599368,
+          "max": 0.9997100937182744
+        },
+        "midpoint_fraction": {
+          "n": 256,
+          "min": 0.500212600786607,
+          "q25": 0.5080091391519705,
+          "median": 0.5177649749463509,
+          "mean": 0.5297596269642773,
+          "q75": 0.5343869228598008,
+          "max": 0.7309616078363257
+        },
+        "per_raw": {
+          "0": {
+            "requests": 64,
+            "total_candidates": 2005,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 5.0,
+              "q25": 15.75,
+              "median": 27.0,
+              "mean": 31.328125,
+              "q75": 47.5,
+              "max": 62.0
+            }
+          },
+          "1": {
+            "requests": 64,
+            "total_candidates": 1754,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 13.0,
+              "median": 23.0,
+              "mean": 27.40625,
+              "q75": 40.0,
+              "max": 63.0
+            }
+          },
+          "2": {
+            "requests": 64,
+            "total_candidates": 1948,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 15.0,
+              "median": 24.0,
+              "mean": 30.4375,
+              "q75": 51.0,
+              "max": 63.0
+            }
+          },
+          "3": {
+            "requests": 64,
+            "total_candidates": 1881,
+            "candidates_per_request": {
+              "n": 64,
+              "min": 4.0,
+              "q25": 14.0,
+              "median": 28.0,
+              "mean": 29.390625,
+              "q75": 42.75,
+              "max": 62.0
+            }
+          }
+        }
+      },
+      "audit_checks": {
+        "native_world_ticks": 4096,
+        "native_obs_label_rows": 524288,
+        "numeric_anchor_rebuilt_exact": 256,
+        "requests": 256,
+        "eligible_processing_WAIT": 7588,
+        "original_midpoint_included": 256,
+        "BEGIN_FINISH_excluded": 512
+      }
+    }
+  }
+}

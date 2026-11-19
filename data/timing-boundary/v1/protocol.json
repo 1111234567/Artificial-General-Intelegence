@@ -1,0 +1,310 @@
+{
+  "format": "timing-boundary-data-v1",
+  "created_utc": "2026-11-04T03:18:39.839060+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "splits": [
+    "train",
+    "validation",
+    "test"
+  ],
+  "arms": [
+    "midpoint",
+    "first",
+    "interior",
+    "random"
+  ],
+  "actors": {
+    "train": [
+      91000,
+      91001,
+      91002,
+      91003,
+      91004,
+      91005,
+      91006,
+      91007,
+      91008,
+      91009,
+      91010,
+      91011,
+      91012,
+      91013,
+      91014,
+      91015,
+      91016,
+      91017,
+      91018,
+      91019,
+      91020,
+      91021,
+      91022,
+      91023,
+      91024,
+      91025,
+      91026,
+      91027,
+      91028,
+      91029,
+      91030,
+      91031
+    ],
+    "validation": [
+      92000,
+      92001,
+      92002,
+      92003,
+      92004,
+      92005,
+      92006,
+      92007,
+      92008,
+      92009,
+      92010,
+      92011,
+      92012,
+      92013,
+      92014,
+      92015,
+      92016,
+      92017,
+      92018,
+      92019,
+      92020,
+      92021,
+      92022,
+      92023,
+      92024,
+      92025,
+      92026,
+      92027,
+      92028,
+      92029,
+      92030,
+      92031
+    ],
+    "test": [
+      93000,
+      93001,
+      93002,
+      93003,
+      93004,
+      93005,
+      93006,
+      93007,
+      93008,
+      93009,
+      93010,
+      93011,
+      93012,
+      93013,
+      93014,
+      93015,
+      93016,
+      93017,
+      93018,
+      93019,
+      93020,
+      93021,
+      93022,
+      93023,
+      93024,
+      93025,
+      93026,
+      93027,
+      93028,
+      93029,
+      93030,
+      93031
+    ]
+  },
+  "world_seed": "740000+seed+100*split_index",
+  "warm": 512,
+  "collected_ticks": 4096,
+  "dt": 0.25,
+  "n_jobs": 2,
+  "active_jobs": 2,
+  "regime": {
+    "duration_range": [
+      8.0,
+      16.0
+    ],
+    "gap_range": [
+      16.0,
+      32.0
+    ]
+  },
+  "native_cancel": 0.2,
+  "native_replace": 0.3,
+  "mapping": {
+    "0": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "1": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "2": [
+      [
+        3,
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ]
+  },
+  "models": {
+    "0/midpoint": {
+      "state_sha256": "d4608d6d599a9754b5815d236278fa69b024d6a1e9809b0ea5b3ead169609d23",
+      "path": "data\\finish-position\\train-v1\\seed_000\\midpoint\\B008.pt",
+      "checkpoint_sha256": "4dd973d8d42f6c0a929e03f6f818d47aa2382d3ea9d62e75bbaddc8c7b4063ca"
+    },
+    "0/first": {
+      "state_sha256": "76ddbde8910e61259ed4253481f18a5915b07ba66ca31a945b127f5626cf6e77",
+      "path": "data\\finish-position\\train-v1\\seed_000\\first\\B008.pt",
+      "checkpoint_sha256": "b859df5d169332ea0b2e43b636e25a5ca872d14034695ae6a49de651021ce626"
+    },
+    "0/interior": {
+      "state_sha256": "55a8e8bddaa2147e4aaaa8fb2860882e5f65857e9ca715325543c13e98e514c8",
+      "path": "data\\finish-position\\interior-v1\\seed_000\\interior\\B008.pt",
+      "checkpoint_sha256": "bed4f80d8a9091f72f90a95b0002abe663de69313abec149ec15f96993880737"
+    },
+    "0/random": {
+      "state_sha256": "d358d124840c9aeecbead47e4e4ebf163722aaa01eb140c1116926b152276917",
+      "initialization_seed": 870000
+    },
+    "1/midpoint": {
+      "state_sha256": "4bca091836309e85576d0a2ca6312e0300a53555d7f6a6a3d2c0cca773784f9d",
+      "path": "data\\finish-position\\train-v1\\seed_001\\midpoint\\B008.pt",
+      "checkpoint_sha256": "c509e3d4ed769c58aca724a08713fd8b1bbfa13d60d1b1051cef1eba8ed491b6"
+    },
+    "1/first": {
+      "state_sha256": "3099343eb02c027cbf919d9890a829545cd144ef55955ee7d38e036ac0317394",
+      "path": "data\\finish-position\\train-v1\\seed_001\\first\\B008.pt",
+      "checkpoint_sha256": "81ffea357bc799fb8eec485109b599a3634e0a90630b17030bb7b9b61611206a"
+    },
+    "1/interior": {
+      "state_sha256": "919705e4a9d52b616818bf09a9170c32d354d6fded56386f508268e793ea61c2",
+      "path": "data\\finish-position\\interior-v1\\seed_001\\interior\\B008.pt",
+      "checkpoint_sha256": "2134934dce52d8b88f45699a9b2eddcf8f48932664673d7c530996f26469f6ed"
+    },
+    "1/random": {
+      "state_sha256": "f98a2016b4cd0054cff07fc0b7f9bf70f6a65aee987b34ee645d8f18a09b91ad",
+      "initialization_seed": 870001
+    },
+    "2/midpoint": {
+      "state_sha256": "98eb90316475ab5359f1ae3f7974e09567ebe49c24a0266b728c93dd738b8b9f",
+      "path": "data\\finish-position\\train-v1\\seed_002\\midpoint\\B008.pt",
+      "checkpoint_sha256": "7fa455af80b35eb8a6048b49f2e0e10ba4f00a23dcf6d552f57ac9df91478ebf"
+    },
+    "2/first": {
+      "state_sha256": "b937f2d0c1b1b9e5809b0199352aaeeb29395e74f533e600da62326d2f769502",
+      "path": "data\\finish-position\\train-v1\\seed_002\\first\\B008.pt",
+      "checkpoint_sha256": "83b2242e1656d3792ecf68695ec0cbc7e43d6c9fd45e5449f11f381464372d01"
+    },
+    "2/interior": {
+      "state_sha256": "5dd282fa551a3593aeb66101af4c0801d3eb6d6abe8f90da182b72242031279b",
+      "path": "data\\finish-position\\interior-v1\\seed_002\\interior\\B008.pt",
+      "checkpoint_sha256": "78ab864afabc6ec79fba0e07e10736252c6bfd6c03fc1b554e693ae6c0394010"
+    },
+    "2/random": {
+      "state_sha256": "6814cfe6a105b54637dcea7297f7a8b63a34cf78d06023975d820c812c330ad7",
+      "initialization_seed": 870002
+    }
+  },
+  "source_files": {
+    "experiments\\timing_boundary\\data.py": "e9e9a238b2955b498c6e3c5d4d0142927190d54ff8163101133b068f8eeb4a74",
+    "experiments\\timing_boundary\\data_test.py": "242ce9879101466d862b33c26be85c6dd555afd9dd1fc83218751817f02c2473",
+    "experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments\\finish_position\\boundary_readout.py": "90159121a3911c5944a189cfb10e744816cf0dc418ee3f83f66ea9e2b680aee1",
+    "experiments\\finish_position\\switch_test.py": "99db0896ded828b0f23e847b2de82917a1c663e962fad6d4a5c44eef5b3faceb",
+    "experiments\\finish_position\\interior_checks.py": "3c9b9ab0966a94e3f69f038c9b0bda542dbf69b871554841f0a660ae98ac9b49"
+  },
+  "teacher": "One native midpoint-executed stream per seed/split. All frozen arms including random consume exactly those public observations from initial h=0 at stream origin, including warmup. No resets, gradients, or private inputs.",
+  "own": "Only test, each trained arm executes native eleven-way argmax every tick including warmup, continuously. Same actors/world seeds/regime/exogenous prefix as teacher. Own histories do not train probes.",
+  "cohort": "All NEW and REPLACE commands archived. Include eligible requests issued at tick>=512 whose native maturity pulse appears by final observed tick and which have active+started last pre-ready and first legal ticks consecutive for the same lane/job/rid. Shared and conflicting raw symbols included; full denominators and exclusions retained.",
+  "offsets": [
+    -8,
+    -4,
+    -2,
+    -1,
+    0,
+    1,
+    2
+  ],
+  "incomplete_offsets": "Keep each available offset if the same request is active and started. The two boundary rows -1/0 are mandatory; missing other offsets never discard the pair.",
+  "hidden": "post-observation h, before action, used directly by unchanged linear policy head",
+  "pair_id": "world_seed*10**10 + actor_id*10**5 + job*10**4 + rid; int64; unique for this fixed protocol",
+  "labels": "family A=0/B=1; target=3+4*version+mapped_payload; legal includes active, started, now>=ready-EPS and now<=deadline+EPS; remaining_ticks=(ready-now)/0.25. Labels never enter GRU.",
+  "success": "Teacher samples are off-policy diagnostics and never autonomous successes. Own ordinary/strict counts use matured eligible postwarm requests; strict means successful native completion with no rejected active action before that completion."
+}

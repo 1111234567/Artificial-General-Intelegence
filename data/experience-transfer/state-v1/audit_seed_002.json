@@ -1,0 +1,768 @@
+{
+  "format": "state-same-input-independent-audit-v1",
+  "seed": 2,
+  "protocol_hash": "58f25b040886590f3537c8450c7170cde234f4ba64d6fbdecc8914a142a8f317",
+  "audit_source_sha256": "60986ab33940eb1020cd7263c46b5a9921f04ce0f6dbbe0db943f0048dd488d7",
+  "oracle_calls": 0,
+  "elapsed_seconds": 292.3686777999974,
+  "coverage": {
+    "release_arrays": 36,
+    "release_recurrence": 36,
+    "native_complete_releases": 12,
+    "real_playback_histories": 4
+  },
+  "release_checks": [
+    {
+      "arch": "plain",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "standard",
+      "counts": {
+        "matured": 171,
+        "completed": 144,
+        "clean_completed": 83,
+        "primary_issued": 175,
+        "idle_opportunities": 20796,
+        "idle_actions": 17,
+        "idle_begin": 0,
+        "idle_finish": 17,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "transplant",
+      "counts": {
+        "matured": 171,
+        "completed": 144,
+        "clean_completed": 82,
+        "primary_issued": 175,
+        "idle_opportunities": 20793,
+        "idle_actions": 25,
+        "idle_begin": 0,
+        "idle_finish": 25,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 32,
+      "state": "standard",
+      "counts": {
+        "matured": 84,
+        "completed": 73,
+        "clean_completed": 45,
+        "primary_issued": 89,
+        "idle_opportunities": 10355,
+        "idle_actions": 7,
+        "idle_begin": 0,
+        "idle_finish": 7,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 32,
+      "state": "transplant",
+      "counts": {
+        "matured": 84,
+        "completed": 73,
+        "clean_completed": 45,
+        "primary_issued": 89,
+        "idle_opportunities": 10352,
+        "idle_actions": 15,
+        "idle_begin": 0,
+        "idle_finish": 15,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 128,
+      "state": "standard",
+      "counts": {
+        "matured": 81,
+        "completed": 71,
+        "clean_completed": 42,
+        "primary_issued": 86,
+        "idle_opportunities": 10350,
+        "idle_actions": 5,
+        "idle_begin": 0,
+        "idle_finish": 5,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 128,
+      "state": "transplant",
+      "counts": {
+        "matured": 81,
+        "completed": 71,
+        "clean_completed": 42,
+        "primary_issued": 86,
+        "idle_opportunities": 10348,
+        "idle_actions": 5,
+        "idle_begin": 0,
+        "idle_finish": 5,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 512,
+      "state": "standard",
+      "counts": {
+        "matured": 76,
+        "completed": 64,
+        "clean_completed": 40,
+        "primary_issued": 81,
+        "idle_opportunities": 10577,
+        "idle_actions": 12,
+        "idle_begin": 0,
+        "idle_finish": 12,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 512,
+      "state": "transplant",
+      "counts": {
+        "matured": 76,
+        "completed": 64,
+        "clean_completed": 40,
+        "primary_issued": 81,
+        "idle_opportunities": 10577,
+        "idle_actions": 12,
+        "idle_begin": 0,
+        "idle_finish": 12,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "counts": {
+        "matured": 80,
+        "completed": 66,
+        "clean_completed": 35,
+        "primary_issued": 84,
+        "idle_opportunities": 10449,
+        "idle_actions": 10,
+        "idle_begin": 0,
+        "idle_finish": 10,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "counts": {
+        "matured": 80,
+        "completed": 66,
+        "clean_completed": 35,
+        "primary_issued": 84,
+        "idle_opportunities": 10449,
+        "idle_actions": 10,
+        "idle_begin": 0,
+        "idle_finish": 10,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 32,
+      "state": "standard",
+      "counts": {
+        "matured": 84,
+        "completed": 73,
+        "clean_completed": 45,
+        "primary_issued": 89,
+        "idle_opportunities": 10355,
+        "idle_actions": 6,
+        "idle_begin": 0,
+        "idle_finish": 6,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 32,
+      "state": "transplant",
+      "counts": {
+        "matured": 84,
+        "completed": 73,
+        "clean_completed": 45,
+        "primary_issued": 89,
+        "idle_opportunities": 10352,
+        "idle_actions": 15,
+        "idle_begin": 0,
+        "idle_finish": 15,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 128,
+      "state": "standard",
+      "counts": {
+        "matured": 81,
+        "completed": 71,
+        "clean_completed": 42,
+        "primary_issued": 86,
+        "idle_opportunities": 10350,
+        "idle_actions": 5,
+        "idle_begin": 0,
+        "idle_finish": 5,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 128,
+      "state": "transplant",
+      "counts": {
+        "matured": 81,
+        "completed": 71,
+        "clean_completed": 42,
+        "primary_issued": 86,
+        "idle_opportunities": 10348,
+        "idle_actions": 5,
+        "idle_begin": 0,
+        "idle_finish": 5,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 512,
+      "state": "standard",
+      "counts": {
+        "matured": 76,
+        "completed": 64,
+        "clean_completed": 40,
+        "primary_issued": 81,
+        "idle_opportunities": 10577,
+        "idle_actions": 12,
+        "idle_begin": 0,
+        "idle_finish": 12,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 512,
+      "state": "transplant",
+      "counts": {
+        "matured": 76,
+        "completed": 64,
+        "clean_completed": 40,
+        "primary_issued": 81,
+        "idle_opportunities": 10577,
+        "idle_actions": 12,
+        "idle_begin": 0,
+        "idle_finish": 12,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "counts": {
+        "matured": 80,
+        "completed": 66,
+        "clean_completed": 35,
+        "primary_issued": 84,
+        "idle_opportunities": 10449,
+        "idle_actions": 10,
+        "idle_begin": 0,
+        "idle_finish": 10,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "counts": {
+        "matured": 80,
+        "completed": 66,
+        "clean_completed": 35,
+        "primary_issued": 84,
+        "idle_opportunities": 10449,
+        "idle_actions": 10,
+        "idle_begin": 0,
+        "idle_finish": 10,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "standard",
+      "counts": {
+        "matured": 171,
+        "completed": 18,
+        "clean_completed": 11,
+        "primary_issued": 175,
+        "idle_opportunities": 20394,
+        "idle_actions": 5236,
+        "idle_begin": 4031,
+        "idle_finish": 1205,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "transplant",
+      "counts": {
+        "matured": 171,
+        "completed": 17,
+        "clean_completed": 13,
+        "primary_issued": 175,
+        "idle_opportunities": 20378,
+        "idle_actions": 147,
+        "idle_begin": 0,
+        "idle_finish": 147,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 32,
+      "state": "standard",
+      "counts": {
+        "matured": 84,
+        "completed": 8,
+        "clean_completed": 5,
+        "primary_issued": 89,
+        "idle_opportunities": 10159,
+        "idle_actions": 2585,
+        "idle_begin": 1999,
+        "idle_finish": 586,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 32,
+      "state": "transplant",
+      "counts": {
+        "matured": 84,
+        "completed": 8,
+        "clean_completed": 4,
+        "primary_issued": 89,
+        "idle_opportunities": 10169,
+        "idle_actions": 2601,
+        "idle_begin": 1853,
+        "idle_finish": 748,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 128,
+      "state": "standard",
+      "counts": {
+        "matured": 81,
+        "completed": 7,
+        "clean_completed": 4,
+        "primary_issued": 86,
+        "idle_opportunities": 10136,
+        "idle_actions": 2588,
+        "idle_begin": 2022,
+        "idle_finish": 566,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 128,
+      "state": "transplant",
+      "counts": {
+        "matured": 81,
+        "completed": 9,
+        "clean_completed": 4,
+        "primary_issued": 86,
+        "idle_opportunities": 10145,
+        "idle_actions": 2604,
+        "idle_begin": 1815,
+        "idle_finish": 789,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 512,
+      "state": "standard",
+      "counts": {
+        "matured": 76,
+        "completed": 7,
+        "clean_completed": 5,
+        "primary_issued": 81,
+        "idle_opportunities": 10368,
+        "idle_actions": 2628,
+        "idle_begin": 2059,
+        "idle_finish": 569,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 512,
+      "state": "transplant",
+      "counts": {
+        "matured": 76,
+        "completed": 9,
+        "clean_completed": 5,
+        "primary_issued": 81,
+        "idle_opportunities": 10376,
+        "idle_actions": 2636,
+        "idle_begin": 1854,
+        "idle_finish": 782,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "counts": {
+        "matured": 80,
+        "completed": 10,
+        "clean_completed": 6,
+        "primary_issued": 84,
+        "idle_opportunities": 10234,
+        "idle_actions": 2641,
+        "idle_begin": 2009,
+        "idle_finish": 632,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "counts": {
+        "matured": 80,
+        "completed": 10,
+        "clean_completed": 6,
+        "primary_issued": 84,
+        "idle_opportunities": 10242,
+        "idle_actions": 2649,
+        "idle_begin": 1836,
+        "idle_finish": 813,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 32,
+      "state": "standard",
+      "counts": {
+        "matured": 84,
+        "completed": 8,
+        "clean_completed": 5,
+        "primary_issued": 89,
+        "idle_opportunities": 10159,
+        "idle_actions": 2585,
+        "idle_begin": 2005,
+        "idle_finish": 580,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 32,
+      "state": "transplant",
+      "counts": {
+        "matured": 84,
+        "completed": 7,
+        "clean_completed": 6,
+        "primary_issued": 89,
+        "idle_opportunities": 10151,
+        "idle_actions": 81,
+        "idle_begin": 0,
+        "idle_finish": 81,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 128,
+      "state": "standard",
+      "counts": {
+        "matured": 81,
+        "completed": 6,
+        "clean_completed": 4,
+        "primary_issued": 86,
+        "idle_opportunities": 10131,
+        "idle_actions": 2583,
+        "idle_begin": 2023,
+        "idle_finish": 560,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 128,
+      "state": "transplant",
+      "counts": {
+        "matured": 81,
+        "completed": 7,
+        "clean_completed": 6,
+        "primary_issued": 86,
+        "idle_opportunities": 10128,
+        "idle_actions": 81,
+        "idle_begin": 0,
+        "idle_finish": 81,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 512,
+      "state": "standard",
+      "counts": {
+        "matured": 76,
+        "completed": 6,
+        "clean_completed": 5,
+        "primary_issued": 81,
+        "idle_opportunities": 10364,
+        "idle_actions": 2624,
+        "idle_begin": 2082,
+        "idle_finish": 542,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 512,
+      "state": "transplant",
+      "counts": {
+        "matured": 76,
+        "completed": 7,
+        "clean_completed": 5,
+        "primary_issued": 81,
+        "idle_opportunities": 10364,
+        "idle_actions": 64,
+        "idle_begin": 0,
+        "idle_finish": 64,
+        "primary_censored": 5
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "counts": {
+        "matured": 80,
+        "completed": 9,
+        "clean_completed": 6,
+        "primary_issued": 84,
+        "idle_opportunities": 10232,
+        "idle_actions": 2639,
+        "idle_begin": 2061,
+        "idle_finish": 578,
+        "primary_censored": 4
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "counts": {
+        "matured": 80,
+        "completed": 10,
+        "clean_completed": 7,
+        "primary_issued": 84,
+        "idle_opportunities": 10226,
+        "idle_actions": 66,
+        "idle_begin": 0,
+        "idle_finish": 66,
+        "primary_censored": 4
+      }
+    }
+  ],
+  "native_checks": [
+    {
+      "arch": "plain",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "standard",
+      "action_hash": "8a96be35c986d3d5208bdd4b1792f3f391c2e61966a987bcbb5da47918638749",
+      "end_world_hash": "56b4d0f056fd0ddf589487e553afcb794b5950e354b808fca17bd897e13868d6"
+    },
+    {
+      "arch": "plain",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "transplant",
+      "action_hash": "6f2a67934d441917ec7b0f766abeff660c93d49a5e3c927dd6555d757e1a930f",
+      "end_world_hash": "79fae118f9b69341047247c085673dbedb2f2f7e78432645dd3626d1ac0cbc37"
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "action_hash": "0b13e80d35e6bd4172346f62d01fa6eb3f63923cbfbb8749e5411e8cfdf07146",
+      "end_world_hash": "ae5a2ac378db06926100fb3165cd43f77312b2cbbf04479525ad81ba54ed7ac9"
+    },
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "action_hash": "0b13e80d35e6bd4172346f62d01fa6eb3f63923cbfbb8749e5411e8cfdf07146",
+      "end_world_hash": "ae5a2ac378db06926100fb3165cd43f77312b2cbbf04479525ad81ba54ed7ac9"
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "action_hash": "0b13e80d35e6bd4172346f62d01fa6eb3f63923cbfbb8749e5411e8cfdf07146",
+      "end_world_hash": "62a501f7d8e3fdb4d833cf22173712364f565bae1b80bc3dcf5d3dfb5391dbb2"
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "action_hash": "0b13e80d35e6bd4172346f62d01fa6eb3f63923cbfbb8749e5411e8cfdf07146",
+      "end_world_hash": "62a501f7d8e3fdb4d833cf22173712364f565bae1b80bc3dcf5d3dfb5391dbb2"
+    },
+    {
+      "arch": "symmetric",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "standard",
+      "action_hash": "5701b913bd0bb11899ee174eaa76c3804dadc1af395f0d5a8a4103922e51f263",
+      "end_world_hash": "3833799909030060c65f78e0e4f9df6f6ce1ebae813ac356e0c7223407dc7d18"
+    },
+    {
+      "arch": "symmetric",
+      "driver": "shared",
+      "clamp_ticks": 0,
+      "state": "transplant",
+      "action_hash": "d6eed5cae4ca14bdc10e03ef6da94f7016465507a70470e0808d48f3a48aa3b4",
+      "end_world_hash": "0b446724532a5cba33f8d3ad1e18c22298f56aa0294e1b808d01ecc696400ef2"
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "action_hash": "bd7da214ced37975ee76e70369f030eb197b6d963e71eafbb467a62e8c4d7dcd",
+      "end_world_hash": "d79ed64812abb97956516c9231709551193580b2f47b166185f56dea81104543"
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "action_hash": "1466d39b5f0d8a05fff84af8684539c25be33a34ead67a236a11ae15106f747f",
+      "end_world_hash": "69ef027f1f51cf08232c5d730c6468894ad22938d6b6c3dabf71252af9174c39"
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "standard",
+      "action_hash": "2cbee8be2a1892e4053429051393746eee3f06f14a5affd0c5bc973fe13ef767",
+      "end_world_hash": "a5e07065292fec9b37b0cd19887a31277e569173ad3968ef1a9a134ea5c95186"
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "clamp_ticks": 1024,
+      "state": "transplant",
+      "action_hash": "76692f084d24f065ba8e215a594f7db551d3f17d0ec8146888e68afe83a52033",
+      "end_world_hash": "5a58a5e1fe014a98b5fe042706a67aab824ec7818a1b3a59025eeba33e65d4b4"
+    }
+  ],
+  "history_checks": [
+    {
+      "arch": "plain",
+      "driver": "standard",
+      "ticks": 1024,
+      "end_world_hash": "43b7b4ae3a6c4b5b4fed157b478660467b3916ad57a4669a36a1ab2c985d7ea8",
+      "end_h_hashes": {
+        "standard": "da0e3ca8ac5717b6ae4de1890975bda3ba5e8f5d0fb4c2c394c83c6e39b39bd9",
+        "transplant": "6d237274d04cac574d37168bd714aab9db1907e13a265178e159cc64b608f927"
+      }
+    },
+    {
+      "arch": "plain",
+      "driver": "transplant",
+      "ticks": 1024,
+      "end_world_hash": "fb99013a73f93e54436af18b3aa1549068dd2a92fd43072d2199f51615d109ed",
+      "end_h_hashes": {
+        "standard": "69ea5ecf6685a1ff41a5f5ed88f573aae73f237371546adc2eea44a844a8f2c9",
+        "transplant": "2519cdcbea49ef2f5176bb67b763209bdc171c9feebd17f3f2bb4e1f9a6e7009"
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "standard",
+      "ticks": 1024,
+      "end_world_hash": "452434514933dbd109a3f6d7c20874fa6043bdb8d8c7c434ebae2778b33a71a9",
+      "end_h_hashes": {
+        "standard": "88e801d5907a5f2bfa460347678aa4a4df8ca46de958b66bac8fcd57d54dc707",
+        "transplant": "6bb192b2786502dcf5b8411bbd3c3554642ff6dc4700867afc8a04db3cf58b74"
+      }
+    },
+    {
+      "arch": "symmetric",
+      "driver": "transplant",
+      "ticks": 1024,
+      "end_world_hash": "6c1a0b9ea7f85f2b1bd3b0af573135f2c5bdc6daeb5731c227598b8453256b32",
+      "end_h_hashes": {
+        "standard": "9f60687650db4f10dba0a9ad0790d1aaa8218a7cccdefb7b07619ca365e4a272",
+        "transplant": "08b74f75b89746c3c61c78985067bc9250ad980ec7fa44854bab2aa6b391e5bd"
+      }
+    }
+  ]
+}

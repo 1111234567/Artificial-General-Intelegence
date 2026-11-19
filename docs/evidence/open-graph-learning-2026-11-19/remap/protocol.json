@@ -1,0 +1,14 @@
+{
+  "question": "Can a fully plastic closed graph learn which individual ordered odors changed after a hidden switch that contains zero net global polarity signal?",
+  "design": "For each physical world and each of the three original binary tables, draw a per-life set of five original right and five original left cells to invert. A second twin inverts the complementary ten. B therefore changes exactly 10 of 20 cells, remains globally balanced and has opposite right answer from its twin in EVERY cell. Both twins share every public input and are physically identical until B. No switch flag, address, task ID or teacher choice reaches the model.",
+  "life": "120 continuous physical requests. A for 20 or 40, B for 60 (three balanced blocks of 20), then return to A. No state reset on either switch. One physically reached side and its own actual signed taste; timeouts get zero. No B rule/odor-pair labels in the learner. Twenty different paired roots per fitted head, eight fitted head groups, three rules.",
+  "groups": [4,5,6,7,12,13,14,15],
+  "world_start": 69851300,
+  "world_count": 20,
+  "table_rng": 40119781,
+  "conditions": ["legacy_joint","adaptive","head_only","placebo"],
+  "choice": "Reuse the primary optimized model/configuration selected on development and validation in the independent open_life experiment. Do not run these roots before choice is sealed or select by these outcomes.",
+  "primary": "On B's third exposure to each cell, test full model vs 50% opportunity accuracy, full vs scalar evidence control head_only, and full vs independent-fair-sign placebo. Average cells and both complementary maps within world. Predefined success for learning cell-specific mappings requires all three lower bounds >0 at simultaneous 95% (3 Bonferroni contrasts). Report third minus first B block and full-minus-legacy descriptive. First B request twin average must equal half coverage. Compare post-return A and changed vs unchanged cells as secondary.",
+  "observability": "A public structural ceiling will replay an ideal noiseless odor reader if required; once an agent can identify both physically flashed odors, a single real taste from a chosen side suffices to infer that pair's rewarding side. Partial prior exposure to other cells may allow statistical inference under the balanced-table design. Interpret results within this 20-cell repertory, not as unseen sensory categories or arbitrary tasks.",
+  "inference": "20000 paired crossed bootstrap draws over fitted model groups and new physical roots; fixed three original tasks and 20 cells. Full individual returns included, no choice-conditioned removal of timeouts."
+}

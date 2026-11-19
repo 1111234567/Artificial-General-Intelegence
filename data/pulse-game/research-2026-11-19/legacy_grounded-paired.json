@@ -1,0 +1,3611 @@
+{
+  "source_files_sha256": {
+    "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-selected.json": "479090efc41c4dc3bd06b8d848a94663c055e85dd2c1a75ec9e8910d09a2bbfc",
+    "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-confirmed.json": "27b4a6665c8425fe67e3c48c3725bde5bea2bb86e4be4fbe40ad208ef547530a",
+    "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-outcomes.json": "8794fb30ddc23111c09e429c84e2a6c8cd5d4d0b7102f8124e3f4c8599483ad8",
+    "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-graph-control.json": "49ec03c98b6c135f56bd0594e3c768f90f0a4e3b1c2c9153015fff24abb62a42",
+    "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-replay.json": "cea1dc243eb1e3b7607f6feab39a350d63f366085718ae8832d428f25e41db19",
+    "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-sensory-interventions.json": "07e1f1a86f6c69efb32948d457c342c3dd5afe690639729cc36e66635cfd55a6"
+  },
+  "release": {
+    "path": "F:\\agi\\data\\pulse-game\\research-2026-11-19\\legacy_grounded-release.pt",
+    "sha256": "5e3c524f1649e6ba11ee577190ebc878b2d740396ea0d9a815cc03ba151dc79a",
+    "replayed_each_world_exactly": true
+  },
+  "sensory_graph": {
+    "checkpoint": "F:\\agi\\data\\pulse-game\\symmetry-grounded-v1\\public-delta-s7243-before.pt",
+    "checkpoint_sha256": "3ba54f6a1d13dd16fc02e7d51e480864512c0cd8b3fcd8da886a1d047268865c",
+    "nodes": 24,
+    "directed_nonzero_edges": 172,
+    "same_birth_mask": true,
+    "pretraining_max_absolute_changes": {
+      "dynamics": 0.4429660737514496,
+      "afferents": 0.624832034111023,
+      "odor": 0.39367300271987915,
+      "bias": 0.11830461025238037
+    }
+  },
+  "source_public_fit": {
+    "steps": 360,
+    "objective": "reconstruct public observed odor"
+  },
+  "factor_selection": {
+    "settings": {
+      "mode": "calibrated_categorical",
+      "value_gain": 0.22,
+      "ready_gain": 1.1,
+      "motor_leak": 0.55,
+      "learning_rate": null
+    },
+    "development_seeds": [
+      4501000000,
+      4501000001,
+      4501000002,
+      4501000003,
+      4501000004,
+      4501000005,
+      4501000006,
+      4501000007
+    ],
+    "public_calibration_seeds": [
+      4502000000,
+      4502000001,
+      4502000002,
+      4502000003,
+      4502000004,
+      4502000005,
+      4502000006,
+      4502000007,
+      4502000008,
+      4502000009,
+      4502000010,
+      4502000011
+    ]
+  },
+  "actual_address_selection": {
+    "criterion": "mean squared signed prediction error before the actual receipt",
+    "best_development_step": 450,
+    "best_development_error": 0.358822762966156,
+    "train_actual_receipts": 32768,
+    "development_actual_receipts": 8192,
+    "selection_and_save_precede_both_closed_loop_splits": true
+  },
+  "namespaces": {
+    "original32": [
+      320261166,
+      320261167,
+      320261168,
+      320261169,
+      320261170,
+      320261171,
+      320261172,
+      320261173,
+      320261174,
+      320261175,
+      320261176,
+      320261177,
+      320261178,
+      320261179,
+      320261180,
+      320261181,
+      320261182,
+      320261183,
+      320261184,
+      320261185,
+      320261186,
+      320261187,
+      320261188,
+      320261189,
+      320261190,
+      320261191,
+      320261192,
+      320261193,
+      320261194,
+      320261195,
+      320261196,
+      320261197
+    ],
+    "new32": [
+      4503000000,
+      4503000001,
+      4503000002,
+      4503000003,
+      4503000004,
+      4503000005,
+      4503000006,
+      4503000007,
+      4503000008,
+      4503000009,
+      4503000010,
+      4503000011,
+      4503000012,
+      4503000013,
+      4503000014,
+      4503000015,
+      4503000016,
+      4503000017,
+      4503000018,
+      4503000019,
+      4503000020,
+      4503000021,
+      4503000022,
+      4503000023,
+      4503000024,
+      4503000025,
+      4503000026,
+      4503000027,
+      4503000028,
+      4503000029,
+      4503000030,
+      4503000031
+    ],
+    "receipt_training": [
+      4506000000,
+      4506000001,
+      4506000002,
+      4506000003,
+      4506000004,
+      4506000005,
+      4506000006,
+      4506000007,
+      4506000008,
+      4506000009,
+      4506000010,
+      4506000011,
+      4506000012,
+      4506000013,
+      4506000014,
+      4506000015,
+      4506000016,
+      4506000017,
+      4506000018,
+      4506000019,
+      4506000020,
+      4506000021,
+      4506000022,
+      4506000023,
+      4506000024,
+      4506000025,
+      4506000026,
+      4506000027,
+      4506000028,
+      4506000029,
+      4506000030,
+      4506000031,
+      4506000032,
+      4506000033,
+      4506000034,
+      4506000035,
+      4506000036,
+      4506000037,
+      4506000038,
+      4506000039,
+      4506000040,
+      4506000041,
+      4506000042,
+      4506000043,
+      4506000044,
+      4506000045,
+      4506000046,
+      4506000047,
+      4506000048,
+      4506000049,
+      4506000050,
+      4506000051,
+      4506000052,
+      4506000053,
+      4506000054,
+      4506000055,
+      4506000056,
+      4506000057,
+      4506000058,
+      4506000059,
+      4506000060,
+      4506000061,
+      4506000062,
+      4506000063
+    ],
+    "receipt_development": [
+      4507000000,
+      4507000001,
+      4507000002,
+      4507000003,
+      4507000004,
+      4507000005,
+      4507000006,
+      4507000007,
+      4507000008,
+      4507000009,
+      4507000010,
+      4507000011,
+      4507000012,
+      4507000013,
+      4507000014,
+      4507000015
+    ],
+    "actuator_development": [
+      4501000000,
+      4501000001,
+      4501000002,
+      4501000003,
+      4501000004,
+      4501000005,
+      4501000006,
+      4501000007
+    ],
+    "public_calibration": [
+      4502000000,
+      4502000001,
+      4502000002,
+      4502000003,
+      4502000004,
+      4502000005,
+      4502000006,
+      4502000007,
+      4502000008,
+      4502000009,
+      4502000010,
+      4502000011
+    ]
+  },
+  "learning_rule": "frozen sensory graph; local RLS indexed by actual issued action; MLP address learned on receipt prefixes",
+  "paired_estimator": "paired worlds, 10000 bootstrap draws, fixed checkpoints; no claims over training seeds",
+  "sets": {
+    "original32": {
+      "roots": [
+        320261166,
+        320261167,
+        320261168,
+        320261169,
+        320261170,
+        320261171,
+        320261172,
+        320261173,
+        320261174,
+        320261175,
+        320261176,
+        320261177,
+        320261178,
+        320261179,
+        320261180,
+        320261181,
+        320261182,
+        320261183,
+        320261184,
+        320261185,
+        320261186,
+        320261187,
+        320261188,
+        320261189,
+        320261190,
+        320261191,
+        320261192,
+        320261193,
+        320261194,
+        320261195,
+        320261196,
+        320261197
+      ],
+      "estimates": {
+        "trained_factor": {
+          "strict": {
+            "mean": 0.90155029296875,
+            "ci95": [
+              0.89971923828125,
+              0.90350341796875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "trained_original_decoder": {
+          "strict": {
+            "mean": 0.70611572265625,
+            "ci95": [
+              0.6986083984375,
+              0.71380615234375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.6069610975682735,
+            "ci95": [
+              0.5919300373643637,
+              0.6217601300217211
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.98699951171875,
+            "ci95": [
+              0.98480224609375,
+              0.9891357421875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_graph_factor": {
+          "strict": {
+            "mean": 0.864501953125,
+            "ci95": [
+              0.8604736328125,
+              0.86865234375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.9172879178076982,
+            "ci95": [
+              0.9080713544972241,
+              0.9264318571425975
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "no_write": {
+          "strict": {
+            "mean": 0.24896240234375,
+            "ci95": [
+              0.241943359375,
+              0.255859375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.06427585240453482,
+            "ci95": [
+              0.05875899149104953,
+              0.06983218899695202
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_context_binding": {
+          "strict": {
+            "mean": 0.04132080078125,
+            "ci95": [
+              0.0377197265625,
+              0.04522705078125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.1732177734375,
+            "ci95": [
+              0.1676025390625,
+              0.17938232421875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cut_sensory_recurrence": {
+          "strict": {
+            "mean": 0.24505615234375,
+            "ci95": [
+              0.2384033203125,
+              0.25201416015625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.03844420291716233,
+            "ci95": [
+              0.03370883934112499,
+              0.04339553064492065
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.75628662109375,
+            "ci95": [
+              0.74859619140625,
+              0.7640380859375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_actions": {
+          "strict": {
+            "mean": 0.24847412109375,
+            "ci95": [
+              0.24365234375,
+              0.25347900390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.06412414519581944,
+            "ci95": [
+              0.05821193103329279,
+              0.06985719727817923
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.68194580078125,
+            "ci95": [
+              0.67474365234375,
+              0.68914794921875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_once": {
+          "strict": {
+            "mean": 0.8128662109375,
+            "ci95": [
+              0.8125,
+              0.8133544921875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.7920271996408701,
+            "ci95": [
+              0.7841623494401574,
+              0.8001138395164162
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.8128662109375,
+            "ci95": [
+              0.8125,
+              0.8133544921875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_retry": {
+          "strict": {
+            "mean": 0.9063720703125,
+            "ci95": [
+              0.90625,
+              0.90655517578125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "previous_bridge": {
+          "strict": {
+            "mean": 0.7419891357421875,
+            "ci95": [
+              0.7382965087890625,
+              0.7456512451171875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.6501477682031691,
+            "ci95": [
+              0.6416456290986389,
+              0.6587838135310449
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.955810546875,
+            "ci95": [
+              0.953125,
+              0.95849609375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual": {
+          "strict": {
+            "mean": 0.91766357421875,
+            "ci95": [
+              0.9152206420898438,
+              0.92010498046875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.9879181087017059,
+            "ci95": [
+              0.9854230456519872,
+              0.9904220725409687
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "shuffled": {
+          "strict": {
+            "mean": 0.32037353515625,
+            "ci95": [
+              0.31292724609375,
+              0.32800445556640623
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.0640228787669912,
+            "ci95": [
+              0.05576424913597293,
+              0.07248748835700099
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.75811767578125,
+            "ci95": [
+              0.75115966796875,
+              0.7645263671875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "initial": {
+          "strict": {
+            "mean": 0.48309326171875,
+            "ci95": [
+              0.47564544677734377,
+              0.49066314697265623
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.20889645023271441,
+            "ci95": [
+              0.19891787196975202,
+              0.21930598662002013
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.9344482421875,
+            "ci95": [
+              0.93023681640625,
+              0.9384765625
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_binding": {
+          "strict": {
+            "mean": 0.2012939453125,
+            "ci95": [
+              0.18994140625,
+              0.21234130859375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.02350646881677676,
+            "ci95": [
+              0.018351584197080228,
+              0.02893029971673968
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.51806640625,
+            "ci95": [
+              0.5057373046875,
+              0.53045654296875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "calibrated_factor_ratematched": {
+          "strict": {
+            "mean": 0.901611328125,
+            "ci95": [
+              0.8997802734375,
+              0.903564453125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_actual": {
+          "strict": {
+            "mean": 0.8956298828125,
+            "ci95": [
+              0.8922119140625,
+              0.8988037109375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.9420195519924164,
+            "ci95": [
+              0.9337499902583659,
+              0.9495914479717612
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_public_factor": {
+          "strict": {
+            "mean": 0.8397216796875,
+            "ci95": [
+              0.835205078125,
+              0.84393310546875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.8634588364511728,
+            "ci95": [
+              0.8536237036343663,
+              0.8728550815954804
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "source_full_affine": {
+          "strict": {
+            "mean": 0.57708740234375,
+            "ci95": [
+              0.5703720092773438,
+              0.58380126953125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.41401482932269573,
+            "ci95": [
+              0.3993512464920059,
+              0.4293024418177083
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.92236328125,
+            "ci95": [
+              0.917236328125,
+              0.92742919921875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_cut_sensory_loop": {
+          "strict": {
+            "mean": 0.2471923828125,
+            "ci95": [
+              0.24127197265625,
+              0.25274658203125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.04163106711348519,
+            "ci95": [
+              0.03607303315657191,
+              0.04762166375003289
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.75244140625,
+            "ci95": [
+              0.74530029296875,
+              0.75958251953125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_hide_context_input": {
+          "strict": {
+            "mean": 0.46649169921875,
+            "ci95": [
+              0.45953369140625,
+              0.473388671875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.11965520726516843,
+            "ci95": [
+              0.11095476160407998,
+              0.12913706958061083
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.9583740234375,
+            "ci95": [
+              0.95416259765625,
+              0.9625259399414062
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        }
+      },
+      "paired_actual_minus_control": {
+        "trained_factor": {
+          "strict": {
+            "difference": 0.01611328125,
+            "ci95": [
+              0.0133056640625,
+              0.01885986328125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": -0.012081891298294067,
+            "ci95": [
+              -0.014576954348012806,
+              -0.009577927459031344
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "trained_original_decoder": {
+          "strict": {
+            "difference": 0.2115478515625,
+            "ci95": [
+              0.203857421875,
+              0.218994140625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.3809570111334324,
+            "ci95": [
+              0.36674280031584205,
+              0.3956049809232354
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.01300048828125,
+            "ci95": [
+              0.0108642578125,
+              0.01519775390625
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_graph_factor": {
+          "strict": {
+            "difference": 0.05316162109375,
+            "ci95": [
+              0.0484619140625,
+              0.057373046875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.07063019089400768,
+            "ci95": [
+              0.06075886944308877,
+              0.08077645730227231
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "no_write": {
+          "strict": {
+            "difference": 0.668701171875,
+            "ci95": [
+              0.662109375,
+              0.67535400390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9236422562971711,
+            "ci95": [
+              0.9176055517396889,
+              0.9296364779555006
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_context_binding": {
+          "strict": {
+            "difference": 0.8763427734375,
+            "ci95": [
+              0.87152099609375,
+              0.88092041015625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9879181087017059,
+            "ci95": [
+              0.9854230456519872,
+              0.9904220725409687
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.8267822265625,
+            "ci95": [
+              0.82061767578125,
+              0.8323974609375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cut_sensory_recurrence": {
+          "strict": {
+            "difference": 0.672607421875,
+            "ci95": [
+              0.66546630859375,
+              0.6796875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9494739057845436,
+            "ci95": [
+              0.9438238588903914,
+              0.954934842948569
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.24371337890625,
+            "ci95": [
+              0.2359619140625,
+              0.25140380859375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_actions": {
+          "strict": {
+            "difference": 0.669189453125,
+            "ci95": [
+              0.66339111328125,
+              0.67510986328125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9237939635058865,
+            "ci95": [
+              0.9173111569078174,
+              0.9305237871711143
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.31805419921875,
+            "ci95": [
+              0.31085205078125,
+              0.32525634765625
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_once": {
+          "strict": {
+            "difference": 0.10479736328125,
+            "ci95": [
+              0.102294921875,
+              0.10723876953125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.19589090906083584,
+            "ci95": [
+              0.18767831046134234,
+              0.20363665353506805
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.1871337890625,
+            "ci95": [
+              0.1866455078125,
+              0.1875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_retry": {
+          "strict": {
+            "difference": 0.01129150390625,
+            "ci95": [
+              0.00885009765625,
+              0.01373291015625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": -0.012081891298294067,
+            "ci95": [
+              -0.014576954348012806,
+              -0.009577927459031344
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "previous_bridge": {
+          "strict": {
+            "difference": 0.1756744384765625,
+            "ci95": [
+              0.17193603515625,
+              0.17944374084472656
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.3377703404985368,
+            "ci95": [
+              0.32921704129548746,
+              0.34610230079852045
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.044189453125,
+            "ci95": [
+              0.04150390625,
+              0.046875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "shuffled": {
+          "strict": {
+            "difference": 0.5972900390625,
+            "ci95": [
+              0.5892333984375,
+              0.60504150390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9238952299347147,
+            "ci95": [
+              0.9152028341137338,
+              0.9323536385112675
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.24188232421875,
+            "ci95": [
+              0.2354736328125,
+              0.24884033203125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "initial": {
+          "strict": {
+            "difference": 0.4345703125,
+            "ci95": [
+              0.42633056640625,
+              0.4427490234375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.7790216584689915,
+            "ci95": [
+              0.7686207384685986,
+              0.7890969694009982
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0655517578125,
+            "ci95": [
+              0.0615234375,
+              0.06976318359375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_binding": {
+          "strict": {
+            "difference": 0.71636962890625,
+            "ci95": [
+              0.70513916015625,
+              0.72772216796875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9644116398849292,
+            "ci95": [
+              0.9589998548708536,
+              0.969467128944234
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.48193359375,
+            "ci95": [
+              0.46954345703125,
+              0.4942626953125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "calibrated_factor_ratematched": {
+          "strict": {
+            "difference": 0.01605224609375,
+            "ci95": [
+              0.01324462890625,
+              0.018739318847656228
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": -0.012081891298294067,
+            "ci95": [
+              -0.014576954348012806,
+              -0.009577927459031344
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_actual": {
+          "strict": {
+            "difference": 0.02203369140625,
+            "ci95": [
+              0.0181884765625,
+              0.02618408203125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.04589855670928955,
+            "ci95": [
+              0.03788097994402051,
+              0.05501828156411648
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_public_factor": {
+          "strict": {
+            "difference": 0.07794189453125,
+            "ci95": [
+              0.07342529296875,
+              0.08258056640625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.1244592722505331,
+            "ci95": [
+              0.11471588830463589,
+              0.1347138130571693
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "source_full_affine": {
+          "strict": {
+            "difference": 0.340576171875,
+            "ci95": [
+              0.3341064453125,
+              0.3472900390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.5739032793790102,
+            "ci95": [
+              0.559004125976935,
+              0.5881589015480131
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.07763671875,
+            "ci95": [
+              0.07257080078125,
+              0.082763671875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_cut_sensory_loop": {
+          "strict": {
+            "difference": 0.67047119140625,
+            "ci95": [
+              0.6641845703125,
+              0.67706298828125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9462870415882207,
+            "ci95": [
+              0.9395650495862355,
+              0.9526931940737995
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.24755859375,
+            "ci95": [
+              0.24041748046875,
+              0.25469970703125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_hide_context_input": {
+          "strict": {
+            "difference": 0.451171875,
+            "ci95": [
+              0.4434814453125,
+              0.45892333984375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.8682629014365375,
+            "ci95": [
+              0.8582429732661694,
+              0.8773547099845018
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0416259765625,
+            "ci95": [
+              0.03747406005859375,
+              0.04583740234375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        }
+      }
+    },
+    "new32": {
+      "roots": [
+        4503000000,
+        4503000001,
+        4503000002,
+        4503000003,
+        4503000004,
+        4503000005,
+        4503000006,
+        4503000007,
+        4503000008,
+        4503000009,
+        4503000010,
+        4503000011,
+        4503000012,
+        4503000013,
+        4503000014,
+        4503000015,
+        4503000016,
+        4503000017,
+        4503000018,
+        4503000019,
+        4503000020,
+        4503000021,
+        4503000022,
+        4503000023,
+        4503000024,
+        4503000025,
+        4503000026,
+        4503000027,
+        4503000028,
+        4503000029,
+        4503000030,
+        4503000031
+      ],
+      "estimates": {
+        "trained_factor": {
+          "strict": {
+            "mean": 0.900146484375,
+            "ci95": [
+              0.898193359375,
+              0.902099609375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "trained_original_decoder": {
+          "strict": {
+            "mean": 0.70501708984375,
+            "ci95": [
+              0.69757080078125,
+              0.71270751953125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.6037346199154854,
+            "ci95": [
+              0.5901457568630576,
+              0.6175473655108362
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.98663330078125,
+            "ci95": [
+              0.98419189453125,
+              0.98895263671875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_graph_factor": {
+          "strict": {
+            "mean": 0.86517333984375,
+            "ci95": [
+              0.86004638671875,
+              0.8702407836914062
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.9211151786148548,
+            "ci95": [
+              0.9110748824197799,
+              0.9308267307002097
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "no_write": {
+          "strict": {
+            "mean": 0.2529296875,
+            "ci95": [
+              0.24603271484375,
+              0.2603759765625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.060196243633981794,
+            "ci95": [
+              0.05354169010242913,
+              0.06737316647777333
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_context_binding": {
+          "strict": {
+            "mean": 0.044189453125,
+            "ci95": [
+              0.04083099365234375,
+              0.0479736328125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.17706298828125,
+            "ci95": [
+              0.17095794677734374,
+              0.183349609375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cut_sensory_recurrence": {
+          "strict": {
+            "mean": 0.25341796875,
+            "ci95": [
+              0.24603271484375,
+              0.26068115234375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.03275848238263279,
+            "ci95": [
+              0.027052462643769103,
+              0.03883541748218704
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.75048828125,
+            "ci95": [
+              0.7442626953125,
+              0.756591796875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_actions": {
+          "strict": {
+            "mean": 0.2510986328125,
+            "ci95": [
+              0.2440185546875,
+              0.25762939453125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.06714665790786967,
+            "ci95": [
+              0.061872156080789865,
+              0.07242104568285868
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.69525146484375,
+            "ci95": [
+              0.68804931640625,
+              0.7026992797851562
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_once": {
+          "strict": {
+            "mean": 0.81298828125,
+            "ci95": [
+              0.81268310546875,
+              0.81341552734375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.7841971796005964,
+            "ci95": [
+              0.7775825709104538,
+              0.7907123117242009
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.81298828125,
+            "ci95": [
+              0.81268310546875,
+              0.81341552734375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_retry": {
+          "strict": {
+            "mean": 0.90625,
+            "ci95": [
+              0.90625,
+              0.90625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "previous_bridge": {
+          "strict": {
+            "mean": 0.73944091796875,
+            "ci95": [
+              0.735565185546875,
+              0.7433628082275391
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.6472210683859885,
+            "ci95": [
+              0.6373393378802575,
+              0.6571859928080812
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.9561767578125,
+            "ci95": [
+              0.9538722991943359,
+              0.9584503173828125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual": {
+          "strict": {
+            "mean": 0.9193115234375,
+            "ci95": [
+              0.91729736328125,
+              0.9212646484375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.9888039547950029,
+            "ci95": [
+              0.9856364261824637,
+              0.9919643785338849
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "shuffled": {
+          "strict": {
+            "mean": 0.315185546875,
+            "ci95": [
+              0.3079833984375,
+              0.32232818603515623
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.05420260818209499,
+            "ci95": [
+              0.047621767880627885,
+              0.060893142432905736
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.7529296875,
+            "ci95": [
+              0.7467041015625,
+              0.75897216796875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "initial": {
+          "strict": {
+            "mean": 0.484375,
+            "ci95": [
+              0.474365234375,
+              0.49407958984375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.2112226583994925,
+            "ci95": [
+              0.19826482303906232,
+              0.22417748463340104
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.935791015625,
+            "ci95": [
+              0.9302978515625,
+              0.9410400390625
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_binding": {
+          "strict": {
+            "mean": 0.20257568359375,
+            "ci95": [
+              0.19232177734375,
+              0.213134765625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.03122169578273315,
+            "ci95": [
+              0.024059723132813817,
+              0.03909222621732624
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.5201416015625,
+            "ci95": [
+              0.5033554077148438,
+              0.5373550415039062
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "calibrated_factor_ratematched": {
+          "strict": {
+            "mean": 0.89996337890625,
+            "ci95": [
+              0.89794921875,
+              0.9019775390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_actual": {
+          "strict": {
+            "mean": 0.8973388671875,
+            "ci95": [
+              0.89398193359375,
+              0.90057373046875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.9432518985122442,
+            "ci95": [
+              0.9374098736792803,
+              0.9494632530026138
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_public_factor": {
+          "strict": {
+            "mean": 0.8406982421875,
+            "ci95": [
+              0.8360595703125,
+              0.84521484375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.8711374793201685,
+            "ci95": [
+              0.8623605362139642,
+              0.8801362708676607
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "source_full_affine": {
+          "strict": {
+            "mean": 0.57843017578125,
+            "ci95": [
+              0.5705551147460938,
+              0.58599853515625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.40996422804892063,
+            "ci95": [
+              0.3964768596692011,
+              0.42307619005441666
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.92132568359375,
+            "ci95": [
+              0.9158935546875,
+              0.926513671875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_cut_sensory_loop": {
+          "strict": {
+            "mean": 0.25396728515625,
+            "ci95": [
+              0.24664306640625,
+              0.26104736328125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.03336307071731426,
+            "ci95": [
+              0.027968795980268624,
+              0.03903689029539237
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.7518310546875,
+            "ci95": [
+              0.7462158203125,
+              0.75726318359375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_hide_context_input": {
+          "strict": {
+            "mean": 0.47039794921875,
+            "ci95": [
+              0.464599609375,
+              0.47613525390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "mean": 0.12791469995863736,
+            "ci95": [
+              0.11915727354935371,
+              0.13689954858273268
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "mean": 0.957275390625,
+            "ci95": [
+              0.95281982421875,
+              0.96185302734375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "mean": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        }
+      },
+      "paired_actual_minus_control": {
+        "trained_factor": {
+          "strict": {
+            "difference": 0.0191650390625,
+            "ci95": [
+              0.01641845703125,
+              0.021728515625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": -0.011196045204997063,
+            "ci95": [
+              -0.014363573817536234,
+              -0.008035621466115118
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "trained_original_decoder": {
+          "strict": {
+            "difference": 0.21429443359375,
+            "ci95": [
+              0.20654296875,
+              0.2218017578125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.38506933487951756,
+            "ci95": [
+              0.37019361802376805,
+              0.3997961416840553
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.01336669921875,
+            "ci95": [
+              0.01104736328125,
+              0.01580810546875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_graph_factor": {
+          "strict": {
+            "difference": 0.05413818359375,
+            "ci95": [
+              0.0489501953125,
+              0.05938720703125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.06768877618014812,
+            "ci95": [
+              0.057642160542309286,
+              0.07809787117876112
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "no_write": {
+          "strict": {
+            "difference": 0.6663818359375,
+            "ci95": [
+              0.65863037109375,
+              0.67401123046875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9286077111610211,
+            "ci95": [
+              0.9212284356894088,
+              0.9355561693228083
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_context_binding": {
+          "strict": {
+            "difference": 0.8751220703125,
+            "ci95": [
+              0.87078857421875,
+              0.879150390625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9888039547950029,
+            "ci95": [
+              0.9856364261824637,
+              0.9919643785338849
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.82293701171875,
+            "ci95": [
+              0.816650390625,
+              0.8290420532226562
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cut_sensory_recurrence": {
+          "strict": {
+            "difference": 0.6658935546875,
+            "ci95": [
+              0.658447265625,
+              0.67352294921875
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9560454724123701,
+            "ci95": [
+              0.9491555542248534,
+              0.9627270302764372
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.24951171875,
+            "ci95": [
+              0.243408203125,
+              0.2557373046875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "random_actions": {
+          "strict": {
+            "difference": 0.668212890625,
+            "ci95": [
+              0.6617431640625,
+              0.67510986328125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9216572968871333,
+            "ci95": [
+              0.9152663538829074,
+              0.9280912541900761
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.30474853515625,
+            "ci95": [
+              0.29730072021484377,
+              0.31195068359375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_once": {
+          "strict": {
+            "difference": 0.1063232421875,
+            "ci95": [
+              0.10418701171875,
+              0.10833740234375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.2046067751944065,
+            "ci95": [
+              0.19688858608715237,
+              0.21225548549555243
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.18701171875,
+            "ci95": [
+              0.18658447265625,
+              0.18731689453125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "table_retry": {
+          "strict": {
+            "difference": 0.0130615234375,
+            "ci95": [
+              0.01104736328125,
+              0.0150146484375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": -0.011196045204997063,
+            "ci95": [
+              -0.014363573817536234,
+              -0.008035621466115118
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "previous_bridge": {
+          "strict": {
+            "difference": 0.17987060546875,
+            "ci95": [
+              0.175811767578125,
+              0.183837890625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.34158288640901446,
+            "ci95": [
+              0.33090012496104465,
+              0.35232643441995604
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0438232421875,
+            "ci95": [
+              0.0415496826171875,
+              0.04612770080566406
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "shuffled": {
+          "strict": {
+            "difference": 0.6041259765625,
+            "ci95": [
+              0.59722900390625,
+              0.611083984375
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.934601346612908,
+            "ci95": [
+              0.9271739112591604,
+              0.9422182900394546
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.2470703125,
+            "ci95": [
+              0.24102783203125,
+              0.2532958984375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "initial": {
+          "strict": {
+            "difference": 0.4349365234375,
+            "ci95": [
+              0.425048828125,
+              0.44506988525390623
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.7775812963955104,
+            "ci95": [
+              0.7635168203385547,
+              0.7916596274706535
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.064208984375,
+            "ci95": [
+              0.0589599609375,
+              0.0697021484375
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "wrong_binding": {
+          "strict": {
+            "difference": 0.71673583984375,
+            "ci95": [
+              0.70623779296875,
+              0.7268692016601562
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9575822590122698,
+            "ci95": [
+              0.9493812940523639,
+              0.9654281947921846
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.4798583984375,
+            "ci95": [
+              0.46264495849609377,
+              0.49664459228515623
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "calibrated_factor_ratematched": {
+          "strict": {
+            "difference": 0.01934814453125,
+            "ci95": [
+              0.01654052734375,
+              0.02203369140625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": -0.011196045204997063,
+            "ci95": [
+              -0.014363573817536234,
+              -0.008035621466115118
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_actual": {
+          "strict": {
+            "difference": 0.02197265625,
+            "ci95": [
+              0.0184326171875,
+              0.0255126953125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.04555205628275871,
+            "ci95": [
+              0.038263242598623036,
+              0.052529246220365165
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "cold_public_factor": {
+          "strict": {
+            "difference": 0.07861328125,
+            "ci95": [
+              0.073486328125,
+              0.0836181640625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.11766647547483444,
+            "ci95": [
+              0.1090071335900575,
+              0.12621531514450907
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "source_full_affine": {
+          "strict": {
+            "difference": 0.34088134765625,
+            "ci95": [
+              0.332763671875,
+              0.34942779541015623
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.5788397267460823,
+            "ci95": [
+              0.5646021862747148,
+              0.5935854792362079
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.07867431640625,
+            "ci95": [
+              0.073486328125,
+              0.0841064453125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_cut_sensory_loop": {
+          "strict": {
+            "difference": 0.66534423828125,
+            "ci95": [
+              0.65838623046875,
+              0.6728515625
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.9554408840776887,
+            "ci95": [
+              0.9482542580379232,
+              0.9623364747567393
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.2481689453125,
+            "ci95": [
+              0.24273681640625,
+              0.2537841796875
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        },
+        "actual_hide_context_input": {
+          "strict": {
+            "difference": 0.44891357421875,
+            "ci95": [
+              0.44293212890625,
+              0.4552001953125
+            ],
+            "worlds": 32
+          },
+          "pair_strict_rate": {
+            "difference": 0.8608892548363656,
+            "ci95": [
+              0.8502198032219894,
+              0.8711896120395977
+            ],
+            "worlds": 32
+          },
+          "completion": {
+            "difference": 0.042724609375,
+            "ci95": [
+              0.03814697265625,
+              0.04718017578125
+            ],
+            "worlds": 32
+          },
+          "ready_coverage": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          },
+          "premature_request_rate": {
+            "difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "worlds": 32
+          }
+        }
+      }
+    }
+  }
+}

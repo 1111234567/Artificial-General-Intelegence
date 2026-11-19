@@ -1,0 +1,82 @@
+{
+  "created_utc": "2026-11-05T16:14:42.611330+00:00",
+  "sources": {
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/action_split/eval_test.py": "702f7a0fa47e2842c735a47cbc422d3f19d7873b1bdf4d1ec91413f389d38716",
+    "experiments/action_split/model.py": "72d44a1ce29a8e26be4e85b3f6743f19591e666b93089384d2ea4bebd5417988",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/remaining_time/evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments/remaining_time/eval_test.py": "a685402e723f7a2f7cf6b29136ae7902a848136cdd6f29a327fa6bd2a7c8bb49",
+    "experiments/remaining_time/model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "original",
+    "probe",
+    "time",
+    "action",
+    "joint"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ],
+    "longer": [
+      16.0,
+      32.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "actor_ids": [
+    98000,
+    98001,
+    98002,
+    98003,
+    98004,
+    98005,
+    98006,
+    98007,
+    98008,
+    98009,
+    98010,
+    98011,
+    98012,
+    98013,
+    98014,
+    98015,
+    98016,
+    98017,
+    98018,
+    98019,
+    98020,
+    98021,
+    98022,
+    98023,
+    98024,
+    98025,
+    98026,
+    98027,
+    98028,
+    98029,
+    98030,
+    98031
+  ],
+  "world_seed": "853000+seed",
+  "primary": "Fixedstep256; joint versus action isolates extra core-reaching time gradient, time versus probe tests time-only core update. Native wholewindow behavior remainsprimary.",
+  "secondary": "Duration16..32 only, gap16..32 fixed. Read-only time MAE/RMSE/bias physicalunits, by distance and phase; paired consecutive boundary sign and conditional content diagnostic only.",
+  "execution": "Every policy executes native actions throughout warmup+test. Independent origin h=0, then fully continuous. No oracle action or private state enters decoder.",
+  "denominator": "All eligible actual NEW/REPLACE issued at tick>=512 and with a matching native maturity pulse before horizon. Include no-BEGIN/no-window failures. No boundary-pair filter.",
+  "diagnostics": "Actual accepted BEGIN; actual early FINISH independent of version/content; first rejected active action; reached legal but no FINISH; legal first attempt correct/wrong/absent. Whole legal window, not mandatory immediate FINISH.",
+  "reference": "All4 models begin with identical originalcore+native11head. Auxiliary2timevalues never feed nativeactions. probe must remain exactly original policy.",
+  "sidecar": "*_time.npz saves time_prediction [4608,32,2] normalized by16 and native_logits [4608,32,2,11], computedfrom same post-observationh. *_time.json binds exact original rawfacts/checkpoint and fixed zero-sign metrics.",
+  "limits": "Own trajectories can change valid-row exposure and be overdue beyond earliestteachernegativecoverage(-.25,0]. Common teacher histories are a separate diagnostic. No learned threshold or deployment clock."
+}

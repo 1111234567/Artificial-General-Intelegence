@@ -1,0 +1,104 @@
+{
+  "cached_meta_counts": [
+    6400,
+    960
+  ],
+  "reconstructed_meta_train_development_overlap": [],
+  "unified_transfer_confirmation_roots": 128,
+  "unified_transfer_confirmation_meta_overlap": [],
+  "physical_sealed_artifacts": 6,
+  "physical_held_roots": 512,
+  "unique_physical_held": 512,
+  "held_vs_meta_training": [],
+  "held_vs_meta_development": [],
+  "held_vs_physical_search": [],
+  "held_vs_physical_dev": [],
+  "same_motor_full_search_roots_scenarios_and_budget": {
+    "rls-learned-s1373": true,
+    "rls-learned-s6547": true,
+    "rls-learned-s8539": true
+  },
+  "physical_checkpoint_provenance": [
+    {
+      "arm": "rls-learned-s1373--full-e19781",
+      "baseline_would_clip_components": [],
+      "frozen_phenotype_rebuilt_exactly": true,
+      "frozen_model_sha_matches": true,
+      "fitted_sensor_sha_matches": true
+    },
+    {
+      "arm": "rls-learned-s1373--motor-e19781",
+      "baseline_would_clip_components": [],
+      "frozen_phenotype_rebuilt_exactly": true,
+      "frozen_model_sha_matches": true,
+      "fitted_sensor_sha_matches": true
+    },
+    {
+      "arm": "rls-learned-s6547--full-e81913",
+      "baseline_would_clip_components": [],
+      "frozen_phenotype_rebuilt_exactly": true,
+      "frozen_model_sha_matches": true,
+      "fitted_sensor_sha_matches": true
+    },
+    {
+      "arm": "rls-learned-s6547--motor-e81913",
+      "baseline_would_clip_components": [],
+      "frozen_phenotype_rebuilt_exactly": true,
+      "frozen_model_sha_matches": true,
+      "fitted_sensor_sha_matches": true
+    },
+    {
+      "arm": "rls-learned-s8539--full-e47893",
+      "baseline_would_clip_components": [],
+      "frozen_phenotype_rebuilt_exactly": true,
+      "frozen_model_sha_matches": true,
+      "fitted_sensor_sha_matches": true
+    },
+    {
+      "arm": "rls-learned-s8539--motor-e47893",
+      "baseline_would_clip_components": [],
+      "frozen_phenotype_rebuilt_exactly": true,
+      "frozen_model_sha_matches": true,
+      "fitted_sensor_sha_matches": true
+    }
+  ],
+  "root_motor_source_hash_matches": true,
+  "recurring_reader_provenance": [
+    {
+      "parent": "public-learned-s4187--full-e9173",
+      "confirmation_roots": 1024,
+      "matches_fixed_writer": true,
+      "matches_original_receptor": true,
+      "development_overlap": [],
+      "writer_train_overlap": [],
+      "writer_train_roots_saved": 2048,
+      "writer_train_reconstruction_matches": true,
+      "writer_development_overlap": [],
+      "root_phenotype_training_overlap": []
+    },
+    {
+      "parent": "public-learned-s7243--full-e8719",
+      "confirmation_roots": 1024,
+      "matches_fixed_writer": true,
+      "matches_original_receptor": true,
+      "development_overlap": [],
+      "writer_train_overlap": [],
+      "writer_train_roots_saved": 2048,
+      "writer_train_reconstruction_matches": true,
+      "writer_development_overlap": [],
+      "root_phenotype_training_overlap": []
+    },
+    {
+      "parent": "public-learned-s9679--full-e5879",
+      "confirmation_roots": 1024,
+      "matches_fixed_writer": true,
+      "matches_original_receptor": true,
+      "development_overlap": [],
+      "writer_train_overlap": [],
+      "writer_train_roots_saved": 2048,
+      "writer_train_reconstruction_matches": true,
+      "writer_development_overlap": [],
+      "root_phenotype_training_overlap": []
+    }
+  ]
+}

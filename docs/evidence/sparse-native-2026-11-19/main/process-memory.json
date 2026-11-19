@@ -1,0 +1,71 @@
+{
+  "platform": "win32",
+  "unit": "bytes",
+  "scenarios": {
+    "stable": {
+      "dense": {
+        "before": {
+          "peak_working_set_bytes": 36003840,
+          "current_working_set_bytes": 36003840,
+          "private_commit_bytes_at_read": 664334336
+        },
+        "after": {
+          "peak_working_set_bytes": 70356992,
+          "current_working_set_bytes": 45568000,
+          "private_commit_bytes_at_read": 705249280
+        },
+        "peak_pair_array_bytes": 3231744,
+        "final_pair_array_bytes": 3231744,
+        "lanes": 96
+      },
+      "guided": {
+        "before": {
+          "peak_working_set_bytes": 36200448,
+          "current_working_set_bytes": 36200448,
+          "private_commit_bytes_at_read": 664657920
+        },
+        "after": {
+          "peak_working_set_bytes": 71843840,
+          "current_working_set_bytes": 52731904,
+          "private_commit_bytes_at_read": 709853184
+        },
+        "peak_pair_array_bytes": 306792,
+        "final_pair_array_bytes": 303192,
+        "lanes": 96
+      }
+    },
+    "reverse": {
+      "dense": {
+        "before": {
+          "peak_working_set_bytes": 36212736,
+          "current_working_set_bytes": 36212736,
+          "private_commit_bytes_at_read": 664633344
+        },
+        "after": {
+          "peak_working_set_bytes": 70807552,
+          "current_working_set_bytes": 45817856,
+          "private_commit_bytes_at_read": 705536000
+        },
+        "peak_pair_array_bytes": 3231744,
+        "final_pair_array_bytes": 3231744,
+        "lanes": 96
+      },
+      "guided": {
+        "before": {
+          "peak_working_set_bytes": 35979264,
+          "current_working_set_bytes": 35979264,
+          "private_commit_bytes_at_read": 664334336
+        },
+        "after": {
+          "peak_working_set_bytes": 70524928,
+          "current_working_set_bytes": 51552256,
+          "private_commit_bytes_at_read": 708620288
+        },
+        "peak_pair_array_bytes": 291072,
+        "final_pair_array_bytes": 284172,
+        "lanes": 96
+      }
+    }
+  },
+  "protocol": "Fresh process per arm/scenario, common 96-lane evaluation. Full 1,280 physical requests with output arrays, without pair event collection or archive compression. The OS-reported working set includes Python, NumPy, all body and graph state, reporting arrays, and scratch allocation; peak cannot be attributed to Q alone. The pair array byte count separately covers stored Q/cache/sampling arrays."
+}

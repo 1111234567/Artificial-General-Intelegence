@@ -1,0 +1,236 @@
+{
+  "format": "action-return-independent-audit-v1",
+  "created_utc": "2026-11-03T05:05:42.406821+00:00",
+  "verifier": {
+    "path": "F:\\agi\\experiments\\action_return\\independent_audit.py",
+    "sha256": "41e68ad25f23fae6202c079ef230bde0f741bd723a318b899b5b56d1ea668424"
+  },
+  "studies": {
+    "refit": {
+      "audit": "passed",
+      "independent_seeds": 3,
+      "fitted_heads": [
+        {
+          "seed": 0,
+          "arm": "assisted_archive",
+          "job": 0,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.3986117745759323
+        },
+        {
+          "seed": 0,
+          "arm": "assisted_archive",
+          "job": 0,
+          "head": "finish",
+          "positions": 60599,
+          "objective": 0.3701937118458811
+        },
+        {
+          "seed": 0,
+          "arm": "assisted_archive",
+          "job": 1,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.41967437088680537
+        },
+        {
+          "seed": 0,
+          "arm": "assisted_archive",
+          "job": 1,
+          "head": "finish",
+          "positions": 60647,
+          "objective": 0.37835126265559355
+        },
+        {
+          "seed": 0,
+          "arm": "own_policy",
+          "job": 0,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.4599125880709052
+        },
+        {
+          "seed": 0,
+          "arm": "own_policy",
+          "job": 0,
+          "head": "finish",
+          "positions": 62121,
+          "objective": 0.6506691697535584
+        },
+        {
+          "seed": 0,
+          "arm": "own_policy",
+          "job": 1,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.4832507482436461
+        },
+        {
+          "seed": 0,
+          "arm": "own_policy",
+          "job": 1,
+          "head": "finish",
+          "positions": 61260,
+          "objective": 0.47860542048371973
+        },
+        {
+          "seed": 1,
+          "arm": "assisted_archive",
+          "job": 0,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.38858945498481107
+        },
+        {
+          "seed": 1,
+          "arm": "assisted_archive",
+          "job": 0,
+          "head": "finish",
+          "positions": 60277,
+          "objective": 0.41849575898726915
+        },
+        {
+          "seed": 1,
+          "arm": "assisted_archive",
+          "job": 1,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.4322701076525363
+        },
+        {
+          "seed": 1,
+          "arm": "assisted_archive",
+          "job": 1,
+          "head": "finish",
+          "positions": 60316,
+          "objective": 0.3682216363739834
+        },
+        {
+          "seed": 1,
+          "arm": "own_policy",
+          "job": 0,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.43107081404749464
+        },
+        {
+          "seed": 1,
+          "arm": "own_policy",
+          "job": 0,
+          "head": "finish",
+          "positions": 61080,
+          "objective": 0.5222126535761458
+        },
+        {
+          "seed": 1,
+          "arm": "own_policy",
+          "job": 1,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.5227033206007414
+        },
+        {
+          "seed": 1,
+          "arm": "own_policy",
+          "job": 1,
+          "head": "finish",
+          "positions": 61730,
+          "objective": 0.5909622956275083
+        },
+        {
+          "seed": 2,
+          "arm": "assisted_archive",
+          "job": 0,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.41173147574028474
+        },
+        {
+          "seed": 2,
+          "arm": "assisted_archive",
+          "job": 0,
+          "head": "finish",
+          "positions": 60408,
+          "objective": 0.3912495058567355
+        },
+        {
+          "seed": 2,
+          "arm": "assisted_archive",
+          "job": 1,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.38797183402935065
+        },
+        {
+          "seed": 2,
+          "arm": "assisted_archive",
+          "job": 1,
+          "head": "finish",
+          "positions": 60505,
+          "objective": 0.37038935254851557
+        },
+        {
+          "seed": 2,
+          "arm": "own_policy",
+          "job": 0,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.5094469286710172
+        },
+        {
+          "seed": 2,
+          "arm": "own_policy",
+          "job": 0,
+          "head": "finish",
+          "positions": 60401,
+          "objective": 0.3581767906434649
+        },
+        {
+          "seed": 2,
+          "arm": "own_policy",
+          "job": 1,
+          "head": "begin",
+          "positions": 65536,
+          "objective": 0.46003916578390597
+        },
+        {
+          "seed": 2,
+          "arm": "own_policy",
+          "job": 1,
+          "head": "finish",
+          "positions": 60504,
+          "objective": 0.3431591672959329
+        }
+      ],
+      "own_policy_model_replay_ticks": 24576,
+      "paired_values_verified": 42,
+      "result_bindings": [
+        {
+          "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\result.json",
+          "sha256": "f0d4b1e49802d2221d7c8ea40ea5a0d296b857e86ad2953238c92856f48bdbed"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\result.json",
+          "sha256": "378c15a960a3c2d7d358d3c33fd99938688321eb4d4fdf5aac64aab8c9adf359"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\result.json",
+          "sha256": "c806b0539f7a8e6abbd26cd53095fcba45b3d55485f8214ad0f4f084011adeae"
+        }
+      ],
+      "scope": "All input/source SHA; exact32768+32768-row budgets,24 head objectives, every own-policy action and continuous feature from saved obs/h, matched cases and aggregate rates."
+    }
+  },
+  "interpretation_limits": [
+    "Decoder-fitting heldout lanes were used by earlier backbone training; this is not a wholly unseen-backbone population.",
+    "BEGIN policies use all public ticks including current command cues. Success does not isolate delayed-memory use.",
+    "No-current-pulse BEGINs can still use public action/result receipts, including information from rejected trial actions.",
+    "External trained action scores change actual choices but do not establish native recurrent-port learning or synaptic repair.",
+    "Same-h gate invariance in conditional FINISH and swap controls does not imply identical gates on later divergent trajectories.",
+    "Withdrawal compares inherited strategies with different learned runtime states; it does not isolate deletion from all prior plasticity.",
+    "Family0 external NEW withdrawal retains pending requests and substantial old-family historical supervision.",
+    "Short family0 has acquired strict behavior; the long-task completion floor cannot demonstrate retention.",
+    "Three independent seeds provide descriptive differences and sample SD, not a population-scale efficacy claim."
+  ]
+}

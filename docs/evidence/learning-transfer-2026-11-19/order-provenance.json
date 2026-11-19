@@ -1,0 +1,236 @@
+{
+  "utc": "2026-11-19T03:22:13Z",
+  "scope": "Post-run reconstruction from archived origins and fixed versions. Checkpoint hashes and actual explorer-receipt counts agree with every training log.",
+  "serialization": "C-contiguous raw bytes; dtype and shape recorded; root IDs uint64 little-endian.",
+  "body_world_py_sha256": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+  "body_world_py_tracked_git_blob": "ace8314c901112fc85e140016be615ee8793b775",
+  "source_sha256": {
+    "order_world.py": "d05f0d88a4b7abd62060e0f26a7600a34567ca5b7f47facd8da28a8fc8c2da51",
+    "order_model.py": "1befb6527601c2d6134a34ceec06e1b54c2cff4a94aa11750b42fd39b81045be",
+    "order_study.py": "5fe6914e7e4e279a2e8d912a8bd5a35a5f3138f38734cc2901693014c6b1e413"
+  },
+  "training_pools": {
+    "standard": {
+      "roots_sha256": {
+        "sha256": "9966df6a3e18a786f2088450e686a0e24b0f74a82a0fe9e1ff44a78deed72a70",
+        "dtype": "uint64",
+        "shape": [
+          512
+        ]
+      },
+      "public_observation_life_request_tick_sense": {
+        "sha256": "2c3d70b0e690910de6fa4168aa16d82dfc657e887f93f046870e195fb64e93cc",
+        "dtype": "float32",
+        "shape": [
+          512,
+          6,
+          46,
+          5
+        ]
+      },
+      "reached_side_life_request": {
+        "sha256": "df21ba19b5dbe28ed9eedd4a6324a472821d564c349f77eb0b790d005d5954bf",
+        "dtype": "int8",
+        "shape": [
+          512,
+          6
+        ]
+      },
+      "delivered_taste_life_request": {
+        "sha256": "674efcf04b24d600e541a42d7146bc76a7bebf9b3328054c213330d8a8249826",
+        "dtype": "int8",
+        "shape": [
+          512,
+          6
+        ]
+      },
+      "endpoint_distances": {
+        "sha256": "f518aec250b82f9b9de18ecd34eb2fa79d31537b77ef4fc7d943d810ce23fc1e",
+        "dtype": "float32",
+        "shape": [
+          512,
+          6,
+          2
+        ]
+      },
+      "winds": {
+        "sha256": "a4bc35b68bb9ad91b788df91c12af24cdceae5427e55d86463e4077d1dd88805",
+        "dtype": "float32",
+        "shape": [
+          512,
+          6,
+          15
+        ]
+      },
+      "receipts": {
+        "opportunities": 3072,
+        "delivered": 3072,
+        "positive": 1559,
+        "negative": 1513
+      }
+    },
+    "long": {
+      "roots_sha256": {
+        "sha256": "9966df6a3e18a786f2088450e686a0e24b0f74a82a0fe9e1ff44a78deed72a70",
+        "dtype": "uint64",
+        "shape": [
+          512
+        ]
+      },
+      "public_observation_life_request_tick_sense": {
+        "sha256": "386e148514c73d0915bf27bf8f23935099bcf946b40a4798b100f113fa04b683",
+        "dtype": "float32",
+        "shape": [
+          512,
+          6,
+          63,
+          5
+        ]
+      },
+      "reached_side_life_request": {
+        "sha256": "df21ba19b5dbe28ed9eedd4a6324a472821d564c349f77eb0b790d005d5954bf",
+        "dtype": "int8",
+        "shape": [
+          512,
+          6
+        ]
+      },
+      "delivered_taste_life_request": {
+        "sha256": "62692bc50edf45d2a9bda8c025bea993db2e24e2d8fb5f9ee4213a47ad635ad4",
+        "dtype": "int8",
+        "shape": [
+          512,
+          6
+        ]
+      },
+      "endpoint_distances": {
+        "sha256": "f518aec250b82f9b9de18ecd34eb2fa79d31537b77ef4fc7d943d810ce23fc1e",
+        "dtype": "float32",
+        "shape": [
+          512,
+          6,
+          2
+        ]
+      },
+      "winds": {
+        "sha256": "a4bc35b68bb9ad91b788df91c12af24cdceae5427e55d86463e4077d1dd88805",
+        "dtype": "float32",
+        "shape": [
+          512,
+          6,
+          15
+        ]
+      },
+      "receipts": {
+        "opportunities": 3072,
+        "delivered": 3072,
+        "positive": 1543,
+        "negative": 1529
+      }
+    }
+  },
+  "verify_frozen_cohorts": {
+    "order": {
+      "replay_birth": 403154,
+      "exact_rollout_cases": [
+        "standard/graph/intact",
+        "standard/graph/drop_candidate_edge",
+        "standard/graph/erase_history",
+        "standard/graph/no_recurrence",
+        "standard/graph/swap",
+        "standard/graph/first_only",
+        "standard/graph/first_only_flip",
+        "standard/graph/second_only",
+        "standard/graph/second_only_flip",
+        "standard/graph/timing_only",
+        "standard/graph/timing_only_flip",
+        "standard/self/intact",
+        "standard/self/drop_candidate_edge",
+        "standard/self/erase_history",
+        "standard/self/no_recurrence",
+        "standard/self/swap",
+        "standard/self/first_only",
+        "standard/self/first_only_flip",
+        "standard/self/second_only",
+        "standard/self/second_only_flip",
+        "standard/self/timing_only",
+        "standard/self/timing_only_flip",
+        "long/graph/intact",
+        "long/graph/drop_candidate_edge",
+        "long/graph/erase_history",
+        "long/graph/no_recurrence",
+        "long/graph/swap",
+        "long/graph/first_only",
+        "long/graph/first_only_flip",
+        "long/graph/second_only",
+        "long/graph/second_only_flip",
+        "long/graph/timing_only",
+        "long/graph/timing_only_flip",
+        "long/self/intact",
+        "long/self/drop_candidate_edge",
+        "long/self/erase_history",
+        "long/self/no_recurrence",
+        "long/self/swap",
+        "long/self/first_only",
+        "long/self/first_only_flip",
+        "long/self/second_only",
+        "long/self/second_only_flip",
+        "long/self/timing_only",
+        "long/self/timing_only_flip"
+      ],
+      "training_log_and_checkpoint_pairs_checked": 12,
+      "frozen_sha256": "2dd44d8e13b4d81f97c0d1f5cb5a21681b296f43f11de0d342ad8348b1f80a44"
+    },
+    "order-replication": {
+      "replay_birth": 6725701,
+      "exact_rollout_cases": [
+        "standard/graph/intact",
+        "standard/graph/drop_candidate_edge",
+        "standard/graph/erase_history",
+        "standard/graph/no_recurrence",
+        "standard/graph/swap",
+        "standard/graph/first_only",
+        "standard/graph/first_only_flip",
+        "standard/graph/second_only",
+        "standard/graph/second_only_flip",
+        "standard/graph/timing_only",
+        "standard/graph/timing_only_flip",
+        "standard/self/intact",
+        "standard/self/drop_candidate_edge",
+        "standard/self/erase_history",
+        "standard/self/no_recurrence",
+        "standard/self/swap",
+        "standard/self/first_only",
+        "standard/self/first_only_flip",
+        "standard/self/second_only",
+        "standard/self/second_only_flip",
+        "standard/self/timing_only",
+        "standard/self/timing_only_flip",
+        "long/graph/intact",
+        "long/graph/drop_candidate_edge",
+        "long/graph/erase_history",
+        "long/graph/no_recurrence",
+        "long/graph/swap",
+        "long/graph/first_only",
+        "long/graph/first_only_flip",
+        "long/graph/second_only",
+        "long/graph/second_only_flip",
+        "long/graph/timing_only",
+        "long/graph/timing_only_flip",
+        "long/self/intact",
+        "long/self/drop_candidate_edge",
+        "long/self/erase_history",
+        "long/self/no_recurrence",
+        "long/self/swap",
+        "long/self/first_only",
+        "long/self/first_only_flip",
+        "long/self/second_only",
+        "long/self/second_only_flip",
+        "long/self/timing_only",
+        "long/self/timing_only_flip"
+      ],
+      "training_log_and_checkpoint_pairs_checked": 64,
+      "frozen_sha256": "4a8d710f0e7cc3c7735936e9b92786d97aa45d43d5f8d091c028d0e2522cf3bd"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "created_utc": "2026-11-19T04:44:28Z",
+  "source_sha256": {
+    "live_module_edits_study.py": "8c89318047d95760eef584a8ab6b027ba2890f0cc204482fc45cd00a12f1c3df",
+    "live_module_edits.py": "9d7aba0d7c0466a1815a17a0d642a9132dfcf6137d7b171665e507938d43e74e",
+    "module_graphs.py": "799a74aaa06f34ea80338c9f3d86667b80c395d4e5981a056180473bfed47502",
+    "free_graph_model.py": "b02f96af9622e6b64f1377dca0f102ba92fc06c4acdc299f9fd7f9b4030724dc",
+    "module_graph_study.py": "f97cf970311af4202ae99db2d1c95cfaf266a9e96ebf4b569320bd62c3538655",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+    "joint_live_study.py": "3139b2566961f9343f91593c21bcaed2c1f9f780d8cb296214e90b49d5fbcf9c",
+    "joint_live_model.py": "5a15be1c17a264f52193e986beaed8f5b6bc6d73d8862f8244eb2bd8306ec33b"
+  },
+  "dev_groups": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "dev_roots": [
+    69021000,
+    69021001,
+    69021002,
+    69021003,
+    69021004,
+    69021005
+  ],
+  "test_groups": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "test_roots": [
+    69023000,
+    69023001,
+    69023002,
+    69023003,
+    69023004,
+    69023005,
+    69023006,
+    69023007,
+    69023008,
+    69023009,
+    69023010,
+    69023011,
+    69023012,
+    69023013,
+    69023014,
+    69023015
+  ],
+  "trials": 120,
+  "schedule": {
+    "growth_every": 9,
+    "retirement_every": 6,
+    "decay": 0.5
+  },
+  "legacy_recipe_sha256": "f523346a53829bac7bfcc3f86457a1d62a5b6a45ebe9c35f4e09ac96e073320b",
+  "arms": [
+    "neither",
+    "weight_only",
+    "edge_only",
+    "joint",
+    "joint_pin_newborn",
+    "joint_random",
+    "joint_independent_sign"
+  ],
+  "conditions": {
+    "stable": "A throughout",
+    "reversal": "A to B at index 40 or 60, no exposed change point",
+    "return_to_A": "A to B at the same index, then to A after 40 requests in B"
+  },
+  "weight_rule": "Signed logistic ascent of mean pre-contact motor logit, assigned by cue-independent rule: sign equals actual contact side times delivered taste. Exact one-request BPTT through cue and movement with fixed carried prior. Shared gradient global norm clip at 4, SGD. Updates all live raw recurrent entries independently, all candidate/gate input weights and biases, and motor readout/offset. No writes on missed contact. Apply to existing active entries before new edits; growth init is the checkpoint's original signed incoming gain at the receiving node and first learns on subsequent receipts.",
+  "structure": "Original uncapped receipt-clock schedule, preference EWMA and strongly-connected retirements, generalized by current effective drive and independent raw coefficient being considered for removal. Remove/grow independently. Every effective coefficient divides by the current receiving indegree square root. No tied weights remaining after birth initialization.",
+  "rate_candidates": [
+    0.015,
+    0.06,
+    0.24,
+    0.96
+  ],
+  "selection": "Select active rate on the weight-only dev arm using pooled last20 reversal gain minus twice any stable last20 loss, compared to frozen. Report no-write alternative score 0 separately. Reuse exact selected weight rule and rate in every weight-plastic arm. No selection on confirmation.",
+  "controls": "Whole-life newborn-raw pin still changes all other active coefficients, and recomputes indegree normally. Matched random arm gets just the contemporaneous donor joint arm's accepted growth/retirement opportunities; it uses own true receipt for weights. Independent-sign arm uses independently drawn fair sign on own actual contact in place of taste for both update mechanisms.",
+  "analysis": "Physical first-contact accuracy with timeout as incorrect; 20,000 crossed paired bootstrap replicates over independent fitted groups and world roots, pooled fixed rules. Factorial contrasts plus difference of simple effects and placebo contrasts each use their own simultaneous 95% Bonferroni family over chosen windows. Mark return window single new third-condition endpoint.",
+  "windows": {
+    "stable": [
+      "last20"
+    ],
+    "reversal": [
+      "before",
+      "first20",
+      "last20"
+    ],
+    "return": [
+      "after_return"
+    ]
+  },
+  "statistics": {
+    "factorial": {
+      "weights_alone": [
+        "weight_only",
+        "neither"
+      ],
+      "edits_alone": [
+        "edge_only",
+        "neither"
+      ],
+      "edits_given_weights": [
+        "joint",
+        "weight_only"
+      ],
+      "weights_given_edits": [
+        "joint",
+        "edge_only"
+      ],
+      "joint_minus_neither": [
+        "joint",
+        "neither"
+      ]
+    },
+    "control": {
+      "newborn_weight_writes": [
+        "joint",
+        "joint_pin_newborn"
+      ],
+      "selected_vs_random_edges": [
+        "joint",
+        "joint_random"
+      ],
+      "actual_vs_placebo_taste": [
+        "joint",
+        "joint_independent_sign"
+      ]
+    },
+    "interaction": "joint - weight_only - edge_only + neither"
+  },
+  "newborn_fields": [
+    "trial",
+    "receipt",
+    "initial_raw",
+    "initial_indegree",
+    "end_raw",
+    "end_indegree",
+    "later_receipts",
+    "changed_receipts",
+    "first_change",
+    "path_raw"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "configuration": {
+    "output": "F:\\agi\\data\\streaming\\structure-v1",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "pilot": false,
+    "input_dim": 32,
+    "classes": 3,
+    "context_scale": 0.5,
+    "n_train": 4096,
+    "n_val": 1024,
+    "n_test": 2048,
+    "steps_per_phase": 800,
+    "batch_size": 128,
+    "fan_in": 32,
+    "rewire_every": 50,
+    "replace_per_output": 2,
+    "eval_every": 10,
+    "lr": 0.2,
+    "initial_scale": 0.01,
+    "threads": 1,
+    "task_seed_base": 0,
+    "sample_seed_base": 0,
+    "init_seed_base": 7300000,
+    "rewire_seed_base": 7400000,
+    "selection_note": "K32 selected only from seed99 validation pilots structure-pilot-k16-v1 and structure-pilot-k32-v1: fixed current-task accuracy was 0.712/0.695/0.721 at K16 versus 0.906/0.939/0.907 at K32; dense was about 0.98. K32 avoids an excessively restrictive fixed baseline. Neither pilot evaluated test. Shared task and stream APIs frozen; phase800,batch128,lr0.2,rewire50,replace2 fixed before three-seed test."
+  },
+  "sources": {
+    "experiments/streaming/structure.py": "66d7a7e7d55f1b144ce40d896e36b0b478b7fa38ce0ad9eff5b72817ddb9a87d",
+    "experiments/streaming/local_learning.py": "c08b6a7932be596a15110f17369e0dc09c018273f84dfc664ef0d9b5e606b870",
+    "experiments/streaming/test_structure.py": "199edd333f364ab69f1d37a733f201779576d4003d7c20713526440a2b8ca9a8"
+  },
+  "arms": [
+    "fixed",
+    "learned",
+    "random",
+    "dense"
+  ],
+  "environment": {
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.11.0+cpu",
+    "device": "cpu",
+    "threads": 1
+  },
+  "teaching_signal": "teacher one-hot minus predicted probability; externally supervised local delta rule",
+  "structural_rule": "fixed budget: smallest |weight| drops; largest absolute window pre*residual correlation grows",
+  "historical_reference": {
+    "budget": "src/core.py grow_edges uses active-trace threshold and random births; prune uses weight and age",
+    "homeo": "src/core.py structural_homeo changes E-E counts using rate targets and tolerance",
+    "new_experiment": "Neither historical rule is executed; no rate or age thresholds are introduced"
+  },
+  "limitations": [
+    "Engineered signed context-interaction features; no LIF/firing-rate autonomy claim",
+    "Teacher residual is external class-wise feedback, not an artificial edge-importance label",
+    "Dense is a larger-budget feasibility control, not evidence for rewiring superiority",
+    "Dense allocated arrays and candidate statistics; no event-sparse efficiency claim",
+    "A-B-A is a finite interference/relearning probe, not lifelong learning",
+    "Only the fixed last model is saved; validation curves never select a checkpoint"
+  ],
+  "test_evaluation_enabled": true,
+  "fingerprint": "b8ec1b368bd240133c4a8391fab9b8826b3f48a280b7cc08d05764e89af2b1a9"
+}

@@ -1,0 +1,25 @@
+{
+  "format": "conditional-finish-readout-v1",
+  "parent_protocol_sha256": "f6506e1da6da62c5955c91bba7bc181767024708df15aef73b2b16aca6e8674c",
+  "source_sha256": "b36122199b29a63b9edde1729b220df6bed956e1617edca8edbd2c0817e25c83",
+  "bindings": {
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_000\\train_dataset.pt.gz": "0e9e43c5f8c7f840c5b8924392d95cdc9407665887cd530f585888fc9671b132",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_000\\fits.pt": "4c4895e0f04b2cec10eeec3f6523da41579d12b2adebb5a74214c9a74263d652",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_000\\fit.json": "4284b8f8e07c70448a9dc7ec6796dedeebfba1e0e75f0b405a1bcee3b533f230",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_001\\train_dataset.pt.gz": "c74a37406b56e2260e015a79d4fa0369aefe7e3d681c30a1f6bb705952e4d49e",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_001\\fits.pt": "8887e28a171e4c6aa53834acd4da967a9635f4ebedc49ad5e5020c235dc38a1e",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_001\\fit.json": "10745f482ef57287b7a5fef9a899bde408d63269c53af7b1d7d5fedf22871d5a",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_002\\train_dataset.pt.gz": "da2ec9063ef6b01a175403faa8f203313e6cec25307e73041d83112ff5a33344",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_002\\fits.pt": "2c3100c5e78cdf6ce4977559f22715859cd5bdf1c2c84ecf67fc67f859d232a6",
+    "F:\\agi\\data\\action-return\\readout-v1\\seed_002\\fit.json": "8580a16d81f8445b7a36a5e63cc40a010d7aac674178c16e16c4ca0edd4f954e"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "design": "Supplement to the primary study, declared before fitting or evaluating this conditional controller. Partial BEGIN-only results were available. Reuse frozen non_input24 BEGIN head and its exact same-state gate and version. Within the non-BEGIN group learn WAIT plus eight FINISH choices. No teacher at inference.",
+  "fitting": "Same assisted training features, original labels and actor/time slice as BEGIN; fit only teacher non-BEGIN positions. Per seed/job, WAIT-reference 9-way affine softmax, native WAIT weight 0.1 and FINISH weight 1, train-only standardization, L2=.001 on slopes, same LBFGS settings. No threshold search.",
+  "evaluation": "Same 4 families, short and long_both, 2048 free ticks from each actual endpoint. Primary actors4..7, count matured/began/completed/strict, legal and executed finish attempts, all idle actions per actual idle opportunity. Paired control is the same trained non_input24 BEGIN controller with native WAIT/FINISH.",
+  "limits": "Conditional score replacement is external to the frozen recurrent field. Its new actions change later receipts and hidden states. Actors4..7 are held out only from readout fitting."
+}

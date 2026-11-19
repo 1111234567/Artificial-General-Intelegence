@@ -1,0 +1,124 @@
+{
+  "format": "action-return-readout-swap-posthoc-v1",
+  "created_utc": "2026-11-03T04:19:00.713354+00:00",
+  "posthoc": true,
+  "timing": "Added after main non_input24 results showed many inappropriate BEGINs; not a prespecified main outcome.",
+  "source": {
+    "path": "F:\\agi\\experiments\\action_return\\readout_swap.py",
+    "sha256": "c34dfc492b99dd297a9401f8d9cb5fa4b24803d29ca97886b61b86b089528038"
+  },
+  "main_protocol": {
+    "path": "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+    "sha256": "f6506e1da6da62c5955c91bba7bc181767024708df15aef73b2b16aca6e8674c"
+  },
+  "sources": {
+    "0": {
+      "fit": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_000\\fits.pt",
+        "sha256": "4c4895e0f04b2cec10eeec3f6523da41579d12b2adebb5a74214c9a74263d652"
+      },
+      "fit_meta": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_000\\fit.json",
+        "sha256": "4284b8f8e07c70448a9dc7ec6796dedeebfba1e0e75f0b405a1bcee3b533f230"
+      },
+      "result": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_000\\result.json",
+        "sha256": "6ff4059f8ca8c135acb66846655dd685b2f9e6edc6bdf36aaa5a7ce01338fa74"
+      }
+    },
+    "1": {
+      "fit": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_001\\fits.pt",
+        "sha256": "8887e28a171e4c6aa53834acd4da967a9635f4ebedc49ad5e5020c235dc38a1e"
+      },
+      "fit_meta": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_001\\fit.json",
+        "sha256": "10745f482ef57287b7a5fef9a899bde408d63269c53af7b1d7d5fedf22871d5a"
+      },
+      "result": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_001\\result.json",
+        "sha256": "3ec903a87c8f8368f0548cb2b22b2a5d1a77804a2e1e0d7d245051b461fa7bef"
+      }
+    },
+    "2": {
+      "fit": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_002\\fits.pt",
+        "sha256": "2c3100c5e78cdf6ce4977559f22715859cd5bdf1c2c84ecf67fc67f859d232a6"
+      },
+      "fit_meta": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_002\\fit.json",
+        "sha256": "8580a16d81f8445b7a36a5e63cc40a010d7aac674178c16e16c4ca0edd4f954e"
+      },
+      "result": {
+        "path": "F:\\agi\\data\\action-return\\readout-v1\\seed_002\\result.json",
+        "sha256": "502e5d819667503fd29c218435a837e4b16b42d6127d31e803813f814026fcb7"
+      }
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "conditions": [
+    "short",
+    "long_both"
+  ],
+  "families": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "steps": 2048,
+  "arms": [
+    "original_non_input24",
+    "swap_begin_scores"
+  ],
+  "intervention": "Freeze original trained non_input24 controller. Swap only its final BEGIN1/BEGIN2 scores at every normal step, preserving all nonBEGIN scores and native next h. No fitting or tuning.",
+  "gate": "On each actual swap-trajectory obs/h, compare pre-swap and post-swap eleven-way argmax BEGIN-vs-nonBEGIN status and require exact equality. Unique highest BEGIN switches version; exact tied BEGIN scores retain original argmax convention. A tie against WAIT/FINISH retains original gate because both BEGIN indices have the same priority relative to each nonBEGIN index.",
+  "inference": "Only public obs and native h, as in the original controller; no oracle, target gate, reset or forced target action.",
+  "baseline": "Rerun all24 original non_input24 forks with added read-only pulse scorer; complete original evaluator record must exactly equal the saved main result.",
+  "source_state": "Same actual endpoint world/h/model per original fork; subsequent receipts and h may diverge because swapped version choices change actions.",
+  "measures": "Decoder-fitting-heldout lanes4..7: matched matured primary feasible correct BEGIN requests/primary matured requests, idle actions per1000 inactive opportunities, active correct-version and wrong-version BEGIN attempts. Split primary matured feasible correct accepted BEGIN requests by whether the accepted action occurred at that job NEW/REPLACE pulse or NONE; also save all actual accepted event counts separately.",
+  "matching": "Require original/swap same source world/h, final external event/scheduler streams, actor/cases and primary matured request fingerprints for each fork.",
+  "interpretation": "A behavioral counterfactual of swapping a fixed gate classifier version choice on each given h. Subsequent trajectories need not have identical timing or gate choices; not an isolated passive version accuracy or proof of native learned memory.",
+  "fit_unchanged": {
+    "updates": "original assisted offsets0..63 inclusive",
+    "actors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "positions": "all live tick/job positions, including WAIT/FINISH",
+    "features": "Endpoint-frozen backbone replay over original public observations and actual-action receipts. Initial h is original CP131072 h; continuously replay all8 actors without resets. These features differ from original historical h under changing weights.",
+    "labels": "original midpoint teacher action; collapse1->BEGIN1,2->BEGIN2,everything else->OTHER",
+    "weights": "original eleven-class weights before collapse: teacher WAIT0=.1, every nonWAIT=1; normalize weighted CE by sum of original row weights",
+    "fitting": "separate seed/job affine reference-class softmax, OTHER logit fixed0; train-only population mean/std; zero-variance columns fixed0; squared L2=.001 on standardized slopes only",
+    "optimizer": {
+      "name": "LBFGS",
+      "lr": 1,
+      "max_iter": 120,
+      "max_eval": 180,
+      "history_size": 30,
+      "line_search_fn": "strong_wolfe",
+      "tolerance_grad": 1e-10,
+      "tolerance_change": 1e-12
+    },
+    "initialization": "all decoder coefficients/bias zero; deterministic; no validation or hyperparameter search",
+    "dimensions": {
+      "non_input24": 24,
+      "all80": 80,
+      "public_obs56": 56
+    },
+    "free_parameters_total_both_jobs": {
+      "non_input24": 100,
+      "all80": 324,
+      "public_obs56": 228
+    }
+  },
+  "new_forks": 48,
+  "unique_intervention_forks": 24,
+  "repeated_original_forks": 24
+}

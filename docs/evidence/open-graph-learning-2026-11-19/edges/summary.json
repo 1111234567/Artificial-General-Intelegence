@@ -1,0 +1,1368 @@
+{
+  "registration_sha256": "ac9841434a5e9996bac286d494d0c28eb5d82e49507b305da9e4a370cd5064b0",
+  "raw_sha256": {
+    "stable": "3566a5d9de36623bdfc1aeeac31eb7021fbd5e978e81c02ef413f8378d8beef0",
+    "reversal": "94fa4ed4c91c1dea73f263dc6ecdf78803cda2f824aeb4631cdaabf07ea7701d",
+    "return": "8abbddacd69dfdfabcac1007a5796d41ce174852457a2d3a5d527a97781cd849"
+  },
+  "shared_physical_prefix_verified": true,
+  "all_graph_edits_replayed": true,
+  "results": {
+    "stable": {
+      "arms": {
+        "instant": {
+          "accuracy": {
+            "before": 0.6990885416666667,
+            "first20": 0.6604166666666667,
+            "last20": 0.621484375,
+            "after_return": 0.621484375
+          },
+          "last20_accuracy_by_rule": [
+            0.55078125,
+            0.6640625,
+            0.649609375
+          ],
+          "full_life_accuracy": 0.6829644097222223,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7675,
+            "retired_birth_arcs": 7179,
+            "retired_newborns": 496,
+            "surviving_newborns": 4496,
+            "final_edges": [
+              57,
+              57.013020833333336,
+              58
+            ],
+            "median_abs_birth_weight": 0.005324734840542078,
+            "median_abs_end_weight": 0.02691560983657837,
+            "median_total_weight_change_after_birth": 0.09929773211479187,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4992,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9933894230769231,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.04266172647476196,
+            "mean_predicted_surrogate_loss_reduction": 0.04390162602066994,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7675,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2415181,
+              "prior_growth": 274932,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2519966,
+              "prior_growth": 275648,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1065.100718407985,
+              "prior_growth": 689.5453948234754,
+              "new_growth": 91.48414174082541
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46018,
+              "bias": 46007,
+              "readout": 46015,
+              "offset": 45762
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              39.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7675,
+                "correlation": 0.10770766431902054
+              },
+              "policy": {
+                "slots": 7675,
+                "correlation": -0.025333652474890934
+              },
+              "instant_prior": {
+                "slots": 7675,
+                "correlation": -0.025333652474890934
+              },
+              "candidates": 467038,
+              "selected": 7675,
+              "selection_help_rate": 0.7390228013029316,
+              "selection_mean_heldout_effect": 0.1501903086900711
+            },
+            "initial": {
+              "later": {
+                "slots": 7675,
+                "correlation": 0.10627431282462287
+              },
+              "policy": {
+                "slots": 7675,
+                "correlation": -0.02546709105737073
+              },
+              "instant_prior": {
+                "slots": 7675,
+                "correlation": -0.02546709105737073
+              },
+              "candidates": 419806,
+              "selected": 7179,
+              "selection_help_rate": 0.7349212982309514,
+              "selection_mean_heldout_effect": 0.15395067632198334
+            },
+            "grown": {
+              "later": {
+                "slots": 6138,
+                "correlation": -0.03149941714556773
+              },
+              "policy": {
+                "slots": 6138,
+                "correlation": -0.03591152503586903
+              },
+              "instant_prior": {
+                "slots": 6138,
+                "correlation": -0.03591152503586903
+              },
+              "candidates": 47232,
+              "selected": 496,
+              "selection_help_rate": 0.7983870967741935,
+              "selection_mean_heldout_effect": 0.09576363116502762
+            }
+          }
+        },
+        "later": {
+          "accuracy": {
+            "before": 0.74375,
+            "first20": 0.7161458333333334,
+            "last20": 0.6701822916666668,
+            "after_return": 0.6701822916666668
+          },
+          "last20_accuracy_by_rule": [
+            0.5617187499999999,
+            0.7289062500000001,
+            0.7199218749999999
+          ],
+          "full_life_accuracy": 0.7264539930555556,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7669,
+            "retired_birth_arcs": 7164,
+            "retired_newborns": 505,
+            "surviving_newborns": 4487,
+            "final_edges": [
+              57,
+              57.028645833333336,
+              58
+            ],
+            "median_abs_birth_weight": 0.00410841591656208,
+            "median_abs_end_weight": 0.02314796671271324,
+            "median_total_weight_change_after_birth": 0.08062316477298737,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4992,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9921875,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.03663085401058197,
+            "mean_predicted_surrogate_loss_reduction": 0.037955015897750854,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7669,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2404120,
+              "prior_growth": 272834,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2521676,
+              "prior_growth": 273590,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 991.6026209289175,
+              "prior_growth": 580.0583717013434,
+              "new_growth": 82.5083748933503
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46014,
+              "bias": 46003,
+              "readout": 45986,
+              "offset": 45747
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              45.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7669,
+                "correlation": 0.12749177221212993
+              },
+              "policy": {
+                "slots": 7669,
+                "correlation": 0.12749177221212993
+              },
+              "instant_prior": {
+                "slots": 7669,
+                "correlation": -0.023213746718966827
+              },
+              "candidates": 466690,
+              "selected": 7669,
+              "selection_help_rate": 0.4492111096622767,
+              "selection_mean_heldout_effect": -0.0881642997264862
+            },
+            "initial": {
+              "later": {
+                "slots": 7669,
+                "correlation": 0.12578611962555264
+              },
+              "policy": {
+                "slots": 7669,
+                "correlation": 0.12578611962555264
+              },
+              "instant_prior": {
+                "slots": 7669,
+                "correlation": -0.023345650825822753
+              },
+              "candidates": 419856,
+              "selected": 7164,
+              "selection_help_rate": 0.4480737018425461,
+              "selection_mean_heldout_effect": -0.0931335911154747
+            },
+            "grown": {
+              "later": {
+                "slots": 6130,
+                "correlation": -0.02767027676801863
+              },
+              "policy": {
+                "slots": 6130,
+                "correlation": -0.02767027676801863
+              },
+              "instant_prior": {
+                "slots": 6130,
+                "correlation": -0.02599681576027519
+              },
+              "candidates": 46834,
+              "selected": 505,
+              "selection_help_rate": 0.46534653465346537,
+              "selection_mean_heldout_effect": -0.017669277265667915
+            }
+          }
+        },
+        "shuffled": {
+          "accuracy": {
+            "before": 0.783203125,
+            "first20": 0.7489583333333334,
+            "last20": 0.6796875,
+            "after_return": 0.6796875
+          },
+          "last20_accuracy_by_rule": [
+            0.564453125,
+            0.726953125,
+            0.74765625
+          ],
+          "full_life_accuracy": 0.75546875,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7672,
+            "retired_birth_arcs": 7580,
+            "retired_newborns": 92,
+            "surviving_newborns": 4900,
+            "final_edges": [
+              57,
+              57.020833333333336,
+              58
+            ],
+            "median_abs_birth_weight": 0.0033444371074438095,
+            "median_abs_end_weight": 0.021081386134028435,
+            "median_total_weight_change_after_birth": 0.07124609500169754,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4990,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9917868589743589,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.034582432359457016,
+            "mean_predicted_surrogate_loss_reduction": 0.03583069518208504,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7672,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2381169,
+              "prior_growth": 281575,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2512668,
+              "prior_growth": 282656,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1027.0668399229207,
+              "prior_growth": 517.8699827817582,
+              "new_growth": 72.53625051353164
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46005,
+              "bias": 45983,
+              "readout": 45987,
+              "offset": 45705
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              40.5,
+              105.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7672,
+                "correlation": 0.12027652160256158
+              },
+              "policy": {
+                "slots": 7672,
+                "correlation": 0.003976078043259261
+              },
+              "instant_prior": {
+                "slots": 7672,
+                "correlation": -0.02568653737289196
+              },
+              "candidates": 466864,
+              "selected": 7672,
+              "selection_help_rate": 0.48709593326381645,
+              "selection_mean_heldout_effect": -0.045229338109493256
+            },
+            "initial": {
+              "later": {
+                "slots": 7672,
+                "correlation": 0.11794998174668829
+              },
+              "policy": {
+                "slots": 7672,
+                "correlation": 0.0010007710897200028
+              },
+              "instant_prior": {
+                "slots": 7672,
+                "correlation": -0.02569077958333078
+              },
+              "candidates": 418493,
+              "selected": 7580,
+              "selection_help_rate": 0.48720316622691295,
+              "selection_mean_heldout_effect": -0.045301809906959534
+            },
+            "grown": {
+              "later": {
+                "slots": 6136,
+                "correlation": -0.01092183070453937
+              },
+              "policy": {
+                "slots": 6136,
+                "correlation": -0.003277852705055441
+              },
+              "instant_prior": {
+                "slots": 6136,
+                "correlation": -0.02455828091423437
+              },
+              "candidates": 48371,
+              "selected": 92,
+              "selection_help_rate": 0.4782608695652174,
+              "selection_mean_heldout_effect": -0.039257992058992386
+            }
+          }
+        }
+      },
+      "last20_contrasts": {
+        "instant": {
+          "delta": 0.04869791666666667,
+          "interval_95": [
+            0.024088541666666654,
+            0.0828125
+          ],
+          "delta_by_rule": [
+            0.010937500000000003,
+            0.06484374999999999,
+            0.0703125
+          ]
+        },
+        "shuffled": {
+          "delta": -0.009505208333333336,
+          "interval_95": [
+            -0.03602484809027778,
+            0.017795681423611136
+          ],
+          "delta_by_rule": [
+            -0.002734374999999996,
+            0.0019531249999999948,
+            -0.027734375000000006
+          ]
+        }
+      },
+      "first_divergence": {
+        "instant": {
+          "lives": 384,
+          "diverged": 384,
+          "usable": 384,
+          "first_trial_range": [
+            5,
+            23
+          ],
+          "action_side_changed": 58,
+          "later_correct_only": 27,
+          "comparator_correct_only": 31,
+          "paired_next_request": {
+            "delta": -0.010416666666666666,
+            "interval_95": [
+              -0.09375,
+              0.07552083333333333
+            ],
+            "delta_by_rule": [
+              0.046875,
+              -0.0546875,
+              -0.0234375
+            ]
+          }
+        },
+        "shuffled": {
+          "lives": 384,
+          "diverged": 384,
+          "usable": 384,
+          "first_trial_range": [
+            5,
+            11
+          ],
+          "action_side_changed": 56,
+          "later_correct_only": 16,
+          "comparator_correct_only": 40,
+          "paired_next_request": {
+            "delta": -0.0625,
+            "interval_95": [
+              -0.15885416666666669,
+              0.033854166666666664
+            ],
+            "delta_by_rule": [
+              -0.078125,
+              -0.0703125,
+              -0.0390625
+            ]
+          }
+        }
+      }
+    },
+    "reversal": {
+      "arms": {
+        "instant": {
+          "accuracy": {
+            "before": 0.6990885416666667,
+            "first20": 0.2994791666666667,
+            "last20": 0.3785156250000001,
+            "after_return": 0.3785156250000001
+          },
+          "last20_accuracy_by_rule": [
+            0.404296875,
+            0.37421875000000004,
+            0.3570312499999999
+          ],
+          "full_life_accuracy": 0.5149739583333334,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7675,
+            "retired_birth_arcs": 7126,
+            "retired_newborns": 549,
+            "surviving_newborns": 4443,
+            "final_edges": [
+              57,
+              57.013020833333336,
+              58
+            ],
+            "median_abs_birth_weight": 0.028971493244171143,
+            "median_abs_end_weight": 0.03626152127981186,
+            "median_total_weight_change_after_birth": 0.14553874731063843,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4991,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9963942307692307,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.06626714766025543,
+            "mean_predicted_surrogate_loss_reduction": 0.06710832566022873,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7675,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2446955,
+              "prior_growth": 275012,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2520252,
+              "prior_growth": 275304,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1466.5951552443298,
+              "prior_growth": 999.0032830664484,
+              "new_growth": 125.37929256898668
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46041,
+              "bias": 46030,
+              "readout": 46033,
+              "offset": 45864
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              39.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7675,
+                "correlation": 0.03607240755336307
+              },
+              "policy": {
+                "slots": 7675,
+                "correlation": -0.028660023603194515
+              },
+              "instant_prior": {
+                "slots": 7675,
+                "correlation": -0.028660023603194515
+              },
+              "candidates": 467038,
+              "selected": 7675,
+              "selection_help_rate": 0.790228013029316,
+              "selection_mean_heldout_effect": 0.351805180311203
+            },
+            "initial": {
+              "later": {
+                "slots": 7675,
+                "correlation": 0.035532566515537496
+              },
+              "policy": {
+                "slots": 7675,
+                "correlation": -0.0287916509336351
+              },
+              "instant_prior": {
+                "slots": 7675,
+                "correlation": -0.0287916509336351
+              },
+              "candidates": 419862,
+              "selected": 7126,
+              "selection_help_rate": 0.7844513050799887,
+              "selection_mean_heldout_effect": 0.3649313151836395
+            },
+            "grown": {
+              "later": {
+                "slots": 6138,
+                "correlation": -0.026313817249438667
+              },
+              "policy": {
+                "slots": 6138,
+                "correlation": -0.02196244958625065
+              },
+              "instant_prior": {
+                "slots": 6138,
+                "correlation": -0.02196244958625065
+              },
+              "candidates": 47176,
+              "selected": 549,
+              "selection_help_rate": 0.8652094717668488,
+              "selection_mean_heldout_effect": 0.18142828345298767
+            }
+          }
+        },
+        "later": {
+          "accuracy": {
+            "before": 0.74375,
+            "first20": 0.26015625,
+            "last20": 0.3768229166666666,
+            "after_return": 0.3768229166666666
+          },
+          "last20_accuracy_by_rule": [
+            0.39335937499999996,
+            0.382421875,
+            0.35468749999999993
+          ],
+          "full_life_accuracy": 0.519140625,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7671,
+            "retired_birth_arcs": 7248,
+            "retired_newborns": 423,
+            "surviving_newborns": 4569,
+            "final_edges": [
+              57,
+              57.0234375,
+              58
+            ],
+            "median_abs_birth_weight": 0.0253242589533329,
+            "median_abs_end_weight": 0.03596670553088188,
+            "median_total_weight_change_after_birth": 0.14797893166542053,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4992,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9963942307692307,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.07017591595649719,
+            "mean_predicted_surrogate_loss_reduction": 0.07093549519777298,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7671,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2441587,
+              "prior_growth": 276528,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2518583,
+              "prior_growth": 276799,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1533.6145086010092,
+              "prior_growth": 962.9542333244922,
+              "new_growth": 122.57187309876733
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46041,
+              "bias": 46038,
+              "readout": 46023,
+              "offset": 45877
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              39.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7671,
+                "correlation": 0.03879270964757616
+              },
+              "policy": {
+                "slots": 7671,
+                "correlation": 0.03879270964757616
+              },
+              "instant_prior": {
+                "slots": 7671,
+                "correlation": -0.030667079913926882
+              },
+              "candidates": 466806,
+              "selected": 7671,
+              "selection_help_rate": 0.47829487680876026,
+              "selection_mean_heldout_effect": -0.02355436608195305
+            },
+            "initial": {
+              "later": {
+                "slots": 7671,
+                "correlation": 0.03824158549840673
+              },
+              "policy": {
+                "slots": 7671,
+                "correlation": 0.03824158549840673
+              },
+              "instant_prior": {
+                "slots": 7671,
+                "correlation": -0.030714087189296756
+              },
+              "candidates": 419423,
+              "selected": 7248,
+              "selection_help_rate": 0.47833885209713023,
+              "selection_mean_heldout_effect": -0.024236148223280907
+            },
+            "grown": {
+              "later": {
+                "slots": 6132,
+                "correlation": -0.026079972595992918
+              },
+              "policy": {
+                "slots": 6132,
+                "correlation": -0.026079972595992918
+              },
+              "instant_prior": {
+                "slots": 6132,
+                "correlation": -0.021566409448460132
+              },
+              "candidates": 47383,
+              "selected": 423,
+              "selection_help_rate": 0.47754137115839246,
+              "selection_mean_heldout_effect": -0.011872201226651669
+            }
+          }
+        },
+        "shuffled": {
+          "accuracy": {
+            "before": 0.783203125,
+            "first20": 0.21210937500000002,
+            "last20": 0.3130208333333333,
+            "after_return": 0.3130208333333333
+          },
+          "last20_accuracy_by_rule": [
+            0.355859375,
+            0.2984375,
+            0.284765625
+          ],
+          "full_life_accuracy": 0.4956597222222222,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7674,
+            "retired_birth_arcs": 7652,
+            "retired_newborns": 22,
+            "surviving_newborns": 4970,
+            "final_edges": [
+              57,
+              57.015625,
+              58
+            ],
+            "median_abs_birth_weight": 0.026361264288425446,
+            "median_abs_end_weight": 0.03742506727576256,
+            "median_total_weight_change_after_birth": 0.14645886421203613,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4991,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9965945512820513,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.07291988283395767,
+            "mean_predicted_surrogate_loss_reduction": 0.07376783341169357,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7674,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2432181,
+              "prior_growth": 283492,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2511723,
+              "prior_growth": 283775,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1838.8991229368876,
+              "prior_growth": 940.5759962603629,
+              "new_growth": 121.62176382125416
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46044,
+              "bias": 46034,
+              "readout": 46035,
+              "offset": 45878
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              40.5,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7674,
+                "correlation": 0.04386030346896663
+              },
+              "policy": {
+                "slots": 7674,
+                "correlation": 0.0004469039957926825
+              },
+              "instant_prior": {
+                "slots": 7674,
+                "correlation": -0.02507457032555274
+              },
+              "candidates": 466980,
+              "selected": 7674,
+              "selection_help_rate": 0.5100338806359135,
+              "selection_mean_heldout_effect": 0.0136283403262496
+            },
+            "initial": {
+              "later": {
+                "slots": 7674,
+                "correlation": 0.04308969646360898
+              },
+              "policy": {
+                "slots": 7674,
+                "correlation": -0.0002474295858726987
+              },
+              "instant_prior": {
+                "slots": 7674,
+                "correlation": -0.025323680101579135
+              },
+              "candidates": 418403,
+              "selected": 7652,
+              "selection_help_rate": 0.5104547830632514,
+              "selection_mean_heldout_effect": 0.013929467648267746
+            },
+            "grown": {
+              "later": {
+                "slots": 6138,
+                "correlation": -0.009738131398650535
+              },
+              "policy": {
+                "slots": 6138,
+                "correlation": -0.006130631250532625
+              },
+              "instant_prior": {
+                "slots": 6138,
+                "correlation": -0.0056053283921301215
+              },
+              "candidates": 48577,
+              "selected": 22,
+              "selection_help_rate": 0.36363636363636365,
+              "selection_mean_heldout_effect": -0.09110834449529648
+            }
+          }
+        }
+      },
+      "last20_contrasts": {
+        "instant": {
+          "delta": -0.0016927083333333325,
+          "interval_95": [
+            -0.02430609809027778,
+            0.023655056423611143
+          ],
+          "delta_by_rule": [
+            -0.010937499999999998,
+            0.008203125,
+            -0.002343749999999998
+          ]
+        },
+        "shuffled": {
+          "delta": 0.06380208333333333,
+          "interval_95": [
+            0.03506890190972222,
+            0.098046875
+          ],
+          "delta_by_rule": [
+            0.037500000000000006,
+            0.083984375,
+            0.06992187500000001
+          ]
+        }
+      },
+      "first_divergence": {
+        "instant": {
+          "lives": 384,
+          "diverged": 384,
+          "usable": 384,
+          "first_trial_range": [
+            5,
+            23
+          ],
+          "action_side_changed": 58,
+          "later_correct_only": 27,
+          "comparator_correct_only": 31,
+          "paired_next_request": {
+            "delta": -0.010416666666666666,
+            "interval_95": [
+              -0.09375,
+              0.07552083333333333
+            ],
+            "delta_by_rule": [
+              0.046875,
+              -0.0546875,
+              -0.0234375
+            ]
+          }
+        },
+        "shuffled": {
+          "lives": 384,
+          "diverged": 384,
+          "usable": 384,
+          "first_trial_range": [
+            5,
+            11
+          ],
+          "action_side_changed": 56,
+          "later_correct_only": 16,
+          "comparator_correct_only": 40,
+          "paired_next_request": {
+            "delta": -0.0625,
+            "interval_95": [
+              -0.15885416666666669,
+              0.033854166666666664
+            ],
+            "delta_by_rule": [
+              -0.078125,
+              -0.0703125,
+              -0.0390625
+            ]
+          }
+        }
+      }
+    },
+    "return": {
+      "arms": {
+        "instant": {
+          "accuracy": {
+            "before": 0.6990885416666667,
+            "first20": 0.2994791666666667,
+            "last20": 0.584375,
+            "after_return": 0.584375
+          },
+          "last20_accuracy_by_rule": [
+            0.5285156249999999,
+            0.603515625,
+            0.6210937499999999
+          ],
+          "full_life_accuracy": 0.5647569444444445,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7674,
+            "retired_birth_arcs": 7139,
+            "retired_newborns": 535,
+            "surviving_newborns": 4457,
+            "final_edges": [
+              57,
+              57.015625,
+              58
+            ],
+            "median_abs_birth_weight": 0.017070772126317024,
+            "median_abs_end_weight": 0.03089049831032753,
+            "median_total_weight_change_after_birth": 0.12578344345092773,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4992,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9957932692307693,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.05792086571455002,
+            "mean_predicted_surrogate_loss_reduction": 0.05891139805316925,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7674,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2441292,
+              "prior_growth": 275075,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2520122,
+              "prior_growth": 275434,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1376.6785385673597,
+              "prior_growth": 887.8773933199625,
+              "new_growth": 115.02134907622907
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46040,
+              "bias": 46029,
+              "readout": 46026,
+              "offset": 45858
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              42.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7674,
+                "correlation": 0.05698448556309684
+              },
+              "policy": {
+                "slots": 7674,
+                "correlation": -0.02685009674120028
+              },
+              "instant_prior": {
+                "slots": 7674,
+                "correlation": -0.02685009674120028
+              },
+              "candidates": 466980,
+              "selected": 7674,
+              "selection_help_rate": 0.7735209799322388,
+              "selection_mean_heldout_effect": 0.3184162676334381
+            },
+            "initial": {
+              "later": {
+                "slots": 7674,
+                "correlation": 0.05612482796968007
+              },
+              "policy": {
+                "slots": 7674,
+                "correlation": -0.027116465765544974
+              },
+              "instant_prior": {
+                "slots": 7674,
+                "correlation": -0.027116465765544974
+              },
+              "candidates": 419792,
+              "selected": 7139,
+              "selection_help_rate": 0.7687351169631601,
+              "selection_mean_heldout_effect": 0.3330603837966919
+            },
+            "grown": {
+              "later": {
+                "slots": 6137,
+                "correlation": -0.01988732051056692
+              },
+              "policy": {
+                "slots": 6137,
+                "correlation": -0.023740621847096566
+              },
+              "instant_prior": {
+                "slots": 6137,
+                "correlation": -0.023740621847096566
+              },
+              "candidates": 47188,
+              "selected": 535,
+              "selection_help_rate": 0.8373831775700935,
+              "selection_mean_heldout_effect": 0.12300604581832886
+            }
+          }
+        },
+        "later": {
+          "accuracy": {
+            "before": 0.74375,
+            "first20": 0.26015625,
+            "last20": 0.5869791666666667,
+            "after_return": 0.5869791666666667
+          },
+          "last20_accuracy_by_rule": [
+            0.5261718750000001,
+            0.6050781249999999,
+            0.6296875
+          ],
+          "full_life_accuracy": 0.5693142361111111,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7672,
+            "retired_birth_arcs": 7195,
+            "retired_newborns": 477,
+            "surviving_newborns": 4515,
+            "final_edges": [
+              57,
+              57.020833333333336,
+              58
+            ],
+            "median_abs_birth_weight": 0.01516385655850172,
+            "median_abs_end_weight": 0.030244294553995132,
+            "median_total_weight_change_after_birth": 0.1254664808511734,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4992,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9957932692307693,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.06215504929423332,
+            "mean_predicted_surrogate_loss_reduction": 0.06326233595609665,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7672,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2435763,
+              "prior_growth": 275665,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2519379,
+              "prior_growth": 276061,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1430.1700255474934,
+              "prior_growth": 851.5545973302951,
+              "new_growth": 112.61486563926633
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46040,
+              "bias": 46035,
+              "readout": 46020,
+              "offset": 45870
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              45.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7672,
+                "correlation": 0.059696878622772225
+              },
+              "policy": {
+                "slots": 7672,
+                "correlation": 0.059696878622772225
+              },
+              "instant_prior": {
+                "slots": 7672,
+                "correlation": -0.028195000654891313
+              },
+              "candidates": 466864,
+              "selected": 7672,
+              "selection_help_rate": 0.477711157455683,
+              "selection_mean_heldout_effect": -0.029681913554668427
+            },
+            "initial": {
+              "later": {
+                "slots": 7672,
+                "correlation": 0.05890186701141855
+              },
+              "policy": {
+                "slots": 7672,
+                "correlation": 0.05890186701141855
+              },
+              "instant_prior": {
+                "slots": 7672,
+                "correlation": -0.028287116049279058
+              },
+              "candidates": 419594,
+              "selected": 7195,
+              "selection_help_rate": 0.47644197359277274,
+              "selection_mean_heldout_effect": -0.03134395182132721
+            },
+            "grown": {
+              "later": {
+                "slots": 6133,
+                "correlation": -0.028480260197883394
+              },
+              "policy": {
+                "slots": 6133,
+                "correlation": -0.028480260197883394
+              },
+              "instant_prior": {
+                "slots": 6133,
+                "correlation": -0.024483541225474876
+              },
+              "candidates": 47270,
+              "selected": 477,
+              "selection_help_rate": 0.4968553459119497,
+              "selection_mean_heldout_effect": -0.004611901938915253
+            }
+          }
+        },
+        "shuffled": {
+          "accuracy": {
+            "before": 0.783203125,
+            "first20": 0.21210937500000002,
+            "last20": 0.6567708333333333,
+            "after_return": 0.6567708333333333
+          },
+          "last20_accuracy_by_rule": [
+            0.55390625,
+            0.7054687500000001,
+            0.7109375
+          ],
+          "full_life_accuracy": 0.5822265625,
+          "structure_and_weights": {
+            "grows": 4992,
+            "retires": 7672,
+            "retired_birth_arcs": 7592,
+            "retired_newborns": 80,
+            "surviving_newborns": 4912,
+            "final_edges": [
+              57,
+              57.020833333333336,
+              58
+            ],
+            "median_abs_birth_weight": 0.010105907917022705,
+            "median_abs_end_weight": 0.02762243151664734,
+            "median_total_weight_change_after_birth": 0.10993336141109467,
+            "newborns_with_followup": 4992,
+            "fraction_changed": 1.0,
+            "newborns_with_two_followups": 4990,
+            "fraction_changed_twice": 1.0,
+            "observed_loss_decline": 0.9957932692307693,
+            "observed_loss_increase": 0.0,
+            "mean_actual_surrogate_loss_reduction": 0.06203760206699371,
+            "mean_predicted_surrogate_loss_reduction": 0.06287937611341476,
+            "graph_edge_range_including_edit_intermediate": [
+              57,
+              64
+            ],
+            "exit_opportunities": 7672,
+            "first_weight_step_changed_counts": {
+              "initial_generation": 2417634,
+              "prior_growth": 282405,
+              "new_growth": 4992
+            },
+            "weight_update_opportunities": {
+              "initial_generation": 2512206,
+              "prior_growth": 283118,
+              "new_growth": 4992
+            },
+            "weight_total_absolute_step": {
+              "initial_generation": 1602.3629075871831,
+              "prior_growth": 766.8325688769032,
+              "new_growth": 105.97240147216051
+            },
+            "other_weights_receipts_with_update": {
+              "drive": 46028,
+              "bias": 46018,
+              "readout": 46020,
+              "offset": 45838
+            },
+            "retired_newborn_age_quantiles": [
+              3.0,
+              48.0,
+              111.0
+            ]
+          },
+          "heldout_receipts": {
+            "all": {
+              "later": {
+                "slots": 7672,
+                "correlation": 0.06968927463634149
+              },
+              "policy": {
+                "slots": 7672,
+                "correlation": 0.0010307199398999476
+              },
+              "instant_prior": {
+                "slots": 7672,
+                "correlation": -0.02391405899229255
+              },
+              "candidates": 466864,
+              "selected": 7672,
+              "selection_help_rate": 0.5059958289885297,
+              "selection_mean_heldout_effect": -0.0036107043270021677
+            },
+            "initial": {
+              "later": {
+                "slots": 7672,
+                "correlation": 0.06836150900402237
+              },
+              "policy": {
+                "slots": 7672,
+                "correlation": -0.0005768213580185389
+              },
+              "instant_prior": {
+                "slots": 7672,
+                "correlation": -0.02405479518721596
+              },
+              "candidates": 418416,
+              "selected": 7592,
+              "selection_help_rate": 0.5064541622760801,
+              "selection_mean_heldout_effect": -0.0036548934876918793
+            },
+            "grown": {
+              "later": {
+                "slots": 6136,
+                "correlation": -0.014181377701875185
+              },
+              "policy": {
+                "slots": 6136,
+                "correlation": -0.0019660908862222117
+              },
+              "instant_prior": {
+                "slots": 6136,
+                "correlation": -0.014174303174250141
+              },
+              "candidates": 48448,
+              "selected": 80,
+              "selection_help_rate": 0.4625,
+              "selection_mean_heldout_effect": 0.0005832806346006691
+            }
+          }
+        }
+      },
+      "last20_contrasts": {
+        "instant": {
+          "delta": 0.0026041666666666665,
+          "interval_95": [
+            -0.023655056423611105,
+            0.02838541666666667
+          ],
+          "delta_by_rule": [
+            -0.0023437500000000003,
+            0.0015624999999999936,
+            0.008593750000000004
+          ]
+        },
+        "shuffled": {
+          "delta": -0.06979166666666665,
+          "interval_95": [
+            -0.101953125,
+            -0.03619791666666666
+          ],
+          "delta_by_rule": [
+            -0.027734375,
+            -0.10039062500000001,
+            -0.08124999999999999
+          ]
+        }
+      },
+      "first_divergence": {
+        "instant": {
+          "lives": 384,
+          "diverged": 384,
+          "usable": 384,
+          "first_trial_range": [
+            5,
+            23
+          ],
+          "action_side_changed": 58,
+          "later_correct_only": 27,
+          "comparator_correct_only": 31,
+          "paired_next_request": {
+            "delta": -0.010416666666666666,
+            "interval_95": [
+              -0.09375,
+              0.07552083333333333
+            ],
+            "delta_by_rule": [
+              0.046875,
+              -0.0546875,
+              -0.0234375
+            ]
+          }
+        },
+        "shuffled": {
+          "lives": 384,
+          "diverged": 384,
+          "usable": 384,
+          "first_trial_range": [
+            5,
+            11
+          ],
+          "action_side_changed": 56,
+          "later_correct_only": 16,
+          "comparator_correct_only": 40,
+          "paired_next_request": {
+            "delta": -0.0625,
+            "interval_95": [
+              -0.15885416666666669,
+              0.033854166666666664
+            ],
+            "delta_by_rule": [
+              -0.078125,
+              -0.0703125,
+              -0.0390625
+            ]
+          }
+        }
+      }
+    }
+  }
+}

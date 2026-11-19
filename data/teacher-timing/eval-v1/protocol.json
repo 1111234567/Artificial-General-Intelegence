@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-11-06T15:17:43.046000+00:00",
+  "sources": {
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/action_split/eval_test.py": "702f7a0fa47e2842c735a47cbc422d3f19d7873b1bdf4d1ec91413f389d38716",
+    "experiments/action_split/model.py": "72d44a1ce29a8e26be4e85b3f6743f19591e666b93089384d2ea4bebd5417988",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/remaining_time/evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments/remaining_time/eval_test.py": "a685402e723f7a2f7cf6b29136ae7902a848136cdd6f29a327fa6bd2a7c8bb49",
+    "experiments/remaining_time/model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "experiments/teacher_timing/evaluate.py": "5b16139b3099742b1db2beb1d266f91b49ee6ece21c82a7de789d83e61eec2e3",
+    "experiments/teacher_timing/eval_audit.py": "8758e4917ca8a575a87150ca2bb8dbff578b54f6dae7f37fc501c2f184c0ab89",
+    "experiments/action_split/eval_audit.py": "1c97b9d19b212eee30500bd69b72d66b00685c4b53e8cd7a5663c100eee1b08f",
+    "experiments/remaining_time/eval_audit.py": "8862973722f03523d4aed2a9f96ccbe16aabab53d8986ecf5145225f94275f13"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "original",
+    "earliest_action",
+    "earliest_joint",
+    "midpoint_action",
+    "midpoint_joint"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ],
+    "longer": [
+      16.0,
+      32.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "actor_ids": [
+    99000,
+    99001,
+    99002,
+    99003,
+    99004,
+    99005,
+    99006,
+    99007,
+    99008,
+    99009,
+    99010,
+    99011,
+    99012,
+    99013,
+    99014,
+    99015,
+    99016,
+    99017,
+    99018,
+    99019,
+    99020,
+    99021,
+    99022,
+    99023,
+    99024,
+    99025,
+    99026,
+    99027,
+    99028,
+    99029,
+    99030,
+    99031
+  ],
+  "world_seed": "854000+seed",
+  "primary": "Compare midpoint versus earliest actual teacher regime under action-only native CE; both copied original policy and have exact same fixed256update/input/action-row budgets.",
+  "secondary": "Duration16..32 with samegap16..32, fixedstep256 only. Frozen read-only time sidecars; no learned threshold or rollout selection.",
+  "execution": "Every policy executes native actions throughout warmup+test. Independent origin h=0, then fully continuous. No oracle action or private state enters decoder.",
+  "denominator": "All eligible actual NEW/REPLACE issued at tick>=512 and with a matching native maturity pulse before horizon. Include no-BEGIN/no-window failures. No boundary-pair filter.",
+  "diagnostics": "Actual accepted BEGIN; actual early FINISH independent of version/content; first rejected active action; reached legal but no FINISH; legal first attempt correct/wrong/absent. Whole legal window, not mandatory immediate FINISH.",
+  "reference": "Original native policy is untouched, no extra training. Four copied-policy continuations start identical; earliest endpoints reproduce previous experiment bitwise.",
+  "sidecar": "*_time.npz saves time_prediction [4608,32,2] normalized by16 and native_logits [4608,32,2,11], computedfrom same post-observationh. *_time.json binds exact original rawfacts/checkpoint and fixed zero-sign metrics.",
+  "limits": "Actual teacher changes labels AND receipts/state histories, not a label-only intervention. Wholewindow success is primary; auxiliarytime signed/MAE metrics are only diagnostics.",
+  "interaction": "Joint-minus-action changes within each teacher, then compare teacher effects. Time-head loss never influences policy through action-only detached features/separateclipping. Time-valid row counts differ with actual teacher execution."
+}

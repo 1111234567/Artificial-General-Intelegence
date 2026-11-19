@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-11-03T11:25:07.862679+00:00",
+  "protocol_hash": "1fa3ec74c85fb9c31c912af1593ad9eb2b9101e412596083eb70d8291ad1bd82",
+  "type": "Independent audit arithmetic correction; training, source and frozen protocol unchanged",
+  "original_auditor": "F:\\agi\\experiments\\review_selection\\train_audit.py",
+  "original_auditor_sha256": "034fae28ddbdfa1714fe6de1c0d31ae0ef7589e66d5256ee821c153b876947b9",
+  "corrected_auditor": "F:\\agi\\experiments\\review_selection\\train_replay_check.py",
+  "corrected_auditor_sha256": "ae852e7fc8a93f7d866716af547d23682a4a3ccee11a708aefb04de704178e43",
+  "correction": "Original independent auditor divides summed NLL by a per-example GPU int tensor equal to3, while frozen trainer divides by scalar3. GPU float32 division differs by up to1ULP on seed0(max1.1920928955078125e-7). Corrected auditor uses scalar3, then requires bitwise scores, choices, model and Adam equality. No score, selection, training data, gradient or checkpoint is changed.",
+  "bank_qualification": "Eligibility requires true in-process WAIT and first legal midpoint teacher FINISH in actual old own-action trajectories. Requests already autonomously completed before midpoint are excluded; qualification is action-dependent. Bank is not an unbiased uniform sample of all historical requests."
+}

@@ -1,0 +1,88 @@
+{
+  "created_utc": "2026-11-03T07:47:54.925499+00:00",
+  "source_sha256": "ece02f0ff5a8ebd18a2a9a8c004a3822ff24887a4d9f23d255ff1ffa2bf36097",
+  "implementation_note": "v1 used ContextWorld's four-slot default and produced 112 inputs. Scoring failed at the GRU input check before any policy result. v2 specifies the intended two-slot,56-input world with otherwise unchanged scoring; v1 sources, protocol and streams are retained.",
+  "dimensions": "3 seeds, pure B long_both, 16 heldout actors, 256 tick warmup then 2048 observed ticks. No training.",
+  "history": "Teacher actually chooses midpoint actions. Scores of the three models do not enter this world. Every new request scored once at first teacher FINISH, before execution. Teacher correct-version BEGIN receipt is available and common to all policies.",
+  "metrics": "Full11 desired FINISH and exact action, conditional8 content, version-known4 payload, and margin/correct B versus common wrong previous payload on changed symbols. Group by raw A==B vs A!=B for all arms.",
+  "declaration": "Secondary diagnostic declared before any trained-B measurements. Main claims depend on actual free actions.",
+  "maps": [
+    [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      1
+    ],
+    [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      2
+    ],
+    [
+      [
+        0,
+        3,
+        1,
+        2
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        3,
+        0,
+        1,
+        2
+      ],
+      0
+    ]
+  ],
+  "stages": [
+    "B000",
+    "Bfirst002",
+    "Bfirst008",
+    "B001",
+    "B002",
+    "B004",
+    "B008"
+  ],
+  "arms": [
+    "related",
+    "disjoint",
+    "direct"
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "archived_utc": "2026-11-19T03:47:43.006816+00:00",
+  "zip_name": "raw.zip",
+  "zip_sha256": "99a1e9011b0fe12981e6c2fbdd3b1a2fbe6c63044802f7a47ff94db005fac4af",
+  "archive_files_sha256": {
+    "checkpoints/birth-00-step-1200.npz": "7583eda6adb2058501fd5c49773ba01cbcedebe3d3113c792241763e3dbc7f0e",
+    "checkpoints/birth-00-step-240.npz": "a28c16be03dbf7c1d2bfcb3d7c2313b8568b95af35f6d4ca83a0222325dccc94",
+    "checkpoints/birth-08-step-1200.npz": "3f4a7d69a8c8c74604d7148bb1ae39481538b41155b8ab70d0726c8fd99e9faa",
+    "checkpoints/birth-08-step-240.npz": "68224acc24120e78600e6dafc73853beceedc22950a1cd4f22396b1cdd5160ea",
+    "development.json": "c1114f36363d25bf20ee4122a4b7d9edc9a6268d117fd6a60865bb502ccde784",
+    "frozen.json": "98d2799dd85cfa77bb818ac8beab19d65fa33d465b857826b63dde3414b52c1b",
+    "graphs.json": "7833a1cbd5c655580b051fa9c96ad76bd3dd527c270675defc1ed61b1a12cfd9",
+    "oracles.npz": "6f01d05f6fb38c83febb10ed95308417c7d99892b3e9818cadd89b26eed21eed",
+    "recipe.json": "e649dbc93f2884c7b96530cddcf1a1dea2fee7b041823f95c23987552e1511ae",
+    "registered.json": "055a1f9260753b332680c73f50f09efc444ae95b38202b15a4cef595d18d8a3a",
+    "scores/birth-00-step-1200.npz": "cd82962e320c9ff32774d45e51943f1053e6338e0477e35a01610c2e147732df",
+    "scores/birth-00-step-240.npz": "3de5617e26aa0eeb5cfa8ee812f187641edf4c4f18fe9feeebb4596943cbd149",
+    "scores/birth-08-step-1200.npz": "3654c652c1f940257defa6799f0744c706c6186c951f5ed8fd7b427ee1ca71bf",
+    "scores/birth-08-step-240.npz": "a910541b463bdf6c503305445afd7e96dd77db557fb6d2ac1f9ed64c102841ba",
+    "summary.json": "e885ed6bbb5adc2d0c2cb3a885fe6c06a1dca69fc32284ae5d3700c582978c19",
+    "timing.json": "11d05194dcc57548554f207f569863df8615eb833f730dfd582f9c5f3defaada",
+    "training-progress.json": "ecd2c5a8ddf80010bac0102d7225af4b0adfabc3727284c34538c817938690ca",
+    "verification.json": "4088d99d217a219e4f6feade19b42ae88692b39d0ceafbff9913ef24c03ba7de"
+  },
+  "registered_sources_sha256": {
+    "ring_logic_model.py": "ad9c3a1409970ec6ce7dfba57e5b44c9ae975950a0342807e502c53f57a20d7d",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "ring_logic_analysis.py": "4094b36e19e77af33c205389fc0be72d9da10cb4d289c010752d24b21030a785",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "frozen_hashes_verified": true,
+  "zip_crc_and_member_hashes_verified": true,
+  "training_receipts_reconstructed": {
+    "dev_train": {
+      "opportunities_per_rule": 2560,
+      "delivered_per_rule": [
+        2560,
+        2560,
+        2560
+      ],
+      "positive_per_rule": [
+        1310,
+        1250,
+        1248
+      ],
+      "negative_per_rule": [
+        1250,
+        1310,
+        1312
+      ]
+    },
+    "main_train": {
+      "opportunities_per_rule": 3840,
+      "delivered_per_rule": [
+        3840,
+        3840,
+        3840
+      ],
+      "positive_per_rule": [
+        1990,
+        1934,
+        1946
+      ],
+      "negative_per_rule": [
+        1850,
+        1906,
+        1894
+      ]
+    }
+  },
+  "confirmed_arrays_checked_against_physical_contact_and_truth": [
+    {
+      "file": "scores/birth-00-step-240.npz",
+      "case": "standard",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 640
+    },
+    {
+      "file": "scores/birth-00-step-240.npz",
+      "case": "long",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 755
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "standard",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 358
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "long",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 314
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "drop",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 33
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "reset",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 48
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "first_only",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 20
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "second_only",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 56
+    },
+    {
+      "file": "scores/birth-00-step-1200.npz",
+      "case": "timing_only",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 20
+    },
+    {
+      "file": "scores/birth-08-step-240.npz",
+      "case": "standard",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 414
+    },
+    {
+      "file": "scores/birth-08-step-240.npz",
+      "case": "long",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 350
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "standard",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 294
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "long",
+      "shape": [
+        192,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 491520,
+      "timeouts": 342
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "drop",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 50
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "reset",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 40
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "first_only",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 124
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "second_only",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 120
+    },
+    {
+      "file": "scores/birth-08-step-1200.npz",
+      "case": "timing_only",
+      "shape": [
+        96,
+        128,
+        20,
+        3
+      ],
+      "opportunities": 245760,
+      "timeouts": 120
+    }
+  ],
+  "standard_sample_cuda_replay": {
+    "device": "cuda",
+    "rows": [
+      {
+        "first_group": 0,
+        "updates": 240,
+        "different_values": {
+          "standard": 0
+        }
+      },
+      {
+        "first_group": 0,
+        "updates": 1200,
+        "different_values": {
+          "standard": 0,
+          "drop": 0,
+          "reset": 0,
+          "first_only": 0,
+          "second_only": 0,
+          "timing_only": 0
+        }
+      },
+      {
+        "first_group": 8,
+        "updates": 240,
+        "different_values": {
+          "standard": 0
+        }
+      },
+      {
+        "first_group": 8,
+        "updates": 1200,
+        "different_values": {
+          "standard": 0,
+          "drop": 0,
+          "reset": 0,
+          "first_only": 0,
+          "second_only": 0,
+          "timing_only": 0
+        }
+      }
+    ],
+    "all_values_replayed_exactly": true
+  },
+  "test_command": ".venv/Scripts/python.exe -m pytest -q experiments/pulse_game/tests",
+  "test_count_passed": 76
+}

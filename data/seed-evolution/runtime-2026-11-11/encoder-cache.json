@@ -1,0 +1,131 @@
+{
+  "reference": {
+    "path": "data\\seed-evolution\\2026-11-11-large-v1\\search\\rep_0\\shared_g00_i00",
+    "artifacts": {
+      "initial.pt": "f6cb0ce5b4440da07bf5a98c4c4d62bc6d748dcbd59e67b12bc6cb3c9b51e6ed",
+      "inner64.pt": "4ae0d266436ac7e15eb3b924fec0d9e04926c67348dc41be9ee76a2205078d4c",
+      "score.json": "7434e7cd21f3f7ee94d5aa9068fd46dc915e6caa21cde6c5028fc62240613a2e",
+      "training.json": "320a3802c3b3ff27147296d6e720cb3ffb282dd412f0aab23c89395cf8c7e2a1"
+    },
+    "archived_cpu_seconds": 88.72125760000017
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.11.0+cu130",
+    "logical_cpu_count": 20,
+    "torch_threads": 1,
+    "device": "cpu",
+    "background": "Existing large search with 14 CPU workers"
+  },
+  "timing_scope": "One fresh process per trial. Preload verified training streams outside the timer.",
+  "rss_scope": "Process-lifetime peak resident/working set before and after the timed training call.",
+  "trials": [
+    {
+      "steps": 8,
+      "mode": "cache",
+      "started_utc": "2026-11-11T10:41:39.021594+00:00",
+      "elapsed_seconds": 11.19146130000081,
+      "updates_per_second": 0.7148306897151511,
+      "peak_rss_before_bytes": 654835712,
+      "peak_rss_after_bytes": 1364303872,
+      "cache": {
+        "hits": 0,
+        "misses": 8,
+        "bypasses": 0,
+        "streams": 8,
+        "bytes": 67174400,
+        "peak_bytes": 67174400
+      },
+      "matches_archived_cpu": null
+    },
+    {
+      "steps": 8,
+      "mode": "baseline",
+      "started_utc": "2026-11-11T10:41:52.646854+00:00",
+      "elapsed_seconds": 11.134644300000218,
+      "updates_per_second": 0.7184782723593464,
+      "peak_rss_before_bytes": 654639104,
+      "peak_rss_after_bytes": 1304702976,
+      "cache": null,
+      "matches_archived_cpu": null
+    },
+    {
+      "steps": 16,
+      "mode": "baseline",
+      "started_utc": "2026-11-11T10:42:06.369879+00:00",
+      "elapsed_seconds": 20.218832099999418,
+      "updates_per_second": 0.7913414543860059,
+      "peak_rss_before_bytes": 654745600,
+      "peak_rss_after_bytes": 1304580096,
+      "cache": null,
+      "matches_archived_cpu": null
+    },
+    {
+      "steps": 16,
+      "mode": "cache",
+      "started_utc": "2026-11-11T10:42:28.711231+00:00",
+      "elapsed_seconds": 18.72566679999909,
+      "updates_per_second": 0.8544422033612591,
+      "peak_rss_before_bytes": 654458880,
+      "peak_rss_after_bytes": 1368768512,
+      "cache": {
+        "hits": 8,
+        "misses": 8,
+        "bypasses": 0,
+        "streams": 8,
+        "bytes": 67174400,
+        "peak_bytes": 67174400
+      },
+      "matches_archived_cpu": null
+    },
+    {
+      "steps": 64,
+      "mode": "cache",
+      "started_utc": "2026-11-11T10:42:49.554025+00:00",
+      "elapsed_seconds": 77.39245979999941,
+      "updates_per_second": 0.8269539457124282,
+      "peak_rss_before_bytes": 654942208,
+      "peak_rss_after_bytes": 1369198592,
+      "cache": {
+        "hits": 56,
+        "misses": 8,
+        "bypasses": 0,
+        "streams": 8,
+        "bytes": 67174400,
+        "peak_bytes": 67174400
+      },
+      "matches_archived_cpu": true
+    },
+    {
+      "steps": 64,
+      "mode": "baseline",
+      "started_utc": "2026-11-11T10:44:09.478354+00:00",
+      "elapsed_seconds": 80.69405769999867,
+      "updates_per_second": 0.7931191196003154,
+      "peak_rss_before_bytes": 654852096,
+      "peak_rss_after_bytes": 1305763840,
+      "cache": null,
+      "matches_archived_cpu": true
+    }
+  ],
+  "pairs": [
+    {
+      "steps": 8,
+      "model_and_adam_bits_match": true,
+      "log_and_metadata_match": true,
+      "speedup": 0.9949231830877538
+    },
+    {
+      "steps": 16,
+      "model_and_adam_bits_match": true,
+      "log_and_metadata_match": true,
+      "speedup": 1.0797389655571785
+    },
+    {
+      "steps": 64,
+      "model_and_adam_bits_match": true,
+      "log_and_metadata_match": true,
+      "speedup": 1.042660459540004
+    }
+  ]
+}

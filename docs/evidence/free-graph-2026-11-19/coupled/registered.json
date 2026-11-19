@@ -1,0 +1,105 @@
+{
+  "created_utc": "2026-11-19T04:46:41Z",
+  "source_sha256": {
+    "live_module_edits_study.py": "8c89318047d95760eef584a8ab6b027ba2890f0cc204482fc45cd00a12f1c3df",
+    "live_module_edits.py": "9d7aba0d7c0466a1815a17a0d642a9132dfcf6137d7b171665e507938d43e74e",
+    "module_graphs.py": "799a74aaa06f34ea80338c9f3d86667b80c395d4e5981a056180473bfed47502",
+    "free_graph_model.py": "b02f96af9622e6b64f1377dca0f102ba92fc06c4acdc299f9fd7f9b4030724dc",
+    "module_graph_study.py": "f97cf970311af4202ae99db2d1c95cfaf266a9e96ebf4b569320bd62c3538655",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+    "coupled_birth_study.py": "d47cdeeaef20873bc744989d27a79508ddae941948113a0351711cbd47b84a18",
+    "coupled_birth.py": "d13771b0a7db90fa35f6bb1ebd7921b73cf1f8b8ffbc4b81e42c5c00f470e792",
+    "joint_live_model.py": "5a15be1c17a264f52193e986beaed8f5b6bc6d73d8862f8244eb2bd8306ec33b",
+    "joint_live_study.py::tapes": "f8303b205b53ccccc69d9550e3849a1491b6000d772c8c61510ca8a885fe9847",
+    "joint_live_study.py::run": "10f79e4047ea30aa53d11d2e2dd56391d2ee6039a109c2ad079db763a7367f6a",
+    "joint_live_study.py::windows": "a676db2b87cbe0f9507a0dddbeb9b5377d524ac4840b8c7ebda3ccebd0009727"
+  },
+  "dev_groups": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "test_groups": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "dev_roots": [
+    69025000,
+    69025001,
+    69025002,
+    69025003,
+    69025004,
+    69025005
+  ],
+  "test_roots": [
+    69027000,
+    69027001,
+    69027002,
+    69027003,
+    69027004,
+    69027005,
+    69027006,
+    69027007,
+    69027008,
+    69027009,
+    69027010,
+    69027011,
+    69027012,
+    69027013,
+    69027014,
+    69027015
+  ],
+  "trials": 120,
+  "conditions": [
+    "stable",
+    "reversal"
+  ],
+  "arms": [
+    "signed",
+    "independent_birth_sign"
+  ],
+  "schedule": {
+    "growth_every": 9,
+    "retirement_every": 6,
+    "decay": 0.5
+  },
+  "protocol": "Shared causal physical lifecycle. Continuous state, 120 trials, balanced ordered odors, actual first contact only. Stable or hidden reversal at rooted trial 40 or 60. Each arm has all active effective weights, all candidate/gate input weights and biases, motor readout and offset trainable on every actual nonzero receipt; no replay writes. Births can occur every ninth actual receipt and retirements every sixth. Every remaining node stays in one strongly connected graph. No edge count, degree, or backbone preservation constraint.",
+  "mechanism": "Exact dense one-request BPTT before any update. Pick the legal dormant non-self edge maximizing squared current loss sensitivity. At zero, include this edge's signed descent in the same jointly clipped SGD update, scaled by the birth multiplier. In the sign placebo, fresh fair sign at equal magnitude changes only the newborn coordinate on that receipt. The loss for all existing parameters and all subsequent updates uses true contact taste in both arms. Edges retire by positive EWMA of Taylor predicted removal improvement, with two receipts of age for newborns. Surgery does not rescale any other edge. Both arms store independent effective weights after exact initial normalization.",
+  "audit": "Per birth, replay the recorded inputs with unchanged movement mask, pre-update carried state and other pre-update parameters. Estimate signed reduction of the same receipt's surrogate loss from the single added value; this does not feed selection or learning. First common birth should match in opportunity, location and magnitude because the initial lives are identical.",
+  "selection": "Choose the signed arm's learning rate and birth multiplier on dev only by highest average of stable last20 and reversal last20 actual-contact accuracy, equally weighted. Ties use registration order. Confirm both arms with the single chosen pair.",
+  "candidates": [
+    {
+      "rate": 0.015,
+      "birth_scale": 4.0
+    },
+    {
+      "rate": 0.06,
+      "birth_scale": 1.0
+    },
+    {
+      "rate": 0.06,
+      "birth_scale": 4.0
+    },
+    {
+      "rate": 0.24,
+      "birth_scale": 4.0
+    }
+  ],
+  "primary": "Paired signed minus sign placebo physical accuracy in the final 20 requests of each condition. Also evaluate the next request after the first common birth and the actual contact side differences for causal evidence of the first birth perturbation. Crossed 20000 paired bootstrap draws by development-independent birth group and world root, always retaining all three rules. Primary stable/reversal and next-request stable/reversal contrasts each occupy a simultaneous 95% family of two.",
+  "audit_fields": [
+    "ascent",
+    "birth_weight",
+    "predicted_loss_reduction",
+    "exact_loss_reduction"
+  ],
+  "bootstrap_seed": 7647514
+}

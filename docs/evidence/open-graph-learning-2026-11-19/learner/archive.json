@@ -1,0 +1,14 @@
+{
+  "pulse_archive_sha256": "9da797628f44968ed915434decf6fde2a2c2ba9a1a6d4bc324841b246c2f51ef",
+  "per_world_sha256": "a15cd11cad4dd51836a453636d356ad281008fa1297883f5524c93be595a3f7c",
+  "confirmation_sha256": "115f50cd111c29d6faee2b59784921db2789f63e0ab42aed45ff8fb50321a91d",
+  "archive_source_sha256": "c6678a44194a4398f1f939a0e80318052ba66326482a2c0f25a1d2ef5e1b9a19",
+  "commands_encoding": "bit 0 left, bit 1 right. Arrays cover every physical motor slot, including receipt slot.",
+  "physical_fields": [
+    "contact_side",
+    "contact_tick",
+    "total_actual_signed_taste"
+  ],
+  "taste": "observed_taste gives the true physical one-shot pulse by tick. For placebo, signed inputs to learning use placebo_sign only at its own actual contact.",
+  "replay": "Every arm reuses the registered recipe and runs its own body. The archived command stream reconstructed all physical outputs and emitted taste pulses exactly. Native physical, edit, edge-generation and write arrays also matched during recording."
+}

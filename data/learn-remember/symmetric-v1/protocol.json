@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-11-03T06:24:55.910634+00:00",
+  "config": {
+    "seed": 0,
+    "width": 192,
+    "batch": 64,
+    "ticks_per_round": 1024,
+    "block": 128,
+    "short_rounds": 6,
+    "wide_rounds": 16,
+    "withdrawal_rounds": 12,
+    "epochs": 32,
+    "lr": 0.001,
+    "wait_weight": 0.25,
+    "device": "cuda"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "source_sha256": "9634884cc5fdf3e6dfa9d84a183a154444c69265c57b7bf5ab68ace8dac38a31",
+  "parent_sha256": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+  "origin": "Posthoc transfer of the promising plain GRU curriculum to reciprocal hidden couplings; fixed before examining any shared-pair trial results.",
+  "hypothesis": "Can a recurrent learner born with trainable shared weights for each unordered hidden node pair acquire and retain the same long task?",
+  "definition": "Three independent symmetric recurrent matrices, one per GRU gate. Diagonal self-weights are learned. Dense input and action interfaces are directed; the node-dependent gates need not give reciprocal effective influences.",
+  "controls": "Plain trainer's exact public data generator, curriculum, model width, seed, optimizer, update counts, memory and no-replay withdrawal. Upper triangle copied from the same initial random draw, mirrored from birth. Different self-generated actions can change later observations/labels.",
+  "evaluation": "Same independent common heldout test worlds and forced-history memory assay as plain. No selection of favorable seeds. Compare end of acquisition and no-replay withdrawal, not a cost-matched comparison to the 80-node graph."
+}

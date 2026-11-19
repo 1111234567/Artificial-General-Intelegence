@@ -1,0 +1,216 @@
+{
+  "format": "review-selection-autonomous-eval-v1",
+  "created_utc": "2026-11-03T11:18:09.576091+00:00",
+  "declaration": "Frozen before reading new review-selection autonomous outcomes. Every declared seed, condition and snapshot retained; no selected winner or threshold.",
+  "arms": [
+    "uniform",
+    "conflict",
+    "error",
+    "no_review"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "snapshots": [
+    "B000",
+    "Bfirst002",
+    "Bfirst008",
+    "B001",
+    "B002",
+    "B004",
+    "B008"
+  ],
+  "mixed_snapshots": [
+    "B000",
+    "B001",
+    "B002",
+    "B004",
+    "B008"
+  ],
+  "expected_records": 168,
+  "steps": 2048,
+  "batch": 8,
+  "spec": {
+    "0": {
+      "mapping_table": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "history_family": 0,
+      "B_family": 1,
+      "raw_groups": {
+        "all": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shared": [
+          0,
+          2
+        ],
+        "conflict": [
+          1,
+          3
+        ]
+      }
+    },
+    "1": {
+      "mapping_table": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "history_family": 1,
+      "B_family": 2,
+      "raw_groups": {
+        "all": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shared": [
+          1,
+          3
+        ],
+        "conflict": [
+          0,
+          2
+        ]
+      }
+    },
+    "2": {
+      "mapping_table": [
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "history_family": 2,
+      "B_family": 0,
+      "raw_groups": {
+        "all": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "shared": [
+          2,
+          3
+        ],
+        "conflict": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "base_protocol_hash": "74578403c11b6d2ffd7189ebf640025cc9cf5b457711a1c91c6d743ea45abdbc",
+  "frozen_files": {
+    "F:\\agi\\experiments\\review_selection\\eval_review.py": "4950b9c60648d76e74b648a85a82d82a703f076071757276573ae9d0c9fd264d",
+    "F:\\agi\\experiments\\review_selection\\eval_review_test.py": "09624292533f988e909d7cc85f3657c3ca68a99a83db8e8bcd2b998da943ccd8",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\protocol.json": "5425c3f357b93fd9cbedc72e06f91f30c2b5e5d5a468e3d36bf152bfe476f7bc",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\common_seed_000_related.pt": "8a35be4f24c88876f723d13eb80fc3525e51dfd7427e8e8d352f3df0aa059e1c",
+    "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B000.pt": "efdbef3bac36b87db79f2440150004628e9c37b5dbccaf56154be34a67313859",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_B.json": "b74d1ed7a63d958b632c39bdcc9aab3f60cd2d12af8e3b83ba1773efc3092fcc",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_B.npz": "6f7f046f3d2098cab582ffb86681927faa17ffde8870b12619bf0fa3c77c94ca",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_mixed.json": "576b193efa3cdc34a105a47013cd1e6b36c41b1f4c9b5351cdaf81b0d19b11dd",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_mixed.npz": "4f6688471fc34f890ece758b1c22cde82fb7f4de606a5731a68ffa542c2dfcc5",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_history.json": "eb437a781bd0a0ae6237f315e12a0d03dfd3a9d05bbd9b6d76bb64f429947d96",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_000_related_history.npz": "b28a571a4e08621f99ae2c53c6965b7bcd77908b7e31e76e11a5c8a929609af1",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\common_seed_001_related.pt": "508fbefc89408d03f35fd4e4f4251c654db5686fb45d2c054c64124893fafe3a",
+    "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B000.pt": "f07c74d4f286fcbd3c56258350e4f1e73b652ad64a2d42e3100c0278bacde978",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_B.json": "ec44a17091b25796aa4bf494bc13c658b8beca01d1c5c2503a952277dddcae4c",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_B.npz": "d10aab22d9cec5177be9631ba52c6154bb63fbf9c6b49ae5508dc260e557c750",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_mixed.json": "4edfeeb1ad19d681f1e6d8a496470eec6dff86e9018b6829bb5a101040d8d759",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_mixed.npz": "87e40bb8fb6aed422e753a0474b616f0aa803c8e567211e7177061f379c220e0",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_history.json": "810a227bcf11c8b8f65de95ea9e5aa341ee721a0179996c333fdde86fb5e6d44",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_001_related_history.npz": "1299fba6e29f32ca92af4f68b829c9ea1bff560ece48341a7a2b5282bc4d7923",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\common_seed_002_related.pt": "e5de433a618c65737bff890ea2e4f16e7379203adc4eddc3054cb13d3c6696cc",
+    "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B000.pt": "d881a360621cf63dcb502eda36a11094b268ca0e6eda8fa9af8de2531897158a",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_B.json": "84212b9a5f46384f6dd5e0678bc9a708ddbec12bbb7485cd805a566fe1c34c60",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_B.npz": "c334e841fda4511873521b106022c84a916a19998a6727c477c0b2e382ea34d1",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_mixed.json": "f19bdca3ed7a1bc763e6eefd0dcf142e74c8e32112bac61cddeaedf688725f7f",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_mixed.npz": "60dbb212a67487eb168366dbb7312442fd79d79dffa0880197d75b6419c2f90f",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_history.json": "fb8c4d893cf2dabb45ef9b43a2e118bb75188712ff8744653fc685a8d776cfc1",
+    "F:\\agi\\data\\experience-transfer\\eval-v1\\reference_seed_002_related_history.npz": "bbbe7f61c3deb8a3ea28bc4a6bd0f40362d556978fb5cbe6de4d1baeeff5ac32"
+  },
+  "B": "Independent long_both B-only free action at B0/first2/first8/B1/B2/B4/B8; native11-action argmax. Same public warmup, external stream and request identities for all conditions and snapshots.",
+  "mixed": "One continuous world/hidden state; future NEW family sampled independently per job from A/B, possibly concurrent within actor. This is random interleaving, NOT strict A/B alternation. Evaluate B0/1/2/4/8. Report family A and B separately, including each of the two common conflicting raw symbols.",
+  "history": "Auxiliary separate A-only long heldout at B0/B8; mixed A/B is the primary retention/context distinction test.",
+  "warmup": "Every snapshot starts newborn h once and consumes the identical independent 1024-observation WAIT history under its own frozen weights. Warmup alternates history/B cue every128 ticks, short for512 then long for512. Numerical states may differ; public histories never do. No teacher or labels in warmup or tests.",
+  "metrics": "Matured eligible postfork regime requests are denominators, independent of BEGIN/success. Ordinary and strict completion, request-level valid/feasible BEGIN, true semantic legal FINISH, action precision, idle nonWAIT per1000; all numerators and denominators saved. Shared/conflict groups are frozen by A versus B and applied identically to C. C and A have identical answers on the A/B conflict group, whereas C also differs from B on the A/B shared group. Idle raw refers to retained slot content.",
+  "scorer": "Independent reconstruction from saved private arrays and actual receipts, crosschecked against frozen score_arrays and native evaluator. No private field is input or an action gate. Raw/context public pulses verified against requests and mapped targets. Full external digest, scheduler hash and primary identities checked against WAIT reference and across policies.",
+  "baseline": "Existing related no-review true evaluation results are hash-bound with original raw artifacts; missing B1/B2/B4 mixed results are evaluated without altering original files. All B0 condition models must exactly equal original related B000.",
+  "exposure_axis": "Actual unique external B NEW commands = checkpoint world family_new_counts(B) minus original B000 counter. Also retain work.B_unique_new_commands; this excludes original no-loss boundary NEW and is not silently treated as actual exposure. Replay positions and gradients are not new cases.",
+  "analysis": "Per-seed rates and equal-weight means/sample SD, no pooled-rate replacement. All/all-conflict/each-conflicting-raw per family. Compare B gains and retention to B0 and no_review at identical snapshots. Three seeds and one independent stream per seed limit generalization.",
+  "strict_control": "Explicit same-slot/symbol paired alternation is a separate supplementary protocol, not a reinterpretation of this random mixed stream.",
+  "protocol_hash": "b4d79ee047fbf1fc016c3c02cb104155969989ddf412c7394cbb62f8e0f94820"
+}

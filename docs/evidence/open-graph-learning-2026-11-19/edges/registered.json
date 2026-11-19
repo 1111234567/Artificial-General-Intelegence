@@ -1,0 +1,324 @@
+{
+  "created_utc": "2026-11-19T05:58:50Z",
+  "source_sha256": {
+    "live_module_edits_study.py": "8c89318047d95760eef584a8ab6b027ba2890f0cc204482fc45cd00a12f1c3df",
+    "live_module_edits.py": "9d7aba0d7c0466a1815a17a0d642a9132dfcf6137d7b171665e507938d43e74e",
+    "module_graphs.py": "799a74aaa06f34ea80338c9f3d86667b80c395d4e5981a056180473bfed47502",
+    "free_graph_model.py": "b02f96af9622e6b64f1377dca0f102ba92fc06c4acdc299f9fd7f9b4030724dc",
+    "module_graph_study.py": "f97cf970311af4202ae99db2d1c95cfaf266a9e96ebf4b569320bd62c3538655",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+    "coupled_birth_study.py": "d47cdeeaef20873bc744989d27a79508ddae941948113a0351711cbd47b84a18",
+    "coupled_birth.py": "d13771b0a7db90fa35f6bb1ebd7921b73cf1f8b8ffbc4b81e42c5c00f470e792",
+    "joint_live_model.py": "5a15be1c17a264f52193e986beaed8f5b6bc6d73d8862f8244eb2bd8306ec33b",
+    "joint_live_study.py::tapes": "f8303b205b53ccccc69d9550e3849a1491b6000d772c8c61510ca8a885fe9847",
+    "joint_live_study.py::run": "10f79e4047ea30aa53d11d2e2dd56391d2ee6039a109c2ad079db763a7367f6a",
+    "joint_live_study.py::windows": "a676db2b87cbe0f9507a0dddbeb9b5377d524ac4840b8c7ebda3ccebd0009727",
+    "prospective_edges.py": "9f363d11df3dcb38ceea7a4a9365389688a7bee66212c2e9eff7fdc0b65d7f05",
+    "prospective_edge_study.py": "8c609df95f953d55f24a874b4e0bb3863e157eb63883fda750ae7f0e86128338",
+    "prospective_edge_analysis.py": "062d4d3581feea0932bbf2e31caa310eac1714d6f35ee09c202d76f74e4088e1"
+  },
+  "earlier_recipe_sha256": "c086530cbe20439e1a406363b287722f7b6ce4c2e65d96e1882e278cc93f1001",
+  "fixed_config": {
+    "rate": 0.015,
+    "birth_scale": 4.0
+  },
+  "groups": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "roots": [
+    69075000,
+    69075001,
+    69075002,
+    69075003,
+    69075004,
+    69075005,
+    69075006,
+    69075007,
+    69075008,
+    69075009,
+    69075010,
+    69075011,
+    69075012,
+    69075013,
+    69075014,
+    69075015
+  ],
+  "trials": 120,
+  "conditions": [
+    "stable",
+    "reversal",
+    "return"
+  ],
+  "arms": [
+    "instant",
+    "later",
+    "shuffled"
+  ],
+  "schedule": {
+    "growth_every": 9,
+    "retirement_every": 6,
+    "decay": 0.5
+  },
+  "fitted_births": [
+    {
+      "group": 4,
+      "record_sha256": "afcc5947776298926595af74ab7a108518bf672580bf0627c30543b30058bc1b",
+      "weights": "group-04-1200.npz",
+      "weight_sha256": "730fcb3b783d89bb68fe05cf42961b2c59aee126da180b83bb5a54ce183a6fb9"
+    },
+    {
+      "group": 5,
+      "record_sha256": "867ed0e30d06b6255829999d9d66fcd4d17eac6f3870f332209a1f25fd0b3d8d",
+      "weights": "group-05-1200.npz",
+      "weight_sha256": "b5b795a1c49e746c783da45a2aa165b94ecf5e025ff1fbe30b07cc59a3e71bdb"
+    },
+    {
+      "group": 6,
+      "record_sha256": "2995c9358df739bfd288f1027de6e0c06131daf5f32c3259586b14f7d4ada4e5",
+      "weights": "group-06-1200.npz",
+      "weight_sha256": "ec3592560b29e81ae537131f7259511aeeea6fcd06d587c07e83094de66ec25a"
+    },
+    {
+      "group": 7,
+      "record_sha256": "e86d395e15e9c9a2442a7a5e7fd4c4a79165e4b66d3554626a12de0b8f3f0b82",
+      "weights": "group-07-1200.npz",
+      "weight_sha256": "f4d635351d955e315e39732dd43cee551325c277531eb4d68345b142fba5a6da"
+    },
+    {
+      "group": 12,
+      "record_sha256": "78643f8e0130633765bbc2dc20018f1371372f2f11458867fd28056278a2551c",
+      "weights": "group-12-1200.npz",
+      "weight_sha256": "91b8994c8a94ed3fa272031849dd1f0c4bff8e3e0b49399bf14b074f566de197"
+    },
+    {
+      "group": 13,
+      "record_sha256": "2b2afb0b060d740644a4ca751643356286e2c687ec460bec755cebe68848ceb2",
+      "weights": "group-13-1200.npz",
+      "weight_sha256": "063d483a21caa5b72af20035010cefe28e8d98fd124b926b61ada01a5c71fedb"
+    },
+    {
+      "group": 14,
+      "record_sha256": "78a936252a16f7bc00e8264de74408ccac31762cc3e724db0199057908655b95",
+      "weights": "group-14-1200.npz",
+      "weight_sha256": "d484daf7bc1573f46ec1be607bbeb2468a1d8caa19433033f1346a2d04df9193"
+    },
+    {
+      "group": 15,
+      "record_sha256": "7bc5a87f264298d0a7ea25a1d26e3234f81d59bd9e19a01f8f3d76b1cb2e44c5",
+      "weights": "group-15-1200.npz",
+      "weight_sha256": "b04cc2de16a42a9dbe4fda456abf341abfe1151a24f7a883a039793123a446b2"
+    }
+  ],
+  "lanes": [
+    [
+      4,
+      0,
+      912141388,
+      0,
+      "modules64"
+    ],
+    [
+      4,
+      0,
+      912141388,
+      1,
+      "modules64"
+    ],
+    [
+      4,
+      0,
+      912141388,
+      2,
+      "modules64"
+    ],
+    [
+      5,
+      0,
+      870049803,
+      0,
+      "modules64"
+    ],
+    [
+      5,
+      1,
+      928982176,
+      1,
+      "modules64"
+    ],
+    [
+      5,
+      0,
+      870049803,
+      2,
+      "modules64"
+    ],
+    [
+      6,
+      0,
+      304705957,
+      0,
+      "modules64"
+    ],
+    [
+      6,
+      1,
+      873487225,
+      1,
+      "modules64"
+    ],
+    [
+      6,
+      1,
+      873487225,
+      2,
+      "modules64"
+    ],
+    [
+      7,
+      0,
+      1408921893,
+      0,
+      "modules64"
+    ],
+    [
+      7,
+      1,
+      1547335921,
+      1,
+      "modules64"
+    ],
+    [
+      7,
+      0,
+      1408921893,
+      2,
+      "modules64"
+    ],
+    [
+      12,
+      1,
+      1268446769,
+      0,
+      "modules64"
+    ],
+    [
+      12,
+      0,
+      1536866680,
+      1,
+      "modules64"
+    ],
+    [
+      12,
+      1,
+      1268446769,
+      2,
+      "modules64"
+    ],
+    [
+      13,
+      0,
+      1378362986,
+      0,
+      "modules64"
+    ],
+    [
+      13,
+      1,
+      1073673765,
+      1,
+      "modules64"
+    ],
+    [
+      13,
+      1,
+      1073673765,
+      2,
+      "modules64"
+    ],
+    [
+      14,
+      1,
+      58416345,
+      0,
+      "modules64"
+    ],
+    [
+      14,
+      0,
+      1660471331,
+      1,
+      "modules64"
+    ],
+    [
+      14,
+      0,
+      1660471331,
+      2,
+      "modules64"
+    ],
+    [
+      15,
+      0,
+      1829442086,
+      0,
+      "modules64"
+    ],
+    [
+      15,
+      0,
+      1829442086,
+      1,
+      "modules64"
+    ],
+    [
+      15,
+      1,
+      1230895188,
+      2,
+      "modules64"
+    ]
+  ],
+  "receipt": "Continuous state and shared physical rollout. Each arm acts in its own copy of the same world. A timeout scores incorrect and supplies no signed training or retention sample. Opposite truthful sides are inferred only from actual contact side and delivered taste. Neither world truth, hidden intervention markers, nor reward from another arm is provided to the model.",
+  "shared_rules": "All effective recurrent coefficients, input gate/candidate coefficients and biases, and readout/offset receive exact same clipped receipt SGD rule in all arms. Every ninth actual receipt may grow one dormant legal non-self arc chosen by dense effective gradient magnitude and initialized by the signed clipped gradient times the prior birth multiplier. Edge coefficients are independent and edits do not rescale other active weights. Every sixth actual receipt offers one possible retirement; removal must preserve strong connectivity. No fixed edge count, budgets, or compulsory removal. Schedule and SGD come from the earlier independently developed coupled birth experiment.",
+  "retirement": {
+    "instant": "Original coupled-birth Taylor gradient score including current receipt. Existing newborn age rule requires at least two subsequent receipts.",
+    "later": "On fourth and fifth actual receipts of each six-receipt block, record intact minus one-edge-silenced loss on fixed observed inputs, initial carry, realized movement mask and pre-update coefficients. Use EWMA with decay .5. The birth receipt cannot contribute to that generation's score. Every sixth receipt consider positive scores using only preceding samples and at least two samples for the current arc generation. Remove the highest ranked legally removable arc, or decline.",
+    "shuffled": "Use identical samples and maturity condition. Before each retirement, randomly permute score identities within the life and separately within checkpoint and later-born cohorts using a private seeded RNG. Preserve each cohort's signed score distribution without associating it with its own arcs."
+  },
+  "holdout": "For all arms, at each sixth actual receipt, diagnose the past-only score association with the removal effect on that sixth receipt evaluated before any writes or edits. Save candidate-level effects, applied past scores and current generation IDs. The exact sixth receipt replay has no effect on any arm decision. The instantaneous comparator itself can use the ordinary Taylor score of the sixth receipt. Average within-life-slot Pearson correlations. Report initial and later-born cohorts separately.",
+  "physical": "Primary simultaneous 95% intervals for six paired differences, later minus instant and later minus shuffled in stable/reversal/return last20. Crossed group/world bootstrap with 20000 draws, retain all three fitted tasks. Report early- and full-life windows descriptively. Evaluate both pairs' first shared-history retirement divergence and immediate next physical request. Stable/reversal and reversal/return share pre-change history and will not be added as independent samples.",
+  "bootstrap_seed": 433587655,
+  "audit_index_fields": [
+    "lane",
+    "trial",
+    "arc",
+    "birth_receipt"
+  ],
+  "audit_value_fields": [
+    "later_score",
+    "policy_score",
+    "past_instant_score",
+    "heldout_effect",
+    "effective_weight"
+  ],
+  "write_groups": [
+    "initial_generation",
+    "prior_growth",
+    "new_growth"
+  ],
+  "write_fields": [
+    "received",
+    "changed",
+    "absolute_step_sum"
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "registered_sha256": "643347be3c523afd836964cea3233bb882c6e5cca7c7c0c9ec17b5a2e09d0399",
+  "primary_development_sha256": "a92b48de718a15c62d8b6f848870b19719186de53119f2305e459d95641e1855",
+  "raw_archive_sha256": "e8c6dad808240dd49f7b144b95fad265085a067c91644aa645167e25a7307a55",
+  "setup": {
+    "recipe": {
+      "rate": 0.045,
+      "exploration": 0.23,
+      "decay": 0.991,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    "pair_rate": 0.65,
+    "pair_decay": 0.993,
+    "policy": {
+      "samples": 48,
+      "threshold": 0.022,
+      "floor": 0.075,
+      "grace": 96
+    }
+  },
+  "results": {
+    "stable": {
+      "means": {
+        "intact": {
+          "accuracy": 0.7762276785714286,
+          "contact": 1.0,
+          "accuracy_among_contacts": 0.7762276785714286,
+          "trials": 10752,
+          "contacted": 10752,
+          "no_contact": 0,
+          "correct": 8346,
+          "positive": 7135
+        },
+        "selected_shuffle": {
+          "accuracy": 0.5041387648809523,
+          "contact": 0.9998372395833334,
+          "accuracy_among_contacts": 0.5042208320736727,
+          "trials": 43008,
+          "contacted": 43001,
+          "no_contact": 7,
+          "correct": 21682,
+          "positive": 22248
+        },
+        "eligible_shuffle": {
+          "accuracy": 0.5035342261904762,
+          "contact": 0.9998604910714286,
+          "accuracy_among_contacts": 0.5036044835123947,
+          "trials": 43008,
+          "contacted": 43002,
+          "no_contact": 6,
+          "correct": 21656,
+          "positive": 22120
+        },
+        "zero": {
+          "accuracy": 0.515625,
+          "contact": 1.0,
+          "accuracy_among_contacts": 0.515625,
+          "trials": 10752,
+          "contacted": 10752,
+          "no_contact": 0,
+          "correct": 5544,
+          "positive": 5595
+        }
+      },
+      "primary": {
+        "intact_minus_eligible_shuffle": [
+          0.2726934523809524,
+          0.2453957693917411,
+          0.30159519740513385
+        ],
+        "selected_shuffle_minus_eligible_shuffle": [
+          0.0006045386904761923,
+          -0.026786004929315467,
+          0.027436755952380956
+        ],
+        "intact_minus_selected_shuffle": [
+          0.27208891369047616,
+          0.2348050798688616,
+          0.31057027180989577
+        ],
+        "intact_minus_zero": [
+          0.2606026785714286,
+          0.2209353492373512,
+          0.30361822219122014
+        ]
+      },
+      "above_chance": [
+        0.2762276785714286,
+        0.25809151785714285,
+        0.294921875
+      ],
+      "exact_ties": 0,
+      "lives_without_pairs": 0,
+      "lives_with_relocatable_pairs": 96,
+      "lives_with_reassignable_weights": 96,
+      "mobility": {
+        "selected": [
+          5225,
+          5225,
+          5225,
+          5225
+        ],
+        "nonzero": [
+          5225,
+          5225,
+          5225,
+          5225
+        ],
+        "all_eligible": [
+          72650,
+          72650,
+          72650,
+          72650
+        ],
+        "eligible_at_selected_receivers": [
+          46977,
+          46977,
+          46977,
+          46977
+        ],
+        "relocatable": [
+          5225,
+          5225,
+          5225,
+          5225
+        ],
+        "reassignable": [
+          5095,
+          5095,
+          5095,
+          5095
+        ],
+        "selected_locations_lost": [
+          4237,
+          4187,
+          4216,
+          4278
+        ],
+        "selected_weights_changed": [
+          4494,
+          4469,
+          4512,
+          4484
+        ],
+        "nonzero_at_new_locations": [
+          4237,
+          4187,
+          4216,
+          4278
+        ]
+      },
+      "raw_sha256": "2565acff93e8fbd0180c703e5110e9c50937730e1393747e0f0cbe3128a10780"
+    },
+    "reverse": {
+      "means": {
+        "intact": {
+          "accuracy": 0.7629278273809523,
+          "contact": 0.9999069940476191,
+          "accuracy_among_contacts": 0.7629987908101572,
+          "trials": 10752,
+          "contacted": 10751,
+          "no_contact": 1,
+          "correct": 8203,
+          "positive": 6887
+        },
+        "selected_shuffle": {
+          "accuracy": 0.5037434895833334,
+          "contact": 0.9999069940476191,
+          "accuracy_among_contacts": 0.5037903450841782,
+          "trials": 43008,
+          "contacted": 43004,
+          "no_contact": 4,
+          "correct": 21665,
+          "positive": 21777
+        },
+        "eligible_shuffle": {
+          "accuracy": 0.49853515625,
+          "contact": 0.9999069940476191,
+          "accuracy_among_contacts": 0.49858152729978605,
+          "trials": 43008,
+          "contacted": 43004,
+          "no_contact": 4,
+          "correct": 21441,
+          "positive": 21666
+        },
+        "zero": {
+          "accuracy": 0.5072544642857143,
+          "contact": 1.0,
+          "accuracy_among_contacts": 0.5072544642857143,
+          "trials": 10752,
+          "contacted": 10752,
+          "no_contact": 0,
+          "correct": 5454,
+          "positive": 5457
+        }
+      },
+      "primary": {
+        "intact_minus_eligible_shuffle": [
+          0.2643926711309524,
+          0.22621372767857145,
+          0.30410635811941955
+        ],
+        "selected_shuffle_minus_eligible_shuffle": [
+          0.00520833333333333,
+          -0.01991526285807293,
+          0.0304711478097098
+        ],
+        "intact_minus_selected_shuffle": [
+          0.259184337797619,
+          0.21773848760695685,
+          0.29689854213169636
+        ],
+        "intact_minus_zero": [
+          0.2556733630952381,
+          0.21293683733258928,
+          0.29287574404761907
+        ]
+      },
+      "above_chance": [
+        0.2629278273809524,
+        0.24004836309523805,
+        0.28608630952380953
+      ],
+      "exact_ties": 0,
+      "lives_without_pairs": 0,
+      "lives_with_relocatable_pairs": 96,
+      "lives_with_reassignable_weights": 96,
+      "mobility": {
+        "selected": [
+          5100,
+          5100,
+          5100,
+          5100
+        ],
+        "nonzero": [
+          5100,
+          5100,
+          5100,
+          5100
+        ],
+        "all_eligible": [
+          72630,
+          72630,
+          72630,
+          72630
+        ],
+        "eligible_at_selected_receivers": [
+          46661,
+          46661,
+          46661,
+          46661
+        ],
+        "relocatable": [
+          5100,
+          5100,
+          5100,
+          5100
+        ],
+        "reassignable": [
+          4955,
+          4955,
+          4955,
+          4955
+        ],
+        "selected_locations_lost": [
+          4095,
+          4048,
+          4053,
+          4057
+        ],
+        "selected_weights_changed": [
+          4375,
+          4385,
+          4385,
+          4357
+        ],
+        "nonzero_at_new_locations": [
+          4095,
+          4048,
+          4053,
+          4057
+        ]
+      },
+      "raw_sha256": "45bc9ac709f7366858a52a41ac3562a84af801e820f2a4673b1810e16397bc02"
+    }
+  }
+}

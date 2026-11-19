@@ -1,0 +1,116 @@
+{
+  "utc": "2026-11-19T06:40:07.057615+00:00",
+  "source_sha256": {
+    "sparse_location_study.py": "089eafe60fc86b913f8b8157ba771eac74758546c8a88ecb8e9836dde19f0ec6",
+    "sparse_pairs_study.py": "556da9da1f51707e0d9ca752cd263ef20e19f1e01a84dcfaee2cb2414252ed98",
+    "sparse_pairs_model.py": "2e29f03241258c3edc611ac78e5a03f6271d1ef36dccba1b58f4cbc0d3e68335",
+    "dendrite_ports_graph.py": "30b6d1c3005963967ba20e2c23c5df2c0a98f416e226447efb97539f9ce840c1",
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444",
+    "sparse_location_roles.py": "8f24b4637518052ebba6dc8030998c230acc04cc5bf367efab5d9b22bd52d639"
+  },
+  "snapshot_archive_sha256": "e8c6dad808240dd49f7b144b95fad265085a067c91644aa645167e25a7307a55",
+  "snapshot_summary_sha256": "85da797c50250871b85cdf1172aef473f6b38740afaf93abe4f8068cebfd94d3",
+  "modes": [
+    "stable",
+    "reverse"
+  ],
+  "arms": [
+    "intact",
+    "drop_motor",
+    "motor_only",
+    "drop_sensory_motor",
+    "sensory_motor_only",
+    "zero"
+  ],
+  "contrasts": [
+    [
+      "intact",
+      "zero"
+    ],
+    [
+      "intact",
+      "drop_motor"
+    ],
+    [
+      "motor_only",
+      "zero"
+    ],
+    [
+      "intact",
+      "motor_only"
+    ],
+    [
+      "drop_motor",
+      "zero"
+    ],
+    [
+      "intact",
+      "drop_sensory_motor"
+    ],
+    [
+      "sensory_motor_only",
+      "zero"
+    ],
+    [
+      "intact",
+      "sensory_motor_only"
+    ],
+    [
+      "drop_sensory_motor",
+      "zero"
+    ],
+    [
+      "motor_only",
+      "sensory_motor_only"
+    ]
+  ],
+  "probes": {
+    "offset_zero_based": 2048,
+    "trials": 128,
+    "stable_or_final_reverse_phase": true
+  },
+  "receivers": [
+    "left odor 0",
+    "left odor 1",
+    "left odor 2",
+    "left odor 3",
+    "right odor 0",
+    "right odor 1",
+    "right odor 2",
+    "right odor 3",
+    "left motor",
+    "right motor",
+    "positive taste",
+    "negative taste",
+    "left contact",
+    "right contact",
+    "internal 0",
+    "internal 1"
+  ],
+  "sensory_vertices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "motor_vertices": [
+    8,
+    9
+  ],
+  "snapshot": "Restore the packed Q and original W, topology, node rates, bias, and recurrent state saved at maturity. Present the continuous foods and physical tape at a suffix disjoint from the historical 1,280 trials, with the same private taste rule at its final sign. All arms see the same candidate foods and tape without exploration or publicly delivered tastes. Freeze updates. Zero coefficients without changing allocated locations or W.",
+  "isolates": "A motor coefficient has receiver 8 or 9. A sensory-to-motor coefficient also has both distinct source vertices among the eight odor input ports. Disable only each set, and in complementary arms keep only that set. Compare with intact and all-Q-zero.",
+  "primary": "Physical best-expected-food first-contact accuracy. Timeout counts as incorrect. Match arms within life and cross resample its birth and world roots for the 20 familywise 95% two-sided contrasts. No selection or early stopping.",
+  "secondary": "For each arm report raw left/right/timeout totals, fraction choosing a different first-contact side from intact, correct totals, and accuracy among contacts. For each receiver and disjoint sender/receiver partition report installed/nonzero counts, sign and absolute weight mass.",
+  "bootstrap": {
+    "seed": 9234662,
+    "draws": 20000
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "format": "undirected-finish-execution-v1",
+  "binding": {
+    "protocol": "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+    "protocol_sha256": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc",
+    "analysis_plan": "F:\\agi\\data\\undirected\\analysis-v2\\analysis-plan-v1.json",
+    "analysis_plan_sha256": "126226f19e0e1b21a1645f97cb1e0e4b1d35b2b1052bd55c7e3f9cfc20c1a1e5",
+    "queue_root": "F:\\agi\\data\\undirected\\main-v1",
+    "sources": {
+      "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc",
+      "F:\\agi\\data\\undirected\\analysis-v2\\analysis-plan-v1.json": "126226f19e0e1b21a1645f97cb1e0e4b1d35b2b1052bd55c7e3f9cfc20c1a1e5",
+      "F:\\agi\\experiments\\undirected\\finish.py": "da89c392422c006e14b1ca2e770f49abc15a9f4dbfd43af9855c1d6d644bcb1e",
+      "F:\\agi\\experiments\\undirected\\report.py": "14742201bfef2b113fd94fe1317de65aa17415f3396dd3d37aadde1c96df6127",
+      "F:\\agi\\experiments\\undirected\\plot.py": "d187036bb9b1f9222209aef6e6aa89219d0ce706bfc9a5f8aaf9561a33772f92",
+      "F:\\agi\\experiments\\undirected\\results.py": "3b6f8fe17844420fe6718c34da917382c8dd73bf1dc97d4f609a177c8c1f5f70",
+      "F:\\agi\\experiments\\undirected\\report_cache.py": "71185e19ff89bd5c5f4e5b311f841fe9de0c5c2b39c43fe13fece852abbe0f31",
+      "F:\\agi\\data\\undirected\\completion-v2\\finish-status.json": "5dbd523f9c9fcbcac78082c4767f1b78f6554c1a2a1e0c7ebb0a8e5645412894"
+    },
+    "report_workers": 5,
+    "report_cache": "F:\\agi\\data\\undirected\\report-cache-v3",
+    "reused_analysis_source": "F:\\agi\\data\\undirected\\completion-v2\\finish-status.json"
+  },
+  "stages": {
+    "analysis": {
+      "status": "verified",
+      "prior_status": "F:\\agi\\data\\undirected\\completion-v2\\finish-status.json",
+      "prior_sha256": "5dbd523f9c9fcbcac78082c4767f1b78f6554c1a2a1e0c7ebb0a8e5645412894",
+      "manifest": "F:\\agi\\data\\undirected\\analysis-v2\\sensitivity-results-v1.json",
+      "artifacts": {
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__core__undirected__recorded512__fixed__warmup.json": "12ac251d4bd918cbc92223c5f5ba213ac3a4ff2fe5e0c77822741a127281136c",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__core__untied__recorded512__fixed__warmup.json": "26a95e02912f83e4fdf7b3bd499657439181ff0259c8e737317f40edce0055d4",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__recorded512__fixed__warmup.json": "29e3601a435b0b7961d0be43507b98d26bdb1099b286e2ae4bfcb45203a38d35",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__untied__recorded512__fixed__warmup.json": "a4ed67d65cddc4ed755f853347f224b8d010faed1ca59260f866a563108728f0",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__tbptt128__fixed__warmup.json": "c04a74ca6c8e6e426294e9392eacaf325a1733e3daccb7161dca52a679b3f288",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__fixed__warmup.json": "6dc1f33dc966321db467cdaadeecc2ce9033c12e99e1bfb9b4220def2f6651c8",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl_reset__fixed__warmup.json": "902fc7aacdca8b0f52e6800173705c25a0a5bb411c00da30b6caa8a383e3b63e",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__untied__rtrl__fixed__warmup.json": "21f9381ff28fe16f7d65ea8462dfe99d2cbc2bb858c15f0c285a41ebd4eab26a",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__fixed_probe__warmup.json": "c5032f1bd65905c0c5720fe49b2d1d8d2ac800ed153bbb196eb9ce8f80a5494e",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__grow__warmup.json": "c68c09b866097fc6a1392a33568ac2102776db23b53b9bb5e3cf4114ebc00ddf",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__retire__warmup.json": "0366adf608a1e2bce496a7e462205f9e0fc0c5070a5e2e8cf1084dc17c280998",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__both__warmup.json": "5b45f755cbef1500f5a0d99106883052dd426c0e358273cf0af9c7f1e4441677",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__tbptt128__fixed__wide.json": "7013f097e69536ac1ec3f6a1c2eae283f518ee321d398793edb40997b1ec0acf",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__fixed__wide.json": "4a207de7c51aea446a2382edba1a2ed83b2aa241edd8fe7ddbe2cccdc4e3a5b4",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__core__undirected__recorded512__fixed__warmup.json": "f1955d9b8a41526f7760eba6a8f9d64f3dc2041b127ef753e57c22049d639627",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__core__untied__recorded512__fixed__warmup.json": "079fdd5e3a7bc262af6f281df08990d7e5d878a0b1299242c4a6ba96195bd7e8",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__recorded512__fixed__warmup.json": "619ed06b963daedc47a405b7e1d5afc0cab97720496cbe2f1946c8f38312eb95",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__untied__recorded512__fixed__warmup.json": "a8fc1c66d1c7d03ab3a99bf3f6ce2fe8c845121d96575fca92b8fd6efc22eae8",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__tbptt128__fixed__warmup.json": "e1242cf83d41b4f11f56a4048755c76d70bef6288cf342559d4d397c5f3ed8b9",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__fixed__warmup.json": "2f1d29f6c2e5871db0655cb8515a24ddeb0e9e317097d6ca1f85958b9a3f7a7c",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl_reset__fixed__warmup.json": "0d13e1e3357c136fdc4d77f44b9629a284b19be9f40a8b1698ac16032d994f8a",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__untied__rtrl__fixed__warmup.json": "fca047c0d930bb3bc384ad6fd57ef422ff6cf4b936449b56c089441106d8e2a9",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__fixed_probe__warmup.json": "fcab47008ec69d527459be5f965674d73cecf9d14a0dcd8268d0804018f29998",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__grow__warmup.json": "e25ffd9951dd63e7c8f705d7ab48a8dec58d2a31618e0fc28ff9557794117233",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__retire__warmup.json": "c018f0b059b4aec78a9d5a8c9364b7a3552bdef732f658d8ea919bca975d46aa",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__both__warmup.json": "04fcc0a515ae73ffa74ac37dd3cab6e93df454b98fb41a525364018c32f004c9",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__tbptt128__fixed__wide.json": "a0a41548ff8f4fa1ab5de3d29caaebeeaee22b35503334f57e98d18ffd96f985",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__fixed__wide.json": "949ce49dcf0f5a81060844a42fa1e9e1c2422772fa5283c022ec5b9acff7ac4c",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__core__undirected__recorded512__fixed__warmup.json": "c561d38b1bc191a2dc3f97174d73ba53b8ef45369df90b4bcb0fe5bc2c0eadde",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__core__untied__recorded512__fixed__warmup.json": "b63365983a3a30148c6505e35578f119f6b141cd73657bba4bbfae16090a59dd",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__recorded512__fixed__warmup.json": "bb4f27f1aaa888105e61115c3fcea744a2d00551b782ec0a974a423cffa20671",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__untied__recorded512__fixed__warmup.json": "5ca7ca7354bf05bf5e8694d1acb7b2a8a53b6749771b540e239d453beac33bca",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__tbptt128__fixed__warmup.json": "ac46aa57f993c639943e764b7c4de515d58ce98f512d437825e726c5113bf605",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__fixed__warmup.json": "d9bdc33c32d10808510cadea46d3ae9538c6c9bfde3f75f20893663182e1b304",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl_reset__fixed__warmup.json": "f87b4c1b9e40f280df11ab1416c76f55c9eadba0ebdc26fe6bf6a14200e1609d",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__untied__rtrl__fixed__warmup.json": "abffb9557dedd9435ee9f6a7ddf32572b20c6b6830af54780c2fad260c55a310",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__fixed_probe__warmup.json": "7d51bbe42f0d5b087d194978b97c1bdea90cd706992a9f525e8a05ff60192124",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__grow__warmup.json": "ba7bd9878477a58ad3359344849c004f7b3b0f32bb4f3519e3306943989873ad",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__retire__warmup.json": "915a2dc0b580a7b0f5cf685f3a34eb26ea2152433092211e626ec23218859fd2",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__both__warmup.json": "0042accfa20626714eb751aa58bc426bf14d81a16c67ae89f59b533517673ef6",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__tbptt128__fixed__wide.json": "5a9be113d98b654f6f449da8d7d4b6aebaec937607da5e12ea7bf753ec8e4f3e",
+        "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__fixed__wide.json": "61f910efa026e04d62fd61b1ca862b581264121317c931efc7df74aca3fe16be",
+        "F:\\agi\\data\\undirected\\analysis-v2\\sensitivity-results-v1.json": "c5ff5008a49731d4b679be6dcbb5f6c8a4ecde85e1e01bc68b08d4cadd5f9f6b",
+        "F:\\agi\\data\\undirected\\analysis-v2\\analysis-execution-v1.json": "7cfded9df8607de0158f27b82b610d492ba5e647c184bb820e26a9e422b05157"
+      },
+      "branch_count": 42
+    },
+    "producer": {
+      "status": "verified",
+      "counts": {
+        "training": 42,
+        "baseline": 0,
+        "evaluation": 42
+      }
+    },
+    "report": {
+      "attempt": 1,
+      "status": "verified",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.undirected.report_cache",
+        "--protocol",
+        "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+        "--output",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001",
+        "--workers",
+        "5",
+        "--sensitivity-manifest",
+        "F:\\agi\\data\\undirected\\analysis-v2\\sensitivity-results-v1.json",
+        "--cache",
+        "F:\\agi\\data\\undirected\\report-cache-v3"
+      ],
+      "log": "F:\\agi\\data\\undirected\\completion-v4\\report-001.log",
+      "started": 1793582278.2601414,
+      "returncode": 0,
+      "finished": 1793585708.215284,
+      "report": "F:\\agi\\data\\undirected\\completion-v4\\report-001\\report.json",
+      "artifacts": {
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\branches.csv": "e243bae02e12e12f284884d47a0be634f10f79a71582381115dc0a021c3d38f6",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\checkpoints.csv": "f451d9d6d96e41e64b387eaa37487c625173b994d623c55d5aa90d9e300cb158",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\family_average_paired_contrasts.csv": "1911187e60883cef7cd5a83f781570f5f6ec5d3d2702888666b3b2f1588eabaa",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\family_average_per_seed.csv": "91344bbaecc9a6d357ab96b649c929c82f5c716647178e213d85be2f1df11fe7",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\family_average_summary.csv": "50d365dfbe4de23f004f665c31c9d2e45fd4d3ef68a5c3831db81e49a4a97662",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\functional_probes.csv": "b9da84a05ab85429a760b766d7071da3540bf734dd86ef23ae26c3b72f070f11",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\graphs.json": "e1f9aec43101b637578b5be8b8baa5c60f4102793269f78a7fc00fd7619b88c9",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\inputs.csv": "e5b9f7c2737b255fb33b8dea95ef563b156995bd68da6204cdd6eb359feb8266",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\paired_contrasts.csv": "1091325b8618e4d1bcaccf486801185b30793825f14baf7bc0003754f3188586",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\per_seed.csv": "931929190055080f54f377ad98819ccd5a10936c16873f7cf1078ed0232deb11",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\report.json": "df1ce5b7abf87676a2206c604a5d2c07d3199014747a20e617c1fc3d778c3350",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\summaries.csv": "510f23e5e56d589ac0c54249dea1437c5f7fa7a9c671771e5aaa0d882eeae944"
+      },
+      "counts": {
+        "declared_branches": 42,
+        "accounted_branches": 42,
+        "successful_branches": 42,
+        "numerical_failure_branches": 0,
+        "declared_forks": 1680,
+        "actual_forks": 1680
+      },
+      "scientific_status": "completed_with_between_policy_differences",
+      "fixed_probe_equality": "failed"
+    },
+    "plot_validate": {
+      "attempt": 1,
+      "status": "verified",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.undirected.plot",
+        "validate",
+        "--report",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\report.json"
+      ],
+      "log": "F:\\agi\\data\\undirected\\completion-v4\\plot_validate-001.log",
+      "started": 1793585708.2789583,
+      "returncode": 0,
+      "finished": 1793585713.2909126
+    },
+    "plot_render": {
+      "attempt": 1,
+      "status": "verified",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.undirected.plot",
+        "render",
+        "--report",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\report.json",
+        "--output",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001"
+      ],
+      "log": "F:\\agi\\data\\undirected\\completion-v4\\plot_render-001.log",
+      "started": 1793585713.2950363,
+      "returncode": 0,
+      "finished": 1793585728.3180165,
+      "manifest": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\figure-manifest.json",
+      "figure_count": 17,
+      "artifacts": {
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_birth_graph_and_parameter_budget.png": "95adecb689d8e045fd2cf3c057cde8998b90bc241f0355554fbeb3962b2128da",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_birth_graph_and_parameter_budget.svg": "384431c09d14f3888cc93f4db144a2e94e126b7e38252c6085749fbae5fedbf1",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_last_valid_direction_weights.png": "97f437f8c8790f2d8e673cb3c67075f78f7c120e3f6a9da6cd5e1b7589ce9544",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_last_valid_direction_weights.svg": "6d2894297e60bc5cfdb5370c181673e8f2e6e4f693980f05c003eb5f3b19820c",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_196608.png": "f7876b6be0efc92877939b22f333c87b6b0dc705c8679ddc721e4236689e41b0",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_196608.svg": "1565c6958c236a25c2d4cbe3275766f512e7d137d1f66a48586ef7b08a1dd994",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_237568.png": "178c8bdcf3689f83c8a0387f317a8d25ee3f26fa054d9e39996d76a94f1f5e65",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_237568.svg": "b76341f5c7db8042d0874a0e5274cf4bbc21a348328556934bcaec4dbc74d6c2",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_196608.png": "e91aa21d73d5f4349083f5050e63c80dc0f7e47dcdcdd6ab78699a6cc7f3c1c8",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_196608.svg": "dd2daf8ee1f2864b338bc73c375e3399f28a8a80eae5921b8aee799203116d1d",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_237568.png": "641334e0845497e681b3264af5209c5fd7e202da231fe467bad8ef2adad5fbb5",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_237568.svg": "c1e241b09ee123ccf18521c1a7761b64be6badb1362412e39b7de2066c54ec43",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_196608.png": "2227badc016fa9e864d7205bf5c3b28f4d73a06e665bf7141f9fcae4a7b949f5",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_196608.svg": "cf4c3582de3fd62f833b0aefeef0995c419f55cd97ef9a98ae3c7199ec7e94d3",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_237568.png": "6c87576554b6be43bc7d3c6bd342ad7aa33614f750f4e781cb017e0946b1892a",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_237568.svg": "b9f7f8b1f8dd5b57321324b6755b7ad0a55f450dc2e2ba3b13b937a06abb7e7f",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\figure-manifest.json": "6759a6d845b5ef33bea1d7468406e47c3eda08ac898498841b45d5b595a12d08",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\mechanical_credit_1152_not_behavior.png": "0975a6258cc6594a01e487534a9fdade6e7e277aac5cb60b0a6f1a73cdf912a8",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\mechanical_credit_1152_not_behavior.svg": "95bfad08918bf09779ce8b9c51643d496de8e3ec5943a799a748ce96325e314a",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_196608.png": "b4814490783e259dc5e819ee5701dcf0efa3212b4b2568d17f8445ea0a67497e",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_196608.svg": "4688e9df98a63565678524e975176d9655e914f3cdd0c0bc53bf167f7e435a4e",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_237568.png": "fd0f5cf31c579e8f6030dbab27314a008fcd33c489e13224a95cab083bd94094",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_237568.svg": "1acdc7255914d4988ba85eafcb802fc5f1da7441b75da679ed35f0fed993dde6",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_196608.png": "8e5834e243838186954e06ad625d66369e0a0621a7b699ab7c9726e8c583eea6",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_196608.svg": "1f59945b8562e922ba79c4637de2a35f8d411d3f1fb125a183beccaf43cbfc68",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_237568.png": "6da28bfa5af7f5da5d48b453c5217a78cff2d0d8c3b4e172ed2daadcad11f4b2",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_237568.svg": "3b30d735c48267e6d6ec557a3c780c9645c2ca412e1b19bbda71a23b83155c06",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_196608.png": "e0779be52d5d9a031bdf7048e54be353d3a2f8eb4b2c79c82762dbd8fb646441",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_196608.svg": "67267fcc79b7fc541017264bc249446c45e4ce841b2c3c7af58660ba7fcaf7db",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_237568.png": "cb49feba9b553c3cdc862f13cd9631e0c6294f65dc703420b3430c6ebaf17dc3",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_237568.svg": "ea9ce34994cfbffdc5fd4ff73bdf77e7584a5f102ea48ff8e71ebf647278e7fb",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_196608.png": "652129b80dc02cf72f19dbe4e68f48ffe627181dbd42143c545585991c72f97b",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_196608.svg": "0bd4bddd7fbb62a691d6ac676f050e4ed68e862a0d275cdf235f650b6abd1f64",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_237568.png": "d146cb8c9be9dc39949cd511dbd6ff6fecdf78de05ae2b2d9b3f97022832dbdb",
+        "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_237568.svg": "261333d253e088539d44f408f77a3106b98e13c81ad8bf16c5cd138a8022e15e"
+      }
+    },
+    "results": {
+      "attempt": 1,
+      "status": "verified",
+      "command": [
+        "F:\\agi\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.undirected.results",
+        "--report",
+        "F:\\agi\\data\\undirected\\completion-v4\\report-001\\report.json",
+        "--output",
+        "F:\\agi\\data\\undirected\\completion-v4\\results-001\\results.zh.md"
+      ],
+      "log": "F:\\agi\\data\\undirected\\completion-v4\\results-001.log",
+      "started": 1793585728.3501248,
+      "returncode": 0,
+      "finished": 1793585733.3609066,
+      "output": "F:\\agi\\data\\undirected\\completion-v4\\results-001\\results.zh.md",
+      "artifacts": {
+        "F:\\agi\\data\\undirected\\completion-v4\\results-001\\results.zh.md": "13bb4f9fd034230a4e838ceb18a08b1d8dc4085af7bed0dba8d59e61d4cc88e7"
+      }
+    }
+  },
+  "complete": true,
+  "coordinator_pid": 107468,
+  "started": 1793582272.5434098,
+  "stage": "complete",
+  "queue": {
+    "training": {
+      "complete": true,
+      "declared_jobs": 42,
+      "recorded_jobs": 42,
+      "terminal_counts": {
+        "success": 42,
+        "numerical_failure": 0
+      },
+      "execution_path": "F:\\agi\\data\\undirected\\main-v1\\training-execution.json",
+      "execution_sha256": "e73598afd167fc968d01438ba253660cc537e55e11068ab9a87ea2e17b6d3856"
+    },
+    "baseline": {
+      "complete": true,
+      "declared_jobs": 0,
+      "recorded_jobs": 0,
+      "terminal_counts": {
+        "success": 0,
+        "numerical_failure": 0
+      },
+      "execution_path": "F:\\agi\\data\\undirected\\main-v1\\baseline-execution.json",
+      "execution_sha256": "13bf464288ad42b78e0086ecdc81f1cc0a4b3a0b7a7d614bc9a61e9bc4fc8dd8"
+    },
+    "evaluation": {
+      "complete": true,
+      "declared_jobs": 42,
+      "recorded_jobs": 42,
+      "terminal_counts": {
+        "success": 42,
+        "numerical_failure": 0
+      },
+      "execution_path": "F:\\agi\\data\\undirected\\main-v1\\evaluation-execution.json",
+      "execution_sha256": "28514743e9a7056fb31a9c9717106bc5b596146995736d0d7c95ba5331ffd759"
+    }
+  },
+  "finished": 1793585733.4987411,
+  "scientific_status": "completed_with_between_policy_differences",
+  "fixed_probe_equality": "failed",
+  "completion_scope": "Frozen job and audit inventories accounted for, exported files verified. Scientific comparison outcomes are reported in the report header and result tables."
+}

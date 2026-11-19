@@ -1,0 +1,373 @@
+{
+  "format": "action-split-native-earliest-streams-v1",
+  "created_utc": "2026-11-05T15:20:41.916875+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "warm": 512,
+  "train_steps": 32768,
+  "total_ticks": 33280,
+  "block": 128,
+  "updates": 256,
+  "batch_size": 32,
+  "dt": 0.25,
+  "world_configs": {
+    "0": {
+      "seed": 850000,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        95000,
+        95001,
+        95002,
+        95003,
+        95004,
+        95005,
+        95006,
+        95007,
+        95008,
+        95009,
+        95010,
+        95011,
+        95012,
+        95013,
+        95014,
+        95015,
+        95016,
+        95017,
+        95018,
+        95019,
+        95020,
+        95021,
+        95022,
+        95023,
+        95024,
+        95025,
+        95026,
+        95027,
+        95028,
+        95029,
+        95030,
+        95031
+      ],
+      "family_allowed": [
+        0,
+        1
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ],
+      "window_range": [
+        1.5,
+        2.5
+      ],
+      "cancel": 0.2,
+      "replace": 0.3,
+      "regime_name": "action-split/training/long_both",
+      "device": "cpu"
+    },
+    "1": {
+      "seed": 850001,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        95000,
+        95001,
+        95002,
+        95003,
+        95004,
+        95005,
+        95006,
+        95007,
+        95008,
+        95009,
+        95010,
+        95011,
+        95012,
+        95013,
+        95014,
+        95015,
+        95016,
+        95017,
+        95018,
+        95019,
+        95020,
+        95021,
+        95022,
+        95023,
+        95024,
+        95025,
+        95026,
+        95027,
+        95028,
+        95029,
+        95030,
+        95031
+      ],
+      "family_allowed": [
+        1,
+        2
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ],
+      "window_range": [
+        1.5,
+        2.5
+      ],
+      "cancel": 0.2,
+      "replace": 0.3,
+      "regime_name": "action-split/training/long_both",
+      "device": "cpu"
+    },
+    "2": {
+      "seed": 850002,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        95000,
+        95001,
+        95002,
+        95003,
+        95004,
+        95005,
+        95006,
+        95007,
+        95008,
+        95009,
+        95010,
+        95011,
+        95012,
+        95013,
+        95014,
+        95015,
+        95016,
+        95017,
+        95018,
+        95019,
+        95020,
+        95021,
+        95022,
+        95023,
+        95024,
+        95025,
+        95026,
+        95027,
+        95028,
+        95029,
+        95030,
+        95031
+      ],
+      "family_allowed": [
+        2,
+        0
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ],
+      "window_range": [
+        1.5,
+        2.5
+      ],
+      "cancel": 0.2,
+      "replace": 0.3,
+      "regime_name": "action-split/training/long_both",
+      "device": "cpu"
+    }
+  },
+  "mappings": {
+    "0": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "1": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "2": [
+      [
+        3,
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ]
+  },
+  "source_files": {
+    "experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "experiments\\action_split\\data_test.py": "e61a4d97cc91ab22899f9a523534a9bc7c28dde016507226e69a22edf84e7ce5",
+    "experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3"
+  },
+  "teacher": "Every tick: native world.observe(); labels=world.oracle('earliest'); world.act(labels). Native actions and receipts are actual. No original-head model is instantiated.",
+  "continuity": "One world per raw model seed, 33280 consecutive observations, no resets. First512 warm ticks then256 sequential128-tick training blocks. Learner numeric h is continuous and detached at each update; no repeated data passes.",
+  "inputs": "Exactly original public56 observation plus constant dt=.25. World clock, phase, private state, target labels, eligibility, maturity, and counts are not model inputs.",
+  "mode_target": "WAIT=0 for native0; BEGIN=1 for native1..2; FINISH=2 for native3..10. Every tick and both slots are supervised.",
+  "begin_target": "Current version0..1 at active pre-action slots, else-1; supervised only where mode_target==BEGIN.",
+  "finish_target": "Current4*version+mapped_payload0..7 at every active pre-action slot, else-1. Supervise all active slots, including later canceled/replaced requests and processing WAIT rows.",
+  "no_future_filter": "Private current/event eligibility and eventual maturity are audit/scorer facts only. They never select or weight a training label.",
+  "data_dtypes": "obs float32[T,32,56], actions/mode/begin/finish int64[T,32,2], active bool[T,32,2]. Raw audit facts retain native NumPy dtypes.",
+  "receipts": "Post-action receipts are archived separately. Their next-observation public channels must exactly reflect those same actual actions/results.",
+  "public_feature_layout": {
+    "kind": [
+      0,
+      3
+    ],
+    "version": [
+      3,
+      5
+    ],
+    "payload": [
+      5,
+      9
+    ],
+    "duration": [
+      9,
+      10
+    ],
+    "window": [
+      10,
+      11
+    ],
+    "previous_action": [
+      11,
+      22
+    ],
+    "previous_result": [
+      22,
+      24
+    ],
+    "context": [
+      24,
+      28
+    ]
+  },
+  "raw_fact_fields": {
+    "rid": "request_id",
+    "active": "active",
+    "started": "started",
+    "ready": "ready_time",
+    "deadline": "deadline",
+    "issued_time": "issued_time",
+    "version": "version",
+    "payload": "payload",
+    "raw": "raw_payload",
+    "family": "current_family",
+    "eligible": "current_eligible",
+    "duration": "duration",
+    "had_error": "had_error",
+    "interrupted": "current_interrupted",
+    "regime_id": "current_regime_id",
+    "event_kind": "event_kind",
+    "event_id": "event_request_id",
+    "event_eligible": "event_eligible",
+    "event_family": "event_family",
+    "event_raw": "raw_event_payload",
+    "event_payload": "event_payload",
+    "event_version": "event_version",
+    "event_duration": "event_duration",
+    "event_window": "event_window",
+    "event_regime_id": "event_regime_id",
+    "mature": "matured_mask",
+    "mature_id": "matured_request_id",
+    "mature_issued": "matured_issued_at",
+    "mature_duration": "matured_duration",
+    "mature_family": "matured_family",
+    "mature_done": "matured_completed",
+    "mature_strict": "matured_clean_completed",
+    "last_external_tick": "last_external_tick",
+    "last_external_time": "last_external_time",
+    "score_pending": "_score_pending",
+    "score_deadline": "_score_deadline",
+    "score_id": "_score_request_id",
+    "score_completed": "_score_completed",
+    "score_clean": "_score_clean",
+    "score_interrupted": "_score_interrupted"
+  }
+}

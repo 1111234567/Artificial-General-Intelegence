@@ -1,0 +1,330 @@
+{
+  "reason": "User-authorized CPU/GPU performance transition; committed artifacts preserved",
+  "utc": "2026-11-11T10:55:06.9692202Z",
+  "processes": [
+    {
+      "ProcessId": 27668,
+      "ParentProcessId": 4552,
+      "CreationDate": "2026-11-11T16:13:07.373365+08:00",
+      "CommandLine": "\"F:\\agi\\.venv\\Scripts\\python.exe\" -u -m experiments.seed_evolution.pipeline --workers 14"
+    },
+    {
+      "ProcessId": 27920,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.441217+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1256)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 19504,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.448469+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1004)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 11456,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.454256+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1020)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 8280,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.458893+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1340)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 26204,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.463947+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1292)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 10168,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.46992+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1396)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 11940,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.474433+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1348)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 21368,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.480663+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1388)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 10780,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.483249+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1432)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 20812,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.489039+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1060)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 3932,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.4951+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1520)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 27688,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.500763+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1264)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 24172,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.50645+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1252)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 26656,
+      "ParentProcessId": 27668,
+      "CreationDate": "2026-11-11T18:28:24.512882+08:00",
+      "CommandLine": "\"F:\\agi\\.tools\\Python3145\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=27668, pipe_handle=1140)\" \"--multiprocessing-fork\""
+    }
+  ],
+  "progress": {
+    "phase": "search",
+    "state": "running",
+    "updated_utc": "2026-11-11T18:55:05.560524+08:00",
+    "generation": 3,
+    "completed_generations": 3,
+    "completed_candidates": 1170,
+    "total_candidates": 12096,
+    "generation_distributions": [
+      {
+        "rep": 0,
+        "arm": "shared",
+        "generation": 0,
+        "n": 64,
+        "planned": 64,
+        "min": 0.21633464075183356,
+        "max": 0.26270461366381714,
+        "mean": 0.23978312569937751,
+        "median": 0.2394702189505492
+      },
+      {
+        "rep": 1,
+        "arm": "shared",
+        "generation": 0,
+        "n": 64,
+        "planned": 64,
+        "min": 0.1382669055082848,
+        "max": 0.17745185848634124,
+        "mean": 0.1569636093073593,
+        "median": 0.15743207941483806
+      },
+      {
+        "rep": 2,
+        "arm": "shared",
+        "generation": 0,
+        "n": 64,
+        "planned": 64,
+        "min": 0.21212371563213583,
+        "max": 0.2659981024054801,
+        "mean": 0.24137825313302708,
+        "median": 0.24197227525214693
+      },
+      {
+        "rep": 0,
+        "arm": "evolution",
+        "generation": 1,
+        "n": 64,
+        "planned": 64,
+        "min": 0.21920820397022436,
+        "max": 0.26909930364277135,
+        "mean": 0.24879138569510867,
+        "median": 0.24956285619835888
+      },
+      {
+        "rep": 0,
+        "arm": "random",
+        "generation": 1,
+        "n": 64,
+        "planned": 64,
+        "min": 0.21985576751239694,
+        "max": 0.2583954818049039,
+        "mean": 0.23914991530395702,
+        "median": 0.2393616279301078
+      },
+      {
+        "rep": 1,
+        "arm": "evolution",
+        "generation": 1,
+        "n": 64,
+        "planned": 64,
+        "min": 0.14884684281236005,
+        "max": 0.1850873264666368,
+        "mean": 0.16869717028660994,
+        "median": 0.16834415584415585
+      },
+      {
+        "rep": 1,
+        "arm": "random",
+        "generation": 1,
+        "n": 64,
+        "planned": 64,
+        "min": 0.13357590685176893,
+        "max": 0.19118525153007912,
+        "mean": 0.16020482301462904,
+        "median": 0.16097925063442306
+      },
+      {
+        "rep": 2,
+        "arm": "evolution",
+        "generation": 1,
+        "n": 64,
+        "planned": 64,
+        "min": 0.2267588399304518,
+        "max": 0.26983294705828786,
+        "mean": 0.25096500853630466,
+        "median": 0.25361660526055074
+      },
+      {
+        "rep": 2,
+        "arm": "random",
+        "generation": 1,
+        "n": 64,
+        "planned": 64,
+        "min": 0.20928356593954028,
+        "max": 0.26407760910567646,
+        "mean": 0.23867064504594576,
+        "median": 0.24180649275877825
+      },
+      {
+        "rep": 0,
+        "arm": "evolution",
+        "generation": 2,
+        "n": 64,
+        "planned": 64,
+        "min": 0.23909702892218676,
+        "max": 0.2692553116302509,
+        "mean": 0.25489495340037166,
+        "median": 0.2559211672251983
+      },
+      {
+        "rep": 0,
+        "arm": "random",
+        "generation": 2,
+        "n": 64,
+        "planned": 64,
+        "min": 0.21017269924506446,
+        "max": 0.28026862242500905,
+        "mean": 0.23930898856435373,
+        "median": 0.23726956021152235
+      },
+      {
+        "rep": 1,
+        "arm": "evolution",
+        "generation": 2,
+        "n": 64,
+        "planned": 64,
+        "min": 0.15796014330497088,
+        "max": 0.18881549484997762,
+        "mean": 0.1767691539782057,
+        "median": 0.17876362143603525
+      },
+      {
+        "rep": 1,
+        "arm": "random",
+        "generation": 2,
+        "n": 64,
+        "planned": 64,
+        "min": 0.14212569040155248,
+        "max": 0.18032542170473204,
+        "mean": 0.15922706514031945,
+        "median": 0.16045678459471563
+      },
+      {
+        "rep": 2,
+        "arm": "evolution",
+        "generation": 2,
+        "n": 64,
+        "planned": 64,
+        "min": 0.22306385808791585,
+        "max": 0.27311311383083636,
+        "mean": 0.252543639074438,
+        "median": 0.25440799844368406
+      },
+      {
+        "rep": 2,
+        "arm": "random",
+        "generation": 2,
+        "n": 64,
+        "planned": 64,
+        "min": 0.21301817001496232,
+        "max": 0.26304950061966903,
+        "mean": 0.2374685321194443,
+        "median": 0.23737199047944837
+      },
+      {
+        "rep": 0,
+        "arm": "evolution",
+        "generation": 3,
+        "n": 64,
+        "planned": 64,
+        "min": 0.23334990248540516,
+        "max": 0.2728336298637416,
+        "mean": 0.2550438794197142,
+        "median": 0.25619354944877043
+      },
+      {
+        "rep": 0,
+        "arm": "random",
+        "generation": 3,
+        "n": 64,
+        "planned": 64,
+        "min": 0.2203784559296944,
+        "max": 0.2623314236354547,
+        "mean": 0.24176997817778384,
+        "median": 0.24226053208568993
+      },
+      {
+        "rep": 1,
+        "arm": "evolution",
+        "generation": 3,
+        "n": 64,
+        "planned": 64,
+        "min": 0.16260262725779967,
+        "max": 0.18881549484997762,
+        "mean": 0.17798732786609942,
+        "median": 0.17790901627108524
+      },
+      {
+        "rep": 1,
+        "arm": "random",
+        "generation": 3,
+        "n": 18,
+        "planned": 64,
+        "min": 0.13974473802060008,
+        "max": 0.17647783251231527,
+        "mean": 0.1559865900383142,
+        "median": 0.15520226899537243
+      },
+      {
+        "rep": 2,
+        "arm": "evolution",
+        "generation": 3,
+        "n": 0,
+        "planned": 64
+      },
+      {
+        "rep": 2,
+        "arm": "random",
+        "generation": 3,
+        "n": 0,
+        "planned": 64
+      }
+    ]
+  }
+}

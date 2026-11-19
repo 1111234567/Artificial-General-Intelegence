@@ -1,0 +1,69 @@
+{
+  "config": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "input_dim": 32,
+    "classes": 3,
+    "context_scale": 0.5,
+    "n_train": 4096,
+    "n_val": 1024,
+    "n_test": 2048,
+    "phase_steps": 800,
+    "batch_size": 128,
+    "eval_every": 10,
+    "lr": 0.2,
+    "threads": 1,
+    "pilot": false
+  },
+  "sources": {
+    "local_learning.py": "c08b6a7932be596a15110f17369e0dc09c018273f84dfc664ef0d9b5e606b870",
+    "test_local_learning.py": "c0c766ffda4f392e7275859d58418a1c6b8a8ba1f8394a97405e169fdbb5dddf"
+  },
+  "citations": {
+    "oja": "https://doi.org/10.1007/BF00275687",
+    "reward_stdp": "https://izhikevich.org/publications/dastdp.pdf",
+    "eprop": "https://doi.org/10.1038/s41467-020-17236-y",
+    "set": "https://doi.org/10.1038/s41467-018-04316-3",
+    "rigl": "https://arxiv.org/abs/1911.11134",
+    "forward_forward_distinct": "https://arxiv.org/abs/2212.13345",
+    "forward_gradient_distinct": "https://arxiv.org/abs/2202.08587"
+  },
+  "limitations": [
+    "Fixed engineered [1,x,c,context_scale*c*x] features already express both tasks.",
+    "Single-layer local delta is mathematically equivalent to this BP baseline.",
+    "Frequency homeostasis changes output biases without labels; it is one rule.",
+    "Reward-local receives binary correctness, while BP/local-delta receive full labels.",
+    "Reward-local uses an analytic policy-gradient estimator with immediate feedback.",
+    "Signed rate features are not biological spike counts or a LIF simulation.",
+    "No learned self-evaluation head, topology change, replay, EWC, or protected weights.",
+    "Mixed-context training is a separate feasibility control, not sequential replay.",
+    "Finite small-task seeds do not establish general continual-learning performance."
+  ],
+  "methods": [
+    "frozen",
+    "frequency",
+    "local_delta",
+    "reward_local",
+    "bp"
+  ],
+  "environment": {
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "F:\\agi\\.venv\\Scripts\\python.exe",
+    "torch": "2.11.0+cu130",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "device": "cpu",
+    "threads": 1
+  },
+  "protocol": {
+    "test_used_for_selection": false,
+    "pilot_test_metrics_disabled": false,
+    "selection": "fixed budgets, no checkpoint selection",
+    "relearning": "first validation checkpoint reaching threshold; checkpoint resolution eval_every",
+    "fresh_control": "same initial weights and A2 minibatch indices; newly initialized rule state",
+    "same_regime_data_across_methods": true,
+    "compute": "equal examples/updates, not equal FLOPs; report update and wall times"
+  }
+}

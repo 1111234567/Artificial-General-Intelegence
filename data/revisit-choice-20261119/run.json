@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "config": {
+    "updates": 8000,
+    "batch": 16,
+    "writers": 8,
+    "min_wait": 0,
+    "max_wait": 8,
+    "world_seed": 43197,
+    "lr": 0.003,
+    "actor_weight": 0.25,
+    "proposal_weight": 0.25,
+    "choice_weight": 0.25,
+    "first_path_weight": 0.25,
+    "rank_weight": 0.5,
+    "gate_weight": 0.5,
+    "keep_connected": true
+  },
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "arms": [
+    "ranked",
+    "shuffled",
+    "outcome_only"
+  ],
+  "checkpoints": [
+    0,
+    500,
+    2000,
+    8000
+  ],
+  "checkpoint_template": "birth_{birth}/{arm}/checkpoint_{step}.npz",
+  "trace_template": "birth_{birth}/{arm}/training.npz",
+  "metrics": [
+    "first_positive",
+    "return_positive",
+    "return_expected_positive",
+    "chosen_applied",
+    "chosen_0",
+    "chosen_1",
+    "chosen_skip",
+    "branch_0_positive",
+    "branch_1_positive",
+    "branch_skip_positive",
+    "branch_0_applied",
+    "branch_1_applied",
+    "identical_commands",
+    "pair_ties",
+    "pair_non_ties",
+    "all_ties",
+    "better_than_skip",
+    "worse_than_skip",
+    "tied_with_skip",
+    "rank_hits",
+    "selection_hits",
+    "gate_hits",
+    "mean_wait",
+    "world_side_changed",
+    "actor_score_loss",
+    "proposal_score_loss",
+    "choice_score_loss",
+    "motor_path_loss",
+    "rank_loss",
+    "selector_rank_loss",
+    "gate_loss",
+    "grad_norm"
+  ],
+  "world_key": [
+    62787,
+    43197,
+    "birth",
+    "update",
+    0
+  ],
+  "shuffle_key": [
+    62787,
+    43197,
+    "birth",
+    "update",
+    1
+  ],
+  "worlds_per_fit": 128000,
+  "branch_returns_per_world": 3,
+  "fit_group_size": 3,
+  "sources_sha256": {
+    "revisit_choice_train.py": "922bf4dc961a3a5979855f5f4c8904714e8f21416e3ef9ed711ae37697418a07",
+    "revisit_choice_graph.py": "eef973f7c6c9c002dcd247e802da86c57647e3a10125e9f99eac6e036aa6c507",
+    "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "edit_receipt_train.py": "c36dbd80489adb005765f05ab8cec676ff91beed8ccf153df7a7d2ad01472167"
+  }
+}

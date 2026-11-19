@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {"label": "birth", "spawn_root": 101, "example_root": 631801, "native_key": 76201},
+    {"label": "historical_one_contact", "checkpoint": "docs/evidence/self-writing-2026-11-19/core/bootstrap-own-101.npz", "example_root": 631802, "native_key": 76202},
+    {"label": "matched_long", "checkpoint": "docs/evidence/self-edit-dose-2026-11-19/bootstrap/train-2101-high-long.npz", "example_root": 631803, "native_key": 76203}
+  ],
+  "directions": ["existing_writer_inputs", "bias_14", "bias_15"],
+  "direction_root": 631804,
+  "central_steps": [0.0001, 0.00003, 0.00001],
+  "extra_branch_rule": "After the predetermined native key, for a missing accepted birth or retirement use the first of the next 256 keys showing that operation, when one exists. Select on committed operation alone."
+}

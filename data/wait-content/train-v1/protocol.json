@@ -1,0 +1,156 @@
+{
+  "format": "matched-wait-content-recurrent-train-v1",
+  "created_utc": "2026-11-03T05:46:24.401346+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "end_only",
+    "wait_mixed"
+  ],
+  "declaration": "Frozen after source own_policy results and content timing diagnostics, before this recurrent training or its free evaluations. No selection by new training outcomes.",
+  "source_files": {
+    "F:\\agi\\experiments\\wait_content\\train.py": "d8e8ad4d30a7854a5260d9ced250b5e0b8a444c8d3b60ba8cfa13e470df7d633",
+    "F:\\agi\\experiments\\action_return\\readout.py": "0ae3bf65c9600556ad658c685ff73630483e6a3ad5832943105d72b240892b6f",
+    "F:\\agi\\experiments\\action_return\\finish_readout.py": "b36122199b29a63b9edde1729b220df6bed956e1617edca8edbd2c0817e25c83",
+    "F:\\agi\\experiments\\wait_content\\train_tests.py": "712f736d81ad94066536ba7c8530dc2ff9e6e43815cd4b6ef3de1ebf0d59d533",
+    "F:\\agi\\experiments\\coverage_exit\\fast_window.py": "c53e0cf6d4370efa39fb169875dad225ad8a123b5e0b95c304488c15f6012d01",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280"
+  },
+  "input_files": {
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json": "d19db82587e5af48616a530981d7838a1301152812d56381d45b515b63fc9758",
+    "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\checkpoint_final.pt": "8982220e1a81e107d0c59e01d2ca1e069542e2e74711f6c4ddba23f728df6610",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\model_own_policy.pt": "9653c3f48b93619acc1fe7d53879e0cc9b6147110a2a0973c532217654be7ccb",
+    "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\checkpoint_final.pt": "cd90c6aa7223a6fad13e6e190fffae09343250469bf99d20d8afbbe6a8e6f5aa",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\model_own_policy.pt": "544d3b4e5beb0a5c122ff43ed2276a00ff46a77e3e45f0a215c3d52a282e437c",
+    "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\checkpoint_final.pt": "a6eb9a9121adb8f469217998f8ce645b9a0302f74992de6e964844ce2d5f39cf",
+    "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\model_own_policy.pt": "db40d52c7230dded80d34b0c99da8b0b692352aaa792f4eed2a47e13bd0e6135",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_000\\stream.npz": "68a1cc9c039ee56f537cee7f7078a7359e67e39736ace82438c9e1685a109cf5",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_000\\anchors.npy": "cfa7059b8fb1531513a6328be98344abd18e5c0d427b56eb31c1939685777715",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_000\\start.pt": "953ae5094a878aa30f697bcf50359804562095bbd2b6939dda196e215116c508",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_000\\endpoint.pt": "bc1d2bbddc1f348ac6cfe1e0c16e139affd6c9a0b5fc49f5589b417a689d8434",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_000\\requests.json": "98b29238db8eee2d5aa0d770138d5793c01d43fcf6a7982aab98ece2bb763cee",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_001\\stream.npz": "2b94cd2f3e9e4f67d06feeb83a897e1738a5a67a431a4b7b00e9950d2f340aa3",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_001\\anchors.npy": "894cf914631f5ae6371422a859f00d2ac6a15945754ee752ba012611e35b0e70",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_001\\start.pt": "405fe5cd5b961af2930867f8de99ef1964f9e38588f6ec99c59226733d460070",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_001\\endpoint.pt": "fb8c3020b2cd62d9b7f267d23d93a8f846be7f6eb6fe031ce6d312bbb33ae16b",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_001\\requests.json": "40eb05364a365227be5eb6276dd96439f0b6a6e9992803be3813e3bdab59ad8a",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_002\\stream.npz": "3fb52242e6a7db4938608e799c847b1198fb02db815dd75b22bbdd0714fa9305",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_002\\anchors.npy": "10d7fd4fda939c9cd20a90b7225db176e2c3d2c4921c09b7b805d5796da30f5c",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_002\\start.pt": "38099b2a3209c2dd9b504899d1cc3166866f48af31b81f67297eac819d8d7e5d",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_002\\endpoint.pt": "8b11b1bdc87aa5ed48a276c365cbc955fe2ee47edb77b7aeb0ab45ef7401a754",
+    "F:\\agi\\data\\wait-content\\data-v1\\seed_002\\requests.json": "d90ec5e83b6e892799a66267eea8cf5c214917c577601d8203e948b624cc56b7",
+    "F:\\agi\\data\\wait-content\\data-v1\\protocol.json": "3400d906b42d301a0d7b2987f57704467f8a0ae90f9a61dc0c4c9db9076288a0",
+    "F:\\agi\\data\\wait-content\\train-v1\\preflight.json": "5e076facaa61b52439ec59c0794c2a6751db17fda6191a44fdd6b1e91dce187a"
+  },
+  "sources": {
+    "0": {
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "8982220e1a81e107d0c59e01d2ca1e069542e2e74711f6c4ddba23f728df6610",
+        "semantic_hash": "8f07a409436aa735e9f39e22aa4c254ee35d5bb90ffd0bfa1cd8aceee1122c11"
+      },
+      "controller": {
+        "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\model_own_policy.pt",
+        "sha256": "9653c3f48b93619acc1fe7d53879e0cc9b6147110a2a0973c532217654be7ccb"
+      }
+    },
+    "1": {
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "cd90c6aa7223a6fad13e6e190fffae09343250469bf99d20d8afbbe6a8e6f5aa",
+        "semantic_hash": "17a9d7bea8af3e7862cb9925933f33bcb825d0e4bacdd4852f901154392e74fb"
+      },
+      "controller": {
+        "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\model_own_policy.pt",
+        "sha256": "544d3b4e5beb0a5c122ff43ed2276a00ff46a77e3e45f0a215c3d52a282e437c"
+      }
+    },
+    "2": {
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "a6eb9a9121adb8f469217998f8ce645b9a0302f74992de6e964844ce2d5f39cf",
+        "semantic_hash": "4b48e11cd0fe861975d36ecd9523324aada413eef2490e7fc4b447049ac65073"
+      },
+      "controller": {
+        "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\model_own_policy.pt",
+        "sha256": "db40d52c7230dded80d34b0c99da8b0b692352aaa792f4eed2a47e13bd0e6135"
+      }
+    }
+  },
+  "data": {
+    "root": "F:\\agi\\data\\wait-content\\data-v1",
+    "all_ticks": 16384,
+    "block_ticks": 128,
+    "actors_fit": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "actors_heldout": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "rule": "One common frozen own_policy autonomous public stream per seed; teachers supply labels only. Full8-lane data retained for separate evaluation warmup; training reads lanes0..3 only.",
+    "anchors_columns": [
+      "block",
+      "actor",
+      "job",
+      "request_id",
+      "end_t",
+      "wait_t",
+      "target0to7",
+      "move"
+    ],
+    "matching": "Identical requests, targets, eight-class counts and quantity at every update. end_only supervises every fixed anchor at END; wait_mixed moves exactly half to the same-request processing-WAIT candidate within the same update. Original WAIT target remains WAIT."
+  },
+  "train": {
+    "updates": 128,
+    "ticks_per_update": 128,
+    "dtype": "float64",
+    "device": "cpu",
+    "threads_per_process": 1,
+    "state": "Start actual147456 inherited h on fit lanes; continuously carry complete h through every update. Detach graph only at128-tick optimizer boundaries; no hidden reset or request boundary warmup.",
+    "parameters": "Original support of undirected edge_shared plus existing conditional FINISH coef/bias for two jobs; preserve exact support and project inactive coordinates0 after every step. Fixed input/output ports, BEGIN affine coefficients, all normalization means/std and graph topology remain frozen.",
+    "action_loss": "All tick/job positions. Weighted OTHER/BEGIN1/BEGIN2 CE plus weighted WAIT/eightFINISH conditional9 CE at teacher nonBEGIN rows; both numerators divide by original all-position weights.sum. WAIT0 weight0.1; all others1. Every teacher FINISH retains its specific eight-class target in both arms.",
+    "extra_loss": "Additional conditional8 CE on selected eightFINISH offsets only, reduction mean, weight1. Same labels/counts/denominator per update; only temporal positions differ. No WAIT action is relabeled FINISH.",
+    "optimizer": {
+      "name": "Adam",
+      "lr": 0.001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "initialization": "Fresh identical zero-state Adam in both arms; source backbone Adam from its original147456 training is retained as provenance, not resumed."
+    },
+    "clipping": {
+      "kind": "global_l2",
+      "max_norm": 1.0
+    },
+    "auxiliary_weight": 1.0,
+    "regularization": "none",
+    "initialization": "Same exact own_policy controller, source support and source h in both arms; conditional FINISH buffers promoted to trainable parameters without numerical change."
+  },
+  "inference": "Unmodified inherited FinishController.step: group-first BEGIN choice from two fixed affine offsets; independent conditional WAIT/eightFINISH choice from0 and eight learned offsets. Exact tie repair runs only at inference, never in gradient path. No private state gates or teacher inputs.",
+  "persistence": "Per-arm source binding, initial state, final all-state checkpoint and model, each update losses/budget/data/hidden/model hashes. Seed0 first auxiliary-moved update saves complete before/after model, Adam and h for independent reconstruction.",
+  "evaluation": "Separate prospective evaluation by wait_eval; primary actual long task completion and idle action frequency. Learned states during fixed-data replay are not mistaken for an on-policy deployment world.",
+  "runtime": {
+    "workers": 3,
+    "threads": 1,
+    "dtype": "float64"
+  },
+  "limits": [
+    "Externally labeled fixed autonomous experience, not new self-generated experience during recurrent optimization.",
+    "BEGIN decoder coefficients are fixed but trained recurrent weights may change its inputs and decisions.",
+    "Actors4..7 are held out only from this fit; original backbone birth training saw all8 actors."
+  ],
+  "protocol_hash": "26ad2169809cdabbc2fbcdecfae16139447915b016e13e6fe009c32bbbccab6c"
+}

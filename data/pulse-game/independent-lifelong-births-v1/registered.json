@@ -1,0 +1,34 @@
+{
+  "fixed_birth_seeds": [
+    374853277,
+    433810157,
+    241766349,
+    319591504,
+    14775819,
+    140349813,
+    310208864,
+    396730,
+    384361128,
+    334996653,
+    173169562,
+    149132983
+  ],
+  "reopening_rule": [
+    2.0,
+    0.01600000075995922,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "training": {
+    "count": 12,
+    "steps": 2000,
+    "lives": 4800,
+    "gens": 160,
+    "width": 1024,
+    "device": "cuda"
+  },
+  "evaluation": "same 256 unobserved paired roots for all births; stable 96 independent long streams",
+  "every_birth_counts": true,
+  "selection_worlds_only": true
+}

@@ -1,0 +1,15 @@
+{
+  "question": "Does a graph that grows receiver-local interactions from zero learn a different family of chemical interactions in the same life, and do further pair births help after the rule changes?",
+  "births": [964200,964201,964202,964203,964204,964205,964206,964207],
+  "roots": [964600,964601,964602,964603,964604,964605,964606,964607],
+  "modes": ["guided","no_new_in_B","dense","alternative"],
+  "supplement": "Before constructing any switch-world results, also register the independently developed two-block corroboration policy as a secondary arm on these identical tapes. Its coefficients and admission policy come only from its original development. The three prespecified primary comparisons are unchanged.",
+  "habitats": ["A","B","A_return"],
+  "training_trials_per_stage": 640,
+  "silent_trials": 80,
+  "B_doses": [0,80,240,640],
+  "menus": "A privately weights pairs {02,03,12,13}. B privately weights the disjoint pairs {01,23}. B and minus B are new, complementary worlds, with identical food mixtures, exploration, winds, and A histories; only real tastes begin to differ in B. At return A has original weights and fresh items. No habitat flag, task ID, or concentration products are given to the graph. Generate a new tape for each evaluation stage; all B dose probes are clones on exactly the same held-out B tape, excluded from subsequent learning. When B has zero teaching, complementary accuracy must equal half contact coverage.",
+  "models": "Reuse primary study's development-selected sparse configuration after it is sealed; no tuning on this task. Independent 16-node strong port graphs; vanilla connections, their independent weights, and joint pair value learning are active throughout every genuine training request. Sparse clone with further pair proposals disabled only from B onset through B end; all remaining weights, conventional arcs and exits can still change. Re-enable proposals on returning to A. Dense matched control uses the same ordinary edge rules and starting W. Silent forks do not alter the live trajectory.",
+  "inference": "Pair twins within each birth and world. Crossed bootstrap over eight fresh births and eight fresh root blocks with 20000 draws, RNG 673681. Three prespecified 95% simultaneous intervals: B640 guided minus chance, guided minus no-new-in-B, guided minus dense (margin -0.03). To assert a benefit of continued pair births require interval lower bound >0 for the no-new comparison; report numerical sufficiency separately. Also report A and A-return after teaching, B learning curve, contact, actual coefficients and pair identities. No spontaneous recall claim.",
+  "limits": "Change of chemical basis is stronger than global sign reversal; each food is new. The diagnostic switches library of meaningful chemistry pairs, not the graph's node identities. Learned receiving nodes are not assigned ground-truth chemical identities."
+}

@@ -1,0 +1,723 @@
+{
+  "format": "coverage-exit-fast-block-rtrl-benchmark-v1",
+  "created_utc": "2026-11-02T14:11:56.901249+00:00",
+  "backend": {
+    "backend": "analytic-full-heun-block-adjoint-fp64-v1",
+    "source": "F:\\agi\\experiments\\coverage_exit\\fast_credit.py",
+    "source_sha256": "f94b7aa3aa240efadf059e4e8cff6681e5b2974ebc8ed694cc1366f3e3db9f4b",
+    "precision": "float64; no AMP, TF32, reduced dtype, sparsification or truncation",
+    "equivalence": "same real-arithmetic derivatives; floating reduction order differs",
+    "scope": "block J/K only; inherited live loss, full S, clipping and Adam",
+    "measured_source_snapshot": "F:\\agi\\data\\coverage-exit\\perf\\block-rtrl-cpu-thread-sweep.fast-credit-source.py"
+  },
+  "native_source_sha256": {
+    "run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7"
+  },
+  "runtime": {
+    "python": "3.14.5",
+    "torch": "2.11.0+cu130",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "pid": 157084,
+    "threads": 1,
+    "cpu_affinity_requested": null,
+    "cpu_affinity_set": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "cpu_topology": {
+      "source": "Windows GetLogicalProcessorInformation / RelationProcessorCore",
+      "physical_cores": [
+        {
+          "logical_processors": [
+            0,
+            1
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            2,
+            3
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            4,
+            5
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            6,
+            7
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            8,
+            9
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            10,
+            11
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            12
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            13
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            14
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            15
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            16
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            17
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            18
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            19
+          ],
+          "hyperthreaded": false
+        }
+      ]
+    },
+    "device": "cpu",
+    "dtype": "float64",
+    "AMP": false,
+    "TF32": false,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "cuda_available_in_runtime": true
+  },
+  "arguments": {
+    "output": "data/coverage-exit/perf/block-rtrl-cpu-thread-sweep.json",
+    "interface": "ports",
+    "mode": "both",
+    "width": 80,
+    "batch_size": 8,
+    "ticks": 128,
+    "threads": 1,
+    "cpu": null,
+    "cpus": "0,2,4,6",
+    "device": "cpu",
+    "seed": 101,
+    "calibration_updates": 1,
+    "continuation_updates": 1,
+    "checkpoint": "data/undirected/main-v1/training/seed_000/ports__undirected__rtrl__fixed__warmup/checkpoint_tick_131072.pt",
+    "repeats": 4,
+    "warmups": 1,
+    "workload": "all",
+    "probe_backend": null,
+    "probe_phase": "trainer",
+    "environment_note": "Coordinated project window: A/B formal training finished, C not started, A audit logical12; external OS load present and sampled per update; physical core masks validated; each thread count assigned distinct physical cores; recover/validation and set_num_threads excluded from timed region",
+    "thread_sweep": "1,2,4"
+  },
+  "cases": [],
+  "benchmark_source_snapshot": "F:\\agi\\data\\coverage-exit\\perf\\block-rtrl-cpu-thread-sweep.benchmark-source.py",
+  "benchmark_source_sha256": "40e366cf18896e9b4d1d779aefa9eced54dc1399a374986488226887d534df16",
+  "thread_sweep": {
+    "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__rtrl__fixed__warmup\\checkpoint_tick_131072.pt",
+    "checkpoint_sha256": "160763d07d58958a3e647ecd22368b0ff185cd86e1f959d076757ead5ded6f2a",
+    "backend": "analytic",
+    "execution_threads_override": [
+      1,
+      2,
+      4
+    ],
+    "saved_config_cpu_threads": 1,
+    "seconds": {
+      "1": [
+        1.2041540000063833,
+        0.5913259999942966,
+        0.6149561000056565,
+        0.5888109999941662
+      ],
+      "2": [
+        0.5484020000003511,
+        0.5358728999999585,
+        0.5241744999948423,
+        0.5091752000007546
+      ],
+      "4": [
+        0.5439023999933852,
+        0.5116528999933507,
+        0.5398600999906193,
+        0.51461919999565
+      ]
+    },
+    "median_seconds": {
+      "1": 0.6031410499999765,
+      "2": 0.5300236999974004,
+      "4": 0.5272396499931347
+    },
+    "cpu_affinity_by_thread_count": {
+      "1": [
+        0
+      ],
+      "2": [
+        0,
+        2
+      ],
+      "4": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    "cpu_topology": {
+      "source": "Windows GetLogicalProcessorInformation / RelationProcessorCore",
+      "physical_cores": [
+        {
+          "logical_processors": [
+            0,
+            1
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            2,
+            3
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            4,
+            5
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            6,
+            7
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            8,
+            9
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            10,
+            11
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            12
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            13
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            14
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            15
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            16
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            17
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            18
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            19
+          ],
+          "hyperthreaded": false
+        }
+      ]
+    },
+    "cpu_usage_during_timed_update": {
+      "1": [
+        {
+          "process_cpu_percent": 64.87957520349212,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            77.2,
+            80.5,
+            80.5,
+            87.0,
+            79.2,
+            74.4,
+            74.4,
+            89.9,
+            83.1,
+            88.3,
+            83.1,
+            83.3,
+            88.3,
+            87.0,
+            92.2,
+            93.8,
+            88.3,
+            90.9,
+            89.9
+          ]
+        },
+        {
+          "process_cpu_percent": 92.48282673267786,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            10.8,
+            0.0,
+            18.9,
+            0.0,
+            5.4,
+            0.0,
+            13.5,
+            0.0,
+            16.2,
+            0.0,
+            59.5,
+            27.0,
+            8.1,
+            7.9,
+            44.7,
+            5.3,
+            5.3,
+            18.9
+          ]
+        },
+        {
+          "process_cpu_percent": 94.01077572767915,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            25.0,
+            0.0,
+            25.6,
+            0.0,
+            28.2,
+            0.0,
+            12.5,
+            0.0,
+            25.6,
+            0.0,
+            35.9,
+            30.8,
+            20.5,
+            22.5,
+            50.0,
+            17.1,
+            7.5,
+            0.0
+          ]
+        },
+        {
+          "process_cpu_percent": 90.2241975787245,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            28.2,
+            0.0,
+            36.8,
+            0.0,
+            18.4,
+            0.0,
+            23.7,
+            0.0,
+            34.2,
+            0.0,
+            31.6,
+            30.8,
+            13.2,
+            10.8,
+            44.7,
+            8.1,
+            2.7,
+            2.7
+          ]
+        }
+      ],
+      "2": [
+        {
+          "process_cpu_percent": 185.19717287671267,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            28.6,
+            0.0,
+            38.9,
+            0.0,
+            0.0,
+            25.7,
+            34.3,
+            0.0,
+            100.0,
+            51.4,
+            71.4,
+            40.0,
+            59.5,
+            41.7,
+            82.9,
+            11.8
+          ]
+        },
+        {
+          "process_cpu_percent": 180.77980804778056,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            23.5,
+            0.0,
+            17.6,
+            0.0,
+            29.4,
+            0.0,
+            20.6,
+            0.0,
+            32.4,
+            38.2,
+            26.5,
+            8.6,
+            50.0,
+            11.8,
+            5.9,
+            2.9
+          ]
+        },
+        {
+          "process_cpu_percent": 172.89089797556292,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            2.9,
+            100.0,
+            5.9,
+            44.1,
+            8.8,
+            35.3,
+            0.0,
+            44.1,
+            0.0,
+            45.5,
+            3.0,
+            48.5,
+            45.5,
+            30.3,
+            9.1,
+            66.7,
+            9.1,
+            12.1,
+            3.0
+          ]
+        },
+        {
+          "process_cpu_percent": 168.77785877998897,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            33.3,
+            0.0,
+            33.3,
+            0.0,
+            18.2,
+            0.0,
+            29.4,
+            0.0,
+            30.3,
+            24.2,
+            27.3,
+            27.3,
+            41.2,
+            3.0,
+            3.0,
+            3.0
+          ]
+        }
+      ],
+      "4": [
+        {
+          "process_cpu_percent": 367.7130308717747,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            6.1,
+            100.0,
+            2.9,
+            100.0,
+            3.0,
+            100.0,
+            3.0,
+            14.3,
+            29.4,
+            34.3,
+            0.0,
+            60.0,
+            48.6,
+            25.7,
+            42.9,
+            56.8,
+            60.0,
+            25.7,
+            45.7
+          ]
+        },
+        {
+          "process_cpu_percent": 351.1902307254296,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            18.8,
+            0.0,
+            28.1,
+            0.0,
+            18.8,
+            33.3,
+            34.4,
+            15.6,
+            37.5,
+            18.2,
+            0.0,
+            6.1
+          ]
+        },
+        {
+          "process_cpu_percent": 341.5236651184329,
+          "system_cpu_percent_per_logical_processor": [
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            100.0,
+            0.0,
+            47.2,
+            0.0,
+            42.9,
+            0.0,
+            48.6,
+            48.6,
+            63.9,
+            68.6,
+            51.4,
+            25.7,
+            62.9,
+            38.2
+          ]
+        },
+        {
+          "process_cpu_percent": 367.38330012094013,
+          "system_cpu_percent_per_logical_processor": [
+            97.4,
+            0.0,
+            100.0,
+            0.0,
+            97.0,
+            0.0,
+            97.0,
+            0.0,
+            24.2,
+            0.0,
+            35.3,
+            0.0,
+            21.2,
+            42.4,
+            24.2,
+            27.3,
+            45.5,
+            36.4,
+            63.6,
+            72.7
+          ]
+        }
+      ]
+    },
+    "pair_order": [
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        4,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        4,
+        2,
+        1
+      ]
+    ],
+    "warmups_per_count": 1,
+    "accuracy_against_first_count": [
+      {
+        "threads": 1,
+        "model": {
+          "edge_shared": {
+            "bitwise_equal": true,
+            "max_abs_error": 0.0,
+            "max_abs_error_over_reference_max": 0.0,
+            "allclose_atol_3e-12_rtol_3e-11": true,
+            "all_finite": true
+          }
+        },
+        "h": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "S": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "action_hash_equal": true
+      },
+      {
+        "threads": 2,
+        "model": {
+          "edge_shared": {
+            "bitwise_equal": true,
+            "max_abs_error": 0.0,
+            "max_abs_error_over_reference_max": 0.0,
+            "allclose_atol_3e-12_rtol_3e-11": true,
+            "all_finite": true
+          }
+        },
+        "h": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "S": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "action_hash_equal": true
+      },
+      {
+        "threads": 4,
+        "model": {
+          "edge_shared": {
+            "bitwise_equal": true,
+            "max_abs_error": 0.0,
+            "max_abs_error_over_reference_max": 0.0,
+            "allclose_atol_3e-12_rtol_3e-11": true,
+            "all_finite": true
+          }
+        },
+        "h": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "S": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "action_hash_equal": true
+      }
+    ],
+    "one_job_resident_at_a_time": true,
+    "scope": "full native train_update; thread override, no mathematical/training change"
+  }
+}

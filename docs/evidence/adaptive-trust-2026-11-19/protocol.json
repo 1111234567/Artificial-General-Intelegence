@@ -1,0 +1,45 @@
+{
+  "study": "Learn from actual contact evidence how much to trust a previously learned relation",
+  "reference": "../learning-transfer-2026-11-19/relation-seal.json",
+  "births": [374853277, 433810157, 241766349, 319591504, 14775819, 140349813],
+  "nonce": 883140036,
+  "roots": {
+    "training": [
+      {"seed": 9631401, "lower": 1720000000, "upper": 1721000000, "count": 40},
+      {"seed": 9631402, "lower": 1721000000, "upper": 1722000000, "count": 48},
+      {"seed": 9631403, "lower": 1722000000, "upper": 1723000000, "count": 64}
+    ],
+    "validation": {"seed": 53684914, "lower": 1723000000, "upper": 1724000000, "count": 100},
+    "holdout": {"seed": 60171449, "lower": 1830000000, "upper": 1830800000, "count": 256}
+  },
+  "design": "Use the previous study's 12-pair A history, independent crossed A/B sign parities, six frozen fronts and actuators, and same six frozen outer update/read rules. Dev B reflects along a line and test B rotates a plane by a signed quarter turn. Matched B tapes within world. No phase, history class, transform class, hidden tag, or geometry passed to the gate.",
+  "doses": [0, 2, 4, 8, 16],
+  "development_probes": 2,
+  "holdout_probes": 3,
+  "fit": {
+    "seed": 333071,
+    "constants": [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0],
+    "initial_centers": [0.60, 0.72, 0.84, 0.92],
+    "initial_slopes": [8, 16, 28],
+    "perturbations_by_round": [16, 20, 24],
+    "elite_per_round": 3,
+    "perturbation_scales": [1.0, 0.75, 0.5],
+    "objective": "Behavior only. Mean silent B correctness at each dose across six fronts, roots, both histories, crossed signs, and probes, weighted 0.4, 0.4, 0.1, 0.1 at 2, 4, 8, 16. Timeouts count as errors. Symmetric history weighting. A is unchanged during B and measured independently. The best three candidates per training round compete with the initial candidates on validation. Ties favor earlier candidates. Constant comparator independently chosen on validation using the same criterion."
+  },
+  "arms": {
+    "always": "Pass the previous rule's sharing amount unchanged.",
+    "local": "Remove only covariance contribution, preserving local read/write.",
+    "constant": "Independently select a fixed multiplier from the preregistered grid on validation.",
+    "explicit": "Fixed public-only continuous benchmark. Linearly clip the leaky mean cosine of the actual displacement and its covariance-projected direction, mapping 0.65 to zero and 0.90 to one. No fit or geometry assumptions.",
+    "learned": "Nine frozen scalar parameters map signed-pair compatibility, prediction evidence and per-address leaky evidence to a sigmoid multiplier in [0,1]. Only actual eligible contacts update memory. No test-time gradient.",
+    "swapped": "Use the learned gate trajectory from the opposite history at the same world, A/B parity, front and teaching request. Swap gate values only, retaining the receiving causal sensory evidence, local writes, contact and phase state. On a recipient write with no donor eligible at that request, use the recipient's ordinary gate."
+  },
+  "criteria": {
+    "early": "Mean B2 and B4 minus B0 for each life, then pair arms. Require jointly: related learned minus always lower 95% bound greater than -0.02; related learned minus local lower bound greater than zero; unrelated learned minus always lower bound greater than zero; unrelated learned minus local lower bound greater than -0.02.",
+    "specificity": "Require pooled balanced-history learned minus selected constant early gain lower bound greater than zero and same comparison against the swapped arm lower bound greater than zero for evidence that contact-dependent routing itself improves behavior over fixed shrinkage and matched but wrong learned weights. Report both comparisons separately if either fails.",
+    "old": "For each history, learned A16 minus learned A0 lower bound greater than -0.05 and learned A16 lower bound above 0.5. Also report paired A16 versus always and local and joint per-life old and new successes.",
+    "mechanism": "Report genuine write coverage, gate means and compatibility across actual B writes, same-world related-minus-unrelated separation, and paired changes produced by swapping only gate outputs. On a dev and first held-out chunk, verify the replay and baseline against closure at the per-choice and per-write levels."
+  },
+  "inference": {"bootstrap_draws": 4096, "bootstrap_seed": 39610351, "unit": "Average all four lives per physical world first, then crossed bootstrap whole worlds and whole fronts. Gate estimates weight eligible pairs within each world, with explicit eligible fractions and complete-pair sensitivity. All intervals two-sided 95%."},
+  "seal": "Fit and validation only on reflection roots. Freeze source, base weights, selected gate, selected constant, and file identity before constructing or evaluating any held-out quarter-turn world. Publish failure or indeterminacy as measured. Use prespecified evaluations only for claims."
+}

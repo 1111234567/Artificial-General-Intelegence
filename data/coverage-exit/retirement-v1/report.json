@@ -1,0 +1,840 @@
+{
+  "format": "coverage-exit-retirement-audited-v1",
+  "audit": {
+    "status": "passed",
+    "checks": [
+      "source/protocol/result/checkpoint SHA bindings",
+      "complete saved checkpoint roundtrip in each worker",
+      "128 updates,15 executed windows,60 probes per branch and equal paired work deltas",
+      "first proposal/trials identical before acceptance switch",
+      "all8 endpoint paired forks share actor/case identities, complete scheduler/event streams and matured request fingerprints",
+      "strict mixed-loss full-commit flags checked from recorded loss components"
+    ]
+  },
+  "protocol": "F:\\agi\\data\\coverage-exit\\retirement-v1\\protocol.json",
+  "protocol_hash": "814be52e0db5a311f940f69ba8f22e20ebdb0c6639a7d75425f41b47dd0511fe",
+  "results": [
+    {
+      "seed": 0,
+      "arm": "half_only",
+      "structural": {
+        "eligible_pairs": 640,
+        "nonzero_pairs": 640,
+        "cumulative_births": 0,
+        "cumulative_deaths": 0,
+        "full_improvement_batches": 0,
+        "accepted_full_batches": 0,
+        "accepted_half_batches": 0,
+        "full_mixed_damage_min": 0.04134039452146876,
+        "full_mixed_damage_mean": 0.1331525785237174,
+        "full_mixed_damage_max": 0.2696209593839909,
+        "half_improvement_batches": 0,
+        "accepted_batches_history_damage": 0,
+        "committed_mixed_damage_sum": 0
+      },
+      "baseline": {
+        "short": {
+          "strict": 0.1580948121645796,
+          "ordinary": 0.25335420393559926,
+          "idle_per1000": 41.50389335382143
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "endpoint": {
+        "short": {
+          "strict": 0.15714285714285714,
+          "ordinary": 0.240625,
+          "idle_per1000": 36.13947155291618
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "per_family_counts": [
+        {
+          "condition": "short",
+          "family": 0,
+          "matured": 1120,
+          "completed": 286,
+          "clean_completed": 159,
+          "inactive_actions": 325,
+          "inactive_opportunities": 9053
+        },
+        {
+          "condition": "long_both",
+          "family": 0,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        },
+        {
+          "condition": "short",
+          "family": 1,
+          "matured": 1120,
+          "completed": 277,
+          "clean_completed": 182,
+          "inactive_actions": 350,
+          "inactive_opportunities": 9006
+        },
+        {
+          "condition": "long_both",
+          "family": 1,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        },
+        {
+          "condition": "short",
+          "family": 2,
+          "matured": 1120,
+          "completed": 317,
+          "clean_completed": 207,
+          "inactive_actions": 283,
+          "inactive_opportunities": 9100
+        },
+        {
+          "condition": "long_both",
+          "family": 2,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        },
+        {
+          "condition": "short",
+          "family": 3,
+          "matured": 1120,
+          "completed": 198,
+          "clean_completed": 156,
+          "inactive_actions": 336,
+          "inactive_opportunities": 8683
+        },
+        {
+          "condition": "long_both",
+          "family": 3,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "arm": "full_eligible",
+      "structural": {
+        "eligible_pairs": 640,
+        "nonzero_pairs": 640,
+        "cumulative_births": 0,
+        "cumulative_deaths": 0,
+        "full_improvement_batches": 0,
+        "accepted_full_batches": 0,
+        "accepted_half_batches": 0,
+        "full_mixed_damage_min": 0.04134039452146876,
+        "full_mixed_damage_mean": 0.1331525785237174,
+        "full_mixed_damage_max": 0.2696209593839909,
+        "half_improvement_batches": 0,
+        "accepted_batches_history_damage": 0,
+        "committed_mixed_damage_sum": 0
+      },
+      "baseline": {
+        "short": {
+          "strict": 0.1580948121645796,
+          "ordinary": 0.25335420393559926,
+          "idle_per1000": 41.50389335382143
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "endpoint": {
+        "short": {
+          "strict": 0.15714285714285714,
+          "ordinary": 0.240625,
+          "idle_per1000": 36.13947155291618
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "per_family_counts": [
+        {
+          "condition": "short",
+          "family": 0,
+          "matured": 1120,
+          "completed": 286,
+          "clean_completed": 159,
+          "inactive_actions": 325,
+          "inactive_opportunities": 9053
+        },
+        {
+          "condition": "long_both",
+          "family": 0,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        },
+        {
+          "condition": "short",
+          "family": 1,
+          "matured": 1120,
+          "completed": 277,
+          "clean_completed": 182,
+          "inactive_actions": 350,
+          "inactive_opportunities": 9006
+        },
+        {
+          "condition": "long_both",
+          "family": 1,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        },
+        {
+          "condition": "short",
+          "family": 2,
+          "matured": 1120,
+          "completed": 317,
+          "clean_completed": 207,
+          "inactive_actions": 283,
+          "inactive_opportunities": 9100
+        },
+        {
+          "condition": "long_both",
+          "family": 2,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        },
+        {
+          "condition": "short",
+          "family": 3,
+          "matured": 1120,
+          "completed": 198,
+          "clean_completed": 156,
+          "inactive_actions": 336,
+          "inactive_opportunities": 8683
+        },
+        {
+          "condition": "long_both",
+          "family": 3,
+          "matured": 170,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20476
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "arm": "half_only",
+      "structural": {
+        "eligible_pairs": 640,
+        "nonzero_pairs": 640,
+        "cumulative_births": 0,
+        "cumulative_deaths": 0,
+        "full_improvement_batches": 0,
+        "accepted_full_batches": 0,
+        "accepted_half_batches": 0,
+        "full_mixed_damage_min": 0.023540812551308243,
+        "full_mixed_damage_mean": 0.14125924837120157,
+        "full_mixed_damage_max": 0.3808628762634936,
+        "half_improvement_batches": 0,
+        "accepted_batches_history_damage": 0,
+        "committed_mixed_damage_sum": 0
+      },
+      "baseline": {
+        "short": {
+          "strict": 0.1629162916291629,
+          "ordinary": 0.268001800180018,
+          "idle_per1000": 43.0987431214002
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "endpoint": {
+        "short": {
+          "strict": 0.1579295154185022,
+          "ordinary": 0.28810572687224667,
+          "idle_per1000": 46.875131279686734
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "per_family_counts": [
+        {
+          "condition": "short",
+          "family": 0,
+          "matured": 1135,
+          "completed": 341,
+          "clean_completed": 166,
+          "inactive_actions": 424,
+          "inactive_opportunities": 9149
+        },
+        {
+          "condition": "long_both",
+          "family": 0,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        },
+        {
+          "condition": "short",
+          "family": 1,
+          "matured": 1135,
+          "completed": 379,
+          "clean_completed": 204,
+          "inactive_actions": 420,
+          "inactive_opportunities": 9350
+        },
+        {
+          "condition": "long_both",
+          "family": 1,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        },
+        {
+          "condition": "short",
+          "family": 2,
+          "matured": 1135,
+          "completed": 312,
+          "clean_completed": 170,
+          "inactive_actions": 375,
+          "inactive_opportunities": 9018
+        },
+        {
+          "condition": "long_both",
+          "family": 2,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        },
+        {
+          "condition": "short",
+          "family": 3,
+          "matured": 1135,
+          "completed": 276,
+          "clean_completed": 177,
+          "inactive_actions": 488,
+          "inactive_opportunities": 8929
+        },
+        {
+          "condition": "long_both",
+          "family": 3,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "arm": "full_eligible",
+      "structural": {
+        "eligible_pairs": 640,
+        "nonzero_pairs": 640,
+        "cumulative_births": 0,
+        "cumulative_deaths": 0,
+        "full_improvement_batches": 0,
+        "accepted_full_batches": 0,
+        "accepted_half_batches": 0,
+        "full_mixed_damage_min": 0.023540812551308243,
+        "full_mixed_damage_mean": 0.14125924837120157,
+        "full_mixed_damage_max": 0.3808628762634936,
+        "half_improvement_batches": 0,
+        "accepted_batches_history_damage": 0,
+        "committed_mixed_damage_sum": 0
+      },
+      "baseline": {
+        "short": {
+          "strict": 0.1629162916291629,
+          "ordinary": 0.268001800180018,
+          "idle_per1000": 43.0987431214002
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "endpoint": {
+        "short": {
+          "strict": 0.1579295154185022,
+          "ordinary": 0.28810572687224667,
+          "idle_per1000": 46.875131279686734
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "per_family_counts": [
+        {
+          "condition": "short",
+          "family": 0,
+          "matured": 1135,
+          "completed": 341,
+          "clean_completed": 166,
+          "inactive_actions": 424,
+          "inactive_opportunities": 9149
+        },
+        {
+          "condition": "long_both",
+          "family": 0,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        },
+        {
+          "condition": "short",
+          "family": 1,
+          "matured": 1135,
+          "completed": 379,
+          "clean_completed": 204,
+          "inactive_actions": 420,
+          "inactive_opportunities": 9350
+        },
+        {
+          "condition": "long_both",
+          "family": 1,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        },
+        {
+          "condition": "short",
+          "family": 2,
+          "matured": 1135,
+          "completed": 312,
+          "clean_completed": 170,
+          "inactive_actions": 375,
+          "inactive_opportunities": 9018
+        },
+        {
+          "condition": "long_both",
+          "family": 2,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        },
+        {
+          "condition": "short",
+          "family": 3,
+          "matured": 1135,
+          "completed": 276,
+          "clean_completed": 177,
+          "inactive_actions": 488,
+          "inactive_opportunities": 8929
+        },
+        {
+          "condition": "long_both",
+          "family": 3,
+          "matured": 178,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 19894
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "arm": "half_only",
+      "structural": {
+        "eligible_pairs": 640,
+        "nonzero_pairs": 640,
+        "cumulative_births": 0,
+        "cumulative_deaths": 0,
+        "full_improvement_batches": 0,
+        "accepted_full_batches": 0,
+        "accepted_half_batches": 0,
+        "full_mixed_damage_min": 0.02344945949252153,
+        "full_mixed_damage_mean": 0.10338456297765161,
+        "full_mixed_damage_max": 0.42816361147815596,
+        "half_improvement_batches": 0,
+        "accepted_batches_history_damage": 0,
+        "committed_mixed_damage_sum": 0
+      },
+      "baseline": {
+        "short": {
+          "strict": 0.14716312056737588,
+          "ordinary": 0.21808510638297873,
+          "idle_per1000": 39.709601754672654
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "endpoint": {
+        "short": {
+          "strict": 0.16453180212014135,
+          "ordinary": 0.22835689045936397,
+          "idle_per1000": 41.918605409150345
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "per_family_counts": [
+        {
+          "condition": "short",
+          "family": 0,
+          "matured": 1132,
+          "completed": 255,
+          "clean_completed": 190,
+          "inactive_actions": 435,
+          "inactive_opportunities": 9067
+        },
+        {
+          "condition": "long_both",
+          "family": 0,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        },
+        {
+          "condition": "short",
+          "family": 1,
+          "matured": 1132,
+          "completed": 284,
+          "clean_completed": 203,
+          "inactive_actions": 360,
+          "inactive_opportunities": 9096
+        },
+        {
+          "condition": "long_both",
+          "family": 1,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        },
+        {
+          "condition": "short",
+          "family": 2,
+          "matured": 1132,
+          "completed": 257,
+          "clean_completed": 182,
+          "inactive_actions": 325,
+          "inactive_opportunities": 8984
+        },
+        {
+          "condition": "long_both",
+          "family": 2,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        },
+        {
+          "condition": "short",
+          "family": 3,
+          "matured": 1132,
+          "completed": 238,
+          "clean_completed": 170,
+          "inactive_actions": 393,
+          "inactive_opportunities": 8943
+        },
+        {
+          "condition": "long_both",
+          "family": 3,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "arm": "full_eligible",
+      "structural": {
+        "eligible_pairs": 640,
+        "nonzero_pairs": 640,
+        "cumulative_births": 0,
+        "cumulative_deaths": 0,
+        "full_improvement_batches": 0,
+        "accepted_full_batches": 0,
+        "accepted_half_batches": 0,
+        "full_mixed_damage_min": 0.02344945949252153,
+        "full_mixed_damage_mean": 0.10338456297765161,
+        "full_mixed_damage_max": 0.42816361147815596,
+        "half_improvement_batches": 0,
+        "accepted_batches_history_damage": 0,
+        "committed_mixed_damage_sum": 0
+      },
+      "baseline": {
+        "short": {
+          "strict": 0.14716312056737588,
+          "ordinary": 0.21808510638297873,
+          "idle_per1000": 39.709601754672654
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "endpoint": {
+        "short": {
+          "strict": 0.16453180212014135,
+          "ordinary": 0.22835689045936397,
+          "idle_per1000": 41.918605409150345
+        },
+        "long_both": {
+          "strict": 0.0,
+          "ordinary": 0.0,
+          "idle_per1000": 0.0
+        }
+      },
+      "per_family_counts": [
+        {
+          "condition": "short",
+          "family": 0,
+          "matured": 1132,
+          "completed": 255,
+          "clean_completed": 190,
+          "inactive_actions": 435,
+          "inactive_opportunities": 9067
+        },
+        {
+          "condition": "long_both",
+          "family": 0,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        },
+        {
+          "condition": "short",
+          "family": 1,
+          "matured": 1132,
+          "completed": 284,
+          "clean_completed": 203,
+          "inactive_actions": 360,
+          "inactive_opportunities": 9096
+        },
+        {
+          "condition": "long_both",
+          "family": 1,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        },
+        {
+          "condition": "short",
+          "family": 2,
+          "matured": 1132,
+          "completed": 257,
+          "clean_completed": 182,
+          "inactive_actions": 325,
+          "inactive_opportunities": 8984
+        },
+        {
+          "condition": "long_both",
+          "family": 2,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        },
+        {
+          "condition": "short",
+          "family": 3,
+          "matured": 1132,
+          "completed": 238,
+          "clean_completed": 170,
+          "inactive_actions": 393,
+          "inactive_opportunities": 8943
+        },
+        {
+          "condition": "long_both",
+          "family": 3,
+          "matured": 169,
+          "completed": 0,
+          "clean_completed": 0,
+          "inactive_actions": 0,
+          "inactive_opportunities": 20594
+        }
+      ]
+    }
+  ],
+  "paired_full_minus_half": [
+    {
+      "seed": 0,
+      "condition": "short",
+      "strict": 0.0,
+      "ordinary": 0.0,
+      "idle_per1000": 0.0
+    },
+    {
+      "seed": 0,
+      "condition": "long_both",
+      "strict": 0.0,
+      "ordinary": 0.0,
+      "idle_per1000": 0.0
+    },
+    {
+      "seed": 1,
+      "condition": "short",
+      "strict": 0.0,
+      "ordinary": 0.0,
+      "idle_per1000": 0.0
+    },
+    {
+      "seed": 1,
+      "condition": "long_both",
+      "strict": 0.0,
+      "ordinary": 0.0,
+      "idle_per1000": 0.0
+    },
+    {
+      "seed": 2,
+      "condition": "short",
+      "strict": 0.0,
+      "ordinary": 0.0,
+      "idle_per1000": 0.0
+    },
+    {
+      "seed": 2,
+      "condition": "long_both",
+      "strict": 0.0,
+      "ordinary": 0.0,
+      "idle_per1000": 0.0
+    }
+  ],
+  "aggregate_paired": {
+    "short": {
+      "strict": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "ordinary": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "idle_per1000": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      }
+    },
+    "long_both": {
+      "strict": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "ordinary": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "idle_per1000": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      }
+    }
+  },
+  "result_bindings": [
+    {
+      "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\half_only\\result.json",
+      "sha256": "7ff1aead949e125758026af1b690afe4a70a75942cecb05c35c71481486c878c",
+      "result_hash": "687a2a3b32d5eb6585adac01f0e70993b52e87df4528c31ed895a3284772e70d"
+    },
+    {
+      "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\full_eligible\\result.json",
+      "sha256": "4b77678a3ff606f38a6c2e773aeb0c7acfaf9630f4a81a1b9a6a1e0bc3bf81ff",
+      "result_hash": "161eedd544a88e83aa0d068b446503a60f5d0eedcafcfe3b27d796f6fbe1a33c"
+    },
+    {
+      "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\half_only\\result.json",
+      "sha256": "cfb990693f61fa95be1ddc51f587cdcdc8a5954fc52aea1e9f6bcc8093f16574",
+      "result_hash": "0318a84785e2b0a828f309bd72fad97b025aa7dd2550b02007099d869de4abe0"
+    },
+    {
+      "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\full_eligible\\result.json",
+      "sha256": "835b1eefcf324e5f8c0993b87a7a34c4963eae48173256a0e133453c84097f84",
+      "result_hash": "8eae51170f93a9bd44563d53c35c020c8b89ca29581d4b1aa416405325fcfe14"
+    },
+    {
+      "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\half_only\\result.json",
+      "sha256": "ef8e62590d84702c81c64b26af1373b430d4eb9716f22865608e43dbffe9831e",
+      "result_hash": "6ef9a4c6e937273678b9e18acdcfd3fc80c74e21048a10907392ce0509b289fa"
+    },
+    {
+      "path": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\full_eligible\\result.json",
+      "sha256": "710a90d3d5af657cacad81f708b6eb5c6938dd36ed8398ce3a57109b6e811ded",
+      "result_hash": "e3e711b734d202721c2c4195f07ebbd33a7da9df62c5d7edf5d5c22ecae3f817"
+    }
+  ],
+  "limits": [
+    "This tests a loss-gated operator in trained core/shared finite-window models, not the zero-behavior ports/RTRL architecture.",
+    "Deletion of a jointly tested batch does not establish that each pair is harmless or identify a disposable memory.",
+    "A lower candidate mixed loss may increase history loss. Equal probe counts and scheduled learning budgets do not force identical trajectories.",
+    "Source-versus-endpoint change is descriptive across time; primary causal contrast is paired full-minus-half complete endpoint systems under matched external commands.",
+    "15 proposals execute inside128 updates; proposal16 is pending and remains unexecuted."
+  ],
+  "primary_scope": "each endpoint complete world/hidden/parameters, detached with no reset and free full11 argmax; paired arms must share external future commands/scheduler and cases while receipts/h follow their own actions",
+  "digest_codec": "Initial direct JSON digest check failed. Original B files/hash retained; exact original hash verified after restoring only native endpoint phase_codes integer keys and three Regime tuples.",
+  "analysis_source": {
+    "path": "F:\\agi\\experiments\\coverage_exit\\retirement_report.py",
+    "sha256": "9929ac453b5e6433979b03a19f633b1a26dc621b6f9df98b781111d82bb17290"
+  },
+  "report_hash": "9c05fe823cea67c553f12072003367d9167adcc2df6587db33a7f26047101217"
+}

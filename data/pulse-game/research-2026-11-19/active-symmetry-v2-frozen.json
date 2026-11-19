@@ -1,0 +1,52 @@
+{
+  "held_start": 93910101,
+  "worlds": 384,
+  "births": [
+    173,
+    211
+  ],
+  "offer_start": 94020101,
+  "offer_worlds": 192,
+  "prices_start": 94120101,
+  "price_worlds": 192,
+  "price_support": {
+    "remaining": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      10,
+      14
+    ],
+    "input_gain": [
+      0,
+      0.45,
+      1.0,
+      1.5
+    ],
+    "current_fees": [
+      0.1,
+      0.72
+    ],
+    "other_fee": 0.36,
+    "other_gain": 0.5
+  },
+  "training": "No constraint on coefficient signs. Use only six raw public or endogenous state features rather than the original random expansion. Physically execute matched pairs of short/long public budgets and cheap/costly offers at one randomly assigned area, sharing scene and gate sampling coin. Learn gate solely from actual actor\u2013critic net returns.",
+  "primary": "Expect positive paired world-level net payoff over same-probe count-and-fee randomized timings and no-probe on new worlds. Under physically identical offer states and only current fee changed, expect average low minus high probe rate positive with 95% lower above 0. Keep if cost direction is wrong or if payoffs fail.",
+  "secondary": "Compare to hand-written, exact matched quotas, public Bayesian and rank-certain gate. The original random-feature gate is a same-state price reference, while whole-life panels of the original and paired gates use disjoint worlds. Architecture and training curriculum both changed.",
+  "source": {
+    "active_symmetry_paired.py": "f70d130d032fb2e16bba2022879d12e675bb2561aaf4c8320feec99e583e9698",
+    "active_symmetry_prices.py": "54064c4b3e74222de7a83573f32573b816d011347ecbe165796db656cd3cddc5",
+    "active_symmetry_offers.py": "ca9de1e0fe36c9366c769b34a087440fed1f022ee8265a0ac7115f5a2acd31f0",
+    "active_symmetry_world.py": "3f1f7e8fe50761589f124ffba14ed59fe44d8188172c250b074089daa3ce49a5",
+    "active_symmetry_train.py": "4afc3d126bd7062f4da628dc9c58e2f27c4c40f298df4b008ab1368f2cc497d5",
+    "active_symmetry_agent.py": "5cd6a0c1ddaf5f079bdda92eccf492baa1a59fd7db91d4776d5743b192cd3130",
+    "symmetry_spike.py": "29242ab7f3b44d4332494c6aafbe1f4f4ff6314b699231f7d29fdb684f860dd2",
+    "symmetry_world.py": "a45aed2f6c893b64428e49d9a9ee1ddfc2c73fe9f49de8d3ccde9c5b9c2877e0"
+  },
+  "checkpoints": {
+    "active-symmetry-v2-trained-5339.json": "d2bc688042ac85a00484591e6237b386a8282b9f524dadeefd77fdd7793e682a",
+    "active-symmetry-v2-trained-6811.json": "c134f3c5d88da0328ded8207d1b8fbfb7a50431b5c210b6d02895508af0d7390"
+  }
+}

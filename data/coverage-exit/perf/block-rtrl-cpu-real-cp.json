@@ -1,0 +1,615 @@
+{
+  "format": "coverage-exit-fast-block-rtrl-benchmark-v1",
+  "created_utc": "2026-11-02T14:09:43.183954+00:00",
+  "backend": {
+    "backend": "analytic-full-heun-block-adjoint-fp64-v1",
+    "source": "F:\\agi\\experiments\\coverage_exit\\fast_credit.py",
+    "source_sha256": "f94b7aa3aa240efadf059e4e8cff6681e5b2974ebc8ed694cc1366f3e3db9f4b",
+    "precision": "float64; no AMP, TF32, reduced dtype, sparsification or truncation",
+    "equivalence": "same real-arithmetic derivatives; floating reduction order differs",
+    "scope": "block J/K only; inherited live loss, full S, clipping and Adam",
+    "measured_source_snapshot": "F:\\agi\\data\\coverage-exit\\perf\\block-rtrl-cpu-real-cp.fast-credit-source.py"
+  },
+  "native_source_sha256": {
+    "run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+    "model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "credit.py": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+    "plasticity.py": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7"
+  },
+  "runtime": {
+    "python": "3.14.5",
+    "torch": "2.11.0+cu130",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "pid": 161464,
+    "threads": 1,
+    "cpu_affinity_requested": 0,
+    "cpu_affinity_set": [
+      0
+    ],
+    "cpu_topology": {
+      "source": "Windows GetLogicalProcessorInformation / RelationProcessorCore",
+      "physical_cores": [
+        {
+          "logical_processors": [
+            0,
+            1
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            2,
+            3
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            4,
+            5
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            6,
+            7
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            8,
+            9
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            10,
+            11
+          ],
+          "hyperthreaded": true
+        },
+        {
+          "logical_processors": [
+            12
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            13
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            14
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            15
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            16
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            17
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            18
+          ],
+          "hyperthreaded": false
+        },
+        {
+          "logical_processors": [
+            19
+          ],
+          "hyperthreaded": false
+        }
+      ]
+    },
+    "device": "cpu",
+    "dtype": "float64",
+    "AMP": false,
+    "TF32": false,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "cuda_available_in_runtime": true
+  },
+  "arguments": {
+    "output": "data/coverage-exit/perf/block-rtrl-cpu-real-cp.json",
+    "interface": "ports",
+    "mode": "undirected",
+    "width": 80,
+    "batch_size": 8,
+    "ticks": 128,
+    "threads": 1,
+    "cpu": 0,
+    "cpus": null,
+    "device": "cpu",
+    "seed": 101,
+    "calibration_updates": 1,
+    "continuation_updates": 3,
+    "checkpoint": "data/undirected/main-v1/training/seed_000/ports__undirected__rtrl__fixed__warmup/checkpoint_tick_131072.pt",
+    "repeats": 4,
+    "warmups": 1,
+    "workload": "all",
+    "probe_backend": null,
+    "probe_phase": "trainer",
+    "environment_note": "Coordinated CPU window: formal A and B training finished, C not started, A audit restricted to logical CPU12; no project worker competes on logical CPU0,2,4,6; background OS processes left unchanged; CP recovery/validation excluded from timing",
+    "thread_sweep": null
+  },
+  "cases": [
+    {
+      "interface": "ports",
+      "mode": "undirected",
+      "dimensions": {
+        "H": 80,
+        "B": 8,
+        "T": 128,
+        "P_dynamic": 3160
+      },
+      "origin": {
+        "checkpoint": "F:\\agi\\data\\undirected\\main-v1\\training\\seed_000\\ports__undirected__rtrl__fixed__warmup\\checkpoint_tick_131072.pt",
+        "updates": 1024,
+        "checkpoint_sha256": "160763d07d58958a3e647ecd22368b0ff185cd86e1f959d076757ead5ded6f2a",
+        "strict_sources": true
+      },
+      "matched_input_record_hash": "74e0c0dada785191cd2a1bfd29a0233b1c5948a9dec66267cb16c1f52e7a8c0c",
+      "starting_full_S_nonzero": true,
+      "accuracy": {
+        "J": {
+          "bitwise_equal": true,
+          "max_abs_error": 0.0,
+          "max_abs_error_over_reference_max": 0.0,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "K": {
+          "bitwise_equal": false,
+          "max_abs_error": 4.440892098500626e-15,
+          "max_abs_error_over_reference_max": 2.8120170208097744e-15,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "live_gradients": {
+          "edge_shared": {
+            "bitwise_equal": true,
+            "max_abs_error": 0.0,
+            "max_abs_error_over_reference_max": 0.0,
+            "allclose_atol_3e-12_rtol_3e-11": true,
+            "all_finite": true
+          }
+        },
+        "next_full_S": {
+          "bitwise_equal": false,
+          "max_abs_error": 4.440892098500626e-15,
+          "max_abs_error_over_reference_max": 2.807995697012141e-15,
+          "allclose_atol_3e-12_rtol_3e-11": true,
+          "all_finite": true
+        },
+        "continuation": [
+          {
+            "tick": 131200,
+            "post_Adam_parameters": {
+              "edge_shared": {
+                "bitwise_equal": true,
+                "max_abs_error": 0.0,
+                "max_abs_error_over_reference_max": 0.0,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "Adam_state": {
+              "0": {
+                "step": {
+                  "bitwise_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_abs_error_over_reference_max": 0.0,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                },
+                "exp_avg": {
+                  "bitwise_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_abs_error_over_reference_max": 0.0,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                },
+                "exp_avg_sq": {
+                  "bitwise_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_abs_error_over_reference_max": 0.0,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                }
+              }
+            },
+            "live_hidden": {
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "max_abs_error_over_reference_max": 0.0,
+              "allclose_atol_3e-12_rtol_3e-11": true,
+              "all_finite": true
+            },
+            "next_full_S": {
+              "bitwise_equal": false,
+              "max_abs_error": 4.440892098500626e-15,
+              "max_abs_error_over_reference_max": 2.807995697012141e-15,
+              "allclose_atol_3e-12_rtol_3e-11": true,
+              "all_finite": true
+            },
+            "clip_scales": {
+              "native": 1.0,
+              "analytic": 1.0
+            },
+            "bitwise_invariant": {
+              "actions": true,
+              "action_hash": true,
+              "data_hash": true,
+              "world": true,
+              "auxiliary_source": true,
+              "replay": true
+            },
+            "live_gradients": {
+              "edge_shared": {
+                "bitwise_equal": true,
+                "max_abs_error": 0.0,
+                "max_abs_error_over_reference_max": 0.0,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "auxiliary_gradients": {
+              "edge_shared": {
+                "bitwise_equal": true,
+                "max_abs_error": 0.0,
+                "max_abs_error_over_reference_max": 0.0,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "combined_gradients": {
+              "edge_shared": {
+                "bitwise_equal": true,
+                "max_abs_error": 0.0,
+                "max_abs_error_over_reference_max": 0.0,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            }
+          },
+          {
+            "tick": 131328,
+            "post_Adam_parameters": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 2.168404344971009e-19,
+                "max_abs_error_over_reference_max": 2.9339681149061644e-19,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "Adam_state": {
+              "0": {
+                "step": {
+                  "bitwise_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_abs_error_over_reference_max": 0.0,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                },
+                "exp_avg": {
+                  "bitwise_equal": false,
+                  "max_abs_error": 8.673617379884035e-19,
+                  "max_abs_error_over_reference_max": 3.7452092766382565e-17,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                },
+                "exp_avg_sq": {
+                  "bitwise_equal": false,
+                  "max_abs_error": 1.3552527156068805e-20,
+                  "max_abs_error_over_reference_max": 1.1261067686447072e-17,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                }
+              }
+            },
+            "live_hidden": {
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "max_abs_error_over_reference_max": 0.0,
+              "allclose_atol_3e-12_rtol_3e-11": true,
+              "all_finite": true
+            },
+            "next_full_S": {
+              "bitwise_equal": false,
+              "max_abs_error": 4.6629367034256575e-15,
+              "max_abs_error_over_reference_max": 2.9182145781855175e-15,
+              "allclose_atol_3e-12_rtol_3e-11": true,
+              "all_finite": true
+            },
+            "clip_scales": {
+              "native": 1.0,
+              "analytic": 1.0
+            },
+            "bitwise_invariant": {
+              "actions": true,
+              "action_hash": true,
+              "data_hash": true,
+              "world": true,
+              "auxiliary_source": true,
+              "replay": true
+            },
+            "live_gradients": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 1.214306433183765e-17,
+                "max_abs_error_over_reference_max": 2.10808130197868e-16,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "auxiliary_gradients": {
+              "edge_shared": {
+                "bitwise_equal": true,
+                "max_abs_error": 0.0,
+                "max_abs_error_over_reference_max": 0.0,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "combined_gradients": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 6.938893903907228e-18,
+                "max_abs_error_over_reference_max": 2.515708422719614e-16,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            }
+          },
+          {
+            "tick": 131456,
+            "post_Adam_parameters": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 6.938893903907228e-18,
+                "max_abs_error_over_reference_max": 9.387909245580553e-18,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "Adam_state": {
+              "0": {
+                "step": {
+                  "bitwise_equal": true,
+                  "max_abs_error": 0.0,
+                  "max_abs_error_over_reference_max": 0.0,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                },
+                "exp_avg": {
+                  "bitwise_equal": false,
+                  "max_abs_error": 8.673617379884035e-19,
+                  "max_abs_error_over_reference_max": 4.165351377574468e-17,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                },
+                "exp_avg_sq": {
+                  "bitwise_equal": false,
+                  "max_abs_error": 1.3552527156068805e-20,
+                  "max_abs_error_over_reference_max": 1.1256784204477944e-17,
+                  "allclose_atol_3e-12_rtol_3e-11": true,
+                  "all_finite": true
+                }
+              }
+            },
+            "live_hidden": {
+              "bitwise_equal": true,
+              "max_abs_error": 0.0,
+              "max_abs_error_over_reference_max": 0.0,
+              "allclose_atol_3e-12_rtol_3e-11": true,
+              "all_finite": true
+            },
+            "next_full_S": {
+              "bitwise_equal": false,
+              "max_abs_error": 4.884981308350689e-15,
+              "max_abs_error_over_reference_max": 3.040494559455125e-15,
+              "allclose_atol_3e-12_rtol_3e-11": true,
+              "all_finite": true
+            },
+            "clip_scales": {
+              "native": 1.0,
+              "analytic": 1.0
+            },
+            "bitwise_invariant": {
+              "actions": true,
+              "action_hash": true,
+              "data_hash": true,
+              "world": true,
+              "auxiliary_source": true,
+              "replay": true
+            },
+            "live_gradients": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 1.474514954580286e-17,
+                "max_abs_error_over_reference_max": 2.676854575601453e-16,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "auxiliary_gradients": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 4.336808689942018e-19,
+                "max_abs_error_over_reference_max": 5.5982157392454435e-18,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            },
+            "combined_gradients": {
+              "edge_shared": {
+                "bitwise_equal": false,
+                "max_abs_error": 6.938893903907228e-18,
+                "max_abs_error_over_reference_max": 1.3385695461990882e-16,
+                "allclose_atol_3e-12_rtol_3e-11": true,
+                "all_finite": true
+              }
+            }
+          }
+        ]
+      },
+      "timings": {
+        "block_jacobians": {
+          "seconds": {
+            "native": [
+              3.0770916000037687,
+              2.674900500001968,
+              2.3505202000087593,
+              2.692769999994198
+            ],
+            "analytic": [
+              0.2281920999957947,
+              0.2279943000030471,
+              0.2198627000034321,
+              0.193693200009875
+            ]
+          },
+          "median_seconds": {
+            "native": 2.683835249998083,
+            "analytic": 0.2239285000032396
+          },
+          "native_over_analytic_median_speedup": 11.98523300946175,
+          "pair_order": [
+            [
+              "native",
+              "analytic"
+            ],
+            [
+              "analytic",
+              "native"
+            ],
+            [
+              "native",
+              "analytic"
+            ],
+            [
+              "analytic",
+              "native"
+            ]
+          ],
+          "warmups_per_backend": 1,
+          "prepare_and_gc_outside_timed_region": true,
+          "device_synchronized_end_to_end": false
+        },
+        "full_credit_gradients_and_S": {
+          "seconds": {
+            "native": [
+              3.0386900000012247,
+              2.793536299999687,
+              2.5487653000018327,
+              3.327912799999467
+            ],
+            "analytic": [
+              0.2849874999956228,
+              0.2995621000009123,
+              0.2793716000014683,
+              0.28665450001426507
+            ]
+          },
+          "median_seconds": {
+            "native": 2.916113150000456,
+            "analytic": 0.2858210000049439
+          },
+          "native_over_analytic_median_speedup": 10.202585359193394,
+          "pair_order": [
+            [
+              "native",
+              "analytic"
+            ],
+            [
+              "analytic",
+              "native"
+            ],
+            [
+              "native",
+              "analytic"
+            ],
+            [
+              "analytic",
+              "native"
+            ]
+          ],
+          "warmups_per_backend": 1,
+          "prepare_and_gc_outside_timed_region": true,
+          "device_synchronized_end_to_end": false
+        },
+        "full_native_train_update": {
+          "seconds": {
+            "native": [
+              3.517419700001483,
+              2.6998236999934306,
+              2.629076900004293,
+              3.0058650999999372
+            ],
+            "analytic": [
+              0.6490984999982174,
+              0.6768482999905245,
+              0.7498826999944868,
+              0.5894690999994054
+            ]
+          },
+          "median_seconds": {
+            "native": 2.852844399996684,
+            "analytic": 0.662973399994371
+          },
+          "native_over_analytic_median_speedup": 4.303105373489956,
+          "pair_order": [
+            [
+              "native",
+              "analytic"
+            ],
+            [
+              "analytic",
+              "native"
+            ],
+            [
+              "native",
+              "analytic"
+            ],
+            [
+              "analytic",
+              "native"
+            ]
+          ],
+          "warmups_per_backend": 1,
+          "prepare_and_gc_outside_timed_region": true,
+          "device_synchronized_end_to_end": false
+        }
+      },
+      "process_memory_after_case": {
+        "working_set_bytes": 1206456320,
+        "lifetime_peak_working_set_bytes": 1331892224,
+        "private_commit_bytes": 2360619008,
+        "lifetime_peak_private_commit_bytes": 2502733824
+      }
+    }
+  ],
+  "benchmark_source_snapshot": "F:\\agi\\data\\coverage-exit\\perf\\block-rtrl-cpu-real-cp.benchmark-source.py",
+  "benchmark_source_sha256": "40e366cf18896e9b4d1d779aefa9eced54dc1399a374986488226887d534df16"
+}

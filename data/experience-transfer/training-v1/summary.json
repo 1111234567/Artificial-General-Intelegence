@@ -1,0 +1,1677 @@
+{
+  "passed": true,
+  "protocol_path": "F:\\agi\\data\\experience-transfer\\training-v1\\protocol.json",
+  "protocol_sha256": "14467234ef21149a6d951a70806339030fe2809e5ec02212816c5f0ae8ec1b6e",
+  "source_sha256": "b2c34d4616406665892807059c5cf6a1b84c1b9ddef508ef15620407c723db19",
+  "seeds": {
+    "0": {
+      "spec": {
+        "history_cue": 0,
+        "B_cue": 1,
+        "A": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "B": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "C": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "conflict_raw": [
+          1,
+          3
+        ],
+        "shared_raw": [
+          0,
+          2
+        ]
+      },
+      "arms": {
+        "related": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B000.pt",
+              "sha256": "efdbef3bac36b87db79f2440150004628e9c37b5dbccaf56154be34a67313859",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 3072,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\Bfirst002.pt",
+              "sha256": "9badd5c5bdefd20cddd5207ed12962a09cf959ab82d538ae97a76dfde429d2a1",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 3074,
+              "B_unique_feedback_positions": 24525,
+              "B_unique_nonwait_feedback": 597,
+              "trained_sequence_B_NEW": 303,
+              "trained_sequence_B_REPLACE": 80,
+              "world_cumulative_B_NEW": 305,
+              "world_cumulative_B_REPLACE": 80
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\Bfirst008.pt",
+              "sha256": "366a0819b5732d007dc58c510ac69c957ee1093fafeb6499c22cfa417c461f10",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 3080,
+              "B_unique_feedback_positions": 122829,
+              "B_unique_nonwait_feedback": 2557,
+              "trained_sequence_B_NEW": 1239,
+              "trained_sequence_B_REPLACE": 354,
+              "world_cumulative_B_NEW": 1241,
+              "world_cumulative_B_REPLACE": 354
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B001.pt",
+              "sha256": "6edd3f3759ac4d9ea2e67172618a8ef804a7b4b3ae158e0c24cdf3a8d015bafe",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 3328,
+              "B_unique_feedback_positions": 122829,
+              "B_unique_nonwait_feedback": 2557,
+              "trained_sequence_B_NEW": 1239,
+              "trained_sequence_B_REPLACE": 354,
+              "world_cumulative_B_NEW": 1241,
+              "world_cumulative_B_REPLACE": 354
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B002.pt",
+              "sha256": "97f746002d988258e9c17f8af4e4b9225241305a14b6134e1d83c5adc5a1ee0a",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 3584,
+              "B_unique_feedback_positions": 253901,
+              "B_unique_nonwait_feedback": 5111,
+              "trained_sequence_B_NEW": 2452,
+              "trained_sequence_B_REPLACE": 714,
+              "world_cumulative_B_NEW": 2454,
+              "world_cumulative_B_REPLACE": 714
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B004.pt",
+              "sha256": "c54ffd31f70c8ce2a02d31761a578c79d540999ff69cf809ef9a5f9762a9fd71",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 4096,
+              "B_unique_feedback_positions": 516045,
+              "B_unique_nonwait_feedback": 10241,
+              "trained_sequence_B_NEW": 4911,
+              "trained_sequence_B_REPLACE": 1429,
+              "world_cumulative_B_NEW": 4913,
+              "world_cumulative_B_REPLACE": 1429
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\related\\B008.pt",
+              "sha256": "cd62c78e8b0f8552336cfc6a1a0cdd96eb77d9e0de01e685ab3427a2b6fb8add",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 5120,
+              "B_unique_feedback_positions": 1040333,
+              "B_unique_nonwait_feedback": 20480,
+              "trained_sequence_B_NEW": 9820,
+              "trained_sequence_B_REPLACE": 2870,
+              "world_cumulative_B_NEW": 9822,
+              "world_cumulative_B_REPLACE": 2870
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5892,
+            "completed_matured": 4703,
+            "clean_completed_matured": 2370
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 2,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9822,
+            "endpoint_world_B_replace": 2870,
+            "trained_sequence_work_B_new": 9820,
+            "trained_sequence_work_B_replace": 2870,
+            "endpoint_minus_work_B_new": 2,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1040333,
+            "nonwait_feedback_positions": 20480,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 5120,
+              "gradient_lane_ticks": 41943040,
+              "B_gradient_label_positions": 33290656,
+              "B_unique_label_positions": 1040333,
+              "B_unique_nonwait_labels": 20480,
+              "B_unique_new_commands": 9820,
+              "B_unique_replace_commands": 2870,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              5,
+              9
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        },
+        "disjoint": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\B000.pt",
+              "sha256": "533c409ccd2dae625f5c13145708901f3805324ca09e23a20eb3abe9af0c9fb5",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 3072,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\Bfirst002.pt",
+              "sha256": "05ccea4af587e0541fea060e0a88955e459f2ac93797ca896a86da881b51f9af",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 3074,
+              "B_unique_feedback_positions": 24525,
+              "B_unique_nonwait_feedback": 597,
+              "trained_sequence_B_NEW": 303,
+              "trained_sequence_B_REPLACE": 80,
+              "world_cumulative_B_NEW": 305,
+              "world_cumulative_B_REPLACE": 80
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\Bfirst008.pt",
+              "sha256": "9e30f530cf0aa1402fba010f909d8d9398f1e64a2e0a5b340805a4842077f3c2",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 3080,
+              "B_unique_feedback_positions": 122829,
+              "B_unique_nonwait_feedback": 2557,
+              "trained_sequence_B_NEW": 1239,
+              "trained_sequence_B_REPLACE": 354,
+              "world_cumulative_B_NEW": 1241,
+              "world_cumulative_B_REPLACE": 354
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\B001.pt",
+              "sha256": "7cd98f56cf8ec48b6632842bf2357195f3cbc0064105403c6da3ca9f7d86a2c9",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 3328,
+              "B_unique_feedback_positions": 122829,
+              "B_unique_nonwait_feedback": 2557,
+              "trained_sequence_B_NEW": 1239,
+              "trained_sequence_B_REPLACE": 354,
+              "world_cumulative_B_NEW": 1241,
+              "world_cumulative_B_REPLACE": 354
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\B002.pt",
+              "sha256": "ba40b1b3b8ff86f6717ec1f66ddb0557111ff4ba2ba7a801c82ae357a3dd7736",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 3584,
+              "B_unique_feedback_positions": 253901,
+              "B_unique_nonwait_feedback": 5111,
+              "trained_sequence_B_NEW": 2452,
+              "trained_sequence_B_REPLACE": 714,
+              "world_cumulative_B_NEW": 2454,
+              "world_cumulative_B_REPLACE": 714
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\B004.pt",
+              "sha256": "d37785b044d28cfdcbc862025c3c4cdbf53b2434255fa0105e8ffd6221f59b4b",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 4096,
+              "B_unique_feedback_positions": 516045,
+              "B_unique_nonwait_feedback": 10241,
+              "trained_sequence_B_NEW": 4911,
+              "trained_sequence_B_REPLACE": 1429,
+              "world_cumulative_B_NEW": 4913,
+              "world_cumulative_B_REPLACE": 1429
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\disjoint\\B008.pt",
+              "sha256": "e1953335a637482764c0836fcb975048bb30aa60e843ff8ff32711ecd9ff0285",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 5120,
+              "B_unique_feedback_positions": 1040333,
+              "B_unique_nonwait_feedback": 20480,
+              "trained_sequence_B_NEW": 9820,
+              "trained_sequence_B_REPLACE": 2870,
+              "world_cumulative_B_NEW": 9822,
+              "world_cumulative_B_REPLACE": 2870
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5892,
+            "completed_matured": 4735,
+            "clean_completed_matured": 2215
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 2,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9822,
+            "endpoint_world_B_replace": 2870,
+            "trained_sequence_work_B_new": 9820,
+            "trained_sequence_work_B_replace": 2870,
+            "endpoint_minus_work_B_new": 2,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1040333,
+            "nonwait_feedback_positions": 20480,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 5120,
+              "gradient_lane_ticks": 41943040,
+              "B_gradient_label_positions": 33290656,
+              "B_unique_label_positions": 1040333,
+              "B_unique_nonwait_labels": 20480,
+              "B_unique_new_commands": 9820,
+              "B_unique_replace_commands": 2870,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              5,
+              9
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        },
+        "direct": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\B000.pt",
+              "sha256": "e9714fde0d9548321664ea15f81a23cbb26092c5c7bf64e918fee67eec63f55a",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 0,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\Bfirst002.pt",
+              "sha256": "64eb27109fde7f083d652fa79cdd5515fafb70e18d1b8149c87b1c1d32c9eb27",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 2,
+              "B_unique_feedback_positions": 24525,
+              "B_unique_nonwait_feedback": 597,
+              "trained_sequence_B_NEW": 303,
+              "trained_sequence_B_REPLACE": 80,
+              "world_cumulative_B_NEW": 305,
+              "world_cumulative_B_REPLACE": 80
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\Bfirst008.pt",
+              "sha256": "42025f76df4fe73e12b08405303d578722baf82ec1ad29fb9a7144c00df01ed0",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 8,
+              "B_unique_feedback_positions": 122829,
+              "B_unique_nonwait_feedback": 2557,
+              "trained_sequence_B_NEW": 1239,
+              "trained_sequence_B_REPLACE": 354,
+              "world_cumulative_B_NEW": 1241,
+              "world_cumulative_B_REPLACE": 354
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\B001.pt",
+              "sha256": "67a73a69b035c6f58147940dfd1d8311dd0b278e0e25a4e54760f5ee9a914341",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 256,
+              "B_unique_feedback_positions": 122829,
+              "B_unique_nonwait_feedback": 2557,
+              "trained_sequence_B_NEW": 1239,
+              "trained_sequence_B_REPLACE": 354,
+              "world_cumulative_B_NEW": 1241,
+              "world_cumulative_B_REPLACE": 354
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\B002.pt",
+              "sha256": "10c87d9a8528334224227f46dd722b65c07a7fb7421badc722d3fd8f8cc9e302",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 512,
+              "B_unique_feedback_positions": 253901,
+              "B_unique_nonwait_feedback": 5111,
+              "trained_sequence_B_NEW": 2452,
+              "trained_sequence_B_REPLACE": 714,
+              "world_cumulative_B_NEW": 2454,
+              "world_cumulative_B_REPLACE": 714
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\B004.pt",
+              "sha256": "eee8ad6fcd18617b9b387ff03b1463f9f8dbf48e24b19aaaf5d794fabee27f6a",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 1024,
+              "B_unique_feedback_positions": 516045,
+              "B_unique_nonwait_feedback": 10241,
+              "trained_sequence_B_NEW": 4911,
+              "trained_sequence_B_REPLACE": 1429,
+              "world_cumulative_B_NEW": 4913,
+              "world_cumulative_B_REPLACE": 1429
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\direct\\B008.pt",
+              "sha256": "5e79976e0c01cc709d00f64e47f1d6aa5fe9e1c2790e2af54908ac6674f9d2d7",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 2048,
+              "B_unique_feedback_positions": 1040333,
+              "B_unique_nonwait_feedback": 20480,
+              "trained_sequence_B_NEW": 9820,
+              "trained_sequence_B_REPLACE": 2870,
+              "world_cumulative_B_NEW": 9822,
+              "world_cumulative_B_REPLACE": 2870
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5892,
+            "completed_matured": 2694,
+            "clean_completed_matured": 437
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 2,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9822,
+            "endpoint_world_B_replace": 2870,
+            "trained_sequence_work_B_new": 9820,
+            "trained_sequence_work_B_replace": 2870,
+            "endpoint_minus_work_B_new": 2,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1040333,
+            "nonwait_feedback_positions": 20480,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 2048,
+              "gradient_lane_ticks": 16777216,
+              "B_gradient_label_positions": 33290656,
+              "B_unique_label_positions": 1040333,
+              "B_unique_nonwait_labels": 20480,
+              "B_unique_new_commands": 9820,
+              "B_unique_replace_commands": 2870,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        }
+      },
+      "pairing": {
+        "disjoint": {
+          "all_history_external_cases_exact": true,
+          "all_B_labels_masks_actions_exact": true,
+          "B_public_input_unequal_float_positions": 0
+        },
+        "direct": {
+          "all_history_external_cases_exact": true,
+          "all_B_labels_masks_actions_exact": true,
+          "B_public_input_unequal_float_positions": 22
+        }
+      },
+      "online_pairing": {
+        "seed": 0,
+        "B_feedback_position_exact": true,
+        "B_actions_exact": true,
+        "obs_unequal_positions": 22,
+        "obs_unequal_B_slot_positions": 0,
+        "obs_unequal_nonB_slot_positions": 22,
+        "obs_unequal_ticks": 8,
+        "first_unequal_tick": 0,
+        "last_unequal_tick": 18,
+        "compared_to": "related",
+        "by_arm": {
+          "disjoint": {
+            "unequal_positions": 0
+          },
+          "direct": {
+            "unequal_positions": 22
+          }
+        }
+      },
+      "independent_audit_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_000\\training_independent_audit.json",
+      "independent_audit_sha256": "6d88bc73c1ca2ff0be898f07398a30d8d0ea90aee72c7ff326f067776342babb",
+      "independent_audit_source": "F:\\agi\\data\\experience-transfer\\training-v1\\audit-source-snapshots\\train_audit-before-command-accounting.py",
+      "independent_audit_source_sha256": "9be0968268a1546ce77aeba50ec18863fcef9db4a580e6014d8c6a8f731f2400"
+    },
+    "1": {
+      "spec": {
+        "history_cue": 1,
+        "B_cue": 2,
+        "A": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "B": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "C": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "conflict_raw": [
+          0,
+          2
+        ],
+        "shared_raw": [
+          1,
+          3
+        ]
+      },
+      "arms": {
+        "related": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B000.pt",
+              "sha256": "f07c74d4f286fcbd3c56258350e4f1e73b652ad64a2d42e3100c0278bacde978",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 3072,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\Bfirst002.pt",
+              "sha256": "f026a5301d496ad0839b8b93ecdadfbb3a4f7173cd5a552d7e248c96333e132f",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 3074,
+              "B_unique_feedback_positions": 24614,
+              "B_unique_nonwait_feedback": 574,
+              "trained_sequence_B_NEW": 302,
+              "trained_sequence_B_REPLACE": 67,
+              "world_cumulative_B_NEW": 303,
+              "world_cumulative_B_REPLACE": 67
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\Bfirst008.pt",
+              "sha256": "972389f2fbddea0cdc0a6c380b7c13f958852929a293cce216fefed7e7621143",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 3080,
+              "B_unique_feedback_positions": 122918,
+              "B_unique_nonwait_feedback": 2459,
+              "trained_sequence_B_NEW": 1198,
+              "trained_sequence_B_REPLACE": 343,
+              "world_cumulative_B_NEW": 1199,
+              "world_cumulative_B_REPLACE": 343
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B001.pt",
+              "sha256": "03af6506987890f40f2d898c22da02adbe3147a7ba597eb7fad4d9c8ac7e1491",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 3328,
+              "B_unique_feedback_positions": 122918,
+              "B_unique_nonwait_feedback": 2459,
+              "trained_sequence_B_NEW": 1198,
+              "trained_sequence_B_REPLACE": 343,
+              "world_cumulative_B_NEW": 1199,
+              "world_cumulative_B_REPLACE": 343
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B002.pt",
+              "sha256": "7b31b4f6e8d6974fad389faf00f0962b96dad938a57cc9d1ef5f0eaec07b42af",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 3584,
+              "B_unique_feedback_positions": 253990,
+              "B_unique_nonwait_feedback": 5037,
+              "trained_sequence_B_NEW": 2397,
+              "trained_sequence_B_REPLACE": 734,
+              "world_cumulative_B_NEW": 2398,
+              "world_cumulative_B_REPLACE": 734
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B004.pt",
+              "sha256": "ce88109e1e0e4d83763e1cd9a6836df6b1c96265369b5df8c5b9da0ec64b3df5",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 4096,
+              "B_unique_feedback_positions": 516134,
+              "B_unique_nonwait_feedback": 10183,
+              "trained_sequence_B_NEW": 4842,
+              "trained_sequence_B_REPLACE": 1491,
+              "world_cumulative_B_NEW": 4843,
+              "world_cumulative_B_REPLACE": 1491
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\related\\B008.pt",
+              "sha256": "bb6872ad2c159cd9054da85f6e020173bad01ba0debaa2a2392ad8d1ff98518e",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 5120,
+              "B_unique_feedback_positions": 1040422,
+              "B_unique_nonwait_feedback": 20451,
+              "trained_sequence_B_NEW": 9730,
+              "trained_sequence_B_REPLACE": 2952,
+              "world_cumulative_B_NEW": 9731,
+              "world_cumulative_B_REPLACE": 2952
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5838,
+            "completed_matured": 3742,
+            "clean_completed_matured": 1950
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 1,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9731,
+            "endpoint_world_B_replace": 2952,
+            "trained_sequence_work_B_new": 9730,
+            "trained_sequence_work_B_replace": 2952,
+            "endpoint_minus_work_B_new": 1,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1040422,
+            "nonwait_feedback_positions": 20451,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 5120,
+              "gradient_lane_ticks": 41943040,
+              "B_gradient_label_positions": 33293504,
+              "B_unique_label_positions": 1040422,
+              "B_unique_nonwait_labels": 20451,
+              "B_unique_new_commands": 9730,
+              "B_unique_replace_commands": 2952,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              5,
+              9
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        },
+        "disjoint": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\B000.pt",
+              "sha256": "34a7b7d8982fdb0b6a46d0a50319da882bbd4b0efb6098d88c7891e34c6bc38c",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 3072,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\Bfirst002.pt",
+              "sha256": "ec37deac862d05842de7b39d46a570711979a7ec8f2a15e45848e59f5d9f7f04",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 3074,
+              "B_unique_feedback_positions": 24614,
+              "B_unique_nonwait_feedback": 574,
+              "trained_sequence_B_NEW": 302,
+              "trained_sequence_B_REPLACE": 67,
+              "world_cumulative_B_NEW": 303,
+              "world_cumulative_B_REPLACE": 67
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\Bfirst008.pt",
+              "sha256": "f9549952ca6ee6f9b50058fad986b2e933d7e7ba0a37b19db018da986b261dc1",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 3080,
+              "B_unique_feedback_positions": 122918,
+              "B_unique_nonwait_feedback": 2459,
+              "trained_sequence_B_NEW": 1198,
+              "trained_sequence_B_REPLACE": 343,
+              "world_cumulative_B_NEW": 1199,
+              "world_cumulative_B_REPLACE": 343
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\B001.pt",
+              "sha256": "5b8749408f6a85b96133a0013bb5d8cb878b64a0a30463232e46ac63d0e28913",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 3328,
+              "B_unique_feedback_positions": 122918,
+              "B_unique_nonwait_feedback": 2459,
+              "trained_sequence_B_NEW": 1198,
+              "trained_sequence_B_REPLACE": 343,
+              "world_cumulative_B_NEW": 1199,
+              "world_cumulative_B_REPLACE": 343
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\B002.pt",
+              "sha256": "f680e31506f9280cd4090ec5b17edb2d0bf5798c9e2a7c9003c4f4967f9c0101",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 3584,
+              "B_unique_feedback_positions": 253990,
+              "B_unique_nonwait_feedback": 5037,
+              "trained_sequence_B_NEW": 2397,
+              "trained_sequence_B_REPLACE": 734,
+              "world_cumulative_B_NEW": 2398,
+              "world_cumulative_B_REPLACE": 734
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\B004.pt",
+              "sha256": "3bd5fe64c9210ebee99c9332bc304726a8db2c561ef0b0ddf3dfbd20e7976541",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 4096,
+              "B_unique_feedback_positions": 516134,
+              "B_unique_nonwait_feedback": 10183,
+              "trained_sequence_B_NEW": 4842,
+              "trained_sequence_B_REPLACE": 1491,
+              "world_cumulative_B_NEW": 4843,
+              "world_cumulative_B_REPLACE": 1491
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\disjoint\\B008.pt",
+              "sha256": "c720a45a04f98e74bcebc4d69ccec1215bb2bab82c1dedb124c0e291ce2c6fdd",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 5120,
+              "B_unique_feedback_positions": 1040422,
+              "B_unique_nonwait_feedback": 20451,
+              "trained_sequence_B_NEW": 9730,
+              "trained_sequence_B_REPLACE": 2952,
+              "world_cumulative_B_NEW": 9731,
+              "world_cumulative_B_REPLACE": 2952
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5838,
+            "completed_matured": 4316,
+            "clean_completed_matured": 2426
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 1,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9731,
+            "endpoint_world_B_replace": 2952,
+            "trained_sequence_work_B_new": 9730,
+            "trained_sequence_work_B_replace": 2952,
+            "endpoint_minus_work_B_new": 1,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1040422,
+            "nonwait_feedback_positions": 20451,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 5120,
+              "gradient_lane_ticks": 41943040,
+              "B_gradient_label_positions": 33293504,
+              "B_unique_label_positions": 1040422,
+              "B_unique_nonwait_labels": 20451,
+              "B_unique_new_commands": 9730,
+              "B_unique_replace_commands": 2952,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              5,
+              9
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        },
+        "direct": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\B000.pt",
+              "sha256": "87f8e949489a41a7d6e79d4797eb93b7f513f4534f7d00abe56148dba953a629",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 0,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\Bfirst002.pt",
+              "sha256": "72a523e44e374c2b7469cff5777ba9b44a4bc1800da2cc7453ee76d8ca41faf7",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 2,
+              "B_unique_feedback_positions": 24614,
+              "B_unique_nonwait_feedback": 574,
+              "trained_sequence_B_NEW": 302,
+              "trained_sequence_B_REPLACE": 67,
+              "world_cumulative_B_NEW": 303,
+              "world_cumulative_B_REPLACE": 67
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\Bfirst008.pt",
+              "sha256": "3f58a2c4a00f1b5b0edcd04da75949633bdadcf7eea2545a0f6b1b9c1066f056",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 8,
+              "B_unique_feedback_positions": 122918,
+              "B_unique_nonwait_feedback": 2459,
+              "trained_sequence_B_NEW": 1198,
+              "trained_sequence_B_REPLACE": 343,
+              "world_cumulative_B_NEW": 1199,
+              "world_cumulative_B_REPLACE": 343
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\B001.pt",
+              "sha256": "b584507ddf19c1b562496236ac024fdcda50a18e54398e2149b95dd02417697a",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 256,
+              "B_unique_feedback_positions": 122918,
+              "B_unique_nonwait_feedback": 2459,
+              "trained_sequence_B_NEW": 1198,
+              "trained_sequence_B_REPLACE": 343,
+              "world_cumulative_B_NEW": 1199,
+              "world_cumulative_B_REPLACE": 343
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\B002.pt",
+              "sha256": "744b14506a2b915eb589f4e890372246d290cc25e614d16b332ccb2e917b9caa",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 512,
+              "B_unique_feedback_positions": 253990,
+              "B_unique_nonwait_feedback": 5037,
+              "trained_sequence_B_NEW": 2397,
+              "trained_sequence_B_REPLACE": 734,
+              "world_cumulative_B_NEW": 2398,
+              "world_cumulative_B_REPLACE": 734
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\B004.pt",
+              "sha256": "392bb5f67ae834ae0eb86e050ac77f07870a05e821545e8e8eeaec97fe383c22",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 1024,
+              "B_unique_feedback_positions": 516134,
+              "B_unique_nonwait_feedback": 10183,
+              "trained_sequence_B_NEW": 4842,
+              "trained_sequence_B_REPLACE": 1491,
+              "world_cumulative_B_NEW": 4843,
+              "world_cumulative_B_REPLACE": 1491
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\direct\\B008.pt",
+              "sha256": "769a510e70219e67e9768fa84846656c08669491d8c0db2253e2b02ff9253526",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 2048,
+              "B_unique_feedback_positions": 1040422,
+              "B_unique_nonwait_feedback": 20451,
+              "trained_sequence_B_NEW": 9730,
+              "trained_sequence_B_REPLACE": 2952,
+              "world_cumulative_B_NEW": 9731,
+              "world_cumulative_B_REPLACE": 2952
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5838,
+            "completed_matured": 1655,
+            "clean_completed_matured": 270
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 1,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9731,
+            "endpoint_world_B_replace": 2952,
+            "trained_sequence_work_B_new": 9730,
+            "trained_sequence_work_B_replace": 2952,
+            "endpoint_minus_work_B_new": 1,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1040422,
+            "nonwait_feedback_positions": 20451,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 2048,
+              "gradient_lane_ticks": 16777216,
+              "B_gradient_label_positions": 33293504,
+              "B_unique_label_positions": 1040422,
+              "B_unique_nonwait_labels": 20451,
+              "B_unique_new_commands": 9730,
+              "B_unique_replace_commands": 2952,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        }
+      },
+      "pairing": {
+        "disjoint": {
+          "all_history_external_cases_exact": true,
+          "all_B_labels_masks_actions_exact": true,
+          "B_public_input_unequal_float_positions": 0
+        },
+        "direct": {
+          "all_history_external_cases_exact": true,
+          "all_B_labels_masks_actions_exact": true,
+          "B_public_input_unequal_float_positions": 20
+        }
+      },
+      "online_pairing": {
+        "seed": 1,
+        "B_feedback_position_exact": true,
+        "B_actions_exact": true,
+        "obs_unequal_positions": 20,
+        "obs_unequal_B_slot_positions": 0,
+        "obs_unequal_nonB_slot_positions": 20,
+        "obs_unequal_ticks": 8,
+        "first_unequal_tick": 0,
+        "last_unequal_tick": 26,
+        "compared_to": "related",
+        "by_arm": {
+          "disjoint": {
+            "unequal_positions": 0
+          },
+          "direct": {
+            "unequal_positions": 20
+          }
+        }
+      },
+      "independent_audit_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_001\\training_independent_audit.json",
+      "independent_audit_sha256": "fe4616afc35c22677fd6ad9f18b2e9ce13c7e590477433f03a82688a15e3d4c7",
+      "independent_audit_source": "F:\\agi\\experiments\\experience_transfer\\train_audit.py",
+      "independent_audit_source_sha256": "da5e27e86e68ce3951c2a420e97daac0f6a67342f8365fa24ac4337f5f1dfc3f"
+    },
+    "2": {
+      "spec": {
+        "history_cue": 2,
+        "B_cue": 0,
+        "A": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "B": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "C": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "conflict_raw": [
+          0,
+          1
+        ],
+        "shared_raw": [
+          2,
+          3
+        ]
+      },
+      "arms": {
+        "related": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B000.pt",
+              "sha256": "d881a360621cf63dcb502eda36a11094b268ca0e6eda8fa9af8de2531897158a",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 3072,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\Bfirst002.pt",
+              "sha256": "c240dfca60d12fc841b87fc141ec463637b8069ece9f73892118bda8ac9806a6",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 3074,
+              "B_unique_feedback_positions": 24173,
+              "B_unique_nonwait_feedback": 578,
+              "trained_sequence_B_NEW": 300,
+              "trained_sequence_B_REPLACE": 81,
+              "world_cumulative_B_NEW": 303,
+              "world_cumulative_B_REPLACE": 81
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\Bfirst008.pt",
+              "sha256": "feb2af8da82415364257404fc7dcc3a89cbd824597aca213fa9e74bf957545d7",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 3080,
+              "B_unique_feedback_positions": 122477,
+              "B_unique_nonwait_feedback": 2510,
+              "trained_sequence_B_NEW": 1223,
+              "trained_sequence_B_REPLACE": 348,
+              "world_cumulative_B_NEW": 1226,
+              "world_cumulative_B_REPLACE": 348
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B001.pt",
+              "sha256": "92f4ebde1e8f38e926299f3e1c4eddf569915dc28022ad591118fdbb144506ef",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 3328,
+              "B_unique_feedback_positions": 122477,
+              "B_unique_nonwait_feedback": 2510,
+              "trained_sequence_B_NEW": 1223,
+              "trained_sequence_B_REPLACE": 348,
+              "world_cumulative_B_NEW": 1226,
+              "world_cumulative_B_REPLACE": 348
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B002.pt",
+              "sha256": "5779e262273a232ffa2d52e830d573be19cb2501565c2d417fa2d9368ccb7f22",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 3584,
+              "B_unique_feedback_positions": 253549,
+              "B_unique_nonwait_feedback": 5053,
+              "trained_sequence_B_NEW": 2455,
+              "trained_sequence_B_REPLACE": 708,
+              "world_cumulative_B_NEW": 2458,
+              "world_cumulative_B_REPLACE": 708
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B004.pt",
+              "sha256": "986961bcda59140ae8b1645fcee2117fce96ec78db1fe82bdf983377e972bc0c",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 4096,
+              "B_unique_feedback_positions": 515693,
+              "B_unique_nonwait_feedback": 10243,
+              "trained_sequence_B_NEW": 4902,
+              "trained_sequence_B_REPLACE": 1468,
+              "world_cumulative_B_NEW": 4905,
+              "world_cumulative_B_REPLACE": 1468
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\related\\B008.pt",
+              "sha256": "a2cff3ce77ecaa21e5384df64049ba06a2267b1192022bd21808d8524fed32aa",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 5120,
+              "B_unique_feedback_positions": 1039981,
+              "B_unique_nonwait_feedback": 20512,
+              "trained_sequence_B_NEW": 9773,
+              "trained_sequence_B_REPLACE": 2975,
+              "world_cumulative_B_NEW": 9776,
+              "world_cumulative_B_REPLACE": 2975
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5877,
+            "completed_matured": 4395,
+            "clean_completed_matured": 2313
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 3,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9776,
+            "endpoint_world_B_replace": 2975,
+            "trained_sequence_work_B_new": 9773,
+            "trained_sequence_work_B_replace": 2975,
+            "endpoint_minus_work_B_new": 3,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1039981,
+            "nonwait_feedback_positions": 20512,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 5120,
+              "gradient_lane_ticks": 41943040,
+              "B_gradient_label_positions": 33279392,
+              "B_unique_label_positions": 1039981,
+              "B_unique_nonwait_labels": 20512,
+              "B_unique_new_commands": 9773,
+              "B_unique_replace_commands": 2975,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              5,
+              9
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        },
+        "disjoint": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\B000.pt",
+              "sha256": "be9bd6592706ca4515dc5b36cfc8f108fb079f480c00d3d4df38aafca3f159de",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 3072,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\Bfirst002.pt",
+              "sha256": "91b8d9841c6e73b7ef41b28b78251befe81bc644fcb30175f1a56c947d156c03",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 3074,
+              "B_unique_feedback_positions": 24173,
+              "B_unique_nonwait_feedback": 578,
+              "trained_sequence_B_NEW": 300,
+              "trained_sequence_B_REPLACE": 81,
+              "world_cumulative_B_NEW": 303,
+              "world_cumulative_B_REPLACE": 81
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\Bfirst008.pt",
+              "sha256": "660dabfedb77e2559e89224b5c65ade474789c237c116845719ef18bc874829d",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 3080,
+              "B_unique_feedback_positions": 122477,
+              "B_unique_nonwait_feedback": 2510,
+              "trained_sequence_B_NEW": 1223,
+              "trained_sequence_B_REPLACE": 348,
+              "world_cumulative_B_NEW": 1226,
+              "world_cumulative_B_REPLACE": 348
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\B001.pt",
+              "sha256": "51b3e05ca641f8bfdde1479413ee43de4ea7a911d3b8f98fe08f41dd9b8bf9dd",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 3328,
+              "B_unique_feedback_positions": 122477,
+              "B_unique_nonwait_feedback": 2510,
+              "trained_sequence_B_NEW": 1223,
+              "trained_sequence_B_REPLACE": 348,
+              "world_cumulative_B_NEW": 1226,
+              "world_cumulative_B_REPLACE": 348
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\B002.pt",
+              "sha256": "d0c6a0fbc400ac32b6296fad86af98372abb85c3d58dc567c38ee4207ea1d76a",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 3584,
+              "B_unique_feedback_positions": 253549,
+              "B_unique_nonwait_feedback": 5053,
+              "trained_sequence_B_NEW": 2455,
+              "trained_sequence_B_REPLACE": 708,
+              "world_cumulative_B_NEW": 2458,
+              "world_cumulative_B_REPLACE": 708
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\B004.pt",
+              "sha256": "265f12015204730ad836681f6e37282aacb12dd299028cc60bcce0e7f00b4323",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 4096,
+              "B_unique_feedback_positions": 515693,
+              "B_unique_nonwait_feedback": 10243,
+              "trained_sequence_B_NEW": 4902,
+              "trained_sequence_B_REPLACE": 1468,
+              "world_cumulative_B_NEW": 4905,
+              "world_cumulative_B_REPLACE": 1468
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\disjoint\\B008.pt",
+              "sha256": "9043381fd8cb0a0ff6ef0ad119583c208ead6297a1010021424e3874a17c7ebf",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 5120,
+              "B_unique_feedback_positions": 1039981,
+              "B_unique_nonwait_feedback": 20512,
+              "trained_sequence_B_NEW": 9773,
+              "trained_sequence_B_REPLACE": 2975,
+              "world_cumulative_B_NEW": 9776,
+              "world_cumulative_B_REPLACE": 2975
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5877,
+            "completed_matured": 4490,
+            "clean_completed_matured": 2604
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 3,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9776,
+            "endpoint_world_B_replace": 2975,
+            "trained_sequence_work_B_new": 9773,
+            "trained_sequence_work_B_replace": 2975,
+            "endpoint_minus_work_B_new": 3,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1039981,
+            "nonwait_feedback_positions": 20512,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 5120,
+              "gradient_lane_ticks": 41943040,
+              "B_gradient_label_positions": 33279392,
+              "B_unique_label_positions": 1039981,
+              "B_unique_nonwait_labels": 20512,
+              "B_unique_new_commands": 9773,
+              "B_unique_replace_commands": 2975,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              5,
+              9
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        },
+        "direct": {
+          "snapshots": [
+            {
+              "snapshot": "B000",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\B000.pt",
+              "sha256": "606f8692c65a492a76ca0d8cad4edb854479a5dd4315a44ba10228f750a0ab12",
+              "real_B_environment_ticks": 0,
+              "B_gradient_updates": 0,
+              "total_added_gradient_updates": 0,
+              "B_unique_feedback_positions": 0,
+              "B_unique_nonwait_feedback": 0,
+              "trained_sequence_B_NEW": 0,
+              "trained_sequence_B_REPLACE": 0,
+              "world_cumulative_B_NEW": 0,
+              "world_cumulative_B_REPLACE": 0
+            },
+            {
+              "snapshot": "Bfirst002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\Bfirst002.pt",
+              "sha256": "a61886cb5729cb79787d7ddfa0c7565508f6f790ecc4ddadd4ee089d14ef7e4c",
+              "real_B_environment_ticks": 257,
+              "B_gradient_updates": 2,
+              "total_added_gradient_updates": 2,
+              "B_unique_feedback_positions": 24173,
+              "B_unique_nonwait_feedback": 578,
+              "trained_sequence_B_NEW": 300,
+              "trained_sequence_B_REPLACE": 81,
+              "world_cumulative_B_NEW": 303,
+              "world_cumulative_B_REPLACE": 81
+            },
+            {
+              "snapshot": "Bfirst008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\Bfirst008.pt",
+              "sha256": "cf6ef71877f9bbf44773c5c2545f203a1258b50396352938dd1fee5186fc28c3",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 8,
+              "total_added_gradient_updates": 8,
+              "B_unique_feedback_positions": 122477,
+              "B_unique_nonwait_feedback": 2510,
+              "trained_sequence_B_NEW": 1223,
+              "trained_sequence_B_REPLACE": 348,
+              "world_cumulative_B_NEW": 1226,
+              "world_cumulative_B_REPLACE": 348
+            },
+            {
+              "snapshot": "B001",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\B001.pt",
+              "sha256": "43049829975823170f9caee0be75c24ea5c70977fa3502068a19c7f579a8c577",
+              "real_B_environment_ticks": 1025,
+              "B_gradient_updates": 256,
+              "total_added_gradient_updates": 256,
+              "B_unique_feedback_positions": 122477,
+              "B_unique_nonwait_feedback": 2510,
+              "trained_sequence_B_NEW": 1223,
+              "trained_sequence_B_REPLACE": 348,
+              "world_cumulative_B_NEW": 1226,
+              "world_cumulative_B_REPLACE": 348
+            },
+            {
+              "snapshot": "B002",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\B002.pt",
+              "sha256": "f71585b2322b7d9314e4b3977b7f4f09e5c2014d2a870c79ed48a969396d2b2d",
+              "real_B_environment_ticks": 2049,
+              "B_gradient_updates": 512,
+              "total_added_gradient_updates": 512,
+              "B_unique_feedback_positions": 253549,
+              "B_unique_nonwait_feedback": 5053,
+              "trained_sequence_B_NEW": 2455,
+              "trained_sequence_B_REPLACE": 708,
+              "world_cumulative_B_NEW": 2458,
+              "world_cumulative_B_REPLACE": 708
+            },
+            {
+              "snapshot": "B004",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\B004.pt",
+              "sha256": "c3c90637cb17898222e47e3192d568b71710c5ba61d9f0d2cb48167200739638",
+              "real_B_environment_ticks": 4097,
+              "B_gradient_updates": 1024,
+              "total_added_gradient_updates": 1024,
+              "B_unique_feedback_positions": 515693,
+              "B_unique_nonwait_feedback": 10243,
+              "trained_sequence_B_NEW": 4902,
+              "trained_sequence_B_REPLACE": 1468,
+              "world_cumulative_B_NEW": 4905,
+              "world_cumulative_B_REPLACE": 1468
+            },
+            {
+              "snapshot": "B008",
+              "path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\direct\\B008.pt",
+              "sha256": "7911291e5d9426b20f925c761eafd5d0454afa7430853b98664935319fa3552c",
+              "real_B_environment_ticks": 8193,
+              "B_gradient_updates": 2048,
+              "total_added_gradient_updates": 2048,
+              "B_unique_feedback_positions": 1039981,
+              "B_unique_nonwait_feedback": 20512,
+              "trained_sequence_B_NEW": 9773,
+              "trained_sequence_B_REPLACE": 2975,
+              "world_cumulative_B_NEW": 9776,
+              "world_cumulative_B_REPLACE": 2975
+            }
+          ],
+          "actual_native_last6_history_rounds_counts": {
+            "matured_eligible": 5877,
+            "completed_matured": 2470,
+            "clean_completed_matured": 391
+          },
+          "command_accounting": {
+            "B0_world_B_new": 0,
+            "B0_world_B_replace": 0,
+            "unlabeled_boundary_B_new": 3,
+            "unlabeled_boundary_B_replace": 0,
+            "endpoint_world_B_new": 9776,
+            "endpoint_world_B_replace": 2975,
+            "trained_sequence_work_B_new": 9773,
+            "trained_sequence_work_B_replace": 2975,
+            "endpoint_minus_work_B_new": 3,
+            "endpoint_minus_work_B_replace": 0
+          },
+          "audit": {
+            "origin_weight_optimizer_hidden_world_exact": true,
+            "all_public_observations_and_labels_replayed": true,
+            "full_world_continuity_exact": true,
+            "boundary_hidden_recomputed_exact": true,
+            "feedback_positions": 1039981,
+            "nonwait_feedback_positions": 20512,
+            "B_updates": 2048,
+            "final_work": {
+              "environment_ticks": 20481,
+              "lane_ticks": 1310784,
+              "gradient_updates": 2048,
+              "gradient_lane_ticks": 16777216,
+              "B_gradient_label_positions": 33279392,
+              "B_unique_label_positions": 1039981,
+              "B_unique_nonwait_labels": 20512,
+              "B_unique_new_commands": 9773,
+              "B_unique_replace_commands": 2975,
+              "old_history_replay_positions": 0
+            },
+            "history_h_continuity_independently_checked_after_rounds": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "first_B_online_updates_reproduced": {
+              "2": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              },
+              "8": {
+                "hidden_exact": true,
+                "model_exact": true,
+                "Adam_exact": true
+              }
+            }
+          }
+        }
+      },
+      "pairing": {
+        "disjoint": {
+          "all_history_external_cases_exact": true,
+          "all_B_labels_masks_actions_exact": true,
+          "B_public_input_unequal_float_positions": 0
+        },
+        "direct": {
+          "all_history_external_cases_exact": true,
+          "all_B_labels_masks_actions_exact": true,
+          "B_public_input_unequal_float_positions": 12
+        }
+      },
+      "online_pairing": {
+        "seed": 2,
+        "B_feedback_position_exact": true,
+        "B_actions_exact": true,
+        "obs_unequal_positions": 12,
+        "obs_unequal_B_slot_positions": 0,
+        "obs_unequal_nonB_slot_positions": 12,
+        "obs_unequal_ticks": 6,
+        "first_unequal_tick": 0,
+        "last_unequal_tick": 26,
+        "compared_to": "related",
+        "by_arm": {
+          "disjoint": {
+            "unequal_positions": 0
+          },
+          "direct": {
+            "unequal_positions": 12
+          }
+        }
+      },
+      "independent_audit_path": "F:\\agi\\data\\experience-transfer\\training-v1\\seed_002\\training_independent_audit.json",
+      "independent_audit_sha256": "fb2b8e049ffeb601bdb2881c0141f2340a826888ec77e814d6513ef8eef0d55d",
+      "independent_audit_source": "F:\\agi\\experiments\\experience_transfer\\train_audit.py",
+      "independent_audit_source_sha256": "da5e27e86e68ce3951c2a420e97daac0f6a67342f8365fa24ac4337f5f1dfc3f"
+    }
+  },
+  "comparison": "related versus disjoint is matched total training and exact B inputs/feedback. Direct is a time-aligned familiar-D no-history-update reference with fewer total updates.",
+  "limits": [
+    "B training executes common teacher demonstrations; ability is assessed separately with free actions.",
+    "Zero mapping overlap does not imply statistical independence.",
+    "Direct history teacher_lanes arrays are unused shared RNG draws; labels=None and zero updates are authoritative.",
+    "All worlds and numeric h continue. A/C B inputs are exact; direct can briefly differ in old pending non-B slot receipts.",
+    "B NEW work counts exclude the separately reported unlabeled WAIT-boundary step."
+  ],
+  "exit_codes": [
+    {
+      "seed": 0,
+      "exit_code": 0
+    },
+    {
+      "seed": 1,
+      "exit_code": 0
+    },
+    {
+      "seed": 2,
+      "exit_code": 0
+    }
+  ]
+}

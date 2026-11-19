@@ -1,0 +1,27 @@
+{
+  "question": "Can native self-sensing and training on consequences of the graph's own proposed writes improve new-life learning and immediate A retention?",
+  "births": [421, 422, 423, 424, 425, 426],
+  "arms": ["baseline", "sensing", "causal", "shuffled"],
+  "adam_checkpoints": [0, 500, 2000, 8000],
+  "primary_checkpoint": 8000,
+  "comparisons": {
+    "sensing-baseline": "additional own local activation and postcommit receipt, matched timing",
+    "causal-sensing": "incremental consequence training for a self-proposed edit",
+    "causal-shuffled": "correct assignment of future consequence compared with shuffled examples"
+  },
+  "primary_measures": [
+    "stable noisy new worlds, late realized correct fraction",
+    "reversed worlds, realized correct fraction across the first four contacts after reversal",
+    "first A-return choice after ABA minus first A-return choice after CBA"
+  ],
+  "secondary_measures": [
+    "same trained birth, full deployment versus write disabled",
+    "win over B-only history on first A return",
+    "cold writer-only transplants",
+    "future realized benefit prediction versus constant zero, conditional direction and prevalence of nonzero targets",
+    "single-edit fork crossing committed parameters and postcommit activity"
+  ],
+  "uncertainty": "Use paired training births as independent units. For primary contrasts report per-birth results and paired 95% Student t intervals; exact paired sign-randomization p-values are descriptive. Intermediate checkpoints are repeated measures. Secondary contrasts exploratory.",
+  "fork_constraints": "Future external stimuli, taste noise and random uniforms are shared, future choices and subsequent writes remain autonomous. Deployment never observes the paired trajectory.",
+  "channels": {"fork_contacts_zero_based": [3,9,15], "future_contacts": 24, "delays_reported": [1,3,8,16,24], "complementary_world_pairs_per_birth": 48, "noise": 0.15}
+}

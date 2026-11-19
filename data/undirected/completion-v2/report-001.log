@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "F:\agi\experiments\undirected\report.py", line 910, in <module>
+    main()
+    ~~~~^^
+  File "F:\agi\experiments\undirected\report.py", line 904, in main
+    result = build_report(args.protocol, workers=args.workers, mechanical=args.mechanical, sensitivity_results=supplied)
+  File "F:\agi\experiments\undirected\report.py", line 819, in build_report
+    _parent_checks(results, plan, checks)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\agi\experiments\undirected\report.py", line 764, in _parent_checks
+    checks.equal("FIXED_PROBE_SAME_LEARNING_EXECUTION", str(seed), left, right)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\agi\experiments\undirected\report.py", line 82, in equal
+    self.require(code, where, actual == expected, dict(actual=actual, expected=expected))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\agi\experiments\undirected\report.py", line 79, in require
+    raise AuditError(f"{code} at {where}: {details!r}")
+AuditError: FIXED_PROBE_SAME_LEARNING_EXECUTION at 0: {'actual': {'tick': 145024, 'parameter_hash': 'bb2e7508a5d5d010c3108c5ecfcd882f16e684cea32705229281bac17be4b436', 'optimizer_hash': '7a134d43979238027f04b93a5a1ceaa6ac3ea1f242c7f731c38724cfd2d4cbd6', 'live_hidden_hash': 'ef3d16064355214ee0d0872d8a87f1a225ae5ef1d9b8ac63eddc1542b08a59a2', 'live_world_hash': '05a7bb01baf732a4eee54c22d880554660cb929ffb843970fb7dae3031584bcc', 'event_hash': '1ed76e3a2df497e67a7ae170493c14c756875ee88985f413a7234581c96337f1', 'action_hash': 'deed80efdfcdb51cb8238aa500bc23b00fa52e97b1a0420f2657b85217bde399', 'data_hash': '36828758c403356827d587f8649adae09471ff98e5d0307251678d0ad80e3117', 'actual_family_exposures': {'new': [14562, 14810, 14393, 14683], 'replace': [4317, 4368, 4268, 4411], 'commands': [18879, 19178, 18661, 19094]}, 'credit_gradient_hash': '3be88ec0e5f22f1c3a5bc13246cde37113d1db9e8f0bfb0f6bb5b0d7b8a7c902', 'physical_matrix': {'frobenius_norm': 6.698541325737388, 'operator_norm': 1.924799672421641, 'spectral_radius': 1.924799672421641, 'antisymmetric_frobenius_norm': 0.0, 'oriented_nonzero_couplings': 1280, 'scope': 'actual post-update matrix; descriptive only, no spectral projection or sensitivity reset'}}, 'expected': {'tick': 145024, 'parameter_hash': 'a09b8de7ec3c552435640cc50e62879815ca9d41ca1fc4b910d71b611dbaee99', 'optimizer_hash': 'aa7634921a7a2efaab972c49938cc8d3847aae5595a124ab9f17df2edceab97c', 'live_hidden_hash': 'ef3d16064355214ee0d0872d8a87f1a225ae5ef1d9b8ac63eddc1542b08a59a2', 'live_world_hash': '05a7bb01baf732a4eee54c22d880554660cb929ffb843970fb7dae3031584bcc', 'event_hash': '1ed76e3a2df497e67a7ae170493c14c756875ee88985f413a7234581c96337f1', 'action_hash': 'deed80efdfcdb51cb8238aa500bc23b00fa52e97b1a0420f2657b85217bde399', 'data_hash': '36828758c403356827d587f8649adae09471ff98e5d0307251678d0ad80e3117', 'actual_family_exposures': {'new': [14562, 14810, 14393, 14683], 'replace': [4317, 4368, 4268, 4411], 'commands': [18879, 19178, 18661, 19094]}, 'credit_gradient_hash': '93ad21e5416f7640874dcc1dada02308acd55b49451740eab0adbb41fffa5ba1', 'physical_matrix': {'frobenius_norm': 6.698541325737388, 'operator_norm': 1.924799672421642, 'spectral_radius': 1.924799672421642, 'antisymmetric_frobenius_norm': 0.0, 'oriented_nonzero_couplings': 1280, 'scope': 'actual post-update matrix; descriptive only, no spectral projection or sensitivity reset'}}}

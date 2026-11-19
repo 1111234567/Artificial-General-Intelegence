@@ -1,0 +1,151 @@
+{
+  "format": "action-return-absence-prospective-v1",
+  "created_utc": "2026-11-03T04:10:55.334820+00:00",
+  "sources": [
+    {
+      "seed": 0,
+      "arm": "magnitude",
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_000\\checkpoint_final.pt",
+      "checkpoint_sha256": "7256613333a8295abb93ee64df0bd7147b48eefdfa30f9a749fb6538a4cb6e78",
+      "result": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_000\\result.json",
+      "result_sha256": "5dae4814ff58c84daa68b91623193ac6600c5f13dbeeb7fb75687ea4ce04e355",
+      "endpoint_semantic_hash": "a049804f91eee74b3dbc69e3451db410586e4f330b078527366e10d8b8bf2590"
+    },
+    {
+      "seed": 0,
+      "arm": "signed_full",
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\full_eligible\\checkpoint_final.pt",
+      "checkpoint_sha256": "ce9dfab91cee0c2058eb07f237a56b6f2b82f267789c6ac4bf2e81adc2c9fe20",
+      "result": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_000\\full_eligible\\result.json",
+      "result_sha256": "4b77678a3ff606f38a6c2e773aeb0c7acfaf9630f4a81a1b9a6a1e0bc3bf81ff",
+      "endpoint_semantic_hash": "a1e0865a0ad22b5d1b719ab5fd87b7bf57e14afcc31de22b3b021c0ca84fd5bc"
+    },
+    {
+      "seed": 1,
+      "arm": "magnitude",
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_001\\checkpoint_final.pt",
+      "checkpoint_sha256": "19d64564b006fdc284ba0569a68096de84daacbf4da41bf34c65d76cdf1d7504",
+      "result": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_001\\result.json",
+      "result_sha256": "50d36cf265972ef4ee85227d53487b350b70850f2205f98cec2ea7a0a336a73c",
+      "endpoint_semantic_hash": "7a3efe68f9e19ca0b3b2e05de1185f1fe64e6e7612f3acc91d8629a4f65fbda6"
+    },
+    {
+      "seed": 1,
+      "arm": "signed_full",
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\full_eligible\\checkpoint_final.pt",
+      "checkpoint_sha256": "a76273996075db6eb4a156c6be30aeae72d2e600b6780abcbb67a63dbc9cd807",
+      "result": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_001\\full_eligible\\result.json",
+      "result_sha256": "835b1eefcf324e5f8c0993b87a7a34c4963eae48173256a0e133453c84097f84",
+      "endpoint_semantic_hash": "2d7906c6c205e9c924ecc0ccda80ad8ed7ba2f7972ef1ed1fc90f9a5f64e767d"
+    },
+    {
+      "seed": 2,
+      "arm": "magnitude",
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_002\\checkpoint_final.pt",
+      "checkpoint_sha256": "4a4a4e968f5e15ab4135799aae4599c23b49f78462e54937ba4a5ad0886d58cc",
+      "result": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_002\\result.json",
+      "result_sha256": "b76b820e823bf3d8d0808ddeacd27b8aada16fd1d95f47630431f0aaa6d823d4",
+      "endpoint_semantic_hash": "1ab6ac6648f63cfecd555884dd0bd2e8ee541cebe7cddb0bb2711235c7caa9fa"
+    },
+    {
+      "seed": 2,
+      "arm": "signed_full",
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\full_eligible\\checkpoint_final.pt",
+      "checkpoint_sha256": "387607332c345e4a3f892301e46b611642aee06fdb76f36a83184ed6ef0ed84e",
+      "result": "F:\\agi\\data\\coverage-exit\\retirement-v1\\seed_002\\full_eligible\\result.json",
+      "result_sha256": "710a90d3d5af657cacad81f708b6eb5c6938dd36ed8398ce3a57109b6e811ded",
+      "endpoint_semantic_hash": "bc16875e75afb6a9d184520898bc8c13b3c8ce77a4dccdfc92139dd8231eeb2b"
+    }
+  ],
+  "execution_files": {
+    "F:\\agi\\experiments\\action_return\\absence.py": "f2b8a0d9d6b652d122baa3ad7651c8d0ebbb23d66e271e52a6829610759d25ad",
+    "F:\\agi\\experiments\\action_return\\absence_study.py": "3eab49d7b0ec090c02becf4db3c4e51bd63fcd1d8ebdcb8dc9c86c67f0c4983b",
+    "F:\\agi\\experiments\\action_return\\absence_tests.py": "4557c0c2fca11f4c89a16850533d9bdf3e98ed42a38bf3d87b1e45da1d4c42c2"
+  },
+  "validation": {
+    "path": "F:\\agi\\data\\action-return\\absence-v1\\validation.json",
+    "sha256": "8fb462f2b87fbad41bf59efd4d51ba97036b18e475bbfb1222b7788b28abedce"
+  },
+  "schedule": {
+    "start_tick": 147456,
+    "withdrawal_ticks": 16384,
+    "withdrawal_end_tick": 163840,
+    "return_ticks": 8192,
+    "return_end_tick": 172032,
+    "native_original_main_boundary": 196608,
+    "withdrawal_future_NEW": [
+      1,
+      2,
+      3
+    ],
+    "return_future_NEW": [
+      0
+    ],
+    "rule": "future-only overlay beginning at actual current boundary; historical original schedule remains unchanged"
+  },
+  "training": {
+    "updates": 192,
+    "withdrawal_updates": 128,
+    "return_updates": 64,
+    "chunk_ticks": 128,
+    "inherited_support": "both eligibility and numeric masks checked exactly against inherited endpoint each update; finite nonzero active weights continue learning",
+    "optimizer": "native Adam and clipping over all potential coordinates; inactive weights projected0; dormant moments retained",
+    "pending": "archive entire endpoint operator including pending proposal16; permanently cancel structural proposal/commit throughout follow-up; no resume",
+    "retained": "complete original h/world including pending events, RNG, Adam, recorded512 credit tape/age, replay reservoir and sampling RNG, traces and causal hashes",
+    "replay": "old family0 history remains eligible for ordinary history sampling; no zero-information claim"
+  },
+  "evaluation": {
+    "initial": "reuse SHA-bound initial8 native endpoint records after exact parameter/world/hidden binding",
+    "families": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "conditions": [
+      "short",
+      "long_both"
+    ],
+    "steps": 2048,
+    "endpoints": [
+      163840,
+      172032
+    ],
+    "policy": "unmodified full11 argmax, detached full-state fork, no hidden/world reset, no parameter updates",
+    "metrics": [
+      "primary clean_completed/matured",
+      "primary completed/matured",
+      "inactive_actions/inactive_opportunities"
+    ],
+    "primary": "family0 short: previously acquired strict behavior, report per-seed counts and rates",
+    "secondary": "family0 long_both floor and nonwithdrawn families1..3 controls"
+  },
+  "estimand": {
+    "primary": "paired magnitude-minus-signed_full change from own initial endpoint through withdrawal and return",
+    "raw": "paired magnitude-minus-signed_full endpoint difference at each boundary",
+    "units": "strict/ordinary percentage points; idle actions per1000 actual inactive opportunities",
+    "interpretation": "two inherited systems already differ in weights, hidden state, optimizer and prior policy; subsequent policies identical and support frozen; total inherited strategy comparison, not pure deletion isolation"
+  },
+  "runtime": {
+    "workers": 3,
+    "cpu_threads": 1,
+    "dtype": "float64",
+    "backend": "unchanged validated fast_window",
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "CUDA_VISIBLE_DEVICES": "-1"
+    },
+    "memory_gate": "launch only with >=5GiB available RAM; max3 workers"
+  },
+  "limits": [
+    "Chosen after prior20/8/36 retirement results; protocol frozen before these follow-up behavioral results.",
+    "Only future NEW family draws are withdrawn; old pending/replacement events and historical family0 replay remain.",
+    "Short family0 had measurable acquired behavior; long_both near floor cannot establish preservation from a null change.",
+    "Three paired seeds, descriptive mean/sample SD; no architecture-wide forgetting or memory localization claim."
+  ],
+  "protocol_hash": "be66161804974143b2f354a2e31cd3f068e8ace06f84e43b1736299de624fc99"
+}

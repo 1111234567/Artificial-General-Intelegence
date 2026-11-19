@@ -1,0 +1,58 @@
+{
+  "format": "magnitude-actual-retirement-offline-recovery-v1",
+  "audit": "passed",
+  "protocol_hash": "8ce331c37eea0d1709f8d9317059569abd4fd16de972740945fcb27d855ae2b4",
+  "source_code": {
+    "path": "F:\\agi\\experiments\\coverage_exit\\retirement_magnitude_recovery.py",
+    "sha256": "887b1f55b87f171345cf426957d870b8022601319a26b2c62f00abcf4a65a62e"
+  },
+  "records": [
+    {
+      "seed": 0,
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_000\\checkpoint_final.pt",
+      "checkpoint_sha256": "7256613333a8295abb93ee64df0bd7147b48eefdfa30f9a749fb6538a4cb6e78",
+      "source_semantic_hash": "a049804f91eee74b3dbc69e3451db410586e4f330b078527366e10d8b8bf2590",
+      "science_endpoint_update": 1152,
+      "science_endpoint_deaths": 20,
+      "audit_update": 1153,
+      "audit_next_update_deaths": 0,
+      "bitwise_next_point_equal": true,
+      "bitwise_next_complete_semantic_equal": true,
+      "next_point_hash": "50aaafd17fac73c0eb52cfb7fa64d18dd5b3abc6b12a7cb6fe9613d84d0c3385",
+      "next_semantic_hash": "1922be2c4ca06d83538884257f2c9d3f5055b706a5f3c8d51f289fc00340045d",
+      "source_unchanged": true
+    },
+    {
+      "seed": 1,
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_001\\checkpoint_final.pt",
+      "checkpoint_sha256": "19d64564b006fdc284ba0569a68096de84daacbf4da41bf34c65d76cdf1d7504",
+      "source_semantic_hash": "7a3efe68f9e19ca0b3b2e05de1185f1fe64e6e7612f3acc91d8629a4f65fbda6",
+      "science_endpoint_update": 1152,
+      "science_endpoint_deaths": 8,
+      "audit_update": 1153,
+      "audit_next_update_deaths": 0,
+      "bitwise_next_point_equal": true,
+      "bitwise_next_complete_semantic_equal": true,
+      "next_point_hash": "e5d80eee17378cc4edcdb5899be5ad845dd9677538a98ead0f7dc68eb0f183a1",
+      "next_semantic_hash": "59688433d558d6f048f3beb06f7dad6313fdadd4e9bd274e1a2bc8562a8d23f4",
+      "source_unchanged": true
+    },
+    {
+      "seed": 2,
+      "checkpoint": "F:\\agi\\data\\coverage-exit\\magnitude-v1\\seed_002\\checkpoint_final.pt",
+      "checkpoint_sha256": "4a4a4e968f5e15ab4135799aae4599c23b49f78462e54937ba4a5ad0886d58cc",
+      "source_semantic_hash": "1ab6ac6648f63cfecd555884dd0bd2e8ee541cebe7cddb0bb2711235c7caa9fa",
+      "science_endpoint_update": 1152,
+      "science_endpoint_deaths": 36,
+      "audit_update": 1153,
+      "audit_next_update_deaths": 0,
+      "bitwise_next_point_equal": true,
+      "bitwise_next_complete_semantic_equal": true,
+      "next_point_hash": "3f7e3d186c26026b7d0a7d1e59565b30c3e761dd896236ac06183ff46d3ff26f",
+      "next_semantic_hash": "f04ab13f339e3754c3baef807dfa27080ce637231a970a739ddb14209d1fe8e2",
+      "source_unchanged": true
+    }
+  ],
+  "scope": "Three independently loaded actual retirement endpoints; compare one continuing cloned update with save/restore of that full state. Includes execution of pending proposal16. Extra updates excluded from science endpoints, budgets, behavior and effect summaries; original checkpoints unchanged.",
+  "audit_hash": "3dd68903e9e076b5cb7cc4620a13800bd7c35afa6873565a4d0bace755e6221f"
+}

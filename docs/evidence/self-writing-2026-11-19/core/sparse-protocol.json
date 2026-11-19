@@ -1,0 +1,12 @@
+{
+  "initiative": "hard sparse parallel slots pilot",
+  "initially_locked_before_training": true,
+  "affordance": "At most four ordinary edge candidates by absolute emitted value and one bias candidate by absolute emitted value, plus existing two optional structural slots. Fixed diagonal prohibition, lowest-index stable tie break and the same deadband. Validity is checked at execution. An absent numerical candidate consumes its slot and never changes the graph. Sparse forward selection is detached in outer-loop training.",
+  "development_roots": [211, 213],
+  "heldout_roots": [201, 202, 203, 204, 205, 206, 207, 208],
+  "bootstrap_budgets": [500, 1100],
+  "selection_rule": "Choose 500 when both roots for both views reach at least 0.75 active one-shot accuracy at 500 otherwise 1100. Retain locked heldout even if the warmup criterion fails, labeled capacity-limited pilot.",
+  "views": ["own", "blind"],
+  "frozen_runtime": "same lifespan worlds protocol, disjoint birth roots, independently bootstrapped in each view; all four matched controls per view; unit physical amplitude only. Cross-view deployment of the own-trained checkpoint also recorded as a readback ablation.",
+  "primary": "Heldout late active minus primitive by view and regime and differences-in-differences, finite descriptive paired root intervals."
+}

@@ -1,0 +1,70 @@
+{
+  "format": "wait-content-autonomous-evaluation-v1",
+  "created_utc": "2026-11-03T05:46:24.426022+00:00",
+  "declaration": "Frozen before either new training arm has completed and before any new free-action result is read. All three seeds and arms are evaluated; no winner selection or subsequent threshold tuning.",
+  "source_files": {
+    "F:\\agi\\experiments\\wait_content\\eval.py": "8acfaab2a9ce0125bbb16dca4370736927111f22228c58b5d04864868dcf0268",
+    "F:\\agi\\experiments\\wait_content\\eval_test.py": "b26b899b2460e6445ff65a2105f03f9000524a039aa61b15667722de05c76d6f",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\continuity\\evaluate.py": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "untrained_anchor",
+    "end_only",
+    "wait_mixed"
+  ],
+  "families": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "conditions": [
+    "short",
+    "long_both"
+  ],
+  "steps": 2048,
+  "forks": 72,
+  "source": "Per-seed shared data-v1 real own-policy trajectory starts from the actual CP147456 complete world/h. Training consumes only lanes0..3 and changes supported recurrent edges and conditional FINISH affine parameters. All arms deploy from the identical actual external endpoint after16384 new observations, including scheduler, pending tasks, receipts, clock and context RNG. No original frozen directory is written.",
+  "hidden": "For every arm, load its frozen final model, start with the common actual precollection h, and consume all16384 public observations with their original elapsed dt in order. This is common-history model-specific warmup; it is not an assertion that a new model generated the old actions. No h is reset at model load, request, stage, fork or evaluation. Anchor warmup must exactly reproduce saved collector end_h and all archived executed actions. New trained-arm h is allowed to differ. Training h from lanes0..3 is never padded or used as an8-lane deployment state.",
+  "policy": "Exact same trained group-first controller class and11-action argmax for every arm. Future action receipts and h evolve on each arm own policy. No scorer gates, target actions, teacher forcing, frozen observations or weight updates at deployment.",
+  "matching": "Per seed/family/condition require same start world/scheduler/event/case/actor identities and end scheduler/event streams, same mature primary request identity fingerprints in heldout/overlap/all, and disjoint future primary identities from all collection observations. Start hidden hashes are model-specific and are not falsely required equal.",
+  "primary": {
+    "actors": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "request_denominator": "Postfork eligible requests under evaluation NEW contract whose deadlines actually matured. Same identities across arms, never selected by action or successful BEGIN.",
+    "metrics": [
+      "ordinary_completion_rate",
+      "strict_completion_rate",
+      "idle_actions_per1000"
+    ],
+    "idle": "Enabled actually inactive job opportunities before own action; denominator can differ by policy. Always report both numerator and denominator plus BEGIN/FINISH partitions."
+  },
+  "secondary": [
+    "Feasible accepted BEGIN per primary matured request",
+    "legal FINISH opportunities, attempts, exact-content correct/wrong, accepted",
+    "active started processing before ready_time early FINISH; unstarted FINISH separately",
+    "cue, nearest processing midpoint and first legal conditional eight-FINISH content accuracy with missing-stage counts and policy-dependent denominators",
+    "all active processing conditional content and action counts, ordinary completion plus errors and repeat actions"
+  ],
+  "aggregation": "Sum four family counts inside each seed/condition/arm; preserve each fork and overlap/all diagnostics. Report3 paired seed differences wait_mixed-minus-end_only, mean and sample SD. Anchor is descriptive. No significance or generality claim from3 seeds.",
+  "artifacts": "Bind complete input files and model/source hashes at execution. Save per-fork frozen evaluator record, scorer counts, full primary request table and compressed per-tick preaction facts plus real action/result. Independent reconstruction can recompute heldout denominators and timing partitions.",
+  "limits": [
+    "Externally supervised recurrent and conditional FINISH learning on fixed collector experience; not new self-generated learning experience or learning native action ports from scratch.",
+    "Actors4..7 are held out of appended action-head fitting, not historical backbone learning.",
+    "One fixed budget and objective comparison; request/stage availability can change with policy.",
+    "Warmup history was generated by the common collector, so trained-arm hidden states are same-history states rather than historical on-policy states."
+  ],
+  "protocol_hash": "ff1f6e7e194568935b47ed152f976ff61075306d2efa73171a6536e78edb9a99"
+}

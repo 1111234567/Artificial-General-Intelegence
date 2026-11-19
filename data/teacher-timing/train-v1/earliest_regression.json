@@ -1,0 +1,340 @@
+{
+  "format": "teacher-timing-earliest-exact-regression-v1",
+  "passed": true,
+  "checkpoint_count": 18,
+  "fields": [
+    "model",
+    "optimizer",
+    "hidden",
+    "stream_cursor",
+    "step",
+    "work"
+  ],
+  "comparisons": [
+    {
+      "seed": 0,
+      "objective": "action",
+      "step": 0,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_000\\action\\step000.pt",
+      "new_sha256": "17dceae82b228397b4f48e683557a686028faf3a709981accb9c7a0b0f8202aa",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step000.pt",
+      "reference_sha256": "c1ce9057a090373027305b4922aebca76f414a13ca3ca7bf3b92543728a33ad4",
+      "fields": {
+        "model": "f6aee871de09f31cccb0f2af5a90df5a5f282d294ec45c7915c5d06ef13ca764",
+        "optimizer": "3f992f7786a88a8d018921b7195048707b717ddf845cf4bb67e249d1bf656f13",
+        "hidden": "95825674540425342917f02386af9922afe518c4a9a027bfe20721c9821311a7",
+        "stream_cursor": "518ba0618cf64b8e068ee21072aa6d16071d4a8b621e0a6b990c70ec3a419798",
+        "step": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+        "work": "7fd5b623d25dddcbd50ced7cf6226008a8f54f65403b31832ccead35685ef9e8"
+      }
+    },
+    {
+      "seed": 0,
+      "objective": "action",
+      "step": 64,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_000\\action\\step064.pt",
+      "new_sha256": "1ced855dd6abb0039a725dab6934193ca1e8e6d59a9a6e6be19098479c10b7a7",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step064.pt",
+      "reference_sha256": "b4407d9a0c0522af7ddc77b063192a1c5f7bb8af0bd8f1fc6a1b7a5142785fdc",
+      "fields": {
+        "model": "a8329d93f7fc768b297fd283b710f065b4c6c0d4b10d5d250e9a0ef4c500cc64",
+        "optimizer": "b0ce440a683f91e108c228a21a4fb9e9554f7a40d9bf2bec8e635b4165403f27",
+        "hidden": "1b6df6e6f940cfcfad7aaebd640995e8a3fdd8d3c0909b9a43efd646235abccc",
+        "stream_cursor": "d3501c05b23f6909cc51449d030415585811eabb7655c8b20b9e233cf6e9d05f",
+        "step": "09c2bb1ce027d6fb57946e851182f983ff6f7e40bdbfb3abc09f337d675c9822",
+        "work": "08cf042470fd3dcc23b7a2ca749d01bc8e24d8c46898b6653d644ec8fbfcb029"
+      }
+    },
+    {
+      "seed": 0,
+      "objective": "action",
+      "step": 256,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_000\\action\\step256.pt",
+      "new_sha256": "c0e9af32c3dd207d6460baf48d4f3569391ae9454ce3cfe4bc5c58298c9d1e46",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step256.pt",
+      "reference_sha256": "5a9add54ad94ee025d22fdd42a12006367ff167c374c552337f4a26600060ff2",
+      "fields": {
+        "model": "747cacd19e1fb61e82a1b2a195a8028bacb81a2e485e39e841a2ed2707e8c9a3",
+        "optimizer": "87e412351a53fa3c9f7d16c2fc25e813a7842f1ac4f2d9c8edbd9fdcb7b3348e",
+        "hidden": "9595d71f59d9233367b4c1a65cbe5552e73303ef7ed44c5bc70c5393e448eea9",
+        "stream_cursor": "e3631b8dcabfe81ae22911ea3f3f6f55b6c18d17e56ba19bb66bcc2288189cdd",
+        "step": "b50ef3559c14af08bd30cc31470b3cd5bb02940518e85109d93abece3d72eabc",
+        "work": "9e191ae958366599a83b4164c39d8cd6c9dfa45fc06096a67eb11dbdcd1ef78f"
+      }
+    },
+    {
+      "seed": 0,
+      "objective": "joint",
+      "step": 0,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_000\\joint\\step000.pt",
+      "new_sha256": "1892a884ccaea4b23da31fa10776bde24175cf115a99d37b6e3a416d1fdfe194",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step000.pt",
+      "reference_sha256": "6fe8ee80917f0f8ff4b104e994c60549d9a847403ec9aaebc658318807b11d2b",
+      "fields": {
+        "model": "f6aee871de09f31cccb0f2af5a90df5a5f282d294ec45c7915c5d06ef13ca764",
+        "optimizer": "3f992f7786a88a8d018921b7195048707b717ddf845cf4bb67e249d1bf656f13",
+        "hidden": "95825674540425342917f02386af9922afe518c4a9a027bfe20721c9821311a7",
+        "stream_cursor": "518ba0618cf64b8e068ee21072aa6d16071d4a8b621e0a6b990c70ec3a419798",
+        "step": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+        "work": "7fd5b623d25dddcbd50ced7cf6226008a8f54f65403b31832ccead35685ef9e8"
+      }
+    },
+    {
+      "seed": 0,
+      "objective": "joint",
+      "step": 64,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_000\\joint\\step064.pt",
+      "new_sha256": "1a788a815d06907b5c88c8beec1f2709c3735afdf5ee483b43d1be52d9019719",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step064.pt",
+      "reference_sha256": "0a75335ca0b4818900c9ffeacef85c2a268e661ec5262b3d0900110a65b9f648",
+      "fields": {
+        "model": "6d56b7e00742a084b91bc3d6caecd4510835742b7b7a21d25a73ed85c08069f1",
+        "optimizer": "b7f812aa326426394ba411271edca6689e136d2d66c02f678e14570a98b8f939",
+        "hidden": "8c5e95806380d2246ec18eb41209465c7ed9390d8c0200321c2ce3fda69ba04c",
+        "stream_cursor": "d3501c05b23f6909cc51449d030415585811eabb7655c8b20b9e233cf6e9d05f",
+        "step": "09c2bb1ce027d6fb57946e851182f983ff6f7e40bdbfb3abc09f337d675c9822",
+        "work": "08cf042470fd3dcc23b7a2ca749d01bc8e24d8c46898b6653d644ec8fbfcb029"
+      }
+    },
+    {
+      "seed": 0,
+      "objective": "joint",
+      "step": 256,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_000\\joint\\step256.pt",
+      "new_sha256": "47a8e9992d42d8deff288a59f9ba9a1e43d637f48da4bced25ebfc70a23bf21e",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step256.pt",
+      "reference_sha256": "093aa8d76c30b0ef6e7e67e6000597b78479d9f7bd3f071b25cc76dd7cdb71ba",
+      "fields": {
+        "model": "d6a8ca7c3318dba55e4fccc75cf14f8cee7f6fa4a9a593f6f1fc2ce5b74dc7e8",
+        "optimizer": "6ec4276dba59da5e02e9cbcb4b22f70a82b703591c841da33af1e5fb41903135",
+        "hidden": "996ae9e372d6d62f6b1645553e5659a37d7f186b2390d07bfffde1f8fffde012",
+        "stream_cursor": "e3631b8dcabfe81ae22911ea3f3f6f55b6c18d17e56ba19bb66bcc2288189cdd",
+        "step": "b50ef3559c14af08bd30cc31470b3cd5bb02940518e85109d93abece3d72eabc",
+        "work": "9e191ae958366599a83b4164c39d8cd6c9dfa45fc06096a67eb11dbdcd1ef78f"
+      }
+    },
+    {
+      "seed": 1,
+      "objective": "action",
+      "step": 0,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_001\\action\\step000.pt",
+      "new_sha256": "f74829dc408377c4563f7fffae9b783dbc5d5fbb68974d8ffdf094bef21bb752",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step000.pt",
+      "reference_sha256": "d9a85eb5c353230f1b5137419515ff55e296113d63c4a4d98d41929e6e537502",
+      "fields": {
+        "model": "490b01ab8d727feee8c6596d8902fda40cab50c95670a1424ffe3835286093c3",
+        "optimizer": "3f992f7786a88a8d018921b7195048707b717ddf845cf4bb67e249d1bf656f13",
+        "hidden": "c2dcd4c68e106f1c40c02632ac58694af19d3980b666bb57b8c3273aae646b12",
+        "stream_cursor": "518ba0618cf64b8e068ee21072aa6d16071d4a8b621e0a6b990c70ec3a419798",
+        "step": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+        "work": "7fd5b623d25dddcbd50ced7cf6226008a8f54f65403b31832ccead35685ef9e8"
+      }
+    },
+    {
+      "seed": 1,
+      "objective": "action",
+      "step": 64,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_001\\action\\step064.pt",
+      "new_sha256": "105c5a01e79d7ba2b888f5f0750b43f2e612a294087eb9dfbb94974063a04a12",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step064.pt",
+      "reference_sha256": "7ae672257f6a05a72bff54b49b43d180cd0086ba0db91547f9a182801ca94204",
+      "fields": {
+        "model": "50a87b41c8bd7b256092cd834db5a6032bbdf3c2645f21356bf9f30a8658e08b",
+        "optimizer": "75ef12aba952d6732613b6187cfd631c5ded8e4be9e0972b683888602926ce39",
+        "hidden": "e53275fae245a4fb65b5083a115ca273d96e99165f0155dc3b8cfffa4fce9926",
+        "stream_cursor": "d3501c05b23f6909cc51449d030415585811eabb7655c8b20b9e233cf6e9d05f",
+        "step": "09c2bb1ce027d6fb57946e851182f983ff6f7e40bdbfb3abc09f337d675c9822",
+        "work": "cfd29c5a2923190b65596db36f93306ba484fafa719164d4e8e2fcb5fcecde30"
+      }
+    },
+    {
+      "seed": 1,
+      "objective": "action",
+      "step": 256,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_001\\action\\step256.pt",
+      "new_sha256": "6fafaec544ae3e81fed6e5920390ef08cab08632e0fbe85f62bfff82f59b182e",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step256.pt",
+      "reference_sha256": "fd80897bc39f474a4aa16876587c87148208f95c5c4ec66e83d6b6982a1e004b",
+      "fields": {
+        "model": "2f305d282cbcec538edddf7328bfb3b592f9b5b7d4fc961a48fe0be38448dfa0",
+        "optimizer": "07dc8337e3dac108806a2a2463c54eaba8e1aa7e1a398c991cf46a3079345909",
+        "hidden": "d89ddecdde4877b4c0391580f3af1abb1dda5efdf164d1f6274da369c3911b7a",
+        "stream_cursor": "e3631b8dcabfe81ae22911ea3f3f6f55b6c18d17e56ba19bb66bcc2288189cdd",
+        "step": "b50ef3559c14af08bd30cc31470b3cd5bb02940518e85109d93abece3d72eabc",
+        "work": "57480aa13b0ea75d4b86a9ad0eab20cc3850b57019d8613e726803d7dca97464"
+      }
+    },
+    {
+      "seed": 1,
+      "objective": "joint",
+      "step": 0,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_001\\joint\\step000.pt",
+      "new_sha256": "3cae146a814be30c83292b32fdd783fd3e91a2a931c26353c7d9b8269c5ebe9b",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step000.pt",
+      "reference_sha256": "04e39afd2febed596e183e76a962dc349d65269597faedcbb1c596f8ae861259",
+      "fields": {
+        "model": "490b01ab8d727feee8c6596d8902fda40cab50c95670a1424ffe3835286093c3",
+        "optimizer": "3f992f7786a88a8d018921b7195048707b717ddf845cf4bb67e249d1bf656f13",
+        "hidden": "c2dcd4c68e106f1c40c02632ac58694af19d3980b666bb57b8c3273aae646b12",
+        "stream_cursor": "518ba0618cf64b8e068ee21072aa6d16071d4a8b621e0a6b990c70ec3a419798",
+        "step": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+        "work": "7fd5b623d25dddcbd50ced7cf6226008a8f54f65403b31832ccead35685ef9e8"
+      }
+    },
+    {
+      "seed": 1,
+      "objective": "joint",
+      "step": 64,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_001\\joint\\step064.pt",
+      "new_sha256": "6d54fa652e9d91564031ab9fb0a40398d4a56278c9c5b68ae5e530382f96b9b6",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step064.pt",
+      "reference_sha256": "ea86e78d78dba2e4d086a2405e894d64d0a4cb6749ab6967a80de9099e963fe7",
+      "fields": {
+        "model": "821a749b301f46303330fabd91ea06da4ad7e75175b4c7272a13a373310aa1cd",
+        "optimizer": "55d7d38e80b036bc3fb6a28efe1d5b18d730dd9d1573f1f1c1732136acef3c75",
+        "hidden": "a50bcb9b564a53ee82c08aa032c14283ecf691d915f11ff148db9ab64282c7dd",
+        "stream_cursor": "d3501c05b23f6909cc51449d030415585811eabb7655c8b20b9e233cf6e9d05f",
+        "step": "09c2bb1ce027d6fb57946e851182f983ff6f7e40bdbfb3abc09f337d675c9822",
+        "work": "cfd29c5a2923190b65596db36f93306ba484fafa719164d4e8e2fcb5fcecde30"
+      }
+    },
+    {
+      "seed": 1,
+      "objective": "joint",
+      "step": 256,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_001\\joint\\step256.pt",
+      "new_sha256": "a6128b4e22a390fa66ec88267f7b16fc822552b3e9e30a8a8b494f640064d932",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step256.pt",
+      "reference_sha256": "91f8d0f801856afd9927bc91fa3c60a224f88ecae4d0a2a06ad22b1b4e44fa84",
+      "fields": {
+        "model": "9e21085f84e438a9bb4ca7795547cfd802440a3a531e61435f71ce3da11c0a3f",
+        "optimizer": "64f19feb689156bdb5eed17351b5a6b416031f9a726716e90b6100d5ade6fb1b",
+        "hidden": "d52d15d3b083c066e85b84a151c2f506e3bdb5b89ca580fb7addc0a17c4a9185",
+        "stream_cursor": "e3631b8dcabfe81ae22911ea3f3f6f55b6c18d17e56ba19bb66bcc2288189cdd",
+        "step": "b50ef3559c14af08bd30cc31470b3cd5bb02940518e85109d93abece3d72eabc",
+        "work": "57480aa13b0ea75d4b86a9ad0eab20cc3850b57019d8613e726803d7dca97464"
+      }
+    },
+    {
+      "seed": 2,
+      "objective": "action",
+      "step": 0,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_002\\action\\step000.pt",
+      "new_sha256": "2170060eb84a308511fbd0a371790f35d962c389ae6b5be0f6d6f419085221be",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step000.pt",
+      "reference_sha256": "42e0502d936abe844d76fd2f21bbddd76f5d4456099771fe55f983de5259c8b5",
+      "fields": {
+        "model": "324f2fb6cfa9e91c81a7092347be444cc6c1d4f571f901a3b0fc5d90b3f902da",
+        "optimizer": "3f992f7786a88a8d018921b7195048707b717ddf845cf4bb67e249d1bf656f13",
+        "hidden": "42261f856ceae59e773c3c1f977d326e99cfadf35e5f1b12e84e3d6c09445eab",
+        "stream_cursor": "518ba0618cf64b8e068ee21072aa6d16071d4a8b621e0a6b990c70ec3a419798",
+        "step": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+        "work": "7fd5b623d25dddcbd50ced7cf6226008a8f54f65403b31832ccead35685ef9e8"
+      }
+    },
+    {
+      "seed": 2,
+      "objective": "action",
+      "step": 64,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_002\\action\\step064.pt",
+      "new_sha256": "902a44d4b3249cac65fcf661ae6036a1ef9843cf11db8fac1f01ec4529f42ad3",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step064.pt",
+      "reference_sha256": "22b0c7e2aecd9eac29c27fe0b36a10a51bf54bfd313c5728396e5cc7aad2d955",
+      "fields": {
+        "model": "cb2f5b4079d1b800605c6b3ef55cdf7b30446fdef0c9eadac8109d5f924359fe",
+        "optimizer": "d3524832aee11f2bb0a10f42927609631f6a5d1e27055c60a9e024ca52f25ad2",
+        "hidden": "5c9ce3315a154ef5bd418cd133f78049c3b0fd980bf0e70e4c1cd4c6c8853cd7",
+        "stream_cursor": "d3501c05b23f6909cc51449d030415585811eabb7655c8b20b9e233cf6e9d05f",
+        "step": "09c2bb1ce027d6fb57946e851182f983ff6f7e40bdbfb3abc09f337d675c9822",
+        "work": "d4467fcf9409fb858b24e44085a232bbe8ef399e34dc8d00e3b48ec55f8d3eae"
+      }
+    },
+    {
+      "seed": 2,
+      "objective": "action",
+      "step": 256,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_002\\action\\step256.pt",
+      "new_sha256": "294e9a0e26df6181437829c001aad62c3361281c1d6384e6adee741c4f68807f",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step256.pt",
+      "reference_sha256": "ed62bedf9655f5f32cd8abde40cfcbb5fee8c6c1e142f0550135f29020c95497",
+      "fields": {
+        "model": "fd2403519409c01d91e240480b02bb392a1bbc71c3572d1aa4378d8f460bafe8",
+        "optimizer": "cadcf7564438bc8ab7fe6f45c6ef501336ab66c33ef47eae1d4d1b6da49ee9b4",
+        "hidden": "1c0652e5ae1816ca0b1b5d1ba02e8a1535eac5a357d465a53ab50eadd57021eb",
+        "stream_cursor": "e3631b8dcabfe81ae22911ea3f3f6f55b6c18d17e56ba19bb66bcc2288189cdd",
+        "step": "b50ef3559c14af08bd30cc31470b3cd5bb02940518e85109d93abece3d72eabc",
+        "work": "c3bafa686386c746252f8267a5b1887cedfc3d508427e8ce48912698badcb5f1"
+      }
+    },
+    {
+      "seed": 2,
+      "objective": "joint",
+      "step": 0,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_002\\joint\\step000.pt",
+      "new_sha256": "19e326c91fa33431d56c8361326641cecc12bb954db37b224f6b9d3e90cddba7",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step000.pt",
+      "reference_sha256": "1b5e93d1b3b09cf3a6d1f7acca016a21df160ac06301a5a28578c3f5455310a4",
+      "fields": {
+        "model": "324f2fb6cfa9e91c81a7092347be444cc6c1d4f571f901a3b0fc5d90b3f902da",
+        "optimizer": "3f992f7786a88a8d018921b7195048707b717ddf845cf4bb67e249d1bf656f13",
+        "hidden": "42261f856ceae59e773c3c1f977d326e99cfadf35e5f1b12e84e3d6c09445eab",
+        "stream_cursor": "518ba0618cf64b8e068ee21072aa6d16071d4a8b621e0a6b990c70ec3a419798",
+        "step": "db7cc86724f02591767c05518a44c1415e3fed8d330464e7be6cd5862076024b",
+        "work": "7fd5b623d25dddcbd50ced7cf6226008a8f54f65403b31832ccead35685ef9e8"
+      }
+    },
+    {
+      "seed": 2,
+      "objective": "joint",
+      "step": 64,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_002\\joint\\step064.pt",
+      "new_sha256": "9f86e7aeb134ddbc54e62435e599fbb6e25b35f29ccc591139c34430c5f4aaaa",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step064.pt",
+      "reference_sha256": "c3876cfdff07d79fe334f33534120d261dc385a3ff0595f5acdbb64f5474894b",
+      "fields": {
+        "model": "83f88626117b030d72d07e20855cd48db5dc1537072b1df5448f2dbd404fe562",
+        "optimizer": "01897758d26b4d57c31f838f8f8bb6079cce258b5b929767e7018e8f7873f686",
+        "hidden": "38b2ad503d3012c6cabaa1db22de19bc7c1fedbadf2053e711a5afb2626bda85",
+        "stream_cursor": "d3501c05b23f6909cc51449d030415585811eabb7655c8b20b9e233cf6e9d05f",
+        "step": "09c2bb1ce027d6fb57946e851182f983ff6f7e40bdbfb3abc09f337d675c9822",
+        "work": "d4467fcf9409fb858b24e44085a232bbe8ef399e34dc8d00e3b48ec55f8d3eae"
+      }
+    },
+    {
+      "seed": 2,
+      "objective": "joint",
+      "step": 256,
+      "passed": true,
+      "new_path": "F:\\agi\\data\\teacher-timing\\train-v1\\earliest\\seed_002\\joint\\step256.pt",
+      "new_sha256": "1282b780ef6449817f0c8bafa90385ebcbfb3be7b867fb14c2fc1c027b8b0bf6",
+      "reference_path": "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step256.pt",
+      "reference_sha256": "2402a6da44472be02d91d4fd1e459964e36ff67f3374766a1c8e03f0812993cd",
+      "fields": {
+        "model": "483b593bdaf80f9ab875d7412dfc4e205a4ca43cc940d5bb3e2ad5fd42e2e5ee",
+        "optimizer": "4af31e671af7b1a8982623345d1f90dfcc262fc9e7a11cd3af5c74e94de025ca",
+        "hidden": "6ace1e8640c30f2c6c6ffcebd488c7b314f7af1bbb3388e1c20fb0e9c6191999",
+        "stream_cursor": "e3631b8dcabfe81ae22911ea3f3f6f55b6c18d17e56ba19bb66bcc2288189cdd",
+        "step": "b50ef3559c14af08bd30cc31470b3cd5bb02940518e85109d93abece3d72eabc",
+        "work": "c3bafa686386c746252f8267a5b1887cedfc3d508427e8ce48912698badcb5f1"
+      }
+    }
+  ],
+  "protocol_hash": "63232645d506f6e8c0838d127915e0c3b7a77d6a2d10389fd1d38ed0c12cfbd4"
+}

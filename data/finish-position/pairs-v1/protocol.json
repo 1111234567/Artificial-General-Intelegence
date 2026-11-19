@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-03T15:43:52.526749+00:00",
+  "arms": [
+    "midpoint",
+    "first"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "files": {
+    "experiments\\wait_position\\switch_pairs.py": "6a256a43217bf86d147ae9b4cd34b74ca9f413d38a14899e53ee9479618bf9e8",
+    "experiments\\review_selection\\pairs.py": "e32e362fcf8f6b789b3dec613eb264aa6529f35c65b09a309be00940147757d9",
+    "experiments\\review_selection\\pair_audit.py": "90cd984ab5741091386d7f9f03839aa99b2dd52957939ba45968923984a4b867",
+    "data\\review-selection\\pairs-v1\\protocol.json": "3f9ae6b5ce7dbebcacef121103553ccb23e1c0ae8f7439d40ccd635bb57fceef",
+    "data\\review-selection\\pairs-v1\\seed_000_uniform.json": "b6c1a9eee769fb0dc4ecf121f7a96377c447cc85df8f953feacfd955a9fd85c9",
+    "data\\review-selection\\pairs-v1\\seed_001_uniform.json": "bedab60f6c6dac1b3522b0346fc007747c0560d1d9d3e03e9ac4cc5e832f53ee",
+    "data\\review-selection\\pairs-v1\\seed_002_uniform.json": "30466bccbfc32b75a2d5e9579f0adb6428d8c04c72b367988202933eeb4f2c41",
+    "data\\wait-position\\last-checks-v1\\pairs\\seed_000_last.json": "60f14c9b24943c4664e97f6f8ebc8f97b433711215ce2acf848604b46e39ca4b",
+    "data\\wait-position\\last-checks-v1\\pairs\\seed_001_last.json": "0730a8cd02dab72b3c364d6cb091ed1f8ebb0fa52d581e25c849af3169da69d9",
+    "data\\wait-position\\last-checks-v1\\pairs\\seed_002_last.json": "06726092ced5aa2910c6c6a0383fca36219e779e920dceb9982c02468ddced48",
+    "experiments\\finish_position\\switch_test.py": "99db0896ded828b0f23e847b2de82917a1c663e962fad6d4a5c44eef5b3faceb",
+    "data\\wait-position\\pairs-v1\\protocol.json": "401a2328d20b9232220afa1d4aaa565dedda562837eb668c93bd1c5a9f28d534"
+  },
+  "test": "Use the previous 512+4096 tick two-slot external schedule, 16 unseen actors, AA/AB/BA/BB. Execute frozen model argmax on every tick, without teaching or h resets. No cancellations/replacements in this supplement.",
+  "primary": "Both halves strictly completed in mature same-slot same-raw AB/BA conflict pairs. Counts for A then B and B then A, pair ordinary outcomes, shared and repeat controls, and all idle actions are saved.",
+  "checks": "Match external events, exact pair identities, and each denominator with prior uniform. Reconstruct accepted actions and error-free completions from recorded actions, times, targets, versions and receipts.",
+  "intervention": "Identical final pre-ready WAIT, original teacher midpoint or first legal FINISH target during old A rehearsal. The B teacher and all test actions are unchanged.",
+  "benchmark": "Use the same 317 completed-exposure pairs and identical 512 warmup plus 4096 free ticks per seed as the frozen parent. Compare both-strict and both-eventual separately; decompose AB and BA; preserve AA/BB."
+}

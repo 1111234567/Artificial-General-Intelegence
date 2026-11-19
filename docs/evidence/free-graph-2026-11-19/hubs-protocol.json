@@ -1,0 +1,10 @@
+{
+  "question": "After training a degree-free closed graph, do its physical choices depend more on a high-outdegree sender than on the same number and strength of scattered arcs into exactly the same receivers?",
+  "source": "All calibration-selected no-backbone 32-node, 64-arc, 449-parameter free graphs at the 1200-step checkpoint of the main comparison. No selection on response to lesions.",
+  "worlds": {"start": 67512000, "count": 64, "profile": "standard", "ordered_odor_pairs_per_root": 20},
+  "rules": ["orientation", "adjacency", "lookup"],
+  "sender_choice": "Highest outdegree of the non-self candidate support. Ties broken by seeded random permutation fixed per topology, independent of task/weights.",
+  "interventions": "After the common intact prefix, freeze weights and cut candidate messages only during the scored request. Hub arm removes every outgoing candidate arc of the selected sender. Eight scattered controls choose one candidate source uniformly from the original active row of each affected receiver; rows with only a single source necessarily share that cut. They preserve removed arc count, each receiver's lost weight and therefore removed squared coefficient norm. No degree renormalization after surgery; intrinsic state retention, all external inputs and readouts remain active.",
+  "primary_readout": "Difference between scored behavior after scattered cuts (averaged per cutoff/seed across all eight draws) and after the single-sender cut. Score by actual first body contact; timeouts count as incorrect. Report intact-minus-hub, intact-minus-scattered and per-rule concentration effects. Resample whole matched birth groups and whole physical worlds, Bonferroni intervals across three concentration comparisons, 20000 draws.",
+  "scope": "This intervention measures dependence on the selected sender's recurrent outputs in a trained graph. Equal removed receiver currents for identical sender activations do not imply matched actual state trajectories, and the control does not isolate degree from learned sender identity. This diagnostic concerns online signal propagation and does not alter archived actors."
+}

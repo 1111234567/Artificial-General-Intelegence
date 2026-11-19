@@ -1,0 +1,32 @@
+{
+  "raw_opportunities": 1228800,
+  "strong_graphs_and_receipt_gating": true,
+  "same_trajectory_until_change": true,
+  "fair_taste_counterfactual_invariant": true,
+  "inference_pair_ablation": {
+    "stable": {
+      "intact": 0.7451171875,
+      "removed": 0.5091145833333334,
+      "paired": [
+        0.23600260416666666,
+        0.20231119791666666,
+        0.265380859375
+      ],
+      "raw_sha256": "c9bf8281a91d27c881d6c6d79dd924445d75cde31bb980808355e6b66ccc40c9",
+      "contact_intact": 0.9998372395833334,
+      "contact_removed": 1.0
+    },
+    "reverse": {
+      "intact": 0.7433268229166666,
+      "removed": 0.50244140625,
+      "paired": [
+        0.24088541666666666,
+        0.21053059895833334,
+        0.2718912760416667
+      ],
+      "raw_sha256": "3ddeb3b3a43d14fbb749ca95100bf2b85767e6ae81a4370a85f1b5a0fdc58c11",
+      "contact_intact": 0.9999186197916666,
+      "contact_removed": 1.0
+    }
+  }
+}

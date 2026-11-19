@@ -7,3 +7,84 @@ docs/evidence/rewiring-2026-10-28/aggregate-v1/report.json filter=lfs diff=lfs m
 data/pulse-game/morning-20261119/** -text
 docs/pulse-game-*-2026-11-19.md -text
 experiments/pulse_game/README.md -text
+
+# The frozen transfer study verifies these source and evidence files byte-for-byte.
+experiments/pulse_game/order*.py -text
+experiments/pulse_game/relation_*.py -text
+experiments/pulse_game/world.py -text
+experiments/pulse_game/habitat_world.py -text
+experiments/pulse_game/lifelong_agent.py -text
+experiments/pulse_game/content_routing.py -text
+docs/evidence/learning-transfer-2026-11-19/*.json -text
+
+# Exact fingerprints in the trust and closed-loop logic protocols.
+experiments/pulse_game/trust_*.py -text
+experiments/pulse_game/transfer_overlap.py -text
+experiments/pulse_game/tests/test_trust_study.py -text
+experiments/pulse_game/habitat_deploy.py -text
+experiments/pulse_game/context_local.py -text
+experiments/pulse_game/mixture_world.py -text
+experiments/pulse_game/mixture_flash.py -text
+experiments/pulse_game/ring_logic_*.py -text
+experiments/pulse_game/ring_routing_*.py -text
+docs/evidence/adaptive-trust-2026-11-19/*.json -text
+docs/evidence/ring-logic-2026-11-19/*.json -text
+
+# Exact source and manifest checks for free topology and local cycles.
+experiments/pulse_game/free_graph_*.py -text
+experiments/pulse_game/free_hub_audit.py -text
+experiments/pulse_game/module_graph*.py -text
+experiments/pulse_game/plastic_topology_*.py -text
+experiments/pulse_game/archival_logic_*.py -text
+experiments/pulse_game/live_module_edits*.py -text
+experiments/pulse_game/joint_live*.py -text
+experiments/pulse_game/coupled_birth*.py -text
+experiments/pulse_game/live_edge_probe*.py -text
+docs/evidence/free-graph-2026-11-19/**/*.json -text
+docs/evidence/free-graph-2026-11-19/*.json -text
+
+# Reproduce the registered continuous-graph learning studies byte-for-byte.
+experiments/pulse_game/open_life_*.py -text
+experiments/pulse_game/open_graph_*.py -text
+experiments/pulse_game/prospective_edge*.py -text
+experiments/pulse_game/unified_live_graph*.py -text
+experiments/pulse_game/graph_interactions*.py -text
+experiments/pulse_game/dendrite_ports*.py -text
+docs/evidence/open-graph-learning-2026-11-19/**/*.json -text
+
+# Sealed sampling rules, held-out worlds and physical forks in the sparse-pair studies.
+experiments/pulse_game/sparse_*.py -text
+docs/evidence/sparse-native-2026-11-19/**/*.json -text
+
+# Self-writing protocol and source digests bind the exact archived bytes.
+experiments/pulse_game/self_write*.py -text
+docs/evidence/self-writing-2026-11-19/**/*.json -text
+
+# The dose, gradient, and parameter-permission studies verify these exact bytes.
+experiments/pulse_game/self_dose*.py -text
+experiments/pulse_game/self_param_writer*.py -text
+docs/evidence/self-edit-dose-2026-11-19/**/*.json -text
+
+# These experiments bind their source and confirmation artifacts by byte hash.
+experiments/pulse_game/sparse_*.py -text
+docs/evidence/sparse-native-2026-11-19/**/*.json -text
+
+# Checkpoint manifests record the exact source and result bytes.
+data/**/*.json -text
+data/**/*.jsonl -text
+data/**/*.csv -text
+experiments/pulse_game/edit_receipt_*.py -text
+experiments/pulse_game/revisit_choice_*.py -text
+experiments/pulse_game/local_trace_*.py -text
+docs/evidence/*2026-11-19/**/*.json -text
+data/edit-receipt-20261119/** -text
+data/revisit-choice-20261119/** -text
+data/local-trace-20261119/** -text
+data/pulse-game/ring-routing-20261119/** -text
+
+# Bulk per-world evidence from the published studies.
+docs/evidence/free-graph-2026-11-19/**/raw.zip filter=lfs diff=lfs merge=lfs -text
+docs/evidence/open-graph-learning-2026-11-19/edges/*-raw.zip filter=lfs diff=lfs merge=lfs -text
+data/edit-receipt-20261119/evaluation/birth_*/**/checkpoint_*.npz filter=lfs diff=lfs merge=lfs -text
+data/revisit-choice-20261119/eval-trials.npz filter=lfs diff=lfs merge=lfs -text
+data/local-trace-20261119/eval-*/*.npz filter=lfs diff=lfs merge=lfs -text

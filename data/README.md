@@ -1,6 +1,6 @@
 # 本机数据索引
 
-`data/` 保存原始运行结果、检查点、恢复材料及发布包。Git 收录这份索引、[Pulse game 数据索引](pulse-game/README.md)和[晨间 CPU 分发材料](pulse-game/morning-20261119/README.md)，包括参考个体、图表和校验记录。其他本机入口需要相应的原始档案。按研究问题查报告、汇总和逐种子读数，见 [研究证据索引](../docs/evidence/README.md)。选择训练、复现或恢复命令，见 [实验代码索引](../experiments/README.md)。
+`data/` 保存原始运行结果、检查点、恢复材料及发布包。公开材料包括[晨间 CPU 分发材料](pulse-game/morning-20261119/README.md)、[自编辑回执](edit-receipt-20261119/run.json)、[一次反馈回访](revisit-choice-20261119/run.json)和[局部迹训练](local-trace-20261119/local/run.json)的检查点与评估记录，以及历史报告引用的研究资料。大型逐世界数据使用 Git LFS。更早的完整训练运行目录、运行环境和机器恢复材料保存在本机。按研究问题查报告与证据，见[研究证据索引](../docs/evidence/README.md)；运行与恢复入口见[实验代码索引](../experiments/README.md)。
 
 ## 研究档案与分发
 

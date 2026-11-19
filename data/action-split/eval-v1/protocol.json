@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-11-05T15:23:49.060755+00:00",
+  "sources": {
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/action_split/eval_test.py": "702f7a0fa47e2842c735a47cbc422d3f19d7873b1bdf4d1ec91413f389d38716",
+    "experiments/action_split/model.py": "72d44a1ce29a8e26be4e85b3f6743f19591e666b93089384d2ea4bebd5417988",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "original",
+    "frozen064",
+    "full064",
+    "frozen256",
+    "full256"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ],
+    "longer": [
+      16.0,
+      32.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "actor_ids": [
+    96000,
+    96001,
+    96002,
+    96003,
+    96004,
+    96005,
+    96006,
+    96007,
+    96008,
+    96009,
+    96010,
+    96011,
+    96012,
+    96013,
+    96014,
+    96015,
+    96016,
+    96017,
+    96018,
+    96019,
+    96020,
+    96021,
+    96022,
+    96023,
+    96024,
+    96025,
+    96026,
+    96027,
+    96028,
+    96029,
+    96030,
+    96031
+  ],
+  "world_seed": "851000+seed",
+  "primary": "step256, mixed A/B long(8..16) strict and ordinary completion, A/B conflict subsets, idle errors per actual idle opportunity",
+  "secondary": "step064 progress and longer(16..32) duration only; same gap16..32. No selection from outcomes.",
+  "execution": "Every policy executes native actions throughout warmup+test. Independent origin h=0, then fully continuous. No oracle action or private state enters decoder.",
+  "denominator": "All eligible actual NEW/REPLACE issued at tick>=512 and with a matching native maturity pulse before horizon. Include no-BEGIN/no-window failures. No boundary-pair filter.",
+  "diagnostics": "Actual accepted BEGIN; actual early FINISH independent of version/content; first rejected active action; reached legal but no FINISH; legal first attempt correct/wrong/absent. Whole legal window, not mandatory immediate FINISH.",
+  "reference": "Untouched original midpoint B008 had its old head and no new budget; new heads start from zero. Frozen/full samearchitecture/data/updatebudget is the primary comparison."
+}

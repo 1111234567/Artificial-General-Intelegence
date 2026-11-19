@@ -1,0 +1,174 @@
+{
+  "cases_per_seed": 3240,
+  "decisive_cases_per_seed": 2608,
+  "positive_edit_improved": 0.3932098765432099,
+  "positive_edit_harmed": 0.4108024691358025,
+  "mode_metrics": {
+    "fixed_plus": {
+      "sign_accuracy_on_decisive": 0.49003067484662577,
+      "motor_change_mean": 0.0007079413626343012,
+      "improved_rate": 0.3932098765432099,
+      "harm_rate": 0.4108024691358025,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.4875283446712018,
+        "add_edge": 0.49071925754060325,
+        "bias": 0.49189814814814814
+      }
+    },
+    "fixed_minus": {
+      "sign_accuracy_on_decisive": 0.5099693251533742,
+      "motor_change_mean": -0.000908805406652391,
+      "improved_rate": 0.41172839506172837,
+      "harm_rate": 0.38981481481481484,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.5124716553287982,
+        "add_edge": 0.5092807424593968,
+        "bias": 0.5081018518518519
+      }
+    },
+    "pulse_rule": {
+      "sign_accuracy_on_decisive": 0.6633435582822086,
+      "motor_change_mean": 0.007794501259922981,
+      "improved_rate": 0.5339506172839507,
+      "harm_rate": 0.26944444444444443,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.6598639455782312,
+        "add_edge": 0.642691415313225,
+        "bias": 0.6875
+      }
+    },
+    "oracle_sign": {
+      "sign_accuracy_on_decisive": 1.0,
+      "motor_change_mean": 0.02276076190173626,
+      "improved_rate": 0.7956790123456791,
+      "harm_rate": 0.007407407407407408,
+      "sign_accuracy_by_type": {
+        "edge_weight": 1.0,
+        "add_edge": 1.0,
+        "bias": 1.0
+      }
+    },
+    "sham": {
+      "sign_accuracy_on_decisive": 0.5010864008179959,
+      "motor_change_mean": 6.547538214363158e-05,
+      "improved_rate": 0.4036008230452675,
+      "harm_rate": 0.3998456790123457,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.5066137566137566,
+        "add_edge": 0.5046403712296984,
+        "bias": 0.49189814814814814
+      }
+    },
+    "current_structure": {
+      "sign_accuracy_on_decisive": 0.5697852760736196,
+      "motor_change_mean": 0.007956876419484615,
+      "improved_rate": 0.45817901234567904,
+      "harm_rate": 0.34449588477366255,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.5073696145124716,
+        "add_edge": 0.5172080433101315,
+        "bias": 0.6859567901234568
+      }
+    },
+    "true_pulse": {
+      "sign_accuracy_on_decisive": 0.6882029652351738,
+      "motor_change_mean": 0.014139266684651375,
+      "improved_rate": 0.5545267489711934,
+      "harm_rate": 0.24840534979423867,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.5640589569160998,
+        "add_edge": 0.5688321732405259,
+        "bias": 0.9340277777777778
+      }
+    },
+    "yoked_pulse": {
+      "sign_accuracy_on_decisive": 0.5015337423312883,
+      "motor_change_mean": 6.0649872466456145e-05,
+      "improved_rate": 0.40406378600823045,
+      "harm_rate": 0.3992798353909465,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.5022675736961452,
+        "add_edge": 0.5069605568445475,
+        "bias": 0.49537037037037035
+      }
+    },
+    "same_model_yoked_pulse": {
+      "sign_accuracy_on_decisive": 0.49399284253578735,
+      "motor_change_mean": 0.0004949514986947179,
+      "improved_rate": 0.3990740740740741,
+      "harm_rate": 0.4043724279835391,
+      "sign_accuracy_by_type": {
+        "edge_weight": 0.4962207105064248,
+        "add_edge": 0.48549883990719256,
+        "bias": 0.5001929012345679
+      }
+    }
+  },
+  "paired_true_pulse_gains": {
+    "sham": {
+      "sign_accuracy": {
+        "difference": 0.18711656441717792,
+        "ci95": [
+          0.16743528190771473,
+          0.2089091948074352
+        ]
+      },
+      "motor_change": {
+        "difference": 0.014073791088109525,
+        "ci95": [
+          0.012951753765150953,
+          0.015108103465424275
+        ]
+      }
+    },
+    "current_structure": {
+      "sign_accuracy": {
+        "difference": 0.1184176891615542,
+        "ci95": [
+          0.09294667553320696,
+          0.1437674934627272
+        ]
+      },
+      "motor_change": {
+        "difference": 0.0061823897295484875,
+        "ci95": [
+          0.005178582051719135,
+          0.007153429588288119
+        ]
+      }
+    },
+    "yoked_pulse": {
+      "sign_accuracy": {
+        "difference": 0.1866692229038855,
+        "ci95": [
+          0.1686014295084385,
+          0.2077976883728417
+        ]
+      },
+      "motor_change": {
+        "difference": 0.014078616560640392,
+        "ci95": [
+          0.013044250765509368,
+          0.015185711727572345
+        ]
+      }
+    },
+    "same_model_yoked_pulse": {
+      "sign_accuracy": {
+        "difference": 0.1942101226993865,
+        "ci95": [
+          0.16909026025917723,
+          0.21732536093344862
+        ]
+      },
+      "motor_change": {
+        "difference": 0.013644315009824586,
+        "ci95": [
+          0.012251827405936803,
+          0.01528905286884293
+        ]
+      }
+    }
+  },
+  "archive_sha256": "8d8d5371046e1f0a9fb21d8ae70349f64757a39b767e1950f66df2ef2caa5702"
+}

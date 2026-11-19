@@ -1,0 +1,238 @@
+{
+  "format": "teacher-timing-crossed-common-history-v1",
+  "created_utc": "2026-11-06T15:21:22.115812+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "test_teachers": [
+    "earliest",
+    "midpoint"
+  ],
+  "policies": [
+    "earliest_action",
+    "earliest_joint",
+    "midpoint_action",
+    "midpoint_joint"
+  ],
+  "conditions": [
+    "long"
+  ],
+  "warm": 512,
+  "test": 4096,
+  "batch": 32,
+  "dt": 0.25,
+  "world_configs": {
+    "0": {
+      "seed": 854000,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        99000,
+        99001,
+        99002,
+        99003,
+        99004,
+        99005,
+        99006,
+        99007,
+        99008,
+        99009,
+        99010,
+        99011,
+        99012,
+        99013,
+        99014,
+        99015,
+        99016,
+        99017,
+        99018,
+        99019,
+        99020,
+        99021,
+        99022,
+        99023,
+        99024,
+        99025,
+        99026,
+        99027,
+        99028,
+        99029,
+        99030,
+        99031
+      ],
+      "family_allowed": [
+        0,
+        1
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "1": {
+      "seed": 854001,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        99000,
+        99001,
+        99002,
+        99003,
+        99004,
+        99005,
+        99006,
+        99007,
+        99008,
+        99009,
+        99010,
+        99011,
+        99012,
+        99013,
+        99014,
+        99015,
+        99016,
+        99017,
+        99018,
+        99019,
+        99020,
+        99021,
+        99022,
+        99023,
+        99024,
+        99025,
+        99026,
+        99027,
+        99028,
+        99029,
+        99030,
+        99031
+      ],
+      "family_allowed": [
+        1,
+        2
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    },
+    "2": {
+      "seed": 854002,
+      "batch_size": 32,
+      "n_jobs": 2,
+      "active_jobs": 2,
+      "actor_ids": [
+        99000,
+        99001,
+        99002,
+        99003,
+        99004,
+        99005,
+        99006,
+        99007,
+        99008,
+        99009,
+        99010,
+        99011,
+        99012,
+        99013,
+        99014,
+        99015,
+        99016,
+        99017,
+        99018,
+        99019,
+        99020,
+        99021,
+        99022,
+        99023,
+        99024,
+        99025,
+        99026,
+        99027,
+        99028,
+        99029,
+        99030,
+        99031
+      ],
+      "family_allowed": [
+        2,
+        0
+      ],
+      "dt": 0.25,
+      "duration_range": [
+        8.0,
+        16.0
+      ],
+      "gap_range": [
+        16.0,
+        32.0
+      ]
+    }
+  },
+  "source_sha256": {
+    "experiments\\teacher_timing\\common_history.py": "73fe16f6e4aabeceb71ccab43fb4c61e3a6ed5c70439fd6a9062cae145c29baa",
+    "experiments\\teacher_timing\\common_history_test.py": "f8f5fbccdbc4a2f15fbf79c453c696dead83a573cd36bf88327d806f87bd00e8",
+    "experiments\\teacher_timing\\evaluate.py": "5b16139b3099742b1db2beb1d266f91b49ee6ece21c82a7de789d83e61eec2e3",
+    "experiments\\remaining_time\\common_history.py": "a86fa14790304c3471eb6e6db785bc5ac657d5ac108fa3f93cebb93f29d73195",
+    "experiments\\remaining_time\\common_history_test.py": "1d90ebe0087a0a00d98659392d61bd706dbcedf8109fae28d0bc6b450c3a9100",
+    "experiments\\remaining_time\\evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments\\remaining_time\\model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "experiments\\action_split\\evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments\\timing_boundary\\data.py": "e9e9a238b2955b498c6e3c5d4d0142927190d54ff8163101133b068f8eeb4a74",
+    "experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments\\teacher_timing\\data.py": "ad264952c757e77732b2133c753ecffc78b55fe540a5cc6c56302e1676b1a3a6",
+    "experiments\\teacher_timing\\data_test.py": "70a06704ef1bb35a166e3f9db253507a183788a19bfaecafc4660a2051a67d17",
+    "data\\teacher-timing\\streams-v1\\audit_raw.py": "4bef4fe797cdc3247785244adcee9b7738198397263acb12c3948367b1c266a1",
+    "experiments\\action_split\\data_test.py": "e61a4d97cc91ab22899f9a523534a9bc7c28dde016507226e69a22edf84e7ce5",
+    "experiments\\remaining_time\\targets.py": "83f2e66044cb2bf3e623dd452d81c1c426d8521f79e7fb63a1d6d5a400403cfa",
+    "experiments\\remaining_time\\targets_test.py": "25a28fcaa319dc22beb843439921bb82729f8ebe3d9c2d5725f4569d8a2421fc",
+    "data\\action-split\\streams-v1\\audit_raw.py": "d0abd06ef948ae764eb476e599d8c5662716aa79cc59a198c6f425346e0cd517",
+    "experiments\\teacher_timing\\train.py": "a53f86c11dc8cacba900802919ea991e69839f1f9a27390a5f03e3841a9efb79",
+    "experiments\\teacher_timing\\train_test.py": "5fa5829d81a4adac7b9688686c4618d5d7a8669c257357439481e644c8fdfdc8"
+  },
+  "checkpoints": {
+    "data\\teacher-timing\\train-v1\\earliest\\seed_000\\action\\step256.pt": "c0e9af32c3dd207d6460baf48d4f3569391ae9454ce3cfe4bc5c58298c9d1e46",
+    "data\\teacher-timing\\train-v1\\earliest\\seed_000\\joint\\step256.pt": "47a8e9992d42d8deff288a59f9ba9a1e43d637f48da4bced25ebfc70a23bf21e",
+    "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+    "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\joint\\step256.pt": "2b7330e3f98f8c09521bbb9f1a0bdbffd3bd8fa9cbc8507f4446aaa9a36c79f5",
+    "data\\teacher-timing\\train-v1\\earliest\\seed_001\\action\\step256.pt": "6fafaec544ae3e81fed6e5920390ef08cab08632e0fbe85f62bfff82f59b182e",
+    "data\\teacher-timing\\train-v1\\earliest\\seed_001\\joint\\step256.pt": "a6128b4e22a390fa66ec88267f7b16fc822552b3e9e30a8a8b494f640064d932",
+    "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+    "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\joint\\step256.pt": "86fbfbe7af31db4eef3e3813e0b852318e592020cbff66de7401908a7c1bee4e",
+    "data\\teacher-timing\\train-v1\\earliest\\seed_002\\action\\step256.pt": "294e9a0e26df6181437829c001aad62c3361281c1d6384e6adee741c4f68807f",
+    "data\\teacher-timing\\train-v1\\earliest\\seed_002\\joint\\step256.pt": "1282b780ef6449817f0c8bafa90385ebcbfb3be7b867fb14c2fc1c027b8b0bf6",
+    "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+    "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\joint\\step256.pt": "da69628cf09951f6bd325d257bffd7a0825e1c6792d827eee4138aca8721427b"
+  },
+  "training_protocol_hash": "63232645d506f6e8c0838d127915e0c3b7a77d6a2d10389fd1d38ed0c12cfbd4",
+  "training_freeze_sha256": "c3e58222ec7cc8c5813d314aa7893d77424e55189aef73db8ff0144e9d502d30",
+  "collection": "Six fresh native ContextWorld origins: three seeds crossed with actual earliest/midpoint oracle. Main long8..16 only, seed854000+seed actors99000..99031 gap16..32 exactly autonomous main evaluation config. Actual native teacher alone acts; actual observations and receipts are archived. No tested policy acts in these worlds.",
+  "history_freeze": "Freeze all six raw histories, request reports, initial/final native world states and paired exogenous checks before first tested-model replay.",
+  "pairing": "Same physical exogenous event hashes, request IDs, external fields, BEGIN ticks, scheduler and context RNG across both test teachers; teacher finish times and subsequent receipt/state history differ. Compare same event identities with autonomous main eval when available.",
+  "inputs": "Only original public56 observations; no clock, oracle action, private readiness or target enters tested policies.",
+  "replay": "Each of four fixedstep256 endpoints reads each seed-matched actual test-teacher history once:24 total CPU float32 inference_mode replays, h zero only at origin then continuous4608 ticks. Archive normalized time_prediction, native_logits and final_h. No optimizer or action feedback.",
+  "metrics": "Unchanged remaining_time.evaluate.time_statistics; physical time prediction*16, postwarm active&started&finite ready all_valid and phase/distance bins. This row denominator is separate from full matured eligible new-request report and consecutive last-illegal/first-legal pair subset.",
+  "boundary": "Fixed sign threshold zero, no calibration. Report both signs, direction, early/missed first, conditional8way content at first legal and all legal. Full matured denominator retained when boundary pair unavailable.",
+  "interpretation": "Cross training teacher with test teacher to avoid preferring one chosen common history. Diagnostics measure readout on common observed history, not autonomous tested-model completion. Teacher100% completion belongs only to teacher report. No longer-duration common-history branch or threshold/weight/model sweep.",
+  "protocol_hash": "320529ff663af966cfba7d8d227873662cbc67e9e9d73eb6514e4979a0510284"
+}

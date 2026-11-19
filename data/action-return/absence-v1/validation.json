@@ -1,0 +1,48 @@
+{
+  "format": "absence-mechanical-validation-v1",
+  "audit": "passed",
+  "records": [
+    {
+      "arm": "magnitude",
+      "seed": 0,
+      "source_sha256": "7256613333a8295abb93ee64df0bd7147b48eefdfa30f9a749fb6538a4cb6e78",
+      "adoption_preserves_all_except_schedule_operator": true,
+      "source_tick": 147456,
+      "source_pending_archived": true,
+      "no_commit_or_probe": true,
+      "weights_continue_learning": true,
+      "complete_restore_equal": true,
+      "next_actual_update_bitwise_equal": true,
+      "tamper_rejected": true,
+      "historical_schedule_unchanged": true,
+      "original_main_boundary": 196608,
+      "next_point_hash": "6f4a0e7c5494030ca67e30a437fdcbd9b6c967970403cb796071f547d27673c9",
+      "next_semantic_hash": "884ed9a3a6fe45273921762b138134eb3e994ad45a619e3ce247f385fdf46130"
+    },
+    {
+      "arm": "signed_full",
+      "seed": 0,
+      "source_sha256": "ce9dfab91cee0c2058eb07f237a56b6f2b82f267789c6ac4bf2e81adc2c9fe20",
+      "adoption_preserves_all_except_schedule_operator": true,
+      "source_tick": 147456,
+      "source_pending_archived": true,
+      "no_commit_or_probe": true,
+      "weights_continue_learning": true,
+      "complete_restore_equal": true,
+      "next_actual_update_bitwise_equal": true,
+      "tamper_rejected": true,
+      "historical_schedule_unchanged": true,
+      "original_main_boundary": 196608,
+      "next_point_hash": "bbe27cde854faee2564e2839e8015f07071b5ca038258c32af1bdfe32e56ef8d",
+      "next_semantic_hash": "79ef6a2153f8f4f94dedc9fe6eb08672a58fae998a1dd4845933dc08c0d1d412"
+    }
+  ],
+  "seconds": 49.12969390000217,
+  "source_files": {
+    "F:\\agi\\experiments\\action_return\\absence.py": "f2b8a0d9d6b652d122baa3ad7651c8d0ebbb23d66e271e52a6829610759d25ad",
+    "F:\\agi\\experiments\\action_return\\absence_study.py": "3eab49d7b0ec090c02becf4db3c4e51bd63fcd1d8ebdcb8dc9c86c67f0c4983b",
+    "F:\\agi\\experiments\\action_return\\absence_tests.py": "4557c0c2fca11f4c89a16850533d9bdf3e98ed42a38bf3d87b1e45da1d4c42c2"
+  },
+  "scope": "cloned seed0 mechanical updates only, no behavior scores; excluded from scientific budgets and endpoints",
+  "validation_hash": "484af11c4d43d01ac7e279fad6182371624e19e7aebe09f0326ff993223aaf95"
+}

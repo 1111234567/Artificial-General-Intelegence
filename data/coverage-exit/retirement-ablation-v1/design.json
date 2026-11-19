@@ -1,0 +1,37 @@
+{
+  "format": "retirement-frozen-ablation-posthoc-design-v1",
+  "declared_utc": "2026-11-02T14:05:25.834413+00:00",
+  "selection": "Post hoc question after first three completed B branches had no accepted full or half batches. All three half_only endpoints fixed regardless of remaining outcomes.",
+  "seen": "Seed0 both and seed1 half endpoint summaries seen. Seed2 training progress at128/0 deaths seen; no seed2 fork scores, pending candidate indices or weak-pair values inspected before this declaration. All modified-group outcomes unmeasured.",
+  "source_rule": "B half_only complete final endpoints for exactly seeds0/1/2, tick147456; each retains its own full h/world/parameters; no training",
+  "arms": {
+    "original": "reuse exactly the four SHA-bound B short forks per seed",
+    "pending_full": "set the actual physical shared weights of the four pending proposal16 fade_indices to exactly zero on a cloned model",
+    "weakest4": "set the four eligible smallest abs(shared weight) pairs to zero, stable canonical pair-index tie break, on a cloned model"
+  },
+  "evaluation": {
+    "condition": "short",
+    "families": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "steps": 2048,
+    "action_policy": "full11 argmax, free own actions/receipts, no hidden/world reset",
+    "new_forks": 24,
+    "reused_forks": 12,
+    "matching": "same complete endpoint source h/world; future scheduler/event streams and matured request identity/timing fingerprints must match source original forks"
+  },
+  "metrics": [
+    "strict clean_completed/matured",
+    "ordinary completed/matured",
+    "inactive_actions/inactive_opportunities",
+    "candidate canonical indices, node pairs, signed weights, abs weights and overlap"
+  ],
+  "aggregation": "all per-seed and per-family counts/rates retained; each seed equal-weights four families; ablation-minus-original paired per-seed, then three-seed mean/sampleSD",
+  "fixed_budget": "exactly four pairs per intervention and2048ticks per declared family; no tuning, pruning search or optional stopping",
+  "scope": "Forced frozen physical-weight ablation, NOT online algorithmic deletion or evidence that the learning policy learned to retire connections. Eligibility and optimizer/credit history do not change.",
+  "failure": "Preserve failed/missing group and do not fill zero, replace seed, alter candidate count or choose another checkpoint.",
+  "design_hash": "a5b5e88f6b42e1bac5879b47a545696d71c14ee43f17812ae890c77a2899638b"
+}

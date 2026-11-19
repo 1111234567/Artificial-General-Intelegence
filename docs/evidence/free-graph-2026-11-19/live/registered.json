@@ -1,0 +1,79 @@
+{
+  "source_sha256": {
+    "live_module_edits_study.py": "8c89318047d95760eef584a8ab6b027ba2890f0cc204482fc45cd00a12f1c3df",
+    "live_module_edits.py": "9d7aba0d7c0466a1815a17a0d642a9132dfcf6137d7b171665e507938d43e74e",
+    "module_graphs.py": "799a74aaa06f34ea80338c9f3d86667b80c395d4e5981a056180473bfed47502",
+    "free_graph_model.py": "b02f96af9622e6b64f1377dca0f102ba92fc06c4acdc299f9fd7f9b4030724dc",
+    "module_graph_study.py": "f97cf970311af4202ae99db2d1c95cfaf266a9e96ebf4b569320bd62c3538655",
+    "ring_logic_study.py": "72d23ef6e7b90f3eae1794cd84698cc0e129b61fb81872b67ac0c70f6116401f",
+    "ring_logic_world.py": "753e41eaa4ac36a61f3eeea343556f587f3944f8c0829988c513518842560ba8",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "dev_groups": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "dev_roots": [
+    68810000,
+    68810001,
+    68810002,
+    68810003,
+    68810004,
+    68810005
+  ],
+  "test_groups": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "test_roots": [
+    68830000,
+    68830001,
+    68830002,
+    68830003,
+    68830004,
+    68830005,
+    68830006,
+    68830007,
+    68830008,
+    68830009,
+    68830010,
+    68830011,
+    68830012,
+    68830013,
+    68830014,
+    68830015
+  ],
+  "trials": 120,
+  "worlds": "All 20 cells appear in random order in each block; fresh sensory geometry and noise. Stable labels or unannounced all-side inversion at a world-seed draw of trial 40 or 60 (zero-based).",
+  "heads": "449-parameter 1200-step modules64 checkpoints, with the parent study's physical calibration choice within each starting group and rule. Runtime weights stay fixed.",
+  "rule": "Trace derivative of frozen motor logit w.r.t. an active neuron's local candidate input, times presynaptic activity and analogue change in the square-root degree normalization. Average over movement ticks before the own actual contact. Multiply approximate structural effect by the direction of physically reached side, the delivered signed taste and a logistic error factor. Separate EWMA scores for adding/removing an arc.",
+  "edit": "Independent growth and retirement intervals in signed receipt count. Positive estimated improvement required. Eligible growth candidates are absent, non-self arcs. Retire only if all 32 nodes remain strongly connected, starting the next request for newly grown arcs. No artificial count bounds, per-node degree targets, protected rings, or tied growth/deletion.",
+  "controls": "Frozen; matched-random attempts at exactly the realized feedback-arm change times with its counts, using randomized endpoints and the same connectivity guard; independent fair random signs instead of true taste at own actual contact. All four clones drive their own bodies and hold their own recurrent state throughout life.",
+  "schedules": [
+    {
+      "growth_every": 5,
+      "retirement_every": 7,
+      "decay": 0.75
+    },
+    {
+      "growth_every": 7,
+      "retirement_every": 5,
+      "decay": 0.75
+    },
+    {
+      "growth_every": 9,
+      "retirement_every": 6,
+      "decay": 0.5
+    }
+  ],
+  "selection": "Maximize reversal last-20 gain over frozen, with penalty 2*max(0, frozen minus adaptive last-20 accuracy in stable world), on development groups and worlds only. Compare with doing nothing, whose score is 0; ties favor doing nothing. Retain the highest-scoring active schedule as a separate mechanistic arm, with active ties settled by order. Confirm all arms on fresh matched worlds whose roots also differ from the earlier bounded pilot, with distinct fixed heads from development.",
+  "confirmation": "Primary pooled-rule contrasts adaptive minus each control in four prespecified windows: stable last 20, reversal before/first/last 20. Paired crossed bootstrap over fitted groups and episode roots with simultaneous 95% Bonferroni intervals over 12 cells. Each 20-trial block is balanced across all ordered odor pairs."
+}

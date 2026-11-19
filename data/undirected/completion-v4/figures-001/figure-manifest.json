@@ -1,0 +1,1280 @@
+{
+  "format": "undirected-figures-v1",
+  "protocol_sha256": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc",
+  "accounting_audit": "passed",
+  "accounting_audit_scope": "provenance_and_accounting",
+  "scientific_status": "completed_with_between_policy_differences",
+  "fixed_probe_comparison": {
+    "check_code": "FIXED_PROBE_SAME_LEARNING_EXECUTION",
+    "status": "failed",
+    "frozen_evaluation_status": "different",
+    "exact_rule": "Original whole training trace records compared exactly, without numerical tolerances; failed equality remains failed.",
+    "scope": "Between-policy empirical comparison, separate from source, per-branch consistency, and count/rate audit certification. Empty histories prove no endpoint equivalence.",
+    "causal_attribution": "Differences are observed; their cause is not established. Equal training actions do not imply equal frozen-fork actions or counters.",
+    "per_seed": [
+      {
+        "seed": 0,
+        "fixed_branch": "seed_000__ports__undirected__rtrl__fixed__warmup",
+        "fixed_probe_branch": "seed_000__ports__undirected__rtrl__fixed_probe__warmup",
+        "fixed_terminal_status": "success",
+        "fixed_probe_terminal_status": "success",
+        "training_trace": {
+          "status": "failed",
+          "compared_records": 1856,
+          "fixed_records": 1856,
+          "fixed_probe_records": 1856,
+          "mismatch_count": 724,
+          "first_mismatch": {
+            "tick": 145024
+          },
+          "first_mismatch_tick": 145024,
+          "record_inventory_equal": true,
+          "fields": {
+            "action_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "actual_family_exposures": {
+              "group": "external_stream",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "credit_gradient_hash": {
+              "group": "learning_state",
+              "mismatch_count": 724,
+              "first_mismatch": {
+                "tick": 145024
+              },
+              "first_mismatch_tick": 145024,
+              "first_difference": {
+                "fixed": "3be88ec0e5f22f1c3a5bc13246cde37113d1db9e8f0bfb0f6bb5b0d7b8a7c902",
+                "fixed_probe": "93ad21e5416f7640874dcc1dada02308acd55b49451740eab0adbb41fffa5ba1"
+              }
+            },
+            "data_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "event_hash": {
+              "group": "external_stream",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "live_hidden_hash": {
+              "group": "learning_state",
+              "mismatch_count": 723,
+              "first_mismatch": {
+                "tick": 145152
+              },
+              "first_mismatch_tick": 145152,
+              "first_difference": {
+                "fixed": "d8fcc9d35145920318ce2e705ec2e4f91be02bb8974050517220f37c009aa2c0",
+                "fixed_probe": "3c6b1a1658cc70330016756f68e296dba2638947e553bfd319053a5675af45ad"
+              }
+            },
+            "live_world_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "optimizer_hash": {
+              "group": "learning_state",
+              "mismatch_count": 724,
+              "first_mismatch": {
+                "tick": 145024
+              },
+              "first_mismatch_tick": 145024,
+              "first_difference": {
+                "fixed": "7a134d43979238027f04b93a5a1ceaa6ac3ea1f242c7f731c38724cfd2d4cbd6",
+                "fixed_probe": "aa7634921a7a2efaab972c49938cc8d3847aae5595a124ab9f17df2edceab97c"
+              }
+            },
+            "parameter_hash": {
+              "group": "learning_state",
+              "mismatch_count": 724,
+              "first_mismatch": {
+                "tick": 145024
+              },
+              "first_mismatch_tick": 145024,
+              "first_difference": {
+                "fixed": "bb2e7508a5d5d010c3108c5ecfcd882f16e684cea32705229281bac17be4b436",
+                "fixed_probe": "a09b8de7ec3c552435640cc50e62879815ca9d41ca1fc4b910d71b611dbaee99"
+              }
+            },
+            "physical_matrix": {
+              "group": "learning_state",
+              "mismatch_count": 714,
+              "first_mismatch": {
+                "tick": 145024
+              },
+              "first_mismatch_tick": 145024,
+              "first_difference": {
+                "fixed": {
+                  "frobenius_norm": 6.698541325737388,
+                  "operator_norm": 1.924799672421641,
+                  "spectral_radius": 1.924799672421641,
+                  "antisymmetric_frobenius_norm": 0.0,
+                  "oriented_nonzero_couplings": 1280,
+                  "scope": "actual post-update matrix; descriptive only, no spectral projection or sensitivity reset"
+                },
+                "fixed_probe": {
+                  "frobenius_norm": 6.698541325737388,
+                  "operator_norm": 1.924799672421642,
+                  "spectral_radius": 1.924799672421642,
+                  "antisymmetric_frobenius_norm": 0.0,
+                  "oriented_nonzero_couplings": 1280,
+                  "scope": "actual post-update matrix; descriptive only, no spectral projection or sensitivity reset"
+                }
+              }
+            }
+          },
+          "groups": {
+            "learning_state": {
+              "status": "different",
+              "fields": [
+                "credit_gradient_hash",
+                "live_hidden_hash",
+                "optimizer_hash",
+                "parameter_hash",
+                "physical_matrix"
+              ],
+              "mismatch_count": 724,
+              "first_mismatch_tick": 145024
+            },
+            "behavior": {
+              "status": "equal",
+              "fields": [
+                "action_hash",
+                "data_hash",
+                "live_world_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "external_stream": {
+              "status": "equal",
+              "fields": [
+                "actual_family_exposures",
+                "event_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "other": {
+              "status": "equal",
+              "fields": [],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            }
+          }
+        },
+        "frozen_evaluation": {
+          "status": "failed",
+          "compared_records": 40,
+          "fixed_records": 40,
+          "fixed_probe_records": 40,
+          "mismatch_count": 24,
+          "first_mismatch": {
+            "tick": 196608,
+            "family": 0,
+            "condition": "long_both",
+            "steps": 2048
+          },
+          "first_mismatch_tick": 196608,
+          "record_inventory_equal": true,
+          "fields": {
+            "action_hash": {
+              "group": "actions",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "content_by_cohort_phase_age": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 24,
+              "first_mismatch": {
+                "tick": 196608,
+                "family": 0,
+                "condition": "long_both",
+                "steps": 2048
+              },
+              "first_mismatch_tick": 196608,
+              "first_difference": {
+                "value_hashes": {
+                  "fixed": "b8fad4a2a471ca812f7a5d9fdee3fb654314457991ac9fcd610101e20b40d719",
+                  "fixed_probe": "f0d47e3dd6ce4a0a14e4f785bb401ab4ee820c221dce65dfa08de72ad5e3708c"
+                },
+                "scope": "Full values remain in the original SHA-bound evaluation input; no approximate comparison."
+              }
+            },
+            "end_hidden_hash": {
+              "group": "learning_state",
+              "mismatch_count": 24,
+              "first_mismatch": {
+                "tick": 196608,
+                "family": 0,
+                "condition": "long_both",
+                "steps": 2048
+              },
+              "first_mismatch_tick": 196608,
+              "first_difference": {
+                "fixed": "69148077ddb940d16cbe22c91de9407c43b08d2269da524417aae0919164052c",
+                "fixed_probe": "86101ff1ae086c501802df36fb58e7941df1c228cc1089738c6b0ad2655a9b58"
+              }
+            },
+            "end_world_state_hash": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "inactive_history": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 24,
+              "first_mismatch": {
+                "tick": 196608,
+                "family": 0,
+                "condition": "long_both",
+                "steps": 2048
+              },
+              "first_mismatch_tick": 196608,
+              "first_difference": {
+                "value_hashes": {
+                  "fixed": "5f2909ccfdf80d00a971485cc427f58e5afe79b596a2ab8e994e38c98973b4fc",
+                  "fixed_probe": "50f392613644a16b5e6313edd3a843297cc3a97e490fc73a1b4c2cf720fcb7b8"
+                },
+                "scope": "Full values remain in the original SHA-bound evaluation input; no approximate comparison."
+              }
+            },
+            "opportunities": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "post_fork_counters": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "primary": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "request_diagnosis": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 8,
+              "first_mismatch": {
+                "tick": 229376,
+                "family": 0,
+                "condition": "short",
+                "steps": 2048
+              },
+              "first_mismatch_tick": 229376,
+              "first_difference": {
+                "value_hashes": {
+                  "fixed": "8d87c8435d6f1ee127fd35fd0257182f9d93ad11425bed411b89e3a613cdfe8e",
+                  "fixed_probe": "4095f685ec071daa3aea855846f32710f82360251a210dcecdd12c2c0041b858"
+                },
+                "scope": "Full values remain in the original SHA-bound evaluation input; no approximate comparison."
+              }
+            }
+          },
+          "groups": {
+            "actions": {
+              "status": "equal",
+              "fields": [
+                "action_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "learning_state": {
+              "status": "different",
+              "fields": [
+                "end_hidden_hash"
+              ],
+              "mismatch_count": 24,
+              "first_mismatch_tick": 196608
+            },
+            "world_and_behavior_counts": {
+              "status": "equal",
+              "fields": [
+                "end_world_state_hash",
+                "opportunities",
+                "post_fork_counters",
+                "primary"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "request_and_content_diagnostics": {
+              "status": "different",
+              "fields": [
+                "content_by_cohort_phase_age",
+                "inactive_history",
+                "request_diagnosis"
+              ],
+              "mismatch_count": 24,
+              "first_mismatch_tick": 196608
+            },
+            "other": {
+              "status": "equal",
+              "fields": [],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            }
+          },
+          "numeric_leaf_differences": {
+            "integer": {
+              "record_count": 16,
+              "first_mismatch_tick": 229376
+            },
+            "float": {
+              "record_count": 24,
+              "first_mismatch_tick": 196608
+            }
+          }
+        }
+      },
+      {
+        "seed": 1,
+        "fixed_branch": "seed_001__ports__undirected__rtrl__fixed__warmup",
+        "fixed_probe_branch": "seed_001__ports__undirected__rtrl__fixed_probe__warmup",
+        "fixed_terminal_status": "success",
+        "fixed_probe_terminal_status": "success",
+        "training_trace": {
+          "status": "passed",
+          "compared_records": 1856,
+          "fixed_records": 1856,
+          "fixed_probe_records": 1856,
+          "mismatch_count": 0,
+          "first_mismatch": null,
+          "first_mismatch_tick": null,
+          "record_inventory_equal": true,
+          "fields": {
+            "action_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "actual_family_exposures": {
+              "group": "external_stream",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "credit_gradient_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "data_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "event_hash": {
+              "group": "external_stream",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "live_hidden_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "live_world_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "optimizer_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "parameter_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "physical_matrix": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            }
+          },
+          "groups": {
+            "learning_state": {
+              "status": "equal",
+              "fields": [
+                "credit_gradient_hash",
+                "live_hidden_hash",
+                "optimizer_hash",
+                "parameter_hash",
+                "physical_matrix"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "behavior": {
+              "status": "equal",
+              "fields": [
+                "action_hash",
+                "data_hash",
+                "live_world_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "external_stream": {
+              "status": "equal",
+              "fields": [
+                "actual_family_exposures",
+                "event_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "other": {
+              "status": "equal",
+              "fields": [],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            }
+          }
+        },
+        "frozen_evaluation": {
+          "status": "passed",
+          "compared_records": 40,
+          "fixed_records": 40,
+          "fixed_probe_records": 40,
+          "mismatch_count": 0,
+          "first_mismatch": null,
+          "first_mismatch_tick": null,
+          "record_inventory_equal": true,
+          "fields": {
+            "action_hash": {
+              "group": "actions",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "content_by_cohort_phase_age": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "end_hidden_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "end_world_state_hash": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "inactive_history": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "opportunities": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "post_fork_counters": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "primary": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "request_diagnosis": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            }
+          },
+          "groups": {
+            "actions": {
+              "status": "equal",
+              "fields": [
+                "action_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "learning_state": {
+              "status": "equal",
+              "fields": [
+                "end_hidden_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "world_and_behavior_counts": {
+              "status": "equal",
+              "fields": [
+                "end_world_state_hash",
+                "opportunities",
+                "post_fork_counters",
+                "primary"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "request_and_content_diagnostics": {
+              "status": "equal",
+              "fields": [
+                "content_by_cohort_phase_age",
+                "inactive_history",
+                "request_diagnosis"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "other": {
+              "status": "equal",
+              "fields": [],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            }
+          },
+          "numeric_leaf_differences": {
+            "integer": {
+              "record_count": 0,
+              "first_mismatch_tick": null
+            },
+            "float": {
+              "record_count": 0,
+              "first_mismatch_tick": null
+            }
+          }
+        }
+      },
+      {
+        "seed": 2,
+        "fixed_branch": "seed_002__ports__undirected__rtrl__fixed__warmup",
+        "fixed_probe_branch": "seed_002__ports__undirected__rtrl__fixed_probe__warmup",
+        "fixed_terminal_status": "success",
+        "fixed_probe_terminal_status": "success",
+        "training_trace": {
+          "status": "passed",
+          "compared_records": 1856,
+          "fixed_records": 1856,
+          "fixed_probe_records": 1856,
+          "mismatch_count": 0,
+          "first_mismatch": null,
+          "first_mismatch_tick": null,
+          "record_inventory_equal": true,
+          "fields": {
+            "action_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "actual_family_exposures": {
+              "group": "external_stream",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "credit_gradient_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "data_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "event_hash": {
+              "group": "external_stream",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "live_hidden_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "live_world_hash": {
+              "group": "behavior",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "optimizer_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "parameter_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "physical_matrix": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            }
+          },
+          "groups": {
+            "learning_state": {
+              "status": "equal",
+              "fields": [
+                "credit_gradient_hash",
+                "live_hidden_hash",
+                "optimizer_hash",
+                "parameter_hash",
+                "physical_matrix"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "behavior": {
+              "status": "equal",
+              "fields": [
+                "action_hash",
+                "data_hash",
+                "live_world_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "external_stream": {
+              "status": "equal",
+              "fields": [
+                "actual_family_exposures",
+                "event_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "other": {
+              "status": "equal",
+              "fields": [],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            }
+          }
+        },
+        "frozen_evaluation": {
+          "status": "passed",
+          "compared_records": 40,
+          "fixed_records": 40,
+          "fixed_probe_records": 40,
+          "mismatch_count": 0,
+          "first_mismatch": null,
+          "first_mismatch_tick": null,
+          "record_inventory_equal": true,
+          "fields": {
+            "action_hash": {
+              "group": "actions",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "content_by_cohort_phase_age": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "end_hidden_hash": {
+              "group": "learning_state",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "end_world_state_hash": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "inactive_history": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "opportunities": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "post_fork_counters": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "primary": {
+              "group": "world_and_behavior_counts",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            },
+            "request_diagnosis": {
+              "group": "request_and_content_diagnostics",
+              "mismatch_count": 0,
+              "first_mismatch": null,
+              "first_mismatch_tick": null
+            }
+          },
+          "groups": {
+            "actions": {
+              "status": "equal",
+              "fields": [
+                "action_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "learning_state": {
+              "status": "equal",
+              "fields": [
+                "end_hidden_hash"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "world_and_behavior_counts": {
+              "status": "equal",
+              "fields": [
+                "end_world_state_hash",
+                "opportunities",
+                "post_fork_counters",
+                "primary"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "request_and_content_diagnostics": {
+              "status": "equal",
+              "fields": [
+                "content_by_cohort_phase_age",
+                "inactive_history",
+                "request_diagnosis"
+              ],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            },
+            "other": {
+              "status": "equal",
+              "fields": [],
+              "mismatch_count": 0,
+              "first_mismatch_tick": null
+            }
+          },
+          "numeric_leaf_differences": {
+            "integer": {
+              "record_count": 0,
+              "first_mismatch_tick": null
+            },
+            "float": {
+              "record_count": 0,
+              "first_mismatch_tick": null
+            }
+          }
+        }
+      }
+    ]
+  },
+  "independent_audit_counts": {
+    "projected_full_S": 24,
+    "primal_history_only": 18,
+    "window_method_no_saved_S": 0,
+    "no_successful_live_blocks": 0
+  },
+  "inputs": {
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\report.json": {
+      "sha256": "df1ce5b7abf87676a2206c604a5d2c07d3199014747a20e617c1fc3d778c3350",
+      "role": "accounting_audit_header"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\branches.csv": {
+      "sha256": "e243bae02e12e12f284884d47a0be634f10f79a71582381115dc0a021c3d38f6",
+      "role": "branches"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\checkpoints.csv": {
+      "sha256": "f451d9d6d96e41e64b387eaa37487c625173b994d623c55d5aa90d9e300cb158",
+      "role": "checkpoints"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\per_seed.csv": {
+      "sha256": "931929190055080f54f377ad98819ccd5a10936c16873f7cf1078ed0232deb11",
+      "role": "per_seed"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\family_average_per_seed.csv": {
+      "sha256": "91344bbaecc9a6d357ab96b649c929c82f5c716647178e213d85be2f1df11fe7",
+      "role": "family_average_per_seed"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\family_average_summary.csv": {
+      "sha256": "50d365dfbe4de23f004f665c31c9d2e45fd4d3ef68a5c3831db81e49a4a97662",
+      "role": "family_average_summary"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__core__undirected__recorded512__fixed__warmup.json": {
+      "sha256": "12ac251d4bd918cbc92223c5f5ba213ac3a4ff2fe5e0c77822741a127281136c",
+      "role": "independent_audit:seed_000__core__undirected__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__core__untied__recorded512__fixed__warmup.json": {
+      "sha256": "26a95e02912f83e4fdf7b3bd499657439181ff0259c8e737317f40edce0055d4",
+      "role": "independent_audit:seed_000__core__untied__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__recorded512__fixed__warmup.json": {
+      "sha256": "29e3601a435b0b7961d0be43507b98d26bdb1099b286e2ae4bfcb45203a38d35",
+      "role": "independent_audit:seed_000__ports__undirected__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__untied__recorded512__fixed__warmup.json": {
+      "sha256": "a4ed67d65cddc4ed755f853347f224b8d010faed1ca59260f866a563108728f0",
+      "role": "independent_audit:seed_000__ports__untied__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__tbptt128__fixed__warmup.json": {
+      "sha256": "c04a74ca6c8e6e426294e9392eacaf325a1733e3daccb7161dca52a679b3f288",
+      "role": "independent_audit:seed_000__ports__undirected__tbptt128__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__fixed__warmup.json": {
+      "sha256": "6dc1f33dc966321db467cdaadeecc2ce9033c12e99e1bfb9b4220def2f6651c8",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl_reset__fixed__warmup.json": {
+      "sha256": "902fc7aacdca8b0f52e6800173705c25a0a5bb411c00da30b6caa8a383e3b63e",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl_reset__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__untied__rtrl__fixed__warmup.json": {
+      "sha256": "21f9381ff28fe16f7d65ea8462dfe99d2cbc2bb858c15f0c285a41ebd4eab26a",
+      "role": "independent_audit:seed_000__ports__untied__rtrl__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__fixed_probe__warmup.json": {
+      "sha256": "c5032f1bd65905c0c5720fe49b2d1d8d2ac800ed153bbb196eb9ce8f80a5494e",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl__fixed_probe__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__grow__warmup.json": {
+      "sha256": "c68c09b866097fc6a1392a33568ac2102776db23b53b9bb5e3cf4114ebc00ddf",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl__grow__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__retire__warmup.json": {
+      "sha256": "0366adf608a1e2bce496a7e462205f9e0fc0c5070a5e2e8cf1084dc17c280998",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl__retire__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__both__warmup.json": {
+      "sha256": "5b45f755cbef1500f5a0d99106883052dd426c0e358273cf0af9c7f1e4441677",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl__both__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__tbptt128__fixed__wide.json": {
+      "sha256": "7013f097e69536ac1ec3f6a1c2eae283f518ee321d398793edb40997b1ec0acf",
+      "role": "independent_audit:seed_000__ports__undirected__tbptt128__fixed__wide"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_000__ports__undirected__rtrl__fixed__wide.json": {
+      "sha256": "4a207de7c51aea446a2382edba1a2ed83b2aa241edd8fe7ddbe2cccdc4e3a5b4",
+      "role": "independent_audit:seed_000__ports__undirected__rtrl__fixed__wide"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__core__undirected__recorded512__fixed__warmup.json": {
+      "sha256": "f1955d9b8a41526f7760eba6a8f9d64f3dc2041b127ef753e57c22049d639627",
+      "role": "independent_audit:seed_001__core__undirected__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__core__untied__recorded512__fixed__warmup.json": {
+      "sha256": "079fdd5e3a7bc262af6f281df08990d7e5d878a0b1299242c4a6ba96195bd7e8",
+      "role": "independent_audit:seed_001__core__untied__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__recorded512__fixed__warmup.json": {
+      "sha256": "619ed06b963daedc47a405b7e1d5afc0cab97720496cbe2f1946c8f38312eb95",
+      "role": "independent_audit:seed_001__ports__undirected__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__untied__recorded512__fixed__warmup.json": {
+      "sha256": "a8fc1c66d1c7d03ab3a99bf3f6ce2fe8c845121d96575fca92b8fd6efc22eae8",
+      "role": "independent_audit:seed_001__ports__untied__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__tbptt128__fixed__warmup.json": {
+      "sha256": "e1242cf83d41b4f11f56a4048755c76d70bef6288cf342559d4d397c5f3ed8b9",
+      "role": "independent_audit:seed_001__ports__undirected__tbptt128__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__fixed__warmup.json": {
+      "sha256": "2f1d29f6c2e5871db0655cb8515a24ddeb0e9e317097d6ca1f85958b9a3f7a7c",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl_reset__fixed__warmup.json": {
+      "sha256": "0d13e1e3357c136fdc4d77f44b9629a284b19be9f40a8b1698ac16032d994f8a",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl_reset__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__untied__rtrl__fixed__warmup.json": {
+      "sha256": "fca047c0d930bb3bc384ad6fd57ef422ff6cf4b936449b56c089441106d8e2a9",
+      "role": "independent_audit:seed_001__ports__untied__rtrl__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__fixed_probe__warmup.json": {
+      "sha256": "fcab47008ec69d527459be5f965674d73cecf9d14a0dcd8268d0804018f29998",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl__fixed_probe__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__grow__warmup.json": {
+      "sha256": "e25ffd9951dd63e7c8f705d7ab48a8dec58d2a31618e0fc28ff9557794117233",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl__grow__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__retire__warmup.json": {
+      "sha256": "c018f0b059b4aec78a9d5a8c9364b7a3552bdef732f658d8ea919bca975d46aa",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl__retire__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__both__warmup.json": {
+      "sha256": "04fcc0a515ae73ffa74ac37dd3cab6e93df454b98fb41a525364018c32f004c9",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl__both__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__tbptt128__fixed__wide.json": {
+      "sha256": "a0a41548ff8f4fa1ab5de3d29caaebeeaee22b35503334f57e98d18ffd96f985",
+      "role": "independent_audit:seed_001__ports__undirected__tbptt128__fixed__wide"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_001__ports__undirected__rtrl__fixed__wide.json": {
+      "sha256": "949ce49dcf0f5a81060844a42fa1e9e1c2422772fa5283c022ec5b9acff7ac4c",
+      "role": "independent_audit:seed_001__ports__undirected__rtrl__fixed__wide"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__core__undirected__recorded512__fixed__warmup.json": {
+      "sha256": "c561d38b1bc191a2dc3f97174d73ba53b8ef45369df90b4bcb0fe5bc2c0eadde",
+      "role": "independent_audit:seed_002__core__undirected__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__core__untied__recorded512__fixed__warmup.json": {
+      "sha256": "b63365983a3a30148c6505e35578f119f6b141cd73657bba4bbfae16090a59dd",
+      "role": "independent_audit:seed_002__core__untied__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__recorded512__fixed__warmup.json": {
+      "sha256": "bb4f27f1aaa888105e61115c3fcea744a2d00551b782ec0a974a423cffa20671",
+      "role": "independent_audit:seed_002__ports__undirected__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__untied__recorded512__fixed__warmup.json": {
+      "sha256": "5ca7ca7354bf05bf5e8694d1acb7b2a8a53b6749771b540e239d453beac33bca",
+      "role": "independent_audit:seed_002__ports__untied__recorded512__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__tbptt128__fixed__warmup.json": {
+      "sha256": "ac46aa57f993c639943e764b7c4de515d58ce98f512d437825e726c5113bf605",
+      "role": "independent_audit:seed_002__ports__undirected__tbptt128__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__fixed__warmup.json": {
+      "sha256": "d9bdc33c32d10808510cadea46d3ae9538c6c9bfde3f75f20893663182e1b304",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl_reset__fixed__warmup.json": {
+      "sha256": "f87b4c1b9e40f280df11ab1416c76f55c9eadba0ebdc26fe6bf6a14200e1609d",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl_reset__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__untied__rtrl__fixed__warmup.json": {
+      "sha256": "abffb9557dedd9435ee9f6a7ddf32572b20c6b6830af54780c2fad260c55a310",
+      "role": "independent_audit:seed_002__ports__untied__rtrl__fixed__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__fixed_probe__warmup.json": {
+      "sha256": "7d51bbe42f0d5b087d194978b97c1bdea90cd706992a9f525e8a05ff60192124",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl__fixed_probe__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__grow__warmup.json": {
+      "sha256": "ba7bd9878477a58ad3359344849c004f7b3b0f32bb4f3519e3306943989873ad",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl__grow__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__retire__warmup.json": {
+      "sha256": "915a2dc0b580a7b0f5cf685f3a34eb26ea2152433092211e626ec23218859fd2",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl__retire__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__both__warmup.json": {
+      "sha256": "0042accfa20626714eb751aa58bc426bf14d81a16c67ae89f59b533517673ef6",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl__both__warmup"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__tbptt128__fixed__wide.json": {
+      "sha256": "5a9be113d98b654f6f449da8d7d4b6aebaec937607da5e12ea7bf753ec8e4f3e",
+      "role": "independent_audit:seed_002__ports__undirected__tbptt128__fixed__wide"
+    },
+    "F:\\agi\\data\\undirected\\analysis-v2\\audits\\seed_002__ports__undirected__rtrl__fixed__wide.json": {
+      "sha256": "61f910efa026e04d62fd61b1ca862b581264121317c931efc7df74aca3fe16be",
+      "role": "independent_audit:seed_002__ports__undirected__rtrl__fixed__wide"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\graphs.json": {
+      "sha256": "e1f9aec43101b637578b5be8b8baa5c60f4102793269f78a7fc00fd7619b88c9",
+      "role": "audited_full_node_graphs"
+    },
+    "F:\\agi\\experiments\\undirected\\report.py": {
+      "sha256": "14742201bfef2b113fd94fe1317de65aa17415f3396dd3d37aadde1c96df6127",
+      "role": "accounting_analysis_source"
+    },
+    "F:\\agi\\experiments\\integration\\report.py": {
+      "sha256": "f696ca3955bb73ab8464a84654ec2c5ef44177de5a8b9c44f0048792bd8300e1",
+      "role": "accounting_analysis_source"
+    },
+    "F:\\agi\\data\\undirected\\completion-v4\\report-001\\inputs.csv": {
+      "sha256": "e5b9f7c2737b255fb33b8dea95ef563b156995bd68da6204cdd6eb359feb8266",
+      "role": "audited_input_manifest"
+    },
+    "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\credit-path-check.json": {
+      "sha256": "87f70a904672d3eec854585ffe4c03c3ae0d61486c2d0901c6dec5ca7e49ecdf",
+      "role": "mechanical_credit_check_no_behavior"
+    },
+    "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\credit-path-check.py": {
+      "sha256": "e04d331e032f72d5c95213727a270089d022045ffc51152673d6c86ecdcde27e",
+      "role": "mechanical_credit_check_source"
+    },
+    "F:\\agi\\experiments\\undirected\\model.py": {
+      "sha256": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+      "role": "mechanical_credit_check_source"
+    },
+    "F:\\agi\\experiments\\undirected\\credit.py": {
+      "sha256": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+      "role": "mechanical_credit_check_source"
+    }
+  },
+  "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+  "figures": [
+    {
+      "name": "audited_birth_graph_and_parameter_budget",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_birth_graph_and_parameter_budget.png",
+        "sha256": "95adecb689d8e045fd2cf3c057cde8998b90bc241f0355554fbeb3962b2128da"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_birth_graph_and_parameter_budget.svg",
+        "sha256": "384431c09d14f3888cc93f4db144a2e94e126b7e38252c6085749fbae5fedbf1"
+      }
+    },
+    {
+      "name": "audited_last_valid_direction_weights",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_last_valid_direction_weights.png",
+        "sha256": "97f437f8c8790f2d8e673cb3c67075f78f7c120e3f6a9da6cd5e1b7589ce9544"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\audited_last_valid_direction_weights.svg",
+        "sha256": "6d2894297e60bc5cfdb5370c181673e8f2e6e4f693980f05c003eb5f3b19820c"
+      }
+    },
+    {
+      "name": "outcomes_interfaces_512_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_196608.png",
+        "sha256": "8e5834e243838186954e06ad625d66369e0a0621a7b699ab7c9726e8c583eea6"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_196608.svg",
+        "sha256": "1f59945b8562e922ba79c4637de2a35f8d411d3f1fb125a183beccaf43cbfc68"
+      }
+    },
+    {
+      "name": "outcomes_temporal_credit_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_196608.png",
+        "sha256": "652129b80dc02cf72f19dbe4e68f48ffe627181dbd42143c545585991c72f97b"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_196608.svg",
+        "sha256": "0bd4bddd7fbb62a691d6ac676f050e4ed68e862a0d275cdf235f650b6abd1f64"
+      }
+    },
+    {
+      "name": "outcomes_structure_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_196608.png",
+        "sha256": "e0779be52d5d9a031bdf7048e54be353d3a2f8eb4b2c79c82762dbd8fb646441"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_196608.svg",
+        "sha256": "67267fcc79b7fc541017264bc249446c45e4ce841b2c3c7af58660ba7fcaf7db"
+      }
+    },
+    {
+      "name": "outcomes_course_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_196608.png",
+        "sha256": "b4814490783e259dc5e819ee5701dcf0efa3212b4b2568d17f8445ea0a67497e"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_196608.svg",
+        "sha256": "4688e9df98a63565678524e975176d9655e914f3cdd0c0bc53bf167f7e435a4e"
+      }
+    },
+    {
+      "name": "cost_interfaces_512_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_196608.png",
+        "sha256": "f7876b6be0efc92877939b22f333c87b6b0dc705c8679ddc721e4236689e41b0"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_196608.svg",
+        "sha256": "1565c6958c236a25c2d4cbe3275766f512e7d137d1f66a48586ef7b08a1dd994"
+      }
+    },
+    {
+      "name": "cost_temporal_credit_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_196608.png",
+        "sha256": "2227badc016fa9e864d7205bf5c3b28f4d73a06e665bf7141f9fcae4a7b949f5"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_196608.svg",
+        "sha256": "cf4c3582de3fd62f833b0aefeef0995c419f55cd97ef9a98ae3c7199ec7e94d3"
+      }
+    },
+    {
+      "name": "cost_structure_tick_196608",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_196608.png",
+        "sha256": "e91aa21d73d5f4349083f5050e63c80dc0f7e47dcdcdd6ab78699a6cc7f3c1c8"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_196608.svg",
+        "sha256": "dd2daf8ee1f2864b338bc73c375e3399f28a8a80eae5921b8aee799203116d1d"
+      }
+    },
+    {
+      "name": "outcomes_interfaces_512_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_237568.png",
+        "sha256": "6da28bfa5af7f5da5d48b453c5217a78cff2d0d8c3b4e172ed2daadcad11f4b2"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_interfaces_512_tick_237568.svg",
+        "sha256": "3b30d735c48267e6d6ec557a3c780c9645c2ca412e1b19bbda71a23b83155c06"
+      }
+    },
+    {
+      "name": "outcomes_temporal_credit_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_237568.png",
+        "sha256": "d146cb8c9be9dc39949cd511dbd6ff6fecdf78de05ae2b2d9b3f97022832dbdb"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_temporal_credit_tick_237568.svg",
+        "sha256": "261333d253e088539d44f408f77a3106b98e13c81ad8bf16c5cd138a8022e15e"
+      }
+    },
+    {
+      "name": "outcomes_structure_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_237568.png",
+        "sha256": "cb49feba9b553c3cdc862f13cd9631e0c6294f65dc703420b3430c6ebaf17dc3"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_structure_tick_237568.svg",
+        "sha256": "ea9ce34994cfbffdc5fd4ff73bdf77e7584a5f102ea48ff8e71ebf647278e7fb"
+      }
+    },
+    {
+      "name": "outcomes_course_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_237568.png",
+        "sha256": "fd0f5cf31c579e8f6030dbab27314a008fcd33c489e13224a95cab083bd94094"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\outcomes_course_tick_237568.svg",
+        "sha256": "1acdc7255914d4988ba85eafcb802fc5f1da7441b75da679ed35f0fed993dde6"
+      }
+    },
+    {
+      "name": "cost_interfaces_512_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_237568.png",
+        "sha256": "178c8bdcf3689f83c8a0387f317a8d25ee3f26fa054d9e39996d76a94f1f5e65"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_interfaces_512_tick_237568.svg",
+        "sha256": "b76341f5c7db8042d0874a0e5274cf4bbc21a348328556934bcaec4dbc74d6c2"
+      }
+    },
+    {
+      "name": "cost_temporal_credit_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_237568.png",
+        "sha256": "6c87576554b6be43bc7d3c6bd342ad7aa33614f750f4e781cb017e0946b1892a"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_temporal_credit_tick_237568.svg",
+        "sha256": "b9f7f8b1f8dd5b57321324b6755b7ad0a55f450dc2e2ba3b13b937a06abb7e7f"
+      }
+    },
+    {
+      "name": "cost_structure_tick_237568",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_237568.png",
+        "sha256": "641334e0845497e681b3264af5209c5fd7e202da231fe467bad8ef2adad5fbb5"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\cost_structure_tick_237568.svg",
+        "sha256": "c1e241b09ee123ccf18521c1a7761b64be6badb1362412e39b7de2066c54ec43"
+      }
+    },
+    {
+      "name": "mechanical_credit_1152_not_behavior",
+      "data_sha256": "63f0075bcdb16f59ca1c7f77270bb75d944e289e905e998309647618ebc76681",
+      "png": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\mechanical_credit_1152_not_behavior.png",
+        "sha256": "0975a6258cc6594a01e487534a9fdade6e7e277aac5cb60b0a6f1a73cdf912a8"
+      },
+      "svg": {
+        "path": "F:\\agi\\data\\undirected\\completion-v4\\figures-001\\mechanical_credit_1152_not_behavior.svg",
+        "sha256": "95bfad08918bf09779ce8b9c51643d496de8e3ec5943a799a748ce96325e314a"
+      }
+    }
+  ],
+  "analysis_sources": {
+    "F:\\agi\\experiments\\undirected\\plot.py": "d187036bb9b1f9222209aef6e6aa89219d0ce706bfc9a5f8aaf9561a33772f92"
+  },
+  "matplotlib": "3.10.9",
+  "numpy": "2.5.1",
+  "circular_layout_seed": 731,
+  "prespecified_graph_seed": 0,
+  "statistics": "Equal four-family averages within each seed; three-seed mean/sample SD only at 3/3 success and defined denominators.",
+  "failures": "NF and U markers retain failure/undefined outcomes; no zero imputation or replacement seeds.",
+  "geometry": "Full audited nodes/edges; fixed random circle is a display layout, not learned functional clustering.",
+  "credit_check": "Mechanical 1152-tick derivative illustration; not behavioral learning evidence."
+}

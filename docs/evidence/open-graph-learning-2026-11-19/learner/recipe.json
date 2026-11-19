@@ -1,0 +1,31 @@
+{
+  "config": {
+    "rate": 0.025,
+    "head_rate": 0.42,
+    "context_gain": 1.75,
+    "memory_decay": 0.94,
+    "kernel_strength": 18.0,
+    "retirement_cost": 0.085,
+    "temperature": 2.2,
+    "birth_scale": 4.0,
+    "memory_prior": 0.055
+  },
+  "accuracy": {
+    "stable": {
+      "late": 0.7682291666666666
+    },
+    "reversal": {
+      "late": 0.7604166666666666
+    },
+    "return": {
+      "late": 0.6791666666666667
+    },
+    "partial": {
+      "changed": 0.6880208333333334,
+      "unchanged": 0.6880208333333333
+    }
+  },
+  "score": 0.7239583333333334,
+  "registered_sha256": "cddd03d00d39976a7b09dffb2af3d107d3e0016cac0f6d19466fa0b4baab31b7",
+  "development_sha256": "1b1079b1ab8f7affa6be39ae4e2b232167ca457040bd74b9231b3ab5b572f218"
+}

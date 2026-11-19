@@ -1,0 +1,2571 @@
+{
+  "format": "coverage-retention-posthoc-error-signature-summary-v1",
+  "posthoc": true,
+  "complete": true,
+  "protocol_sha256": "819ffff2fc098691cdf51c2073962b6450843464605eeb6a904863a3cba697ef",
+  "parser_amendment_sha256": "b503b3c97071a3cbb02b1a6ec1c34cdad86e1c2dac7f8d54778ec7be0a270ec4",
+  "created_utc": "2026-11-06T16:52:33.104479+00:00",
+  "runs": 15,
+  "groups": {
+    "fresh": {
+      "baseline": {
+        "seeds": {
+          "0": {
+            "A_conflict": {
+              "matured": 345,
+              "categories": {
+                "correct_current_rule": 254,
+                "other_rule_substitution": 90,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.736231884057971,
+                "other_rule_substitution": 0.2608695652173913,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.002898550724637681
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 339,
+              "strict": 254,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 90,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 5,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "B_conflict": {
+              "matured": 342,
+              "categories": {
+                "correct_current_rule": 303,
+                "other_rule_substitution": 37,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8859649122807017,
+                "other_rule_substitution": 0.10818713450292397,
+                "correct_version_other_payload": 0.0029239766081871343,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0029239766081871343
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 337,
+              "strict": 303,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 37,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 3,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "shared": {
+              "matured": 681,
+              "categories": {
+                "correct_current_rule": 673,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 4,
+                "wrong_version": 0,
+                "no_attempt": 4
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9882525697503671,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.005873715124816446,
+                "wrong_version": 0.0,
+                "no_attempt": 0.005873715124816446
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 675,
+              "strict": 667,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 4,
+              "any_early": 6,
+              "first_error_early": 6,
+              "strict_failure_categories": {
+                "correct_current_rule": 6,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 4,
+                "wrong_version": 0,
+                "no_attempt": 4
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 4
+              }
+            }
+          },
+          "1": {
+            "A_conflict": {
+              "matured": 306,
+              "categories": {
+                "correct_current_rule": 205,
+                "other_rule_substitution": 86,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 15
+              },
+              "category_rates": {
+                "correct_current_rule": 0.6699346405228758,
+                "other_rule_substitution": 0.28104575163398693,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.049019607843137254
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 277,
+              "strict": 205,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 15,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 86,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 15
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 14,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 15
+              }
+            },
+            "B_conflict": {
+              "matured": 350,
+              "categories": {
+                "correct_current_rule": 240,
+                "other_rule_substitution": 90,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 19
+              },
+              "category_rates": {
+                "correct_current_rule": 0.6857142857142857,
+                "other_rule_substitution": 0.2571428571428571,
+                "correct_version_other_payload": 0.002857142857142857,
+                "wrong_version": 0.0,
+                "no_attempt": 0.054285714285714284
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 314,
+              "strict": 240,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 19,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 90,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 19
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 16,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 19
+              }
+            },
+            "shared": {
+              "matured": 681,
+              "categories": {
+                "correct_current_rule": 667,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 14
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9794419970631424,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.020558002936857563
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 667,
+              "strict": 666,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 14,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 14
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 14
+              }
+            }
+          },
+          "2": {
+            "A_conflict": {
+              "matured": 352,
+              "categories": {
+                "correct_current_rule": 248,
+                "other_rule_substitution": 97,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 6
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7045454545454546,
+                "other_rule_substitution": 0.2755681818181818,
+                "correct_version_other_payload": 0.002840909090909091,
+                "wrong_version": 0.0,
+                "no_attempt": 0.017045454545454544
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 346,
+              "strict": 248,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 6,
+              "any_early": 2,
+              "first_error_early": 2,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 97,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 6
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 6
+              }
+            },
+            "B_conflict": {
+              "matured": 311,
+              "categories": {
+                "correct_current_rule": 233,
+                "other_rule_substitution": 51,
+                "correct_version_other_payload": 23,
+                "wrong_version": 0,
+                "no_attempt": 4
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7491961414790996,
+                "other_rule_substitution": 0.1639871382636656,
+                "correct_version_other_payload": 0.07395498392282958,
+                "wrong_version": 0.0,
+                "no_attempt": 0.012861736334405145
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 289,
+              "strict": 232,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 4,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 51,
+                "correct_version_other_payload": 23,
+                "wrong_version": 0,
+                "no_attempt": 4
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 4,
+                "correct_version_other_payload": 14,
+                "wrong_version": 0,
+                "no_attempt": 4
+              }
+            },
+            "shared": {
+              "matured": 687,
+              "categories": {
+                "correct_current_rule": 665,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 7,
+                "wrong_version": 2,
+                "no_attempt": 13
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9679767103347889,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.010189228529839884,
+                "wrong_version": 0.002911208151382824,
+                "no_attempt": 0.018922852983988356
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 672,
+              "strict": 663,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 13,
+              "any_early": 4,
+              "first_error_early": 4,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 7,
+                "wrong_version": 2,
+                "no_attempt": 13
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 2,
+                "no_attempt": 13
+              }
+            }
+          }
+        },
+        "pooled": {
+          "A_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 707,
+              "other_rule_substitution": 273,
+              "correct_version_other_payload": 1,
+              "wrong_version": 0,
+              "no_attempt": 22
+            },
+            "category_rates": {
+              "correct_current_rule": 0.7048853439680958,
+              "other_rule_substitution": 0.27218344965104685,
+              "correct_version_other_payload": 0.0009970089730807576,
+              "wrong_version": 0.0,
+              "no_attempt": 0.02193419740777667
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 962,
+            "strict": 707,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 22,
+            "any_early": 2,
+            "first_error_early": 2,
+            "strict_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 273,
+              "correct_version_other_payload": 1,
+              "wrong_version": 0,
+              "no_attempt": 22
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 19,
+              "correct_version_other_payload": 0,
+              "wrong_version": 0,
+              "no_attempt": 22
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.7035706597087671,
+              "other_rule_substitution": 0.27249449955652,
+              "correct_version_other_payload": 0.000946969696969697,
+              "wrong_version": 0.0,
+              "no_attempt": 0.022987871037743163
+            },
+            "equal_seed_strict_rate": 0.7035706597087671,
+            "equal_seed_ordinary_rate": 0.9569306664255514
+          },
+          "B_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 776,
+              "other_rule_substitution": 178,
+              "correct_version_other_payload": 25,
+              "wrong_version": 0,
+              "no_attempt": 24
+            },
+            "category_rates": {
+              "correct_current_rule": 0.773678963110668,
+              "other_rule_substitution": 0.17746759720837488,
+              "correct_version_other_payload": 0.024925224327018942,
+              "wrong_version": 0.0,
+              "no_attempt": 0.023928215353938187
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 940,
+            "strict": 775,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 24,
+            "any_early": 2,
+            "first_error_early": 2,
+            "strict_failure_categories": {
+              "correct_current_rule": 1,
+              "other_rule_substitution": 178,
+              "correct_version_other_payload": 25,
+              "wrong_version": 0,
+              "no_attempt": 24
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 23,
+              "correct_version_other_payload": 16,
+              "wrong_version": 0,
+              "no_attempt": 24
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.7736251131580291,
+              "other_rule_substitution": 0.17643904330314888,
+              "correct_version_other_payload": 0.026578701129386522,
+              "wrong_version": 0.0,
+              "no_attempt": 0.02335714240943552
+            },
+            "equal_seed_strict_rate": 0.7725533017968287,
+            "equal_seed_ordinary_rate": 0.9372611414208979
+          },
+          "shared": {
+            "matured": 2049,
+            "categories": {
+              "correct_current_rule": 2005,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 11,
+              "wrong_version": 2,
+              "no_attempt": 31
+            },
+            "category_rates": {
+              "correct_current_rule": 0.9785261102977062,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.005368472425573451,
+              "wrong_version": 0.0009760858955588092,
+              "no_attempt": 0.015129331381161543
+            },
+            "other_rule_applicability": "other_rule_notapplicable",
+            "ordinary": 2014,
+            "strict": 1996,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 31,
+            "any_early": 11,
+            "first_error_early": 11,
+            "strict_failure_categories": {
+              "correct_current_rule": 9,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 11,
+              "wrong_version": 2,
+              "no_attempt": 31
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 2,
+              "wrong_version": 2,
+              "no_attempt": 31
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9785570923827661,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.005354314551552109,
+              "wrong_version": 0.000970402717127608,
+              "no_attempt": 0.015118190348554121
+            },
+            "equal_seed_strict_rate": 0.9741603558428289,
+            "equal_seed_ordinary_rate": 0.9829324544135155
+          }
+        }
+      },
+      "control256": {
+        "seeds": {
+          "0": {
+            "A_conflict": {
+              "matured": 345,
+              "categories": {
+                "correct_current_rule": 261,
+                "other_rule_substitution": 83,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7565217391304347,
+                "other_rule_substitution": 0.24057971014492754,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.002898550724637681
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 342,
+              "strict": 257,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 4,
+              "first_error_early": 4,
+              "strict_failure_categories": {
+                "correct_current_rule": 4,
+                "other_rule_substitution": 83,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 2,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "B_conflict": {
+              "matured": 342,
+              "categories": {
+                "correct_current_rule": 336,
+                "other_rule_substitution": 4,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9824561403508771,
+                "other_rule_substitution": 0.011695906432748537,
+                "correct_version_other_payload": 0.005847953216374269,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 339,
+              "strict": 336,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 2,
+              "first_error_early": 2,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 4,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "shared": {
+              "matured": 681,
+              "categories": {
+                "correct_current_rule": 673,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 5
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9882525697503671,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.004405286343612335,
+                "wrong_version": 0.0,
+                "no_attempt": 0.007342143906020558
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 674,
+              "strict": 669,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 5,
+              "any_early": 8,
+              "first_error_early": 8,
+              "strict_failure_categories": {
+                "correct_current_rule": 4,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 5
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 5
+              }
+            }
+          },
+          "1": {
+            "A_conflict": {
+              "matured": 306,
+              "categories": {
+                "correct_current_rule": 250,
+                "other_rule_substitution": 53,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8169934640522876,
+                "other_rule_substitution": 0.17320261437908496,
+                "correct_version_other_payload": 0.0032679738562091504,
+                "wrong_version": 0.0,
+                "no_attempt": 0.006535947712418301
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 303,
+              "strict": 250,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 2,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 53,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 2
+              }
+            },
+            "B_conflict": {
+              "matured": 350,
+              "categories": {
+                "correct_current_rule": 265,
+                "other_rule_substitution": 84,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7571428571428571,
+                "other_rule_substitution": 0.24,
+                "correct_version_other_payload": 0.002857142857142857,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 349,
+              "strict": 265,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 84,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "shared": {
+              "matured": 681,
+              "categories": {
+                "correct_current_rule": 674,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 6,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9897209985315712,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.00881057268722467,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0014684287812041115
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 678,
+              "strict": 670,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 11,
+              "first_error_early": 11,
+              "strict_failure_categories": {
+                "correct_current_rule": 4,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 6,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            }
+          },
+          "2": {
+            "A_conflict": {
+              "matured": 352,
+              "categories": {
+                "correct_current_rule": 289,
+                "other_rule_substitution": 59,
+                "correct_version_other_payload": 4,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8210227272727273,
+                "other_rule_substitution": 0.16761363636363635,
+                "correct_version_other_payload": 0.011363636363636364,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 352,
+              "strict": 289,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 2,
+              "first_error_early": 2,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 59,
+                "correct_version_other_payload": 4,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "B_conflict": {
+              "matured": 311,
+              "categories": {
+                "correct_current_rule": 270,
+                "other_rule_substitution": 40,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8681672025723473,
+                "other_rule_substitution": 0.12861736334405144,
+                "correct_version_other_payload": 0.003215434083601286,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 310,
+              "strict": 270,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 40,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "shared": {
+              "matured": 687,
+              "categories": {
+                "correct_current_rule": 676,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 5,
+                "wrong_version": 4,
+                "no_attempt": 2
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9839883551673945,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.00727802037845706,
+                "wrong_version": 0.005822416302765648,
+                "no_attempt": 0.002911208151382824
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 679,
+              "strict": 676,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 2,
+              "any_early": 4,
+              "first_error_early": 4,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 5,
+                "wrong_version": 4,
+                "no_attempt": 2
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 4,
+                "no_attempt": 2
+              }
+            }
+          }
+        },
+        "pooled": {
+          "A_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 800,
+              "other_rule_substitution": 195,
+              "correct_version_other_payload": 5,
+              "wrong_version": 0,
+              "no_attempt": 3
+            },
+            "category_rates": {
+              "correct_current_rule": 0.7976071784646062,
+              "other_rule_substitution": 0.19441674975074777,
+              "correct_version_other_payload": 0.004985044865403789,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0029910269192422734
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 997,
+            "strict": 796,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 3,
+            "any_early": 7,
+            "first_error_early": 7,
+            "strict_failure_categories": {
+              "correct_current_rule": 4,
+              "other_rule_substitution": 195,
+              "correct_version_other_payload": 5,
+              "wrong_version": 0,
+              "no_attempt": 3
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 3,
+              "correct_version_other_payload": 0,
+              "wrong_version": 0,
+              "no_attempt": 3
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.7981793101518164,
+              "other_rule_substitution": 0.1937986536292163,
+              "correct_version_other_payload": 0.004877203406615171,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0031448328123519936
+            },
+            "equal_seed_strict_rate": 0.7943145758522997,
+            "equal_seed_ordinary_rate": 0.9938334754191532
+          },
+          "B_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 871,
+              "other_rule_substitution": 128,
+              "correct_version_other_payload": 4,
+              "wrong_version": 0,
+              "no_attempt": 0
+            },
+            "category_rates": {
+              "correct_current_rule": 0.86839481555334,
+              "other_rule_substitution": 0.12761714855433698,
+              "correct_version_other_payload": 0.003988035892323031,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 998,
+            "strict": 871,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 0,
+            "any_early": 3,
+            "first_error_early": 3,
+            "strict_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 128,
+              "correct_version_other_payload": 4,
+              "wrong_version": 0,
+              "no_attempt": 0
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 3,
+              "correct_version_other_payload": 2,
+              "wrong_version": 0,
+              "no_attempt": 0
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.8692554000220273,
+              "other_rule_substitution": 0.1267710899256,
+              "correct_version_other_payload": 0.0039735100523728036,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0
+            },
+            "equal_seed_strict_rate": 0.8692554000220273,
+            "equal_seed_ordinary_rate": 0.9950518310782316
+          },
+          "shared": {
+            "matured": 2049,
+            "categories": {
+              "correct_current_rule": 2023,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 14,
+              "wrong_version": 4,
+              "no_attempt": 8
+            },
+            "category_rates": {
+              "correct_current_rule": 0.9873108833577355,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.006832601268911664,
+              "wrong_version": 0.0019521717911176184,
+              "no_attempt": 0.003904343582235237
+            },
+            "other_rule_applicability": "other_rule_notapplicable",
+            "ordinary": 2031,
+            "strict": 2015,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 8,
+            "any_early": 23,
+            "first_error_early": 23,
+            "strict_failure_categories": {
+              "correct_current_rule": 8,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 14,
+              "wrong_version": 4,
+              "no_attempt": 8
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 6,
+              "wrong_version": 4,
+              "no_attempt": 8
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9873206411497776,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.006831293136431355,
+              "wrong_version": 0.001940805434255216,
+              "no_attempt": 0.003907260279535831
+            },
+            "equal_seed_strict_rate": 0.9834048310665665,
+            "equal_seed_ordinary_rate": 0.9912236265274759
+          }
+        }
+      },
+      "withdraw256": {
+        "seeds": {
+          "0": {
+            "A_conflict": {
+              "matured": 345,
+              "categories": {
+                "correct_current_rule": 251,
+                "other_rule_substitution": 92,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7275362318840579,
+                "other_rule_substitution": 0.26666666666666666,
+                "correct_version_other_payload": 0.002898550724637681,
+                "wrong_version": 0.0,
+                "no_attempt": 0.002898550724637681
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 319,
+              "strict": 249,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 5,
+              "first_error_early": 5,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 92,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 24,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "B_conflict": {
+              "matured": 342,
+              "categories": {
+                "correct_current_rule": 338,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9883040935672515,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.008771929824561403,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0029239766081871343
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 340,
+              "strict": 337,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 3,
+              "first_error_early": 3,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "shared": {
+              "matured": 681,
+              "categories": {
+                "correct_current_rule": 667,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 9,
+                "wrong_version": 0,
+                "no_attempt": 5
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9794419970631424,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.013215859030837005,
+                "wrong_version": 0.0,
+                "no_attempt": 0.007342143906020558
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 675,
+              "strict": 665,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 5,
+              "any_early": 3,
+              "first_error_early": 3,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 9,
+                "wrong_version": 0,
+                "no_attempt": 5
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 5
+              }
+            }
+          },
+          "1": {
+            "A_conflict": {
+              "matured": 306,
+              "categories": {
+                "correct_current_rule": 82,
+                "other_rule_substitution": 221,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.2679738562091503,
+                "other_rule_substitution": 0.7222222222222222,
+                "correct_version_other_payload": 0.006535947712418301,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0032679738562091504
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 188,
+              "strict": 82,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 221,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 116,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "B_conflict": {
+              "matured": 350,
+              "categories": {
+                "correct_current_rule": 346,
+                "other_rule_substitution": 3,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9885714285714285,
+                "other_rule_substitution": 0.008571428571428572,
+                "correct_version_other_payload": 0.002857142857142857,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 349,
+              "strict": 346,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 3,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "shared": {
+              "matured": 681,
+              "categories": {
+                "correct_current_rule": 566,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 104,
+                "wrong_version": 4,
+                "no_attempt": 7
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8311306901615272,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.1527165932452276,
+                "wrong_version": 0.005873715124816446,
+                "no_attempt": 0.010279001468428781
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 601,
+              "strict": 565,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 7,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 104,
+                "wrong_version": 4,
+                "no_attempt": 7
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 73,
+                "wrong_version": 0,
+                "no_attempt": 7
+              }
+            }
+          },
+          "2": {
+            "A_conflict": {
+              "matured": 352,
+              "categories": {
+                "correct_current_rule": 183,
+                "other_rule_substitution": 97,
+                "correct_version_other_payload": 71,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.5198863636363636,
+                "other_rule_substitution": 0.2755681818181818,
+                "correct_version_other_payload": 0.20170454545454544,
+                "wrong_version": 0.0,
+                "no_attempt": 0.002840909090909091
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 348,
+              "strict": 183,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 97,
+                "correct_version_other_payload": 71,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 3,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "B_conflict": {
+              "matured": 311,
+              "categories": {
+                "correct_current_rule": 284,
+                "other_rule_substitution": 26,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9131832797427653,
+                "other_rule_substitution": 0.08360128617363344,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.003215434083601286
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 310,
+              "strict": 284,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 26,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "shared": {
+              "matured": 687,
+              "categories": {
+                "correct_current_rule": 675,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 9,
+                "wrong_version": 3,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.982532751091703,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.013100436681222707,
+                "wrong_version": 0.004366812227074236,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 684,
+              "strict": 673,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 7,
+              "first_error_early": 7,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 9,
+                "wrong_version": 3,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 1,
+                "wrong_version": 2,
+                "no_attempt": 0
+              }
+            }
+          }
+        },
+        "pooled": {
+          "A_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 516,
+              "other_rule_substitution": 410,
+              "correct_version_other_payload": 74,
+              "wrong_version": 0,
+              "no_attempt": 3
+            },
+            "category_rates": {
+              "correct_current_rule": 0.514456630109671,
+              "other_rule_substitution": 0.4087736789631107,
+              "correct_version_other_payload": 0.07377866400797607,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0029910269192422734
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 855,
+            "strict": 514,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 3,
+            "any_early": 6,
+            "first_error_early": 6,
+            "strict_failure_categories": {
+              "correct_current_rule": 2,
+              "other_rule_substitution": 410,
+              "correct_version_other_payload": 74,
+              "wrong_version": 0,
+              "no_attempt": 3
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 143,
+              "correct_version_other_payload": 2,
+              "wrong_version": 0,
+              "no_attempt": 3
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.5051321505765239,
+              "other_rule_substitution": 0.42148569023569027,
+              "correct_version_other_payload": 0.07037968129720047,
+              "wrong_version": 0.0,
+              "no_attempt": 0.003002477890585308
+            },
+            "equal_seed_strict_rate": 0.5031997834267655,
+            "equal_seed_ordinary_rate": 0.842551043254368
+          },
+          "B_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 968,
+              "other_rule_substitution": 29,
+              "correct_version_other_payload": 4,
+              "wrong_version": 0,
+              "no_attempt": 2
+            },
+            "category_rates": {
+              "correct_current_rule": 0.9651046859421735,
+              "other_rule_substitution": 0.028913260219341975,
+              "correct_version_other_payload": 0.003988035892323031,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0019940179461615153
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 999,
+            "strict": 967,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 2,
+            "any_early": 4,
+            "first_error_early": 4,
+            "strict_failure_categories": {
+              "correct_current_rule": 1,
+              "other_rule_substitution": 29,
+              "correct_version_other_payload": 4,
+              "wrong_version": 0,
+              "no_attempt": 2
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 1,
+              "correct_version_other_payload": 1,
+              "wrong_version": 0,
+              "no_attempt": 2
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9633529339604818,
+              "other_rule_substitution": 0.030724238248354005,
+              "correct_version_other_payload": 0.0038763575605680867,
+              "wrong_version": 0.0,
+              "no_attempt": 0.00204647023059614
+            },
+            "equal_seed_strict_rate": 0.9623782750910861,
+            "equal_seed_ordinary_rate": 0.9960264899476273
+          },
+          "shared": {
+            "matured": 2049,
+            "categories": {
+              "correct_current_rule": 1908,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 122,
+              "wrong_version": 7,
+              "no_attempt": 12
+            },
+            "category_rates": {
+              "correct_current_rule": 0.931185944363104,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.05954123962908736,
+              "wrong_version": 0.003416300634455832,
+              "no_attempt": 0.005856515373352855
+            },
+            "other_rule_applicability": "other_rule_notapplicable",
+            "ordinary": 1960,
+            "strict": 1903,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 12,
+            "any_early": 11,
+            "first_error_early": 11,
+            "strict_failure_categories": {
+              "correct_current_rule": 5,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 122,
+              "wrong_version": 7,
+              "no_attempt": 12
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 75,
+              "wrong_version": 2,
+              "no_attempt": 12
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9310351461054576,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.0596776296524291,
+              "wrong_version": 0.0034135091172968943,
+              "no_attempt": 0.005873715124816446
+            },
+            "equal_seed_strict_rate": 0.9285963146071259,
+            "equal_seed_ordinary_rate": 0.9564494375297907
+          }
+        }
+      }
+    },
+    "live": {
+      "control": {
+        "seeds": {
+          "0": {
+            "A_conflict": {
+              "matured": 330,
+              "categories": {
+                "correct_current_rule": 244,
+                "other_rule_substitution": 83,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7393939393939394,
+                "other_rule_substitution": 0.2515151515151515,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.00909090909090909
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 326,
+              "strict": 242,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 3,
+              "any_early": 5,
+              "first_error_early": 5,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 83,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              }
+            },
+            "B_conflict": {
+              "matured": 326,
+              "categories": {
+                "correct_current_rule": 320,
+                "other_rule_substitution": 2,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9815950920245399,
+                "other_rule_substitution": 0.006134969325153374,
+                "correct_version_other_payload": 0.009202453987730062,
+                "wrong_version": 0.0,
+                "no_attempt": 0.003067484662576687
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 322,
+              "strict": 319,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 3,
+              "first_error_early": 3,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 2,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 3,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "shared": {
+              "matured": 701,
+              "categories": {
+                "correct_current_rule": 698,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9957203994293866,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0042796005706134095
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 698,
+              "strict": 695,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 3,
+              "any_early": 4,
+              "first_error_early": 4,
+              "strict_failure_categories": {
+                "correct_current_rule": 3,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              }
+            }
+          },
+          "1": {
+            "A_conflict": {
+              "matured": 335,
+              "categories": {
+                "correct_current_rule": 269,
+                "other_rule_substitution": 63,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8029850746268656,
+                "other_rule_substitution": 0.1880597014925373,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.008955223880597015
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 327,
+              "strict": 268,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 3,
+              "any_early": 2,
+              "first_error_early": 2,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 63,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 5,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              }
+            },
+            "B_conflict": {
+              "matured": 356,
+              "categories": {
+                "correct_current_rule": 266,
+                "other_rule_substitution": 90,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7471910112359551,
+                "other_rule_substitution": 0.25280898876404495,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 355,
+              "strict": 266,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 90,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "shared": {
+              "matured": 679,
+              "categories": {
+                "correct_current_rule": 673,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 5,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9911634756995582,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.007363770250368188,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0014727540500736377
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 676,
+              "strict": 671,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 8,
+              "first_error_early": 8,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 5,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            }
+          },
+          "2": {
+            "A_conflict": {
+              "matured": 339,
+              "categories": {
+                "correct_current_rule": 273,
+                "other_rule_substitution": 60,
+                "correct_version_other_payload": 5,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8053097345132744,
+                "other_rule_substitution": 0.17699115044247787,
+                "correct_version_other_payload": 0.014749262536873156,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0029498525073746312
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 338,
+              "strict": 273,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 2,
+              "first_error_early": 2,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 60,
+                "correct_version_other_payload": 5,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "B_conflict": {
+              "matured": 321,
+              "categories": {
+                "correct_current_rule": 268,
+                "other_rule_substitution": 48,
+                "correct_version_other_payload": 4,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8348909657320872,
+                "other_rule_substitution": 0.14953271028037382,
+                "correct_version_other_payload": 0.012461059190031152,
+                "wrong_version": 0.0,
+                "no_attempt": 0.003115264797507788
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 319,
+              "strict": 267,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 3,
+              "first_error_early": 3,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 48,
+                "correct_version_other_payload": 4,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            },
+            "shared": {
+              "matured": 689,
+              "categories": {
+                "correct_current_rule": 686,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9956458635703919,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.002902757619738752,
+                "wrong_version": 0.0,
+                "no_attempt": 0.001451378809869376
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 688,
+              "strict": 685,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 2,
+              "first_error_early": 2,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            }
+          }
+        },
+        "pooled": {
+          "A_conflict": {
+            "matured": 1004,
+            "categories": {
+              "correct_current_rule": 786,
+              "other_rule_substitution": 206,
+              "correct_version_other_payload": 5,
+              "wrong_version": 0,
+              "no_attempt": 7
+            },
+            "category_rates": {
+              "correct_current_rule": 0.7828685258964143,
+              "other_rule_substitution": 0.2051792828685259,
+              "correct_version_other_payload": 0.0049800796812749,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0069721115537848604
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 991,
+            "strict": 783,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 7,
+            "any_early": 9,
+            "first_error_early": 9,
+            "strict_failure_categories": {
+              "correct_current_rule": 3,
+              "other_rule_substitution": 206,
+              "correct_version_other_payload": 5,
+              "wrong_version": 0,
+              "no_attempt": 7
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 6,
+              "correct_version_other_payload": 0,
+              "wrong_version": 0,
+              "no_attempt": 7
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.7825629161780264,
+              "other_rule_substitution": 0.2055220011500556,
+              "correct_version_other_payload": 0.004916420845624385,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0069986618262935785
+            },
+            "equal_seed_strict_rate": 0.7795476892822025,
+            "equal_seed_ordinary_rate": 0.9870161127854961
+          },
+          "B_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 854,
+              "other_rule_substitution": 140,
+              "correct_version_other_payload": 7,
+              "wrong_version": 0,
+              "no_attempt": 2
+            },
+            "category_rates": {
+              "correct_current_rule": 0.8514456630109671,
+              "other_rule_substitution": 0.13958125623130607,
+              "correct_version_other_payload": 0.006979062811565304,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0019940179461615153
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 996,
+            "strict": 852,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 2,
+            "any_early": 6,
+            "first_error_early": 6,
+            "strict_failure_categories": {
+              "correct_current_rule": 2,
+              "other_rule_substitution": 140,
+              "correct_version_other_payload": 7,
+              "wrong_version": 0,
+              "no_attempt": 2
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 2,
+              "correct_version_other_payload": 3,
+              "wrong_version": 0,
+              "no_attempt": 2
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.8545590229975274,
+              "other_rule_substitution": 0.13615888945652407,
+              "correct_version_other_payload": 0.007221171059253738,
+              "wrong_version": 0.0,
+              "no_attempt": 0.002060916486694825
+            },
+            "equal_seed_strict_rate": 0.8524981065108325,
+            "equal_seed_ordinary_rate": 0.9928968476635442
+          },
+          "shared": {
+            "matured": 2069,
+            "categories": {
+              "correct_current_rule": 2057,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 7,
+              "wrong_version": 0,
+              "no_attempt": 5
+            },
+            "category_rates": {
+              "correct_current_rule": 0.9942000966650556,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.0033832769453842437,
+              "wrong_version": 0.0,
+              "no_attempt": 0.002416626389560174
+            },
+            "other_rule_applicability": "other_rule_notapplicable",
+            "ordinary": 2062,
+            "strict": 2051,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 5,
+            "any_early": 14,
+            "first_error_early": 14,
+            "strict_failure_categories": {
+              "correct_current_rule": 6,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 7,
+              "wrong_version": 0,
+              "no_attempt": 5
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 2,
+              "wrong_version": 0,
+              "no_attempt": 5
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9941765795664456,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.0034221759567023137,
+              "wrong_version": 0.0,
+              "no_attempt": 0.002401244476852141
+            },
+            "equal_seed_strict_rate": 0.9912844170729023,
+            "equal_seed_ordinary_rate": 0.9966169194897655
+          }
+        }
+      },
+      "withdraw": {
+        "seeds": {
+          "0": {
+            "A_conflict": {
+              "matured": 330,
+              "categories": {
+                "correct_current_rule": 234,
+                "other_rule_substitution": 94,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "category_rates": {
+                "correct_current_rule": 0.7090909090909091,
+                "other_rule_substitution": 0.28484848484848485,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.006060606060606061
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 305,
+              "strict": 233,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 2,
+              "any_early": 3,
+              "first_error_early": 3,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 94,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 23,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 2
+              }
+            },
+            "B_conflict": {
+              "matured": 326,
+              "categories": {
+                "correct_current_rule": 322,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9877300613496932,
+                "other_rule_substitution": 0.003067484662576687,
+                "correct_version_other_payload": 0.003067484662576687,
+                "wrong_version": 0.0,
+                "no_attempt": 0.006134969325153374
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 322,
+              "strict": 320,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 2,
+              "any_early": 4,
+              "first_error_early": 4,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              }
+            },
+            "shared": {
+              "matured": 701,
+              "categories": {
+                "correct_current_rule": 694,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 5,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9900142653352354,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.007132667617689016,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0028530670470756064
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 699,
+              "strict": 689,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 2,
+              "any_early": 5,
+              "first_error_early": 5,
+              "strict_failure_categories": {
+                "correct_current_rule": 5,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 5,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 2
+              }
+            }
+          },
+          "1": {
+            "A_conflict": {
+              "matured": 335,
+              "categories": {
+                "correct_current_rule": 96,
+                "other_rule_substitution": 236,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "category_rates": {
+                "correct_current_rule": 0.2865671641791045,
+                "other_rule_substitution": 0.7044776119402985,
+                "correct_version_other_payload": 0.0,
+                "wrong_version": 0.0,
+                "no_attempt": 0.008955223880597015
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 196,
+              "strict": 96,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 3,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 236,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 136,
+                "correct_version_other_payload": 0,
+                "wrong_version": 0,
+                "no_attempt": 3
+              }
+            },
+            "B_conflict": {
+              "matured": 356,
+              "categories": {
+                "correct_current_rule": 352,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9887640449438202,
+                "other_rule_substitution": 0.0028089887640449437,
+                "correct_version_other_payload": 0.0028089887640449437,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0056179775280898875
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 353,
+              "strict": 352,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 2,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 2
+              }
+            },
+            "shared": {
+              "matured": 679,
+              "categories": {
+                "correct_current_rule": 560,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 108,
+                "wrong_version": 4,
+                "no_attempt": 7
+              },
+              "category_rates": {
+                "correct_current_rule": 0.8247422680412371,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.15905743740795286,
+                "wrong_version": 0.005891016200294551,
+                "no_attempt": 0.010309278350515464
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 605,
+              "strict": 559,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 7,
+              "any_early": 1,
+              "first_error_early": 1,
+              "strict_failure_categories": {
+                "correct_current_rule": 1,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 108,
+                "wrong_version": 4,
+                "no_attempt": 7
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 65,
+                "wrong_version": 2,
+                "no_attempt": 7
+              }
+            }
+          },
+          "2": {
+            "A_conflict": {
+              "matured": 339,
+              "categories": {
+                "correct_current_rule": 169,
+                "other_rule_substitution": 123,
+                "correct_version_other_payload": 47,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.49852507374631266,
+                "other_rule_substitution": 0.36283185840707965,
+                "correct_version_other_payload": 0.13864306784660768,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 332,
+              "strict": 167,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 4,
+              "first_error_early": 4,
+              "strict_failure_categories": {
+                "correct_current_rule": 2,
+                "other_rule_substitution": 123,
+                "correct_version_other_payload": 47,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 6,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "B_conflict": {
+              "matured": 321,
+              "categories": {
+                "correct_current_rule": 294,
+                "other_rule_substitution": 25,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "category_rates": {
+                "correct_current_rule": 0.9158878504672897,
+                "other_rule_substitution": 0.0778816199376947,
+                "correct_version_other_payload": 0.006230529595015576,
+                "wrong_version": 0.0,
+                "no_attempt": 0.0
+              },
+              "other_rule_applicability": "conflict",
+              "ordinary": 319,
+              "strict": 294,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 0,
+              "any_early": 0,
+              "first_error_early": 0,
+              "strict_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 25,
+                "correct_version_other_payload": 2,
+                "wrong_version": 0,
+                "no_attempt": 0
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 1,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 0
+              }
+            },
+            "shared": {
+              "matured": 689,
+              "categories": {
+                "correct_current_rule": 681,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 7,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "category_rates": {
+                "correct_current_rule": 0.988388969521045,
+                "other_rule_substitution": 0.0,
+                "correct_version_other_payload": 0.010159651669085631,
+                "wrong_version": 0.0,
+                "no_attempt": 0.001451378809869376
+              },
+              "other_rule_applicability": "other_rule_notapplicable",
+              "ordinary": 687,
+              "strict": 678,
+              "no_begin": 0,
+              "started_no_window": 0,
+              "legal_no_finish": 1,
+              "any_early": 8,
+              "first_error_early": 8,
+              "strict_failure_categories": {
+                "correct_current_rule": 3,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 7,
+                "wrong_version": 0,
+                "no_attempt": 1
+              },
+              "ordinary_failure_categories": {
+                "correct_current_rule": 0,
+                "other_rule_substitution": 0,
+                "correct_version_other_payload": 1,
+                "wrong_version": 0,
+                "no_attempt": 1
+              }
+            }
+          }
+        },
+        "pooled": {
+          "A_conflict": {
+            "matured": 1004,
+            "categories": {
+              "correct_current_rule": 499,
+              "other_rule_substitution": 453,
+              "correct_version_other_payload": 47,
+              "wrong_version": 0,
+              "no_attempt": 5
+            },
+            "category_rates": {
+              "correct_current_rule": 0.49701195219123506,
+              "other_rule_substitution": 0.45119521912350596,
+              "correct_version_other_payload": 0.046812749003984064,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0049800796812749
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 833,
+            "strict": 496,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 5,
+            "any_early": 8,
+            "first_error_early": 8,
+            "strict_failure_categories": {
+              "correct_current_rule": 3,
+              "other_rule_substitution": 453,
+              "correct_version_other_payload": 47,
+              "wrong_version": 0,
+              "no_attempt": 5
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 165,
+              "correct_version_other_payload": 1,
+              "wrong_version": 0,
+              "no_attempt": 5
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.49806104900544207,
+              "other_rule_substitution": 0.45071931839862095,
+              "correct_version_other_payload": 0.046214355948869225,
+              "wrong_version": 0.0,
+              "no_attempt": 0.0050052766470676914
+            },
+            "equal_seed_strict_rate": 0.49508437965709134,
+            "equal_seed_ordinary_rate": 0.8295560278521578
+          },
+          "B_conflict": {
+            "matured": 1003,
+            "categories": {
+              "correct_current_rule": 968,
+              "other_rule_substitution": 27,
+              "correct_version_other_payload": 4,
+              "wrong_version": 0,
+              "no_attempt": 4
+            },
+            "category_rates": {
+              "correct_current_rule": 0.9651046859421735,
+              "other_rule_substitution": 0.026919242273180457,
+              "correct_version_other_payload": 0.003988035892323031,
+              "wrong_version": 0.0,
+              "no_attempt": 0.003988035892323031
+            },
+            "other_rule_applicability": "conflict",
+            "ordinary": 994,
+            "strict": 966,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 4,
+            "any_early": 4,
+            "first_error_early": 4,
+            "strict_failure_categories": {
+              "correct_current_rule": 2,
+              "other_rule_substitution": 27,
+              "correct_version_other_payload": 4,
+              "wrong_version": 0,
+              "no_attempt": 4
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 2,
+              "correct_version_other_payload": 3,
+              "wrong_version": 0,
+              "no_attempt": 4
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9641273189202676,
+              "other_rule_substitution": 0.02791936445477211,
+              "correct_version_other_payload": 0.0040356676738790695,
+              "wrong_version": 0.0,
+              "no_attempt": 0.003917648951081087
+            },
+            "equal_seed_strict_rate": 0.9620823291452165,
+            "equal_seed_ordinary_rate": 0.9910241884875143
+          },
+          "shared": {
+            "matured": 2069,
+            "categories": {
+              "correct_current_rule": 1935,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 120,
+              "wrong_version": 4,
+              "no_attempt": 10
+            },
+            "category_rates": {
+              "correct_current_rule": 0.9352344127597874,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.05799903334944417,
+              "wrong_version": 0.0019333011116481392,
+              "no_attempt": 0.004833252779120348
+            },
+            "other_rule_applicability": "other_rule_notapplicable",
+            "ordinary": 1991,
+            "strict": 1926,
+            "no_begin": 0,
+            "started_no_window": 0,
+            "legal_no_finish": 10,
+            "any_early": 14,
+            "first_error_early": 14,
+            "strict_failure_categories": {
+              "correct_current_rule": 9,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 120,
+              "wrong_version": 4,
+              "no_attempt": 10
+            },
+            "ordinary_failure_categories": {
+              "correct_current_rule": 0,
+              "other_rule_substitution": 0,
+              "correct_version_other_payload": 66,
+              "wrong_version": 2,
+              "no_attempt": 10
+            },
+            "equal_seed_category_rates": {
+              "correct_current_rule": 0.9343818342991724,
+              "other_rule_substitution": 0.0,
+              "correct_version_other_payload": 0.05878325223157584,
+              "wrong_version": 0.0019636720667648502,
+              "no_attempt": 0.004871241402486816
+            },
+            "equal_seed_strict_rate": 0.9300619816000489,
+            "equal_seed_ordinary_rate": 0.9617534585425789
+          }
+        }
+      }
+    }
+  },
+  "run_outputs": {
+    "data/coverage-retention/error-signature-v1/fresh/seed_000/baseline_long.json": "b821acdbe846988e6c7cd008b5675dd226669430cf1d5a76227715a6b678ad35",
+    "data/coverage-retention/error-signature-v1/fresh/seed_000/control256_long.json": "2902c714d1c0895c8796cd9cd9f464b323941fca07b3648fa87e4e2da25d41ed",
+    "data/coverage-retention/error-signature-v1/fresh/seed_000/withdraw256_long.json": "f24b2509b2b149c9b43ec3207965c8b5758cfdc6082851b1d5e89db3bb6e3ead",
+    "data/coverage-retention/error-signature-v1/fresh/seed_001/baseline_long.json": "6a7e2cda7e03e483de1855465a9d0a9fb088f108d36637e74f6ef1461454b425",
+    "data/coverage-retention/error-signature-v1/fresh/seed_001/control256_long.json": "2445b536eabc97ccf3c75a147190493cf1c89e9b4073ace337fc0f8f0c369bdd",
+    "data/coverage-retention/error-signature-v1/fresh/seed_001/withdraw256_long.json": "43f981c7fe7bcc18f5ea241521844ce3e5e957c41fe23e7847fe2cd021f4f0b0",
+    "data/coverage-retention/error-signature-v1/fresh/seed_002/baseline_long.json": "e1e9944b2a3aa3dfb467eaf4a43f2ab178c3fac8b635e64302b8255a042dc6f9",
+    "data/coverage-retention/error-signature-v1/fresh/seed_002/control256_long.json": "692307670f20a4e885c6327418371b9c1c11435c550d0dd9500dad4d9f9b394a",
+    "data/coverage-retention/error-signature-v1/fresh/seed_002/withdraw256_long.json": "61a54d25407318e429c4851f6452eb91a050881ad430517d8d82a5e2c918b468",
+    "data/coverage-retention/error-signature-v1/live/seed_000/control_long.json": "115b11995b747227a9543d7621f9d52597fa2f31e01345542b4a12c3b2b8e96e",
+    "data/coverage-retention/error-signature-v1/live/seed_000/withdraw_long.json": "24030db6ad08b12e5318faf79b03eb6ccb56bebbc0e99727f2ed62be492e0cbc",
+    "data/coverage-retention/error-signature-v1/live/seed_001/control_long.json": "ea980e716737462d87e7048f2c1a4a674b6249bd60676b0bbe64f464957a7b04",
+    "data/coverage-retention/error-signature-v1/live/seed_001/withdraw_long.json": "6d6c6638025e27ede116c2a883477f2d9a2185cc8caaf27f422702998196c46f",
+    "data/coverage-retention/error-signature-v1/live/seed_002/control_long.json": "8f530fc032e542022677efc06e963999079fac6a683a04eec4758875abaaa342",
+    "data/coverage-retention/error-signature-v1/live/seed_002/withdraw_long.json": "ec04650a7977aa540fb520370f07c9e6037164375314112322291e7aec0995bd"
+  },
+  "paired_requests_path": "data\\coverage-retention\\error-signature-v1\\paired_requests.json",
+  "paired_requests_sha256": "95f224d66b9db4bf497f1e0505ecd532bb33655b63e679285fe20fdc0071ef63",
+  "limits": "Posthoc descriptive error signature in these finite saved trajectories. Other-rule answers indicate behavioral substitution, not complete erasure or proof that context is the sole cause. Fresh and live cases are distinct cohorts.",
+  "interpretation": "All categories use complete matured request denominators. First legal FINISH signatures and strict-success outcomes are separately cross-tabulated."
+}

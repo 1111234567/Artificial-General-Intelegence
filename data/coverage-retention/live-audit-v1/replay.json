@@ -1,0 +1,135 @@
+{
+  "format": "coverage-retention-independent-native-policy-replay-v1",
+  "passed": true,
+  "runs": 6,
+  "ticks_compared": 27648,
+  "opportunities_compared": 1769472,
+  "native_observations_private_facts_receipts_actions_finalh": "all bitwise exact",
+  "sidecars_checked": 6,
+  "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d",
+  "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+  "workers": [
+    {
+      "index": 0,
+      "exit_code": 0,
+      "log": "data\\coverage-retention\\live-audit-v1\\replay_logs\\run_000.log"
+    },
+    {
+      "index": 1,
+      "exit_code": 0,
+      "log": "data\\coverage-retention\\live-audit-v1\\replay_logs\\run_001.log"
+    },
+    {
+      "index": 2,
+      "exit_code": 0,
+      "log": "data\\coverage-retention\\live-audit-v1\\replay_logs\\run_002.log"
+    },
+    {
+      "index": 3,
+      "exit_code": 0,
+      "log": "data\\coverage-retention\\live-audit-v1\\replay_logs\\run_003.log"
+    },
+    {
+      "index": 4,
+      "exit_code": 0,
+      "log": "data\\coverage-retention\\live-audit-v1\\replay_logs\\run_004.log"
+    },
+    {
+      "index": 5,
+      "exit_code": 0,
+      "log": "data\\coverage-retention\\live-audit-v1\\replay_logs\\run_005.log"
+    }
+  ],
+  "results": [
+    {
+      "index": 0,
+      "seed": 0,
+      "policy": "control",
+      "condition": "long",
+      "passed": true,
+      "ticks": 4608,
+      "opportunities": 294912,
+      "native_facts": "all bitwise exact",
+      "actions": "all bitwise exact",
+      "final_h": "bitwise exact",
+      "sidecar": true,
+      "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+      "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d"
+    },
+    {
+      "index": 1,
+      "seed": 0,
+      "policy": "withdraw",
+      "condition": "long",
+      "passed": true,
+      "ticks": 4608,
+      "opportunities": 294912,
+      "native_facts": "all bitwise exact",
+      "actions": "all bitwise exact",
+      "final_h": "bitwise exact",
+      "sidecar": true,
+      "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+      "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d"
+    },
+    {
+      "index": 2,
+      "seed": 1,
+      "policy": "control",
+      "condition": "long",
+      "passed": true,
+      "ticks": 4608,
+      "opportunities": 294912,
+      "native_facts": "all bitwise exact",
+      "actions": "all bitwise exact",
+      "final_h": "bitwise exact",
+      "sidecar": true,
+      "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+      "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d"
+    },
+    {
+      "index": 3,
+      "seed": 1,
+      "policy": "withdraw",
+      "condition": "long",
+      "passed": true,
+      "ticks": 4608,
+      "opportunities": 294912,
+      "native_facts": "all bitwise exact",
+      "actions": "all bitwise exact",
+      "final_h": "bitwise exact",
+      "sidecar": true,
+      "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+      "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d"
+    },
+    {
+      "index": 4,
+      "seed": 2,
+      "policy": "control",
+      "condition": "long",
+      "passed": true,
+      "ticks": 4608,
+      "opportunities": 294912,
+      "native_facts": "all bitwise exact",
+      "actions": "all bitwise exact",
+      "final_h": "bitwise exact",
+      "sidecar": true,
+      "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+      "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d"
+    },
+    {
+      "index": 5,
+      "seed": 2,
+      "policy": "withdraw",
+      "condition": "long",
+      "passed": true,
+      "ticks": 4608,
+      "opportunities": 294912,
+      "native_facts": "all bitwise exact",
+      "actions": "all bitwise exact",
+      "final_h": "bitwise exact",
+      "sidecar": true,
+      "auditor_sha256": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+      "plan_sha256": "ec0c374cdbc0cce83d79e6648368c8307d23deac795275568208e6f4756fe19d"
+    }
+  ]
+}

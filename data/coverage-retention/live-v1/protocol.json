@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-11-06T16:34:33.638371+00:00",
+  "sources": {
+    "experiments/coverage_retention/live_eval.py": "2fa4fe9fc1c92fca6a58febd40e3329173a6cb78b536c63c8b3b096b3dfa2a99",
+    "experiments/coverage_retention/eval_test.py": "6ef53dfa11a9759ade2a361a4d62b7d89f49a1393d18b8f61be9c1c12abf0f53",
+    "experiments/coverage_retention/eval_audit.py": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+    "experiments/coverage_retention/analysis-plan.md": "57955a12155119d9d699a682c7bf903dbaf82938851b3966d84f03981fab250e",
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/remaining_time/model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "experiments/remaining_time/evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "control",
+    "withdraw"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "initialization": "Exact checkpointmodel/hidden and actual branchfinal world afterteacheract. Restore futurefamilyAB only through nativeAPI; no h/clock/RNG/request/receipt/scheduler reset. No optimizerupdate.",
+  "action": "Native11argmax, timepredictionread-only. Allown warm andtest, no teacheractions.",
+  "denominator": "Same completepostwarm neweligiblemature requests as freshscorer, localissued/matureindices withglobalphysicalclock/requestIDs. Inheritedrequests neverpromoted to testdenominator.",
+  "pairing": "control/withdraw trainingphysicalstream ismatched. After512 ownwarm, futureAB events andmaturednewcontextidentities mustmatch. Do not comparefullhistoryeventhashes, which includepre-withdrawalcontext.",
+  "scope": "Finite oldA return without weightlearning andwithout state reset; cannotcomparethe differentcases directly to freshworldpercentages as a pairedstateintervention.",
+  "diagnostic_bucket": "Legacy overdue_beyond_training bucket is literal remaining<-.25 only; some such labels were seen under midpointteacher."
+}

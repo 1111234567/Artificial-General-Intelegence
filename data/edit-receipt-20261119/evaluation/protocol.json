@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "settings": {
+    "seed": 909719,
+    "worlds": 192,
+    "holdout_worlds": 192,
+    "contacts": 60,
+    "channels": 3,
+    "phase_contacts": 24,
+    "reversal_at": null,
+    "noise": 0.2,
+    "holdout_noise": 0.15,
+    "forks": 6,
+    "early": 4,
+    "late": 8,
+    "bootstrap_draws": 2000
+  },
+  "training_config": {
+    "updates": 8000,
+    "batch": 12,
+    "contacts": 8,
+    "horizon": 3,
+    "writers": 8,
+    "noise": 0.1,
+    "world_seed": 43197,
+    "lr": 0.003,
+    "credit_target": "taste",
+    "writer_weight": 0.25,
+    "motor_path_weight": 1.0,
+    "effect_weight": 0.25,
+    "benefit_weight": 2.0,
+    "keep_connected": true
+  },
+  "training_manifest": "F:\\agi\\data\\edit-receipt-20261119\\run.json",
+  "training_manifest_sha256": "180608bb89a13eba44e6ccd4bb210ad2dd3ed5b97051aa37b435eb4ca32857f5",
+  "sources_sha256": {
+    "edit_receipt_graph.py": "41b3fd80a2191958355970867cdc0f84b4a56f4f672d8f5bef4c7f57bd9a9ace",
+    "edit_receipt_train.py": "c36dbd80489adb005765f05ab8cec676ff91beed8ccf153df7a7d2ad01472167",
+    "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "edit_receipt_eval.py": "9c39a7815cf570d76c01dd750e190e8c0c0402d627c39a71225753709df9982d"
+  },
+  "source_mismatch_with_training_manifest": [],
+  "software": {
+    "numpy": "2.5.4",
+    "torch": "2.11.0+cu130"
+  },
+  "births": [
+    421,
+    422,
+    423,
+    424,
+    425,
+    426
+  ],
+  "arms": [
+    "baseline",
+    "sensing",
+    "causal",
+    "shuffled"
+  ],
+  "checkpoints": [
+    0,
+    500,
+    2000,
+    8000
+  ],
+  "tapes": {
+    "421": {
+      "file": "birth_421/worlds.npz",
+      "sha256": "ea9260360b6b7fbc05df1557aea3eec74ea7c072b42d3e8125afa9da0c48dfe7"
+    },
+    "422": {
+      "file": "birth_422/worlds.npz",
+      "sha256": "c0d3b2970209c1476007b0d4c53967627fe1230a731f67f5f3cf2f804eb7052d"
+    },
+    "423": {
+      "file": "birth_423/worlds.npz",
+      "sha256": "9295703c32883db124a3cf47c983b915759e423da610bf0cf6dadd478a0c2c3e"
+    },
+    "424": {
+      "file": "birth_424/worlds.npz",
+      "sha256": "ddb20c39fefeecdb69d01a3576e0e6aa35f9d1e100eae9b7e34a4cbb3f0fee6c"
+    },
+    "425": {
+      "file": "birth_425/worlds.npz",
+      "sha256": "2061a53442cafc68d356f7515676d9759cfdfb559f27cd58a83287202647009f"
+    },
+    "426": {
+      "file": "birth_426/worlds.npz",
+      "sha256": "537be2deb41e86aabdc5865983c61fdad2a1e487196b1ac44ca1a09fd74a99c7"
+    }
+  },
+  "split_key": [
+    909719,
+    "birth",
+    "domain"
+  ],
+  "split_domains": {
+    "deployment": 59929,
+    "return": 60185,
+    "fork_holdout": 60441,
+    "fork_validation": 60697,
+    "yoked_donor": 61209
+  },
+  "reversal_at_zero_based": 30,
+  "deployment_windows_zero_based_half_open": {
+    "stable_noise": {
+      "contact_1": [
+        0,
+        1
+      ],
+      "early": [
+        0,
+        4
+      ],
+      "late": [
+        52,
+        60
+      ]
+    },
+    "reversal": {
+      "contact_1": [
+        0,
+        1
+      ],
+      "early": [
+        0,
+        4
+      ],
+      "late": [
+        52,
+        60
+      ],
+      "before_flip": [
+        22,
+        30
+      ],
+      "after_flip_1": [
+        30,
+        31
+      ],
+      "after_flip_early": [
+        30,
+        34
+      ]
+    }
+  },
+  "fork_horizon": 3,
+  "teacher_target": "taste",
+  "world_and_protocol": {
+    "deployment": "Stable and reversal share input and all exogenous draws. The clean and noisy taste signs invert together at reversal_at_zero_based. The policy sees only the actual taste.",
+    "disabled": "Blocks physical graph writes and preserves recurrent sensing of the actual disabled receipt.",
+    "yoked": "All own-sensing arms are also deployed with the native yoked pre/post local sensing from a paired independently drawn donor world. Both lanes start at the same checkpoint. Only the primary world's outcomes are scored, with its original tape and draws.",
+    "return": "ABA and CBA use one odor bank in the first phase, opposite hidden taste assignments, and the same exogenous draws. B uses new odors and is shared exactly across histories. A return uses the first A assignments on new presentations and is shared exactly. B_only starts at the same cold checkpoint and skips the first phase.",
+    "return_silent": "Serial return controls suppress A taste and physical writes across the short prefix.",
+    "return_pre_feedback": "Each early A motor sample forks from the same unmodified post-B state, with no contacts, taste or edits from earlier A probes.",
+    "transplant": "After B, copy only the writer-receiver weight/support rows and writer biases into the same cold checkpoint. Checkpoint_writer uses the trained checkpoint as donor and its matched step-0 cold body as recipient. Donor activity is never copied. Disconnected grafts fall back to the recipient and remain identifiable in valid.",
+    "fork": "At predetermined contacts of a live deployment, force or suppress the same proposal. Both branches sample their future decisions with identical exogenous draws and continue normal writes. Fork_holdout uses wholly independent worlds and a different slip rate. Fork_validation uses independently sampled worlds with the training contact count, two-cue stimulus distribution, layout mix and slip rate.",
+    "statistics": "Score whole worlds within birth, then average births with equal weight. The paired hierarchical bootstrap resamples births and worlds within each resampled birth; intervals are pointwise. Calibration fits no model to holdout: zero effect and the constant mean of the corresponding deployment-fork split are comparators."
+  },
+  "arrays": {
+    "tape": "[world, contact, ...]. Draw order is address, operation, motor, gate. Truth/outcome are the clean/noisy right-side taste signs.",
+    "deployment": "[world, contact, ...], actual signed side, delivered taste, correctness, one-step p_correct, writer address/op, accepted/applied/status and predicted/actual effects.",
+    "return": "[world, contact, ...]. ABA/CBA have three contiguous phase_contacts segments, B_only has two. The final phase is always A return.",
+    "transplant": "[world, A-return contact, ...]; valid and writer distances are [world]. Checkpoint_writer score trajectories use the deployment contact axis.",
+    "fork": "[world, fork contact, ...]. The time vector is zero-based. Future side/truth/action_changed arrays have an additional horizon axis. Targets are horizon mean take-minus-skip in positive delivered taste/clean correctness, or their per-branch sigmoid probabilities."
+  }
+}

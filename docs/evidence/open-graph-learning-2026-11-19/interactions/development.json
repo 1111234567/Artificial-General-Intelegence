@@ -1,0 +1,256 @@
+{
+  "selection": {
+    "tanh": {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.75,
+      "even": 0.0
+    },
+    "square": {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.85
+    },
+    "matched_tanh": {
+      "recipe": {
+        "rate": 0.32,
+        "exploration": 0.28,
+        "decay": 0.999,
+        "grow_every": 19,
+        "retire_every": 17
+      },
+      "weight_gain": 1.0,
+      "even": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.18,
+          "exploration": 0.31,
+          "decay": 0.998,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.0,
+        "even": 0.0
+      },
+      "accuracy": {
+        "stable": 0.498046875,
+        "reverse": 0.51806640625
+      },
+      "objective": 0.508056640625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.18,
+          "exploration": 0.31,
+          "decay": 0.998,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.0,
+        "even": 0.45
+      },
+      "accuracy": {
+        "stable": 0.511474609375,
+        "reverse": 0.508056640625
+      },
+      "objective": 0.509765625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.18,
+          "exploration": 0.31,
+          "decay": 0.998,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.0,
+        "even": 0.85
+      },
+      "accuracy": {
+        "stable": 0.5185546875,
+        "reverse": 0.511962890625
+      },
+      "objective": 0.5152587890625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.32,
+          "exploration": 0.28,
+          "decay": 0.999,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.0,
+        "even": 0.0
+      },
+      "accuracy": {
+        "stable": 0.5,
+        "reverse": 0.510986328125
+      },
+      "objective": 0.5054931640625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.32,
+          "exploration": 0.28,
+          "decay": 0.999,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.0,
+        "even": 0.45
+      },
+      "accuracy": {
+        "stable": 0.5029296875,
+        "reverse": 0.511962890625
+      },
+      "objective": 0.5074462890625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.32,
+          "exploration": 0.28,
+          "decay": 0.999,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.0,
+        "even": 0.85
+      },
+      "accuracy": {
+        "stable": 0.52197265625,
+        "reverse": 0.509033203125
+      },
+      "objective": 0.5155029296875
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.32,
+          "exploration": 0.28,
+          "decay": 0.999,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.75,
+        "even": 0.0
+      },
+      "accuracy": {
+        "stable": 0.498779296875,
+        "reverse": 0.51806640625
+      },
+      "objective": 0.5084228515625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.32,
+          "exploration": 0.28,
+          "decay": 0.999,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.75,
+        "even": 0.45
+      },
+      "accuracy": {
+        "stable": 0.50244140625,
+        "reverse": 0.509765625
+      },
+      "objective": 0.506103515625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.32,
+          "exploration": 0.28,
+          "decay": 0.999,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.75,
+        "even": 0.85
+      },
+      "accuracy": {
+        "stable": 0.518310546875,
+        "reverse": 0.505615234375
+      },
+      "objective": 0.511962890625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.48,
+          "exploration": 0.33,
+          "decay": 0.9995,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.75,
+        "even": 0.0
+      },
+      "accuracy": {
+        "stable": 0.49658203125,
+        "reverse": 0.51513671875
+      },
+      "objective": 0.505859375
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.48,
+          "exploration": 0.33,
+          "decay": 0.9995,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.75,
+        "even": 0.45
+      },
+      "accuracy": {
+        "stable": 0.514404296875,
+        "reverse": 0.505615234375
+      },
+      "objective": 0.510009765625
+    },
+    {
+      "setup": {
+        "recipe": {
+          "rate": 0.48,
+          "exploration": 0.33,
+          "decay": 0.9995,
+          "grow_every": 19,
+          "retire_every": 17
+        },
+        "weight_gain": 1.75,
+        "even": 0.85
+      },
+      "accuracy": {
+        "stable": 0.522216796875,
+        "reverse": 0.505126953125
+      },
+      "objective": 0.513671875
+    }
+  ],
+  "registered_sha256": "05b514feb344d4459e997baa5c95611031c04265787c46696d8849aa69f0d05b"
+}

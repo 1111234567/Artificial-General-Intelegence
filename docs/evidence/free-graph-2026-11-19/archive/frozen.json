@@ -1,0 +1,31 @@
+{
+  "registered_sha256": "e22451a3f7676fcd911b58dd3a1f58449d5d932d40b192d7d04e85cea0f0ca95",
+  "runtime": {
+    "python": "3.14.5",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.5.4",
+    "device": "cuda",
+    "cuda_runtime": "13.0",
+    "accelerator": "NVIDIA GeForce RTX 4060 Ti",
+    "cpu_threads": 1,
+    "autocast": false,
+    "matmul_tf32": true,
+    "cuda_graph": true
+  },
+  "checkpoints": [
+    {
+      "path": "step-240.pt",
+      "sha256": "4b65500e75199d78d175de4930a9a0aaadcf8094a9e51175c84e239e80051f3e",
+      "updates": 240,
+      "mean_loss": 0.6945696936713325,
+      "seconds": 17.16611649998231
+    },
+    {
+      "path": "step-1200.pt",
+      "sha256": "e54d597d7dd33912abe8fd83558dc1ee50cb7099e9757c82006f948b0d7c3c0c",
+      "updates": 1200,
+      "mean_loss": 0.3576549424065484,
+      "seconds": 177.51298450000468
+    }
+  ]
+}

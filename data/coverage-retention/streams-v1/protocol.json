@@ -1,0 +1,547 @@
+{
+  "format": "coverage-retention-native-continuations-v1",
+  "created_utc": "2026-11-06T16:29:08.562445+00:00",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "control",
+    "wide",
+    "withdraw"
+  ],
+  "runs": 9,
+  "warm": 0,
+  "train_steps": 32768,
+  "total_ticks": 32768,
+  "block": 128,
+  "updates": 256,
+  "batch_size": 32,
+  "dt": 0.25,
+  "time_scale": 16.0,
+  "source_cursor": 33280,
+  "mappings": {
+    "0": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "1": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "2": [
+      [
+        3,
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ]
+  },
+  "source_files": {
+    "experiments\\coverage_retention\\data.py": "87c15b05282a96b050467a4110c1aead91b20f1edcd99df1b9554947a58559d4",
+    "experiments\\coverage_retention\\data_test.py": "c2c81a713a7b4e187be28a1cd0aeaa7dc747da9f33bd5d5a8c2704d2cbed5b9e",
+    "data\\coverage-retention\\streams-v1\\audit_raw.py": "5d7bea5a16a72d76695f86ea78451ce52409fa4ae78eaf3663e84297863cf2b5",
+    "experiments\\teacher_timing\\data.py": "ad264952c757e77732b2133c753ecffc78b55fe540a5cc6c56302e1676b1a3a6",
+    "experiments\\teacher_timing\\data_test.py": "70a06704ef1bb35a166e3f9db253507a183788a19bfaecafc4660a2051a67d17",
+    "data\\teacher-timing\\streams-v1\\audit_raw.py": "4bef4fe797cdc3247785244adcee9b7738198397263acb12c3948367b1c266a1",
+    "experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "experiments\\action_split\\data_test.py": "e61a4d97cc91ab22899f9a523534a9bc7c28dde016507226e69a22edf84e7ce5",
+    "experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "experiments\\remaining_time\\targets.py": "83f2e66044cb2bf3e623dd452d81c1c426d8521f79e7fb63a1d6d5a400403cfa",
+    "experiments\\remaining_time\\targets_test.py": "25a28fcaa319dc22beb843439921bb82729f8ebe3d9c2d5725f4569d8a2421fc",
+    "data\\action-split\\streams-v1\\audit_raw.py": "d0abd06ef948ae764eb476e599d8c5662716aa79cc59a198c6f425346e0cd517"
+  },
+  "immutable_input_sha256": {
+    "0": {
+      "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.pt": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+      "data\\teacher-timing\\train-v1\\midpoint\\seed_000\\action\\step256.json": "d290979a1c252fcdb11a273d806cb20f57a64ceb6a1c923c3ceba4ec4f1331cc",
+      "data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+      "data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\stream.npz": "38a612b7ec6bad4ab19cd73e260e668575d411b4bd31f3e9ff3eae9e4af43891",
+      "data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\stream.json": "03ea0605a17365e7d9599694e3f9e2134175fd7db9f22ef8a2d8cbec0b8b13dc",
+      "data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\raw_audit.json": "07ef980493891b573841d4bf6911a4fbaa9533376105d18aee696c0200d00a16"
+    },
+    "1": {
+      "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.pt": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+      "data\\teacher-timing\\train-v1\\midpoint\\seed_001\\action\\step256.json": "754693026574a3f856af041db69c9467b32904cfed0821c446c22c5232ef8435",
+      "data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+      "data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\stream.npz": "d2a59bfbb00872d26fcf1c98560340097a696f649a49c87356a2838ab15231f3",
+      "data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\stream.json": "879dbee566b1ff1fd9fbf89614254e7c21b8724b4e993623ad6ebc810f91afc7",
+      "data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\raw_audit.json": "5628bc2ae0b32baf7147bddd68be04625c5d2d0247d291db2f0cba62a09756ac"
+    },
+    "2": {
+      "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.pt": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+      "data\\teacher-timing\\train-v1\\midpoint\\seed_002\\action\\step256.json": "65aa8286caec595a1b2180f452e581e34fd2dd795785c0d11c09d14b977225fd",
+      "data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+      "data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\stream.npz": "aa3bf2b71e326a4825bb36ee9221a4ba618abb6057d10e85cca4a73efc62c659",
+      "data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\stream.json": "d1f61dd1b9b74f950df9e0c630a47ff05ad17f4cb8158bbc20df0052516f8f30",
+      "data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\raw_audit.json": "c8de5c63804e0149120a12397ece2e4df797b4a7c317d61173a3d69ce4596539"
+    }
+  },
+  "source_protocol_sha256": "6fc9305cea79ba9062764b6c34d0c856c0b843ab1810016ee5dd2999b432a52b",
+  "initial_worlds": {
+    "0": {
+      "world_digest": "77be7095dd2c69df90c3cf3e87c58cf8c79aafe21aecb3a2a922335a2bfb6662",
+      "source_world_file_sha256": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+      "source_checkpoint_sha256": "3e820afcec324ea3d729cd636cc22995ee98c23f8fa29abe8e11f0e0b001c084",
+      "source_model_digest": "dc57be027d0ddea2109958f47d9141228846235410ba7a5b6efcb9c6295ac65d",
+      "source_Adam_digest": "399b4e872a6d26bff830292de469f9c7612d22be656096893b52fcb74374237e",
+      "source_hidden_digest": "c1e15ccf6ec816e63c8457150b78d71f79458399f40cf9810ce6dfad2d0fbe09",
+      "world_tick": 33279,
+      "native_time": 8319.75,
+      "source_cursor": 33280,
+      "regime": {
+        "duration_range": [
+          8.0,
+          16.0
+        ],
+        "gap_range": [
+          16.0,
+          32.0
+        ],
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "name": "action-split/training/long_both"
+      },
+      "family_allowed": [
+        0,
+        1
+      ]
+    },
+    "1": {
+      "world_digest": "1ba04b533798d0e45f3f18adc3ff667ce721b8aa18104a39ca03ef986ff4ace5",
+      "source_world_file_sha256": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+      "source_checkpoint_sha256": "35e81f9d4b4ee78a2a8ce8d4ffe1f70d504eb5092ff312fb190240e3d3fbc02c",
+      "source_model_digest": "73caee2eba47760dd184a55785ebbb110623310e42c57539a25991259c7944aa",
+      "source_Adam_digest": "a923a882bc95b2ab6b85482bad63433f1b8aca930dc445c710cfa2781d13bf98",
+      "source_hidden_digest": "c38f66f330723d3550d722e93db87fb4615285f6a1aa1b02a8824b483759fc6f",
+      "world_tick": 33279,
+      "native_time": 8319.75,
+      "source_cursor": 33280,
+      "regime": {
+        "duration_range": [
+          8.0,
+          16.0
+        ],
+        "gap_range": [
+          16.0,
+          32.0
+        ],
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "name": "action-split/training/long_both"
+      },
+      "family_allowed": [
+        1,
+        2
+      ]
+    },
+    "2": {
+      "world_digest": "f40d87df3b4afe84aba23fbe67bbfd6bc9603b79c9181215eedb616b1aab93c6",
+      "source_world_file_sha256": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+      "source_checkpoint_sha256": "05932026e3e5f2fffdf307aa6d377d116aa056f8ea1278568c8ba067af4a24bc",
+      "source_model_digest": "9e895e8152ed7e1da5914b48becfa9fa6548141ebcf3cb5005610e63f7d3948b",
+      "source_Adam_digest": "ad00a00e6054d06331c7aa7161855df70cf73b1a150637eecda8cf6656a74698",
+      "source_hidden_digest": "96b1a1d2a210ab49c0294fa3bb8fd10ae40a36830987a304b416b8eeddb6df54",
+      "world_tick": 33279,
+      "native_time": 8319.75,
+      "source_cursor": 33280,
+      "regime": {
+        "duration_range": [
+          8.0,
+          16.0
+        ],
+        "gap_range": [
+          16.0,
+          32.0
+        ],
+        "window_range": [
+          1.5,
+          2.5
+        ],
+        "cancel": 0.2,
+        "replace": 0.3,
+        "name": "action-split/training/long_both"
+      },
+      "family_allowed": [
+        2,
+        0
+      ]
+    }
+  },
+  "changes": {
+    "0": {
+      "control": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            16.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          0,
+          1
+        ]
+      },
+      "wide": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            32.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          0,
+          1
+        ]
+      },
+      "withdraw": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            16.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          1
+        ]
+      }
+    },
+    "1": {
+      "control": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            16.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          1,
+          2
+        ]
+      },
+      "wide": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            32.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          1,
+          2
+        ]
+      },
+      "withdraw": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            16.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          2
+        ]
+      }
+    },
+    "2": {
+      "control": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            16.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          2,
+          0
+        ]
+      },
+      "wide": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            32.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          2,
+          0
+        ]
+      },
+      "withdraw": {
+        "set_regime": {
+          "duration_range": [
+            8.0,
+            16.0
+          ],
+          "gap_range": [
+            16.0,
+            32.0
+          ],
+          "window_range": [
+            1.5,
+            2.5
+          ],
+          "cancel": 0.2,
+          "replace": 0.3,
+          "name": "coverage-retention/continuation"
+        },
+        "set_family_policy": [
+          0
+        ]
+      }
+    }
+  },
+  "changes_order": [
+    "restore full source final world",
+    "set_regime",
+    "set_family_policy",
+    "save after-change full state",
+    "first observe"
+  ],
+  "continuity": "No world clock, RNG, receipts, scheduler, pending request/duration/family or counters reset. Pending inherited replacements retain their original A/B context and sampled duration. Only future NEW draws see changed policies.",
+  "teacher": "Actual same native midpoint policy observe/oracle/act on all32768 new ticks. No new warmup.",
+  "request_id": "Native global world_tick*2+job for both NEW and REPLACE. Local tick is separate; never index local facts using request_id//2. cycle_id retains original NEW id, so a pending inherited REPLACE can have new global rid while retaining inherited cycle/family/duration. Both origins counted separately.",
+  "target": "Native float64(ready-now)/16 saved float32 on active & started & finite ready, zero elsewhere; every valid row including future-ineligible requests retained.",
+  "pair": "control and withdraw have exact physical RAW event histories, version/duration/scheduler and RNG; mapped target/context differs. Wide changes duration and resulting schedules, without an equality assertion.",
+  "audit": "After collection, independent full native replay from saved after-change state plus independent accepted-BEGIN ledger reconstructed through immutable source public history, across all3seeds9worlds.",
+  "counts": "Totals and each128tick block: native11 actions; A/B retained-family action labels, active/nonWAIT/time labels, BEGIN/FINISH, NEW/REPLACE/CANCEL/mature by inherited/new global request IDs AND inherited/new original-NEW cycle IDs; active/time/nonWAIT/NEW/REPLACE/mature duration bins[8,16],(16,32]. Withdrawal inherited-cycle A counts and exact last local/global tick retained, including newly identified REPLACE sampled before change.",
+  "raw_fact_fields": {
+    "rid": "request_id",
+    "active": "active",
+    "started": "started",
+    "ready": "ready_time",
+    "deadline": "deadline",
+    "issued_time": "issued_time",
+    "version": "version",
+    "payload": "payload",
+    "raw": "raw_payload",
+    "family": "current_family",
+    "eligible": "current_eligible",
+    "duration": "duration",
+    "had_error": "had_error",
+    "interrupted": "current_interrupted",
+    "regime_id": "current_regime_id",
+    "event_kind": "event_kind",
+    "event_id": "event_request_id",
+    "event_eligible": "event_eligible",
+    "event_family": "event_family",
+    "event_raw": "raw_event_payload",
+    "event_payload": "event_payload",
+    "event_version": "event_version",
+    "event_duration": "event_duration",
+    "event_window": "event_window",
+    "event_regime_id": "event_regime_id",
+    "mature": "matured_mask",
+    "mature_id": "matured_request_id",
+    "mature_issued": "matured_issued_at",
+    "mature_duration": "matured_duration",
+    "mature_family": "matured_family",
+    "mature_done": "matured_completed",
+    "mature_strict": "matured_clean_completed",
+    "last_external_tick": "last_external_tick",
+    "last_external_time": "last_external_time",
+    "score_pending": "_score_pending",
+    "score_deadline": "_score_deadline",
+    "score_id": "_score_request_id",
+    "score_completed": "_score_completed",
+    "score_clean": "_score_clean",
+    "score_interrupted": "_score_interrupted"
+  },
+  "public_feature_layout": {
+    "kind": [
+      0,
+      3
+    ],
+    "version": [
+      3,
+      5
+    ],
+    "payload": [
+      5,
+      9
+    ],
+    "duration": [
+      9,
+      10
+    ],
+    "window": [
+      10,
+      11
+    ],
+    "previous_action": [
+      11,
+      22
+    ],
+    "previous_result": [
+      22,
+      24
+    ],
+    "context": [
+      24,
+      28
+    ]
+  }
+}

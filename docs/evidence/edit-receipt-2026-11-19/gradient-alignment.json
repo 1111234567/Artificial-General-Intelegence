@@ -1,0 +1,1020 @@
+{
+  "interpretation": "Instantaneous pre-clipping gradient alignment at fixed causal checkpoints. A negative dot means an auxiliary descent direction increases the common sampled loss to first order. Training trajectory and Adam updates require separate measurements.",
+  "gradient_composition": {
+    "common_reward": "Actor score, writer score including acceptance, and differentiable motor reward path at their training weights.",
+    "local_effect": "Gradient difference after adding the training-weight local edit-forecast loss.",
+    "future_benefit": "Gradient difference after adding the training-weight paired future-benefit loss.",
+    "weights": {
+      "writer": 0.25,
+      "motor_path": 1.0,
+      "local_effect": 0.25,
+      "future_benefit": 2.0
+    }
+  },
+  "design": {
+    "births": [
+      421,
+      422,
+      423,
+      424,
+      425,
+      426
+    ],
+    "steps": [
+      0,
+      500,
+      2000,
+      8000
+    ],
+    "fresh_minibatches_per_birth": 16,
+    "batch_size": 12,
+    "diagnostic_seed": 829241,
+    "world_seed_fields": [
+      "diagnostic_seed",
+      "training_world_seed",
+      "sample",
+      0,
+      "birth"
+    ],
+    "matched": "Each birth and minibatch uses the same stimuli, taste noise, random draws and focal contact across checkpoints and losses.",
+    "cosine": "Cosines and negative-dot fractions are defined on pairs with two nonzero gradients. Mean dots include all pairs.",
+    "usable_fork_labels": "The training loss requires at least two eligible lane targets. All-zero fractions are computed among minibatches passing that mask."
+  },
+  "raw": {
+    "file": "F:/agi/data/edit-receipt-20261119/diagnostics/gradient-alignment.npz",
+    "sha256": "3c9fda0ffd5283916543db735391e753013fdcf449e921ddca030ef1c919ead0",
+    "axes": [
+      "checkpoint",
+      "birth",
+      "minibatch",
+      "gradient term",
+      "weight coordinates then bias"
+    ]
+  },
+  "sources_sha256": {
+    "edit_receipt_train.py": "c36dbd80489adb005765f05ab8cec676ff91beed8ccf153df7a7d2ad01472167",
+    "edit_receipt_graph.py": "41b3fd80a2191958355970867cdc0f84b4a56f4f672d8f5bef4c7f57bd9a9ace",
+    "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "edit_receipt_gradient_alignment.py": "e098ad3e975ff1cf709d3fbc6ae2d3d7034456a8239e16a51d9ab3aaa4f341ed"
+  },
+  "checkpoints_sha256": {
+    "birth_421/causal/checkpoint_0.npz": "bf64d2f426c6cc105f1354b21e12148bce5b8ecd55c8b4ef2c207f669904200a",
+    "birth_422/causal/checkpoint_0.npz": "5d1232ed2ad30014d88321f75b5ab77a837e3e88f432faca1b43080429dec99f",
+    "birth_423/causal/checkpoint_0.npz": "9e59df074befeb0b2775eb01bdd247b00688e2c4cac48d2dd33b82a1fd8797ca",
+    "birth_424/causal/checkpoint_0.npz": "dfb97df2c2947976fddcea17f1cf9d6ee7bbfa11ba001b9b5496162d6d40711e",
+    "birth_425/causal/checkpoint_0.npz": "31da686aebc0c4350db230935d55d86278b4848abd6d5a11548ac0dc48557439",
+    "birth_426/causal/checkpoint_0.npz": "3203bbbade26e5798327206706a81756be4a1e1216ae0529b51ec153d82e16d3",
+    "birth_421/causal/checkpoint_500.npz": "b1aa26b122f098b85e3cf3b2823de13c21105c1bda107a2b644795c5f074e294",
+    "birth_422/causal/checkpoint_500.npz": "e9239d16e56d4d83b1c0026786e4d1005d8f14094a10155e72b695f8aa96c55f",
+    "birth_423/causal/checkpoint_500.npz": "b82eac5a7ca425ec700fbbe761a36bf4cc9fc458195007b23a189940a2c6d79b",
+    "birth_424/causal/checkpoint_500.npz": "c06ecda9f846339923170862cc4492797a79e7b127f5eedfb8d69845045a0fe1",
+    "birth_425/causal/checkpoint_500.npz": "c2a47be3d8cc2555515853ef88b62dd821aeb76c13b68d07f670963c126a2aa3",
+    "birth_426/causal/checkpoint_500.npz": "3ab94a3baf2778d9603d8cbd54f46ba620b095917b90588a4440bad4bde47f7b",
+    "birth_421/causal/checkpoint_2000.npz": "22d6503dfb6f1e8b194e3e465b54978ab34a7ff611f362fe1a9771af9d41480a",
+    "birth_422/causal/checkpoint_2000.npz": "aadfd9b1f912953b4f7dd5f0c51d327ce0db63fa7561451eaab999d59d309c05",
+    "birth_423/causal/checkpoint_2000.npz": "3ed64f6303c48fde4ffba014f714143866eca032cea732dd2b4c7e568bed1bbf",
+    "birth_424/causal/checkpoint_2000.npz": "92f1e73e49864acb716446b8bfce524c057daa8d476841d9169cf7532d6a3a1e",
+    "birth_425/causal/checkpoint_2000.npz": "e220ad78492071cb3891269c4e1d91eaf552e648f4b62f2f4e3d8b04735bc98b",
+    "birth_426/causal/checkpoint_2000.npz": "7aa77fb1ce77a3a3e9fffc59b3f408a7a9b7fd3c9bef17d03028888f21c21e20",
+    "birth_421/causal/checkpoint_8000.npz": "934d62b0028a8169a9ea0b974a2354c6d4f3d5e1a48b345c0ababff31650dbc8",
+    "birth_422/causal/checkpoint_8000.npz": "3be4dcab44e900d9dc068fd912b12cbf751a8e35f993162ac3558d6c9cd35439",
+    "birth_423/causal/checkpoint_8000.npz": "d3e3d0a7db377b9cf7b2515214161a6831dba31e6409591450e72a15c0faaad3",
+    "birth_424/causal/checkpoint_8000.npz": "a2924c45249a7bbf8a7d630bcd652382bf578a14c004b8274b333caa296f2732",
+    "birth_425/causal/checkpoint_8000.npz": "8e50e3e27636fde812a176baf325bcb0e2ae29e109753fc1c3405c1a59067ff1",
+    "birth_426/causal/checkpoint_8000.npz": "ef941682eae23f0582093bd08ce5027a9ba3044e0ceb68443186eb2c3c37d2c8"
+  },
+  "by_step": {
+    "0": {
+      "gradient": {
+        "common_reward": {
+          "mean_norm": 0.18244012710678184,
+          "median_norm": 0.18038690122577666,
+          "fraction_zero_gradient": 0.0
+        },
+        "local_effect": {
+          "mean_norm": 0.04155771590948979,
+          "median_norm": 0.03688480807003823,
+          "fraction_zero_gradient": 0.0,
+          "informative_pairs": 96,
+          "mean_dot_with_common": -3.051856393131223e-05,
+          "mean_cosine_with_common": 0.01203592951187818,
+          "negative_dot_fraction_of_informative": 0.5104166666666666
+        },
+        "future_benefit": {
+          "mean_norm": 0.45009715539852274,
+          "median_norm": 0.34494996229201225,
+          "fraction_zero_gradient": 0.0,
+          "informative_pairs": 96,
+          "mean_dot_with_common": -0.0036918449483839193,
+          "mean_cosine_with_common": -0.02154078929772646,
+          "negative_dot_fraction_of_informative": 0.5833333333333334
+        }
+      },
+      "signal": {
+        "fraction_batches_without_attempted_edit": 0.0,
+        "fraction_batches_without_usable_fork_labels": 0.0,
+        "fraction_usable_batches_with_all_fork_targets_zero": 0.7916666666666666,
+        "mean_usable_fork_labels_per_batch": 4.833333492279053
+      },
+      "births": {
+        "421": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.16758668169774762,
+              "median_norm": 0.16944702242349807,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.024319231915881413,
+              "median_norm": 0.023695643216509406,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 2.9641585055128167e-05,
+              "mean_cosine_with_common": 0.0001861767838054907,
+              "negative_dot_fraction_of_informative": 0.5625
+            },
+            "future_benefit": {
+              "mean_norm": 0.12482018153962482,
+              "median_norm": 0.1110493055944688,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0016291118397734545,
+              "mean_cosine_with_common": -0.051188289305534214,
+              "negative_dot_fraction_of_informative": 0.5625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9375,
+            "mean_usable_fork_labels_per_batch": 5.625
+          }
+        },
+        "422": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.16808019816681363,
+              "median_norm": 0.1609355168987483,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.03791905783497794,
+              "median_norm": 0.039252178759495916,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.00026224417286356224,
+              "mean_cosine_with_common": 0.05380937931282756,
+              "negative_dot_fraction_of_informative": 0.375
+            },
+            "future_benefit": {
+              "mean_norm": 0.27392237124391217,
+              "median_norm": 0.23888253981156676,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.004431821842259566,
+              "mean_cosine_with_common": 0.058373880647738595,
+              "negative_dot_fraction_of_informative": 0.375
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9375,
+            "mean_usable_fork_labels_per_batch": 4.3125
+          }
+        },
+        "423": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.1768561545969216,
+              "median_norm": 0.19142850219876378,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.04226981847226924,
+              "median_norm": 0.04136999138697134,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.0003591855551024495,
+              "mean_cosine_with_common": 0.04325603395909289,
+              "negative_dot_fraction_of_informative": 0.4375
+            },
+            "future_benefit": {
+              "mean_norm": 0.5320896619648554,
+              "median_norm": 0.578559264919076,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.005011588824578596,
+              "mean_cosine_with_common": -0.03144867604818852,
+              "negative_dot_fraction_of_informative": 0.6875
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.75,
+            "mean_usable_fork_labels_per_batch": 4.375
+          }
+        },
+        "424": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.18026984001655028,
+              "median_norm": 0.1666509619401605,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.07780246498775198,
+              "median_norm": 0.07618750242630988,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0007835221841969665,
+              "mean_cosine_with_common": -0.039795581796271434,
+              "negative_dot_fraction_of_informative": 0.625
+            },
+            "future_benefit": {
+              "mean_norm": 0.9258144490757685,
+              "median_norm": 0.8593203759018876,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.007959069276915854,
+              "mean_cosine_with_common": -0.04336715942278249,
+              "negative_dot_fraction_of_informative": 0.625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.5,
+            "mean_usable_fork_labels_per_batch": 5.1875
+          }
+        },
+        "425": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.1879476716787331,
+              "median_norm": 0.1908852148202121,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.03282289097366548,
+              "median_norm": 0.030621617521749633,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.00027455998405960947,
+              "mean_cosine_with_common": 0.04784765037864313,
+              "negative_dot_fraction_of_informative": 0.4375
+            },
+            "future_benefit": {
+              "mean_norm": 0.15507420293463853,
+              "median_norm": 0.09804295299848917,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.001693958877312634,
+              "mean_cosine_with_common": -0.0007124959645285998,
+              "negative_dot_fraction_of_informative": 0.5625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.8125,
+            "mean_usable_fork_labels_per_batch": 4.6875
+          }
+        },
+        "426": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.2139002164839247,
+              "median_norm": 0.21079525845715086,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.03421283127239273,
+              "median_norm": 0.03530944602002048,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0003252204964716563,
+              "mean_cosine_with_common": -0.033088081566828575,
+              "negative_dot_fraction_of_informative": 0.625
+            },
+            "future_benefit": {
+              "mean_norm": 0.6888620656323373,
+              "median_norm": 0.638365472059907,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.01028916271398254,
+              "mean_cosine_with_common": -0.060901995693063496,
+              "negative_dot_fraction_of_informative": 0.6875
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.8125,
+            "mean_usable_fork_labels_per_batch": 4.8125
+          }
+        }
+      }
+    },
+    "500": {
+      "gradient": {
+        "common_reward": {
+          "mean_norm": 0.1690721414848995,
+          "median_norm": 0.16530917858804423,
+          "fraction_zero_gradient": 0.0
+        },
+        "local_effect": {
+          "mean_norm": 0.021314464994173495,
+          "median_norm": 0.0199863491994363,
+          "fraction_zero_gradient": 0.0,
+          "informative_pairs": 96,
+          "mean_dot_with_common": -1.1655366718090249e-05,
+          "mean_cosine_with_common": -0.00229730847056502,
+          "negative_dot_fraction_of_informative": 0.5520833333333334
+        },
+        "future_benefit": {
+          "mean_norm": 0.07301554880878194,
+          "median_norm": 0.027884778524975416,
+          "fraction_zero_gradient": 0.08333333333333333,
+          "informative_pairs": 88,
+          "mean_dot_with_common": 0.0009980713150478545,
+          "mean_cosine_with_common": 0.02568602976268182,
+          "negative_dot_fraction_of_informative": 0.4659090909090909
+        }
+      },
+      "signal": {
+        "fraction_batches_without_attempted_edit": 0.0,
+        "fraction_batches_without_usable_fork_labels": 0.08333333333333333,
+        "fraction_usable_batches_with_all_fork_targets_zero": 0.875,
+        "mean_usable_fork_labels_per_batch": 4.895833492279053
+      },
+      "births": {
+        "421": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.15576524382947254,
+              "median_norm": 0.16156108712966166,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.019581647838201068,
+              "median_norm": 0.018182274598388493,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.00019936842279743926,
+              "mean_cosine_with_common": -0.04117910362672973,
+              "negative_dot_fraction_of_informative": 0.5625
+            },
+            "future_benefit": {
+              "mean_norm": 0.10995645064552573,
+              "median_norm": 0.0681026498193722,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0001252105097249008,
+              "mean_cosine_with_common": -0.07900573219576736,
+              "negative_dot_fraction_of_informative": 0.75
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.8125,
+            "mean_usable_fork_labels_per_batch": 6.6875
+          }
+        },
+        "422": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.15673741647073924,
+              "median_norm": 0.15708557191933992,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.018724157379519484,
+              "median_norm": 0.017403480232224856,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -7.465156853364634e-05,
+              "mean_cosine_with_common": -0.018306948038374866,
+              "negative_dot_fraction_of_informative": 0.625
+            },
+            "future_benefit": {
+              "mean_norm": 0.029361180912692186,
+              "median_norm": 0.008506386932450009,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.0007092582396632574,
+              "mean_cosine_with_common": 0.05219757744905005,
+              "negative_dot_fraction_of_informative": 0.4375
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9375,
+            "mean_usable_fork_labels_per_batch": 6.75
+          }
+        },
+        "423": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.17358299409066894,
+              "median_norm": 0.17385688932999743,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.024615079451646687,
+              "median_norm": 0.022776794889126248,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -2.130688671586713e-05,
+              "mean_cosine_with_common": -0.005095591419305476,
+              "negative_dot_fraction_of_informative": 0.5625
+            },
+            "future_benefit": {
+              "mean_norm": 0.0431622380021002,
+              "median_norm": 0.008083725020322452,
+              "fraction_zero_gradient": 0.375,
+              "informative_pairs": 10,
+              "mean_dot_with_common": 0.00016157764378933552,
+              "mean_cosine_with_common": 0.045855140058718866,
+              "negative_dot_fraction_of_informative": 0.5
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.375,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9,
+            "mean_usable_fork_labels_per_batch": 1.9375
+          }
+        },
+        "424": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.15790515581470133,
+              "median_norm": 0.15935994501081724,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.019491925048474593,
+              "median_norm": 0.017004345128351396,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -9.928778871934399e-05,
+              "mean_cosine_with_common": -0.01658291141437316,
+              "negative_dot_fraction_of_informative": 0.6875
+            },
+            "future_benefit": {
+              "mean_norm": 0.03715195061108341,
+              "median_norm": 0.01656706960302002,
+              "fraction_zero_gradient": 0.0625,
+              "informative_pairs": 15,
+              "mean_dot_with_common": 0.0002081232718436335,
+              "mean_cosine_with_common": -0.0034040639235059455,
+              "negative_dot_fraction_of_informative": 0.5333333333333333
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0625,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9333333333333333,
+            "mean_usable_fork_labels_per_batch": 3.4375
+          }
+        },
+        "425": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.20572499998682725,
+              "median_norm": 0.2052994005997632,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.026944768276409486,
+              "median_norm": 0.026224850199664584,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.0002627260874649406,
+              "mean_cosine_with_common": 0.04024659511419325,
+              "negative_dot_fraction_of_informative": 0.4375
+            },
+            "future_benefit": {
+              "mean_norm": 0.12838158112849085,
+              "median_norm": 0.06163255171213204,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.001473345923325957,
+              "mean_cosine_with_common": 0.06590314079813289,
+              "negative_dot_fraction_of_informative": 0.375
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.6875,
+            "mean_usable_fork_labels_per_batch": 6.0625
+          }
+        },
+        "426": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.16471703871698778,
+              "median_norm": 0.1665442084726287,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.018529211970789647,
+              "median_norm": 0.019017493361616098,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 6.195637899281456e-05,
+              "mean_cosine_with_common": 0.027134108561199858,
+              "negative_dot_fraction_of_informative": 0.4375
+            },
+            "future_benefit": {
+              "mean_norm": 0.09007989155279933,
+              "median_norm": 0.028757013887017183,
+              "fraction_zero_gradient": 0.0625,
+              "informative_pairs": 15,
+              "mean_dot_with_common": 0.0035613333213898447,
+              "mean_cosine_with_common": 0.08182402670391675,
+              "negative_dot_fraction_of_informative": 0.2
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0625,
+            "fraction_usable_batches_with_all_fork_targets_zero": 1.0,
+            "mean_usable_fork_labels_per_batch": 4.5
+          }
+        }
+      }
+    },
+    "2000": {
+      "gradient": {
+        "common_reward": {
+          "mean_norm": 0.1550144239477386,
+          "median_norm": 0.15565018523760468,
+          "fraction_zero_gradient": 0.0
+        },
+        "local_effect": {
+          "mean_norm": 0.023655675729469628,
+          "median_norm": 0.022152834674224617,
+          "fraction_zero_gradient": 0.020833333333333332,
+          "informative_pairs": 94,
+          "mean_dot_with_common": -7.596494738159566e-05,
+          "mean_cosine_with_common": -0.021789282830359455,
+          "negative_dot_fraction_of_informative": 0.48936170212765956
+        },
+        "future_benefit": {
+          "mean_norm": 0.04662939247258077,
+          "median_norm": 0.01598251941701078,
+          "fraction_zero_gradient": 0.14583333333333334,
+          "informative_pairs": 82,
+          "mean_dot_with_common": -0.0003125833404407706,
+          "mean_cosine_with_common": -0.017985973512529396,
+          "negative_dot_fraction_of_informative": 0.5609756097560976
+        }
+      },
+      "signal": {
+        "fraction_batches_without_attempted_edit": 0.020833333333333332,
+        "fraction_batches_without_usable_fork_labels": 0.14583333333333334,
+        "fraction_usable_batches_with_all_fork_targets_zero": 0.8902439024390244,
+        "mean_usable_fork_labels_per_batch": 5.052083492279053
+      },
+      "births": {
+        "421": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.18466213351771787,
+              "median_norm": 0.17752786158188122,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.02101663086906537,
+              "median_norm": 0.020016894160966033,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.00020568181970773594,
+              "mean_cosine_with_common": 0.02229413285998907,
+              "negative_dot_fraction_of_informative": 0.375
+            },
+            "future_benefit": {
+              "mean_norm": 0.054099906174114545,
+              "median_norm": 0.022566513125875105,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0011867800298487581,
+              "mean_cosine_with_common": -0.031355752035874616,
+              "negative_dot_fraction_of_informative": 0.5625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.875,
+            "mean_usable_fork_labels_per_batch": 7.75
+          }
+        },
+        "422": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.16098614729267097,
+              "median_norm": 0.14297546302216205,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.022269738824987603,
+              "median_norm": 0.019840737355279626,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0003133002116609033,
+              "mean_cosine_with_common": -0.07376757967966541,
+              "negative_dot_fraction_of_informative": 0.625
+            },
+            "future_benefit": {
+              "mean_norm": 0.019531236066382462,
+              "median_norm": 0.006628706070657174,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.0005232033549741977,
+              "mean_cosine_with_common": -0.04618599553359124,
+              "negative_dot_fraction_of_informative": 0.625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.875,
+            "mean_usable_fork_labels_per_batch": 9.0625
+          }
+        },
+        "423": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.09169871900832614,
+              "median_norm": 0.09524824764462911,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.023941125106587857,
+              "median_norm": 0.026530523612727445,
+              "fraction_zero_gradient": 0.125,
+              "informative_pairs": 14,
+              "mean_dot_with_common": -7.305003671382722e-06,
+              "mean_cosine_with_common": -0.00813491910790391,
+              "negative_dot_fraction_of_informative": 0.42857142857142855
+            },
+            "future_benefit": {
+              "mean_norm": 0.009971180604165877,
+              "median_norm": 0.0,
+              "fraction_zero_gradient": 0.8125,
+              "informative_pairs": 3,
+              "mean_dot_with_common": -0.0001398319057603764,
+              "mean_cosine_with_common": -0.11488601112301407,
+              "negative_dot_fraction_of_informative": 0.6666666666666666
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.125,
+            "fraction_batches_without_usable_fork_labels": 0.8125,
+            "fraction_usable_batches_with_all_fork_targets_zero": 1.0,
+            "mean_usable_fork_labels_per_batch": 0.4375
+          }
+        },
+        "424": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.14143681410931486,
+              "median_norm": 0.12912773095848493,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.01837254984182025,
+              "median_norm": 0.016788621507381814,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0001752048291231987,
+              "mean_cosine_with_common": -0.047141578343393456,
+              "negative_dot_fraction_of_informative": 0.4375
+            },
+            "future_benefit": {
+              "mean_norm": 0.05919780096007049,
+              "median_norm": 0.01678218931553104,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -8.42421695456835e-05,
+              "mean_cosine_with_common": 0.04462555628608787,
+              "negative_dot_fraction_of_informative": 0.375
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.8125,
+            "mean_usable_fork_labels_per_batch": 5.5625
+          }
+        },
+        "425": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.17594115960064372,
+              "median_norm": 0.176835429479459,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.029992591310177726,
+              "median_norm": 0.028324820841675986,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 6.701088943624915e-05,
+              "mean_cosine_with_common": 0.036038794350589105,
+              "negative_dot_fraction_of_informative": 0.5
+            },
+            "future_benefit": {
+              "mean_norm": 0.054847082147296215,
+              "median_norm": 0.021567866331656735,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.00033725167888987845,
+              "mean_cosine_with_common": -0.019423540900719717,
+              "negative_dot_fraction_of_informative": 0.5625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9375,
+            "mean_usable_fork_labels_per_batch": 4.0625
+          }
+        },
+        "426": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.1753615701577581,
+              "median_norm": 0.16795784561185423,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.026341418424178968,
+              "median_norm": 0.025906512419828807,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.00023267234897807437,
+              "mean_cosine_with_common": -0.05831775159646521,
+              "negative_dot_fraction_of_informative": 0.5625
+            },
+            "future_benefit": {
+              "mean_norm": 0.08212914888345506,
+              "median_norm": 0.030400416400871468,
+              "fraction_zero_gradient": 0.0625,
+              "informative_pairs": 15,
+              "mean_dot_with_common": -0.0006505976135741244,
+              "mean_cosine_with_common": -0.01951707198085367,
+              "negative_dot_fraction_of_informative": 0.6666666666666666
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0625,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.9333333333333333,
+            "mean_usable_fork_labels_per_batch": 3.4375
+          }
+        }
+      }
+    },
+    "8000": {
+      "gradient": {
+        "common_reward": {
+          "mean_norm": 0.1844640493896447,
+          "median_norm": 0.1729388179716468,
+          "fraction_zero_gradient": 0.0
+        },
+        "local_effect": {
+          "mean_norm": 0.02516311645561721,
+          "median_norm": 0.02478818119446833,
+          "fraction_zero_gradient": 0.0,
+          "informative_pairs": 96,
+          "mean_dot_with_common": -5.604563949842989e-05,
+          "mean_cosine_with_common": -0.01521810026453489,
+          "negative_dot_fraction_of_informative": 0.5104166666666666
+        },
+        "future_benefit": {
+          "mean_norm": 0.09489997649481534,
+          "median_norm": 0.05566948934260743,
+          "fraction_zero_gradient": 0.03125,
+          "informative_pairs": 93,
+          "mean_dot_with_common": -0.0008445839413380526,
+          "mean_cosine_with_common": -0.047740336514118624,
+          "negative_dot_fraction_of_informative": 0.6236559139784946
+        }
+      },
+      "signal": {
+        "fraction_batches_without_attempted_edit": 0.0,
+        "fraction_batches_without_usable_fork_labels": 0.03125,
+        "fraction_usable_batches_with_all_fork_targets_zero": 0.7849462365591398,
+        "mean_usable_fork_labels_per_batch": 7.520833492279053
+      },
+      "births": {
+        "421": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.19568641174547097,
+              "median_norm": 0.18268501544530596,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.027758954266011767,
+              "median_norm": 0.02749888367247893,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 9.389125559219847e-05,
+              "mean_cosine_with_common": -0.012464501863586264,
+              "negative_dot_fraction_of_informative": 0.5625
+            },
+            "future_benefit": {
+              "mean_norm": 0.13478941561966923,
+              "median_norm": 0.07223496579625921,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0005310434014727913,
+              "mean_cosine_with_common": -0.05825476441176419,
+              "negative_dot_fraction_of_informative": 0.6875
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.5,
+            "mean_usable_fork_labels_per_batch": 7.375
+          }
+        },
+        "422": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.1899338089261558,
+              "median_norm": 0.1600979067617643,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.02577621443563103,
+              "median_norm": 0.025261818904366205,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0005917082224952893,
+              "mean_cosine_with_common": 0.011337706801544833,
+              "negative_dot_fraction_of_informative": 0.5
+            },
+            "future_benefit": {
+              "mean_norm": 0.013769228578407601,
+              "median_norm": 0.006204115161606521,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -6.002352471803426e-05,
+              "mean_cosine_with_common": -0.02530549758751305,
+              "negative_dot_fraction_of_informative": 0.6875
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.875,
+            "mean_usable_fork_labels_per_batch": 10.4375
+          }
+        },
+        "423": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.19637695196202448,
+              "median_norm": 0.16575731532312873,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.030781142498889292,
+              "median_norm": 0.02849236490875899,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.0011541299791280955,
+              "mean_cosine_with_common": 0.11901867211592035,
+              "negative_dot_fraction_of_informative": 0.3125
+            },
+            "future_benefit": {
+              "mean_norm": 0.16588308515573638,
+              "median_norm": 0.1483305653401027,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.003744181529374216,
+              "mean_cosine_with_common": -0.20041987515247978,
+              "negative_dot_fraction_of_informative": 0.6875
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.75,
+            "mean_usable_fork_labels_per_batch": 10.9375
+          }
+        },
+        "424": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.17366323543147288,
+              "median_norm": 0.16755188697607662,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.021653344631831217,
+              "median_norm": 0.02231656678226824,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.000291082708950729,
+              "mean_cosine_with_common": -0.08776263663993285,
+              "negative_dot_fraction_of_informative": 0.625
+            },
+            "future_benefit": {
+              "mean_norm": 0.024077372978942323,
+              "median_norm": 0.022986435030882095,
+              "fraction_zero_gradient": 0.1875,
+              "informative_pairs": 13,
+              "mean_dot_with_common": 0.00012511856425770316,
+              "mean_cosine_with_common": 0.06739115875424916,
+              "negative_dot_fraction_of_informative": 0.38461538461538464
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.1875,
+            "fraction_usable_batches_with_all_fork_targets_zero": 1.0,
+            "mean_usable_fork_labels_per_batch": 2.9375
+          }
+        },
+        "425": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.18806734333784836,
+              "median_norm": 0.18683255801226217,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.02600479737784752,
+              "median_norm": 0.024176244981503805,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0005689074608959125,
+              "mean_cosine_with_common": -0.05379151576730082,
+              "negative_dot_fraction_of_informative": 0.4375
+            },
+            "future_benefit": {
+              "mean_norm": 0.06874465801423599,
+              "median_norm": 0.0432172022689849,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.0015869070694444595,
+              "mean_cosine_with_common": -0.07474320748576704,
+              "negative_dot_fraction_of_informative": 0.625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.875,
+            "mean_usable_fork_labels_per_batch": 5.1875
+          }
+        },
+        "426": {
+          "gradient": {
+            "common_reward": {
+              "mean_norm": 0.16305654493489585,
+              "median_norm": 0.15684014179069528,
+              "fraction_zero_gradient": 0.0
+            },
+            "local_effect": {
+              "mean_norm": 0.019004245523492447,
+              "median_norm": 0.01847457432209196,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": -0.00013259667936894247,
+              "mean_cosine_with_common": -0.06764632623385455,
+              "negative_dot_fraction_of_informative": 0.625
+            },
+            "future_benefit": {
+              "mean_norm": 0.16213609862190045,
+              "median_norm": 0.13457606269614333,
+              "fraction_zero_gradient": 0.0,
+              "informative_pairs": 16,
+              "mean_dot_with_common": 0.0007295333127234817,
+              "mean_cosine_with_common": 0.02647732216138214,
+              "negative_dot_fraction_of_informative": 0.625
+            }
+          },
+          "signal": {
+            "fraction_batches_without_attempted_edit": 0.0,
+            "fraction_batches_without_usable_fork_labels": 0.0,
+            "fraction_usable_batches_with_all_fork_targets_zero": 0.75,
+            "mean_usable_fork_labels_per_batch": 8.25
+          }
+        }
+      }
+    }
+  }
+}

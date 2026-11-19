@@ -1,0 +1,118 @@
+{
+  "utc": "2026-11-19T06:32:28.927578+00:00",
+  "sources": {
+    "sparse_alt_study.py": "6a4440608550de7e60d15ec046f9d432c3c3453daf13fbbd0400fdaac4d30aa2",
+    "sparse_alt_model.py": "25540169de4ea8669ea8f179d70af0c0e3e225fb35795fe91adffa891ea797de",
+    "dendrite_ports_graph.py": "30b6d1c3005963967ba20e2c23c5df2c0a98f416e226447efb97539f9ce840c1",
+    "dendrite_ports_check.py": "45066ed1a00a50214443a5e4c37babf621647eb3a979688dfc07c47931e756f8",
+    "graph_interactions.py": "62eb809a38490b714086687cca37123b0a73e2367417bda22f3f04d2926024a3",
+    "unified_live_graph.py": "ac2b442790c23506ee5f746fac20d6c31c21fc2213b6a8b86950f58eb25ce4dd",
+    "unified_live_graph_study.py": "3938882208e9f094cfb0e386687ae0dbc7d8d390e9a89b9c9c314b7c2678e4d0",
+    "mixture_world.py": "592e73762c5106fa72623f3cafb33d35022b2338f8e7a737697ee086bf956c38",
+    "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+  },
+  "birth_roots": {
+    "development": [
+      872110,
+      872111,
+      872112
+    ],
+    "confirmation": [
+      872210,
+      872211,
+      872212,
+      872213,
+      872214,
+      872215,
+      872216,
+      872217
+    ]
+  },
+  "world_roots": {
+    "development": [
+      872140,
+      872141,
+      872142,
+      872143,
+      872144,
+      872145
+    ],
+    "confirmation": [
+      872240,
+      872241,
+      872242,
+      872243,
+      872244,
+      872245,
+      872246,
+      872247,
+      872248,
+      872249,
+      872250,
+      872251
+    ]
+  },
+  "modes": [
+    "stable",
+    "reverse"
+  ],
+  "arms": [
+    "corroborating",
+    "sham",
+    "dense",
+    "tanh"
+  ],
+  "trials": 1280,
+  "silent_tail": 112,
+  "setup": {
+    "recipe": {
+      "rate": 0.045,
+      "exploration": 0.23,
+      "decay": 0.991,
+      "grow_every": 19,
+      "retire_every": 17
+    },
+    "pair_rate": 0.65,
+    "pair_decay": 0.993
+  },
+  "policies": [
+    {
+      "slots": 6,
+      "half_window": 6,
+      "evidence": 2.0,
+      "minimum_mean": 0.001,
+      "l1": 0.003
+    },
+    {
+      "slots": 6,
+      "half_window": 6,
+      "evidence": 1.65,
+      "minimum_mean": 0.0004,
+      "l1": 0.0006
+    },
+    {
+      "slots": 8,
+      "half_window": 5,
+      "evidence": 1.45,
+      "minimum_mean": 0.0003,
+      "l1": 0.0004
+    },
+    {
+      "slots": 8,
+      "half_window": 7,
+      "evidence": 1.45,
+      "minimum_mean": 0.0002,
+      "l1": 0.00015
+    },
+    {
+      "slots": 12,
+      "half_window": 4,
+      "evidence": 1.25,
+      "minimum_mean": 0.0003,
+      "l1": 0.0003
+    }
+  ],
+  "rule": "Every receiver can keep a bounded number of transient probes. At a real receipt, sample a missing probe uniformly over current distinct incoming source pairs; reject live and already probed keys. Observe signed truncated receipt gradients over two consecutive disjoint blocks. Two sums must have the same nonzero sign, and pooled evidence must clear both the signed RMS threshold and the minimum mean. Admission initializes a live coefficient from pooled evidence. Live coefficients update through receipt-gated L1 soft thresholding, and expire at exact zero or if an incoming arc is removed. Q starts empty. There is no learned-pair quota or full dormant-pair table.",
+  "development": "Choose the candidate with highest average stable/reversal silent accuracy among candidates remaining below a quarter of contemporaneous legal Q counts in every development lane and trial. Break ties by first candidate. If no candidate meets the constraint, select the one with smallest worst ratio and report failure.",
+  "confirmation": "96 new crossed birth-world lives per scenario and arm, same first-order birth and editing rule. Compare stable and reversal silent physical accuracy with matched sham, native tanh and all-legal-pair dense arms. Also compare frozen learned pair-intact and pair-cut graphs on 128 fresh trials. Report 95% simultaneous crossed bootstrap intervals over the six performance and two deletion contrasts. Report live and probe counts, fraction of Q opportunity evaluated, and strict fraction threshold for every lane/trial. No test outcomes select policies."
+}

@@ -1,0 +1,3130 @@
+{
+  "recipe": {
+    "rate": 0.06,
+    "score": -0.059722222222222426,
+    "deploy": "no_writes",
+    "registered_sha256": "5b94156a54e6c19972fa9ff5831a8c5bd4528e1252df4aae5632f6936b15d026",
+    "development_sha256": "65e979da718e85e19267b333d008daa1d81b9a54e0df65b8e97eef07d351fad8"
+  },
+  "results": {
+    "stable": {
+      "arms": {
+        "neither": {
+          "accuracy": {
+            "last20": 0.8742187499999999
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.70546875
+            },
+            "adjacency": {
+              "last20": 0.95703125
+            },
+            "lookup": {
+              "last20": 0.96015625
+            }
+          },
+          "mean_grown": 0.0,
+          "mean_retired": 0.0,
+          "final_arcs": [
+            64,
+            64.0,
+            64
+          ],
+          "timeout": 0.00034722222222222224,
+          "changed_receipts_by_family": {
+            "raw": 0,
+            "drive": 0,
+            "bias": 0,
+            "readout": 0,
+            "offset": 0
+          },
+          "changed_receipts_by_input": {
+            "odor0": 0,
+            "odor1": 0,
+            "odor2": 0,
+            "marker": 0,
+            "movement": 0
+          },
+          "newborn": {
+            "born": 0,
+            "surviving": 0,
+            "retired": 0,
+            "had_later_receipt": 0,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [],
+            "signed_raw_end_quantiles": [],
+            "abs_raw_birth_quantiles": [],
+            "abs_raw_delta_quantiles": [],
+            "abs_effective_delta_quantiles": [],
+            "path_raw_quantiles": [],
+            "later_receipts_quantiles": [],
+            "changed_receipts_quantiles": [],
+            "initial_indegree_quantiles": [],
+            "end_indegree_quantiles": [],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "weight_only": {
+          "accuracy": {
+            "last20": 0.853125
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.649609375
+            },
+            "adjacency": {
+              "last20": 0.950390625
+            },
+            "lookup": {
+              "last20": 0.9593749999999999
+            }
+          },
+          "mean_grown": 0.0,
+          "mean_retired": 0.0,
+          "final_arcs": [
+            64,
+            64.0,
+            64
+          ],
+          "timeout": 6.510416666666667e-05,
+          "changed_receipts_by_family": {
+            "raw": 45991,
+            "drive": 46061,
+            "bias": 46051,
+            "readout": 46022,
+            "offset": 45899
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45951,
+            "odor1": 45831,
+            "odor2": 45982,
+            "marker": 45972,
+            "movement": 46026
+          },
+          "newborn": {
+            "born": 0,
+            "surviving": 0,
+            "retired": 0,
+            "had_later_receipt": 0,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [],
+            "signed_raw_end_quantiles": [],
+            "abs_raw_birth_quantiles": [],
+            "abs_raw_delta_quantiles": [],
+            "abs_effective_delta_quantiles": [],
+            "path_raw_quantiles": [],
+            "later_receipts_quantiles": [],
+            "changed_receipts_quantiles": [],
+            "initial_indegree_quantiles": [],
+            "end_indegree_quantiles": [],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "edge_only": {
+          "accuracy": {
+            "last20": 0.6846354166666666
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.5785156250000001
+            },
+            "adjacency": {
+              "last20": 0.77265625
+            },
+            "lookup": {
+              "last20": 0.702734375
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.9765625,
+          "final_arcs": [
+            57,
+            57.0234375,
+            58
+          ],
+          "timeout": 0.00021701388888888888,
+          "changed_receipts_by_family": {
+            "raw": 0,
+            "drive": 0,
+            "bias": 0,
+            "readout": 0,
+            "offset": 0
+          },
+          "changed_receipts_by_input": {
+            "odor0": 0,
+            "odor1": 0,
+            "odor2": 0,
+            "marker": 0,
+            "movement": 0
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1233,
+            "retired": 3759,
+            "had_later_receipt": 4992,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.5941091775894165,
+              2.892442226409912,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.47886848449707,
+              1.5941091775894165,
+              2.892442226409912,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_birth_quantiles": [
+              0.3989735543727875,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.8819406032562256,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.13514602184295654,
+              2.429750919342041
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              6.0,
+              9.0,
+              27.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "joint": {
+          "accuracy": {
+            "last20": 0.6869791666666667
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.5640625
+            },
+            "adjacency": {
+              "last20": 0.7699218750000001
+            },
+            "lookup": {
+              "last20": 0.7269531249999999
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.9609375,
+          "final_arcs": [
+            57,
+            57.0390625,
+            58
+          ],
+          "timeout": 0.00034722222222222224,
+          "changed_receipts_by_family": {
+            "raw": 45896,
+            "drive": 46000,
+            "bias": 46003,
+            "readout": 46000,
+            "offset": 45803
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45856,
+            "odor1": 45776,
+            "odor2": 45870,
+            "marker": 45913,
+            "movement": 45933
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1299,
+            "retired": 3693,
+            "had_later_receipt": 4992,
+            "changed": 4989,
+            "surviving_changed": 1296,
+            "retired_changed": 3693,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.6036317348480225,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.575065612792969,
+              1.5886371433734894,
+              2.9126213788986206,
+              3.8266814947128296,
+              6.231986045837402
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.002221226692199707,
+              0.00950765609741211,
+              0.02811729907989502,
+              0.3181253671646118
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.002127140760421753,
+              0.012220621109008789,
+              0.10291117429733276,
+              2.300053358078003
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.006887912750244141,
+              0.0225103497505188,
+              0.05695420503616333,
+              0.7488812208175659
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              6.0,
+              9.0,
+              27.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              3.0,
+              9.0,
+              24.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              9.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              9.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              12.0
+            ]
+          }
+        },
+        "joint_pin_newborn": {
+          "accuracy": {
+            "last20": 0.6891927083333332
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.5648437500000001
+            },
+            "adjacency": {
+              "last20": 0.7718750000000001
+            },
+            "lookup": {
+              "last20": 0.7308593749999999
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.966145833333332,
+          "final_arcs": [
+            57,
+            57.033854166666664,
+            58
+          ],
+          "timeout": 0.0003255208333333333,
+          "changed_receipts_by_family": {
+            "raw": 45900,
+            "drive": 46001,
+            "bias": 46006,
+            "readout": 45999,
+            "offset": 45803
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45862,
+            "odor1": 45781,
+            "odor2": 45873,
+            "marker": 45910,
+            "movement": 45937
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1316,
+            "retired": 3676,
+            "had_later_receipt": 4991,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.6036317348480225,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.47886848449707,
+              1.6036317348480225,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.848374456167221,
+              3.0604093074798584,
+              3.8549644947052,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.10848397016525269,
+              2.3156421184539795
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              6.0,
+              9.0,
+              27.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              9.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              9.0
+            ],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "joint_random": {
+          "accuracy": {
+            "last20": 0.6830729166666667
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.565625
+            },
+            "adjacency": {
+              "last20": 0.7324218749999999
+            },
+            "lookup": {
+              "last20": 0.751171875
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.9609375,
+          "final_arcs": [
+            57,
+            57.0390625,
+            58
+          ],
+          "timeout": 0.00015190972222222222,
+          "changed_receipts_by_family": {
+            "raw": 45963,
+            "drive": 46037,
+            "bias": 46031,
+            "readout": 46005,
+            "offset": 45846
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45908,
+            "odor1": 45820,
+            "odor2": 45937,
+            "marker": 45951,
+            "movement": 45980
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 3953,
+            "retired": 1039,
+            "had_later_receipt": 4992,
+            "changed": 4992,
+            "surviving_changed": 3953,
+            "retired_changed": 1039,
+            "sign_flips": 19,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              0.010667418129742146,
+              0.5912833213806152,
+              2.0531203746795654,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.843809127807617,
+              0.011049692751839757,
+              0.5882094502449036,
+              2.0071120262145996,
+              6.205202579498291
+            ],
+            "abs_raw_birth_quantiles": [
+              0.0005144728347659111,
+              0.3621676117181778,
+              0.9580349326133728,
+              2.3268916606903076,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0007914844900369644,
+              0.004600822925567627,
+              0.021103084087371826,
+              0.7254691123962402
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0008920878171920776,
+              0.007909268140792847,
+              0.05147266760468483,
+              2.107215404510498
+            ],
+            "path_raw_quantiles": [
+              2.5704503059387207e-07,
+              0.005297377705574036,
+              0.024762287735939026,
+              0.08359640836715698,
+              1.2782396078109741
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              21.0,
+              48.0,
+              75.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              1.0,
+              21.0,
+              44.0,
+              74.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              3.0,
+              3.0,
+              10.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              6.0
+            ]
+          }
+        },
+        "joint_independent_sign": {
+          "accuracy": {
+            "last20": 0.6204427083333334
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "last20": 0.5914062499999999
+            },
+            "adjacency": {
+              "last20": 0.633984375
+            },
+            "lookup": {
+              "last20": 0.6359375
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.981770833333332,
+          "final_arcs": [
+            57,
+            57.018229166666664,
+            58
+          ],
+          "timeout": 0.0001953125,
+          "changed_receipts_by_family": {
+            "raw": 46008,
+            "drive": 46046,
+            "bias": 46043,
+            "readout": 46041,
+            "offset": 45980
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45991,
+            "odor1": 45969,
+            "odor2": 46000,
+            "marker": 46012,
+            "movement": 46017
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1574,
+            "retired": 3418,
+            "had_later_receipt": 4992,
+            "changed": 4990,
+            "surviving_changed": 1572,
+            "retired_changed": 3418,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              1.3310972452163696,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.899557113647461,
+              1.388348788022995,
+              2.857333779335022,
+              3.821946382522583,
+              6.298092365264893
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0033417940139770508,
+              0.01298069953918457,
+              0.03419792652130127,
+              0.47820234298706055
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0034052282571792603,
+              0.01740717887878418,
+              0.19770465046167374,
+              2.276944160461426
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.013161182403564453,
+              0.040603041648864746,
+              0.09852445125579834,
+              1.3572243452072144
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              6.0,
+              15.0,
+              36.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              6.0,
+              13.0,
+              33.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              17.0
+            ]
+          }
+        }
+      },
+      "windows": {
+        "last20": {
+          "factorial": {
+            "weights_alone": {
+              "delta": -0.021093749999999998,
+              "simultaneous_95pct": [
+                -0.051302083333333325,
+                0.004427083333333332
+              ],
+              "delta_by_group": [
+                -0.034375,
+                -0.04375,
+                0.007291666666666666,
+                -0.03749999999999999,
+                -0.009375000000000003,
+                0.010416666666666668,
+                -0.04791666666666666,
+                -0.013541666666666662
+              ]
+            },
+            "edits_alone": {
+              "delta": -0.18958333333333333,
+              "simultaneous_95pct": [
+                -0.255859375,
+                -0.12890592447916635
+              ],
+              "delta_by_group": [
+                -0.16145833333333331,
+                -0.20104166666666667,
+                -0.23854166666666665,
+                -0.15729166666666666,
+                -0.28437499999999993,
+                -0.12604166666666666,
+                -0.11770833333333332,
+                -0.23020833333333332
+              ]
+            },
+            "edits_given_weights": {
+              "delta": -0.16614583333333333,
+              "simultaneous_95pct": [
+                -0.23715321180555557,
+                -0.10082443576388869
+              ],
+              "delta_by_group": [
+                -0.12916666666666665,
+                -0.15625,
+                -0.23854166666666668,
+                -0.140625,
+                -0.2520833333333333,
+                -0.09479166666666666,
+                -0.090625,
+                -0.2270833333333333
+              ]
+            },
+            "weights_given_edits": {
+              "delta": 0.0023437500000000003,
+              "simultaneous_95pct": [
+                -0.03715288628472222,
+                0.043402886284722324
+              ],
+              "delta_by_group": [
+                -0.002083333333333326,
+                0.0010416666666666664,
+                0.007291666666666665,
+                -0.02083333333333334,
+                0.02291666666666666,
+                0.04166666666666667,
+                -0.02083333333333334,
+                -0.010416666666666664
+              ]
+            },
+            "joint_minus_neither": {
+              "delta": -0.18723958333333335,
+              "simultaneous_95pct": [
+                -0.25052115885416665,
+                -0.12248253038194434
+              ],
+              "delta_by_group": [
+                -0.16354166666666664,
+                -0.19999999999999996,
+                -0.23125,
+                -0.178125,
+                -0.26145833333333335,
+                -0.084375,
+                -0.13854166666666667,
+                -0.24062499999999998
+              ]
+            },
+            "interaction": {
+              "delta": 0.023437500000000003,
+              "simultaneous_95pct": [
+                -0.009592230902777778,
+                0.056553927951389
+              ],
+              "delta_by_group": [
+                0.032291666666666684,
+                0.044791666666666674,
+                0.0,
+                0.016666666666666656,
+                0.03229166666666666,
+                0.03125000000000001,
+                0.027083333333333327,
+                0.0031250000000000028
+              ]
+            }
+          },
+          "controls": {
+            "newborn_weight_writes": {
+              "delta": -0.002213541666666667,
+              "simultaneous_95pct": [
+                -0.013671875000000005,
+                0.009982855902777504
+              ],
+              "delta_by_group": [
+                -0.007291666666666664,
+                -0.0010416666666666664,
+                -0.007291666666666669,
+                -6.505213034913027e-19,
+                0.006249999999999996,
+                0.0010416666666666675,
+                0.0010416666666666673,
+                -0.010416666666666666
+              ]
+            },
+            "selected_vs_random_edges": {
+              "delta": 0.0039062499999999957,
+              "simultaneous_95pct": [
+                -0.042708984375,
+                0.05716210937499918
+              ],
+              "delta_by_group": [
+                0.019791666666666666,
+                0.002083333333333338,
+                -0.01145833333333334,
+                0.013541666666666657,
+                -0.03333333333333333,
+                0.08541666666666667,
+                -0.01145833333333333,
+                -0.03333333333333334
+              ]
+            },
+            "actual_vs_placebo_taste": {
+              "delta": 0.06653645833333333,
+              "simultaneous_95pct": [
+                0.00933051215277777,
+                0.13389800347222167
+              ],
+              "delta_by_group": [
+                0.034375,
+                0.028124999999999997,
+                0.12187500000000001,
+                0.07187499999999997,
+                0.027083333333333327,
+                0.1791666666666667,
+                -0.004166666666666669,
+                0.07395833333333332
+              ]
+            }
+          }
+        }
+      },
+      "random_event_matching": {
+        "matched": 12657,
+        "missed": 0,
+        "extra": 0
+      }
+    },
+    "reversal": {
+      "arms": {
+        "neither": {
+          "accuracy": {
+            "before": 0.8765625,
+            "first20": 0.12630208333333334,
+            "last20": 0.125390625
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.7046874999999999,
+              "first20": 0.297265625,
+              "last20": 0.29374999999999996
+            },
+            "adjacency": {
+              "before": 0.96171875,
+              "first20": 0.0421875,
+              "last20": 0.04257812500000001
+            },
+            "lookup": {
+              "before": 0.9632812499999999,
+              "first20": 0.039453125000000006,
+              "last20": 0.03984375
+            }
+          },
+          "mean_grown": 0.0,
+          "mean_retired": 0.0,
+          "final_arcs": [
+            64,
+            64.0,
+            64
+          ],
+          "timeout": 0.00034722222222222224,
+          "changed_receipts_by_family": {
+            "raw": 0,
+            "drive": 0,
+            "bias": 0,
+            "readout": 0,
+            "offset": 0
+          },
+          "changed_receipts_by_input": {
+            "odor0": 0,
+            "odor1": 0,
+            "odor2": 0,
+            "marker": 0,
+            "movement": 0
+          },
+          "newborn": {
+            "born": 0,
+            "surviving": 0,
+            "retired": 0,
+            "had_later_receipt": 0,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [],
+            "signed_raw_end_quantiles": [],
+            "abs_raw_birth_quantiles": [],
+            "abs_raw_delta_quantiles": [],
+            "abs_effective_delta_quantiles": [],
+            "path_raw_quantiles": [],
+            "later_receipts_quantiles": [],
+            "changed_receipts_quantiles": [],
+            "initial_indegree_quantiles": [],
+            "end_indegree_quantiles": [],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "weight_only": {
+          "accuracy": {
+            "before": 0.858984375,
+            "first20": 0.12578125,
+            "last20": 0.32135416666666666
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.66796875,
+              "first20": 0.243359375,
+              "last20": 0.32265625
+            },
+            "adjacency": {
+              "before": 0.94921875,
+              "first20": 0.07382812500000001,
+              "last20": 0.3203125
+            },
+            "lookup": {
+              "before": 0.959765625,
+              "first20": 0.06015625000000001,
+              "last20": 0.32109374999999996
+            }
+          },
+          "mean_grown": 0.0,
+          "mean_retired": 0.0,
+          "final_arcs": [
+            64,
+            64.0,
+            64
+          ],
+          "timeout": 4.340277777777778e-05,
+          "changed_receipts_by_family": {
+            "raw": 46037,
+            "drive": 46073,
+            "bias": 46066,
+            "readout": 46052,
+            "offset": 46009
+          },
+          "changed_receipts_by_input": {
+            "odor0": 46038,
+            "odor1": 45979,
+            "odor2": 46038,
+            "marker": 46034,
+            "movement": 46055
+          },
+          "newborn": {
+            "born": 0,
+            "surviving": 0,
+            "retired": 0,
+            "had_later_receipt": 0,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [],
+            "signed_raw_end_quantiles": [],
+            "abs_raw_birth_quantiles": [],
+            "abs_raw_delta_quantiles": [],
+            "abs_effective_delta_quantiles": [],
+            "path_raw_quantiles": [],
+            "later_receipts_quantiles": [],
+            "changed_receipts_quantiles": [],
+            "initial_indegree_quantiles": [],
+            "end_indegree_quantiles": [],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "edge_only": {
+          "accuracy": {
+            "before": 0.74453125,
+            "first20": 0.27317708333333335,
+            "last20": 0.3532552083333333
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.620703125,
+              "first20": 0.357421875,
+              "last20": 0.40390625
+            },
+            "adjacency": {
+              "before": 0.827734375,
+              "first20": 0.221484375,
+              "last20": 0.33476562500000007
+            },
+            "lookup": {
+              "before": 0.78515625,
+              "first20": 0.24062499999999998,
+              "last20": 0.32109375
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.971354166666668,
+          "final_arcs": [
+            57,
+            57.028645833333336,
+            58
+          ],
+          "timeout": 0.00034722222222222224,
+          "changed_receipts_by_family": {
+            "raw": 0,
+            "drive": 0,
+            "bias": 0,
+            "readout": 0,
+            "offset": 0
+          },
+          "changed_receipts_by_input": {
+            "odor0": 0,
+            "odor1": 0,
+            "odor2": 0,
+            "marker": 0,
+            "movement": 0
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1551,
+            "retired": 3441,
+            "had_later_receipt": 4991,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_birth_quantiles": [
+              0.3989735543727875,
+              1.8485220670700073,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.19446836411952972,
+              2.3156421184539795
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              6.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "joint": {
+          "accuracy": {
+            "before": 0.7307291666666668,
+            "first20": 0.23997395833333335,
+            "last20": 0.362109375
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.5847656250000001,
+              "first20": 0.305859375,
+              "last20": 0.353125
+            },
+            "adjacency": {
+              "before": 0.815234375,
+              "first20": 0.19218749999999998,
+              "last20": 0.3671875
+            },
+            "lookup": {
+              "before": 0.7921875,
+              "first20": 0.221875,
+              "last20": 0.36601562499999996
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.971354166666668,
+          "final_arcs": [
+            57,
+            57.028645833333336,
+            58
+          ],
+          "timeout": 0.00030381944444444445,
+          "changed_receipts_by_family": {
+            "raw": 45990,
+            "drive": 46038,
+            "bias": 46035,
+            "readout": 46027,
+            "offset": 45951
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45977,
+            "odor1": 45926,
+            "odor2": 45983,
+            "marker": 45997,
+            "movement": 46015
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1560,
+            "retired": 3432,
+            "had_later_receipt": 4991,
+            "changed": 4991,
+            "surviving_changed": 1559,
+            "retired_changed": 3432,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.615837097167969,
+              1.447139859199524,
+              2.9231218099594116,
+              3.848791480064392,
+              6.2621283531188965
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.085463523864746,
+              3.8819406032562256,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0027657747268676758,
+              0.01318979263305664,
+              0.03840762376785278,
+              0.49710726737976074
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.002978876233100891,
+              0.018049120903015137,
+              0.1988445594906807,
+              2.515061855316162
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.010680586099624634,
+              0.037583351135253906,
+              0.10105514526367188,
+              1.5552990436553955
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              6.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              5.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              13.0
+            ]
+          }
+        },
+        "joint_pin_newborn": {
+          "accuracy": {
+            "before": 0.7305989583333332,
+            "first20": 0.23893229166666666,
+            "last20": 0.3618489583333333
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.584375,
+              "first20": 0.306640625,
+              "last20": 0.35039062500000007
+            },
+            "adjacency": {
+              "before": 0.815234375,
+              "first20": 0.190625,
+              "last20": 0.36835937500000004
+            },
+            "lookup": {
+              "before": 0.7921875,
+              "first20": 0.21953125,
+              "last20": 0.36679687499999997
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.9765625,
+          "final_arcs": [
+            57,
+            57.0234375,
+            58
+          ],
+          "timeout": 0.00028211805555555553,
+          "changed_receipts_by_family": {
+            "raw": 45992,
+            "drive": 46040,
+            "bias": 46037,
+            "readout": 46029,
+            "offset": 45952
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45979,
+            "odor1": 45930,
+            "odor2": 45984,
+            "marker": 46000,
+            "movement": 46018
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1565,
+            "retired": 3427,
+            "had_later_receipt": 4990,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.085463523864746,
+              3.8819406032562256,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.19550175964832306,
+              2.4668030738830566
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              6.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "joint_random": {
+          "accuracy": {
+            "before": 0.7721354166666666,
+            "first20": 0.2203125,
+            "last20": 0.37018229166666666
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.627734375,
+              "first20": 0.28984375,
+              "last20": 0.375390625
+            },
+            "adjacency": {
+              "before": 0.8375,
+              "first20": 0.203515625,
+              "last20": 0.380859375
+            },
+            "lookup": {
+              "before": 0.8511718749999999,
+              "first20": 0.16757812500000002,
+              "last20": 0.354296875
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.971354166666668,
+          "final_arcs": [
+            57,
+            57.028645833333336,
+            58
+          ],
+          "timeout": 0.00013020833333333333,
+          "changed_receipts_by_family": {
+            "raw": 46016,
+            "drive": 46061,
+            "bias": 46051,
+            "readout": 46041,
+            "offset": 45963
+          },
+          "changed_receipts_by_input": {
+            "odor0": 46010,
+            "odor1": 45945,
+            "odor2": 46011,
+            "marker": 46015,
+            "movement": 46035
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 3951,
+            "retired": 1041,
+            "had_later_receipt": 4991,
+            "changed": 4991,
+            "surviving_changed": 3950,
+            "retired_changed": 1041,
+            "sign_flips": 30,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              0.010667418129742146,
+              0.5912833213806152,
+              2.0531203746795654,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.99364709854126,
+              0.011136731831356883,
+              0.5895523428916931,
+              2.067313551902771,
+              6.221391201019287
+            ],
+            "abs_raw_birth_quantiles": [
+              0.0005144728347659111,
+              0.3621676117181778,
+              0.9580349326133728,
+              2.3268916606903076,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0011419099755585194,
+              0.007042989134788513,
+              0.03180933743715286,
+              0.4416203498840332
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0014115571975708008,
+              0.011745274066925049,
+              0.057897359132766724,
+              2.154021739959717
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.00977063924074173,
+              0.04944369196891785,
+              0.1665423959493637,
+              2.615818738937378
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              21.0,
+              48.0,
+              75.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              21.0,
+              47.0,
+              75.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              3.0,
+              3.0,
+              10.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              6.0
+            ]
+          }
+        },
+        "joint_independent_sign": {
+          "accuracy": {
+            "before": 0.6731770833333334,
+            "first20": 0.34335937499999997,
+            "last20": 0.3792968750000001
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "before": 0.610546875,
+              "first20": 0.394921875,
+              "last20": 0.408203125
+            },
+            "adjacency": {
+              "before": 0.712890625,
+              "first20": 0.30234374999999997,
+              "last20": 0.36562500000000003
+            },
+            "lookup": {
+              "before": 0.6960937500000001,
+              "first20": 0.3328125,
+              "last20": 0.3640625
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.981770833333332,
+          "final_arcs": [
+            57,
+            57.018229166666664,
+            58
+          ],
+          "timeout": 0.0001953125,
+          "changed_receipts_by_family": {
+            "raw": 46008,
+            "drive": 46046,
+            "bias": 46043,
+            "readout": 46041,
+            "offset": 45980
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45991,
+            "odor1": 45969,
+            "odor2": 46000,
+            "marker": 46012,
+            "movement": 46017
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1574,
+            "retired": 3418,
+            "had_later_receipt": 4992,
+            "changed": 4990,
+            "surviving_changed": 1572,
+            "retired_changed": 3418,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              1.3310972452163696,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.899557113647461,
+              1.388348788022995,
+              2.857333779335022,
+              3.821946382522583,
+              6.298092365264893
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0033417940139770508,
+              0.01298069953918457,
+              0.03419792652130127,
+              0.47820234298706055
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0034052282571792603,
+              0.01740717887878418,
+              0.19770465046167374,
+              2.276944160461426
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.013161182403564453,
+              0.040603041648864746,
+              0.09852445125579834,
+              1.3572243452072144
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              6.0,
+              15.0,
+              36.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              6.0,
+              13.0,
+              33.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              17.0
+            ]
+          }
+        }
+      },
+      "windows": {
+        "before": {
+          "factorial": {
+            "weights_alone": {
+              "delta": -0.017578124999999997,
+              "simultaneous_95pct": [
+                -0.04817708333333333,
+                0.004947916666666666
+              ],
+              "delta_by_group": [
+                -0.025,
+                -0.04270833333333333,
+                -0.002083333333333333,
+                -0.028124999999999994,
+                0.0052083333333333304,
+                0.009375000000000001,
+                -0.04375,
+                -0.013541666666666667
+              ]
+            },
+            "edits_alone": {
+              "delta": -0.13203125,
+              "simultaneous_95pct": [
+                -0.18342035590277775,
+                -0.08333333333333334
+              ],
+              "delta_by_group": [
+                -0.11041666666666666,
+                -0.15208333333333332,
+                -0.15625,
+                -0.08958333333333332,
+                -0.1791666666666667,
+                -0.078125,
+                -0.09375,
+                -0.19687499999999997
+              ]
+            },
+            "edits_given_weights": {
+              "delta": -0.12825520833333331,
+              "simultaneous_95pct": [
+                -0.1793403862847222,
+                -0.075
+              ],
+              "delta_by_group": [
+                -0.11041666666666666,
+                -0.14166666666666666,
+                -0.17604166666666668,
+                -0.10208333333333333,
+                -0.171875,
+                -0.065625,
+                -0.07395833333333332,
+                -0.18437499999999998
+              ]
+            },
+            "weights_given_edits": {
+              "delta": -0.01380208333333333,
+              "simultaneous_95pct": [
+                -0.048307617187500006,
+                0.016059136284722327
+              ],
+              "delta_by_group": [
+                -0.025,
+                -0.03229166666666666,
+                -0.021875,
+                -0.040625,
+                0.012499999999999997,
+                0.021875000000000006,
+                -0.02395833333333333,
+                -0.0010416666666666656
+              ]
+            },
+            "joint_minus_neither": {
+              "delta": -0.14583333333333331,
+              "simultaneous_95pct": [
+                -0.1926216362847222,
+                -0.08901898871527766
+              ],
+              "delta_by_group": [
+                -0.13541666666666669,
+                -0.18437499999999998,
+                -0.17812499999999998,
+                -0.13020833333333331,
+                -0.16666666666666666,
+                -0.05625,
+                -0.11770833333333332,
+                -0.19791666666666666
+              ]
+            },
+            "interaction": {
+              "delta": 0.003776041666666667,
+              "simultaneous_95pct": [
+                -0.025390625000000003,
+                0.03411490885416697
+              ],
+              "delta_by_group": [
+                -7.806255641895632e-18,
+                0.010416666666666668,
+                -0.019791666666666666,
+                -0.0125,
+                0.007291666666666671,
+                0.012500000000000008,
+                0.01979166666666667,
+                0.0125
+              ]
+            }
+          },
+          "controls": {
+            "newborn_weight_writes": {
+              "delta": 0.0001302083333333333,
+              "simultaneous_95pct": [
+                -0.005425564236111107,
+                0.008463541666666664
+              ],
+              "delta_by_group": [
+                0.0,
+                0.0,
+                0.001041666666666665,
+                -0.0010416666666666675,
+                0.0031249999999999967,
+                0.0010416666666666697,
+                0.0010416666666666675,
+                -0.004166666666666663
+              ]
+            },
+            "selected_vs_random_edges": {
+              "delta": -0.04140625,
+              "simultaneous_95pct": [
+                -0.07682291666666666,
+                -0.0058155381944449795
+              ],
+              "delta_by_group": [
+                -0.06979166666666667,
+                -0.04895833333333334,
+                -0.05000000000000002,
+                -0.0375,
+                -0.05625000000000001,
+                0.014583333333333334,
+                -0.025,
+                -0.05833333333333332
+              ]
+            },
+            "actual_vs_placebo_taste": {
+              "delta": 0.05755208333333333,
+              "simultaneous_95pct": [
+                0.008897352430555555,
+                0.10972243923611084
+              ],
+              "delta_by_group": [
+                0.01354166666666666,
+                0.03645833333333333,
+                0.11145833333333333,
+                0.046875,
+                0.09687499999999999,
+                0.1125,
+                0.004166666666666669,
+                0.03854166666666667
+              ]
+            }
+          }
+        },
+        "first20": {
+          "factorial": {
+            "weights_alone": {
+              "delta": -0.0005208333333333327,
+              "simultaneous_95pct": [
+                -0.03402821180555555,
+                0.033637261284722324
+              ],
+              "delta_by_group": [
+                -0.020833333333333332,
+                0.024999999999999998,
+                0.04479166666666667,
+                -0.02708333333333333,
+                -0.0020833333333333346,
+                -0.010416666666666666,
+                -0.03958333333333333,
+                0.026041666666666668
+              ]
+            },
+            "edits_alone": {
+              "delta": 0.14687500000000003,
+              "simultaneous_95pct": [
+                0.08654503038194444,
+                0.21770833333333334
+              ],
+              "delta_by_group": [
+                0.11354166666666667,
+                0.13229166666666667,
+                0.2375,
+                0.10208333333333333,
+                0.21354166666666666,
+                0.09791666666666665,
+                0.075,
+                0.203125
+              ]
+            },
+            "edits_given_weights": {
+              "delta": 0.11419270833333334,
+              "simultaneous_95pct": [
+                0.07456553819444445,
+                0.15651041666666665
+              ],
+              "delta_by_group": [
+                0.103125,
+                0.09895833333333334,
+                0.15833333333333333,
+                0.09479166666666666,
+                0.15520833333333334,
+                0.09895833333333334,
+                0.06770833333333333,
+                0.13645833333333332
+              ]
+            },
+            "weights_given_edits": {
+              "delta": -0.033203125,
+              "simultaneous_95pct": [
+                -0.06749142795138889,
+                0.002778537326389597
+              ],
+              "delta_by_group": [
+                -0.031249999999999997,
+                -0.00833333333333333,
+                -0.034375,
+                -0.034375,
+                -0.06041666666666666,
+                -0.009375000000000001,
+                -0.046875,
+                -0.040624999999999994
+              ]
+            },
+            "joint_minus_neither": {
+              "delta": 0.113671875,
+              "simultaneous_95pct": [
+                0.05403645833333333,
+                0.17638910590277798
+              ],
+              "delta_by_group": [
+                0.08229166666666667,
+                0.12395833333333334,
+                0.203125,
+                0.06770833333333333,
+                0.153125,
+                0.08854166666666667,
+                0.028124999999999997,
+                0.1625
+              ]
+            },
+            "interaction": {
+              "delta": -0.03268229166666666,
+              "simultaneous_95pct": [
+                -0.08107693142361112,
+                0.007682291666666664
+              ],
+              "delta_by_group": [
+                -0.010416666666666666,
+                -0.03333333333333333,
+                -0.07916666666666666,
+                -0.007291666666666668,
+                -0.05833333333333333,
+                0.001041666666666673,
+                -0.0072916666666666755,
+                -0.06666666666666665
+              ]
+            }
+          },
+          "controls": {
+            "newborn_weight_writes": {
+              "delta": 0.0010416666666666673,
+              "simultaneous_95pct": [
+                -0.013281249999999998,
+                0.009765625
+              ],
+              "delta_by_group": [
+                0.006250000000000001,
+                8.673617379884035e-19,
+                0.0010416666666666682,
+                0.002083333333333333,
+                0.004166666666666668,
+                0.006250000000000001,
+                0.005208333333333333,
+                -0.016666666666666666
+              ]
+            },
+            "selected_vs_random_edges": {
+              "delta": 0.019661458333333333,
+              "simultaneous_95pct": [
+                -0.015624999999999998,
+                0.05946202256944416
+              ],
+              "delta_by_group": [
+                0.02916666666666667,
+                0.027083333333333334,
+                0.05416666666666666,
+                0.0031249999999999993,
+                0.03229166666666667,
+                -0.026041666666666668,
+                0.019791666666666662,
+                0.017708333333333333
+              ]
+            },
+            "actual_vs_placebo_taste": {
+              "delta": -0.10338541666666667,
+              "simultaneous_95pct": [
+                -0.13758702256944444,
+                -0.0646265190972225
+              ],
+              "delta_by_group": [
+                -0.07187500000000001,
+                -0.11875,
+                -0.07604166666666667,
+                -0.12291666666666665,
+                -0.11041666666666668,
+                -0.11666666666666667,
+                -0.08020833333333334,
+                -0.13020833333333334
+              ]
+            }
+          }
+        },
+        "last20": {
+          "factorial": {
+            "weights_alone": {
+              "delta": 0.19596354166666669,
+              "simultaneous_95pct": [
+                0.0934892578125,
+                0.30043446180555594
+              ],
+              "delta_by_group": [
+                0.14166666666666666,
+                0.17291666666666666,
+                0.3458333333333333,
+                0.12604166666666666,
+                0.20416666666666666,
+                0.23854166666666668,
+                0.06041666666666666,
+                0.27812499999999996
+              ]
+            },
+            "edits_alone": {
+              "delta": 0.22786458333333331,
+              "simultaneous_95pct": [
+                0.1512150607638889,
+                0.303038302951389
+              ],
+              "delta_by_group": [
+                0.175,
+                0.20729166666666665,
+                0.3,
+                0.19791666666666669,
+                0.29166666666666663,
+                0.21562499999999998,
+                0.11145833333333333,
+                0.32395833333333335
+              ]
+            },
+            "edits_given_weights": {
+              "delta": 0.040755208333333334,
+              "simultaneous_95pct": [
+                -0.006640950520833328,
+                0.09401041666666667
+              ],
+              "delta_by_group": [
+                0.007291666666666662,
+                0.021875000000000002,
+                0.0062500000000000056,
+                0.084375,
+                0.08541666666666667,
+                0.06770833333333333,
+                0.04166666666666667,
+                0.011458333333333334
+              ]
+            },
+            "weights_given_edits": {
+              "delta": 0.008854166666666666,
+              "simultaneous_95pct": [
+                -0.03940993923611111,
+                0.07582508680555596
+              ],
+              "delta_by_group": [
+                -0.02604166666666666,
+                -0.0125,
+                0.052083333333333336,
+                0.012499999999999997,
+                -0.0020833333333333346,
+                0.090625,
+                -0.009375000000000001,
+                -0.034375
+              ]
+            },
+            "joint_minus_neither": {
+              "delta": 0.23671875,
+              "simultaneous_95pct": [
+                0.13975672743055556,
+                0.32560850694444526
+              ],
+              "delta_by_group": [
+                0.14895833333333333,
+                0.19479166666666667,
+                0.35208333333333336,
+                0.21041666666666664,
+                0.2895833333333333,
+                0.30624999999999997,
+                0.10208333333333333,
+                0.2895833333333333
+              ]
+            },
+            "interaction": {
+              "delta": -0.18710937499999997,
+              "simultaneous_95pct": [
+                -0.27812499999999996,
+                -0.10086794704861102
+              ],
+              "delta_by_group": [
+                -0.16770833333333335,
+                -0.18541666666666667,
+                -0.29375,
+                -0.11354166666666668,
+                -0.20625,
+                -0.14791666666666664,
+                -0.06979166666666667,
+                -0.3125
+              ]
+            }
+          },
+          "controls": {
+            "newborn_weight_writes": {
+              "delta": 0.0002604166666666653,
+              "simultaneous_95pct": [
+                -0.01614583333333333,
+                0.01844639756944417
+              ],
+              "delta_by_group": [
+                -0.008333333333333333,
+                0.015624999999999997,
+                -0.0020833333333333346,
+                0.003125,
+                0.005208333333333334,
+                0.012499999999999995,
+                -0.008333333333333331,
+                -0.015624999999999997
+              ]
+            },
+            "selected_vs_random_edges": {
+              "delta": -0.008072916666666667,
+              "simultaneous_95pct": [
+                -0.03967035590277778,
+                0.02821202256944418
+              ],
+              "delta_by_group": [
+                -0.019791666666666666,
+                -0.006249999999999997,
+                -0.00625,
+                -0.008333333333333338,
+                0.03229166666666666,
+                -0.02395833333333333,
+                0.0020833333333333285,
+                -0.034375
+              ]
+            },
+            "actual_vs_placebo_taste": {
+              "delta": -0.0171875,
+              "simultaneous_95pct": [
+                -0.060633897569444435,
+                0.033203125
+              ],
+              "delta_by_group": [
+                -0.048958333333333326,
+                -0.03333333333333334,
+                1.734723475976807e-18,
+                -0.041666666666666685,
+                0.001041666666666663,
+                0.04374999999999999,
+                -0.03333333333333333,
+                -0.025
+              ]
+            }
+          }
+        }
+      },
+      "random_event_matching": {
+        "matched": 12661,
+        "missed": 0,
+        "extra": 0
+      }
+    },
+    "return": {
+      "arms": {
+        "neither": {
+          "accuracy": {
+            "after_return": 0.8742187499999999
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.70546875
+            },
+            "adjacency": {
+              "after_return": 0.95703125
+            },
+            "lookup": {
+              "after_return": 0.96015625
+            }
+          },
+          "mean_grown": 0.0,
+          "mean_retired": 0.0,
+          "final_arcs": [
+            64,
+            64.0,
+            64
+          ],
+          "timeout": 0.00034722222222222224,
+          "changed_receipts_by_family": {
+            "raw": 0,
+            "drive": 0,
+            "bias": 0,
+            "readout": 0,
+            "offset": 0
+          },
+          "changed_receipts_by_input": {
+            "odor0": 0,
+            "odor1": 0,
+            "odor2": 0,
+            "marker": 0,
+            "movement": 0
+          },
+          "newborn": {
+            "born": 0,
+            "surviving": 0,
+            "retired": 0,
+            "had_later_receipt": 0,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [],
+            "signed_raw_end_quantiles": [],
+            "abs_raw_birth_quantiles": [],
+            "abs_raw_delta_quantiles": [],
+            "abs_effective_delta_quantiles": [],
+            "path_raw_quantiles": [],
+            "later_receipts_quantiles": [],
+            "changed_receipts_quantiles": [],
+            "initial_indegree_quantiles": [],
+            "end_indegree_quantiles": [],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "weight_only": {
+          "accuracy": {
+            "after_return": 0.7247395833333332
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.601953125
+            },
+            "adjacency": {
+              "after_return": 0.80234375
+            },
+            "lookup": {
+              "after_return": 0.769921875
+            }
+          },
+          "mean_grown": 0.0,
+          "mean_retired": 0.0,
+          "final_arcs": [
+            64,
+            64.0,
+            64
+          ],
+          "timeout": 4.340277777777778e-05,
+          "changed_receipts_by_family": {
+            "raw": 46036,
+            "drive": 46072,
+            "bias": 46066,
+            "readout": 46052,
+            "offset": 46002
+          },
+          "changed_receipts_by_input": {
+            "odor0": 46027,
+            "odor1": 45966,
+            "odor2": 46033,
+            "marker": 46031,
+            "movement": 46051
+          },
+          "newborn": {
+            "born": 0,
+            "surviving": 0,
+            "retired": 0,
+            "had_later_receipt": 0,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [],
+            "signed_raw_end_quantiles": [],
+            "abs_raw_birth_quantiles": [],
+            "abs_raw_delta_quantiles": [],
+            "abs_effective_delta_quantiles": [],
+            "path_raw_quantiles": [],
+            "later_receipts_quantiles": [],
+            "changed_receipts_quantiles": [],
+            "initial_indegree_quantiles": [],
+            "end_indegree_quantiles": [],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "edge_only": {
+          "accuracy": {
+            "after_return": 0.6485677083333333
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.57421875
+            },
+            "adjacency": {
+              "after_return": 0.6937500000000001
+            },
+            "lookup": {
+              "after_return": 0.677734375
+            }
+          },
+          "mean_grown": 12.997395833333334,
+          "mean_retired": 19.9765625,
+          "final_arcs": [
+            57,
+            57.020833333333336,
+            58
+          ],
+          "timeout": 0.0003255208333333333,
+          "changed_receipts_by_family": {
+            "raw": 0,
+            "drive": 0,
+            "bias": 0,
+            "readout": 0,
+            "offset": 0
+          },
+          "changed_receipts_by_input": {
+            "odor0": 0,
+            "odor1": 0,
+            "odor2": 0,
+            "marker": 0,
+            "movement": 0
+          },
+          "newborn": {
+            "born": 4991,
+            "surviving": 1431,
+            "retired": 3560,
+            "had_later_receipt": 4990,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_birth_quantiles": [
+              0.3989735543727875,
+              1.8485220670700073,
+              2.930077314376831,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.18151220679283142,
+              2.3156421184539795
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              6.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "joint": {
+          "accuracy": {
+            "after_return": 0.5893229166666667
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.52109375
+            },
+            "adjacency": {
+              "after_return": 0.626171875
+            },
+            "lookup": {
+              "after_return": 0.620703125
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.9765625,
+          "final_arcs": [
+            57,
+            57.0234375,
+            58
+          ],
+          "timeout": 0.00021701388888888888,
+          "changed_receipts_by_family": {
+            "raw": 45987,
+            "drive": 46041,
+            "bias": 46038,
+            "readout": 46030,
+            "offset": 45952
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45978,
+            "odor1": 45919,
+            "odor2": 45980,
+            "marker": 45997,
+            "movement": 46017
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1490,
+            "retired": 3502,
+            "had_later_receipt": 4992,
+            "changed": 4988,
+            "surviving_changed": 1486,
+            "retired_changed": 3502,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              1.4551799297332764,
+              2.8849551677703857,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.8415846824646,
+              1.44906684756279,
+              2.8816051483154297,
+              3.8208924531936646,
+              6.2355570793151855
+            ],
+            "abs_raw_birth_quantiles": [
+              0.23431739211082458,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.002565354108810425,
+              0.012042522430419922,
+              0.03448474407196045,
+              0.5258262157440186
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0028274953365325928,
+              0.016634821891784668,
+              0.19371923804283142,
+              2.5107264518737793
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.009908139705657959,
+              0.032482266426086426,
+              0.09090033173561096,
+              1.8537228107452393
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              6.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              5.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              12.0
+            ]
+          }
+        },
+        "joint_pin_newborn": {
+          "accuracy": {
+            "after_return": 0.593359375
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.51796875
+            },
+            "adjacency": {
+              "after_return": 0.636328125
+            },
+            "lookup": {
+              "after_return": 0.6257812500000001
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.984375,
+          "final_arcs": [
+            57,
+            57.015625,
+            58
+          ],
+          "timeout": 0.00021701388888888888,
+          "changed_receipts_by_family": {
+            "raw": 45991,
+            "drive": 46042,
+            "bias": 46039,
+            "readout": 46031,
+            "offset": 45953
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45978,
+            "odor1": 45927,
+            "odor2": 45980,
+            "marker": 45999,
+            "movement": 46020
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1490,
+            "retired": 3502,
+            "had_later_receipt": 4990,
+            "changed": 0,
+            "surviving_changed": 0,
+            "retired_changed": 0,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.8971710205078125,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.47886848449707,
+              1.4551799297332764,
+              2.8971710205078125,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.1888190507888794,
+              2.4668030738830566
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "later_receipts_quantiles": [
+              0.0,
+              6.0,
+              12.0,
+              30.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": []
+          }
+        },
+        "joint_random": {
+          "accuracy": {
+            "after_return": 0.5950520833333334
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.50859375
+            },
+            "adjacency": {
+              "after_return": 0.6207031250000001
+            },
+            "lookup": {
+              "after_return": 0.655859375
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.9765625,
+          "final_arcs": [
+            57,
+            57.0234375,
+            58
+          ],
+          "timeout": 0.00010850694444444444,
+          "changed_receipts_by_family": {
+            "raw": 46008,
+            "drive": 46061,
+            "bias": 46052,
+            "readout": 46042,
+            "offset": 45958
+          },
+          "changed_receipts_by_input": {
+            "odor0": 46004,
+            "odor1": 45932,
+            "odor2": 46009,
+            "marker": 46014,
+            "movement": 46032
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 3952,
+            "retired": 1040,
+            "had_later_receipt": 4992,
+            "changed": 4992,
+            "surviving_changed": 3952,
+            "retired_changed": 1040,
+            "sign_flips": 30,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              0.010667418129742146,
+              0.5912833213806152,
+              2.0531203746795654,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.909953594207764,
+              0.013031817972660065,
+              0.5896118581295013,
+              2.0318548679351807,
+              6.234817981719971
+            ],
+            "abs_raw_birth_quantiles": [
+              0.0005144728347659111,
+              0.3621676117181778,
+              0.9580349326133728,
+              2.3268916606903076,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0009987959638237953,
+              0.006064153276383877,
+              0.025892850011587143,
+              0.38711416721343994
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0011736731976270676,
+              0.009781254455447197,
+              0.05317200720310211,
+              2.0999693870544434
+            ],
+            "path_raw_quantiles": [
+              2.5704503059387207e-07,
+              0.007634170353412628,
+              0.03966638818383217,
+              0.14106054604053497,
+              2.5567519664764404
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              21.0,
+              48.0,
+              75.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              1.0,
+              21.0,
+              45.5,
+              75.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              3.0,
+              3.0,
+              10.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              7.0
+            ]
+          }
+        },
+        "joint_independent_sign": {
+          "accuracy": {
+            "after_return": 0.6204427083333334
+          },
+          "accuracy_by_rule": {
+            "orientation": {
+              "after_return": 0.5914062499999999
+            },
+            "adjacency": {
+              "after_return": 0.633984375
+            },
+            "lookup": {
+              "after_return": 0.6359375
+            }
+          },
+          "mean_grown": 13.0,
+          "mean_retired": 19.981770833333332,
+          "final_arcs": [
+            57,
+            57.018229166666664,
+            58
+          ],
+          "timeout": 0.0001953125,
+          "changed_receipts_by_family": {
+            "raw": 46008,
+            "drive": 46046,
+            "bias": 46043,
+            "readout": 46041,
+            "offset": 45980
+          },
+          "changed_receipts_by_input": {
+            "odor0": 45991,
+            "odor1": 45969,
+            "odor2": 46000,
+            "marker": 46012,
+            "movement": 46017
+          },
+          "newborn": {
+            "born": 4992,
+            "surviving": 1574,
+            "retired": 3418,
+            "had_later_receipt": 4992,
+            "changed": 4990,
+            "surviving_changed": 1572,
+            "retired_changed": 3418,
+            "sign_flips": 0,
+            "signed_raw_birth_quantiles": [
+              -5.843361854553223,
+              1.3310972452163696,
+              2.826564311981201,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "signed_raw_end_quantiles": [
+              -5.899557113647461,
+              1.388348788022995,
+              2.857333779335022,
+              3.821946382522583,
+              6.298092365264893
+            ],
+            "abs_raw_birth_quantiles": [
+              0.2854490280151367,
+              1.8485220670700073,
+              3.0604093074798584,
+              3.828770160675049,
+              6.205477714538574
+            ],
+            "abs_raw_delta_quantiles": [
+              0.0,
+              0.0033417940139770508,
+              0.01298069953918457,
+              0.03419792652130127,
+              0.47820234298706055
+            ],
+            "abs_effective_delta_quantiles": [
+              0.0,
+              0.0034052282571792603,
+              0.01740717887878418,
+              0.19770465046167374,
+              2.276944160461426
+            ],
+            "path_raw_quantiles": [
+              0.0,
+              0.013161182403564453,
+              0.040603041648864746,
+              0.09852445125579834,
+              1.3572243452072144
+            ],
+            "later_receipts_quantiles": [
+              1.0,
+              6.0,
+              15.0,
+              36.0,
+              111.0
+            ],
+            "changed_receipts_quantiles": [
+              0.0,
+              6.0,
+              13.0,
+              33.0,
+              111.0
+            ],
+            "initial_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "end_indegree_quantiles": [
+              1.0,
+              2.0,
+              2.0,
+              3.0,
+              8.0
+            ],
+            "first_changed_after_trials_quantiles": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              17.0
+            ]
+          }
+        }
+      },
+      "windows": {
+        "after_return": {
+          "factorial": {
+            "weights_alone": {
+              "delta": -0.14947916666666666,
+              "simultaneous_95pct": [
+                -0.22313389756944443,
+                -0.08333333333333334
+              ],
+              "delta_by_group": [
+                -0.13958333333333334,
+                -0.228125,
+                -0.20625,
+                -0.10625,
+                -0.12395833333333334,
+                -0.09479166666666666,
+                -0.08541666666666665,
+                -0.2114583333333333
+              ]
+            },
+            "edits_alone": {
+              "delta": -0.22565104166666666,
+              "simultaneous_95pct": [
+                -0.30199663628472223,
+                -0.15629286024305503
+              ],
+              "delta_by_group": [
+                -0.17395833333333333,
+                -0.21770833333333334,
+                -0.303125,
+                -0.184375,
+                -0.2989583333333333,
+                -0.19687500000000002,
+                -0.13229166666666664,
+                -0.2979166666666666
+              ]
+            },
+            "edits_given_weights": {
+              "delta": -0.13541666666666666,
+              "simultaneous_95pct": [
+                -0.1964411892361111,
+                -0.0766923828124997
+              ],
+              "delta_by_group": [
+                -0.10624999999999998,
+                -0.053125000000000006,
+                -0.15937500000000002,
+                -0.16770833333333332,
+                -0.19374999999999998,
+                -0.15520833333333334,
+                -0.12604166666666666,
+                -0.12187500000000001
+              ]
+            },
+            "weights_given_edits": {
+              "delta": -0.059244791666666664,
+              "simultaneous_95pct": [
+                -0.09552973090277778,
+                -0.019314019097222024
+              ],
+              "delta_by_group": [
+                -0.071875,
+                -0.06354166666666666,
+                -0.062499999999999986,
+                -0.08958333333333332,
+                -0.018750000000000006,
+                -0.053125,
+                -0.07916666666666666,
+                -0.035416666666666666
+              ]
+            },
+            "joint_minus_neither": {
+              "delta": -0.28489583333333335,
+              "simultaneous_95pct": [
+                -0.35013053385416665,
+                -0.22699631076388868
+              ],
+              "delta_by_group": [
+                -0.24583333333333335,
+                -0.28125,
+                -0.36562500000000003,
+                -0.2739583333333333,
+                -0.31770833333333337,
+                -0.25,
+                -0.2114583333333333,
+                -0.3333333333333333
+              ]
+            },
+            "interaction": {
+              "delta": 0.09023437499999999,
+              "simultaneous_95pct": [
+                0.011197591145833337,
+                0.17430577256944463
+              ],
+              "delta_by_group": [
+                0.06770833333333333,
+                0.1645833333333333,
+                0.14375,
+                0.016666666666666673,
+                0.10520833333333332,
+                0.041666666666666664,
+                0.006249999999999993,
+                0.17604166666666665
+              ]
+            }
+          },
+          "controls": {
+            "newborn_weight_writes": {
+              "delta": -0.004036458333333335,
+              "simultaneous_95pct": [
+                -0.025130208333333338,
+                0.01671050347222168
+              ],
+              "delta_by_group": [
+                -0.017708333333333333,
+                0.0010416666666666664,
+                -0.006250000000000002,
+                0.00416666666666667,
+                0.013541666666666662,
+                -0.011458333333333333,
+                -0.002083333333333333,
+                -0.013541666666666667
+              ]
+            },
+            "selected_vs_random_edges": {
+              "delta": -0.005729166666666666,
+              "simultaneous_95pct": [
+                -0.04010416666666666,
+                0.029991753472221674
+              ],
+              "delta_by_group": [
+                -0.0010416666666666682,
+                -0.010416666666666675,
+                -0.014583333333333335,
+                -0.004166666666666659,
+                -0.01250000000000001,
+                0.01770833333333333,
+                -0.02083333333333333,
+                3.469446951953614e-18
+              ]
+            },
+            "actual_vs_placebo_taste": {
+              "delta": -0.031119791666666664,
+              "simultaneous_95pct": [
+                -0.07157139756944444,
+                0.015581814236110844
+              ],
+              "delta_by_group": [
+                -0.04791666666666666,
+                -0.053125,
+                -0.01249999999999999,
+                -0.02395833333333333,
+                -0.029166666666666667,
+                0.013541666666666681,
+                -0.07708333333333332,
+                -0.01875
+              ]
+            }
+          }
+        }
+      },
+      "random_event_matching": {
+        "matched": 12663,
+        "missed": 0,
+        "extra": 0
+      }
+    }
+  },
+  "groups": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "roots": [
+    69024000,
+    69024001,
+    69024002,
+    69024003,
+    69024004,
+    69024005,
+    69024006,
+    69024007,
+    69024008,
+    69024009,
+    69024010,
+    69024011,
+    69024012,
+    69024013,
+    69024014,
+    69024015
+  ],
+  "scores_sha256": {
+    "stable": "3f0ebb49b0d015decd158e45544df17a70f7953c620e6370de1b729ea17fce34",
+    "reversal": "89d2dc06dae31052617524c90833b4e53bf8303a81a9656f6a9d93cc2645e650",
+    "return": "df267ec692229ec4ce8f2cbe8446b2dfccb5d0d008803497bd53b60f42b1c7cc"
+  },
+  "verification": {
+    "reference_neither_and_edge_only_equal_at_confirmation": true,
+    "every_edit_and_final_support_reconstructed": true,
+    "every_generation_clock_and_raw_write_audited": true,
+    "no_weight_writes_without_actual_receipt": true,
+    "frozen_and_placebo_behaviors_independent_of_hidden_changes": true,
+    "all_prechange_histories_equal": true,
+    "global_birth_heads": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "4": {
+    "lives": 128,
+    "contacts_per_life": 18,
+    "initial_support_strongly_connected": true,
+    "last_out_of_bounds_weights": 9,
+    "last_out_of_bounds_biases": 53,
+    "last_non_strongly_connected_graphs": 23,
+    "emitted_witnesses": {
+      "first_crossing": {
+        "lane": 47,
+        "contact": 1,
+        "address": 256,
+        "operation": "adjust",
+        "emitted_payload": 0.7902995944023132,
+        "value_before": 2.450000047683716,
+        "unbounded_value_after": 3.240299701690674,
+        "bounded_value_after": 2.5,
+        "bounded_status": "applied"
+      },
+      "first_guard_cut": {
+        "lane": 33,
+        "contact": 2,
+        "address": 220,
+        "operation": "retire",
+        "emitted_payload": 0.7891936302185059,
+        "value_before": 2.450000047683716,
+        "unbounded_value_after": 0.0,
+        "bounded_value_after": 2.450000047683716,
+        "bounded_status": "connectivity"
+      },
+      "first_clipped_different": {
+        "lane": 47,
+        "contact": 1,
+        "address": 256,
+        "operation": "adjust",
+        "emitted_payload": 0.7902995944023132,
+        "value_before": 2.450000047683716,
+        "unbounded_value_after": 3.240299701690674,
+        "bounded_value_after": 2.5,
+        "bounded_status": "applied"
+      }
+    }
+  },
+  "8": {
+    "lives": 128,
+    "contacts_per_life": 18,
+    "initial_support_strongly_connected": true,
+    "last_out_of_bounds_weights": 5,
+    "last_out_of_bounds_biases": 49,
+    "last_non_strongly_connected_graphs": 9,
+    "emitted_witnesses": {
+      "first_crossing": {
+        "lane": 8,
+        "contact": 1,
+        "address": 400,
+        "operation": "adjust",
+        "emitted_payload": -0.7777876257896423,
+        "value_before": -2.450000047683716,
+        "unbounded_value_after": -3.227787733078003,
+        "bounded_value_after": -2.5,
+        "bounded_status": "applied"
+      },
+      "first_guard_cut": {
+        "lane": 1,
+        "contact": 1,
+        "address": 272,
+        "operation": "retire",
+        "emitted_payload": 0.7989819645881653,
+        "value_before": 2.450000047683716,
+        "unbounded_value_after": 0.0,
+        "bounded_value_after": 2.450000047683716,
+        "bounded_status": "connectivity"
+      },
+      "first_clipped_different": {
+        "lane": 8,
+        "contact": 1,
+        "address": 400,
+        "operation": "adjust",
+        "emitted_payload": -0.7777876257896423,
+        "value_before": -2.450000047683716,
+        "unbounded_value_after": -3.227787733078003,
+        "bounded_value_after": -2.5,
+        "bounded_status": "applied"
+      }
+    }
+  }
+}

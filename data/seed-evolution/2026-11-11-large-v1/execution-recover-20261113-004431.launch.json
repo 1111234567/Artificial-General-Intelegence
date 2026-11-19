@@ -1,0 +1,13 @@
+{
+  "launcher_pid": 20352,
+  "started_utc": "2026-11-12T16:44:31.4444093Z",
+  "previous_pid": 26464,
+  "previous_completed": 5861,
+  "cpu_workers": 8,
+  "hybrid_workers": 1,
+  "hybrid_start_free_mib": 1600,
+  "entrypoint": "from experiments.seed_evolution.balanced_runtime import run; run(cpu_workers=8, hybrid_workers=1, hybrid_start_free_mib=1600)",
+  "stdout": "F:\\agi\\data\\seed-evolution\\2026-11-11-large-v1\\execution-recover-20261113-004431.stdout.log",
+  "stderr": "F:\\agi\\data\\seed-evolution\\2026-11-11-large-v1\\execution-recover-20261113-004431.stderr.log",
+  "reason": "Recovery after cuDNN failure; preserve candidate backend routing while waiting for GPU headroom"
+}

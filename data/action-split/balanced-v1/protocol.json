@@ -1,0 +1,191 @@
+{
+  "format": "action-split-balanced-training-v1",
+  "created_utc": "2026-11-05T15:43:24.178466+00:00",
+  "design": "One explicitly post-hoc class-normalization control, chosen after retaining the failed original mode-loss run and diagnosing low FINISH recall even on teacher histories. No sweep.",
+  "known_parent_results": {
+    "primary_full_strict_completion": 0,
+    "diagnostic_full": {
+      "training_teacher": {
+        "legal_rows": 32915,
+        "FINISH_mode_argmax": 0
+      },
+      "heldout_teacher": {
+        "legal_rows": 4106,
+        "FINISH_mode_argmax": 0
+      }
+    },
+    "note": "Known results motivated this single control; they are not confirmatory evidence for class imbalance as the sole cause."
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": [
+    "frozen",
+    "full"
+  ],
+  "snapshots": [
+    0,
+    64,
+    256
+  ],
+  "runtime": {
+    "executable": "F:\\agi\\.venv\\Scripts\\python.exe",
+    "torch_version": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "cudnn_version": 91900,
+    "GPU_name": "NVIDIA GeForce RTX 4060 Ti",
+    "GPU_total_memory": 8585216000,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "deterministic_algorithms": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "matmul_TF32": false,
+    "cudnn_TF32": false,
+    "dtype": "float32",
+    "AMP": false
+  },
+  "source_sha256": {
+    "F:\\agi\\experiments\\action_split\\balanced_train.py": "5dc544b46e474ec3f6036f16701884f5e5c2a6636be71c86ac5a5d71c2099f0f",
+    "F:\\agi\\experiments\\action_split\\balanced_test.py": "d51b8e4511c0b3c3caf7ab139e8ed5850660197274f7f3ac06c553e567afc90b",
+    "F:\\agi\\experiments\\action_split\\train.py": "5d322b8adb84e719d8151cccfb45ebc50b50b5cb6362c001a085cd165d898cdd",
+    "F:\\agi\\experiments\\action_split\\train_test.py": "31629e4c0b7f257660c81d67ce679dec7151d1ca09144ba4c6f3cef584d1843f",
+    "F:\\agi\\experiments\\action_split\\model.py": "72d44a1ce29a8e26be4e85b3f6743f19591e666b93089384d2ea4bebd5417988",
+    "F:\\agi\\experiments\\action_split\\model_test.py": "060aa1a206ecbe8a872adffb98b51b887f70f347eea781ba045bb73f577bc6c9",
+    "F:\\agi\\experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "F:\\agi\\experiments\\action_split\\data_test.py": "e61a4d97cc91ab22899f9a523534a9bc7c28dde016507226e69a22edf84e7ce5",
+    "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\timing_boundary\\data.py": "e9e9a238b2955b498c6e3c5d4d0142927190d54ff8163101133b068f8eeb4a74"
+  },
+  "input_sha256": {
+    "0": {
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.npz": "e3e7df907ad5e078baddee42f10e0910511a298653183275aa627ef10e02feb6",
+      "F:\\agi\\data\\finish-position\\train-v1\\seed_000\\midpoint\\B008.pt": "4dd973d8d42f6c0a929e03f6f818d47aa2382d3ea9d62e75bbaddc8c7b4063ca"
+    },
+    "1": {
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.npz": "b02acb269cd541565e90be2db2e43bdc06e579d91def28aa5adf4374f4c6b379",
+      "F:\\agi\\data\\finish-position\\train-v1\\seed_001\\midpoint\\B008.pt": "c509e3d4ed769c58aca724a08713fd8b1bbfa13d60d1b1051cef1eba8ed491b6"
+    },
+    "2": {
+      "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.npz": "e197c3628ef63260c837bb5fd73fc9cb087e918f2b847ff0f7afc51e2d337d2d",
+      "F:\\agi\\data\\finish-position\\train-v1\\seed_002\\midpoint\\B008.pt": "7fa455af80b35eb8a6048b49f2e0e10ba4f00a23dcf6d552f57ac9df91478ebf"
+    }
+  },
+  "upstream_sha256": {
+    "F:\\agi\\data\\action-split\\train-v1\\protocol.json": "aa586018fda434bf1e8350a591854f82e0dbd8bba217700bb117073d91d0b2ab",
+    "F:\\agi\\data\\action-split\\train-v1\\globalfreeze.json": "087d8fa0cca3ec18a8daee2f344400289f80452032f88a9270dcda35e9b14f09",
+    "F:\\agi\\data\\action-split\\eval-v1\\protocol.json": "dcef324cdea26ac4be993d34c3e80db83cf9bbc78955bdbe52bfee94f083fe81",
+    "F:\\agi\\data\\action-split\\eval-v1\\freeze.json": "411112b2432048b2b67c00b34a2154737202a54033b16599d1090d7844eb1024",
+    "F:\\agi\\data\\action-split\\eval-v1\\completion.json": "7b4927daf278e50849f66de55429ccc4b0f8652063d7db2500cf654e5ed94b38",
+    "F:\\agi\\data\\action-split\\diagnostic-v1\\protocol.json": "32accc0440d2ad4f763aecfa8b3a98cbc4a247defe853cc122693d0194795fd4",
+    "F:\\agi\\data\\action-split\\diagnostic-v1\\summary.json": "2c21f7214c0732f4fe72b2c0b190aa6da9b3907819e78610930476d729b60030"
+  },
+  "data_protocol_sha256": "687d36349861a871a11f6c678f22c7789748d53e75c34a787444b3414b4564a2",
+  "data_protocol_hash": null,
+  "parent_training_protocol_hash": "6bb754c1145a1ed59d7c9c07272fdf27a718d05afd18b53ccc0ff8e278e21db4",
+  "initial_model": {
+    "width": 192,
+    "input_size": 56,
+    "n_jobs": 2,
+    "n_actions": 13,
+    "total_parameters": 149018,
+    "original_total_parameters": 148246,
+    "increase": 772,
+    "recurrent_core": "copied only from seed-matched original midpoint B008",
+    "head": "all new mode/begin/finish weights and biases exactly zero; all-WAIT start by argmax ties",
+    "note": "This is a new all-WAIT policy, not a function-preserving replacement of original head."
+  },
+  "source_policy": "original midpoint B008 is untouched reference",
+  "initialization": "Original seed-matched midpoint B008 core only plus exactly-zero new heads; NOT a continuation of the failed step256 control.",
+  "optimizer": {
+    "kind": "Adam",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "reset_for_both_arms": true,
+    "global_gradient_norm_clip": 1.0
+  },
+  "stream": {
+    "warm_ticks": 512,
+    "training_ticks": 32768,
+    "batch": 32,
+    "slots": 2,
+    "block": 128,
+    "updates": 256,
+    "replay_epochs": 0,
+    "common_physical_observations_and_targets_for_both_arms": true,
+    "recurrent_state": "zero only at independent stream origin; teacher warm no gradients/loss; carry numerical h across ALL blocks, detach graph at128; never recompute h after optimizer updates"
+  },
+  "loss": {
+    "mode": "(mean CE on WAIT rows + mean CE on BEGIN rows + mean CE on FINISH rows) / 3, independently within each128tick block; all3 classes required, no empty-class fallback",
+    "begin": "CE correct version only where teacher mode is BEGIN; divide by BEGIN rows",
+    "finish": "8-way CE correct current version and payload on ALL active rows; divide by active rows",
+    "coefficients": {
+      "mode": 1.0,
+      "begin": 1.0,
+      "finish": 1.0
+    },
+    "eligible_filter": false,
+    "class_weights": "inverse actual within-block class counts, followed by division by3; fixed formula, no tuning"
+  },
+  "counters": {
+    "raw_supervision_counts": "All mode/BEGIN/FINISH content row counts identical to parent",
+    "mode_weight_sum": "Sum of inverse-class-count row weights =3 per update,768 total; a reduction denominator counter, not additional supervision"
+  },
+  "expected_training_rows": {
+    "0": {
+      "mode_rows": 2097152,
+      "mode_WAIT_rows": 2068337,
+      "mode_BEGIN_rows": 17813,
+      "mode_FINISH_rows": 11002,
+      "mode_weight_sum": 768.0,
+      "begin_rows": 17813,
+      "finish_rows": 704043
+    },
+    "1": {
+      "mode_rows": 2097152,
+      "mode_WAIT_rows": 2068355,
+      "mode_BEGIN_rows": 17826,
+      "mode_FINISH_rows": 10971,
+      "mode_weight_sum": 768.0,
+      "begin_rows": 17826,
+      "finish_rows": 703915
+    },
+    "2": {
+      "mode_rows": 2097152,
+      "mode_WAIT_rows": 2068356,
+      "mode_BEGIN_rows": 17854,
+      "mode_FINISH_rows": 10942,
+      "mode_weight_sum": 768.0,
+      "begin_rows": 17854,
+      "finish_rows": 702442
+    }
+  },
+  "minimum_class_rows_per_block": {
+    "0": {
+      "mode_WAIT_rows": 8063,
+      "mode_BEGIN_rows": 58,
+      "mode_FINISH_rows": 33
+    },
+    "1": {
+      "mode_WAIT_rows": 8060,
+      "mode_BEGIN_rows": 55,
+      "mode_FINISH_rows": 32
+    },
+    "2": {
+      "mode_WAIT_rows": 8058,
+      "mode_BEGIN_rows": 58,
+      "mode_FINISH_rows": 30
+    }
+  },
+  "implementation": "Frozen base train.py reused only through process-local OUT/PLAN/FORMAT/checked/loss/row-counter bindings. All parent sources and artifacts unchanged.",
+  "checkpoint": "step000 after warm, step064, step256; model/config/head format, full Adam, live h, stream cursor, protocol/source hashes, RNG, work; first two real updates before/after and gradients",
+  "no_adaptation": "Exactly six fixed continuations: frozen/full x3seeds, same stream/order/256updates; no LR, coefficient, threshold, sampling or epoch search. All6 endpoints freeze before own-action scoring. Original negative results retained.",
+  "protocol_hash": "ff3c716e8495083e4c79e4e36f870bf8da1a5d7457e8d1ebbe05a9e9a3f52772"
+}

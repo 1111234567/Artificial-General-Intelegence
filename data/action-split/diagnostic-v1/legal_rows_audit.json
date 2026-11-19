@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "scope": "Independent reaggregation of all18 legal-row archives: target, count, FINISH argmax, content, joint, probability normalization/sum, unique coordinates",
+  "summary_sha256": "2c21f7214c0732f4fe72b2c0b190aa6da9b3907819e78610930476d729b60030",
+  "checks": [
+    {
+      "seed": 0,
+      "arm": "frozen",
+      "history": "training_teacher",
+      "legal_rows": 11002,
+      "finish_argmax": 1979,
+      "content_correct": 8671,
+      "p_finish_mean": 0.2834626610068832,
+      "legal_sha256": "bd3258f2f2c16055bd35b4cc0e95156fce55577824a6f18b708fdf7bc21bee70"
+    },
+    {
+      "seed": 0,
+      "arm": "full",
+      "history": "training_teacher",
+      "legal_rows": 11002,
+      "finish_argmax": 0,
+      "content_correct": 9597,
+      "p_finish_mean": 0.045208556627528124,
+      "legal_sha256": "3e9b924e17ffac7f9c71dae59019dcca77fc02dee8f3072a757471d734b5b455"
+    },
+    {
+      "seed": 0,
+      "arm": "frozen",
+      "history": "heldout_teacher",
+      "legal_rows": 1355,
+      "finish_argmax": 285,
+      "content_correct": 1059,
+      "p_finish_mean": 0.29689958896006824,
+      "legal_sha256": "08cbf285087a8cba60dcf30968d7103e29e38c2d49b648f95b3f715a7f7d965d"
+    },
+    {
+      "seed": 0,
+      "arm": "full",
+      "history": "heldout_teacher",
+      "legal_rows": 1355,
+      "finish_argmax": 0,
+      "content_correct": 1167,
+      "p_finish_mean": 0.04414591457337361,
+      "legal_sha256": "ea894ac052eb251ff26479a357b9e542448ecfdd0355476b7162634f08604c7f"
+    },
+    {
+      "seed": 0,
+      "arm": "frozen",
+      "history": "own_long",
+      "legal_rows": 8073,
+      "finish_argmax": 895,
+      "content_correct": 5110,
+      "p_finish_mean": 0.25889586003802495,
+      "legal_sha256": "409a90898f05fd0520c6d4b3154d4930a53f254cdb6e546c2b9cddc76a2a84ea"
+    },
+    {
+      "seed": 0,
+      "arm": "full",
+      "history": "own_long",
+      "legal_rows": 10891,
+      "finish_argmax": 0,
+      "content_correct": 9254,
+      "p_finish_mean": 0.04500184824036732,
+      "legal_sha256": "dd447b5841b1b022a1509168f74ee6b809ab0ca76adc79a0f7488ea2372d9df7"
+    },
+    {
+      "seed": 1,
+      "arm": "frozen",
+      "history": "training_teacher",
+      "legal_rows": 10971,
+      "finish_argmax": 270,
+      "content_correct": 7966,
+      "p_finish_mean": 0.1552550521085081,
+      "legal_sha256": "472b13b875dd472046e4152752414e76650d98e1680414054d48a7b7284a53a4"
+    },
+    {
+      "seed": 1,
+      "arm": "full",
+      "history": "training_teacher",
+      "legal_rows": 10971,
+      "finish_argmax": 0,
+      "content_correct": 8225,
+      "p_finish_mean": 0.03948037094035823,
+      "legal_sha256": "43e7cb38b7b2d96461e993becc5196c6adaf34e5a827947b5cb3b1fbb12ce22d"
+    },
+    {
+      "seed": 1,
+      "arm": "frozen",
+      "history": "heldout_teacher",
+      "legal_rows": 1387,
+      "finish_argmax": 35,
+      "content_correct": 1000,
+      "p_finish_mean": 0.1572832553979834,
+      "legal_sha256": "0c7da81b032e589e24c2c8533308a25041e1bb83ca5c722f973d5e0641c4c649"
+    },
+    {
+      "seed": 1,
+      "arm": "full",
+      "history": "heldout_teacher",
+      "legal_rows": 1387,
+      "finish_argmax": 0,
+      "content_correct": 1039,
+      "p_finish_mean": 0.039897091304326046,
+      "legal_sha256": "c34a0710a5293038d202a05f9f1ff84fa95c55b25ad57b978e7f9be0fb7590a6"
+    },
+    {
+      "seed": 1,
+      "arm": "frozen",
+      "history": "own_long",
+      "legal_rows": 10333,
+      "finish_argmax": 605,
+      "content_correct": 7095,
+      "p_finish_mean": 0.19313220406748982,
+      "legal_sha256": "67ac5d31fb7e6c1ba570dd706b1ca5eb1dd33bc834cffb3462affd5842a2535c"
+    },
+    {
+      "seed": 1,
+      "arm": "full",
+      "history": "own_long",
+      "legal_rows": 11135,
+      "finish_argmax": 0,
+      "content_correct": 8299,
+      "p_finish_mean": 0.04134650194961419,
+      "legal_sha256": "1904b01c9016571200cac5a83fec231f2da925d867bdb5cc6396a4fb442ee708"
+    },
+    {
+      "seed": 2,
+      "arm": "frozen",
+      "history": "training_teacher",
+      "legal_rows": 10942,
+      "finish_argmax": 184,
+      "content_correct": 7131,
+      "p_finish_mean": 0.17708533182387837,
+      "legal_sha256": "ae053b3dcce0f4d232bf4ac99f48431004b397f4df81229fceada3afe380214c"
+    },
+    {
+      "seed": 2,
+      "arm": "full",
+      "history": "training_teacher",
+      "legal_rows": 10942,
+      "finish_argmax": 0,
+      "content_correct": 8390,
+      "p_finish_mean": 0.045433975782107,
+      "legal_sha256": "1cb34e4591e5d59b878bc8ff5d6a5595446478f36757946751810bc4d1dc6186"
+    },
+    {
+      "seed": 2,
+      "arm": "frozen",
+      "history": "heldout_teacher",
+      "legal_rows": 1364,
+      "finish_argmax": 23,
+      "content_correct": 871,
+      "p_finish_mean": 0.1790665025055365,
+      "legal_sha256": "026d1aedb52130241222b877d9dd4d3ac77c6158159ef2b653d2418c81b70d33"
+    },
+    {
+      "seed": 2,
+      "arm": "full",
+      "history": "heldout_teacher",
+      "legal_rows": 1364,
+      "finish_argmax": 0,
+      "content_correct": 1018,
+      "p_finish_mean": 0.04573411101088217,
+      "legal_sha256": "0c322f4cc6f63040d6d83f6f87f69ca9774e6f52529c0893a9a632e49dbe4110"
+    },
+    {
+      "seed": 2,
+      "arm": "frozen",
+      "history": "own_long",
+      "legal_rows": 10369,
+      "finish_argmax": 187,
+      "content_correct": 6020,
+      "p_finish_mean": 0.18587407059034308,
+      "legal_sha256": "7429c6cba200fcaee9ffc6a07bbc0b502b7cb6b9e41f30d448c4e7cafef86e73"
+    },
+    {
+      "seed": 2,
+      "arm": "full",
+      "history": "own_long",
+      "legal_rows": 10943,
+      "finish_argmax": 0,
+      "content_correct": 8037,
+      "p_finish_mean": 0.043768561261048264,
+      "legal_sha256": "5cdbaa25e2410b521489d2c9bee2c1c272496136ddd29ff0d9343dde3d4ac577"
+    }
+  ]
+}

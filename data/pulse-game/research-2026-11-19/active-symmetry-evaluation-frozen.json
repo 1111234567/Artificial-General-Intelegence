@@ -1,0 +1,42 @@
+{
+  "held_start": 93100101,
+  "worlds": 384,
+  "founders": [
+    173,
+    211
+  ],
+  "train_random_seeds": [
+    1619,
+    2449
+  ],
+  "offer_held_start": 93220101,
+  "offer_worlds": 192,
+  "horizons": [
+    4,
+    8,
+    14
+  ],
+  "displayed_costs": [
+    0.1,
+    0.36,
+    0.72
+  ],
+  "arenas": 2,
+  "private_relation_independent_by_arena": true,
+  "pairs_per_probe": 4,
+  "information_path": "A probe physically visits a labeled marker and spends one ticket and stated fee. It then physically tastes a balanced four-pair pack. Harvest spends its ticket, receives one actual new B anchor receipt, then chooses a real B target with net +1 or -1 but no local B-choice receipt. A taste outcomes are information only, not utility.",
+  "evaluation": "Actual per-life net utility and first no-receipt B choice, counting both missed and abstained as misses. Compare two separately trained gates to public Bayes structure baseline, explicit heuristic, fixed 1/2 per arena, no exploration, learned-confidence masked, and three independent timing permutations preserving each world and each arena probe budget and total fee. Held state counterfactuals vary displayed horizon/cost while original body stays identical.",
+  "readiness": "Reward-trained active choice supported if paired net versus count-matched random and no-probe has a 95% lower above zero, plus a physically realized timing response to at least one changed public offer at same state. Compare to heuristic and public upper reference quantitatively without assuming an advantage.",
+  "source": {
+    "active_symmetry_world.py": "3f1f7e8fe50761589f124ffba14ed59fe44d8188172c250b074089daa3ce49a5",
+    "active_symmetry_agent.py": "5cd6a0c1ddaf5f079bdda92eccf492baa1a59fd7db91d4776d5743b192cd3130",
+    "active_symmetry_train.py": "4afc3d126bd7062f4da628dc9c58e2f27c4c40f298df4b008ab1368f2cc497d5",
+    "active_symmetry_offers.py": "ca9de1e0fe36c9366c769b34a087440fed1f022ee8265a0ac7115f5a2acd31f0",
+    "symmetry_world.py": "a45aed2f6c893b64428e49d9a9ee1ddfc2c73fe9f49de8d3ccde9c5b9c2877e0",
+    "symmetry_spike.py": "29242ab7f3b44d4332494c6aafbe1f4f4ff6314b699231f7d29fdb684f860dd2"
+  },
+  "checkpoints": {
+    "active-symmetry-trained-1619.json": "88ee91009e9ca61ea84d0d0ca67f22ecc90f993ba12a306ac762da351521ced9",
+    "active-symmetry-trained-2449.json": "329b92431a35cd6bd191d9ab0ff7afba5bd0a9b7cd7bf37418b8316eae6fa7a4"
+  }
+}

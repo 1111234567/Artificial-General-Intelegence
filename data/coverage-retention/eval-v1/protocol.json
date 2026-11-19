@@ -1,0 +1,95 @@
+{
+  "created_utc": "2026-11-06T16:34:31.160342+00:00",
+  "sources": {
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/action_split/eval_test.py": "702f7a0fa47e2842c735a47cbc422d3f19d7873b1bdf4d1ec91413f389d38716",
+    "experiments/action_split/model.py": "72d44a1ce29a8e26be4e85b3f6743f19591e666b93089384d2ea4bebd5417988",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/remaining_time/evaluate.py": "a4f018a9eb0fb851ef04976361615c41897d3913b2309903e5b94ffb17797156",
+    "experiments/remaining_time/eval_test.py": "a685402e723f7a2f7cf6b29136ae7902a848136cdd6f29a327fa6bd2a7c8bb49",
+    "experiments/remaining_time/model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "experiments/teacher_timing/evaluate.py": "5b16139b3099742b1db2beb1d266f91b49ee6ece21c82a7de789d83e61eec2e3",
+    "experiments/teacher_timing/eval_audit.py": "8758e4917ca8a575a87150ca2bb8dbff578b54f6dae7f37fc501c2f184c0ab89",
+    "experiments/action_split/eval_audit.py": "1c97b9d19b212eee30500bd69b72d66b00685c4b53e8cd7a5663c100eee1b08f",
+    "experiments/remaining_time/eval_audit.py": "8862973722f03523d4aed2a9f96ccbe16aabab53d8986ecf5145225f94275f13",
+    "experiments/coverage_retention/evaluate.py": "e01114202bb577498b77b20c9fa18d2943fc1093c1f44a5f0a22c225aca8100c",
+    "experiments/coverage_retention/eval_test.py": "6ef53dfa11a9759ade2a361a4d62b7d89f49a1393d18b8f61be9c1c12abf0f53",
+    "experiments/coverage_retention/eval_audit.py": "c03839da4c76ba7607d42d8dc87bccb48203e98397b87716e0855edf3071f2df",
+    "experiments/coverage_retention/analysis-plan.md": "57955a12155119d9d699a682c7bf903dbaf82938851b3966d84f03981fab250e"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "baseline",
+    "control256",
+    "wide256",
+    "withdraw256"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ],
+    "longer": [
+      16.0,
+      32.0
+    ],
+    "far": [
+      32.0,
+      64.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "actor_ids": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100021,
+    100022,
+    100023,
+    100024,
+    100025,
+    100026,
+    100027,
+    100028,
+    100029,
+    100030,
+    100031
+  ],
+  "world_seed": "855000+seed",
+  "primary": "Fixed localstep256. Coverage: wide versus control. Withdrawal: withdraw versus control and source baseline, A/B conflict separately. 36freshworld rollouts,512ownwarm+4096test.",
+  "secondary": "8..16 oldcoverage,16..32 learnedcoverage for wide ONLY,32..64 unseen by everyarm. No snapshotselection; step064archivednot evaluated.",
+  "execution": "Every policy executes native actions throughout warmup+test. Independent origin h=0, then fully continuous. No oracle action or private state enters decoder.",
+  "denominator": "All eligible actual NEW/REPLACE issued at tick>=512 and with a matching native maturity pulse before horizon. Include no-BEGIN/no-window failures. No boundary-pair filter.",
+  "diagnostics": "Actual accepted BEGIN; actual early FINISH independent of version/content; first rejected active action; reached legal but no FINISH; legal first attempt correct/wrong/absent. Whole legal window, not mandatory immediate FINISH.",
+  "reference": "Baseline is teacher-timing midpoint/action step256 with trained diagnostic timehead. Everypolicy retains native11argmax, includingbaseline; everypolicy gets read-only time sidecar.",
+  "sidecar": "All36 *_time.npz contain time_prediction/nativelogits, unused bypolicy. Valid-row exposure can differ, and largerduration extends beyond prior time-targetcoverage.",
+  "limits": "All teachers remain midpoint. Extendedduration is learnedcoverage for wide, not extrapolation. Validrows differ between ownhistories. Legacy metricbucket overdue_beyond_training means only remaining<-.25; midpointtraining already covers part of it.",
+  "interaction": "Threebranches only; no combined wide+B-only condition or replay branch. Same newly issued holdoutcases within eachseed/duration acrossallpolicies.",
+  "initialization": "Independent freshworld origin h0 for standardization, thenfullycontinuous. Separate live-v1 experiment restores complete trainingworld+h without reset."
+}

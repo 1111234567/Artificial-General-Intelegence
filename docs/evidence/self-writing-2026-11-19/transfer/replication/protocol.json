@@ -1,0 +1,21 @@
+{
+  "protocol": 1,
+  "created_local_date": "2026-11-19",
+  "selection": "All seven bootstrap roots after 101. Root 101 remains in the original experiment only.",
+  "view": "own",
+  "endpoint": "Inherit the original study's two paired contrasts, two primary noise bins and two phases with no arm or window changes.",
+  "reuse_original_experiment_protocol": true,
+  "world_seed_policy": "Both donor and recipient roots are fresh for every bootstrap checkpoint; within each checkpoint they are held fixed across arms.",
+  "uncertainty": "Paired hierarchical percentile bootstrap. Resample birth roots, donors within each root, and fresh private complement pairs within each donor.",
+  "hierarchical_bootstrap_seed": 73125113,
+  "bootstrap_draws": 6000,
+  "births": [
+    {"bootstrap": 102, "donor_root": 171100000, "recipient_root": 296100000},
+    {"bootstrap": 103, "donor_root": 171200000, "recipient_root": 296200000},
+    {"bootstrap": 104, "donor_root": 171300000, "recipient_root": 296300000},
+    {"bootstrap": 105, "donor_root": 171400000, "recipient_root": 296400000},
+    {"bootstrap": 106, "donor_root": 171500000, "recipient_root": 296500000},
+    {"bootstrap": 107, "donor_root": 171600000, "recipient_root": 296600000},
+    {"bootstrap": 108, "donor_root": 171700000, "recipient_root": 296700000}
+  ]
+}

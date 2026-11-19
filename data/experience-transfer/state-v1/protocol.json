@@ -1,0 +1,64 @@
+{
+  "format": "experience-transfer-same-input-state-release-v1",
+  "created_utc": "2026-11-03T07:35:57.819398+00:00",
+  "declaration": "Frozen before generating any same-input/release results. Posthoc follow-up to learn-remember/state-transfer-v1; no new training or state/checkpoint selection.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "architectures": [
+    "plain",
+    "symmetric"
+  ],
+  "states": [
+    "standard",
+    "transplant"
+  ],
+  "clamp_points": [
+    0,
+    32,
+    128,
+    512,
+    1024
+  ],
+  "checkpoints": {
+    "F:\\agi\\data\\learn-remember\\gru-v1\\seed_000\\wide.pt": "db0e13af3022d762ec29652dcae4f2e17dbab0687aead4c0ccec0d7abb201a2a",
+    "F:\\agi\\data\\learn-remember\\gru-v1\\seed_001\\wide.pt": "aceaee09af828b6d66b825b647da0d37a523ac697d5d529933434cb166744e55",
+    "F:\\agi\\data\\learn-remember\\gru-v1\\seed_002\\wide.pt": "dd1dbaad4862b79db842f862179e7d6f6d3497d7a9f6908ae9169be9e36be79f",
+    "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_000\\wide.pt": "cdca2ce11bcc13dbf1e6b058a05bea9e6b296e95cc124e9543e5c7e5068b1dea",
+    "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_001\\wide.pt": "6351b32a29e28f3bac4dc602597ee256021419b7af59625310e95836231e3bf5",
+    "F:\\agi\\data\\learn-remember\\symmetric-v1\\seed_002\\wide.pt": "457a96fb293833249301cc4860d330ad57177d2bc25b2f32539ebd4053fff16e"
+  },
+  "source_files": {
+    "F:\\agi\\experiments\\experience_transfer\\state_clamp.py": "ef38d2740dccce17f1110c46b0413c6b0376dd383f27505ce6994f3c90ca0975",
+    "F:\\agi\\experiments\\learn_remember\\evaluate_gru.py": "51bff264fcdcab432e0c06baf907914464adf6da8a065750df1d0c0c035af528",
+    "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\lifelong\\evaluate.py": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c"
+  },
+  "common_history": "Reuse original evaluation-v1/common_seed_NNN.pt: eight unfamiliar actors, the same 1024-tick WAIT warmup, complete endpoint world. Standard h is recomputed from that exact public history with each frozen model; transplant h is saved native training endpoint first eight lanes in original order, without selection.",
+  "playback": "Two separate real free-action trajectories start from the identical heldout world, one driven by standard h and one driven by transplant h. Set future family3/long_both once. Both h consume exactly the same observe() tensor at every tick on a given trajectory; only the named driver's eleven-way argmax acts in the world. Receipts are actual driver receipts. Labels never enter the model, and oracle is not called.",
+  "checkpoints_semantics": "At k, exactly k public observations have updated both h and k driver actions have occurred. Save complete shared world and each evolved h. Distance is measured before the next public input. Next eleven-action disagreement uses one additional shared observation and cloned h, without advancing the saved h/world. Also retain per-tick h distance and both proposed argmax choices.",
+  "release": "At k>0 clone the corresponding playback endpoint world twice, one per evolved h; then execute 1024 actual observation/action ticks independently with frozen weights and true eleven-way argmax. Change only future family/regime via original evaluator. At k=0 reuse the original common endpoint without a preceding extra regime switch; execute2048 ticks to exactly reproduce original state-transfer counts. k=0 is common to both histories and counted once.",
+  "request_matching": "Within each seed/architecture/history/k, both h release branches have identical starting full world, future external events, scheduler/context RNG states, and mature primary request identities. Scoring includes all eligible post-release requests with mature deadlines, regardless of action/success. Inherited requests are excluded from primary completion, but idle counts use every actual inactive enabled opportunity. Pairing across histories is descriptive total-history comparison, not an h-only intervention.",
+  "metrics": [
+    "per-tick h RMS/L2 per lane, relative-to-k0 RMS, cosine similarity; mean/max and all lanes",
+    "same-input next eleven-action argmax disagreement, by all/active/idle slots and lane",
+    "within-history released ordinary/strict completion counts and paired differences, actual idle numerator/denominator and rates",
+    "all three seed values and equal-seed means; individual residual/disagreement cases retained"
+  ],
+  "release_steps_nonzero": 1024,
+  "release_steps_zero": 2048,
+  "mature_sample": "Expect roughly80 mature family3 requests per seed per nonzero branch (~240 across3); report actual denominators. k0 retains original ~170/seed. No extension or cutoff chosen by score.",
+  "compute": "Three seed workers, CPU only, torch and BLAS threads1; no optimizer, gradient or parameter update. Frozen checkpoint/model hashes checked at start/end.",
+  "audit": "Independent saved-array scoring and model recurrence; actual world replays of both clamped histories; original lifelong native evaluator on all zero branches and selected longest-release branches. Record audit coverage and exact hashes.",
+  "limits": [
+    "Artificial initial-h transplant and externally clamped observations are causal probes, not autonomous deployment success.",
+    "The two real histories may differ in world state and receipts; only two h releases within one history/k isolate initial h.",
+    "Finite same-input persistence or convergence is not proof of an attractor, global basin, or asymptotic recovery.",
+    "Three trained seeds and one unfamiliar stream per seed; plain/symmetric differ in parameterization and previous training trajectories."
+  ],
+  "protocol_hash": "58f25b040886590f3537c8450c7170cde234f4ba64d6fbdecc8914a142a8f317"
+}

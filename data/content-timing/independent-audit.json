@@ -1,0 +1,1678 @@
+{
+  "format": "content-timing-independent-audit-v1",
+  "created_utc": "2026-11-03T05:37:06.582767+00:00",
+  "verifier": {
+    "path": "F:\\agi\\experiments\\content_timing\\audit.py",
+    "sha256": "c58417b1416cf0401a2bc60f18ffec8aa76bce90264b1e1834b9b826e9737d90"
+  },
+  "old_source_closure": {
+    "original_native_source_count": 26,
+    "scope": "Original native closure, coverage wrapper, BEGIN/FINISH/refit source closure; all additional actual inputs come from current study protocols."
+  },
+  "studies": {
+    "natural": {
+      "audit": "passed",
+      "forks": 24,
+      "issued_requests_reconstructed": 7884,
+      "stage_samples_recomputed": 20162,
+      "aggregate_table_rows_verified": 30,
+      "checks": [
+        "All original evaluator/shadow fields equal archived own-policy results",
+        "Eligible primary issue inventory and matured identities reconstructed from raw pre-action metadata",
+        "Every cue, closest processing midpoint and first legal tick selected independently",
+        "Every FINISH rank, margin, exact/version/payload correctness and pre-stage receipt history recomputed",
+        "Every marginal, matched transition, missing-status partition and three-seed mean/sample SD recomputed"
+      ]
+    },
+    "matched": {
+      "audit": "passed",
+      "independent_seeds": 3,
+      "anchors": 576,
+      "raw_stage_rows": 27648,
+      "affine_score_rows_recomputed": 27648,
+      "summary_rows_verified": 144,
+      "symmetric_pairs_recomputed": 41472,
+      "common_age_pairs_recomputed": 4608,
+      "exactly_invariant_immediate_cue_anchors": 576,
+      "scope": "Saved actual anchor fingerprints/quotas and scheduler exclusions, all raw sample fields, frozen affine scores, complete factorial/pair inventories and summary arithmetic. Recorded execution-equality flags are verified as saved assertions; the audit does not rerun world dynamics."
+    },
+    "probe": {
+      "audit": "passed",
+      "fold_count_rows_verified": 240,
+      "independent_late_stage_svd_recomputations": [
+        {
+          "seed": 0,
+          "duration": 8.0,
+          "job": 0,
+          "test_lanes": [
+            6,
+            7
+          ],
+          "phase": "first_legal",
+          "label": "mapped",
+          "method": "independent augmented SVD least squares",
+          "train_rows": 192,
+          "test_rows": 192,
+          "rank": 25,
+          "augmented_condition_number": 106.47185218346839,
+          "objective": 0.6662008455696742,
+          "confusion_true_by_pred": [
+            [
+              13,
+              28,
+              2,
+              5
+            ],
+            [
+              16,
+              25,
+              3,
+              4
+            ],
+            [
+              17,
+              13,
+              10,
+              8
+            ],
+            [
+              20,
+              5,
+              14,
+              9
+            ]
+          ],
+          "correct": 57,
+          "total": 192,
+          "null_correct": 48
+        },
+        {
+          "seed": 1,
+          "duration": 8.0,
+          "job": 0,
+          "test_lanes": [
+            6,
+            7
+          ],
+          "phase": "first_legal",
+          "label": "mapped",
+          "method": "independent augmented SVD least squares",
+          "train_rows": 192,
+          "test_rows": 192,
+          "rank": 25,
+          "augmented_condition_number": 135.7880205839264,
+          "objective": 0.6058066808428251,
+          "confusion_true_by_pred": [
+            [
+              13,
+              20,
+              2,
+              13
+            ],
+            [
+              11,
+              29,
+              4,
+              4
+            ],
+            [
+              0,
+              11,
+              10,
+              27
+            ],
+            [
+              2,
+              6,
+              10,
+              30
+            ]
+          ],
+          "correct": 82,
+          "total": 192,
+          "null_correct": 48
+        },
+        {
+          "seed": 2,
+          "duration": 8.0,
+          "job": 0,
+          "test_lanes": [
+            6,
+            7
+          ],
+          "phase": "first_legal",
+          "label": "mapped",
+          "method": "independent augmented SVD least squares",
+          "train_rows": 192,
+          "test_rows": 192,
+          "rank": 25,
+          "augmented_condition_number": 108.13317059974241,
+          "objective": 0.72217848869502,
+          "confusion_true_by_pred": [
+            [
+              21,
+              12,
+              1,
+              14
+            ],
+            [
+              13,
+              23,
+              1,
+              11
+            ],
+            [
+              14,
+              14,
+              8,
+              12
+            ],
+            [
+              22,
+              1,
+              4,
+              21
+            ]
+          ],
+          "correct": 73,
+          "total": 192,
+          "null_correct": 48
+        }
+      ],
+      "scope": "Every confusion/count/rate and cross-actor split; an independent late-stage augmented-SVD refit per seed. No world actions, model learning, threshold selection or new research."
+    },
+    "transfer": {
+      "audit": "passed",
+      "distinct_stage_label_predictions_verified": 39994,
+      "confusion_table_rows_recomputed": 648,
+      "saved_continuous_replay_forks_checked": 24,
+      "replay_serialization_correction_verified": true,
+      "scope": "Every natural matured identity, available phase, raw/mapped label, actor fold, complete-three-stage population, score argmax, matched training-feature/label hash, confusion table and three-seed summary. Saved exact-replay flags/bindings checked; no new replay or readout fitting."
+    },
+    "onset": {
+      "audit": "passed",
+      "original_anchor_groups_recomputed": 576,
+      "raw_rows_verified": 2304,
+      "confusion_folds_verified": 24,
+      "scope": "Exact original cue-state/score correspondence, unchanged request/treatment population, actual one-tick metadata and fixed BEGIN receipts, full non-input-state slices, every within-anchor propagation flag/distance and saved probe-confusion arithmetic. No dynamics replay or new probe fitting."
+    },
+    "natural_probe": {
+      "audit": "passed",
+      "actor_disjoint_fold_confusions_verified": 144,
+      "seed_condition_phase_label_summaries_verified": 36,
+      "scope": "Frozen source/data and continuous-feature bindings; whole-actor train/test populations, true-class denominators, training-only majority baseline, every saved confusion matrix's arithmetic and pooled accuracy/macro recall. Does not refit the natural calibration probe or establish policy use."
+    }
+  },
+  "bindings": {
+    "audit": "passed",
+    "unique_files": 181,
+    "files": {
+      "F:\\agi\\experiments\\undirected\\__init__.py": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\model.py": {
+        "sha256": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+        "bytes": 27374,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "matched protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_model.py": {
+        "sha256": "636ad022366233cdf414a09313b02bfe9484b090dae7620782f9e035028428a1",
+        "bytes": 28420,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\credit.py": {
+        "sha256": "2ebdbe2c2505b6a067396a42ae4266d6b7dc2250c9346e76ca6b9c22fbe1cf88",
+        "bytes": 38087,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_credit.py": {
+        "sha256": "4ce8cd859ad99b05239958fbc38cc869dee890d791d3360e2238302da05b63cd",
+        "bytes": 32400,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\plasticity.py": {
+        "sha256": "64fc6c157d821e80cde0dcaa6af1c64a2d59112654dbc320d2ddfef3d4fc5cf7",
+        "bytes": 33351,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_plasticity.py": {
+        "sha256": "bf7f0984474990b4a82fb3ab3abb0402414b2da20dfa8432921f359f7065072d",
+        "bytes": 16890,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\run.py": {
+        "sha256": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6",
+        "bytes": 65295,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "matched protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_run.py": {
+        "sha256": "e6981df9823fbc56b95ec1b8562c5028d40eda672bac9236a984f0d3a754f855",
+        "bytes": 29084,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\study.py": {
+        "sha256": "386f95d00595521421a166356e5e31c0d2384b3d45fb23dbee03d359c3121858",
+        "bytes": 41935,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_study.py": {
+        "sha256": "71b162f4eeb1318c8ef1acfc70bf2041f2d75d15f1c83efc52cc9157ddb12a88",
+        "bytes": 17682,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\queue.py": {
+        "sha256": "863371fa5fb1ab70e896eb1a936f1fda01af06f3a67b59bed2fb5f4ca540bb33",
+        "bytes": 22337,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_queue.py": {
+        "sha256": "d3dfab0ad05f812a7800dc0134ead83ab02a354e8cc03389f446b6638af48bdc",
+        "bytes": 14715,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\ledger.py": {
+        "sha256": "8b0f5284a9a5e53d14af9081e6d95f83cb4f854523d431a475edc2e65d76080a",
+        "bytes": 18621,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\undirected\\test_ledger.py": {
+        "sha256": "1fb9180ce0af912b49265b3df0408d38b4575d8559002da0fd4d5995022d794e",
+        "bytes": 8022,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\lifelong\\__init__.py": {
+        "sha256": "a17ec6f3b596fda5257d500ad8ee30fe3c15e9519fdb666138625dafb64f4f72",
+        "bytes": 87,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\lifelong\\world.py": {
+        "sha256": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+        "bytes": 19461,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "matched protocol/source_files",
+          "natural protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\lifelong\\schedule.py": {
+        "sha256": "4abe3d45025d6505f976d642a57f83822930e9c60cca619e2b6520d2792bc633",
+        "bytes": 7459,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\lifelong\\replay.py": {
+        "sha256": "932425bde5a10648876bb706a961d3eab01b7b15a909456d72e71fe6a1b72bb7",
+        "bytes": 21602,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\lifelong\\evaluate.py": {
+        "sha256": "9695aa898ee9afb600aa31192e74c9622540ef1c33d4b0c21b8bd0f022184ec8",
+        "bytes": 40310,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "natural protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\continuity\\__init__.py": {
+        "sha256": "2ead3ef9c4e2f3a042f368d7cbadf17b42ffc7062207013303983c20f288ad1c",
+        "bytes": 138,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\continuity\\run.py": {
+        "sha256": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+        "bytes": 44381,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\continuity\\model.py": {
+        "sha256": "0f2e5748063350f779b602a94db7b4a8f9e26ed30f7bd592a6a5cdf12665f355",
+        "bytes": 3841,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\continuity\\world.py": {
+        "sha256": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+        "bytes": 34752,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json",
+          "matched protocol/source_files",
+          "natural protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\continuity\\evaluate.py": {
+        "sha256": "db0a726da54f0228609238c23b2adfe14f61c2d03e66515fecb1ef73f4d3bc9f",
+        "bytes": 24233,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\integration\\diagnose.py": {
+        "sha256": "8617708ba12625f34f76ca49d66759032a64b28a8bdd7fc3fc2af713290c5852",
+        "bytes": 45305,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json",
+          "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json"
+        ]
+      },
+      "F:\\agi\\experiments\\coverage_exit\\coverage.py": {
+        "sha256": "2cb8b22972d850a35dff0ac3670c4c55f6b66416a52d0f5f9a609f24f9bf472a",
+        "bytes": 25752,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json"
+        ]
+      },
+      "F:\\agi\\experiments\\action_return\\readout.py": {
+        "sha256": "0ae3bf65c9600556ad658c685ff73630483e6a3ad5832943105d72b240892b6f",
+        "bytes": 25337,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\readout-v1\\protocol.json",
+          "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json",
+          "matched protocol/source_files",
+          "natural protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\action_return\\refit_policy.py": {
+        "sha256": "b4363e02dd701e794de0fa6c1f37cfbd8fc8cb02934333023d4e8b08a88d3352",
+        "bytes": 23487,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json",
+          "matched protocol/source_files",
+          "natural protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\action_return\\finish_readout.py": {
+        "sha256": "b36122199b29a63b9edde1729b220df6bed956e1617edca8edbd2c0817e25c83",
+        "bytes": 12536,
+        "declared_by": [
+          "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json",
+          "matched protocol/source_files",
+          "natural protocol/source_files"
+        ]
+      },
+      "F:\\agi\\docs\\evidence\\undirected-2026-10-30\\protocol-v1.json": {
+        "sha256": "59d27ae848b5d5b65fce0735860f7f84e402311f797d1faa7d0bb38708b25ffc",
+        "bytes": 255774,
+        "declared_by": [
+          "audit protocol inventory"
+        ]
+      },
+      "F:\\agi\\data\\coverage-exit\\coverage-v1\\protocol.json": {
+        "sha256": "958720cceeab25d6ed3eeedf1afd5f8ca88fe4649886f8611a4e5ba6becde8f4",
+        "bytes": 8431,
+        "declared_by": [
+          "audit protocol inventory"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\readout-v1\\protocol.json": {
+        "sha256": "f6506e1da6da62c5955c91bba7bc181767024708df15aef73b2b16aca6e8674c",
+        "bytes": 56705,
+        "declared_by": [
+          "audit protocol inventory"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json": {
+        "sha256": "d19db82587e5af48616a530981d7838a1301152812d56381d45b515b63fc9758",
+        "bytes": 172176,
+        "declared_by": [
+          "audit protocol inventory",
+          "matched protocol/parent_protocol",
+          "natural protocol/input_files",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\natural.py": {
+        "sha256": "4206317fe6879b6532680132452bc00641095dba0dbbed48f92a7662ce9519e1",
+        "bytes": 29521,
+        "declared_by": [
+          "natural protocol/source_files",
+          "transfer protocol/source_files"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\model_own_policy.pt": {
+        "sha256": "9653c3f48b93619acc1fe7d53879e0cc9b6147110a2a0973c532217654be7ccb",
+        "bytes": 90077,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "matched deployed model",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\result.json": {
+        "sha256": "f0d4b1e49802d2221d7c8ea40ea5a0d296b857e86ad2953238c92856f48bdbed",
+        "bytes": 1465743,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "matched historical result",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\checkpoint_final.pt": {
+        "sha256": "8982220e1a81e107d0c59e01d2ca1e069542e2e74711f6c4ddba23f728df6610",
+        "bytes": 40427941,
+        "declared_by": [
+          "matched protocol/sources/0/endpoint",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\model_own_policy.pt": {
+        "sha256": "544d3b4e5beb0a5c122ff43ed2276a00ff46a77e3e45f0a215c3d52a282e437c",
+        "bytes": 90077,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "matched deployed model",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\result.json": {
+        "sha256": "378c15a960a3c2d7d358d3c33fd99938688321eb4d4fdf5aac64aab8c9adf359",
+        "bytes": 1381587,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "matched historical result",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\checkpoint_final.pt": {
+        "sha256": "cd90c6aa7223a6fad13e6e190fffae09343250469bf99d20d8afbbe6a8e6f5aa",
+        "bytes": 40428261,
+        "declared_by": [
+          "matched protocol/sources/1/endpoint",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\model_own_policy.pt": {
+        "sha256": "db40d52c7230dded80d34b0c99da8b0b692352aaa792f4eed2a47e13bd0e6135",
+        "bytes": 90077,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "matched deployed model",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\result.json": {
+        "sha256": "c806b0539f7a8e6abbd26cd53095fcba45b3d55485f8214ad0f4f084011adeae",
+        "bytes": 1505308,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "matched historical result",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\checkpoint_final.pt": {
+        "sha256": "a6eb9a9121adb8f469217998f8ce645b9a0302f74992de6e964844ce2d5f39cf",
+        "bytes": 40428197,
+        "declared_by": [
+          "matched protocol/sources/2/endpoint",
+          "natural protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_0.trace.json.gz": {
+        "sha256": "60a2eaef6e0d04adee5ac4762cd5b10a1e9cbd3631eef93ba99798f8c2d15ed3",
+        "bytes": 816294,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_0.raw.pt": {
+        "sha256": "7f7c35e9697d0e4fae6dcb0d45d96b53efc6066b0d50774a4843a9973407a4d4",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_1.trace.json.gz": {
+        "sha256": "1da56a589d3e23c85c2c83dfe9ca038dcb6c26fd90866989e85d41c82f831537",
+        "bytes": 808172,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_1.raw.pt": {
+        "sha256": "4d3aae51f11c6476e152b5b7bba8b870e7c701106abd3e390661f36bc29c6fd6",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_2.trace.json.gz": {
+        "sha256": "b5b6018cdc1dd7428ac78feeb67c1eed040ba4250f25a2a52f32d3d83da8acb0",
+        "bytes": 816800,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_2.raw.pt": {
+        "sha256": "d4142b5fe4f120315d859a5f27f6bec452d0852a32a15506c57b72f3ab5562da",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_3.trace.json.gz": {
+        "sha256": "9c6c667aa26f8c375bba260886cc4a114febccec8e8bd24d9c7ca411c7208bad",
+        "bytes": 795302,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\short_family_3.raw.pt": {
+        "sha256": "0a621e1cc52d38173db8c215f7c28d7b3475fd599fe18682d65efe6d4dbb3bf7",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_0.trace.json.gz": {
+        "sha256": "28e26c6465c043176e5978abeab5e9a1af3daabc431a0156ae3702022f181add",
+        "bytes": 520787,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_0.raw.pt": {
+        "sha256": "4cf38c072771205bdd91efe3c8162076174dac56ac6f69554359eaae0b1557c9",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_1.trace.json.gz": {
+        "sha256": "f776a33578930469bde54822e3fa00f2969da7290ffa60d652620ce0be08cebf",
+        "bytes": 522476,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_1.raw.pt": {
+        "sha256": "e6011ae28ef47a08875763dabb9f21e3fc1b3134350ec2b4416bbe305487ac36",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_2.trace.json.gz": {
+        "sha256": "91276622c8ec7fe66ca02153de16b51476b9a92aa8c755a852d9464f19d03ada",
+        "bytes": 522826,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_2.raw.pt": {
+        "sha256": "70b25dbb634bcfaf455e1b77ddc930631adcb46aca875ce9b2388724c5c51460",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_3.trace.json.gz": {
+        "sha256": "5e953783c1e4462e468bc919c4c04d559bc1d6a2283e1f5b3c2f970995e27159",
+        "bytes": 539737,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\long_both_family_3.raw.pt": {
+        "sha256": "7e9c5ebdb32ffd115086a2011369f8758e5c215ab7f258e77186217559bd8e55",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\requests.jsonl": {
+        "sha256": "8ae33ce9dfae96022407c25f9aa53ec4f7e1d849e3cda1f4deab646c2e515342",
+        "bytes": 6243727,
+        "declared_by": [
+          "natural calibration source/input pins",
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\stage_samples.csv": {
+        "sha256": "e530570d57b9494d4cb51c098ee67cc6fb9adaa5716044165bd213e726abd4f9",
+        "bytes": 2234343,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_000\\result.json": {
+        "sha256": "ca5362d2021b13b621beec609c7c93e59b2d2c43168cc819407caa01527e7b7d",
+        "bytes": 571222,
+        "declared_by": [
+          "natural summary result",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_0.trace.json.gz": {
+        "sha256": "6837059ee7f332c2976662a5eae1f293f1a70fa54ea771a10d69c9452c11e11f",
+        "bytes": 833647,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_0.raw.pt": {
+        "sha256": "24e1fc210bdd4682dfea758e0c8dd3be6cb9b945422c0b437ed14ff541a72c03",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_1.trace.json.gz": {
+        "sha256": "01ebe52b60a7d46353f9106e5a8d06cc8d7850276cd15e05d84d9e33808aef77",
+        "bytes": 822490,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_1.raw.pt": {
+        "sha256": "b469f42e530f7df64fb35b90f7b8962bc2feebc123fe4d95c44560101a193e02",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_2.trace.json.gz": {
+        "sha256": "f1f9fedb48d62196f901e5dceffd48fb21077f1cb071fb351aab1422ca5f87e9",
+        "bytes": 836688,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_2.raw.pt": {
+        "sha256": "0d710cbcd8c0a4a82d71e6583cc67bebf8361d7b9b5672eb73e0e3b0b43c4b88",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_3.trace.json.gz": {
+        "sha256": "f9afaea1414d8a6b03c6f98e5d1c6247e44f6eac16bca3f732f069fce5b4b2a6",
+        "bytes": 829677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\short_family_3.raw.pt": {
+        "sha256": "06943f5320b4cae575f50f04a2eec957f4350fce5bd9f38b42b07c64a02d4b79",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_0.trace.json.gz": {
+        "sha256": "f38444c62da5c01bdcef20ebe23d104784db2a85b43f2568f0f96a3905c77c6a",
+        "bytes": 538527,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_0.raw.pt": {
+        "sha256": "7fe4e563ba7e9492f8599cc3d5dcfdbab82da6ff47c36e09194ea91606e8b76d",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_1.trace.json.gz": {
+        "sha256": "95a77844d2f84428329415b3ffc395ed7f33d7d0e6ef544cb814ec996e6f9284",
+        "bytes": 522314,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_1.raw.pt": {
+        "sha256": "e1ae5502792b89dc926cd2ba9cba9ef44b013bddf5e21f28371b69ae7ee21ca3",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_2.trace.json.gz": {
+        "sha256": "45e6a80d01d4c7745a6cba1bdf673b1af7ba943b6f364bcc2d09471443922f92",
+        "bytes": 527981,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_2.raw.pt": {
+        "sha256": "6e7e8b3cfaeb231bc9878aee3203e1b9cc1dd76e64d20b4db8753dbda275d956",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_3.trace.json.gz": {
+        "sha256": "b30bf11f9c435ddab885d2ac5946ffa169e8ff86d4ceaac849ecd0f84de832da",
+        "bytes": 522335,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\long_both_family_3.raw.pt": {
+        "sha256": "a1044c6683fa757f21e82a225c81999231dcf90ce4f580f9ff14a60f92fb28ae",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\requests.jsonl": {
+        "sha256": "76e3beac4ec06a9c51870fcab0eb7dc6b027d4477fd5582af6e9596912295b8f",
+        "bytes": 7106096,
+        "declared_by": [
+          "natural calibration source/input pins",
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\stage_samples.csv": {
+        "sha256": "d2b07e9ddb23f41801f54c0c3c055ad1f12a337c9e086541d34e4b1d3ff603ea",
+        "bytes": 2642724,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_001\\result.json": {
+        "sha256": "1d11b33e49e41ce8dc33904c33d952444e8d70620413b27b7df2879c72ce3f98",
+        "bytes": 506951,
+        "declared_by": [
+          "natural summary result",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_0.trace.json.gz": {
+        "sha256": "407b60d178a57c3d835b77d3f8ce369ac12cd88f646d7fd6a751fe754cd7b8d4",
+        "bytes": 801599,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_0.raw.pt": {
+        "sha256": "229c2e2cf5a7f820f75bde009ce294c30a5c65cdc181a6769df6467e718d19d1",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_1.trace.json.gz": {
+        "sha256": "1a6372ebe6bbc80120b9263632cdd445cb56a95a678fc7261c9a834ab147dec4",
+        "bytes": 779249,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_1.raw.pt": {
+        "sha256": "7b0e5fd495eb8b70593fc8ffcacd1c10a8ed33dbc565a29f07e65a11091016e9",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_2.trace.json.gz": {
+        "sha256": "cb8065d120a0ecc5581c1dbbc63db57ceed09ff2ed2b2060205142efdfc3cd5e",
+        "bytes": 790226,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_2.raw.pt": {
+        "sha256": "7d0ab8c13dc26ccf2a606a5defac019ffa233a28ceb6def3763072f784a0a96b",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_3.trace.json.gz": {
+        "sha256": "437528a9492401b91b65a9f9dea230dff3fed58b65ee9d642177d1394dc7cdd9",
+        "bytes": 782898,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\short_family_3.raw.pt": {
+        "sha256": "704524fe2e643fb3a9e5c4a83afaf4c123e9b246061c1a5a5385a38545f233e0",
+        "bytes": 10198677,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_0.trace.json.gz": {
+        "sha256": "107f846cc09469438552e586dcb50e97de2076fbc33787b9ab9731af83455e4b",
+        "bytes": 520063,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_0.raw.pt": {
+        "sha256": "77506e7fe6cf9fc423e748fa74f6b554ba921181dc9ceb451853fc7546eee959",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_1.trace.json.gz": {
+        "sha256": "a5dffebd6280a6a9bc4c92bb926021f1a2278437344da61a6eb4f02b9fa113fe",
+        "bytes": 510846,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_1.raw.pt": {
+        "sha256": "b65468ea0a7665093e6cbea7b1405683367f78f64091c30fde12cab3a7c27d54",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_2.trace.json.gz": {
+        "sha256": "a27247038f74d125b3a8e52f5bafde8b8f4d1b86b4fecb63a3c1bc2650e4620e",
+        "bytes": 513075,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_2.raw.pt": {
+        "sha256": "90df413c6eb57016079e0268b8add66cb4255cfa4501b5a59e3a4e4fb31ecc1f",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_3.trace.json.gz": {
+        "sha256": "06ae0a0f17b201b3fbd4f5670fe9da92038eda012c0c495d366d60f58b4bd340",
+        "bytes": 508874,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\long_both_family_3.raw.pt": {
+        "sha256": "cb73b8c403562bc8a8632b63d6583280654e7792a9568d2439acf46e77d13ecc",
+        "bytes": 10198853,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\requests.jsonl": {
+        "sha256": "18dbd448753878a6994bcfd0795bcef83e55a425703713090aab563f52e1b7a4",
+        "bytes": 6440048,
+        "declared_by": [
+          "natural calibration source/input pins",
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\stage_samples.csv": {
+        "sha256": "ee209ff96fe9b27b537b98ee0541ac885a98518320f4ba22e135dbb39bd721d9",
+        "bytes": 2322665,
+        "declared_by": [
+          "natural result artifacts",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\seed_002\\result.json": {
+        "sha256": "70e9efe7b997fd43e2520580e468003b04b7f8c00d6e917c16413150c6ea29eb",
+        "bytes": 577447,
+        "declared_by": [
+          "natural summary result",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\protocol.json": {
+        "sha256": "3b6ba16e3b48cf42413c9fec04f20ccb1304ad49f8af06559ff4663d3df769c6",
+        "bytes": 7437,
+        "declared_by": [
+          "natural calibration source/input pins",
+          "natural protocol inventory",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-v1\\summary.json": {
+        "sha256": "ff7f7b92b68642d7cd9230d400295b975627764f18b1625e07691bd854b419c3",
+        "bytes": 198148,
+        "declared_by": [
+          "audited natural summary",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\matched_flow.py": {
+        "sha256": "a78d55a438068814b43f8a02672b9876d58c937745e5d52fc752c557c0cf56d2",
+        "bytes": 32631,
+        "declared_by": [
+          "matched protocol/source_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\paired_scores.json": {
+        "sha256": "4b9d53e9a010f61c310710dc703534ecd0f952b3b44d9ecc02ea35d2b3bfa635",
+        "bytes": 27553413,
+        "declared_by": [
+          "matched paired score table"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\matched_timing.json": {
+        "sha256": "67bc67aa5b71723755dae9267ce9f0d9d62baad6446f052b7868929dfd71187c",
+        "bytes": 2125383,
+        "declared_by": [
+          "matched timing table"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\result.json": {
+        "sha256": "b44fef95aac942c13a4a33cccbff5f321f37b5e7671e6e2842fd091992ce2be9",
+        "bytes": 779921,
+        "declared_by": [
+          "matched summary artifacts",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\records.pt": {
+        "sha256": "aabf470b0d98730cd12d7e7609e5710d35e25a02e7f7d5bfe102f0f30fbd4d0d",
+        "bytes": 6640985,
+        "declared_by": [
+          "matched saved rows",
+          "matched summary artifacts",
+          "onset frozen source/input pins",
+          "probe saved paired input",
+          "transfer seed result/matched_artifact"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\result.json": {
+        "sha256": "d5f2b163d18aa3f8b78187fec02d969a2ababab59cea06ca848a5d3b1cd688a6",
+        "bytes": 779921,
+        "declared_by": [
+          "matched summary artifacts",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\records.pt": {
+        "sha256": "3b17d52653ad56961b1fda229e0179e601ad61c21d79189ab984d9cabedf1216",
+        "bytes": 6640985,
+        "declared_by": [
+          "matched saved rows",
+          "matched summary artifacts",
+          "onset frozen source/input pins",
+          "probe saved paired input",
+          "transfer seed result/matched_artifact"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\result.json": {
+        "sha256": "5037349219b0dabe23fcfb74a13e18e5cb08d2a5fb9172af8047faa0484d3e5f",
+        "bytes": 779921,
+        "declared_by": [
+          "matched summary artifacts",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\records.pt": {
+        "sha256": "fa2cebd5a0cac1afc56734d22e33485650001e11569e49611c9ad5aa366c4864",
+        "bytes": 6640985,
+        "declared_by": [
+          "matched saved rows",
+          "matched summary artifacts",
+          "onset frozen source/input pins",
+          "probe saved paired input",
+          "transfer seed result/matched_artifact"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f0.pt": {
+        "sha256": "9429bd61e0d4c0e720cd55e64d14aedf19a090086d9937146da9327c7ff559db",
+        "bytes": 11812727,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f1.pt": {
+        "sha256": "cd0eaa7849708ac58ed80290df09e64136bb87b3f10baaaf2e9666662771ff73",
+        "bytes": 11812727,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f2.pt": {
+        "sha256": "3eb0f3f801e880c1126e2e07c6cd6130c7084dfb51c1d517f81c495440b5ebdd",
+        "bytes": 11812727,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_000\\background_f3.pt": {
+        "sha256": "ce9610b0e3f446392017726d6a467c018c54e026305c20f875020380b77a60c0",
+        "bytes": 11812727,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f0.pt": {
+        "sha256": "b1944752dff27f48534ea2a6f822ff4a75609fb7fcba1ff14f3fe68af1cc77a1",
+        "bytes": 8542455,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f1.pt": {
+        "sha256": "6ac4ed1d2951af401f65a2cdb712dde8d85da9ffbfbc31298846f435972c2e72",
+        "bytes": 8542455,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f2.pt": {
+        "sha256": "8612d909a8fd69cf48205eebaf94677beb7fb5a60414ea7d5ebbc9e1cc413b79",
+        "bytes": 8542455,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_001\\background_f3.pt": {
+        "sha256": "3a514666aa953db8ab577806cb60be8976802d180fe174c7ec29aa0525f08118",
+        "bytes": 8542455,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f0.pt": {
+        "sha256": "b5ee80f8419ecb23d7ff837c2800c6ad5c8b7b45f49c686e9ac80f4d121cf47e",
+        "bytes": 8512695,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f1.pt": {
+        "sha256": "c187c97771d589722b18d2201178185787c5cd08cd433ca8b6e24f4d2df6f071",
+        "bytes": 8512695,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f2.pt": {
+        "sha256": "291f0c4db430145f18b55e4c01954cfd8990165cfacc6e5beca7e78309bd78ff",
+        "bytes": 8512695,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\seed_002\\background_f3.pt": {
+        "sha256": "3d47863d65926868517287c5e89054653210f921c2b46754e904ae54bcc20aa9",
+        "bytes": 8512695,
+        "declared_by": [
+          "matched real continuous background",
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\protocol.json": {
+        "sha256": "0d962ec4c75d783e6aa09d1233be0cf489e56467e7f53c7db2b88a3377d3b301",
+        "bytes": 10818,
+        "declared_by": [
+          "matched protocol inventory",
+          "onset parent protocol",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\matched-v1\\summary.json": {
+        "sha256": "45473ee53acbb6836ef707b1e62c4b9ae7d29ba5a0069124094053d0a5ecb7bf",
+        "bytes": 73918,
+        "declared_by": [
+          "audited matched summary"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\probe-plan.md": {
+        "sha256": "047495cc9692a594a37a0cb98c1281fef300c82e16c0eee0946cef9bae4d7875",
+        "bytes": 2565,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "transfer protocol/source_files"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\probe.py": {
+        "sha256": "2ea9b4cfe9fa967ad0a3e87b1081f5f9af4fada56c37ffd14f7d60d4440404ae",
+        "bytes": 7565,
+        "declared_by": [
+          "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json",
+          "natural calibration source/input pins",
+          "onset frozen source/input pins",
+          "transfer protocol/source_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\probe-v1\\protocol.json": {
+        "sha256": "52f910056a5498f3771e8eb91051a0b01bb82fd1ccaf059292f75399cccd88e2",
+        "bytes": 3918,
+        "declared_by": [
+          "probe protocol inventory",
+          "transfer protocol/input_files"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\probe-v1\\summary.json": {
+        "sha256": "09d5a1fb24ee651dbe62813124b336d827016387f4c3700f022ef5a7ff92d665",
+        "bytes": 222557,
+        "declared_by": [
+          "audited probe summary"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\transfer_replay.py": {
+        "sha256": "81b741446a6c3a0ebeae9c100a24e29bba60de156d058caf680f98df7941e2af",
+        "bytes": 7580,
+        "declared_by": [
+          "transfer serialization-only correction/source"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\transfer.py": {
+        "sha256": "c4a51faa8c766ff868de7f2f8cf86fde1fbd744ca504685322d2bd3af7b7def5",
+        "bytes": 22129,
+        "declared_by": [
+          "transfer protocol/source_files",
+          "transfer serialization-only correction/old_source"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\replay_exit_codes.json": {
+        "sha256": "091a6e28c4e1f0dc97b983a356553d56c3302d6c613e6942fdebce24245c2780",
+        "bytes": 207,
+        "declared_by": [
+          "transfer serialization-only correction/failed_exit_codes"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\replay_correction.json": {
+        "sha256": "af03cbd07f88f3d6c638158a219e19b801c4bbeff05324fd3597a4b4a5a4cb81",
+        "bytes": 1703,
+        "declared_by": [
+          "natural calibration source/input pins",
+          "transfer correction inventory"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\result.json": {
+        "sha256": "dec428bc488695fa09d3727802f8fb30c7d9c08a4df9c099c1644258e72a4404",
+        "bytes": 307359,
+        "declared_by": [
+          "transfer summary results"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\result.json": {
+        "sha256": "bdc0aa3122b8ccc2bf268b9d66d762d65bc6d95ab16786a7cecfc7491c965426",
+        "bytes": 308766,
+        "declared_by": [
+          "transfer summary results"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\result.json": {
+        "sha256": "e5fc2de6076a84ae7857b7c622d9d579971b2a63d766791536adee160631a2e1",
+        "bytes": 307165,
+        "declared_by": [
+          "transfer summary results"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\replay.json": {
+        "sha256": "4821a4b164904dc15a51c0330bd353762aed9f3f5df87f0cedc23d65825c833a",
+        "bytes": 4878,
+        "declared_by": [
+          "transfer seed result/replay_result"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\predictions.jsonl": {
+        "sha256": "85d6b5b5207bfcd8dae3c0d439e41ea4282459a39b87fb7abd3606ce820b9f4b",
+        "bytes": 4688953,
+        "declared_by": [
+          "transfer seed result/prediction_artifact"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\short_family_0.features.pt": {
+        "sha256": "f1adc4f6d7da5f5d3eade991f69e9aa96cc162d066155ebe73981d8289bb49bf",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\short_family_1.features.pt": {
+        "sha256": "1cacc599ce46ae8e5f0cd09bf2adbb0c64737ba77ef5de385a899b0dabed986f",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\short_family_2.features.pt": {
+        "sha256": "4fbb57ed7a1734943772ade531111efb87be2c4c129c3c7e55c59078ef74ed6c",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\short_family_3.features.pt": {
+        "sha256": "8fcba872ba4bfbeca625a2087da0f0a9469e2bae5e8e83887b92221b362fa828",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\long_both_family_0.features.pt": {
+        "sha256": "f0a27ef79f4e8feddc9af86ca7832c309a25583546fe5dd814a6150c33d1e1ff",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\long_both_family_1.features.pt": {
+        "sha256": "d5153c6987cb54178379f6cff1140bd2563547fd2f085dab03515ccb2a434ead",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\long_both_family_2.features.pt": {
+        "sha256": "4b980c845f592cf6f07e5400163c78bb772ff3ea95bee005348beb03615f4012",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_000\\long_both_family_3.features.pt": {
+        "sha256": "0383f1e51a4627bbebacc60ecb420659e82bea60b3ee1ee9a9e710e0097ca926",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\replay.json": {
+        "sha256": "0dc4a03913b424d5944f0173eab5cc226b75b46b4baa63def00480d0df74e967",
+        "bytes": 4878,
+        "declared_by": [
+          "transfer seed result/replay_result"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\predictions.jsonl": {
+        "sha256": "37bcf89cbb06c39eae8424f59621546fe0490b6993c318f2fa8ad23c50d22c40",
+        "bytes": 5546549,
+        "declared_by": [
+          "transfer seed result/prediction_artifact"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\short_family_0.features.pt": {
+        "sha256": "72d947fce77f253d36b3a75b73e51781131c8ddeecb024ac45973ac589613406",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\short_family_1.features.pt": {
+        "sha256": "94980f6018fd21eea1a249ee4ab155cd59c72206005f9ee136ddb3e6b1167385",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\short_family_2.features.pt": {
+        "sha256": "b36cb7eb903c4b321253c8d3b53c7a4dba7cf16a51b1353867c4653feb5f4e6b",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\short_family_3.features.pt": {
+        "sha256": "5baf0876fab7db2ae80c94112a65c356892c789cdb54f89f9f7e384ca339ef0c",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\long_both_family_0.features.pt": {
+        "sha256": "6a13d597605efb0bf423492f3ba11e3bb6374c1da30287fd687d22c919f35af6",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\long_both_family_1.features.pt": {
+        "sha256": "da9057acb2756179ba6da0b05208b7878cb6b37c4270286e682cb294252a5c3f",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\long_both_family_2.features.pt": {
+        "sha256": "f21d2af2d866cb5a08105345aede884ac8b2c31dd29b3c1c6295a21434bd50da",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_001\\long_both_family_3.features.pt": {
+        "sha256": "dd3bf00515c5e63fc812d41428dd38e54ba510f4b0c6b2cda7cbc03fff6c1126",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\replay.json": {
+        "sha256": "d78f19e5bfb8d8e726c8dd6f6d4328f78f33c3acea0a9f23600421c7d926982b",
+        "bytes": 4876,
+        "declared_by": [
+          "transfer seed result/replay_result"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\predictions.jsonl": {
+        "sha256": "c643690c65169b7ec653bb445a4e5c485051527ade7464e20d83a542beb1404e",
+        "bytes": 4858830,
+        "declared_by": [
+          "transfer seed result/prediction_artifact"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\short_family_0.features.pt": {
+        "sha256": "d094ac9d499ce391ef0758ac6cbf51b15d8369c017ab9d01e60199c08afb3b4b",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\short_family_1.features.pt": {
+        "sha256": "38a1bf10d5413814af5fa5350a14886348f21136ef9e4cbcde90d2f370eac35f",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\short_family_2.features.pt": {
+        "sha256": "a3fedd4f14d572fb5830479cf97c7037777656cd2ade5e38c06c455893096ab7",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\short_family_3.features.pt": {
+        "sha256": "69249cd973c1c4fe49ceae9142c22aa0a6046394c8f93c9050cf983662727337",
+        "bytes": 3148389,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\long_both_family_0.features.pt": {
+        "sha256": "e091afa588fbaaaf91312ecd938ab360cedda55e878a3247e63fa333c32429d4",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\long_both_family_1.features.pt": {
+        "sha256": "e9e0ddd0f4891caf327bb4710b8f1b579253be624e170daf185b7c1a2d91fdb6",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\long_both_family_2.features.pt": {
+        "sha256": "166f9c3b528f366f507a090f954d4a96e41d59ced1fc6fe41809196282ab6e62",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\seed_002\\long_both_family_3.features.pt": {
+        "sha256": "fed2a2bba0a05bbaac46ca737f39a1256aa8a1f9c65f73965bded6596229732c",
+        "bytes": 3148421,
+        "declared_by": [
+          "transfer continuous features"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\protocol.json": {
+        "sha256": "839860ad8660184a6ccc1f017b4602cb36eb817610f81e55064f832291a8dc2d",
+        "bytes": 14136,
+        "declared_by": [
+          "natural calibration source/input pins",
+          "transfer protocol inventory"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\transfer-v1\\summary.json": {
+        "sha256": "5dd764c2f20c61ac4c440790897bfda74a4f9bd760a920b35ab2705b6d3fd6b2",
+        "bytes": 850701,
+        "declared_by": [
+          "audited transfer summary"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\onset.py": {
+        "sha256": "0fb28b486dd0c155c4f4f06d96d51a4bfab96de819016f03e446addaca7fff86",
+        "bytes": 14176,
+        "declared_by": [
+          "onset frozen source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\seed_000\\records.pt": {
+        "sha256": "09b8770c663b0314b8dbd5b8df00867dc01cfde0cf6f56596ccfd4d7c5d2b04d",
+        "bytes": 1581585,
+        "declared_by": [
+          "onset saved samples"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\seed_000\\result.json": {
+        "sha256": "1a3bd8ce24fa04f93ffdf434cf17c24e46ca534e9dbeb3d6276f40ef2a1d2120",
+        "bytes": 88368,
+        "declared_by": [
+          "onset audited result"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\seed_001\\records.pt": {
+        "sha256": "0beb7281912cd1dfe29dce45e99276f83423002e9280b6c76bee1226f086c9ef",
+        "bytes": 1581585,
+        "declared_by": [
+          "onset saved samples"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\seed_001\\result.json": {
+        "sha256": "79c16b6715c8957fef11a46fdca7b9e8ed0c100abebc71f7f888652d96c210ec",
+        "bytes": 88531,
+        "declared_by": [
+          "onset audited result"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\seed_002\\records.pt": {
+        "sha256": "0a5b74118e492ae106b0bb189e82a15559c981f0f6306db1a665f315e404dfbe",
+        "bytes": 1581585,
+        "declared_by": [
+          "onset saved samples"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\seed_002\\result.json": {
+        "sha256": "7e7ac05fdba4a4ccd88504e1f1765eec66a3ab5ddbc9a22de1a10115eb32500b",
+        "bytes": 88623,
+        "declared_by": [
+          "onset audited result"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\protocol.json": {
+        "sha256": "daaec92bec637cd43e41b68b1e1e447a450a73f7cd8629ca097788169a049ce4",
+        "bytes": 6026,
+        "declared_by": [
+          "onset protocol inventory"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\onset-v1\\summary.json": {
+        "sha256": "2d5cf15b319e2a32f3fb61167629aa83ca76af0de6c79049389d306fedc4de47",
+        "bytes": 25057,
+        "declared_by": [
+          "audited onset summary"
+        ]
+      },
+      "F:\\agi\\experiments\\content_timing\\natural_probe.py": {
+        "sha256": "f158817e499ee3dc05cf8e534d434ca7af0e7760c36a2dbbef197b20d08002bd",
+        "bytes": 5314,
+        "declared_by": [
+          "natural calibration source/input pins"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-probe-v1\\protocol.json": {
+        "sha256": "3a04654be1a4661cd767d05920ac67388e59ce835373673d5e56d75b666b96b3",
+        "bytes": 1749,
+        "declared_by": [
+          "natural calibration protocol inventory"
+        ]
+      },
+      "F:\\agi\\data\\content-timing\\natural-probe-v1\\summary.json": {
+        "sha256": "65de43fa30a4de94bf2d98a82810b2d34fd705015871b2323d515a732e2c11a1",
+        "bytes": 137273,
+        "declared_by": [
+          "audited natural calibration summary"
+        ]
+      }
+    }
+  },
+  "audit": "passed",
+  "scope": "three_primary_studies_plus_transfer_onset_and_natural_calibration",
+  "interpretation_limits": [
+    "The three inherited training seeds are the independent replication units; requests, jobs, variants, families, phases and folds are nested observations.",
+    "Natural delayed scores may use the model's own attempted-action/result feedback and policy-dependent survival; they do not isolate passive memory retention.",
+    "Matched locked-BEGIN/WAIT forks isolate within-anchor raw-payload variation. Fixed version is repeated by the BEGIN receipt; this is not an isolated version-memory test.",
+    "Controlled duration changes preserve the actual scheduler and select uninterrupted windows; they do not describe a newly sampled natural task regime.",
+    "Actor lanes are held out only from the external action-head fitting, not from prior backbone training; probe actor folds keep each complete anchor's variants together.",
+    "Final deployed FINISH scores come from the externally supervised controller; probe or pair discrimination is not evidence of native port learning or autonomous complete behavior.",
+    "Immediate cue non-input states/scores are exactly invariant because each step flows first and then adds the pulse only on input nodes. The 25-percent balanced cue probe result is structural and does not establish failed cue encoding.",
+    "Stored controlled execution-equality assertions are source-reviewed and artifact-bound; this independent audit does not advance a world to reproduce them."
+  ]
+}

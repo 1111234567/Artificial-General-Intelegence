@@ -1,0 +1,27 @@
+{
+  "launcher_pid": 18128,
+  "started_utc": "2026-11-12T12:37:59.0339314Z",
+  "stopped_pid": 25580,
+  "stopped_workers": 12,
+  "previous_completed": 4173,
+  "cpu_workers": 10,
+  "hybrid_workers": 3,
+  "entrypoint": "from experiments.seed_evolution.balanced_runtime import run; run(cpu_workers=10, hybrid_workers=3)",
+  "stdout": "F:\\agi\\data\\seed-evolution\\2026-11-11-large-v1\\execution-balanced-20261112-203756.stdout.log",
+  "stderr": "F:\\agi\\data\\seed-evolution\\2026-11-11-large-v1\\execution-balanced-20261112-203756.stderr.log",
+  "baseline": {
+    "to": "20:33:04",
+    "cpu_candidates": 20,
+    "from": "20:29:35",
+    "candidates_per_minute": 8.04,
+    "hybrid_candidates": 8
+  },
+  "third_hybrid_probe": {
+    "min_ram_available_mib": 4704,
+    "same_checkpoint_hash": true,
+    "train_seconds": 40.45,
+    "same_score": true,
+    "score_seconds": 27.99,
+    "peak_gpu_mib": 5327
+  }
+}

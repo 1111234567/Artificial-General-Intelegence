@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-11-14T11:37:53.113830+00:00",
+  "manifest_sha256": "617dde37e0dc13b39e6e7dc3e76ac0fe88aeb031b564c3c483211b995d8b0843",
+  "hybrid": {
+    "exact_parity": false,
+    "training_log_equal": false,
+    "arithmetic_metadata_equal": true,
+    "train_seconds": 143.9069734999939,
+    "eval_seconds": 81.80805360000522,
+    "gpu_memory": {
+      "free_before_mib": 11004.0,
+      "total_mib": 12199.75,
+      "free_after_mib": 9880.0,
+      "torch_peak_allocated_mib": 695.29931640625,
+      "torch_peak_reserved_mib": 1106.0
+    },
+    "development_score": {
+      "full_score_equal": false,
+      "score_except_parameter_hashes_equal": false,
+      "archived_parameter_hash": "44c88199f6a688b23c3dc001bf4cae0b6a585430d57e362000b3b96153ce2d61",
+      "observed_parameter_hash": "27a5999a2df42ec1e02da85470853dc4d1c7078f67816cd5a4c0d40cfb0cdad1",
+      "archived_fitness": 0.261897059553689,
+      "observed_fitness": 0.261897059553689,
+      "all_actions_equal": true,
+      "streams": [
+        {
+          "stream_id": 1100,
+          "actions": {
+            "support": {
+              "archived": "6ad3d59bb44bba9c70893b486d77289bc0a53817e02401b5454747bfa7c6d89e",
+              "observed": "6ad3d59bb44bba9c70893b486d77289bc0a53817e02401b5454747bfa7c6d89e",
+              "equal": true
+            },
+            "probe": {
+              "archived": "43033a47e068f162414ef99df51982e579b2197a23de8e2dd4a1cb86fbe4f4a1",
+              "observed": "43033a47e068f162414ef99df51982e579b2197a23de8e2dd4a1cb86fbe4f4a1",
+              "equal": true
+            }
+          },
+          "groups_equal": true,
+          "archived_fitness": 0.2755624657033108,
+          "observed_fitness": 0.2755624657033108
+        },
+        {
+          "stream_id": 1101,
+          "actions": {
+            "support": {
+              "archived": "96f957c8b5c39b5a118d3e642debe42c81517f54dfa52d56284cf79ceb604694",
+              "observed": "96f957c8b5c39b5a118d3e642debe42c81517f54dfa52d56284cf79ceb604694",
+              "equal": true
+            },
+            "probe": {
+              "archived": "e25f29691d92b9419c6ccf8d4adf9cb9b60f27366a6ce1a517505664d94ea050",
+              "observed": "e25f29691d92b9419c6ccf8d4adf9cb9b60f27366a6ce1a517505664d94ea050",
+              "equal": true
+            }
+          },
+          "groups_equal": true,
+          "archived_fitness": 0.24823165340406722,
+          "observed_fitness": 0.24823165340406722
+        }
+      ]
+    }
+  }
+}

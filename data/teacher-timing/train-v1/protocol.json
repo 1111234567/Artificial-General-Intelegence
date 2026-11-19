@@ -1,0 +1,381 @@
+{
+  "format": "teacher-timing-native-training-v1",
+  "created_utc": "2026-11-06T15:20:12.399186+00:00",
+  "teachers": [
+    "earliest",
+    "midpoint"
+  ],
+  "objectives": [
+    "action",
+    "joint"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "snapshots": [
+    0,
+    64,
+    256
+  ],
+  "runtime": {
+    "executable": "F:\\agi\\.venv\\Scripts\\python.exe",
+    "torch_version": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "cudnn_version": 91900,
+    "GPU_name": "NVIDIA GeForce RTX 4060 Ti",
+    "GPU_total_memory": 8585216000,
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "deterministic_algorithms": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "matmul_TF32": false,
+    "cudnn_TF32": false,
+    "dtype": "float32",
+    "AMP": false
+  },
+  "source_sha256": {
+    "F:\\agi\\experiments\\teacher_timing\\train.py": "a53f86c11dc8cacba900802919ea991e69839f1f9a27390a5f03e3841a9efb79",
+    "F:\\agi\\experiments\\teacher_timing\\train_test.py": "5fa5829d81a4adac7b9688686c4618d5d7a8669c257357439481e644c8fdfdc8",
+    "F:\\agi\\experiments\\teacher_timing\\train_audit.py": "9733ddcd2b2f89ff6ff45c53c4c45f81f23134a3ed8be221251784753605a06b",
+    "F:\\agi\\experiments\\remaining_time\\train_audit.py": "d80c3275882ae66a830fb45c473b9a4a5c637c937fdc0844852b3234be8fbf86",
+    "F:\\agi\\experiments\\remaining_time\\train.py": "fb660574f9f38e5f03b8625b71d13042811e555af36481bbbd791b4afd869b54",
+    "F:\\agi\\experiments\\remaining_time\\train_test.py": "376600603041d09f711eebf3712ba0304801756a2276af339f75b9f1d4c13345",
+    "F:\\agi\\experiments\\remaining_time\\model.py": "d04798fbf7e75039b90f25582aa2c423289a9dcecfa83d79bf388fd918d08e27",
+    "F:\\agi\\experiments\\remaining_time\\model_test.py": "5e527b965634b1950352bcb15b94ddabf6a88ac9600b3643e09e411235679a2d",
+    "F:\\agi\\experiments\\remaining_time\\targets.py": "83f2e66044cb2bf3e623dd452d81c1c426d8521f79e7fb63a1d6d5a400403cfa",
+    "F:\\agi\\experiments\\remaining_time\\targets_test.py": "25a28fcaa319dc22beb843439921bb82729f8ebe3d9c2d5725f4569d8a2421fc",
+    "F:\\agi\\experiments\\action_split\\train.py": "5d322b8adb84e719d8151cccfb45ebc50b50b5cb6362c001a085cd165d898cdd",
+    "F:\\agi\\experiments\\action_split\\data.py": "22d1afa4cabe7659ef8d7113ccb1fe673499af8b473f29212df05ac22079ada4",
+    "F:\\agi\\experiments\\learn_remember\\gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "F:\\agi\\experiments\\continuity\\run.py": "f68ea37fdb08c7ee38852e5909b29a859546b7c78934b1019c76ccb8fa2113d7",
+    "F:\\agi\\experiments\\teacher_timing\\data.py": "ad264952c757e77732b2133c753ecffc78b55fe540a5cc6c56302e1676b1a3a6",
+    "F:\\agi\\experiments\\teacher_timing\\data_test.py": "70a06704ef1bb35a166e3f9db253507a183788a19bfaecafc4660a2051a67d17",
+    "F:\\agi\\data\\teacher-timing\\streams-v1\\audit_raw.py": "4bef4fe797cdc3247785244adcee9b7738198397263acb12c3948367b1c266a1",
+    "F:\\agi\\experiments\\action_split\\data_test.py": "e61a4d97cc91ab22899f9a523534a9bc7c28dde016507226e69a22edf84e7ce5",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\experience_transfer\\train_transfer.py": "0d1e3643a19f186db3459d2083c56f2c6ec1363c2ba0e8d904ffe5200705f5a3",
+    "F:\\agi\\data\\action-split\\streams-v1\\audit_raw.py": "d0abd06ef948ae764eb476e599d8c5662716aa79cc59a198c6f425346e0cd517",
+    "F:\\agi\\experiments\\teacher_timing\\analysis-plan.md": "4b27a7f8e67da4c8d796d076163221e9b27f190e9c4d1707e4cb65995e300fc0"
+  },
+  "input_sha256": {
+    "earliest": {
+      "0": {
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.npz": "e3e7df907ad5e078baddee42f10e0910511a298653183275aa627ef10e02feb6",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.json": "bc93de46678b5fac52c34aba4a702ebceb91736efa18511594fda0852751e33b",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\world_states.pt": "c3cb65cebf7066868edeba34051701be8f81fef8fe83f36c65f2d3d578ec6ee5",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\raw_audit.json": "edcf9a7d68ab08b85c3f0d6ac708c399bc1a80e05b050d6ae8da4f247e35fcb6",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_000\\targets.npz": "1906f72d6a421eec8625618293be1cbcefa6aac99a96f323e7b048dd4e0877b3",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_000\\targets.json": "edff842825cb38d6405f47694828be7e109db465899478282e8a6aeb877a1513",
+        "F:\\agi\\data\\finish-position\\train-v1\\seed_000\\midpoint\\B008.pt": "4dd973d8d42f6c0a929e03f6f818d47aa2382d3ea9d62e75bbaddc8c7b4063ca",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\earliest\\stream.json": "260f49f96f7d33baed2f9632e3f9879fba8dccb49b8f3b7e24aff6e441eb0758",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\earliest\\raw_audit.json": "12424035e323ffd77c73a1146b235c7a27ba1a1587d67d7ab8883737ff9c7240",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\earliest\\finish_latency.npz": "7d7e24fe041b684bfa57bcf71b934bf84113bd4eb65eb8960b91ab51bdfa8b58",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\pair_comparison.json": "510dea6f26fbd23be2e39b9a532181063a2aef3586658c3e6dbfb1f5007df84f",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step000.pt": "c1ce9057a090373027305b4922aebca76f414a13ca3ca7bf3b92543728a33ad4",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step000.json": "7a2b8f657a8565b1b21ca4d2b498e6a81b9af53647abe62866f043023f7c3c28",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step064.pt": "b4407d9a0c0522af7ddc77b063192a1c5f7bb8af0bd8f1fc6a1b7a5142785fdc",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step064.json": "63fdcae3c152fac6e79c26857bc3bba2f0f18cf4c44ba6d3b9033d65b5e1d346",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step256.pt": "5a9add54ad94ee025d22fdd42a12006367ff167c374c552337f4a26600060ff2",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step256.json": "3e56f07a594fa43acc62504863c69304c5ab75296509ddfce72ccd24961735ef",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step000.pt": "6fe8ee80917f0f8ff4b104e994c60549d9a847403ec9aaebc658318807b11d2b",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step000.json": "2015c13e8b69c6f37a98e6d7b1caa9b983342ab9785d0cf3fac945d8f55fdfdc",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step064.pt": "0a75335ca0b4818900c9ffeacef85c2a268e661ec5262b3d0900110a65b9f648",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step064.json": "d352073278acd09ba3d883bacc851d6e13d39d28c6f722138f1fb8bdb2887fdf",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step256.pt": "093aa8d76c30b0ef6e7e67e6000597b78479d9f7bd3f071b25cc76dd7cdb71ba",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step256.json": "4e96f9b2914b12919e6d8f827a28f5dd3e3fefb46e74c1a049ca122c72b1d489"
+      },
+      "1": {
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.npz": "b02acb269cd541565e90be2db2e43bdc06e579d91def28aa5adf4374f4c6b379",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.json": "45a85266413a982efec54e7930ad0d10dffb3b852e875bc5c75a12da634da8a8",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\world_states.pt": "ad87db3e8e709b179bb8f035ff4a88143050f19d315dcfa5ebac07a84721279a",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\raw_audit.json": "98d0cd934cb0899e2c4ebca7ed21df73e5a125e6f44e5cea4ea42ba7e2679e0e",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_001\\targets.npz": "8ca99ab37ac5fb63efd5a76969169e73289c24b1928cf972f56f971c976a6d39",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_001\\targets.json": "f047259a78c8deff0e8fffc81d7783ee1da3c50503b251646108830ee405fef7",
+        "F:\\agi\\data\\finish-position\\train-v1\\seed_001\\midpoint\\B008.pt": "c509e3d4ed769c58aca724a08713fd8b1bbfa13d60d1b1051cef1eba8ed491b6",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\earliest\\stream.json": "33c64145118ecc5ff98d913056e790b0560a1e9bc6dc714599bf70b1cbd5aeff",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\earliest\\raw_audit.json": "ece184ee00b215bc076604430602dcd02209b57192e7a176576a01175b41781e",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\earliest\\finish_latency.npz": "4017e1d22077d5a226273ac0abac53587c8ad95f8e58310be55f0bd2e8bf49b7",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\pair_comparison.json": "5151009f3a06256945d73ca777cd6902216258cec69beaee62c4779c889953af",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step000.pt": "d9a85eb5c353230f1b5137419515ff55e296113d63c4a4d98d41929e6e537502",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step000.json": "0b07e63eb65f9e2357b646a3c54eca6a5f62112dd0d3fc04fa18a31e9c27ea4d",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step064.pt": "7ae672257f6a05a72bff54b49b43d180cd0086ba0db91547f9a182801ca94204",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step064.json": "f1c8532b58a9319212c4374818f547435167038b0fe17833bfa48ff5d2bdf10d",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step256.pt": "fd80897bc39f474a4aa16876587c87148208f95c5c4ec66e83d6b6982a1e004b",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step256.json": "650eca6db1fac301b1a4b5c50766b3da067b9f59b34882bba9259d8869d2b7bb",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step000.pt": "04e39afd2febed596e183e76a962dc349d65269597faedcbb1c596f8ae861259",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step000.json": "a7ca41d09d2b5f85ec07cfc7b7b70f9acb892dd3d7bab3c2aff2a875b526f945",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step064.pt": "ea86e78d78dba2e4d086a2405e894d64d0a4cb6749ab6967a80de9099e963fe7",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step064.json": "4338e555d8dbc0140cf8aefa1f095e1388f1875074dc909d9e451d2465c66b2a",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step256.pt": "91f8d0f801856afd9927bc91fa3c60a224f88ecae4d0a2a06ad22b1b4e44fa84",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step256.json": "39cb1d2c488f89ab0d9736c90cf5e03db698e806c3821c4eccd842b404b4ef66"
+      },
+      "2": {
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.npz": "e197c3628ef63260c837bb5fd73fc9cb087e918f2b847ff0f7afc51e2d337d2d",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.json": "f07d2194782f6cd0bf48e470fd6ccc1e9de83c0a8f53008b739d4c900c851615",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\world_states.pt": "0abe3037ba7878e0dd4cf27f947839b0ee467d3fd70d4a1237337e469e456602",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\raw_audit.json": "feae060d4be39825e99d7710a85e0f461ffeca6c52722ac366b636c4abcca87c",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_002\\targets.npz": "4a3ae3a9913ae26710efcd908ad9c2b45a92fa5ccaf917ff294f8dd2695e0b17",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_002\\targets.json": "12028fff1ddd8a20e313f704da5c56210039de9fbe15f6e32a94c601c69a92da",
+        "F:\\agi\\data\\finish-position\\train-v1\\seed_002\\midpoint\\B008.pt": "7fa455af80b35eb8a6048b49f2e0e10ba4f00a23dcf6d552f57ac9df91478ebf",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\earliest\\stream.json": "3f9b136df7f62a1649c26bc3563661c9b14331ad787b4db2d7af709cfca2c732",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\earliest\\raw_audit.json": "72a94ade738e4a164eb5a57c43332bb434ba7ddd1e0593431b150842266089bb",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\earliest\\finish_latency.npz": "f0331256e1a337da893204f507a5bb5ba7106d4ac65c5c56649a47e34c199ce7",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\pair_comparison.json": "fa0018a527485cb6ed262cca5b20bab53946cef06a62cca48d049de86881eb40",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step000.pt": "42e0502d936abe844d76fd2f21bbddd76f5d4456099771fe55f983de5259c8b5",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step000.json": "f4acdd4371898d6aff20bdba16e87ab0e751fe9e096a0611ee817a8b77e9a832",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step064.pt": "22b0c7e2aecd9eac29c27fe0b36a10a51bf54bfd313c5728396e5cc7aad2d955",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step064.json": "6a530037e496cf1985d5a2f48cb660e785205b23216853fdaa888819be34fdc4",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step256.pt": "ed62bedf9655f5f32cd8abde40cfcbb5fee8c6c1e142f0550135f29020c95497",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step256.json": "a0469b80943854dd5dfecaa7986b01e6840686185ee6e7dbbc8f9abce0143096",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step000.pt": "1b5e93d1b3b09cf3a6d1f7acca016a21df160ac06301a5a28578c3f5455310a4",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step000.json": "2eb97f2e64f112427285dd6bec168485cbc7619a133ee1808fda851d5baf02d8",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step064.pt": "c3876cfdff07d79fe334f33534120d261dc385a3ff0595f5acdbb64f5474894b",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step064.json": "7160f0807e4ba8d232f39955691ea2634539a8a8f3a7e330f47bfa26b59071c6",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step256.pt": "2402a6da44472be02d91d4fd1e459964e36ff67f3374766a1c8e03f0812993cd",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step256.json": "0272024def95979df419e971e70b73fdf1c090e29c2d23971c19338b11c7f725"
+      }
+    },
+    "midpoint": {
+      "0": {
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.npz": "e3e7df907ad5e078baddee42f10e0910511a298653183275aa627ef10e02feb6",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\stream.json": "bc93de46678b5fac52c34aba4a702ebceb91736efa18511594fda0852751e33b",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\world_states.pt": "c3cb65cebf7066868edeba34051701be8f81fef8fe83f36c65f2d3d578ec6ee5",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_000\\raw_audit.json": "edcf9a7d68ab08b85c3f0d6ac708c399bc1a80e05b050d6ae8da4f247e35fcb6",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_000\\targets.npz": "1906f72d6a421eec8625618293be1cbcefa6aac99a96f323e7b048dd4e0877b3",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_000\\targets.json": "edff842825cb38d6405f47694828be7e109db465899478282e8a6aeb877a1513",
+        "F:\\agi\\data\\finish-position\\train-v1\\seed_000\\midpoint\\B008.pt": "4dd973d8d42f6c0a929e03f6f818d47aa2382d3ea9d62e75bbaddc8c7b4063ca",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\stream.npz": "38a612b7ec6bad4ab19cd73e260e668575d411b4bd31f3e9ff3eae9e4af43891",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\world_states.pt": "6361aa8a34319977aedbf260ac6a3439aed36fcf649730e430dce8a8b30ebddd",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\stream.json": "03ea0605a17365e7d9599694e3f9e2134175fd7db9f22ef8a2d8cbec0b8b13dc",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\raw_audit.json": "07ef980493891b573841d4bf6911a4fbaa9533376105d18aee696c0200d00a16",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\midpoint\\finish_latency.npz": "f44d1332512d9313526a89d6bed140e837fe6a5f296521424c3a7d032bf5299c",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_000\\pair_comparison.json": "510dea6f26fbd23be2e39b9a532181063a2aef3586658c3e6dbfb1f5007df84f",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step000.pt": "c1ce9057a090373027305b4922aebca76f414a13ca3ca7bf3b92543728a33ad4",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step000.json": "7a2b8f657a8565b1b21ca4d2b498e6a81b9af53647abe62866f043023f7c3c28",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step064.pt": "b4407d9a0c0522af7ddc77b063192a1c5f7bb8af0bd8f1fc6a1b7a5142785fdc",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step064.json": "63fdcae3c152fac6e79c26857bc3bba2f0f18cf4c44ba6d3b9033d65b5e1d346",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step256.pt": "5a9add54ad94ee025d22fdd42a12006367ff167c374c552337f4a26600060ff2",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\action\\step256.json": "3e56f07a594fa43acc62504863c69304c5ab75296509ddfce72ccd24961735ef",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step000.pt": "6fe8ee80917f0f8ff4b104e994c60549d9a847403ec9aaebc658318807b11d2b",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step000.json": "2015c13e8b69c6f37a98e6d7b1caa9b983342ab9785d0cf3fac945d8f55fdfdc",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step064.pt": "0a75335ca0b4818900c9ffeacef85c2a268e661ec5262b3d0900110a65b9f648",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step064.json": "d352073278acd09ba3d883bacc851d6e13d39d28c6f722138f1fb8bdb2887fdf",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step256.pt": "093aa8d76c30b0ef6e7e67e6000597b78479d9f7bd3f071b25cc76dd7cdb71ba",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_000\\joint\\step256.json": "4e96f9b2914b12919e6d8f827a28f5dd3e3fefb46e74c1a049ca122c72b1d489"
+      },
+      "1": {
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.npz": "b02acb269cd541565e90be2db2e43bdc06e579d91def28aa5adf4374f4c6b379",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\stream.json": "45a85266413a982efec54e7930ad0d10dffb3b852e875bc5c75a12da634da8a8",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\world_states.pt": "ad87db3e8e709b179bb8f035ff4a88143050f19d315dcfa5ebac07a84721279a",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_001\\raw_audit.json": "98d0cd934cb0899e2c4ebca7ed21df73e5a125e6f44e5cea4ea42ba7e2679e0e",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_001\\targets.npz": "8ca99ab37ac5fb63efd5a76969169e73289c24b1928cf972f56f971c976a6d39",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_001\\targets.json": "f047259a78c8deff0e8fffc81d7783ee1da3c50503b251646108830ee405fef7",
+        "F:\\agi\\data\\finish-position\\train-v1\\seed_001\\midpoint\\B008.pt": "c509e3d4ed769c58aca724a08713fd8b1bbfa13d60d1b1051cef1eba8ed491b6",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\stream.npz": "d2a59bfbb00872d26fcf1c98560340097a696f649a49c87356a2838ab15231f3",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\world_states.pt": "8c376b1450ac081b2d968a0a8fc0a25a97363250317e040e36d744e6a6dab1c0",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\stream.json": "879dbee566b1ff1fd9fbf89614254e7c21b8724b4e993623ad6ebc810f91afc7",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\raw_audit.json": "5628bc2ae0b32baf7147bddd68be04625c5d2d0247d291db2f0cba62a09756ac",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\midpoint\\finish_latency.npz": "aa2b173b6bd6b41543c26c249de05e0eaea7fea11e9dc62ab1d04469ef518783",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_001\\pair_comparison.json": "5151009f3a06256945d73ca777cd6902216258cec69beaee62c4779c889953af",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step000.pt": "d9a85eb5c353230f1b5137419515ff55e296113d63c4a4d98d41929e6e537502",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step000.json": "0b07e63eb65f9e2357b646a3c54eca6a5f62112dd0d3fc04fa18a31e9c27ea4d",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step064.pt": "7ae672257f6a05a72bff54b49b43d180cd0086ba0db91547f9a182801ca94204",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step064.json": "f1c8532b58a9319212c4374818f547435167038b0fe17833bfa48ff5d2bdf10d",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step256.pt": "fd80897bc39f474a4aa16876587c87148208f95c5c4ec66e83d6b6982a1e004b",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\action\\step256.json": "650eca6db1fac301b1a4b5c50766b3da067b9f59b34882bba9259d8869d2b7bb",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step000.pt": "04e39afd2febed596e183e76a962dc349d65269597faedcbb1c596f8ae861259",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step000.json": "a7ca41d09d2b5f85ec07cfc7b7b70f9acb892dd3d7bab3c2aff2a875b526f945",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step064.pt": "ea86e78d78dba2e4d086a2405e894d64d0a4cb6749ab6967a80de9099e963fe7",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step064.json": "4338e555d8dbc0140cf8aefa1f095e1388f1875074dc909d9e451d2465c66b2a",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step256.pt": "91f8d0f801856afd9927bc91fa3c60a224f88ecae4d0a2a06ad22b1b4e44fa84",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_001\\joint\\step256.json": "39cb1d2c488f89ab0d9736c90cf5e03db698e806c3821c4eccd842b404b4ef66"
+      },
+      "2": {
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.npz": "e197c3628ef63260c837bb5fd73fc9cb087e918f2b847ff0f7afc51e2d337d2d",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\stream.json": "f07d2194782f6cd0bf48e470fd6ccc1e9de83c0a8f53008b739d4c900c851615",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\world_states.pt": "0abe3037ba7878e0dd4cf27f947839b0ee467d3fd70d4a1237337e469e456602",
+        "F:\\agi\\data\\action-split\\streams-v1\\seed_002\\raw_audit.json": "feae060d4be39825e99d7710a85e0f461ffeca6c52722ac366b636c4abcca87c",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_002\\targets.npz": "4a3ae3a9913ae26710efcd908ad9c2b45a92fa5ccaf917ff294f8dd2695e0b17",
+        "F:\\agi\\data\\remaining-time\\targets-v1\\seed_002\\targets.json": "12028fff1ddd8a20e313f704da5c56210039de9fbe15f6e32a94c601c69a92da",
+        "F:\\agi\\data\\finish-position\\train-v1\\seed_002\\midpoint\\B008.pt": "7fa455af80b35eb8a6048b49f2e0e10ba4f00a23dcf6d552f57ac9df91478ebf",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\stream.npz": "aa3bf2b71e326a4825bb36ee9221a4ba618abb6057d10e85cca4a73efc62c659",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\world_states.pt": "312d23fbf07328694936ac0eaa1aacd6b3d9232257ecfdf9c47260a95a01574b",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\stream.json": "d1f61dd1b9b74f950df9e0c630a47ff05ad17f4cb8158bbc20df0052516f8f30",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\raw_audit.json": "c8de5c63804e0149120a12397ece2e4df797b4a7c317d61173a3d69ce4596539",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\midpoint\\finish_latency.npz": "b0061851730c8088ef68b881d7fb4846aacb26545c10ad169e91d12c4b9bab51",
+        "F:\\agi\\data\\teacher-timing\\streams-v1\\seed_002\\pair_comparison.json": "fa0018a527485cb6ed262cca5b20bab53946cef06a62cca48d049de86881eb40",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step000.pt": "42e0502d936abe844d76fd2f21bbddd76f5d4456099771fe55f983de5259c8b5",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step000.json": "f4acdd4371898d6aff20bdba16e87ab0e751fe9e096a0611ee817a8b77e9a832",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step064.pt": "22b0c7e2aecd9eac29c27fe0b36a10a51bf54bfd313c5728396e5cc7aad2d955",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step064.json": "6a530037e496cf1985d5a2f48cb660e785205b23216853fdaa888819be34fdc4",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step256.pt": "ed62bedf9655f5f32cd8abde40cfcbb5fee8c6c1e142f0550135f29020c95497",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\action\\step256.json": "a0469b80943854dd5dfecaa7986b01e6840686185ee6e7dbbc8f9abce0143096",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step000.pt": "1b5e93d1b3b09cf3a6d1f7acca016a21df160ac06301a5a28578c3f5455310a4",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step000.json": "2eb97f2e64f112427285dd6bec168485cbc7619a133ee1808fda851d5baf02d8",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step064.pt": "c3876cfdff07d79fe334f33534120d261dc385a3ff0595f5acdbb64f5474894b",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step064.json": "7160f0807e4ba8d232f39955691ea2634539a8a8f3a7e330f47bfa26b59071c6",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step256.pt": "2402a6da44472be02d91d4fd1e459964e36ff67f3374766a1c8e03f0812993cd",
+        "F:\\agi\\data\\remaining-time\\train-v1\\seed_002\\joint\\step256.json": "0272024def95979df419e971e70b73fdf1c090e29c2d23971c19338b11c7f725"
+      }
+    }
+  },
+  "data_protocol_path": "F:\\agi\\data\\teacher-timing\\streams-v1\\protocol.json",
+  "data_protocol_sha256": "6fc9305cea79ba9062764b6c34d0c856c0b843ab1810016ee5dd2999b432a52b",
+  "data_protocol_hash": null,
+  "previous_training_protocol_path": "F:\\agi\\data\\remaining-time\\train-v1\\protocol.json",
+  "previous_training_protocol_sha256": "17a00845f075447f3a1fe3472451f3382008b2047acad968647b845c90982769",
+  "previous_training_protocol_hash": "fecd4bdfc84fd7689f7563231de580df43aa90361cc75c78b156065c6eaf537e",
+  "previous_freeze_path": "F:\\agi\\data\\remaining-time\\train-v1\\globalfreeze.json",
+  "previous_freeze_sha256": "6ffe33dc43d761a14c7ed232bcedaae40b517332419c3252f314caa31a078e68",
+  "source_policy": "Seed-matched original midpoint B008; both native core and 11-action head copied bit-exact; original artifacts untouched",
+  "initial_model": {
+    "width": 192,
+    "input_size": 56,
+    "n_jobs": 2,
+    "n_actions": 11,
+    "total_parameters": 148632,
+    "original_total_parameters": 148246,
+    "increase": 386,
+    "time_head": "new linear192->2 weights and biases exactly zero; diagnostic only",
+    "preserved_native_function": "forward and step inherit original GRU operations; native argmax unchanged in all4 arms"
+  },
+  "optimizer": {
+    "kind": "Adam",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "reset_for_all_arms": true,
+    "single_optimizer_per_arm": true,
+    "clipping": "separate clip_grad_norm_(trainable core+native head,1) and clip_grad_norm_(time head,1); time-head gradients never rescale native-policy group"
+  },
+  "loss": {
+    "action": "native11 CE every tick and slot; WAIT weight .25, all other classes1; weighted mean divides by sum of target class weights",
+    "time": "MSE prediction vs signed (ready-now)/16 in physical time units; mean over active & started & finite ready rows; exactly zero otherwise; no eligibility or future-outcome selection",
+    "coefficients": {
+      "action": 1.0,
+      "time": 1.0
+    },
+    "time_prediction_never_controls_action": true,
+    "no_oracle_in_inputs": true
+  },
+  "objectives_detail": {
+    "action": "train core+native action head by native weighted CE; concurrently train time head by MSE on detached h; independent gradient clipping",
+    "joint": "train core+native action head+time head by CE+MSE"
+  },
+  "first_update": "zero time head makes auxiliary core gradient exactly zero; action/joint core can move immediately through preserved native CE",
+  "teacher_intervention": "earliest executes native earliest oracle; midpoint executes native fixed midpoint oracle with actual accepted actions and receipts; no relabel-only stream",
+  "teacher_history": "same physical external stream per seed; observation, receipt and request lifetime can differ because teacher actions differ",
+  "primary_comparison": "midpoint versus earliest with action-only core update; detached auxiliary h and separate clipping prevent auxiliary target-gradient confounding",
+  "secondary_comparison": "joint objective measures interaction with CE+MSE core updates",
+  "stream": {
+    "warm_ticks": 512,
+    "training_ticks": 32768,
+    "batch": 32,
+    "slots": 2,
+    "block": 128,
+    "updates": 256,
+    "replay_epochs": 0,
+    "same_raw_obs_actions_within_teacher": true,
+    "inputs": "original public56 observation only; time prediction never inputs, gates or controls action",
+    "recurrent_state": "zero only at independent stream origin; first512 warm with no loss/grad; carry numerical h across every update; detach graph at128; never recompute h after update"
+  },
+  "matched_budget": "same action rows and updates across all twelve; class composition and valid auxiliary rows can differ across actual teachers and are reported rather than equalized",
+  "expected_training_rows": {
+    "earliest": {
+      "0": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068337,
+        "action_BEGIN_rows": 17813,
+        "action_FINISH_rows": 11002,
+        "action_weight_sum": 545899.25,
+        "time_rows": 686230
+      },
+      "1": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068355,
+        "action_BEGIN_rows": 17826,
+        "action_FINISH_rows": 10971,
+        "action_weight_sum": 545885.75,
+        "time_rows": 686089
+      },
+      "2": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068356,
+        "action_BEGIN_rows": 17854,
+        "action_FINISH_rows": 10942,
+        "action_weight_sum": 545885.0,
+        "time_rows": 684588
+      }
+    },
+    "midpoint": {
+      "0": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068338,
+        "action_BEGIN_rows": 17813,
+        "action_FINISH_rows": 11001,
+        "action_weight_sum": 545898.5,
+        "time_rows": 730189
+      },
+      "1": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068356,
+        "action_BEGIN_rows": 17826,
+        "action_FINISH_rows": 10970,
+        "action_weight_sum": 545885.0,
+        "time_rows": 729945
+      },
+      "2": {
+        "action_rows": 2097152,
+        "action_WAIT_rows": 2068358,
+        "action_BEGIN_rows": 17854,
+        "action_FINISH_rows": 10940,
+        "action_weight_sum": 545883.5,
+        "time_rows": 728341
+      }
+    }
+  },
+  "full_stream_identity": {
+    "earliest": {
+      "0": "7cf1f9597c6e25cd8cc79a0e51d884f912a74e5b9bb3fd55561be1fa947b6261",
+      "1": "84d3437d976ae1a90da486aff4dd5e15a331888dcae2365da5404e331249bcb0",
+      "2": "0e8a7aab4015ee3e4c402dba08fbede70b472f3cdc995043b6bb7967c81d0366"
+    },
+    "midpoint": {
+      "0": "e50e724713f4fd57e5bb03e58d0b5ff65294be65b7877c9db7acdb79e0fd473e",
+      "1": "52abd1eb87f33630ff7d92b41cc781e7b9fde966d60f957aedf59dad6415e998",
+      "2": "e1bc5df2fe3c748175a5342744372c391ddef5870407502752204a1ae17fa4fc"
+    }
+  },
+  "checkpoint": "every step000/064/256: full model, Adam, live h, cursor, work, RNG, protocol/source/input hashes; first two actual updates before/after plus preclip/clipped gradients for all12",
+  "historical_regression": {
+    "teacher": "earliest",
+    "objectives": [
+      "action",
+      "joint"
+    ],
+    "snapshots": [
+      0,
+      64,
+      256
+    ],
+    "reference": "F:\\agi\\data\\remaining-time\\train-v1",
+    "fields": [
+      "model",
+      "optimizer",
+      "hidden",
+      "stream_cursor",
+      "step",
+      "work"
+    ],
+    "comparison": "recursive torch.equal with dtype/shape and exact scalar equality; metadata may differ"
+  },
+  "no_adaptation": "Exactly two actual teachers x two objectives x three seeds, fixed256 updates; no LR or time-weight sweep, no teacher sweep, repeated epochs, best selection or heldout-directed change; freeze all12 endpoints and36 named snapshots before heldout scoring",
+  "protocol_hash": "63232645d506f6e8c0838d127915e0c3b7a77d6a2d10389fd1d38ed0c12cfbd4"
+}

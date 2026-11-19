@@ -1,0 +1,103 @@
+{
+  "format": "action-return-independent-audit-v1",
+  "created_utc": "2026-11-03T04:20:35.729766+00:00",
+  "verifier": {
+    "path": "F:\\agi\\experiments\\action_return\\independent_audit.py",
+    "sha256": "398b3c78ede6acb0ad619e022d43f00c16b16a10e14611fd61620b0aa17e858c"
+  },
+  "studies": {
+    "absence": {
+      "audit": "passed",
+      "independent_seeds": 3,
+      "endpoint_count_rows": 144,
+      "inherited_execution_provenance": {
+        "F:\\agi\\data\\coverage-exit\\retirement-v1\\protocol.json": {
+          "sha256": "208b3dbc49a981cc192c4361af79a14c9f4e7c2a81d5b4d7ad39a1de318d1387",
+          "execution_files_verified": 33
+        },
+        "F:\\agi\\data\\coverage-exit\\magnitude-v1\\protocol.json": {
+          "sha256": "d279bd3c927570563ab053b0fb312bb886b9407e7c780849df8b725b808e131c",
+          "execution_files_verified": 37
+        }
+      },
+      "paired_values_checked": 648,
+      "result_bindings": [
+        {
+          "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_000\\magnitude\\result.json",
+          "sha256": "9736f514caa4bc7ef0ed621976ed9cbc1874881cec694afd6d987260a1c5a9ce"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_000\\signed_full\\result.json",
+          "sha256": "bc8d1df40d7ee70a35719ad6bba23634e5dd091598722020801f24df685ad10e"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_001\\magnitude\\result.json",
+          "sha256": "c1a1b4b0f5a2e4a1103f63efc3127f60e444738d55e6cbfa69ba23759323e81d"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_001\\signed_full\\result.json",
+          "sha256": "f933a925c4dc95ca3c8d7222419ac49ecb0ab0abae04681306f7b44742bcf136"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_002\\magnitude\\result.json",
+          "sha256": "a7988a106a1ca8a594a927db8d9412af58eee0bd82812b6f645d1262bd97644a"
+        },
+        {
+          "path": "F:\\agi\\data\\action-return\\absence-v1\\seed_002\\signed_full\\result.json",
+          "sha256": "2b75ac3e74e07f426f806b5349cd22f9e6912f19854c60c3be55c28bf1ff4aa2"
+        }
+      ],
+      "family0_short_acquired_counts": [
+        {
+          "seed": 0,
+          "arm": "magnitude",
+          "matured": 1120,
+          "strict_completed": 162,
+          "ordinary_completed": 291,
+          "strict_pp": 14.464285714285714
+        },
+        {
+          "seed": 0,
+          "arm": "signed_full",
+          "matured": 1120,
+          "strict_completed": 159,
+          "ordinary_completed": 286,
+          "strict_pp": 14.196428571428571
+        },
+        {
+          "seed": 1,
+          "arm": "magnitude",
+          "matured": 1135,
+          "strict_completed": 163,
+          "ordinary_completed": 334,
+          "strict_pp": 14.361233480176212
+        },
+        {
+          "seed": 1,
+          "arm": "signed_full",
+          "matured": 1135,
+          "strict_completed": 166,
+          "ordinary_completed": 341,
+          "strict_pp": 14.625550660792952
+        },
+        {
+          "seed": 2,
+          "arm": "magnitude",
+          "matured": 1132,
+          "strict_completed": 193,
+          "ordinary_completed": 263,
+          "strict_pp": 17.04946996466431
+        },
+        {
+          "seed": 2,
+          "arm": "signed_full",
+          "matured": 1132,
+          "strict_completed": 190,
+          "ordinary_completed": 255,
+          "strict_pp": 16.784452296819786
+        }
+      ],
+      "scope": "Raw per-fork count arithmetic, paired cases, update/support budgets, change contrasts, seed mean/sample SD."
+    }
+  }
+}

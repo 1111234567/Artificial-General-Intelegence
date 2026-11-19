@@ -1,0 +1,200 @@
+{
+  "format": "matched-real-anchor-content-duration-v1",
+  "created_utc": "2026-11-03T05:28:25.526853+00:00",
+  "status": "fixed_before_any_new_background_or_treatment_result",
+  "selection_history": "Prior refit-policy-v1 aggregate results were known. This protocol fixes one new matched experiment with no threshold search and no new readout fitting.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "families": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "actors": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "jobs": [
+    0,
+    1
+  ],
+  "dimensions": {
+    "raw_payload": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "duration": [
+      2.0,
+      8.0
+    ],
+    "real_version": [
+      0,
+      1
+    ]
+  },
+  "sources": {
+    "0": {
+      "model": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\model_own_policy.pt",
+      "model_sha256": "9653c3f48b93619acc1fe7d53879e0cc9b6147110a2a0973c532217654be7ccb",
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_000\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "8982220e1a81e107d0c59e01d2ca1e069542e2e74711f6c4ddba23f728df6610",
+        "semantic_hash": "8f07a409436aa735e9f39e22aa4c254ee35d5bb90ffd0bfa1cd8aceee1122c11"
+      },
+      "parent_result": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_000\\result.json",
+      "parent_result_sha256": "f0d4b1e49802d2221d7c8ea40ea5a0d296b857e86ad2953238c92856f48bdbed"
+    },
+    "1": {
+      "model": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\model_own_policy.pt",
+      "model_sha256": "544d3b4e5beb0a5c122ff43ed2276a00ff46a77e3e45f0a215c3d52a282e437c",
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_001\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "cd90c6aa7223a6fad13e6e190fffae09343250469bf99d20d8afbbe6a8e6f5aa",
+        "semantic_hash": "17a9d7bea8af3e7862cb9925933f33bcb825d0e4bacdd4852f901154392e74fb"
+      },
+      "parent_result": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_001\\result.json",
+      "parent_result_sha256": "378c15a960a3c2d7d358d3c33fd99938688321eb4d4fdf5aac64aab8c9adf359"
+    },
+    "2": {
+      "model": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\model_own_policy.pt",
+      "model_sha256": "db40d52c7230dded80d34b0c99da8b0b692352aaa792f4eed2a47e13bd0e6135",
+      "endpoint": {
+        "path": "F:\\agi\\data\\coverage-exit\\coverage-v1\\training\\seed_002\\begin_quarter\\checkpoint_final.pt",
+        "sha256": "a6eb9a9121adb8f469217998f8ce645b9a0302f74992de6e964844ce2d5f39cf",
+        "semantic_hash": "4b48e11cd0fe861975d36ecd9523324aada413eef2490e7fc4b447049ac65073"
+      },
+      "parent_result": "F:\\agi\\data\\action-return\\refit-policy-v1\\seed_002\\result.json",
+      "parent_result_sha256": "c806b0539f7a8e6abbd26cd53095fcba45b3d55485f8214ad0f4f084011adeae"
+    }
+  },
+  "parent_protocol": {
+    "path": "F:\\agi\\data\\action-return\\refit-policy-v1\\protocol.json",
+    "sha256": "d19db82587e5af48616a530981d7838a1301152812d56381d45b515b63fc9758"
+  },
+  "source_files": {
+    "F:\\agi\\experiments\\content_timing\\matched_flow.py": "a78d55a438068814b43f8a02672b9876d58c937745e5d52fc752c557c0cf56d2",
+    "F:\\agi\\experiments\\action_return\\readout.py": "0ae3bf65c9600556ad658c685ff73630483e6a3ad5832943105d72b240892b6f",
+    "F:\\agi\\experiments\\action_return\\finish_readout.py": "b36122199b29a63b9edde1729b220df6bed956e1617edca8edbd2c0817e25c83",
+    "F:\\agi\\experiments\\action_return\\refit_policy.py": "b4363e02dd701e794de0fa6c1f37cfbd8fc8cb02934333023d4e8b08a88d3352",
+    "F:\\agi\\experiments\\lifelong\\world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "F:\\agi\\experiments\\continuity\\world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "F:\\agi\\experiments\\undirected\\model.py": "3a4aa292d9c3a1d1f8cb63f4ca39a0711d1390afd2db59a2dd265645b40bf280",
+    "F:\\agi\\experiments\\undirected\\run.py": "3ae44e5ee1026094445ac6483fa630c6b791f52d01bda0d2ff5ced84d60a94d6"
+  },
+  "background": {
+    "source": "Full actual147456 endpoint world and inherited h; frozen own_policy model. Execute its actual eleven-action argmax at every tick in all8 actors.",
+    "condition": "long_both",
+    "dt": 0.25,
+    "family": "Change future family only; inherited pending contracts remain intact.",
+    "max_ticks": 4096,
+    "quota_per_seed_family_lane_job_real_version": 3,
+    "selection": "Earliest eligible real NEW/REPLACE under the new regime and requested family in each lane/job/real-version stratum. No response score is used. Require the next scheduled target NEW/REPLACE/CANCEL to be strictly after cue+8+original window. Continue through the entire needed source-observation suffix.",
+    "anchor": "Save full real post-observe/pre-act world, exact original observation, continuous pre-cue h and source post-cue h. Real version and kind are never relabeled or altered."
+  },
+  "treatment": {
+    "arms": "4 raw payloads x durations2,8 at each identical actual anchor; preserve real family, version, event kind, request identity, window and scheduler.",
+    "world_changes": [
+      "raw_payload",
+      "raw_event_payload",
+      "payload",
+      "event_payload",
+      "duration",
+      "event_duration",
+      "deadline",
+      "_score_deadline"
+    ],
+    "pulse": "Only target job raw-payload one-hot and duration in the real cue observation are replaced. Mapped target follows the original family mapping. No hidden state, weight, previous receipt, context or version is replaced.",
+    "hash": "Original event_hash remains the authentic scheduler prefix digest; intervention is separately fingerprinted and the complete mutated world hash is saved. It must not be mistaken for an unmodified scheduler event.",
+    "actions": "Target executes its correct-version BEGIN at cue, then WAIT throughout. All non-target actor/job actions are locked to the recorded original own-policy background actions at the same absolute tick. Model argmax is measured but not executed in these forks.",
+    "receipts": "Retain actual unmodified world-generated receipts. Fixed real version means identical BEGIN action/accepted result in all8 variants; WAIT yields no subsequent receipt. No FINISH is executed, so payload labels never enter feedback. Version is present in BEGIN receipt and is not isolated as a pure memory test.",
+    "equality": "Assert every non-target public observation equals source background exactly, and every complete observation across all8 treatments is identical after cue. At cue only target payload/duration columns may differ.",
+    "legal": "Use actual active+started and ready_time<=now<=deadline, after an actually accepted locked BEGIN; first observed legal time is not teacher midpoint."
+  },
+  "observation": {
+    "stages": [
+      "cue",
+      "midpoint",
+      "common_age2",
+      "first_legal",
+      "teacher_first",
+      "common_short_teacher"
+    ],
+    "timing": "All scores/features sampled post-model-step/pre-action. midpoint is duration/2 since actual locked BEGIN; common_age2 is common absolute cue-age2. teacher_first is first observed midpoint-oracle FINISH time; common_short_teacher is short-arm teacher_first absolute age in both duration arms.",
+    "stage_duplicates": "short first_legal=common_age2 and short teacher_first=common_short_teacher reuse the same state with different stage labels. Do not count these rows as independent samples.",
+    "outputs": "Unchanged actual11 logits, actual8 FINISH logits, uncentered original conditional affine offsets8, descending FINISH rank8, original FP64 non_input24 states; teacher and private-world labels are scorer-only."
+  },
+  "analysis": {
+    "primary": "Within-anchor pairwise correct-versus-alternative target score differential, symmetric paired ordering and argmax distinction at equal duration/stage; per-seed descriptive summaries across four families.",
+    "timing": "At common_age2 compare short legal vs long processing; at common_short_teacher compare short teacher-FINISH vs long processing. Separately report WAIT/BEGIN/FINISH argmax and FINISH-minus-best-nonFINISH margin.",
+    "heldout": "Actors4..7 were held out from external readout fitting only; backbone saw all8. Independent probes must split whole anchor families of variants together and use actor4,5 train vs6,7 test then reverse; no score-selected model or hyperparameter changes here.",
+    "independence": "Three seeds are the independent replicated units. Anchors, jobs, versions, treatments and stages are repeated nested measurements."
+  },
+  "schema": {
+    "file": "seed_000/records.pt (similarly001,002)",
+    "rows": "List of metadata dictionaries; all tensors use the exact same row order.",
+    "tensors": {
+      "x24": "float64[N,24]",
+      "scores11": "float64[N,11]",
+      "finish_scores8": "float64[N,8]",
+      "finish_offsets8": "float64[N,8]",
+      "rank8": "int64[N,8]; descending original FINISH scores; code4*version+mapped_payload"
+    },
+    "metadata": [
+      "row_id",
+      "anchor_id",
+      "seed",
+      "family",
+      "actor_lane",
+      "actor_id",
+      "job",
+      "case_id",
+      "request_id",
+      "cue_kind",
+      "version",
+      "source_raw_payload",
+      "raw_payload",
+      "mapped_payload",
+      "target8",
+      "duration_arm",
+      "duration",
+      "stage",
+      "age",
+      "tick",
+      "now",
+      "issued_time",
+      "active",
+      "started",
+      "ready_time",
+      "deadline",
+      "legal",
+      "previous_observation_time",
+      "previous_observation_legal",
+      "model_action",
+      "conditional_choice8",
+      "content_correct",
+      "version_correct",
+      "payload_correct",
+      "teacher_action",
+      "teacher_finish_expected",
+      "finish_vs_nonfinish_margin",
+      "target_external_event_free",
+      "source_fingerprint",
+      "treatment_fingerprint"
+    ]
+  },
+  "limits": [
+    "Controlled real-world forks under locked operations, not autonomous policy behavior or completion evidence.",
+    "Duration changes preserve the original next-external-event scheduler; selection restricts analysis to an uninterrupted treatment window, so this is not a natural resampled duration regime.",
+    "Version is observed and fixed within an anchor, and its BEGIN receipt is retained. Raw payload is the isolated within-anchor content manipulation.",
+    "Only three seeds; paired discrimination and decodability do not establish learned causal use or native recurrent learning."
+  ],
+  "protocol_hash": "17081cc7d23488c0d148c64c0dc5032192c593f37e114f8f9a3fc7f201bdcfd6"
+}

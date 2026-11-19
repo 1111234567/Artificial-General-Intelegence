@@ -1,0 +1,89 @@
+{
+  "purpose": "Verify that paired delivered tastes identify an edit with a measurable one-contact causal consequence. An external four-cell probe measures the information in the fitted labels.",
+  "reproduce": "python -m experiments.pulse_game.edit_receipt_positive_control",
+  "design": {
+    "fit_and_test_worlds_each": 4096,
+    "fit_seed": 811039,
+    "test_seed": 811040,
+    "shuffle_seed": 811041,
+    "shuffled_fits": 256,
+    "slip_probability_per_contact": 0.15,
+    "edit": "Externally supplied ±0.8 adjustment to an initially zero cue-to-motor edge on the actual graph at contact 0. Private preference, orientation and edit sign vary. Full and suppressed commits share upcoming odor, slip and stochastic motor draw.",
+    "label": "Accepted minus suppressed realized taste at contact 1, divided by 2, computed by the main experiment's future_fork estimator.",
+    "inputs": "Signs of the command payload and the focal preference inferred from the observed odor, own side, and actual delivered taste. Latent preference is used only for verification and scoring.",
+    "cells": [
+      "clue−/edit−",
+      "clue−/edit+",
+      "clue+/edit−",
+      "clue+/edit+"
+    ]
+  },
+  "heldout_fork": {
+    "applied": 4096,
+    "changed_side": 1201,
+    "improved_physical_count": 629,
+    "worsened_physical_count": 572,
+    "mean_abs_expected_physical_effect": 0.29436129331588745,
+    "physical_sign_matches_constructed_direction_when_changed": true,
+    "expected_physical_sign_matches_constructed_direction_all_worlds": true,
+    "zero_payload_control": {
+      "applied": 0,
+      "changed_side": 0
+    }
+  },
+  "fit_cell_prediction": {
+    "causal": [
+      0.14258001744747162,
+      -0.13490566611289978,
+      -0.16814158856868744,
+      0.1437246948480606
+    ],
+    "shuffled_mean": [
+      -0.006027976516634226,
+      -0.006496904417872429,
+      -0.006276118569076061,
+      -0.005582616664469242
+    ]
+  },
+  "heldout_probe": {
+    "causal": {
+      "delivered_taste_mse": 0.2724214494228363,
+      "latent_effect_direction_accuracy": 0.84375,
+      "physical_direction_accuracy_when_changed": 0.8501248955726624,
+      "delivered_direction_accuracy_when_changed": 0.7468776106834412
+    },
+    "shuffled": {
+      "delivered_taste_mse": {
+        "mean": 0.29347070248331875,
+        "central_95_percent": [
+          0.2880127616226673,
+          0.2987114004790783
+        ]
+      },
+      "latent_effect_direction_accuracy": {
+        "mean": 0.48894309997558594,
+        "central_95_percent": [
+          0.15625,
+          0.84375
+        ]
+      },
+      "physical_direction_accuracy_when_changed": {
+        "mean": 0.4822283547837287,
+        "central_95_percent": [
+          0.14987510442733765,
+          0.8501248955726624
+        ]
+      },
+      "delivered_direction_accuracy_when_changed": {
+        "mean": 0.4848563673440367,
+        "central_95_percent": [
+          0.25312238931655884,
+          0.7468776106834412
+        ]
+      }
+    },
+    "zero": {
+      "delivered_taste_mse": 0.293212890625
+    }
+  }
+}

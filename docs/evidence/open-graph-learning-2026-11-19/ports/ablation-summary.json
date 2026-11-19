@@ -1,0 +1,97 @@
+{
+  "recipe": {
+    "rate": 0.22,
+    "exploration": 0.28,
+    "decay": 0.995,
+    "grow_every": 19,
+    "retire_every": 17
+  },
+  "rows": {
+    "stable": {
+      "joint": 0.8274739583333334,
+      "matched_random": {
+        "tail": 0.7664930555555557,
+        "joint_minus": [
+          0.06098090277777777,
+          0.01779513888888889,
+          0.1106418185763892
+        ],
+        "retirement_fallback": 0,
+        "matching_growth": 18,
+        "matching_retirement": 44
+      },
+      "cut_motor": {
+        "tail": 0.8333333333333334,
+        "joint_minus": [
+          -0.005859374999999997,
+          -0.017144097222222227,
+          0.0019531250000000104
+        ],
+        "retirement_fallback": 0,
+        "matching_growth": 2976,
+        "matching_retirement": 3264
+      },
+      "cut_taste": {
+        "tail": 0.8274739583333334,
+        "joint_minus": [
+          1.1564823173178713e-18,
+          -0.001953124999999993,
+          0.0019531250000000035
+        ],
+        "retirement_fallback": 0,
+        "matching_growth": 2976,
+        "matching_retirement": 3264
+      }
+    },
+    "reverse": {
+      "joint": 0.8253038194444443,
+      "matched_random": {
+        "tail": 0.7456597222222222,
+        "joint_minus": [
+          0.07964409722222222,
+          0.03410644531250001,
+          0.13585069444444445
+        ],
+        "retirement_fallback": 0,
+        "matching_growth": 18,
+        "matching_retirement": 37
+      },
+      "cut_motor": {
+        "tail": 0.8292100694444443,
+        "joint_minus": [
+          -0.003906250000000003,
+          -0.014322916666666657,
+          0.004774305555555548
+        ],
+        "retirement_fallback": 0,
+        "matching_growth": 2976,
+        "matching_retirement": 3264
+      },
+      "cut_taste": {
+        "tail": 0.8253038194444443,
+        "joint_minus": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "retirement_fallback": 0,
+        "matching_growth": 2976,
+        "matching_retirement": 3264
+      }
+    }
+  },
+  "npz_sha256": {
+    "stable": {
+      "joint": "1e5012d452e98cee70f3dcdced8b9af60295aaff99a67d59045515c7e96add3b",
+      "matched_random": "110b9f4bb4bac125f2e4490b693d8d28138bb6e4606a93074c34e2416d2807f6",
+      "cut_motor": "315bccaa13d244ff71ae8b2823f37544db60b435b86e971a51cfb895d6a3734c",
+      "cut_taste": "eeb53dc7902135cc69d3cd30c004d24da7a94abcc3f2650aff89b31e47a38286"
+    },
+    "reverse": {
+      "joint": "cc51ae9b3f064b593b634f93bfad418bb165337a4b47319651af92377feaae49",
+      "matched_random": "d7fdd9f350a4760eddeb9aafb201f9902513d22bf2b9856e707620feb3a45dbb",
+      "cut_motor": "56ccd2dc93949a1c51418a910f880cd334d4533b4e4de714bc7c90e2f665b6db",
+      "cut_taste": "76359f993c5ff8f8d083b0d47a2b7ce3b2ac28edfc0e7dd86c58f6e8e360aba7"
+    }
+  }
+}

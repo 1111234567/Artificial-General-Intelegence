@@ -1,0 +1,4 @@
+{
+  "source_unchanged": true,
+  "note": "The frozen summary fixed_replay_mode_CE note calls own block1 perrow normalized. Correct interpretation is per-tick batch-normalized over 32 actors x 2 slots. The implemented class numerator/denominator and all metrics are unchanged; training/teacher block128 uses 8192 rows."
+}

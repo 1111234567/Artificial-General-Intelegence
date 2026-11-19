@@ -1,0 +1,458 @@
+{
+  "protocol_sha256": "958720cceeab25d6ed3eeedf1afd5f8ca88fe4649886f8611a4e5ba6becde8f4",
+  "verified_inputs_sha256": "b3ca4e55e17447476409e01dc1b82796c7a7419325e2307be1a9d92124fe909a",
+  "reader_sha256": "81ae8a307b0c39e55eca5a25f74176d4545c7ad3949ecf8520b084614ea51a13",
+  "aggregation": "Live label positions, including repeated positions per request. First and last 64 updates separately. Balanced accuracy averages per-class recall among the existing logits in the teacher group. Margin is best group logit minus best outside logit. No fitted decoder.",
+  "rows": [
+    {
+      "seed": 0,
+      "arm": "control",
+      "half": 0,
+      "teacher_action_group": "BEGIN",
+      "positions": 12749,
+      "label_counts": [
+        6319,
+        6430
+      ],
+      "correct_within_group": [
+        3208,
+        3144
+      ],
+      "balanced_content_accuracy": 0.4983166372024237,
+      "median_group_margin": -0.46172398431657036,
+      "chosen_group": 0
+    },
+    {
+      "seed": 0,
+      "arm": "control",
+      "half": 0,
+      "teacher_action_group": "FINISH",
+      "positions": 0,
+      "balanced_content_accuracy": null,
+      "median_group_margin": null
+    },
+    {
+      "seed": 0,
+      "arm": "control",
+      "half": 1,
+      "teacher_action_group": "BEGIN",
+      "positions": 12775,
+      "label_counts": [
+        6388,
+        6387
+      ],
+      "correct_within_group": [
+        4415,
+        1988
+      ],
+      "balanced_content_accuracy": 0.501198439045184,
+      "median_group_margin": -0.4910966682543232,
+      "chosen_group": 0
+    },
+    {
+      "seed": 0,
+      "arm": "control",
+      "half": 1,
+      "teacher_action_group": "FINISH",
+      "positions": 0,
+      "balanced_content_accuracy": null,
+      "median_group_margin": null
+    },
+    {
+      "seed": 0,
+      "arm": "begin_quarter",
+      "half": 0,
+      "teacher_action_group": "BEGIN",
+      "positions": 10004,
+      "label_counts": [
+        5044,
+        4960
+      ],
+      "correct_within_group": [
+        3309,
+        1629
+      ],
+      "balanced_content_accuracy": 0.4922271910414162,
+      "median_group_margin": -0.5428192087426181,
+      "chosen_group": 0
+    },
+    {
+      "seed": 0,
+      "arm": "begin_quarter",
+      "half": 0,
+      "teacher_action_group": "FINISH",
+      "positions": 924,
+      "label_counts": [
+        115,
+        73,
+        109,
+        127,
+        125,
+        127,
+        111,
+        137
+      ],
+      "correct_within_group": [
+        53,
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12
+      ],
+      "balanced_content_accuracy": 0.12677677884385474,
+      "median_group_margin": -3.6378427608899897,
+      "chosen_group": 0
+    },
+    {
+      "seed": 0,
+      "arm": "begin_quarter",
+      "half": 1,
+      "teacher_action_group": "BEGIN",
+      "positions": 10032,
+      "label_counts": [
+        5140,
+        4892
+      ],
+      "correct_within_group": [
+        3760,
+        1332
+      ],
+      "balanced_content_accuracy": 0.5018993926397739,
+      "median_group_margin": -0.6306047924295785,
+      "chosen_group": 0
+    },
+    {
+      "seed": 0,
+      "arm": "begin_quarter",
+      "half": 1,
+      "teacher_action_group": "FINISH",
+      "positions": 894,
+      "label_counts": [
+        86,
+        93,
+        94,
+        104,
+        112,
+        127,
+        101,
+        177
+      ],
+      "correct_within_group": [
+        41,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        92
+      ],
+      "balanced_content_accuracy": 0.12456477466824334,
+      "median_group_margin": -3.7890559636626504,
+      "chosen_group": 0
+    },
+    {
+      "seed": 1,
+      "arm": "control",
+      "half": 0,
+      "teacher_action_group": "BEGIN",
+      "positions": 13071,
+      "label_counts": [
+        6508,
+        6563
+      ],
+      "correct_within_group": [
+        1940,
+        4625
+      ],
+      "balanced_content_accuracy": 0.5014014327213492,
+      "median_group_margin": -0.3700046247527107,
+      "chosen_group": 0
+    },
+    {
+      "seed": 1,
+      "arm": "control",
+      "half": 0,
+      "teacher_action_group": "FINISH",
+      "positions": 0,
+      "balanced_content_accuracy": null,
+      "median_group_margin": null
+    },
+    {
+      "seed": 1,
+      "arm": "control",
+      "half": 1,
+      "teacher_action_group": "BEGIN",
+      "positions": 13014,
+      "label_counts": [
+        6487,
+        6527
+      ],
+      "correct_within_group": [
+        1449,
+        5064
+      ],
+      "balanced_content_accuracy": 0.49961198043988414,
+      "median_group_margin": -0.3753798001893577,
+      "chosen_group": 0
+    },
+    {
+      "seed": 1,
+      "arm": "control",
+      "half": 1,
+      "teacher_action_group": "FINISH",
+      "positions": 0,
+      "balanced_content_accuracy": null,
+      "median_group_margin": null
+    },
+    {
+      "seed": 1,
+      "arm": "begin_quarter",
+      "half": 0,
+      "teacher_action_group": "BEGIN",
+      "positions": 10220,
+      "label_counts": [
+        5034,
+        5186
+      ],
+      "correct_within_group": [
+        1553,
+        3586
+      ],
+      "balanced_content_accuracy": 0.49998961937345143,
+      "median_group_margin": -0.43304410792320414,
+      "chosen_group": 0
+    },
+    {
+      "seed": 1,
+      "arm": "begin_quarter",
+      "half": 0,
+      "teacher_action_group": "FINISH",
+      "positions": 981,
+      "label_counts": [
+        117,
+        139,
+        160,
+        81,
+        158,
+        115,
+        103,
+        108
+      ],
+      "correct_within_group": [
+        0,
+        0,
+        117,
+        0,
+        0,
+        0,
+        0,
+        44
+      ],
+      "balanced_content_accuracy": 0.14233217592592592,
+      "median_group_margin": -4.0262324415053055,
+      "chosen_group": 0
+    },
+    {
+      "seed": 1,
+      "arm": "begin_quarter",
+      "half": 1,
+      "teacher_action_group": "BEGIN",
+      "positions": 10139,
+      "label_counts": [
+        5083,
+        5056
+      ],
+      "correct_within_group": [
+        1135,
+        3913
+      ],
+      "balanced_content_accuracy": 0.4986126463677635,
+      "median_group_margin": -0.49576404299914567,
+      "chosen_group": 0
+    },
+    {
+      "seed": 1,
+      "arm": "begin_quarter",
+      "half": 1,
+      "teacher_action_group": "FINISH",
+      "positions": 949,
+      "label_counts": [
+        110,
+        107,
+        148,
+        103,
+        118,
+        140,
+        123,
+        100
+      ],
+      "correct_within_group": [
+        0,
+        0,
+        148,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "balanced_content_accuracy": 0.1275,
+      "median_group_margin": -3.905079086810182,
+      "chosen_group": 0
+    },
+    {
+      "seed": 2,
+      "arm": "control",
+      "half": 0,
+      "teacher_action_group": "BEGIN",
+      "positions": 13139,
+      "label_counts": [
+        6594,
+        6545
+      ],
+      "correct_within_group": [
+        6594,
+        0
+      ],
+      "balanced_content_accuracy": 0.5,
+      "median_group_margin": -0.4066857972183251,
+      "chosen_group": 0
+    },
+    {
+      "seed": 2,
+      "arm": "control",
+      "half": 0,
+      "teacher_action_group": "FINISH",
+      "positions": 0,
+      "balanced_content_accuracy": null,
+      "median_group_margin": null
+    },
+    {
+      "seed": 2,
+      "arm": "control",
+      "half": 1,
+      "teacher_action_group": "BEGIN",
+      "positions": 13066,
+      "label_counts": [
+        6499,
+        6567
+      ],
+      "correct_within_group": [
+        6499,
+        0
+      ],
+      "balanced_content_accuracy": 0.5,
+      "median_group_margin": -0.3731692941930136,
+      "chosen_group": 0
+    },
+    {
+      "seed": 2,
+      "arm": "control",
+      "half": 1,
+      "teacher_action_group": "FINISH",
+      "positions": 0,
+      "balanced_content_accuracy": null,
+      "median_group_margin": null
+    },
+    {
+      "seed": 2,
+      "arm": "begin_quarter",
+      "half": 0,
+      "teacher_action_group": "BEGIN",
+      "positions": 10196,
+      "label_counts": [
+        5206,
+        4990
+      ],
+      "correct_within_group": [
+        5206,
+        0
+      ],
+      "balanced_content_accuracy": 0.5,
+      "median_group_margin": -0.49038765389059313,
+      "chosen_group": 0
+    },
+    {
+      "seed": 2,
+      "arm": "begin_quarter",
+      "half": 0,
+      "teacher_action_group": "FINISH",
+      "positions": 1006,
+      "label_counts": [
+        117,
+        110,
+        101,
+        115,
+        153,
+        116,
+        140,
+        154
+      ],
+      "correct_within_group": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        74,
+        0,
+        62
+      ],
+      "balanced_content_accuracy": 0.13006605463502016,
+      "median_group_margin": -3.8318546703981933,
+      "chosen_group": 0
+    },
+    {
+      "seed": 2,
+      "arm": "begin_quarter",
+      "half": 1,
+      "teacher_action_group": "BEGIN",
+      "positions": 10310,
+      "label_counts": [
+        5117,
+        5193
+      ],
+      "correct_within_group": [
+        5117,
+        0
+      ],
+      "balanced_content_accuracy": 0.5,
+      "median_group_margin": -0.5145270662600723,
+      "chosen_group": 0
+    },
+    {
+      "seed": 2,
+      "arm": "begin_quarter",
+      "half": 1,
+      "teacher_action_group": "FINISH",
+      "positions": 888,
+      "label_counts": [
+        85,
+        117,
+        131,
+        110,
+        130,
+        113,
+        101,
+        101
+      ],
+      "correct_within_group": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        65,
+        0,
+        58
+      ],
+      "balanced_content_accuracy": 0.1436848330850784,
+      "median_group_margin": -3.736968484193593,
+      "chosen_group": 0
+    }
+  ]
+}

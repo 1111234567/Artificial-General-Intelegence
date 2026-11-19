@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-11-05T15:39:13.458965+00:00",
+  "sources": {
+    "experiments/action_split/evaluate.py": "43fdb435c5b49e5ea3009bc061ab2c2886853c5056c8cd7e8a05736b2175eebb",
+    "experiments/action_split/eval_test.py": "702f7a0fa47e2842c735a47cbc422d3f19d7873b1bdf4d1ec91413f389d38716",
+    "experiments/action_split/model.py": "72d44a1ce29a8e26be4e85b3f6743f19591e666b93089384d2ea4bebd5417988",
+    "experiments/lifelong/world.py": "eb0eb9b920531a397a18fcbabb8597d30a5c9c894e0e35b44f22183fa659f638",
+    "experiments/continuity/world.py": "899b14ef521ac118a53f5785d1ea06f2457f9c6a633572179a4ace51b0e8cb0c",
+    "experiments/learn_remember/gru_train.py": "5b44945a1c56b170ab87c7763814c63581a857f569fe3f5cde47ddb677a1bab3",
+    "experiments/action_split/balanced_eval.py": "45eb894d0827d8ba3fabcd8ec3921cf0b3802b11db5705228c212e4b856f64e4"
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "policies": [
+    "original",
+    "base_frozen",
+    "base_full",
+    "balanced_frozen",
+    "balanced_full"
+  ],
+  "conditions": {
+    "long": [
+      8.0,
+      16.0
+    ],
+    "longer": [
+      16.0,
+      32.0
+    ]
+  },
+  "warm": 512,
+  "test": 4096,
+  "dt": 0.25,
+  "actor_ids": [
+    97000,
+    97001,
+    97002,
+    97003,
+    97004,
+    97005,
+    97006,
+    97007,
+    97008,
+    97009,
+    97010,
+    97011,
+    97012,
+    97013,
+    97014,
+    97015,
+    97016,
+    97017,
+    97018,
+    97019,
+    97020,
+    97021,
+    97022,
+    97023,
+    97024,
+    97025,
+    97026,
+    97027,
+    97028,
+    97029,
+    97030,
+    97031
+  ],
+  "world_seed": "852000+seed",
+  "primary": "Final step256, compare originalmodeobjective and equal-class-modeobjective frozen/full, on the SAME FRESH external requests for all5policies.",
+  "secondary": "Duration16..32 only, unchangedgap16..32; no model/threshold selection.",
+  "execution": "Every policy executes native actions throughout warmup+test. Independent origin h=0, then fully continuous. No oracle action or private state enters decoder.",
+  "denominator": "All eligible actual NEW/REPLACE issued at tick>=512 and with a matching native maturity pulse before horizon. Include no-BEGIN/no-window failures. No boundary-pair filter.",
+  "diagnostics": "Actual accepted BEGIN; actual early FINISH independent of version/content; first rejected active action; reached legal but no FINISH; legal first attempt correct/wrong/absent. Whole legal window, not mandatory immediate FINISH.",
+  "reference": "Untouched original midpoint B008 had its old head and no new budget; new heads start from zero. Frozen/full samearchitecture/data/updatebudget is the primary comparison.",
+  "posthoc": "Chosen after the initial full model achieved zero completion and zero teacher-history FINISH recall. One fixed equal-class normalization, not a sweep. All previous failed outcomes retained. New evaluation actors/worldseed were not in those results.",
+  "original_evaluation_sha256": "7b4927daf278e50849f66de55429ccc4b0f8652063d7db2500cf654e5ed94b38",
+  "diagnostic_sha256": "2c21f7214c0732f4fe72b2c0b190aa6da9b3907819e78610930476d729b60030"
+}

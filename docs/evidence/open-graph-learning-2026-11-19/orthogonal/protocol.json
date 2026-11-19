@@ -1,0 +1,12 @@
+{
+  "question": "Can the single end-free port graph learn a new preference that is orthogonal rather than a sign flip, and does that experience affect action through the learned graph itself?",
+  "policy": "Use the sealed 16-node tanh joint recipe previously selected on stable/reversal development for the native port graph. All graph weights and growth/retirement remain available throughout real teaching. No per-life examples table, feature expansion, task ID, change indicator, or external action learning head.",
+  "births": [873251,873252,873253,873254,873255,873256,873257,873258],
+  "roots": [69891000,69891001,69891002,69891003,69891004,69891005,69891006,69891007,69891008,69891009,69891010,69891011,69891012,69891013,69891014,69891015],
+  "stages": ["A","B","A_return"],
+  "questions_per_stage": 256,
+  "silent_tail": 64,
+  "design": "Draw private unit vector A in four chemical dimensions and an independent random direction B orthogonal to A. Two sign twins start with the same A, same food mixtures, body geometry, exploration noise, taste draws and brain. Each subsequent B food has exactly opposite realized taste across the two worlds, with its expected preference given by +B or -B. Return restores A. No physical taste on the last 64 NEW foods per stage. Timeout counts as failure.",
+  "primary": "B silent-tail optimal contact minus 0.5; B silent-tail joint minus yoke with independent fair signs; B silent-tail intact minus endpoint fork with other twin's entire learned synaptic matrix and support. Simultaneous 95% Bonferroni percentile intervals, paired crossed bootstrap on eight birth roots and sixteen world roots. For interchange, fork at the same pre-probe boundary and preserve the recipient's activity. Additionally report just-state exchange (recipient synapses intact), both twins making correct opposite choices, first B action invariant, A and A-return, and edits. Silent worlds are not fed back into the live path.",
+  "limits": "Orthogonal linear utilities on never-repeated continuous chemical mixtures test an unfamiliar direction rather than an arbitrary nonlinear function. A/B habitats have no context label. Swapping matrix and support together identifies the effect of the learned synaptic graph, not any specific edge or bidirectionality requirement."
+}
