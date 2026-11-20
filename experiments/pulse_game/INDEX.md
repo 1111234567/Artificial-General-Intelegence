@@ -2,11 +2,22 @@
 
 [发布版复现命令](README.md) · [研究证据](../../docs/pulse-game-evidence-2026-11-19.md) · [报告与汇总脚本](reporting/README.md) · [回归测试](tests/README.md)
 
+## 11 月 20 日的训练和复算
+
+| 任务 | 代码 |
+|---|---|
+| 双复查时核对较早事实、原生试探与实际动作 | [世界](double_visit_world.py)、[训练](double_visit_fit.py)、[直接询房定位](double_visit_localize.py)、[阶段报告](../../docs/double-visit-2026-11-20.md) |
+| 部署改道任务，复算旧图留出与副区中间房移植 | [世界](reroute_world.py)、[训练](reroute_fit.py)、[首次行动](reroute_eval.py)、[冻结旧图留出](reroute_novel.py)、[房间干预](reroute_midpoint.py)、[报告](../../docs/reroute-2026-11-20.md) |
+| 让主区利用克隆预测并行动 | [双门环境](fork_lesson_world.py)、[整体具身训练](fork_lesson_fit.py)、[冻结留出](fork_lesson_eval.py)、[内试探](fork_lesson_whatif.py)、[阶段报告](../../docs/fork-lesson-2026-11-20.md) |
+| 比较一次试写的外置重演与整图内在计算 | [回执和草稿](draft_rehearse.py)、[完整循环图](native_rehearsal_graph.py)、[独立行为检验](native_rehearsal_eval.py)、[跨进程部署核验](native_rehearsal_stream.py)、[阶段结果](../../docs/native-rehearsal-2026-11-20.md) |
+| 复算边地址选择、实际单路训练与旧回执回放 | [小组诊断](edge_site_diagnostic.py)、[共享选边训练](edge_site_train_fit.py)、[独立留出](edge_site_eval.py)、[配平 B 的回放复验](edge_site_replay_check.py)、[结果](../../docs/edge-site-2026-11-20.md) |
+| 复算期限提示、实际单路线、反馈冲突和写入 | [单路训练](noon_horizon_online.py)、[路径账本核验](noon_horizon_online_audit.py)、[回执核验](noon_agreement_eval.py)、[写入或跳过的真实后续](noon_commit_eval.py)、[研究报告](../../docs/active-review-2026-11-20.md) |
+| 定位交错学习的实验代码和各轮数据 | 下方的[跨对象学习入口](#按研究问题找代码)与[按研究挑选审计包](../../docs/evidence/reproduce-2026-11-20.md) |
+
 ## 公用入口
 
 | 任务 | 代码 |
 |---|---|
-| 复算期限提示、实际单路线、反馈冲突和写入 | [单路训练](noon_horizon_online.py)、[路径账本核验](noon_horizon_online_audit.py)、[回执核验](noon_agreement_eval.py)、[写入或跳过的真实后续](noon_commit_eval.py)、[研究报告](../../docs/active-review-2026-11-20.md) |
 | 运行冻结控制器，保存或恢复同一生命的状态 | [lifelong_agent.py](lifelong_agent.py)、[live_continuity.py](live_continuity.py)、[lifetime_retention_fork.py](lifetime_retention_fork.py) |
 | 复算旧符号控制器封存结果 | [legacy_grounded_release.py](legacy_grounded_release.py) |
 | 生成 CPU 包，校验新进程续跑与晨间发布证据 | [export_reference.py](export_reference.py)、[portable_reboot.py](portable_reboot.py)、[morning_release_check.py](morning_release_check.py) |

@@ -98,3 +98,30 @@ docs/evidence/interleaved-learning-2026-11-20/** -text
 docs/evidence/active-review-20261120/** -text
 docs/evidence/interleaved-learning-2026-11-20/audit-data.zip filter=lfs diff=lfs merge=lfs -text
 docs/evidence/active-review-20261120/audit-data.zip filter=lfs diff=lfs merge=lfs -text
+
+# These studies bind the original bytes of their implementation, protocols and ledgers.
+experiments/pulse_game/edge_site*.py -text
+experiments/pulse_game/draft_rehears*.py -text
+experiments/pulse_game/native_rehears*.py -text
+experiments/pulse_game/fork_lesson*.py -text
+experiments/pulse_game/reroute*.py -text
+experiments/pulse_game/double_visit*.py -text
+experiments/pulse_game/reporting/edge_site*.py -text
+experiments/pulse_game/reporting/draft_rehears*.py -text
+experiments/pulse_game/reporting/native_rehears*.py -text
+experiments/pulse_game/reporting/fork_lesson*.py -text
+experiments/pulse_game/reporting/reroute*.py -text
+experiments/pulse_game/reporting/double_visit*.py -text
+experiments/pulse_game/tests/test_edge_site*.py -text
+experiments/pulse_game/tests/test_draft_rehears*.py -text
+experiments/pulse_game/tests/test_native_rehears*.py -text
+experiments/pulse_game/tests/test_fork_lesson*.py -text
+experiments/pulse_game/tests/test_reroute*.py -text
+experiments/pulse_game/tests/test_double_visit*.py -text
+docs/evidence/edge-site-20261120/** -text
+docs/evidence/draft-rehearsal-20261120/** -text
+docs/evidence/native-rehearsal-20261120/** -text
+docs/evidence/fork-lesson-20261120/** -text
+docs/evidence/reroute-20261120/** -text
+docs/evidence/double-visit-20261120/** -text
+docs/evidence/*-20261120/audit-data.zip filter=lfs diff=lfs merge=lfs -text

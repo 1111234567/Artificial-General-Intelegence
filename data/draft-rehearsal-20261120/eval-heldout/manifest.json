@@ -1,0 +1,192 @@
+{
+  "final_step": 768,
+  "replica_seeds": [
+    21294703,
+    21294711
+  ],
+  "fit_protocol_sha256": "a77dc19aa38204d1955a3150f5bf97d1bbf1e14d9e04210941eb567fa821f9c9",
+  "heads": {
+    "path": "data/draft-rehearsal-20261120/fit-heads.npz",
+    "sha256": "12f76b67ba69e52cd3e0b702dccaba6abed950aa5591f340a452665b83cd8798"
+  },
+  "inputs": {
+    "eval-protocol.md": {
+      "path": "docs/evidence/draft-rehearsal-20261120/eval-protocol.md",
+      "sha256": "b690b38da843b17659f9c9b10899cffdacc0984a390a46d727dcdadb7a2e4550"
+    },
+    "fit-protocol.json": {
+      "path": "docs/evidence/draft-rehearsal-20261120/fit-protocol.json",
+      "sha256": "a77dc19aa38204d1955a3150f5bf97d1bbf1e14d9e04210941eb567fa821f9c9"
+    },
+    "draft_rehearse_eval.py": {
+      "path": "experiments/pulse_game/draft_rehearse_eval.py",
+      "sha256": "60577482a98a4e21847b23b06247d30409dcf351710023ccfbca34b569b2e89f"
+    },
+    "draft_rehearse_eval_stats.py": {
+      "path": "experiments/pulse_game/draft_rehearse_eval_stats.py",
+      "sha256": "c08901fd11bdeedd4d8d0fc6b0921b234227951b52b366bc3cf6ee7ecbe01131"
+    },
+    "draft_rehearse.py": {
+      "path": "experiments/pulse_game/draft_rehearse.py",
+      "sha256": "54f6515c15d1a3f2a542847058878bae9c8b174b9a5a0945552596e7b1d9a960"
+    }
+  },
+  "seed": 63190477,
+  "training_geometry_domain": 73111943,
+  "training_births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "births": [
+    811,
+    812,
+    813,
+    814,
+    815,
+    816
+  ],
+  "geometry_roots": 256,
+  "angles": [
+    15,
+    30,
+    90
+  ],
+  "modes": [
+    "post",
+    "pre",
+    "wrong",
+    "post_wrong",
+    "pre_wrong",
+    "random",
+    "native"
+  ],
+  "orders": [
+    0,
+    1
+  ],
+  "dose_columns": [
+    "written_count",
+    "positive_count",
+    "negative_count",
+    "positive_l1",
+    "negative_l1",
+    "l1",
+    "deferred_count",
+    "deferred_positive_l1",
+    "deferred_negative_l1",
+    "deferred_l1",
+    "plan_positive_l1",
+    "plan_negative_l1",
+    "positive_bias_l1",
+    "negative_bias_l1",
+    "edge_births",
+    "edge_retirements",
+    "selected_count",
+    "max_unselected_change"
+  ],
+  "repeat_b": true,
+  "parent_sha256": {
+    "811": {
+      "path": "data/interleaved-learning-20261120/retention-objective-confirmation/birth_811/odor/uniform/checkpoint_8000.npz",
+      "sha256": "2d215955e15d65d90e954cad0c06837c12fea83775f87cdddc42f2fb112e21b4"
+    },
+    "812": {
+      "path": "data/interleaved-learning-20261120/retention-objective-confirmation/birth_812/odor/uniform/checkpoint_8000.npz",
+      "sha256": "8f8aaa6ff7e5ba50c358e3b4b882c7f15a40d1a6dcbe6b59fbb0fbbd8c2bc026"
+    },
+    "813": {
+      "path": "data/interleaved-learning-20261120/retention-objective-confirmation/birth_813/odor/uniform/checkpoint_8000.npz",
+      "sha256": "800c62ee75b0895399fca902b8368f474651b392238522f9e7387a70d9a3b1d7"
+    },
+    "814": {
+      "path": "data/interleaved-learning-20261120/retention-objective-confirmation/birth_814/odor/uniform/checkpoint_8000.npz",
+      "sha256": "8134746dadfcdd06e908b28b968a1575fff935d51e88de53c2b10d8e212dae67"
+    },
+    "815": {
+      "path": "data/interleaved-learning-20261120/retention-objective-confirmation/birth_815/odor/uniform/checkpoint_8000.npz",
+      "sha256": "7e6e1abad5bc3f84270c40773b4ef91535288b8d0173e1bd2aaf086ec637dc1e"
+    },
+    "816": {
+      "path": "data/interleaved-learning-20261120/retention-objective-confirmation/birth_816/odor/uniform/checkpoint_8000.npz",
+      "sha256": "379a9d3d88c2c161c7ef5575d927d8abed5de70fe12dbe8eaf23cad333102bdd"
+    }
+  },
+  "files": {
+    "811-15.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/811-15.npz",
+      "sha256": "57eb797937f0378ee5e01bad15bcf0735b398e6bc27e75bda3d276e298b870ad"
+    },
+    "811-30.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/811-30.npz",
+      "sha256": "0e1cec51b41d97f974e538047c4edb3bca6444ff0a5c97ea86f65df41c424035"
+    },
+    "811-90.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/811-90.npz",
+      "sha256": "d7c1d97d9a45d31fde83d89b3b47c33126d529a04454ab95f01a836e77274372"
+    },
+    "812-15.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/812-15.npz",
+      "sha256": "94545e5a2aebf89bdca52f4fe1b41b832e4ea0b61685cc0614900c3882ef2b35"
+    },
+    "812-30.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/812-30.npz",
+      "sha256": "63b5b8641be1add0cabf1287ac79c2d625002e88635afcfe34385c7e19c0d17c"
+    },
+    "812-90.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/812-90.npz",
+      "sha256": "336254b81edff401b3dfe52fabe794548c393e4e1995d237425cb2ea4b1fa381"
+    },
+    "813-15.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/813-15.npz",
+      "sha256": "3bef19a0ac7b449b58e844a79feccd117330a4dc9c747dcbb00bfc5cae245e0a"
+    },
+    "813-30.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/813-30.npz",
+      "sha256": "2251e4acf819b393e214cf414808bd8f56e17a6abb4dc96da02aac43a046a015"
+    },
+    "813-90.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/813-90.npz",
+      "sha256": "3c4f5b7d4eb88c9d1dac8b08f70c0b52ae2c0015596850ee9780f9eeb7c9b103"
+    },
+    "814-15.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/814-15.npz",
+      "sha256": "bfd876102676af91ddd3dc86b7e454f2a1ab7ae5bacd2ee9b33e9e67288ec6c3"
+    },
+    "814-30.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/814-30.npz",
+      "sha256": "f00ca8fdbaa05ea39e07400f24ab5f607c4b829da95dfe34c33373af981f076e"
+    },
+    "814-90.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/814-90.npz",
+      "sha256": "1d2bdefa205ef824d90b85af0b86cb7c0974f5dd1131336b0e50770c0bb0e52c"
+    },
+    "815-15.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/815-15.npz",
+      "sha256": "9635b607262084d766560b3ff26360f61b9173b3a68137ba8095391f29fbfab3"
+    },
+    "815-30.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/815-30.npz",
+      "sha256": "944463ba7774bebf8f1156b00bb6493df261cc28809c9d5f4198b5b5d036f13d"
+    },
+    "815-90.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/815-90.npz",
+      "sha256": "f0f0772e5993aa061202440d14ad700d734fd01d0a2fc65dcaa561f1ffc3ca71"
+    },
+    "816-15.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/816-15.npz",
+      "sha256": "115e44a769215ce9c89ba639867bc7a70310ee3bfc68e589e6fc309dfe2e715d"
+    },
+    "816-30.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/816-30.npz",
+      "sha256": "8d873e2931c0d953d6c1f3982e6b8f34ab25809c7d2162d58f204b73925a0006"
+    },
+    "816-90.npz": {
+      "path": "data/draft-rehearsal-20261120/eval-heldout/816-90.npz",
+      "sha256": "e8f37b503c617266a6bfccbf20bcc73dc5068f672ea7cd2dc36c72b8205d5e47"
+    }
+  }
+}

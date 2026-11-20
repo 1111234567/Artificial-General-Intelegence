@@ -1,0 +1,528 @@
+{
+  "protocol_sha256": "0cead404a4acec2451a31d0cc06d82df3bae772d869b35faf4e4cb19dfbd6d08",
+  "verified_routes": 1769472,
+  "fits": {
+    "reward/731": {
+      "file": "data/fork-lesson-20261120/fit/reward/seed-731.pt",
+      "sha256": "5f4c73052ca72e832a636df24c42190640a5f7d4921420e114073cd4495e99b6",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 620,
+      "first_64": {
+        "delayed_return": 0.01318359375,
+        "right_fraction": 0.366455078125,
+        "selected_propensity": 0.6329407691955566,
+        "observed_mse": 1.1072380542755127,
+        "teacher_mse": 1.1072380542755127,
+        "policy_loss": -0.017221687361598015,
+        "gradient_norm": 0.7618961930274963,
+        "forecast_span": 0.29507046937942505,
+        "return_current_rms": 0.1323714256286621
+      },
+      "last_64": {
+        "delayed_return": 0.150390625,
+        "right_fraction": 0.353271484375,
+        "selected_propensity": 0.7652727365493774,
+        "observed_mse": 1.2924470901489258,
+        "teacher_mse": 1.2924470901489258,
+        "policy_loss": -0.08329658955335617,
+        "gradient_norm": 0.5692367553710938,
+        "forecast_span": 0.5553259253501892,
+        "return_current_rms": 0.2857659161090851
+      }
+    },
+    "reward/733": {
+      "file": "data/fork-lesson-20261120/fit/reward/seed-733.pt",
+      "sha256": "618ce4cc2b9d6f758082c9eafefd499039b65a72edf17ba644763a1f57c6c035",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 574,
+      "first_64": {
+        "delayed_return": 0.01806640625,
+        "right_fraction": 0.50732421875,
+        "selected_propensity": 0.5939947962760925,
+        "observed_mse": 1.1260507106781006,
+        "teacher_mse": 1.1260507106781006,
+        "policy_loss": -0.00021219125483185053,
+        "gradient_norm": 1.0073295831680298,
+        "forecast_span": 0.36907801032066345,
+        "return_current_rms": 0.2172173261642456
+      },
+      "last_64": {
+        "delayed_return": 0.349609375,
+        "right_fraction": 0.4638671875,
+        "selected_propensity": 0.735729455947876,
+        "observed_mse": 1.3039662837982178,
+        "teacher_mse": 1.3039662837982178,
+        "policy_loss": -0.21636715531349182,
+        "gradient_norm": 2.3610727787017822,
+        "forecast_span": 0.8004080653190613,
+        "return_current_rms": 0.4151120185852051
+      }
+    },
+    "reward/735": {
+      "file": "data/fork-lesson-20261120/fit/reward/seed-735.pt",
+      "sha256": "f5b35dafa143902289e0e09fece0a41dc5645f58b1c58e6e4a638eae5ab16815",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 594,
+      "first_64": {
+        "delayed_return": 0.01513671875,
+        "right_fraction": 0.64453125,
+        "selected_propensity": 0.7105259299278259,
+        "observed_mse": 1.0903633832931519,
+        "teacher_mse": 1.0903633832931519,
+        "policy_loss": -0.02127065509557724,
+        "gradient_norm": 1.7064787149429321,
+        "forecast_span": 0.4348789155483246,
+        "return_current_rms": 0.17579320073127747
+      },
+      "last_64": {
+        "delayed_return": 0.28369140625,
+        "right_fraction": 0.583984375,
+        "selected_propensity": 0.7593340873718262,
+        "observed_mse": 1.0123348236083984,
+        "teacher_mse": 1.0123348236083984,
+        "policy_loss": -0.1759527027606964,
+        "gradient_norm": 1.110919713973999,
+        "forecast_span": 0.470329225063324,
+        "return_current_rms": 0.26595067977905273
+      }
+    },
+    "whole/731": {
+      "file": "data/fork-lesson-20261120/fit/whole/seed-731.pt",
+      "sha256": "24e01d5cbbca86f2adadf8819e3ee867a76d3fef7362a7a17cfdd36faf034a63",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 620,
+      "first_64": {
+        "delayed_return": 0.0078125,
+        "right_fraction": 0.402587890625,
+        "selected_propensity": 0.6200249195098877,
+        "observed_mse": 1.0174570083618164,
+        "teacher_mse": 1.0174570083618164,
+        "policy_loss": -0.016015175729990005,
+        "gradient_norm": 1.3841098546981812,
+        "forecast_span": 0.18469037115573883,
+        "return_current_rms": 0.11040341854095459
+      },
+      "last_64": {
+        "delayed_return": 0.35205078125,
+        "right_fraction": 0.455322265625,
+        "selected_propensity": 0.7046058773994446,
+        "observed_mse": 0.019484322518110275,
+        "teacher_mse": 0.019484322518110275,
+        "policy_loss": -0.2422216534614563,
+        "gradient_norm": 2.4777166843414307,
+        "forecast_span": 0.9490276575088501,
+        "return_current_rms": 0.5736873745918274
+      }
+    },
+    "whole/733": {
+      "file": "data/fork-lesson-20261120/fit/whole/seed-733.pt",
+      "sha256": "ba8878cc76f1b262dccd9b14f61259d154bf65dc1809e2374dfa66edc79a949f",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 574,
+      "first_64": {
+        "delayed_return": 0.0302734375,
+        "right_fraction": 0.60400390625,
+        "selected_propensity": 0.5835995078086853,
+        "observed_mse": 1.0285365581512451,
+        "teacher_mse": 1.0285365581512451,
+        "policy_loss": -0.005905237980186939,
+        "gradient_norm": 2.0331058502197266,
+        "forecast_span": 0.2711332142353058,
+        "return_current_rms": 0.1853611171245575
+      },
+      "last_64": {
+        "delayed_return": 0.3125,
+        "right_fraction": 0.466064453125,
+        "selected_propensity": 0.7229387760162354,
+        "observed_mse": 0.05315433070063591,
+        "teacher_mse": 0.05315433070063591,
+        "policy_loss": -0.20668275654315948,
+        "gradient_norm": 2.2293574810028076,
+        "forecast_span": 0.8956829309463501,
+        "return_current_rms": 0.6764128804206848
+      }
+    },
+    "whole/735": {
+      "file": "data/fork-lesson-20261120/fit/whole/seed-735.pt",
+      "sha256": "405a34cb8b75bf356ad7694230899107017377d14a3207dc3c9c3fa128212256",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 594,
+      "first_64": {
+        "delayed_return": 0.0068359375,
+        "right_fraction": 0.401611328125,
+        "selected_propensity": 0.6815780401229858,
+        "observed_mse": 0.9904156923294067,
+        "teacher_mse": 0.9904156923294067,
+        "policy_loss": -0.01864035241305828,
+        "gradient_norm": 1.5221364498138428,
+        "forecast_span": 0.15740564465522766,
+        "return_current_rms": 0.19176799058914185
+      },
+      "last_64": {
+        "delayed_return": 0.369140625,
+        "right_fraction": 0.51806640625,
+        "selected_propensity": 0.745130181312561,
+        "observed_mse": 0.03689121454954147,
+        "teacher_mse": 0.03689121454954147,
+        "policy_loss": -0.22981661558151245,
+        "gradient_norm": 3.9353883266448975,
+        "forecast_span": 0.9056486487388611,
+        "return_current_rms": 0.6930439472198486
+      }
+    },
+    "sham/731": {
+      "file": "data/fork-lesson-20261120/fit/sham/seed-731.pt",
+      "sha256": "03a36080f19093f679f611f0c7a196a3697b681c3841d0e0fe98fb932a6d2184",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 620,
+      "first_64": {
+        "delayed_return": -0.0029296875,
+        "right_fraction": 0.447509765625,
+        "selected_propensity": 0.6187955141067505,
+        "observed_mse": 1.0342998504638672,
+        "teacher_mse": 1.0301307439804077,
+        "policy_loss": -0.009701142087578773,
+        "gradient_norm": 1.2685470581054688,
+        "forecast_span": 0.1620865911245346,
+        "return_current_rms": 0.10755807161331177
+      },
+      "last_64": {
+        "delayed_return": 0.34716796875,
+        "right_fraction": 0.486572265625,
+        "selected_propensity": 0.739270031452179,
+        "observed_mse": 0.8855364322662354,
+        "teacher_mse": 0.8855835199356079,
+        "policy_loss": -0.21947158873081207,
+        "gradient_norm": 1.5933791399002075,
+        "forecast_span": 0.09025561809539795,
+        "return_current_rms": 0.29059556126594543
+      }
+    },
+    "sham/733": {
+      "file": "data/fork-lesson-20261120/fit/sham/seed-733.pt",
+      "sha256": "080df879058575451a8860a6873de81447692284dcdb75101ce6cf5a202c8840",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 574,
+      "first_64": {
+        "delayed_return": 0.02197265625,
+        "right_fraction": 0.40478515625,
+        "selected_propensity": 0.5997180938720703,
+        "observed_mse": 1.0400800704956055,
+        "teacher_mse": 1.061506748199463,
+        "policy_loss": -0.0006929170340299606,
+        "gradient_norm": 1.6985098123550415,
+        "forecast_span": 0.28196850419044495,
+        "return_current_rms": 0.1951810121536255
+      },
+      "last_64": {
+        "delayed_return": 0.16748046875,
+        "right_fraction": 0.29541015625,
+        "selected_propensity": 0.7617119550704956,
+        "observed_mse": 0.9645236134529114,
+        "teacher_mse": 0.9766555428504944,
+        "policy_loss": -0.10303641855716705,
+        "gradient_norm": 0.7880125045776367,
+        "forecast_span": 0.11132477968931198,
+        "return_current_rms": 0.25577065348625183
+      }
+    },
+    "sham/735": {
+      "file": "data/fork-lesson-20261120/fit/sham/seed-735.pt",
+      "sha256": "a824c0ba8018f782d8d45d6346a18a4f2a018c75eaaa9f854abd2535a06d1df4",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 594,
+      "first_64": {
+        "delayed_return": 0.00048828125,
+        "right_fraction": 0.446533203125,
+        "selected_propensity": 0.6720451712608337,
+        "observed_mse": 1.005503535270691,
+        "teacher_mse": 1.0209190845489502,
+        "policy_loss": -0.014945332892239094,
+        "gradient_norm": 1.6375560760498047,
+        "forecast_span": 0.1684960424900055,
+        "return_current_rms": 0.18238511681556702
+      },
+      "last_64": {
+        "delayed_return": 0.22119140625,
+        "right_fraction": 0.349365234375,
+        "selected_propensity": 0.7550352811813354,
+        "observed_mse": 0.9456369876861572,
+        "teacher_mse": 0.9561668634414673,
+        "policy_loss": -0.12261036038398743,
+        "gradient_norm": 1.3901368379592896,
+        "forecast_span": 0.07457602024078369,
+        "return_current_rms": 0.36293283104896545
+      }
+    },
+    "bridge/731": {
+      "file": "data/fork-lesson-20261120/fit/bridge/seed-731.pt",
+      "sha256": "c28059de5c958c853e2f0ad945915d7cd15984a037a22e086c245b354db9cda3",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 620,
+      "first_64": {
+        "delayed_return": 0.00927734375,
+        "right_fraction": 0.390869140625,
+        "selected_propensity": 0.6310931444168091,
+        "observed_mse": 1.0484144687652588,
+        "teacher_mse": 1.0484144687652588,
+        "policy_loss": -0.01789805106818676,
+        "gradient_norm": 0.9972833395004272,
+        "forecast_span": 0.26126089692115784,
+        "return_current_rms": 0.12124308943748474
+      },
+      "last_64": {
+        "delayed_return": 0.228515625,
+        "right_fraction": 0.490234375,
+        "selected_propensity": 0.7081908583641052,
+        "observed_mse": 0.9144179224967957,
+        "teacher_mse": 0.9144179224967957,
+        "policy_loss": -0.15450987219810486,
+        "gradient_norm": 2.879899501800537,
+        "forecast_span": 0.7985409498214722,
+        "return_current_rms": 0.5461713075637817
+      }
+    },
+    "bridge/733": {
+      "file": "data/fork-lesson-20261120/fit/bridge/seed-733.pt",
+      "sha256": "62cd9454afe4fc2ef393a206ad6ff86014aac550d4679116ad63606f2dd20aef",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 574,
+      "first_64": {
+        "delayed_return": 0.02197265625,
+        "right_fraction": 0.478271484375,
+        "selected_propensity": 0.5952709913253784,
+        "observed_mse": 1.0720134973526,
+        "teacher_mse": 1.0720134973526,
+        "policy_loss": -0.003878568997606635,
+        "gradient_norm": 1.3348921537399292,
+        "forecast_span": 0.33654090762138367,
+        "return_current_rms": 0.207954540848732
+      },
+      "last_64": {
+        "delayed_return": 0.3505859375,
+        "right_fraction": 0.43017578125,
+        "selected_propensity": 0.7475777864456177,
+        "observed_mse": 0.7392235994338989,
+        "teacher_mse": 0.7392235994338989,
+        "policy_loss": -0.20390333235263824,
+        "gradient_norm": 1.6656783819198608,
+        "forecast_span": 0.5326866507530212,
+        "return_current_rms": 0.48113465309143066
+      }
+    },
+    "bridge/735": {
+      "file": "data/fork-lesson-20261120/fit/bridge/seed-735.pt",
+      "sha256": "5dac2b81b15dca5e89a8699b1c4164296e14486e665664f29c2347ac6d8e5ce8",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 594,
+      "first_64": {
+        "delayed_return": 0.0048828125,
+        "right_fraction": 0.6064453125,
+        "selected_propensity": 0.7000808119773865,
+        "observed_mse": 1.0550950765609741,
+        "teacher_mse": 1.0550950765609741,
+        "policy_loss": -0.022638292983174324,
+        "gradient_norm": 1.61967134475708,
+        "forecast_span": 0.31050267815589905,
+        "return_current_rms": 0.1649763286113739
+      },
+      "last_64": {
+        "delayed_return": 0.28076171875,
+        "right_fraction": 0.576416015625,
+        "selected_propensity": 0.7581520080566406,
+        "observed_mse": 0.6846861839294434,
+        "teacher_mse": 0.6846861839294434,
+        "policy_loss": -0.18555276095867157,
+        "gradient_norm": 1.7788912057876587,
+        "forecast_span": 0.6310873031616211,
+        "return_current_rms": 0.8262964487075806
+      }
+    },
+    "cut_out/731": {
+      "file": "data/fork-lesson-20261120/fit/cut_out/seed-731.pt",
+      "sha256": "0f7102c871516158a62c4eb8d5470e1d649f9979fbdb3b50fc7fc9bc5c4fedde",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 620,
+      "first_64": {
+        "delayed_return": 0.0029296875,
+        "right_fraction": 0.4384765625,
+        "selected_propensity": 0.6169719099998474,
+        "observed_mse": 1.0052874088287354,
+        "teacher_mse": 1.0052874088287354,
+        "policy_loss": -0.012930214405059814,
+        "gradient_norm": 1.2667371034622192,
+        "forecast_span": 0.1469970941543579,
+        "return_current_rms": 0.053608641028404236
+      },
+      "last_64": {
+        "delayed_return": 0.32080078125,
+        "right_fraction": 0.447021484375,
+        "selected_propensity": 0.6974177956581116,
+        "observed_mse": 0.09112720191478729,
+        "teacher_mse": 0.09112720191478729,
+        "policy_loss": -0.2256334275007248,
+        "gradient_norm": 3.9046239852905273,
+        "forecast_span": 0.9462578892707825,
+        "return_current_rms": 0.3824511766433716
+      }
+    },
+    "cut_out/733": {
+      "file": "data/fork-lesson-20261120/fit/cut_out/seed-733.pt",
+      "sha256": "d76944cd892cc3d51752f26a0b914968a1b3a8ed891da933878cd74a0bea7961",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 574,
+      "first_64": {
+        "delayed_return": 0.029296875,
+        "right_fraction": 0.321533203125,
+        "selected_propensity": 0.5966967940330505,
+        "observed_mse": 1.0323913097381592,
+        "teacher_mse": 1.0323913097381592,
+        "policy_loss": -0.011951364576816559,
+        "gradient_norm": 1.5345118045806885,
+        "forecast_span": 0.24891020357608795,
+        "return_current_rms": 0.14463917911052704
+      },
+      "last_64": {
+        "delayed_return": 0.2900390625,
+        "right_fraction": 0.419921875,
+        "selected_propensity": 0.7105395793914795,
+        "observed_mse": 0.046328261494636536,
+        "teacher_mse": 0.046328261494636536,
+        "policy_loss": -0.21045903861522675,
+        "gradient_norm": 3.4826443195343018,
+        "forecast_span": 0.9049918055534363,
+        "return_current_rms": 0.8004522323608398
+      }
+    },
+    "cut_out/735": {
+      "file": "data/fork-lesson-20261120/fit/cut_out/seed-735.pt",
+      "sha256": "dfb0c672b40f8e9a915ffd7e75947eb777dc0dedb2bad47c2a67432a7adc63bf",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 594,
+      "first_64": {
+        "delayed_return": -0.0078125,
+        "right_fraction": 0.668701171875,
+        "selected_propensity": 0.6785219311714172,
+        "observed_mse": 1.005881428718567,
+        "teacher_mse": 1.005881428718567,
+        "policy_loss": -0.008726900443434715,
+        "gradient_norm": 1.2280049324035645,
+        "forecast_span": 0.16516253352165222,
+        "return_current_rms": 0.11031056940555573
+      },
+      "last_64": {
+        "delayed_return": 0.345703125,
+        "right_fraction": 0.4892578125,
+        "selected_propensity": 0.7273846864700317,
+        "observed_mse": 0.1218205913901329,
+        "teacher_mse": 0.1218205913901329,
+        "policy_loss": -0.21989363431930542,
+        "gradient_norm": 3.6983134746551514,
+        "forecast_span": 0.9773309230804443,
+        "return_current_rms": 0.4548186659812927
+      }
+    },
+    "cut_back/731": {
+      "file": "data/fork-lesson-20261120/fit/cut_back/seed-731.pt",
+      "sha256": "46582e25e5255ab4db9fd46489150a66c1b0c18f0b303197faf855c3da4037f9",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 620,
+      "first_64": {
+        "delayed_return": 0.0048828125,
+        "right_fraction": 0.453369140625,
+        "selected_propensity": 0.6178785562515259,
+        "observed_mse": 1.006549596786499,
+        "teacher_mse": 1.006549596786499,
+        "policy_loss": -0.013816590420901775,
+        "gradient_norm": 1.0999512672424316,
+        "forecast_span": 0.14792557060718536,
+        "return_current_rms": 0.0
+      },
+      "last_64": {
+        "delayed_return": 0.32568359375,
+        "right_fraction": 0.462158203125,
+        "selected_propensity": 0.7284897565841675,
+        "observed_mse": 0.16076968610286713,
+        "teacher_mse": 0.16076968610286713,
+        "policy_loss": -0.23080377280712128,
+        "gradient_norm": 4.761575698852539,
+        "forecast_span": 1.057631254196167,
+        "return_current_rms": 0.0
+      }
+    },
+    "cut_back/733": {
+      "file": "data/fork-lesson-20261120/fit/cut_back/seed-733.pt",
+      "sha256": "7aff0c2dd8c88387f17298d53c73c9df4202bb478fe9aaea094b6ec093e22493",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 574,
+      "first_64": {
+        "delayed_return": 0.03515625,
+        "right_fraction": 0.512451171875,
+        "selected_propensity": 0.544780969619751,
+        "observed_mse": 1.009358286857605,
+        "teacher_mse": 1.009358286857605,
+        "policy_loss": -0.008018391206860542,
+        "gradient_norm": 1.497102975845337,
+        "forecast_span": 0.19584622979164124,
+        "return_current_rms": 0.0
+      },
+      "last_64": {
+        "delayed_return": 0.35986328125,
+        "right_fraction": 0.510009765625,
+        "selected_propensity": 0.7275210618972778,
+        "observed_mse": 0.09844254702329636,
+        "teacher_mse": 0.09844254702329636,
+        "policy_loss": -0.2443079948425293,
+        "gradient_norm": 2.3434255123138428,
+        "forecast_span": 0.821118950843811,
+        "return_current_rms": 0.0
+      }
+    },
+    "cut_back/735": {
+      "file": "data/fork-lesson-20261120/fit/cut_back/seed-735.pt",
+      "sha256": "4a499d91f4964c9eaf54ca4a09c25adcb8c0a59e7f2a05d743e742c64d8a2a9b",
+      "steps": 1536,
+      "verified_routes": 98304,
+      "present_edges": 594,
+      "first_64": {
+        "delayed_return": 0.00439453125,
+        "right_fraction": 0.664794921875,
+        "selected_propensity": 0.68705153465271,
+        "observed_mse": 0.9895135164260864,
+        "teacher_mse": 0.9895135164260864,
+        "policy_loss": -0.01583649031817913,
+        "gradient_norm": 0.986391544342041,
+        "forecast_span": 0.1979762613773346,
+        "return_current_rms": 0.0
+      },
+      "last_64": {
+        "delayed_return": 0.30078125,
+        "right_fraction": 0.46435546875,
+        "selected_propensity": 0.7485734224319458,
+        "observed_mse": 0.14278948307037354,
+        "teacher_mse": 0.14278948307037354,
+        "policy_loss": -0.19164027273654938,
+        "gradient_norm": 3.5788393020629883,
+        "forecast_span": 0.8265052437782288,
+        "return_current_rms": 0.0
+      }
+    }
+  }
+}

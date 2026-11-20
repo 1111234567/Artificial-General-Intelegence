@@ -1,0 +1,93 @@
+{
+  "main_protocol_sha256": "ccfd584356c753ac14b166bf5e4f229ec4cb7c1457e717ebd739effdff998ea0",
+  "training_domain": 18693173,
+  "kinds": [
+    "terminal",
+    "next_room"
+  ],
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "steps": 1792,
+  "easy_steps": 256,
+  "batch": 64,
+  "backend": "cpu",
+  "source_sha256": "70a845e5123910afce978c824a8ab18801c8e00b80fc81ee8a84ca6fdd88df8c",
+  "plan_sha256": "10fc6beacaaf126c933ed7d8d5225d46023bc57fa64610e744b5c4fd66f048ba",
+  "map_tuple": [
+    "prior endpoint from room 0",
+    "prior endpoint from room 1",
+    "remaining endpoint"
+  ],
+  "training_maps": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      1
+    ]
+  ],
+  "heldout_maps": [
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "samples": "Generate from the main environment and retain only even maps. Each update uses the first 64 accepted rows in deterministic blocks. The exploration draws have a separate substream.",
+  "curve_columns": [
+    "paid",
+    "query_action_match",
+    "weighted_terminal_mse",
+    "weighted_real_room_mse",
+    "weighted_room_teacher_mse",
+    "weighted_real_room_acc",
+    "policy_loss",
+    "gradient_norm",
+    "query_right",
+    "action_right",
+    "used_room_target_count"
+  ],
+  "route_columns": [
+    "query_draw",
+    "query_right_probability",
+    "query",
+    "action_draw",
+    "action_right_probability",
+    "action",
+    "actual_room",
+    "actual_endpoint",
+    "paid",
+    "forecast_room",
+    "forecast_pay",
+    "actual_route_weight",
+    "room_teacher_source",
+    "room_teacher_target",
+    "query_logit",
+    "action_logit"
+  ]
+}

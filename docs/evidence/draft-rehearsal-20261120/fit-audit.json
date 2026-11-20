@@ -1,0 +1,28 @@
+{
+  "protocol_sha256": "a77dc19aa38204d1955a3150f5bf97d1bbf1e14d9e04210941eb567fa821f9c9",
+  "fit_heads_sha256": "12f76b67ba69e52cd3e0b702dccaba6abed950aa5591f340a452665b83cd8798",
+  "audited_routes_across_arms_and_replicas": 2211840,
+  "per_run_numeric_dose_max_signed_error": 7.152557373046875e-07,
+  "compute_seconds_measured_before_archive_io": [
+    {
+      "prefix": 42.882542699881014,
+      "pre": 38.54712339997059,
+      "post": 38.475210099895776,
+      "wrong": 38.53522140001587
+    },
+    {
+      "prefix": 42.91579900000215,
+      "pre": 38.69328329995187,
+      "post": 38.746810400007234,
+      "wrong": 38.74058809998678
+    }
+  ],
+  "verified": [
+    "fit checkpoint and action ledger hashes",
+    "shared true contact logs across arms",
+    "zero-head arms produce identical first-update address and real revisit decisions",
+    "virtual taste sign transforms from the appropriate true receipt",
+    "revisit order and outcome emitted by the selected route",
+    "matching per-route counts, per-update dose and observed outcomes against aggregate curves"
+  ]
+}

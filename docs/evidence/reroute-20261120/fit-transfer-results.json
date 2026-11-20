@@ -1,0 +1,1504 @@
+{
+  "audit_source_sha256": "a0bc5b942709659d075326d7d10bf659e34b5f52475b3ec21adf53e8f349f7ab",
+  "protocol_sha256": "2ad97992ff9d573e0734670f56f11cea721928ff8c09fba15f4d1e1e9b0558b1",
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "steps": 1792,
+  "batch": 64,
+  "cohorts": {
+    "731": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 38492,
+          "1,2": 37833,
+          "2,0": 38363
+        },
+        "current_room_endpoints": {
+          "0,0": 8967,
+          "0,1": 12295,
+          "0,2": 17188,
+          "1,0": 16970,
+          "1,1": 8962,
+          "1,2": 12071,
+          "2,0": 12453,
+          "2,1": 17132,
+          "2,2": 8650
+        },
+        "easy_cases": [
+          716,
+          1324,
+          12339,
+          2005
+        ],
+        "formal_cases": [
+          16359,
+          32891,
+          24480,
+          24574
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-terminal/birth-731.pt",
+          "sha256": "957259a380e32042f8f6bf714e0bdcaf9dab88ac44f1e14a91b321d2a592007a",
+          "birth_sha256": "e10dc474ad55e84082bc84bd564567d18fc0668503a819d731c558c01f1599d7",
+          "training_seconds": 364.98811900000146,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 310,
+            "bias": 40,
+            "gate": 620,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.0791846513748169,
+                1.2685514688491821,
+                0.004455516114830971,
+                0.742763876914978
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.08174209296703339,
+                1.4031798839569092,
+                0.017625821754336357,
+                0.9135062098503113
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 61334,
+          "matched_case_counts": [
+            8800,
+            18141,
+            20311,
+            14082
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.05975341796875,
+            "query_action_match": 0.590576171875,
+            "weighted_terminal_mse": 0.6177078485488892,
+            "weighted_real_room_mse": 1.023442029953003,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5072073340415955,
+            "policy_loss": -0.026027005165815353,
+            "gradient_norm": 2.5655629634857178,
+            "query_right": 0.6453857421875,
+            "action_right": 0.71484375,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.09197998046875,
+            "query_action_match": 0.5567626953125,
+            "weighted_terminal_mse": 0.6116716861724854,
+            "weighted_real_room_mse": 1.045108437538147,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.49899184703826904,
+            "policy_loss": -0.057823602110147476,
+            "gradient_norm": 3.6800217628479004,
+            "query_right": 0.64312744140625,
+            "action_right": 0.63458251953125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.20501708984375,
+            "query_action_match": 0.50634765625,
+            "weighted_terminal_mse": 0.4499184489250183,
+            "weighted_real_room_mse": 1.0896210670471191,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4737001657485962,
+            "policy_loss": -0.14370039105415344,
+            "gradient_norm": 5.611273765563965,
+            "query_right": 0.567626953125,
+            "action_right": 0.5313720703125,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-next_room/birth-731.pt",
+          "sha256": "ba469ec85a5d6d5d527b512860826d5e10e7a95b407235b0659ce4be1b7e92cb",
+          "birth_sha256": "e10dc474ad55e84082bc84bd564567d18fc0668503a819d731c558c01f1599d7",
+          "training_seconds": 382.6746676000039,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 310,
+            "bias": 40,
+            "gate": 620,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.0791846513748169,
+                1.2685514688491821,
+                0.004455516114830971,
+                0.742763876914978
+              ],
+              "room": [
+                0.04008752852678299,
+                0.7093169689178467,
+                0.004007344134151936,
+                0.4653080999851227
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.1732640266418457,
+                3.021333694458008,
+                0.03901395946741104,
+                1.9288628101348877
+              ],
+              "room": [
+                0.07400520890951157,
+                0.9752712249755859,
+                0.009300862438976765,
+                0.6226296424865723
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 64307,
+          "matched_case_counts": [
+            9428,
+            19437,
+            20699,
+            14743
+          ],
+          "room_targets_applied": 64307,
+          "first_256": {
+            "paid": 0.05145263671875,
+            "query_action_match": 0.5634765625,
+            "weighted_terminal_mse": 0.6117603778839111,
+            "weighted_real_room_mse": 1.0021108388900757,
+            "weighted_room_teacher_mse": 1.0021108388900757,
+            "weighted_real_room_acc": 0.501386821269989,
+            "policy_loss": -0.030620403587818146,
+            "gradient_norm": 2.9486098289489746,
+            "query_right": 0.61517333984375,
+            "action_right": 0.69659423828125,
+            "used_room_target_count": 36.0625
+          },
+          "first_formal_256": {
+            "paid": 0.109619140625,
+            "query_action_match": 0.561279296875,
+            "weighted_terminal_mse": 0.5736716389656067,
+            "weighted_real_room_mse": 0.9929128289222717,
+            "weighted_room_teacher_mse": 0.9929128289222717,
+            "weighted_real_room_acc": 0.528724730014801,
+            "policy_loss": -0.07689826190471649,
+            "gradient_norm": 5.767134666442871,
+            "query_right": 0.64239501953125,
+            "action_right": 0.62408447265625,
+            "used_room_target_count": 35.921875
+          },
+          "last_256": {
+            "paid": 0.14459228515625,
+            "query_action_match": 0.5540771484375,
+            "weighted_terminal_mse": 0.4792216420173645,
+            "weighted_real_room_mse": 0.6211986541748047,
+            "weighted_room_teacher_mse": 0.6211986541748047,
+            "weighted_real_room_acc": 0.8352197408676147,
+            "policy_loss": -0.09690938889980316,
+            "gradient_norm": 9.053556442260742,
+            "query_right": 0.67205810546875,
+            "action_right": 0.59429931640625,
+            "used_room_target_count": 35.4609375
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 102082,
+          "same_action": 97713,
+          "same_both": 87308,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "732": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 38176,
+          "1,2": 38444,
+          "2,0": 38068
+        },
+        "current_room_endpoints": {
+          "0,0": 8788,
+          "0,1": 12248,
+          "0,2": 17162,
+          "1,0": 17016,
+          "1,1": 8881,
+          "1,2": 12470,
+          "2,0": 12298,
+          "2,1": 16997,
+          "2,2": 8828
+        },
+        "easy_cases": [
+          643,
+          1424,
+          12268,
+          2049
+        ],
+        "formal_cases": [
+          16281,
+          32827,
+          24748,
+          24448
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-terminal/birth-732.pt",
+          "sha256": "0ad089cb815438b21076dc08e1606db40d318410a71cc6f27d38b1f376782704",
+          "birth_sha256": "f8e773af6f166efbea0ef69e980561a93102ba8768d22f988620cee7a21c293b",
+          "training_seconds": 335.3502490000028,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 277,
+            "bias": 40,
+            "gate": 554,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.07007106393575668,
+                0.7474581003189087,
+                0.0014759150799363852,
+                0.4671216309070587
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.2379341423511505,
+                1.6799153089523315,
+                0.022873343899846077,
+                1.0518776178359985
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 65010,
+          "matched_case_counts": [
+            9469,
+            19066,
+            21524,
+            14951
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.029296875,
+            "query_action_match": 0.63201904296875,
+            "weighted_terminal_mse": 0.6381683349609375,
+            "weighted_real_room_mse": 1.0149023532867432,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.516278088092804,
+            "policy_loss": -0.0216194037348032,
+            "gradient_norm": 1.4545568227767944,
+            "query_right": 0.61663818359375,
+            "action_right": 0.64111328125,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.0828857421875,
+            "query_action_match": 0.58160400390625,
+            "weighted_terminal_mse": 0.6120477914810181,
+            "weighted_real_room_mse": 1.0436134338378906,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.505159854888916,
+            "policy_loss": -0.06729233264923096,
+            "gradient_norm": 2.8367161750793457,
+            "query_right": 0.53466796875,
+            "action_right": 0.53900146484375,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.2352294921875,
+            "query_action_match": 0.54998779296875,
+            "weighted_terminal_mse": 0.4573504328727722,
+            "weighted_real_room_mse": 1.1376060247421265,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4854929447174072,
+            "policy_loss": -0.178684800863266,
+            "gradient_norm": 5.848074913024902,
+            "query_right": 0.51898193359375,
+            "action_right": 0.490478515625,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-next_room/birth-732.pt",
+          "sha256": "00774e0edee1167d3aa67dcfb64ed6bd45fcd2e820e3c6e4a3da1eaf9b765879",
+          "birth_sha256": "f8e773af6f166efbea0ef69e980561a93102ba8768d22f988620cee7a21c293b",
+          "training_seconds": 381.96981889999734,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 277,
+            "bias": 40,
+            "gate": 554,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.07007106393575668,
+                0.7474581003189087,
+                0.0014759150799363852,
+                0.4671216309070587
+              ],
+              "room": [
+                0.12675413489341736,
+                0.8076266646385193,
+                0.001112667960114777,
+                0.5132982134819031
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.15839387476444244,
+                1.9578973054885864,
+                0.03072565607726574,
+                1.2601056098937988
+              ],
+              "room": [
+                0.12577083706855774,
+                1.3300000429153442,
+                0.012156215496361256,
+                0.835928738117218
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 65255,
+          "matched_case_counts": [
+            9426,
+            19104,
+            21642,
+            15083
+          ],
+          "room_targets_applied": 65255,
+          "first_256": {
+            "paid": -0.0032958984375,
+            "query_action_match": 0.637939453125,
+            "weighted_terminal_mse": 0.6513239145278931,
+            "weighted_real_room_mse": 0.9749706387519836,
+            "weighted_room_teacher_mse": 0.9749706387519836,
+            "weighted_real_room_acc": 0.5626769065856934,
+            "policy_loss": 0.00018363120034337044,
+            "gradient_norm": 1.6602146625518799,
+            "query_right": 0.52734375,
+            "action_right": 0.513427734375,
+            "used_room_target_count": 40.828125
+          },
+          "first_formal_256": {
+            "paid": 0.00341796875,
+            "query_action_match": 0.61260986328125,
+            "weighted_terminal_mse": 0.6359775066375732,
+            "weighted_real_room_mse": 0.8989732265472412,
+            "weighted_room_teacher_mse": 0.8989732265472412,
+            "weighted_real_room_acc": 0.6463623046875,
+            "policy_loss": -0.018399376422166824,
+            "gradient_norm": 2.463604688644409,
+            "query_right": 0.3525390625,
+            "action_right": 0.28167724609375,
+            "used_room_target_count": 39.20703125
+          },
+          "last_256": {
+            "paid": 0.15081787109375,
+            "query_action_match": 0.5166015625,
+            "weighted_terminal_mse": 0.5022374391555786,
+            "weighted_real_room_mse": 0.4832531809806824,
+            "weighted_room_teacher_mse": 0.4832531809806824,
+            "weighted_real_room_acc": 0.8214643001556396,
+            "policy_loss": -0.12042060494422913,
+            "gradient_norm": 5.751691818237305,
+            "query_right": 0.52685546875,
+            "action_right": 0.4395751953125,
+            "used_room_target_count": 33.0625
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 88912,
+          "same_action": 86811,
+          "same_both": 68551,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "733": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 38196,
+          "1,2": 38322,
+          "2,0": 38170
+        },
+        "current_room_endpoints": {
+          "0,0": 8807,
+          "0,1": 12241,
+          "0,2": 17004,
+          "1,0": 17108,
+          "1,1": 8746,
+          "1,2": 12335,
+          "2,0": 12203,
+          "2,1": 17232,
+          "2,2": 9012
+        },
+        "easy_cases": [
+          696,
+          1322,
+          12314,
+          2052
+        ],
+        "formal_cases": [
+          16354,
+          32972,
+          24465,
+          24513
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-terminal/birth-733.pt",
+          "sha256": "1b406e1a9a8a4fc7ab902f3ee1c18b6ce8c2f08e91da691ff0229db3981bf8ee",
+          "birth_sha256": "80cea5afa7679c44d8d44ad263bd4af86f5bc53cc4878f318da6cc8ee28a4a0d",
+          "training_seconds": 397.9885820999989,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 287,
+            "bias": 40,
+            "gate": 574,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.38259124755859375,
+                4.412785530090332,
+                0.009634730406105518,
+                2.850128650665283
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.3752494752407074,
+                2.397113561630249,
+                0.022654330357909203,
+                1.5895549058914185
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 63022,
+          "matched_case_counts": [
+            9300,
+            19204,
+            19871,
+            14647
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.0118408203125,
+            "query_action_match": 0.4912109375,
+            "weighted_terminal_mse": 0.6785013675689697,
+            "weighted_real_room_mse": 1.0446439981460571,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5015515089035034,
+            "policy_loss": -0.002492882078513503,
+            "gradient_norm": 1.8446086645126343,
+            "query_right": 0.512939453125,
+            "action_right": 0.194091796875,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.023193359375,
+            "query_action_match": 0.53814697265625,
+            "weighted_terminal_mse": 0.5726770758628845,
+            "weighted_real_room_mse": 1.0560919046401978,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5035626292228699,
+            "policy_loss": -0.008693522773683071,
+            "gradient_norm": 1.9584298133850098,
+            "query_right": 0.49603271484375,
+            "action_right": 0.2353515625,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.04901123046875,
+            "query_action_match": 0.536865234375,
+            "weighted_terminal_mse": 0.4923504590988159,
+            "weighted_real_room_mse": 1.1442959308624268,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4953277111053467,
+            "policy_loss": -0.05099141597747803,
+            "gradient_norm": 2.8537940979003906,
+            "query_right": 0.5379638671875,
+            "action_right": 0.3760986328125,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-next_room/birth-733.pt",
+          "sha256": "b0ede87bb1b4550a00fac95bbbe1b678517ee4bed4a1a915182c1eb7ec1a4886",
+          "birth_sha256": "80cea5afa7679c44d8d44ad263bd4af86f5bc53cc4878f318da6cc8ee28a4a0d",
+          "training_seconds": 396.9887574000022,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 287,
+            "bias": 40,
+            "gate": 574,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.38259124755859375,
+                4.412785530090332,
+                0.009634730406105518,
+                2.850128650665283
+              ],
+              "room": [
+                0.17086011171340942,
+                2.739196300506592,
+                0.006596649065613747,
+                1.7045038938522339
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.41011905670166016,
+                2.2790207862854004,
+                0.02175198122859001,
+                1.357345461845398
+              ],
+              "room": [
+                0.16259580850601196,
+                1.5894819498062134,
+                0.0135770533233881,
+                1.0402331352233887
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 55405,
+          "matched_case_counts": [
+            8467,
+            16979,
+            16974,
+            12985
+          ],
+          "room_targets_applied": 55405,
+          "first_256": {
+            "paid": 0.0103759765625,
+            "query_action_match": 0.411376953125,
+            "weighted_terminal_mse": 0.6891852617263794,
+            "weighted_real_room_mse": 1.0081053972244263,
+            "weighted_room_teacher_mse": 1.0081053972244263,
+            "weighted_real_room_acc": 0.5115382671356201,
+            "policy_loss": -0.0034040184691548347,
+            "gradient_norm": 2.6165575981140137,
+            "query_right": 0.63671875,
+            "action_right": 0.1844482421875,
+            "used_room_target_count": 26.328125
+          },
+          "first_formal_256": {
+            "paid": 0.02154541015625,
+            "query_action_match": 0.4696044921875,
+            "weighted_terminal_mse": 0.6431131362915039,
+            "weighted_real_room_mse": 0.9601333141326904,
+            "weighted_room_teacher_mse": 0.9601333141326904,
+            "weighted_real_room_acc": 0.5900952816009521,
+            "policy_loss": -0.004427778534591198,
+            "gradient_norm": 2.1147899627685547,
+            "query_right": 0.61041259765625,
+            "action_right": 0.25518798828125,
+            "used_room_target_count": 30.0546875
+          },
+          "last_256": {
+            "paid": 0.17742919921875,
+            "query_action_match": 0.50714111328125,
+            "weighted_terminal_mse": 0.45894819498062134,
+            "weighted_real_room_mse": 0.028331948444247246,
+            "weighted_room_teacher_mse": 0.028331948444247246,
+            "weighted_real_room_acc": 0.9996527433395386,
+            "policy_loss": -0.14648407697677612,
+            "gradient_norm": 5.142125129699707,
+            "query_right": 0.6676025390625,
+            "action_right": 0.47723388671875,
+            "used_room_target_count": 32.45703125
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 91286,
+          "same_action": 95553,
+          "same_both": 76462,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "734": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 38393,
+          "1,2": 38008,
+          "2,0": 38287
+        },
+        "current_room_endpoints": {
+          "0,0": 8804,
+          "0,1": 12333,
+          "0,2": 17049,
+          "1,0": 17082,
+          "1,1": 8843,
+          "1,2": 12306,
+          "2,0": 12155,
+          "2,1": 17178,
+          "2,2": 8938
+        },
+        "easy_cases": [
+          673,
+          1340,
+          12291,
+          2080
+        ],
+        "formal_cases": [
+          16388,
+          32908,
+          24503,
+          24505
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-terminal/birth-734.pt",
+          "sha256": "0cec26a3da166dae0dbf3e319665aa9898d286de441182664916c33fd4b040df",
+          "birth_sha256": "3d80050ebf1f9b170745ee475c0132b064f22b8ada00b13dd041813421781143",
+          "training_seconds": 386.7556748999996,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 284,
+            "bias": 40,
+            "gate": 568,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.05426885932683945,
+                0.7597852945327759,
+                0.0028675675857812166,
+                0.4906267821788788
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.07543851435184479,
+                1.0783463716506958,
+                0.010538795962929726,
+                0.699285626411438
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 58316,
+          "matched_case_counts": [
+            8634,
+            17155,
+            18736,
+            13791
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.0186767578125,
+            "query_action_match": 0.4873046875,
+            "weighted_terminal_mse": 0.6467464566230774,
+            "weighted_real_room_mse": 1.0062689781188965,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5064042806625366,
+            "policy_loss": -0.005669251084327698,
+            "gradient_norm": 0.9616982936859131,
+            "query_right": 0.63128662109375,
+            "action_right": 0.58038330078125,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.1358642578125,
+            "query_action_match": 0.49359130859375,
+            "weighted_terminal_mse": 0.6109230518341064,
+            "weighted_real_room_mse": 1.0176565647125244,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.48326268792152405,
+            "policy_loss": -0.08603112399578094,
+            "gradient_norm": 2.0744078159332275,
+            "query_right": 0.5362548828125,
+            "action_right": 0.50518798828125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.23931884765625,
+            "query_action_match": 0.5142822265625,
+            "weighted_terminal_mse": 0.37993323802948,
+            "weighted_real_room_mse": 1.0696529150009155,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.49995067715644836,
+            "policy_loss": -0.1613411158323288,
+            "gradient_norm": 4.259481906890869,
+            "query_right": 0.5157470703125,
+            "action_right": 0.4884033203125,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-next_room/birth-734.pt",
+          "sha256": "fdb0caf9743b0a82bdf0d8a11950294a67429eb11cdc409d8a2cff1efb911ffc",
+          "birth_sha256": "3d80050ebf1f9b170745ee475c0132b064f22b8ada00b13dd041813421781143",
+          "training_seconds": 379.03010599999834,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 284,
+            "bias": 40,
+            "gate": 568,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.05426885932683945,
+                0.7597852945327759,
+                0.0028675675857812166,
+                0.4906267821788788
+              ],
+              "room": [
+                0.06268017739057541,
+                0.9384516477584839,
+                0.0028970064595341682,
+                0.6063019037246704
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.03288613259792328,
+                0.8105363249778748,
+                0.006671536713838577,
+                0.5312221050262451
+              ],
+              "room": [
+                0.06683792173862457,
+                1.46155846118927,
+                0.009557796642184258,
+                0.9440632462501526
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 67675,
+          "matched_case_counts": [
+            9930,
+            19941,
+            22399,
+            15405
+          ],
+          "room_targets_applied": 67675,
+          "first_256": {
+            "paid": 0.00555419921875,
+            "query_action_match": 0.6783447265625,
+            "weighted_terminal_mse": 0.6590386033058167,
+            "weighted_real_room_mse": 0.9960761070251465,
+            "weighted_room_teacher_mse": 0.9960761070251465,
+            "weighted_real_room_acc": 0.5131211280822754,
+            "policy_loss": -0.0055143507197499275,
+            "gradient_norm": 0.7919431924819946,
+            "query_right": 0.759521484375,
+            "action_right": 0.834716796875,
+            "used_room_target_count": 43.4140625
+          },
+          "first_formal_256": {
+            "paid": 0.00762939453125,
+            "query_action_match": 0.66473388671875,
+            "weighted_terminal_mse": 0.6368958353996277,
+            "weighted_real_room_mse": 0.5137136578559875,
+            "weighted_room_teacher_mse": 0.5137136578559875,
+            "weighted_real_room_acc": 0.8380352854728699,
+            "policy_loss": -0.002579890191555023,
+            "gradient_norm": 2.272237777709961,
+            "query_right": 0.761474609375,
+            "action_right": 0.83087158203125,
+            "used_room_target_count": 42.54296875
+          },
+          "last_256": {
+            "paid": 0.19940185546875,
+            "query_action_match": 0.52337646484375,
+            "weighted_terminal_mse": 0.4194464087486267,
+            "weighted_real_room_mse": 0.010849641636013985,
+            "weighted_room_teacher_mse": 0.010849641636013985,
+            "weighted_real_room_acc": 0.9992161989212036,
+            "policy_loss": -0.14460206031799316,
+            "gradient_norm": 5.7532572746276855,
+            "query_right": 0.76080322265625,
+            "action_right": 0.5206298828125,
+            "used_room_target_count": 33.49609375
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 88734,
+          "same_action": 83115,
+          "same_both": 64727,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "735": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 38049,
+          "1,2": 37965,
+          "2,0": 38674
+        },
+        "current_room_endpoints": {
+          "0,0": 8951,
+          "0,1": 12206,
+          "0,2": 17059,
+          "1,0": 16946,
+          "1,1": 8936,
+          "1,2": 12263,
+          "2,0": 12551,
+          "2,1": 16892,
+          "2,2": 8884
+        },
+        "easy_cases": [
+          668,
+          1323,
+          12387,
+          2006
+        ],
+        "formal_cases": [
+          16303,
+          32603,
+          24633,
+          24765
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-terminal/birth-735.pt",
+          "sha256": "3427cb6095efb5a10f7f46e6eed85cd4b63a1fb5dbae96dd2bb009fa4f3f3b74",
+          "birth_sha256": "50973af7e3c28c2d875260a826a61528567c4ae959cfbb29af739c796bae0adb",
+          "training_seconds": 261.0967000000019,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 297,
+            "bias": 40,
+            "gate": 594,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.09844095259904861,
+                1.3056714534759521,
+                0.0037327350582927465,
+                0.8003631830215454
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.0884111076593399,
+                0.9928998947143555,
+                0.00798887014389038,
+                0.6304765343666077
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 53877,
+          "matched_case_counts": [
+            8115,
+            16096,
+            17039,
+            12627
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": -0.0013427734375,
+            "query_action_match": 0.42535400390625,
+            "weighted_terminal_mse": 0.6486856937408447,
+            "weighted_real_room_mse": 1.0098662376403809,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5060726404190063,
+            "policy_loss": -0.004269447177648544,
+            "gradient_norm": 1.6877894401550293,
+            "query_right": 0.3499755859375,
+            "action_right": 0.75335693359375,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.03515625,
+            "query_action_match": 0.48944091796875,
+            "weighted_terminal_mse": 0.6244867444038391,
+            "weighted_real_room_mse": 1.0442485809326172,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4961451292037964,
+            "policy_loss": -0.016606776043772697,
+            "gradient_norm": 3.2855613231658936,
+            "query_right": 0.448486328125,
+            "action_right": 0.61163330078125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.2515869140625,
+            "query_action_match": 0.4698486328125,
+            "weighted_terminal_mse": 0.4876936078071594,
+            "weighted_real_room_mse": 1.1719967126846313,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.49958112835884094,
+            "policy_loss": -0.16759829223155975,
+            "gradient_norm": 5.250886917114258,
+            "query_right": 0.47064208984375,
+            "action_right": 0.49859619140625,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-next_room/birth-735.pt",
+          "sha256": "c41b5835d63fa2544a4104701ef83108614c00d1e045b36b95d319aa70dd08bf",
+          "birth_sha256": "50973af7e3c28c2d875260a826a61528567c4ae959cfbb29af739c796bae0adb",
+          "training_seconds": 239.10137479999685,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 297,
+            "bias": 40,
+            "gate": 594,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.09844095259904861,
+                1.3056714534759521,
+                0.0037327350582927465,
+                0.8003631830215454
+              ],
+              "room": [
+                0.18182560801506042,
+                1.7458635568618774,
+                0.0059856027364730835,
+                1.0893677473068237
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.11088033020496368,
+                1.346228003501892,
+                0.013454251922667027,
+                0.902623176574707
+              ],
+              "room": [
+                0.21835578978061676,
+                1.5409959554672241,
+                0.009002613835036755,
+                0.9396039843559265
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 41915,
+          "matched_case_counts": [
+            6165,
+            12472,
+            13453,
+            9825
+          ],
+          "room_targets_applied": 41915,
+          "first_256": {
+            "paid": 0.01373291015625,
+            "query_action_match": 0.3712158203125,
+            "weighted_terminal_mse": 0.6561252474784851,
+            "weighted_real_room_mse": 0.9982573390007019,
+            "weighted_room_teacher_mse": 0.9982573390007019,
+            "weighted_real_room_acc": 0.5301675796508789,
+            "policy_loss": -0.014573873952031136,
+            "gradient_norm": 2.0661957263946533,
+            "query_right": 0.2923583984375,
+            "action_right": 0.7618408203125,
+            "used_room_target_count": 23.7578125
+          },
+          "first_formal_256": {
+            "paid": 0.03277587890625,
+            "query_action_match": 0.36572265625,
+            "weighted_terminal_mse": 0.6481918096542358,
+            "weighted_real_room_mse": 0.8974882364273071,
+            "weighted_room_teacher_mse": 0.8974882364273071,
+            "weighted_real_room_acc": 0.6243423819541931,
+            "policy_loss": -0.012031812220811844,
+            "gradient_norm": 3.346280813217163,
+            "query_right": 0.3372802734375,
+            "action_right": 0.744384765625,
+            "used_room_target_count": 23.40625
+          },
+          "last_256": {
+            "paid": 0.03338623046875,
+            "query_action_match": 0.364501953125,
+            "weighted_terminal_mse": 0.6064813733100891,
+            "weighted_real_room_mse": 0.41737163066864014,
+            "weighted_room_teacher_mse": 0.41737163066864014,
+            "weighted_real_room_acc": 0.8612830638885498,
+            "policy_loss": -0.020923376083374023,
+            "gradient_norm": 5.2877020835876465,
+            "query_right": 0.3255615234375,
+            "action_right": 0.718994140625,
+            "used_room_target_count": 23.328125
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 89424,
+          "same_action": 82418,
+          "same_both": 65791,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "736": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 38289,
+          "1,2": 38147,
+          "2,0": 38252
+        },
+        "current_room_endpoints": {
+          "0,0": 8960,
+          "0,1": 12275,
+          "0,2": 16992,
+          "1,0": 17173,
+          "1,1": 8780,
+          "1,2": 12259,
+          "2,0": 12231,
+          "2,1": 17198,
+          "2,2": 8820
+        },
+        "easy_cases": [
+          671,
+          1403,
+          12274,
+          2036
+        ],
+        "formal_cases": [
+          16339,
+          32950,
+          24491,
+          24524
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-terminal/birth-736.pt",
+          "sha256": "7f26091c51b1e3f7aec5c9a9eaccc5585e177a8b9723059d8e24dc34a71b4a53",
+          "birth_sha256": "34d33c8352544d3aa2ab9824f0128b88b6da0b971b9c9980b071219a51f7bc64",
+          "training_seconds": 235.35431749999407,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 303,
+            "bias": 40,
+            "gate": 606,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.0325966402888298,
+                1.6206767559051514,
+                0.002086328575387597,
+                1.0163284540176392
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.13901446759700775,
+                2.5076653957366943,
+                0.06518881767988205,
+                1.7060738801956177
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 59673,
+          "matched_case_counts": [
+            8703,
+            17308,
+            19893,
+            13769
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": -0.0040283203125,
+            "query_action_match": 0.619384765625,
+            "weighted_terminal_mse": 0.6404558420181274,
+            "weighted_real_room_mse": 1.0364261865615845,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.49405810236930847,
+            "policy_loss": -0.00765272555872798,
+            "gradient_norm": 1.3017630577087402,
+            "query_right": 0.7340087890625,
+            "action_right": 0.7540283203125,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.1060791015625,
+            "query_action_match": 0.53857421875,
+            "weighted_terminal_mse": 0.5551692247390747,
+            "weighted_real_room_mse": 1.1476389169692993,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.48062247037887573,
+            "policy_loss": -0.08502252399921417,
+            "gradient_norm": 2.808961868286133,
+            "query_right": 0.7354736328125,
+            "action_right": 0.5716552734375,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.2615966796875,
+            "query_action_match": 0.4930419921875,
+            "weighted_terminal_mse": 0.4390934705734253,
+            "weighted_real_room_mse": 1.3548645973205566,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4874246120452881,
+            "policy_loss": -0.17655685544013977,
+            "gradient_norm": 4.598204612731934,
+            "query_right": 0.618408203125,
+            "action_right": 0.5260009765625,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-transfer-next_room/birth-736.pt",
+          "sha256": "092441c25de827939e9257e941f164fe8a778b7dda8da9a4aa46f0c53af1600e",
+          "birth_sha256": "34d33c8352544d3aa2ab9824f0128b88b6da0b971b9c9980b071219a51f7bc64",
+          "training_seconds": 234.8311235000001,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 303,
+            "bias": 40,
+            "gate": 606,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.0325966402888298,
+                1.6206767559051514,
+                0.002086328575387597,
+                1.0163284540176392
+              ],
+              "room": [
+                0.07660981267690659,
+                1.9429540634155273,
+                0.003241048427298665,
+                1.2284214496612549
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.07650107145309448,
+                2.1436920166015625,
+                0.012960430234670639,
+                1.5045113563537598
+              ],
+              "room": [
+                0.26883989572525024,
+                2.5259344577789307,
+                0.01948758214712143,
+                1.6239635944366455
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 56666,
+          "matched_case_counts": [
+            7887,
+            16386,
+            19361,
+            13032
+          ],
+          "room_targets_applied": 56666,
+          "first_256": {
+            "paid": -0.005126953125,
+            "query_action_match": 0.6268310546875,
+            "weighted_terminal_mse": 0.6657575368881226,
+            "weighted_real_room_mse": 0.886277437210083,
+            "weighted_room_teacher_mse": 0.886277437210083,
+            "weighted_real_room_acc": 0.6308177709579468,
+            "policy_loss": -0.005127507261931896,
+            "gradient_norm": 2.355369806289673,
+            "query_right": 0.74151611328125,
+            "action_right": 0.77557373046875,
+            "used_room_target_count": 40.1171875
+          },
+          "first_formal_256": {
+            "paid": 0.04083251953125,
+            "query_action_match": 0.49151611328125,
+            "weighted_terminal_mse": 0.6591696739196777,
+            "weighted_real_room_mse": 0.18841788172721863,
+            "weighted_room_teacher_mse": 0.18841788172721863,
+            "weighted_real_room_acc": 0.9621238112449646,
+            "policy_loss": -0.03615013137459755,
+            "gradient_norm": 3.572746515274048,
+            "query_right": 0.61566162109375,
+            "action_right": 0.5224609375,
+            "used_room_target_count": 31.45703125
+          },
+          "last_256": {
+            "paid": 0.27886962890625,
+            "query_action_match": 0.46722412109375,
+            "weighted_terminal_mse": 0.39815253019332886,
+            "weighted_real_room_mse": 0.011401318944990635,
+            "weighted_room_teacher_mse": 0.011401318944990635,
+            "weighted_real_room_acc": 0.9993237257003784,
+            "policy_loss": -0.18861299753189087,
+            "gradient_norm": 5.848149299621582,
+            "query_right": 0.501953125,
+            "action_right": 0.48797607421875,
+            "used_room_target_count": 29.90234375
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 90004,
+          "same_action": 94977,
+          "same_both": 74888,
+          "identical_initial_update_routes": 64
+        }
+      }
+    }
+  },
+  "arms": {
+    "terminal": {
+      "actual_routes": 688128,
+      "matched_routes": 361232,
+      "applied_room_targets": 0,
+      "first_256": {
+        "paid": 0.019032796223958332,
+        "query_action_match": 0.5409749348958334,
+        "weighted_terminal_mse": 0.6450442572434744,
+        "weighted_real_room_mse": 1.0225916306177776,
+        "weighted_room_teacher_mse": 0.0,
+        "weighted_real_room_acc": 0.5052619924147924,
+        "policy_loss": -0.011288452466639379,
+        "gradient_norm": 1.6359965403874714,
+        "query_right": 0.5817057291666666,
+        "action_right": 0.6063028971354166,
+        "used_room_target_count": 0.0
+      },
+      "first_formal_256": {
+        "paid": 0.079193115234375,
+        "query_action_match": 0.53302001953125,
+        "weighted_terminal_mse": 0.597829262415568,
+        "weighted_real_room_mse": 1.0590596397717793,
+        "weighted_room_teacher_mse": 0.0,
+        "weighted_real_room_acc": 0.49462410310904187,
+        "policy_loss": -0.053578313595304884,
+        "gradient_norm": 2.7740164597829184,
+        "query_right": 0.565673828125,
+        "action_right": 0.5162353515625,
+        "used_room_target_count": 0.0
+      },
+      "last_256": {
+        "paid": 0.20696004231770834,
+        "query_action_match": 0.5117289225260416,
+        "weighted_terminal_mse": 0.4510566095511119,
+        "weighted_real_room_mse": 1.161339541276296,
+        "weighted_room_teacher_mse": 0.0,
+        "weighted_real_room_acc": 0.4902462065219879,
+        "policy_loss": -0.14647881189982095,
+        "gradient_norm": 4.736952702204387,
+        "query_right": 0.5382283528645834,
+        "action_right": 0.4851582845052083,
+        "used_room_target_count": 0.0
+      }
+    },
+    "next_room": {
+      "actual_routes": 688128,
+      "matched_routes": 351223,
+      "applied_room_targets": 351223,
+      "first_256": {
+        "paid": 0.012115478515625,
+        "query_action_match": 0.5481974283854166,
+        "weighted_terminal_mse": 0.6555318236351013,
+        "weighted_real_room_mse": 0.9776329596837362,
+        "weighted_room_teacher_mse": 0.9776329596837362,
+        "weighted_real_room_acc": 0.5416180789470673,
+        "policy_loss": -0.009842753798390428,
+        "gradient_norm": 2.073148469130198,
+        "query_right": 0.5954386393229166,
+        "action_right": 0.6277669270833334,
+        "used_room_target_count": 35.084635416666664
+      },
+      "first_formal_256": {
+        "paid": 0.035970052083333336,
+        "query_action_match": 0.5275777180989584,
+        "weighted_terminal_mse": 0.6328366001447042,
+        "weighted_real_room_mse": 0.7419398576021194,
+        "weighted_room_teacher_mse": 0.7419398576021194,
+        "weighted_real_room_acc": 0.6982806324958801,
+        "policy_loss": -0.02508120844140649,
+        "gradient_norm": 3.256132404009501,
+        "query_right": 0.5532938639322916,
+        "action_right": 0.5431111653645834,
+        "used_room_target_count": 33.764973958333336
+      },
+      "last_256": {
+        "paid": 0.16408284505208334,
+        "query_action_match": 0.4888203938802083,
+        "weighted_terminal_mse": 0.4774145980676015,
+        "weighted_real_room_mse": 0.2620677291415632,
+        "weighted_room_teacher_mse": 0.2620677291415632,
+        "weighted_real_room_acc": 0.9193599621454874,
+        "policy_loss": -0.1196587507923444,
+        "gradient_norm": 6.139413674672444,
+        "query_right": 0.5758056640625,
+        "action_right": 0.5397847493489584,
+        "used_room_target_count": 31.284505208333332
+      }
+    }
+  },
+  "case_order": [
+    "flip",
+    "stay",
+    "unchanged",
+    "tie"
+  ]
+}

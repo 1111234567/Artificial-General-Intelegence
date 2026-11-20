@@ -1,0 +1,124 @@
+{
+  "training_births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "heldout_births": [
+    811,
+    812,
+    813,
+    814,
+    815,
+    816
+  ],
+  "replica_seeds": [
+    21294563,
+    21294601
+  ],
+  "rollout_domain": 73110827,
+  "steps_per_fit": 1024,
+  "routes_per_birth_per_update": 128,
+  "arms": [
+    "full",
+    "no_old"
+  ],
+  "checkpoints": [
+    0,
+    256,
+    512,
+    1024
+  ],
+  "angles_degrees": [
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "gap_ticks": 4,
+  "probe_wait_ticks": 4,
+  "probe_orders": "A then B; unpaid contact and a neutral wait occur after the first action",
+  "parent_checkpoint": "odor/uniform at step 8000",
+  "role_of_parent": "Frozen parameters and original active local write process. Each life starts cold once.",
+  "laws": "Independent unbiased signs, sampled separately for every route and never provided to the selector.",
+  "objective": {
+    "correct_A": 1,
+    "correct_B": 2,
+    "joint_correct": 1
+  },
+  "B_preservation": "Double weight on realized B alone, joint reward, a small fixed fraction deferred, and a prespecified independent paired test of B. Objective is a soft incentive.",
+  "rule": {
+    "learned_parameters": [
+      "change_magnitude",
+      "weight_with_change_sign",
+      "weight_magnitude",
+      "sender_activity",
+      "receiver_activity",
+      "sender_receiver_activity",
+      "receiver_taste_response",
+      "sender_to_receiver_response",
+      "old_change_magnitude",
+      "old_change_with_proposal_sign",
+      "old_sender_activity",
+      "old_receiver_activity",
+      "old_endpoint_interaction",
+      "sender_reactivation",
+      "receiver_reactivation",
+      "old_change_with_sender_reactivation",
+      "old_change_with_receiver_reactivation",
+      "old_change_with_endpoint_reactivation"
+    ],
+    "no_old_active_parameters": [
+      "change_magnitude",
+      "weight_with_change_sign",
+      "weight_magnitude",
+      "sender_activity",
+      "receiver_activity",
+      "sender_receiver_activity",
+      "receiver_taste_response",
+      "sender_to_receiver_response"
+    ],
+    "candidate_group_size": 4,
+    "minimum_absolute_native_change": 2e-05,
+    "common_deferred_fraction": 0.75,
+    "proposal_partition": "Same-sign surviving native B proposals sorted by magnitude, nonoverlapping consecutive quadruples. Up to three unmatched proposals per sign pass unchanged.",
+    "dose": "At one of four addresses withhold 75% of the minimum group magnitude, preserving residuals at all four, native writes elsewhere, bias, birth and retirement. Per-group signed dose is constant across selected-address controls, subject only to float32 subtraction roundoff.",
+    "old_record": "Pre-receipt motor emission endpoint activities and the last actual common-edge coefficient change from A. Node activities are physically stored once per node.",
+    "training_update": "Sample once from the shared categorical head per valid group. Center actual serial return by a leave-one-route-out mean within birth. Apply the analytical score-function derivative over sampled groups, with Adam on head coefficients.",
+    "optimizer": {
+      "name": "Adam",
+      "learning_rate": 0.012,
+      "l2": 0.00025,
+      "coefficient_bounds": [
+        -4,
+        4
+      ]
+    },
+    "isolation": "Arms use disjoint random streams. No route continuation yields another reward. The native commit helper calculates two neutral ticks while constructing the B receipt; its hidden result is discarded in fitted routes. Only the sampled B write enters either return action. The optimizer sees only realized payoffs and local scores."
+  },
+  "source_sha256": {
+    "edge_site_train_fit.py": "b52ff6a9af3ebde68770624eccacbc1af9dc447518f4f9ab6ed74b1f70f2fe6f",
+    "edge_site_train.py": "228f908340f8e84e25ecfd554f8b5a854122573762c43aa56f4b43cedff29d4e",
+    "local_trace_graph.py": "8bdd13b8a6954fae00d27ae56b585cc8073442221929a510813d0b10e728b31a",
+    "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "local_trace_train.py": "666eac678846ec83410e1dd6c879a4b9a925fc5fab190a1eb89525f0627a3a6f"
+  },
+  "parent_sha256": {
+    "731": "940ebc6d5c5d4304526b5e3ae16ab5a62e0ccdddac367793dbc73ece1c4a5da6",
+    "732": "0e175d2a047735c2cd4c85c7f83d5cbedadef07e3393dd25355d4e23bb9dbaf3",
+    "733": "986ee1300da95831a7907ce93a565c346d9b0d8213c3340171e5d518a82688ec",
+    "734": "82a690a6b35c6101b9d3f2b5c47e5e1e0151dae92114c2fea9e9f2bc5bee3a2d",
+    "735": "7fe591e6eca9144770fd0e9a63fff505a10c874a1b470f7f3bd3153ed33f982d",
+    "736": "e07171e34367bdb7cfd8df4f6987f80d31318af5850c19948450fb5f4b2a923e",
+    "811": "2d215955e15d65d90e954cad0c06837c12fea83775f87cdddc42f2fb112e21b4",
+    "812": "8f8aaa6ff7e5ba50c358e3b4b882c7f15a40d1a6dcbe6b59fbb0fbbd8c2bc026",
+    "813": "800c62ee75b0895399fca902b8368f474651b392238522f9e7387a70d9a3b1d7",
+    "814": "8134746dadfcdd06e908b28b968a1575fff935d51e88de53c2b10d8e212dae67",
+    "815": "7e6e1abad5bc3f84270c40773b4ef91535288b8d0173e1bd2aaf086ec637dc1e",
+    "816": "379a9d3d88c2c161c7ef5575d927d8abed5de70fe12dbe8eaf23cad333102bdd"
+  }
+}

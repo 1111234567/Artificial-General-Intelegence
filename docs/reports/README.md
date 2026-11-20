@@ -2,6 +2,8 @@
 
 [实验总览](../experiments.md)汇总研究结论和适用边界，[证据索引](../evidence/README.md)定位协议、读数和原始档案。新报告按问题放入相应主题目录，可在下方添加入口。已进入发布或完成清单的报告及这些报告依赖的相对链接保留原址。
 
+第一次阅读可从[持续学习项目回顾](../research-retrospective-2026-11-20.md)进入。核验最新一日的正式读数可查[复算数据包](../evidence/reproduce-2026-11-20.md)。
+
 - [脉冲游戏、真实反馈与跨游戏迁移](#pulse-game)
 - [局部可塑性、拓扑和原生习得](#structure)
 - [初始化搜索和执行性能](#initialization)
@@ -13,6 +15,9 @@
 
 ## 脉冲游戏、真实反馈与跨游戏迁移
 
+- 11-20 [双复查](../double-visit-2026-11-20.md)和[局部改道](../reroute-2026-11-20.md)用第一次真实选门衡量两笔旧事实有无共同起作用。
+- 11-20 [本体如何向克隆区发问](../fork-lesson-2026-11-20.md)和[无外界线索时的整图计算](../native-rehearsal-2026-11-20.md)比较条件预测、回流和真实行动。
+- 11-20 [该改动哪条边](../edge-site-2026-11-20.md)用同剂量写入和旧反馈回放检验不同落点的得失。
 - 11-20 [按未来机会复习与决定是否写入](../active-review-2026-11-20.md)比较原生身体、少量读出系数、生命内的新提示关联和真实回执。[证据与复算入口](../evidence/active-review-20261120/README.md)
 - 11-20 [一张持续可写的图能同时学会几件事](../interleaved-learning-2026-11-20.md)涵盖旧记忆与新学习的冲突、陌生对象首次行动，以及从实际味觉习得的非线性反应。[逐项证据](../evidence/interleaved-learning-2026-11-20/README.md)
 - 11-19 [晨间结果](../pulse-game-morning-2026-11-19.md)汇总 12 个独立训练出生、实际反馈学习、情境冲突、回访、主动探查和长生命验证。
@@ -24,6 +29,8 @@
 
 ## 局部可塑性、拓扑和原生习得
 
+- 11-19 [局部活动迹与写入位置](../local-trace-feedback-2026-11-19.md) · [启蒙与写入端移植](../self-writing-bootstrap-2026-11-19.md) · [样本剂量与写入权限](../self-edit-dose-2026-11-19.md)。
+- 11-19 [自由拓扑与分环生长](../free-graph-2026-11-19.md) · [统一无端图](../end-free-learning-2026-11-19.md) · [稀疏二阶交互](../sparse-native-learning-2026-11-19.md)。
 - 11-19 [有向图局部可塑性与回执记忆](../local-rule-experiment-2026-11-19.md)记录三组 128 代终点、配对留出和回执分叉。
 - 11-02 [启动覆盖、删边候选与 FP64 速度](structure/coverage-exit-experiment-2026-11-02.md)研究成功启动后怎样选退出候选。
 - 10-30 [共享无向图的实验设计](../undirected-experiment-2026-10-30.md) · [完整对照结果](../undirected-results-2026-10-30.md)。
@@ -35,6 +42,7 @@
 
 ## 初始化搜索和执行性能
 
+- 11-16–18 [从无向出生到有向图与私有符号](../../experiments/undirected/README.md#连续图搜索的终代记录)保留四群交叉、下坡选择和继承反事实的原始留出。
 - 11-11 [搜索协议与恢复入口](initialization/seed-evolution-experiment-2026-11-11.md) · [FP32 审计通过的完整结果](../evidence/seed-evolution-2026-11-11-large/report.md) · [CPU/GPU 执行与性能](initialization/seed-evolution-performance-2026-11-11.md)。
 - 11-15 BF16 扩展在 11-16 暂停，已记录 17,224／23,424 个候选。[进度](../../data/seed-evolution/2026-11-15-scale-bf16-v1/progress.json) · [暂停记录](../../data/seed-evolution/2026-11-15-scale-bf16-v1/pause-20261116.json)。
 

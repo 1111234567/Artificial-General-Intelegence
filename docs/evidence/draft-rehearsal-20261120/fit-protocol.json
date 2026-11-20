@@ -1,0 +1,128 @@
+{
+  "plan_sha256": "2b9917b515cb927382a4015dd30446af03773358ecdf9ca5fd76d186dc04e5a8",
+  "training_births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "heldout_births": [
+    811,
+    812,
+    813,
+    814,
+    815,
+    816
+  ],
+  "fit_seeds": [
+    21294703,
+    21294711
+  ],
+  "arms": [
+    "pre",
+    "post",
+    "wrong"
+  ],
+  "feature_names": [
+    "change_magnitude",
+    "weight_with_change_sign",
+    "weight_magnitude",
+    "sender_activity",
+    "receiver_activity",
+    "sender_receiver_activity",
+    "receiver_taste_response",
+    "sender_to_receiver_response",
+    "retained_sender_activity",
+    "retained_receiver_activity",
+    "retained_endpoint_activity",
+    "retained_receiver_virtual_taste_response",
+    "retained_sender_to_receiver_response",
+    "retained_signed_sender_to_receiver_response",
+    "retained_virtual_taste_endpoint_activity",
+    "retained_signed_virtual_taste_endpoint_activity",
+    "current_sender_activity",
+    "current_receiver_activity",
+    "current_endpoint_activity",
+    "current_receiver_virtual_taste_response",
+    "current_sender_to_receiver_response",
+    "current_signed_sender_to_receiver_response",
+    "current_virtual_taste_endpoint_activity",
+    "current_signed_virtual_taste_endpoint_activity"
+  ],
+  "geometry_domain": 73111943,
+  "steps": 768,
+  "checkpoints": [
+    0,
+    128,
+    256,
+    512,
+    768
+  ],
+  "worlds_per_birth_per_update": 80,
+  "angles_degrees": [
+    15,
+    30,
+    45,
+    60,
+    75
+  ],
+  "true_revisit_order": "exactly crossed within every birth and update",
+  "revisit_wait_ticks": 4,
+  "objective": {
+    "A": 1,
+    "B": 1,
+    "both": 1
+  },
+  "routed_training": "root-major; shared tapes across arms, disjoint substreams for geometry and actual support, true revisits, trial/rehearsal, and address sampling",
+  "optimization": {
+    "baseline": "leave-one-out mean within birth",
+    "optimizer": "Adam",
+    "learning_rate": 0.012,
+    "l2_gradient": 0.00025,
+    "coefficient_bound": 4,
+    "initial_coefficients": 0,
+    "torch_threads": 1,
+    "torch_deterministic": true
+  },
+  "event_columns": [
+    "c_side",
+    "c_taste",
+    "a_side",
+    "a_taste",
+    "b_side",
+    "b_taste",
+    "rehearsed_first_receipt_side",
+    "rehearsed_first_receipt_taste",
+    "rehearsed_b_side",
+    "rehearsed_b_taste",
+    "first_real_revisit_object",
+    "revisit_a_side",
+    "revisit_b_side",
+    "revisit_a_payout",
+    "revisit_b_payout",
+    "rehearsed_retained_before_b"
+  ],
+  "event_shape": "step \u00d7 root-major route \u00d7 field",
+  "address_log": "Flattened receiver * 20 + sender in candidate group order; -1 means invalid or padding.",
+  "source_sha256": {
+    "experiments/pulse_game/draft_rehearse_fit.py": "dc2dfda948a2230db769d4daf32d88985bf2e9da10ee2cdbd0d5c65e6d611abd",
+    "experiments/pulse_game/draft_rehearse.py": "54f6515c15d1a3f2a542847058878bae9c8b174b9a5a0945552596e7b1d9a960",
+    "experiments/pulse_game/edge_site_train.py": "228f908340f8e84e25ecfd554f8b5a854122573762c43aa56f4b43cedff29d4e",
+    "experiments/pulse_game/local_trace_graph.py": "8bdd13b8a6954fae00d27ae56b585cc8073442221929a510813d0b10e728b31a",
+    "experiments/pulse_game/self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+    "experiments/pulse_game/local_trace_train.py": "666eac678846ec83410e1dd6c879a4b9a925fc5fab190a1eb89525f0627a3a6f",
+    "experiments/pulse_game/noon_ticket.py": "fb604bfeddebf03bf6f84b0bc597d4865bd0bd4870ad6ce1430dbb45027e5ef2",
+    "experiments/pulse_game/interleave_interference.py": "6e45e8fb18c06ba8e7645dcbd849aaee5e196f5ca80e24c605cde5c352787ce7",
+    "experiments/pulse_game/interleave_revisit_train.py": "31e5a11e8e0e7d0c94f73c01ea393f0bdc783790f2d86608de90532f51254b9a"
+  },
+  "parent_sha256": {
+    "731": "940ebc6d5c5d4304526b5e3ae16ab5a62e0ccdddac367793dbc73ece1c4a5da6",
+    "732": "0e175d2a047735c2cd4c85c7f83d5cbedadef07e3393dd25355d4e23bb9dbaf3",
+    "733": "986ee1300da95831a7907ce93a565c346d9b0d8213c3340171e5d518a82688ec",
+    "734": "82a690a6b35c6101b9d3f2b5c47e5e1e0151dae92114c2fea9e9f2bc5bee3a2d",
+    "735": "7fe591e6eca9144770fd0e9a63fff505a10c874a1b470f7f3bd3153ed33f982d",
+    "736": "e07171e34367bdb7cfd8df4f6987f80d31318af5850c19948450fb5f4b2a923e"
+  }
+}

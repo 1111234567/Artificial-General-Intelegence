@@ -1,0 +1,114 @@
+{
+  "plan_sha256": "d70d8422fe385585bb0df33d8069310f23d308e76c31e1802adb56f9383b14db",
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "kinds": [
+    "terminal",
+    "next_room",
+    "misbound"
+  ],
+  "steps": 1792,
+  "easy_steps": 256,
+  "batch": 64,
+  "checkpoint_every": 128,
+  "world_seed": [
+    18692341,
+    "birth",
+    "step",
+    0
+  ],
+  "draw_seed": [
+    18692341,
+    "birth",
+    "step",
+    1
+  ],
+  "smoke_domain": 18692863,
+  "query_exploration": 0.45,
+  "action_exploration": 0.3,
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.003,
+    "max_gradient_norm": 2.0,
+    "foreach": false,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0
+  },
+  "objective": {
+    "actor": "Both native draws are self-selected. Both mixture log-likelihoods get actual return minus the leave-one-other-world-out batch baseline.",
+    "terminal": "The native terminal readout forecasts the signed payout of the tried door. Apply stabilized inverse action propensity weighting only on rows which took the tried door.",
+    "next_room": "Also teach the preceding native room readout the realized room ID as -1 or +1, using the same weights and the same eligible rows as the terminal loss.",
+    "misbound": "Same extra room computation and eligibility. Apply a cyclic derangement of the same eligible rows' actual room targets. Used targets have identical marginal counts to the eligible routes' actual room targets within each batch.",
+    "terminal_coefficient": 1.0,
+    "room_coefficient": 1.0,
+    "loss_scope": "Full BPTT through all physical prior visits and internal discussion. Read targets only after actual settlement, outside the differentiation graph."
+  },
+  "paired_experience": "Identical birth, world tape and both draw columns. Actual doors may diverge as the bodies' native motor policies change.",
+  "backend": "cpu",
+  "dtype": "torch.float32",
+  "torch": "2.11.0+cu130",
+  "deterministic": true,
+  "cuda_tf32": false,
+  "torch_threads": 1,
+  "curve_columns": [
+    "paid",
+    "query_action_match",
+    "weighted_terminal_mse",
+    "weighted_real_room_mse",
+    "weighted_room_teacher_mse",
+    "weighted_real_room_acc",
+    "policy_loss",
+    "gradient_norm",
+    "query_right",
+    "action_right",
+    "used_room_target_count"
+  ],
+  "route_columns": [
+    "query_draw",
+    "query_right_probability",
+    "query",
+    "action_draw",
+    "action_right_probability",
+    "action",
+    "actual_room",
+    "actual_endpoint",
+    "paid",
+    "forecast_room",
+    "forecast_pay",
+    "actual_route_weight",
+    "room_teacher_source",
+    "room_teacher_target",
+    "query_logit",
+    "action_logit"
+  ],
+  "source_sha256": {
+    "experiments/pulse_game/fork_lesson_bit_relay.py": "511cb627d35f3214ddc202e694bd01a95395199306bf25309a990524043d9b0e",
+    "experiments/pulse_game/fork_lesson_native_request.py": "434f2e453bb0b8e80439b344467d1e5efa10707ebca7844a601614bcfc807d06",
+    "experiments/pulse_game/fork_lesson_whatif.py": "cd4f530efba47de2bbe6adde2d4628e0a483cb0bbabfc7d5ae3ede9b884a8673",
+    "experiments/pulse_game/fork_lesson_world.py": "6229dbd9de18ea6b4db4ef383bcebb2ee702556f73501e4d748020d9bce5064f",
+    "experiments/pulse_game/local_trace_graph.py": "8bdd13b8a6954fae00d27ae56b585cc8073442221929a510813d0b10e728b31a",
+    "experiments/pulse_game/local_trace_train.py": "666eac678846ec83410e1dd6c879a4b9a925fc5fab190a1eb89525f0627a3a6f",
+    "experiments/pulse_game/native_rehearsal_graph.py": "f6bacf5e397ff8251ad591acfc16fb2764a9550f438759c406bf7e7f38ffeea0",
+    "experiments/pulse_game/native_rehearsal_trial.py": "9e71c2944dd9ee6052ee70b7a08679092f2030464754375f94472f970cf4c511",
+    "experiments/pulse_game/reroute_fit.py": "f9e4f9e85843db28415ad9cc79ef0aef91cbc7a17533d1b69ebf0be7d3d1d951",
+    "experiments/pulse_game/reroute_world.py": "ae1f81af8204e471a088a28a8732b986d170a6cd2a1c6b2008deede6cb998bf1"
+  },
+  "parent_sha256": {
+    "731": "940ebc6d5c5d4304526b5e3ae16ab5a62e0ccdddac367793dbc73ece1c4a5da6",
+    "732": "0e175d2a047735c2cd4c85c7f83d5cbedadef07e3393dd25355d4e23bb9dbaf3",
+    "733": "986ee1300da95831a7907ce93a565c346d9b0d8213c3340171e5d518a82688ec",
+    "734": "82a690a6b35c6101b9d3f2b5c47e5e1e0151dae92114c2fea9e9f2bc5bee3a2d",
+    "735": "7fe591e6eca9144770fd0e9a63fff505a10c874a1b470f7f3bd3153ed33f982d",
+    "736": "e07171e34367bdb7cfd8df4f6987f80d31318af5850c19948450fb5f4b2a923e"
+  }
+}

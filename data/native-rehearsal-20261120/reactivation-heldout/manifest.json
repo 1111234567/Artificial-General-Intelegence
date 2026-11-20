@@ -1,0 +1,217 @@
+{
+  "roots": 128,
+  "step": 1536,
+  "seed": 451023793,
+  "kinds": [
+    "single",
+    "copy",
+    "permuted",
+    "guide_a",
+    "guide_c"
+  ],
+  "births": [
+    731,
+    733,
+    735
+  ],
+  "source": [
+    {
+      "path": "docs/evidence/native-rehearsal-20261120/reactivation-protocol.md",
+      "sha256": "0869238cb691549ec81fcec92453b8c28b61e48ea8be92ec6e40a7d00ea48f4f"
+    },
+    {
+      "path": "experiments/pulse_game/native_rehearsal_reactivation.py",
+      "sha256": "de5f8e46b77733571d010159a7ffca5b51c5bea1e4d51a6a68d9da7b52bfb0ca"
+    },
+    {
+      "path": "experiments/pulse_game/native_rehearsal_reactivation_stats.py",
+      "sha256": "14e4026080a0a2f427a926fa17f9ec6746585b63c2ca3ed4fa16f53cbd638216"
+    },
+    {
+      "path": "experiments/pulse_game/native_rehearsal_graph.py",
+      "sha256": "f6bacf5e397ff8251ad591acfc16fb2764a9550f438759c406bf7e7f38ffeea0"
+    }
+  ],
+  "cells": [
+    {
+      "kind": "single",
+      "birth": 731,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/single/seed-731.pt",
+        "sha256": "b55795242958ce6c1d2708d47c24a47617dc9bbab89490ed5348435d7783f370"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/single-731.npz",
+        "sha256": "08c53754b6eaa9a44277726d8c03e11b132be9063c0b7b3317eaac05f830b09f"
+      }
+    },
+    {
+      "kind": "single",
+      "birth": 733,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/single/seed-733.pt",
+        "sha256": "d6e0aca8b674ecedd90b5798a76953685a645f6ba2885518c6ccb2f3f9667724"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/single-733.npz",
+        "sha256": "973cc59cf4c47d5724fc2adc710c0cfc8f47ea9c3f01fc0c72996e6314ec9915"
+      }
+    },
+    {
+      "kind": "single",
+      "birth": 735,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/single/seed-735.pt",
+        "sha256": "599fd01580bbc19d71c43e4fb5734c45cf20312f1c98b7d88af65b990863e463"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/single-735.npz",
+        "sha256": "f9837fd48a2153ef745fe25b124cb4d878bc1e9861f762e2c72ee8fdaadebb4e"
+      }
+    },
+    {
+      "kind": "copy",
+      "birth": 731,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/copy/seed-731.pt",
+        "sha256": "f0c4fd0e73120f8e000e87a35f55d72fbed8d0f4c617d6bdf59c6f621eec0ce7"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/copy-731.npz",
+        "sha256": "9e35037109b40751f30b62dd4960ab19f0f89b9a92571a6f6333dc8ec1382eb3"
+      }
+    },
+    {
+      "kind": "copy",
+      "birth": 733,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/copy/seed-733.pt",
+        "sha256": "dcb368097aaf5690e826b0e727ecc537248f90ffdecb0cb672d65b7bb7d68b31"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/copy-733.npz",
+        "sha256": "f04d49ccec7aa6861218feba1e79c5f0283208dc62a9b92c36546030f9897fcc"
+      }
+    },
+    {
+      "kind": "copy",
+      "birth": 735,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/copy/seed-735.pt",
+        "sha256": "28a168f5673337d7d3b0e2e87ed9471ef9d7721fe44bd2c72e212552f89cc2c8"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/copy-735.npz",
+        "sha256": "794a98cbbfab0782ab9292650d4fed3e8a3efff5bfbc23aedc9ef4d8fde8a7d1"
+      }
+    },
+    {
+      "kind": "permuted",
+      "birth": 731,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/permuted/seed-731.pt",
+        "sha256": "830980b7757d13be4da2e7ff9785d318ad82a565e8b7a6d1b0c318852fe214fa"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/permuted-731.npz",
+        "sha256": "9e4ccc5f65481543ed4540c0c4e93271d4679e72378add3a257bbfbdc4367ea3"
+      }
+    },
+    {
+      "kind": "permuted",
+      "birth": 733,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/permuted/seed-733.pt",
+        "sha256": "779f519bbd40f2aa783601aecff39fd78f173d5552b81b283684509e3b373f1a"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/permuted-733.npz",
+        "sha256": "949dbc4f7de0d6b802f8e3fdc0fe64eaf527983171d1133c46fecf4aa4a96771"
+      }
+    },
+    {
+      "kind": "permuted",
+      "birth": 735,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/permuted/seed-735.pt",
+        "sha256": "817ea57f31e811a3e0634381a1b606cd080c20d9b26b0eb74b811c38e7d31277"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/permuted-735.npz",
+        "sha256": "094997e3662b87906dcfa5d6b0d950a2def32781db68cc56f678f4290b989c49"
+      }
+    },
+    {
+      "kind": "guide_a",
+      "birth": 731,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/guide_a/seed-731.pt",
+        "sha256": "5d97fcd7675599928ccf296aa732832c3439b7bdbb1838475e1f6b5bc9881de7"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/guide_a-731.npz",
+        "sha256": "9b30d13186714f641a5913c51041827b02e6c9b73bff30a425372f83479b00dd"
+      }
+    },
+    {
+      "kind": "guide_a",
+      "birth": 733,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/guide_a/seed-733.pt",
+        "sha256": "d8c0fe46ee5fd1c9f270fa2ef82ff9cd6088027badf4dfcc9282be94fd33285e"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/guide_a-733.npz",
+        "sha256": "888f4dcbfa3a613e966b2c195c05559048e6a7059bc1c1bec928fe82efe9c647"
+      }
+    },
+    {
+      "kind": "guide_a",
+      "birth": 735,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/guide_a/seed-735.pt",
+        "sha256": "6ad9ef549b9f8bac465d788e36999ddae9bf6fe5bc483fb2f8ea254c4d7637e1"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/guide_a-735.npz",
+        "sha256": "e3389c310beaf034268c144cec81bb1547e4e82b0a50fd58e7c0fa2866e73c5f"
+      }
+    },
+    {
+      "kind": "guide_c",
+      "birth": 731,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/guide_c/seed-731.pt",
+        "sha256": "3fed5f39d64c67a020124aeef41f2942f630eaf9f045740386d4310ede53d38c"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/guide_c-731.npz",
+        "sha256": "3e20b1c92a3f0f57d7d3b6c4baca809223b15cfafcb94bfa6f53173dcf84144b"
+      }
+    },
+    {
+      "kind": "guide_c",
+      "birth": 733,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/guide_c/seed-733.pt",
+        "sha256": "bee158d967ffceb1e2cad2d4593cb6b70a0625ba4431f32cb984c968022ef8b1"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/guide_c-733.npz",
+        "sha256": "2aa878cb68db94ecbc7a1d1dce082cf87f2c4c1949b9396b0fe0da2d383cf9f0"
+      }
+    },
+    {
+      "kind": "guide_c",
+      "birth": 735,
+      "checkpoint": {
+        "path": "data/native-rehearsal-20261120/guide_c/seed-735.pt",
+        "sha256": "5ae908c3e9f0ad722d0e24bcf297c9991a10cdb7accec840112c2e90ac0b42a5"
+      },
+      "raw": {
+        "path": "data/native-rehearsal-20261120/reactivation-heldout/guide_c-735.npz",
+        "sha256": "d02d48234b78ada1300da5a56374d2d77d44a601820dae0619750f8a90ef423e"
+      }
+    }
+  ]
+}

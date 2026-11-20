@@ -1,0 +1,92 @@
+{
+  "conditions": {
+    "reward": "Realized delayed return and policy likelihood.",
+    "whole": "Reward objective and realized-route whole-body early forecast loss.",
+    "sham": "Same as whole, with the following independent row's realized return as the forecast target.",
+    "bridge": "Same as whole, with auxiliary credit applied to both directions' base bridge weights and the bias and leak of primary neurons 12 and 13. Policy credit reaches the entire graph.",
+    "cut_out": "Same as whole, with the primary-to-replica current bridge disabled from door cue to choice.",
+    "cut_back": "Same as whole, with the replica-to-primary current bridge disabled from door cue to choice."
+  },
+  "graph": "One 40-node TrialGraph with two 20-node populations, the same architecture in every fit.",
+  "current_cuts": "The specified current bridge is zero. Shared recurrence, draft and adoption still run.",
+  "births": [
+    731,
+    733,
+    735
+  ],
+  "training_world_seed": [
+    76312417,
+    "birth",
+    "optimizer_step"
+  ],
+  "steps": 1536,
+  "routes_per_step": 64,
+  "checkpoint_interval": 256,
+  "forecast": "Read primary neurons 12 and 13 two recurrent ticks before motor neurons 10 and 11 commit. Forecast loss is squared error at the selected door's own delayed ±1 payoff. The graph runs the final two ticks normally subject to the assigned current intervention.",
+  "forecast_weight": 1.0,
+  "feedback": "Each training route physically commits just one door and receives that door's delayed taste.",
+  "exploration": {
+    "uniform_mixture_weight": 0.25,
+    "record": "Exact behavior right propensity and draw."
+  },
+  "policy": "Actual delayed return centered by a leave-one-route-out batch baseline, scored at the mixture likelihood.",
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.003,
+    "max_gradient_norm": 2.0
+  },
+  "curve_columns": [
+    "delayed_return",
+    "right_fraction",
+    "selected_propensity",
+    "observed_mse",
+    "teacher_mse",
+    "policy_loss",
+    "gradient_norm",
+    "forecast_span",
+    "return_current_rms"
+  ],
+  "route_ledger_columns": [
+    "route_draw",
+    "right_propensity",
+    "action_right",
+    "main_motor_logit",
+    "estimated_delayed_left",
+    "estimated_delayed_right",
+    "actual_delayed_return",
+    "applied_teacher_target",
+    "visit1_object",
+    "visit1_x",
+    "visit1_y",
+    "visit1_z",
+    "visit1_side",
+    "visit1_actual_taste",
+    "visit2_object",
+    "visit2_x",
+    "visit2_y",
+    "visit2_z",
+    "visit2_side",
+    "visit2_actual_taste",
+    "door_left_x",
+    "door_left_y",
+    "door_left_z",
+    "door_right_x",
+    "door_right_y",
+    "door_right_z",
+    "door_left_multiplier",
+    "door_right_multiplier"
+  ],
+  "source_sha256": {
+    "experiments\\pulse_game\\fork_lesson_fit.py": "2d1b7ef40cc467deb7eb2343b93184c8b7a16874fa2d5db09499f6bba64da373",
+    "experiments\\pulse_game\\fork_lesson_world.py": "6229dbd9de18ea6b4db4ef383bcebb2ee702556f73501e4d748020d9bce5064f",
+    "experiments\\pulse_game\\native_rehearsal_graph.py": "f6bacf5e397ff8251ad591acfc16fb2764a9550f438759c406bf7e7f38ffeea0",
+    "experiments\\pulse_game\\native_rehearsal_trial.py": "9e71c2944dd9ee6052ee70b7a08679092f2030464754375f94472f970cf4c511",
+    "experiments\\pulse_game\\edge_site_train.py": "228f908340f8e84e25ecfd554f8b5a854122573762c43aa56f4b43cedff29d4e",
+    "experiments\\pulse_game\\interleave_revisit_train.py": "31e5a11e8e0e7d0c94f73c01ea393f0bdc783790f2d86608de90532f51254b9a"
+  },
+  "parent_sha256": {
+    "731": "940ebc6d5c5d4304526b5e3ae16ab5a62e0ccdddac367793dbc73ece1c4a5da6",
+    "733": "986ee1300da95831a7907ce93a565c346d9b0d8213c3340171e5d518a82688ec",
+    "735": "7fe591e6eca9144770fd0e9a63fff505a10c874a1b470f7f3bd3153ed33f982d"
+  }
+}

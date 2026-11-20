@@ -1,0 +1,2262 @@
+{
+  "audit_source_sha256": "a0bc5b942709659d075326d7d10bf659e34b5f52475b3ec21adf53e8f349f7ab",
+  "protocol_sha256": "ccfd584356c753ac14b166bf5e4f229ec4cb7c1457e717ebd739effdff998ea0",
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "steps": 1792,
+  "batch": 64,
+  "cohorts": {
+    "731": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 19236,
+          "0,2": 19119,
+          "1,0": 19220,
+          "1,2": 18906,
+          "2,0": 19057,
+          "2,1": 19150
+        },
+        "current_room_endpoints": {
+          "0,0": 8988,
+          "0,1": 14785,
+          "0,2": 14565,
+          "1,0": 14570,
+          "1,1": 8854,
+          "1,2": 14672,
+          "2,0": 14644,
+          "2,1": 14852,
+          "2,2": 8758
+        },
+        "easy_cases": [
+          634,
+          1404,
+          12229,
+          2117
+        ],
+        "formal_cases": [
+          16547,
+          32711,
+          24563,
+          24483
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-terminal/birth-731.pt",
+          "sha256": "c2815ffaefd2d7bd7d57fdb768afcf3a733afeedf0b6b16626b6b85ed6d5a247",
+          "birth_sha256": "e10dc474ad55e84082bc84bd564567d18fc0668503a819d731c558c01f1599d7",
+          "training_seconds": 217.72168120000424,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 310,
+            "bias": 40,
+            "gate": 620,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.12487126886844635,
+                2.119774341583252,
+                0.00788135640323162,
+                1.2722803354263306
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.13866722583770752,
+                1.797560214996338,
+                0.01918705552816391,
+                1.1790870428085327
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 61336,
+          "matched_case_counts": [
+            9069,
+            17974,
+            20079,
+            14214
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.0565185546875,
+            "query_action_match": 0.59686279296875,
+            "weighted_terminal_mse": 0.618884801864624,
+            "weighted_real_room_mse": 1.0199007987976074,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.506075382232666,
+            "policy_loss": -0.04789159074425697,
+            "gradient_norm": 3.3968069553375244,
+            "query_right": 0.65472412109375,
+            "action_right": 0.720458984375,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.10693359375,
+            "query_action_match": 0.518798828125,
+            "weighted_terminal_mse": 0.6063632965087891,
+            "weighted_real_room_mse": 1.0235592126846313,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5032551288604736,
+            "policy_loss": -0.08441303670406342,
+            "gradient_norm": 4.561700344085693,
+            "query_right": 0.6431884765625,
+            "action_right": 0.5245361328125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.20556640625,
+            "query_action_match": 0.52996826171875,
+            "weighted_terminal_mse": 0.5120887160301208,
+            "weighted_real_room_mse": 1.0198850631713867,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4822540879249573,
+            "policy_loss": -0.14014331996440887,
+            "gradient_norm": 4.033564567565918,
+            "query_right": 0.6151123046875,
+            "action_right": 0.50653076171875,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-next_room/birth-731.pt",
+          "sha256": "0e099169a44d0a9abeee2130730fe69425bdebcb776c87d5be931cae6d4de91b",
+          "birth_sha256": "e10dc474ad55e84082bc84bd564567d18fc0668503a819d731c558c01f1599d7",
+          "training_seconds": 217.8733790000042,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 310,
+            "bias": 40,
+            "gate": 620,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.12487126886844635,
+                2.119774341583252,
+                0.00788135640323162,
+                1.2722803354263306
+              ],
+              "room": [
+                0.04464961215853691,
+                0.8215985298156738,
+                0.0038894363678991795,
+                0.534842848777771
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.18054471909999847,
+                3.1828501224517822,
+                0.049225129187107086,
+                2.0443813800811768
+              ],
+              "room": [
+                0.08423171192407608,
+                1.3067290782928467,
+                0.011134226806461811,
+                0.8577823042869568
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 58972,
+          "matched_case_counts": [
+            8924,
+            17469,
+            19056,
+            13523
+          ],
+          "room_targets_applied": 58972,
+          "first_256": {
+            "paid": 0.04119873046875,
+            "query_action_match": 0.57598876953125,
+            "weighted_terminal_mse": 0.6359031796455383,
+            "weighted_real_room_mse": 0.9988410472869873,
+            "weighted_room_teacher_mse": 0.9988410472869873,
+            "weighted_real_room_acc": 0.5214290618896484,
+            "policy_loss": -0.027919035404920578,
+            "gradient_norm": 3.0521018505096436,
+            "query_right": 0.63482666015625,
+            "action_right": 0.704833984375,
+            "used_room_target_count": 36.86328125
+          },
+          "first_formal_256": {
+            "paid": 0.06402587890625,
+            "query_action_match": 0.56610107421875,
+            "weighted_terminal_mse": 0.6013311743736267,
+            "weighted_real_room_mse": 0.9419532418251038,
+            "weighted_room_teacher_mse": 0.9419532418251038,
+            "weighted_real_room_acc": 0.5992916822433472,
+            "policy_loss": -0.047811221331357956,
+            "gradient_norm": 4.517857074737549,
+            "query_right": 0.67755126953125,
+            "action_right": 0.6484375,
+            "used_room_target_count": 36.23046875
+          },
+          "last_256": {
+            "paid": 0.201171875,
+            "query_action_match": 0.48406982421875,
+            "weighted_terminal_mse": 0.4480709135532379,
+            "weighted_real_room_mse": 0.02051372267305851,
+            "weighted_room_teacher_mse": 0.02051372267305851,
+            "weighted_real_room_acc": 0.9988085031509399,
+            "policy_loss": -0.14338961243629456,
+            "gradient_norm": 5.389033317565918,
+            "query_right": 0.7586669921875,
+            "action_right": 0.52496337890625,
+            "used_room_target_count": 30.98046875
+          }
+        },
+        "misbound": {
+          "checkpoint": "data/reroute-20261120/fit-misbound/birth-731.pt",
+          "sha256": "71cf82a6e790f5f5a9fbf9522dd2cf91400c0964eaca145f0260256383eaf422",
+          "birth_sha256": "e10dc474ad55e84082bc84bd564567d18fc0668503a819d731c558c01f1599d7",
+          "training_seconds": 218.3567425000001,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 310,
+            "bias": 40,
+            "gate": 620,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.12487126886844635,
+                2.119774341583252,
+                0.00788135640323162,
+                1.2722803354263306
+              ],
+              "room": [
+                0.044608622789382935,
+                0.8226566314697266,
+                0.003895475761964917,
+                0.5351644158363342
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.23591218888759613,
+                3.073490858078003,
+                0.04640723764896393,
+                1.8970801830291748
+              ],
+              "room": [
+                0.0459180623292923,
+                0.8365514278411865,
+                0.006818743422627449,
+                0.5323493480682373
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 61875,
+          "matched_case_counts": [
+            9134,
+            18217,
+            20232,
+            14292
+          ],
+          "room_targets_applied": 61875,
+          "first_256": {
+            "paid": 0.04168701171875,
+            "query_action_match": 0.6009521484375,
+            "weighted_terminal_mse": 0.6162046790122986,
+            "weighted_real_room_mse": 1.003526210784912,
+            "weighted_room_teacher_mse": 1.005523443222046,
+            "weighted_real_room_acc": 0.5049050450325012,
+            "policy_loss": -0.030684810131788254,
+            "gradient_norm": 2.576798677444458,
+            "query_right": 0.64898681640625,
+            "action_right": 0.73736572265625,
+            "used_room_target_count": 38.4609375
+          },
+          "first_formal_256": {
+            "paid": 0.06304931640625,
+            "query_action_match": 0.57958984375,
+            "weighted_terminal_mse": 0.5877327919006348,
+            "weighted_real_room_mse": 1.002519130706787,
+            "weighted_room_teacher_mse": 1.0011811256408691,
+            "weighted_real_room_acc": 0.5042179822921753,
+            "policy_loss": -0.04294804111123085,
+            "gradient_norm": 3.413646936416626,
+            "query_right": 0.649658203125,
+            "action_right": 0.6817626953125,
+            "used_room_target_count": 37.09375
+          },
+          "last_256": {
+            "paid": 0.2100830078125,
+            "query_action_match": 0.52581787109375,
+            "weighted_terminal_mse": 0.5154963731765747,
+            "weighted_real_room_mse": 1.0036039352416992,
+            "weighted_room_teacher_mse": 1.0014779567718506,
+            "weighted_real_room_acc": 0.49012628197669983,
+            "policy_loss": -0.1439674198627472,
+            "gradient_norm": 4.035053253173828,
+            "query_right": 0.58868408203125,
+            "action_right": 0.4991455078125,
+            "used_room_target_count": 33.65234375
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 101366,
+          "same_action": 94942,
+          "same_both": 83986,
+          "identical_initial_update_routes": 64
+        },
+        "terminal/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 107298,
+          "same_action": 100531,
+          "same_both": 94226,
+          "identical_initial_update_routes": 64
+        },
+        "next_room/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 103198,
+          "same_action": 97747,
+          "same_both": 88251,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "732": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 19218,
+          "0,2": 19082,
+          "1,0": 18915,
+          "1,2": 19463,
+          "2,0": 18942,
+          "2,1": 19068
+        },
+        "current_room_endpoints": {
+          "0,0": 8759,
+          "0,1": 14731,
+          "0,2": 14805,
+          "1,0": 14540,
+          "1,1": 8899,
+          "1,2": 14906,
+          "2,0": 14655,
+          "2,1": 14584,
+          "2,2": 8809
+        },
+        "easy_cases": [
+          703,
+          1407,
+          12218,
+          2056
+        ],
+        "formal_cases": [
+          16410,
+          32948,
+          24535,
+          24411
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-terminal/birth-732.pt",
+          "sha256": "e1a55b02416418d9d5a7ce4ddb01c888d16f3dff604467edfe170a8b4cbae4a1",
+          "birth_sha256": "f8e773af6f166efbea0ef69e980561a93102ba8768d22f988620cee7a21c293b",
+          "training_seconds": 220.2676167000027,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 277,
+            "bias": 40,
+            "gate": 554,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.06447027623653412,
+                0.6872338652610779,
+                0.0013061390491202474,
+                0.42341139912605286
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.26967382431030273,
+                2.098851203918457,
+                0.06846147030591965,
+                1.3169958591461182
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 59588,
+          "matched_case_counts": [
+            8753,
+            17066,
+            20232,
+            13537
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.00775146484375,
+            "query_action_match": 0.6572265625,
+            "weighted_terminal_mse": 0.6113147735595703,
+            "weighted_real_room_mse": 1.031497836112976,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5009924173355103,
+            "policy_loss": -0.011873695999383926,
+            "gradient_norm": 1.6209113597869873,
+            "query_right": 0.71185302734375,
+            "action_right": 0.74969482421875,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.095703125,
+            "query_action_match": 0.51336669921875,
+            "weighted_terminal_mse": 0.5995969772338867,
+            "weighted_real_room_mse": 1.0415494441986084,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4971397817134857,
+            "policy_loss": -0.07513878494501114,
+            "gradient_norm": 2.714305877685547,
+            "query_right": 0.60552978515625,
+            "action_right": 0.516845703125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.21197509765625,
+            "query_action_match": 0.4981689453125,
+            "weighted_terminal_mse": 0.4414207339286804,
+            "weighted_real_room_mse": 1.2631864547729492,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4876019060611725,
+            "policy_loss": -0.14576208591461182,
+            "gradient_norm": 3.698345899581909,
+            "query_right": 0.5970458984375,
+            "action_right": 0.51220703125,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-next_room/birth-732.pt",
+          "sha256": "a6ffa76a8746269042c539dcffc99fffdd03de31d1f35912f420c1c20f39a7ea",
+          "birth_sha256": "f8e773af6f166efbea0ef69e980561a93102ba8768d22f988620cee7a21c293b",
+          "training_seconds": 218.87101930000063,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 277,
+            "bias": 40,
+            "gate": 554,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.06447027623653412,
+                0.6872338652610779,
+                0.0013061390491202474,
+                0.42341139912605286
+              ],
+              "room": [
+                0.1273779273033142,
+                0.8494759798049927,
+                0.0011658166768029332,
+                0.5399676561355591
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.04878736287355423,
+                1.0365326404571533,
+                0.0044148582965135574,
+                0.6598222851753235
+              ],
+              "room": [
+                0.1301199495792389,
+                2.0336251258850098,
+                0.01571073569357395,
+                1.2768412828445435
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 70722,
+          "matched_case_counts": [
+            10541,
+            20896,
+            22876,
+            16409
+          ],
+          "room_targets_applied": 70722,
+          "first_256": {
+            "paid": 0.009033203125,
+            "query_action_match": 0.66619873046875,
+            "weighted_terminal_mse": 0.6671698093414307,
+            "weighted_real_room_mse": 0.7968382835388184,
+            "weighted_room_teacher_mse": 0.7968382835388184,
+            "weighted_real_room_acc": 0.7118911743164062,
+            "policy_loss": -0.014026404358446598,
+            "gradient_norm": 1.5916836261749268,
+            "query_right": 0.75897216796875,
+            "action_right": 0.7579345703125,
+            "used_room_target_count": 42.63671875
+          },
+          "first_formal_256": {
+            "paid": 0.04150390625,
+            "query_action_match": 0.622802734375,
+            "weighted_terminal_mse": 0.6377447843551636,
+            "weighted_real_room_mse": 0.738329291343689,
+            "weighted_room_teacher_mse": 0.738329291343689,
+            "weighted_real_room_acc": 0.7575792074203491,
+            "policy_loss": -0.03146912157535553,
+            "gradient_norm": 2.0851831436157227,
+            "query_right": 0.74420166015625,
+            "action_right": 0.71746826171875,
+            "used_room_target_count": 39.859375
+          },
+          "last_256": {
+            "paid": 0.1173095703125,
+            "query_action_match": 0.59515380859375,
+            "weighted_terminal_mse": 0.4579783082008362,
+            "weighted_real_room_mse": 0.35929709672927856,
+            "weighted_room_teacher_mse": 0.35929709672927856,
+            "weighted_real_room_acc": 0.8958795070648193,
+            "policy_loss": -0.0790184810757637,
+            "gradient_norm": 4.358391761779785,
+            "query_right": 0.7352294921875,
+            "action_right": 0.68280029296875,
+            "used_room_target_count": 38.08984375
+          }
+        },
+        "misbound": {
+          "checkpoint": "data/reroute-20261120/fit-misbound/birth-732.pt",
+          "sha256": "da5c6cacf4adb35460ef3bc229d4a0f91c79cbd22f74412a973581c7d73f7fd6",
+          "birth_sha256": "f8e773af6f166efbea0ef69e980561a93102ba8768d22f988620cee7a21c293b",
+          "training_seconds": 219.08666410000296,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 277,
+            "bias": 40,
+            "gate": 554,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.06447027623653412,
+                0.6872338652610779,
+                0.0013061390491202474,
+                0.42341139912605286
+              ],
+              "room": [
+                0.12911176681518555,
+                0.8412560224533081,
+                0.0011066041188314557,
+                0.5385426878929138
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.13903231918811798,
+                1.5774502754211426,
+                0.030786948278546333,
+                0.9318561553955078
+              ],
+              "room": [
+                0.11261937022209167,
+                1.0768548250198364,
+                0.010930532589554787,
+                0.6378592252731323
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 61419,
+          "matched_case_counts": [
+            8967,
+            17633,
+            20875,
+            13944
+          ],
+          "room_targets_applied": 61419,
+          "first_256": {
+            "paid": -0.00042724609375,
+            "query_action_match": 0.66900634765625,
+            "weighted_terminal_mse": 0.6216312050819397,
+            "weighted_real_room_mse": 1.0054423809051514,
+            "weighted_room_teacher_mse": 1.004218578338623,
+            "weighted_real_room_acc": 0.5031628608703613,
+            "policy_loss": -0.0024079130962491035,
+            "gradient_norm": 1.4035718441009521,
+            "query_right": 0.7430419921875,
+            "action_right": 0.78704833984375,
+            "used_room_target_count": 42.81640625
+          },
+          "first_formal_256": {
+            "paid": 0.02166748046875,
+            "query_action_match": 0.61444091796875,
+            "weighted_terminal_mse": 0.5641832947731018,
+            "weighted_real_room_mse": 1.0046067237854004,
+            "weighted_room_teacher_mse": 1.0059146881103516,
+            "weighted_real_room_acc": 0.5047084093093872,
+            "policy_loss": -0.01592903770506382,
+            "gradient_norm": 2.2109460830688477,
+            "query_right": 0.69879150390625,
+            "action_right": 0.7159423828125,
+            "used_room_target_count": 39.32421875
+          },
+          "last_256": {
+            "paid": 0.21881103515625,
+            "query_action_match": 0.49365234375,
+            "weighted_terminal_mse": 0.46245497465133667,
+            "weighted_real_room_mse": 1.003139853477478,
+            "weighted_room_teacher_mse": 1.0039176940917969,
+            "weighted_real_room_acc": 0.4993218183517456,
+            "policy_loss": -0.15938282012939453,
+            "gradient_norm": 3.6265618801116943,
+            "query_right": 0.642578125,
+            "action_right": 0.5235595703125,
+            "used_room_target_count": 31.59375
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 96900,
+          "same_action": 85820,
+          "same_both": 72759,
+          "identical_initial_update_routes": 64
+        },
+        "terminal/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 101577,
+          "same_action": 101910,
+          "same_both": 90352,
+          "identical_initial_update_routes": 64
+        },
+        "next_room/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 103957,
+          "same_action": 88472,
+          "same_both": 80152,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "733": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 19010,
+          "0,2": 19144,
+          "1,0": 19264,
+          "1,2": 18999,
+          "2,0": 19121,
+          "2,1": 19150
+        },
+        "current_room_endpoints": {
+          "0,0": 9019,
+          "0,1": 14682,
+          "0,2": 14433,
+          "1,0": 14638,
+          "1,1": 8834,
+          "1,2": 14771,
+          "2,0": 14622,
+          "2,1": 14663,
+          "2,2": 9026
+        },
+        "easy_cases": [
+          661,
+          1344,
+          12331,
+          2048
+        ],
+        "formal_cases": [
+          16253,
+          32925,
+          24295,
+          24831
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-terminal/birth-733.pt",
+          "sha256": "4ce344999bcff6a55e805240fb8f78403672d9c705e9a19fa68a4230942628b9",
+          "birth_sha256": "80cea5afa7679c44d8d44ad263bd4af86f5bc53cc4878f318da6cc8ee28a4a0d",
+          "training_seconds": 219.87335200000234,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 287,
+            "bias": 40,
+            "gate": 574,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.3171577453613281,
+                3.4623970985412598,
+                0.006433288101106882,
+                2.2303457260131836
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.033310070633888245,
+                0.24015463888645172,
+                0.0030924740713089705,
+                0.16069695353507996
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 65053,
+          "matched_case_counts": [
+            9555,
+            19357,
+            21041,
+            15100
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.00421142578125,
+            "query_action_match": 0.58807373046875,
+            "weighted_terminal_mse": 0.6849288940429688,
+            "weighted_real_room_mse": 1.4912694692611694,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4928457736968994,
+            "policy_loss": -0.0037565433885902166,
+            "gradient_norm": 1.3250590562820435,
+            "query_right": 0.3526611328125,
+            "action_right": 0.17852783203125,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": -0.00811767578125,
+            "query_action_match": 0.63519287109375,
+            "weighted_terminal_mse": 0.65388023853302,
+            "weighted_real_room_mse": 1.413545846939087,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.501703143119812,
+            "policy_loss": 0.0048072547651827335,
+            "gradient_norm": 0.9485727548599243,
+            "query_right": 0.304443359375,
+            "action_right": 0.15972900390625,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.0650634765625,
+            "query_action_match": 0.4891357421875,
+            "weighted_terminal_mse": 0.5386013984680176,
+            "weighted_real_room_mse": 1.2119532823562622,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.486533522605896,
+            "policy_loss": -0.06143980473279953,
+            "gradient_norm": 2.1363637447357178,
+            "query_right": 0.4993896484375,
+            "action_right": 0.4298095703125,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-next_room/birth-733.pt",
+          "sha256": "d419362dbbc96b001ba842e0ee6e62344d4bdd32eb6286f5bafb0888e2492b2c",
+          "birth_sha256": "80cea5afa7679c44d8d44ad263bd4af86f5bc53cc4878f318da6cc8ee28a4a0d",
+          "training_seconds": 218.42334589999518,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 287,
+            "bias": 40,
+            "gate": 574,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.3171577453613281,
+                3.4623970985412598,
+                0.006433288101106882,
+                2.2303457260131836
+              ],
+              "room": [
+                0.16886891424655914,
+                2.6952414512634277,
+                0.006384340580552816,
+                1.6694117784500122
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.11756714433431625,
+                1.8015549182891846,
+                0.0111984983086586,
+                1.0740299224853516
+              ],
+              "room": [
+                0.284394770860672,
+                2.429741621017456,
+                0.023370126262307167,
+                1.4955750703811646
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 73543,
+          "matched_case_counts": [
+            11091,
+            22338,
+            22696,
+            17418
+          ],
+          "room_targets_applied": 73543,
+          "first_256": {
+            "paid": 0.00604248046875,
+            "query_action_match": 0.54864501953125,
+            "weighted_terminal_mse": 0.6933339238166809,
+            "weighted_real_room_mse": 0.9043909311294556,
+            "weighted_room_teacher_mse": 0.9043909311294556,
+            "weighted_real_room_acc": 0.6214869022369385,
+            "policy_loss": -0.0063084750436246395,
+            "gradient_norm": 3.324427366256714,
+            "query_right": 0.41229248046875,
+            "action_right": 0.1944580078125,
+            "used_room_target_count": 35.11328125
+          },
+          "first_formal_256": {
+            "paid": -0.0108642578125,
+            "query_action_match": 0.61968994140625,
+            "weighted_terminal_mse": 0.6697402596473694,
+            "weighted_real_room_mse": 0.6570967435836792,
+            "weighted_room_teacher_mse": 0.6570967435836792,
+            "weighted_real_room_acc": 0.7879697680473328,
+            "policy_loss": 0.00996674969792366,
+            "gradient_norm": 2.4379963874816895,
+            "query_right": 0.31036376953125,
+            "action_right": 0.1702880859375,
+            "used_room_target_count": 39.66015625
+          },
+          "last_256": {
+            "paid": -0.0015869140625,
+            "query_action_match": 0.6590576171875,
+            "weighted_terminal_mse": 0.6375051140785217,
+            "weighted_real_room_mse": 0.3567349910736084,
+            "weighted_room_teacher_mse": 0.3567349910736084,
+            "weighted_real_room_acc": 0.8875692486763,
+            "policy_loss": -0.0024313004687428474,
+            "gradient_norm": 1.6582670211791992,
+            "query_right": 0.2664794921875,
+            "action_right": 0.162109375,
+            "used_room_target_count": 42.1796875
+          }
+        },
+        "misbound": {
+          "checkpoint": "data/reroute-20261120/fit-misbound/birth-733.pt",
+          "sha256": "541261afc4bf54ab67fab2203392b03b13e308245af557991581c2af2f5ee3bb",
+          "birth_sha256": "80cea5afa7679c44d8d44ad263bd4af86f5bc53cc4878f318da6cc8ee28a4a0d",
+          "training_seconds": 218.7289976999964,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 287,
+            "bias": 40,
+            "gate": 574,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.3171577453613281,
+                3.4623970985412598,
+                0.006433288101106882,
+                2.2303457260131836
+              ],
+              "room": [
+                0.16290676593780518,
+                2.6485509872436523,
+                0.006330346222966909,
+                1.6353633403778076
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.16924196481704712,
+                1.8960577249526978,
+                0.0195938590914011,
+                1.2467588186264038
+              ],
+              "room": [
+                0.07601577043533325,
+                1.8470038175582886,
+                0.011532953009009361,
+                1.1721155643463135
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 56962,
+          "matched_case_counts": [
+            8584,
+            17442,
+            17423,
+            13513
+          ],
+          "room_targets_applied": 56962,
+          "first_256": {
+            "paid": 0.0040283203125,
+            "query_action_match": 0.41168212890625,
+            "weighted_terminal_mse": 0.6948037147521973,
+            "weighted_real_room_mse": 1.0150606632232666,
+            "weighted_room_teacher_mse": 1.0089142322540283,
+            "weighted_real_room_acc": 0.4909430146217346,
+            "policy_loss": -0.0052424268797039986,
+            "gradient_norm": 2.260345697402954,
+            "query_right": 0.65478515625,
+            "action_right": 0.25384521484375,
+            "used_room_target_count": 26.34765625
+          },
+          "first_formal_256": {
+            "paid": -0.0067138671875,
+            "query_action_match": 0.4481201171875,
+            "weighted_terminal_mse": 0.6440162658691406,
+            "weighted_real_room_mse": 1.004377841949463,
+            "weighted_room_teacher_mse": 1.0036606788635254,
+            "weighted_real_room_acc": 0.502383291721344,
+            "policy_loss": 0.0011670748936012387,
+            "gradient_norm": 1.578518271446228,
+            "query_right": 0.682373046875,
+            "action_right": 0.356689453125,
+            "used_room_target_count": 28.6796875
+          },
+          "last_256": {
+            "paid": 0.1544189453125,
+            "query_action_match": 0.50225830078125,
+            "weighted_terminal_mse": 0.5166012644767761,
+            "weighted_real_room_mse": 0.9990463256835938,
+            "weighted_room_teacher_mse": 1.0024865865707397,
+            "weighted_real_room_acc": 0.5112161636352539,
+            "policy_loss": -0.12667904794216156,
+            "gradient_norm": 3.5689101219177246,
+            "query_right": 0.70306396484375,
+            "action_right": 0.519775390625,
+            "used_room_target_count": 32.14453125
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 98318,
+          "same_action": 102322,
+          "same_both": 88066,
+          "identical_initial_update_routes": 64
+        },
+        "terminal/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 77576,
+          "same_action": 80791,
+          "same_both": 54089,
+          "identical_initial_update_routes": 64
+        },
+        "next_room/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 66858,
+          "same_action": 75063,
+          "same_both": 44519,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "734": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 19348,
+          "0,2": 18961,
+          "1,0": 19057,
+          "1,2": 19219,
+          "2,0": 18960,
+          "2,1": 19143
+        },
+        "current_room_endpoints": {
+          "0,0": 8902,
+          "0,1": 14787,
+          "0,2": 14563,
+          "1,0": 14588,
+          "1,1": 8941,
+          "1,2": 14675,
+          "2,0": 14617,
+          "2,1": 14702,
+          "2,2": 8913
+        },
+        "easy_cases": [
+          671,
+          1414,
+          12262,
+          2037
+        ],
+        "formal_cases": [
+          16339,
+          32601,
+          24645,
+          24719
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-terminal/birth-734.pt",
+          "sha256": "24a34c3a610dafed8c1f93fc15dada074ec808fe4dcbde65321de403d51eccba",
+          "birth_sha256": "3d80050ebf1f9b170745ee475c0132b064f22b8ada00b13dd041813421781143",
+          "training_seconds": 376.7808311999979,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 284,
+            "bias": 40,
+            "gate": 568,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.051298391073942184,
+                0.741553008556366,
+                0.002359858015552163,
+                0.4880189001560211
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.052309680730104446,
+                0.9248450398445129,
+                0.01063354779034853,
+                0.5641372799873352
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 70791,
+          "matched_case_counts": [
+            10528,
+            20903,
+            23101,
+            16259
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.0081787109375,
+            "query_action_match": 0.665283203125,
+            "weighted_terminal_mse": 0.658465564250946,
+            "weighted_real_room_mse": 1.0050325393676758,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5018694400787354,
+            "policy_loss": -0.0024984264746308327,
+            "gradient_norm": 0.48378655314445496,
+            "query_right": 0.759521484375,
+            "action_right": 0.828369140625,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": -0.00433349609375,
+            "query_action_match": 0.6724853515625,
+            "weighted_terminal_mse": 0.5662473440170288,
+            "weighted_real_room_mse": 1.024472951889038,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.48971182107925415,
+            "policy_loss": -0.010606794618070126,
+            "gradient_norm": 1.5356957912445068,
+            "query_right": 0.7520751953125,
+            "action_right": 0.8389892578125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.159912109375,
+            "query_action_match": 0.5224609375,
+            "weighted_terminal_mse": 0.4414919912815094,
+            "weighted_real_room_mse": 1.112179160118103,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5035645961761475,
+            "policy_loss": -0.1282164752483368,
+            "gradient_norm": 3.2334060668945312,
+            "query_right": 0.6507568359375,
+            "action_right": 0.498046875,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-next_room/birth-734.pt",
+          "sha256": "ff41003bae2f16482d7f5a5ea31ed00b948d15b3e38ce517fa2d642939c9cde8",
+          "birth_sha256": "3d80050ebf1f9b170745ee475c0132b064f22b8ada00b13dd041813421781143",
+          "training_seconds": 381.7101438999962,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 284,
+            "bias": 40,
+            "gate": 568,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.051298391073942184,
+                0.741553008556366,
+                0.002359858015552163,
+                0.4880189001560211
+              ],
+              "room": [
+                0.06458627432584763,
+                0.8765961527824402,
+                0.0025702158454805613,
+                0.5876871347427368
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.047190431505441666,
+                0.7633848190307617,
+                0.00598977180197835,
+                0.42969101667404175
+              ],
+              "room": [
+                0.031007789075374603,
+                1.1163976192474365,
+                0.0118526890873909,
+                0.7310817241668701
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 67900,
+          "matched_case_counts": [
+            9847,
+            19878,
+            22466,
+            15709
+          ],
+          "room_targets_applied": 67900,
+          "first_256": {
+            "paid": 0.00830078125,
+            "query_action_match": 0.666259765625,
+            "weighted_terminal_mse": 0.6642404198646545,
+            "weighted_real_room_mse": 0.9499418139457703,
+            "weighted_room_teacher_mse": 0.9499418139457703,
+            "weighted_real_room_acc": 0.5594090223312378,
+            "policy_loss": -0.002688636537641287,
+            "gradient_norm": 1.073815107345581,
+            "query_right": 0.7607421875,
+            "action_right": 0.8284912109375,
+            "used_room_target_count": 42.640625
+          },
+          "first_formal_256": {
+            "paid": -0.0045166015625,
+            "query_action_match": 0.644287109375,
+            "weighted_terminal_mse": 0.6491405367851257,
+            "weighted_real_room_mse": 0.40458565950393677,
+            "weighted_room_teacher_mse": 0.40458565950393677,
+            "weighted_real_room_acc": 0.8815964460372925,
+            "policy_loss": -0.008692542091012001,
+            "gradient_norm": 1.3065091371536255,
+            "query_right": 0.7559814453125,
+            "action_right": 0.8031005859375,
+            "used_room_target_count": 41.234375
+          },
+          "last_256": {
+            "paid": 0.14898681640625,
+            "query_action_match": 0.53631591796875,
+            "weighted_terminal_mse": 0.5077741146087646,
+            "weighted_real_room_mse": 0.007707688491791487,
+            "weighted_room_teacher_mse": 0.007707688491791487,
+            "weighted_real_room_acc": 0.9993240237236023,
+            "policy_loss": -0.11571252346038818,
+            "gradient_norm": 4.841351509094238,
+            "query_right": 0.7459716796875,
+            "action_right": 0.54425048828125,
+            "used_room_target_count": 34.32421875
+          }
+        },
+        "misbound": {
+          "checkpoint": "data/reroute-20261120/fit-misbound/birth-734.pt",
+          "sha256": "7f33fd5f63ad2aa5de86bf3b5faca761f001b4294a9ee43d6d69321aac5fecb2",
+          "birth_sha256": "3d80050ebf1f9b170745ee475c0132b064f22b8ada00b13dd041813421781143",
+          "training_seconds": 393.31801269999414,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 284,
+            "bias": 40,
+            "gate": 568,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.051298391073942184,
+                0.741553008556366,
+                0.002359858015552163,
+                0.4880189001560211
+              ],
+              "room": [
+                0.06462236493825912,
+                0.8752376437187195,
+                0.0025513337459415197,
+                0.586800754070282
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.03985697031021118,
+                0.6793476939201355,
+                0.006083497311919928,
+                0.44165799021720886
+              ],
+              "room": [
+                0.04250094294548035,
+                0.7167075276374817,
+                0.003662243951112032,
+                0.45271581411361694
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 64068,
+          "matched_case_counts": [
+            9349,
+            18244,
+            21633,
+            14842
+          ],
+          "room_targets_applied": 64068,
+          "first_256": {
+            "paid": 0.0069580078125,
+            "query_action_match": 0.66363525390625,
+            "weighted_terminal_mse": 0.6607486009597778,
+            "weighted_real_room_mse": 1.003462553024292,
+            "weighted_room_teacher_mse": 1.003835916519165,
+            "weighted_real_room_acc": 0.49601221084594727,
+            "policy_loss": -0.0011870318558067083,
+            "gradient_norm": 0.7744945287704468,
+            "query_right": 0.75860595703125,
+            "action_right": 0.827880859375,
+            "used_room_target_count": 42.47265625
+          },
+          "first_formal_256": {
+            "paid": -0.00360107421875,
+            "query_action_match": 0.6607666015625,
+            "weighted_terminal_mse": 0.5921622514724731,
+            "weighted_real_room_mse": 1.0045138597488403,
+            "weighted_room_teacher_mse": 1.0017211437225342,
+            "weighted_real_room_acc": 0.49776819348335266,
+            "policy_loss": -0.0029074351768940687,
+            "gradient_norm": 1.7790992259979248,
+            "query_right": 0.7423095703125,
+            "action_right": 0.8228759765625,
+            "used_room_target_count": 42.2890625
+          },
+          "last_256": {
+            "paid": 0.1943359375,
+            "query_action_match": 0.51141357421875,
+            "weighted_terminal_mse": 0.4911039173603058,
+            "weighted_real_room_mse": 1.00076162815094,
+            "weighted_room_teacher_mse": 1.0018670558929443,
+            "weighted_real_room_acc": 0.515703558921814,
+            "policy_loss": -0.14110085368156433,
+            "gradient_norm": 4.171098709106445,
+            "query_right": 0.52532958984375,
+            "action_right": 0.50146484375,
+            "used_room_target_count": 32.73046875
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 108907,
+          "same_action": 99164,
+          "same_both": 94485,
+          "identical_initial_update_routes": 64
+        },
+        "terminal/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 93647,
+          "same_action": 95374,
+          "same_both": 79021,
+          "identical_initial_update_routes": 64
+        },
+        "next_room/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 95338,
+          "same_action": 92566,
+          "same_both": 78443,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "735": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 19120,
+          "0,2": 19136,
+          "1,0": 19043,
+          "1,2": 19141,
+          "2,0": 19049,
+          "2,1": 19199
+        },
+        "current_room_endpoints": {
+          "0,0": 8895,
+          "0,1": 14817,
+          "0,2": 14715,
+          "1,0": 14827,
+          "1,1": 8780,
+          "1,2": 14662,
+          "2,0": 14661,
+          "2,1": 14568,
+          "2,2": 8763
+        },
+        "easy_cases": [
+          685,
+          1358,
+          12329,
+          2012
+        ],
+        "formal_cases": [
+          16347,
+          32947,
+          24584,
+          24426
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-terminal/birth-735.pt",
+          "sha256": "a7718eed1b6b92e947e3b1aae9afa330e619690d14079d698df6e6cbcfc39ebc",
+          "birth_sha256": "50973af7e3c28c2d875260a826a61528567c4ae959cfbb29af739c796bae0adb",
+          "training_seconds": 379.3364347999959,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 297,
+            "bias": 40,
+            "gate": 594,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.11166485399007797,
+                1.5501385927200317,
+                0.004670315887778997,
+                0.9599953293800354
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.1798391342163086,
+                2.4378609657287598,
+                0.03713681921362877,
+                1.650590419769287
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 55898,
+          "matched_case_counts": [
+            8358,
+            16665,
+            17932,
+            12943
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.02935791015625,
+            "query_action_match": 0.488525390625,
+            "weighted_terminal_mse": 0.6636415719985962,
+            "weighted_real_room_mse": 1.0353437662124634,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.49368250370025635,
+            "policy_loss": -0.027183961123228073,
+            "gradient_norm": 1.9180406332015991,
+            "query_right": 0.26654052734375,
+            "action_right": 0.53167724609375,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.04058837890625,
+            "query_action_match": 0.48651123046875,
+            "weighted_terminal_mse": 0.6264787316322327,
+            "weighted_real_room_mse": 1.032183051109314,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4976879954338074,
+            "policy_loss": -0.034613024443387985,
+            "gradient_norm": 2.627311944961548,
+            "query_right": 0.3572998046875,
+            "action_right": 0.52618408203125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.0628662109375,
+            "query_action_match": 0.48919677734375,
+            "weighted_terminal_mse": 0.5307890772819519,
+            "weighted_real_room_mse": 1.0981576442718506,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4934696555137634,
+            "policy_loss": -0.045609939843416214,
+            "gradient_norm": 3.1369781494140625,
+            "query_right": 0.33148193359375,
+            "action_right": 0.518310546875,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-next_room/birth-735.pt",
+          "sha256": "130fb6759e675939d871e19c8d979d648b6c2f4ca9eb3c1a05fbd15f57b5e5ea",
+          "birth_sha256": "50973af7e3c28c2d875260a826a61528567c4ae959cfbb29af739c796bae0adb",
+          "training_seconds": 398.3954408999998,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 297,
+            "bias": 40,
+            "gate": 594,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.11166485399007797,
+                1.5501385927200317,
+                0.004670315887778997,
+                0.9599953293800354
+              ],
+              "room": [
+                0.1726064682006836,
+                1.634497880935669,
+                0.006022993009537458,
+                1.017130732536316
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.1336720883846283,
+                2.127432107925415,
+                0.015205422416329384,
+                1.4062129259109497
+              ],
+              "room": [
+                0.10583003610372543,
+                1.6061738729476929,
+                0.013226467184722424,
+                0.9681007862091064
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 53840,
+          "matched_case_counts": [
+            8243,
+            16298,
+            16730,
+            12569
+          ],
+          "room_targets_applied": 53840,
+          "first_256": {
+            "paid": 0.007080078125,
+            "query_action_match": 0.40277099609375,
+            "weighted_terminal_mse": 0.6682482361793518,
+            "weighted_real_room_mse": 1.0035732984542847,
+            "weighted_room_teacher_mse": 1.0035732984542847,
+            "weighted_real_room_acc": 0.5151810646057129,
+            "policy_loss": -0.003207004629075527,
+            "gradient_norm": 1.922624945640564,
+            "query_right": 0.319580078125,
+            "action_right": 0.77947998046875,
+            "used_room_target_count": 25.77734375
+          },
+          "first_formal_256": {
+            "paid": 0.00067138671875,
+            "query_action_match": 0.4097900390625,
+            "weighted_terminal_mse": 0.6693700551986694,
+            "weighted_real_room_mse": 0.9009466171264648,
+            "weighted_room_teacher_mse": 0.9009466171264648,
+            "weighted_real_room_acc": 0.6323596835136414,
+            "policy_loss": -0.003408135613426566,
+            "gradient_norm": 2.6155338287353516,
+            "query_right": 0.3594970703125,
+            "action_right": 0.602294921875,
+            "used_room_target_count": 26.2265625
+          },
+          "last_256": {
+            "paid": 0.07196044921875,
+            "query_action_match": 0.4970703125,
+            "weighted_terminal_mse": 0.574347198009491,
+            "weighted_real_room_mse": 0.42773348093032837,
+            "weighted_room_teacher_mse": 0.42773348093032837,
+            "weighted_real_room_acc": 0.853066623210907,
+            "policy_loss": -0.05457472801208496,
+            "gradient_norm": 5.521773338317871,
+            "query_right": 0.31500244140625,
+            "action_right": 0.53192138671875,
+            "used_room_target_count": 31.8125
+          }
+        },
+        "misbound": {
+          "checkpoint": "data/reroute-20261120/fit-misbound/birth-735.pt",
+          "sha256": "3ab21860c0aeee83262e821cc2186d4807e46d2561754e689d63ef47ce036ea7",
+          "birth_sha256": "50973af7e3c28c2d875260a826a61528567c4ae959cfbb29af739c796bae0adb",
+          "training_seconds": 371.23981799999456,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 297,
+            "bias": 40,
+            "gate": 594,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.11166485399007797,
+                1.5501385927200317,
+                0.004670315887778997,
+                0.9599953293800354
+              ],
+              "room": [
+                0.16111315786838531,
+                1.5350769758224487,
+                0.005797213409096003,
+                0.9616544842720032
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.0790831595659256,
+                1.7057329416275024,
+                0.021736018359661102,
+                1.0951476097106934
+              ],
+              "room": [
+                0.0719461739063263,
+                1.00937819480896,
+                0.006045202258974314,
+                0.5814215540885925
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 64714,
+          "matched_case_counts": [
+            9722,
+            19498,
+            20597,
+            14897
+          ],
+          "room_targets_applied": 64714,
+          "first_256": {
+            "paid": 0.0067138671875,
+            "query_action_match": 0.5335693359375,
+            "weighted_terminal_mse": 0.6740753650665283,
+            "weighted_real_room_mse": 1.008341670036316,
+            "weighted_room_teacher_mse": 1.0080827474594116,
+            "weighted_real_room_acc": 0.5013021230697632,
+            "policy_loss": -0.020086949691176414,
+            "gradient_norm": 1.795844554901123,
+            "query_right": 0.28546142578125,
+            "action_right": 0.49688720703125,
+            "used_room_target_count": 34.1484375
+          },
+          "first_formal_256": {
+            "paid": -0.00274658203125,
+            "query_action_match": 0.5447998046875,
+            "weighted_terminal_mse": 0.6361752152442932,
+            "weighted_real_room_mse": 1.004328966140747,
+            "weighted_room_teacher_mse": 1.0051169395446777,
+            "weighted_real_room_acc": 0.5046820640563965,
+            "policy_loss": -0.008089957758784294,
+            "gradient_norm": 2.6871962547302246,
+            "query_right": 0.45416259765625,
+            "action_right": 0.68609619140625,
+            "used_room_target_count": 34.8671875
+          },
+          "last_256": {
+            "paid": 0.06640625,
+            "query_action_match": 0.580810546875,
+            "weighted_terminal_mse": 0.5256826877593994,
+            "weighted_real_room_mse": 1.0017870664596558,
+            "weighted_room_teacher_mse": 1.0025538206100464,
+            "weighted_real_room_acc": 0.5042616128921509,
+            "policy_loss": -0.060204725712537766,
+            "gradient_norm": 3.83798885345459,
+            "query_right": 0.52947998046875,
+            "action_right": 0.62774658203125,
+            "used_room_target_count": 37.171875
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 90895,
+          "same_action": 83375,
+          "same_both": 65716,
+          "identical_initial_update_routes": 64
+        },
+        "terminal/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 83970,
+          "same_action": 85492,
+          "same_both": 63330,
+          "identical_initial_update_routes": 64
+        },
+        "next_room/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 91039,
+          "same_action": 84871,
+          "same_both": 66969,
+          "identical_initial_update_routes": 64
+        }
+      }
+    },
+    "736": {
+      "worlds": {
+        "prior_room_endpoints": {
+          "0,1": 19234,
+          "0,2": 19016,
+          "1,0": 19221,
+          "1,2": 18999,
+          "2,0": 18950,
+          "2,1": 19268
+        },
+        "current_room_endpoints": {
+          "0,0": 8851,
+          "0,1": 14773,
+          "0,2": 14529,
+          "1,0": 14701,
+          "1,1": 9043,
+          "1,2": 14653,
+          "2,0": 14681,
+          "2,1": 14640,
+          "2,2": 8817
+        },
+        "easy_cases": [
+          706,
+          1410,
+          12230,
+          2038
+        ],
+        "formal_cases": [
+          16215,
+          32734,
+          24682,
+          24673
+        ]
+      },
+      "arms": {
+        "terminal": {
+          "checkpoint": "data/reroute-20261120/fit-terminal/birth-736.pt",
+          "sha256": "84d97c6df5171dec8d68cf27b83d8309660e8b203756f9176a3cb8635b3871e7",
+          "birth_sha256": "34d33c8352544d3aa2ab9824f0128b88b6da0b971b9c9980b071219a51f7bc64",
+          "training_seconds": 370.5569848000014,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 303,
+            "bias": 40,
+            "gate": 606,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.024965818971395493,
+                1.0895881652832031,
+                0.0016263322904706001,
+                0.6696990132331848
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.13722556829452515,
+                2.320699691772461,
+                0.033465366810560226,
+                1.510111689567566
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 47210,
+          "matched_case_counts": [
+            7234,
+            13729,
+            15343,
+            10904
+          ],
+          "room_targets_applied": 0,
+          "first_256": {
+            "paid": 0.0675048828125,
+            "query_action_match": 0.423828125,
+            "weighted_terminal_mse": 0.6546846032142639,
+            "weighted_real_room_mse": 1.0638389587402344,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.48709994554519653,
+            "policy_loss": -0.055688999593257904,
+            "gradient_norm": 2.208300828933716,
+            "query_right": 0.63623046875,
+            "action_right": 0.37451171875,
+            "used_room_target_count": 0.0
+          },
+          "first_formal_256": {
+            "paid": 0.16693115234375,
+            "query_action_match": 0.43243408203125,
+            "weighted_terminal_mse": 0.6213757991790771,
+            "weighted_real_room_mse": 1.1491336822509766,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.4960363209247589,
+            "policy_loss": -0.11511057615280151,
+            "gradient_norm": 3.2784032821655273,
+            "query_right": 0.59234619140625,
+            "action_right": 0.4815673828125,
+            "used_room_target_count": 0.0
+          },
+          "last_256": {
+            "paid": 0.19805908203125,
+            "query_action_match": 0.40625,
+            "weighted_terminal_mse": 0.5201901197433472,
+            "weighted_real_room_mse": 1.1620090007781982,
+            "weighted_room_teacher_mse": 0.0,
+            "weighted_real_room_acc": 0.5049043893814087,
+            "policy_loss": -0.13821016252040863,
+            "gradient_norm": 3.3514726161956787,
+            "query_right": 0.521728515625,
+            "action_right": 0.501220703125,
+            "used_room_target_count": 0.0
+          }
+        },
+        "next_room": {
+          "checkpoint": "data/reroute-20261120/fit-next_room/birth-736.pt",
+          "sha256": "31efa5745bc7054ba703530bca0cfd57a106a7a1a841bfdb01f6b56d572f00a9",
+          "birth_sha256": "34d33c8352544d3aa2ab9824f0128b88b6da0b971b9c9980b071219a51f7bc64",
+          "training_seconds": 389.3963952999984,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 303,
+            "bias": 40,
+            "gate": 606,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.024965818971395493,
+                1.0895881652832031,
+                0.0016263322904706001,
+                0.6696990132331848
+              ],
+              "room": [
+                0.0786052867770195,
+                2.0624563694000244,
+                0.003565770573914051,
+                1.2788327932357788
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.047503385692834854,
+                1.7165672779083252,
+                0.00936717726290226,
+                1.2101227045059204
+              ],
+              "room": [
+                0.09497947245836258,
+                1.9727199077606201,
+                0.016245100647211075,
+                1.217881679534912
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 69943,
+          "matched_case_counts": [
+            10378,
+            20514,
+            22789,
+            16262
+          ],
+          "room_targets_applied": 69943,
+          "first_256": {
+            "paid": -0.00238037109375,
+            "query_action_match": 0.6346435546875,
+            "weighted_terminal_mse": 0.6628246307373047,
+            "weighted_real_room_mse": 0.8974785804748535,
+            "weighted_room_teacher_mse": 0.8974785804748535,
+            "weighted_real_room_acc": 0.6108558177947998,
+            "policy_loss": -0.005314512178301811,
+            "gradient_norm": 2.5814151763916016,
+            "query_right": 0.76177978515625,
+            "action_right": 0.75213623046875,
+            "used_room_target_count": 40.6171875
+          },
+          "first_formal_256": {
+            "paid": 0.02099609375,
+            "query_action_match": 0.5826416015625,
+            "weighted_terminal_mse": 0.6643018126487732,
+            "weighted_real_room_mse": 0.4568791389465332,
+            "weighted_room_teacher_mse": 0.4568791389465332,
+            "weighted_real_room_acc": 0.865939736366272,
+            "policy_loss": -0.01473845262080431,
+            "gradient_norm": 2.5018186569213867,
+            "query_right": 0.766845703125,
+            "action_right": 0.716064453125,
+            "used_room_target_count": 37.2890625
+          },
+          "last_256": {
+            "paid": 0.07989501953125,
+            "query_action_match": 0.615966796875,
+            "weighted_terminal_mse": 0.4335428476333618,
+            "weighted_real_room_mse": 0.01117768045514822,
+            "weighted_room_teacher_mse": 0.01117768045514822,
+            "weighted_real_room_acc": 0.9985581636428833,
+            "policy_loss": -0.056335270404815674,
+            "gradient_norm": 4.28549861907959,
+            "query_right": 0.761962890625,
+            "action_right": 0.7117919921875,
+            "used_room_target_count": 39.421875
+          }
+        },
+        "misbound": {
+          "checkpoint": "data/reroute-20261120/fit-misbound/birth-736.pt",
+          "sha256": "7efe76d048a9239b71ee891cc5f2cc1322b77b8a3e594f227a86209d026062dd",
+          "birth_sha256": "34d33c8352544d3aa2ab9824f0128b88b6da0b971b9c9980b071219a51f7bc64",
+          "training_seconds": 398.78312559999904,
+          "first_step_replayed_bitwise": true,
+          "changed_entries": {
+            "weight": 303,
+            "bias": 40,
+            "gate": 606,
+            "keep_logit": 40,
+            "edit_rate": 40,
+            "post_bias": 40,
+            "leak_logit": 40,
+            "return_weight": 80,
+            "adopt_bias": 20,
+            "adopt_receiver": 20,
+            "adopt_sender": 20,
+            "trial_gain": 2,
+            "mask": 0
+          },
+          "through_history_gradient_norms": {
+            "1": {
+              "terminal": [
+                0.024965818971395493,
+                1.0895881652832031,
+                0.0016263322904706001,
+                0.6696990132331848
+              ],
+              "room": [
+                0.07838128507137299,
+                2.0781924724578857,
+                0.0035832675639539957,
+                1.2870135307312012
+              ]
+            },
+            "257": {
+              "terminal": [
+                0.050549738109111786,
+                2.3447511196136475,
+                0.009554168209433556,
+                1.4789397716522217
+              ],
+              "room": [
+                0.10595861077308655,
+                2.3129401206970215,
+                0.011785019189119339,
+                1.4716992378234863
+              ]
+            }
+          },
+          "actual_routes": 114688,
+          "matched_routes": 58096,
+          "matched_case_counts": [
+            8560,
+            17110,
+            18746,
+            13680
+          ],
+          "room_targets_applied": 58096,
+          "first_256": {
+            "paid": 0.020263671875,
+            "query_action_match": 0.4783935546875,
+            "weighted_terminal_mse": 0.6634952425956726,
+            "weighted_real_room_mse": 1.0063979625701904,
+            "weighted_room_teacher_mse": 1.004280686378479,
+            "weighted_real_room_acc": 0.500561535358429,
+            "policy_loss": -0.015314297750592232,
+            "gradient_norm": 3.05724835395813,
+            "query_right": 0.68634033203125,
+            "action_right": 0.52239990234375,
+            "used_room_target_count": 30.6171875
+          },
+          "first_formal_256": {
+            "paid": 0.04925537109375,
+            "query_action_match": 0.48248291015625,
+            "weighted_terminal_mse": 0.6727184653282166,
+            "weighted_real_room_mse": 1.0089795589447021,
+            "weighted_room_teacher_mse": 1.0058982372283936,
+            "weighted_real_room_acc": 0.5067751407623291,
+            "policy_loss": -0.03472106158733368,
+            "gradient_norm": 4.028751373291016,
+            "query_right": 0.65753173828125,
+            "action_right": 0.4910888671875,
+            "used_room_target_count": 30.87890625
+          },
+          "last_256": {
+            "paid": 0.13824462890625,
+            "query_action_match": 0.52227783203125,
+            "weighted_terminal_mse": 0.5534504652023315,
+            "weighted_real_room_mse": 1.0036613941192627,
+            "weighted_room_teacher_mse": 1.005577802658081,
+            "weighted_real_room_acc": 0.505944013595581,
+            "policy_loss": -0.09411785006523132,
+            "gradient_norm": 4.716732978820801,
+            "query_right": 0.51934814453125,
+            "action_right": 0.4814453125,
+            "used_room_target_count": 33.42578125
+          }
+        }
+      },
+      "paired_actions": {
+        "terminal/next_room": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 90338,
+          "same_action": 74823,
+          "same_both": 56230,
+          "identical_initial_update_routes": 64
+        },
+        "terminal/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 90810,
+          "same_action": 87620,
+          "same_both": 69185,
+          "identical_initial_update_routes": 64
+        },
+        "next_room/misbound": {
+          "common_query_draws": 114688,
+          "common_action_draws": 114688,
+          "same_query": 92524,
+          "same_action": 77401,
+          "same_both": 62928,
+          "identical_initial_update_routes": 64
+        }
+      }
+    }
+  },
+  "arms": {
+    "terminal": {
+      "actual_routes": 688128,
+      "matched_routes": 359876,
+      "applied_room_targets": 0,
+      "first_256": {
+        "paid": 0.028920491536458332,
+        "query_action_match": 0.5699666341145834,
+        "weighted_terminal_mse": 0.6486533681551615,
+        "weighted_real_room_mse": 1.1078138947486877,
+        "weighted_room_teacher_mse": 0.0,
+        "weighted_real_room_acc": 0.4970942437648773,
+        "policy_loss": -0.024815536220557988,
+        "gradient_norm": 1.8254842311143875,
+        "query_right": 0.5635884602864584,
+        "action_right": 0.563873291015625,
+        "used_room_target_count": 0.0
+      },
+      "first_formal_256": {
+        "paid": 0.0662841796875,
+        "query_action_match": 0.5431315104166666,
+        "weighted_terminal_mse": 0.6123237311840057,
+        "weighted_real_room_mse": 1.1140740315119426,
+        "weighted_room_teacher_mse": 0.0,
+        "weighted_real_room_acc": 0.4975890318552653,
+        "policy_loss": -0.05251249368302524,
+        "gradient_norm": 2.6109983325004578,
+        "query_right": 0.54248046875,
+        "action_right": 0.5079752604166666,
+        "used_room_target_count": 0.0
+      },
+      "last_256": {
+        "paid": 0.15057373046875,
+        "query_action_match": 0.48919677734375,
+        "weighted_terminal_mse": 0.49743033945560455,
+        "weighted_real_room_mse": 1.144561767578125,
+        "weighted_room_teacher_mse": 0.0,
+        "weighted_real_room_acc": 0.49305469294389087,
+        "policy_loss": -0.10989696470399697,
+        "gradient_norm": 3.2650218407313027,
+        "query_right": 0.535919189453125,
+        "action_right": 0.494354248046875,
+        "used_room_target_count": 0.0
+      }
+    },
+    "next_room": {
+      "actual_routes": 688128,
+      "matched_routes": 394920,
+      "applied_room_targets": 394920,
+      "first_256": {
+        "paid": 0.011545817057291666,
+        "query_action_match": 0.5824178059895834,
+        "weighted_terminal_mse": 0.6652866999308268,
+        "weighted_real_room_mse": 0.9251773258050283,
+        "weighted_room_teacher_mse": 0.9251773258050283,
+        "weighted_real_room_acc": 0.5900421738624573,
+        "policy_loss": -0.009910678025335073,
+        "gradient_norm": 2.2576780120531716,
+        "query_right": 0.6080322265625,
+        "action_right": 0.6695556640625,
+        "used_room_target_count": 37.274739583333336
+      },
+      "first_formal_256": {
+        "paid": 0.018636067708333332,
+        "query_action_match": 0.57421875,
+        "weighted_terminal_mse": 0.6486047705014547,
+        "weighted_real_room_mse": 0.6832984487215678,
+        "weighted_room_teacher_mse": 0.6832984487215678,
+        "weighted_real_room_acc": 0.7541227539380392,
+        "policy_loss": -0.016025453922338784,
+        "gradient_norm": 2.577483038107554,
+        "query_right": 0.6024068196614584,
+        "action_right": 0.6096089680989584,
+        "used_room_target_count": 36.75
+      },
+      "last_256": {
+        "paid": 0.10295613606770833,
+        "query_action_match": 0.564605712890625,
+        "weighted_terminal_mse": 0.5098697493473688,
+        "weighted_real_room_mse": 0.19719411005886892,
+        "weighted_room_teacher_mse": 0.19719411005886892,
+        "weighted_real_room_acc": 0.9388676782449087,
+        "policy_loss": -0.07524365264301498,
+        "gradient_norm": 4.342385927836101,
+        "query_right": 0.5972188313802084,
+        "action_right": 0.52630615234375,
+        "used_room_target_count": 36.134765625
+      }
+    },
+    "misbound": {
+      "actual_routes": 688128,
+      "matched_routes": 367134,
+      "applied_room_targets": 367134,
+      "first_256": {
+        "paid": 0.013203938802083334,
+        "query_action_match": 0.559539794921875,
+        "weighted_terminal_mse": 0.6551598012447357,
+        "weighted_real_room_mse": 1.0070385734240215,
+        "weighted_room_teacher_mse": 1.0058092673619587,
+        "weighted_real_room_acc": 0.49948113163312274,
+        "policy_loss": -0.012487238234219452,
+        "gradient_norm": 1.9780506094296773,
+        "query_right": 0.6295369466145834,
+        "action_right": 0.6042378743489584,
+        "used_room_target_count": 35.810546875
+      },
+      "first_formal_256": {
+        "paid": 0.020151774088541668,
+        "query_action_match": 0.5550333658854166,
+        "weighted_terminal_mse": 0.6161647140979767,
+        "weighted_real_room_mse": 1.0048876802126567,
+        "weighted_room_teacher_mse": 1.0039154688517253,
+        "weighted_real_room_acc": 0.5034225136041641,
+        "policy_loss": -0.01723807640761758,
+        "gradient_norm": 2.6163596908251443,
+        "query_right": 0.6474711100260416,
+        "action_right": 0.6257425944010416,
+        "used_room_target_count": 35.522135416666664
+      },
+      "last_256": {
+        "paid": 0.16371663411458334,
+        "query_action_match": 0.522705078125,
+        "weighted_terminal_mse": 0.5107982804377874,
+        "weighted_real_room_mse": 1.0020000338554382,
+        "weighted_room_teacher_mse": 1.00298015276591,
+        "weighted_real_room_acc": 0.5044289082288742,
+        "policy_loss": -0.12090878623227279,
+        "gradient_norm": 3.992724299430847,
+        "query_right": 0.584747314453125,
+        "action_right": 0.5255228678385416,
+        "used_room_target_count": 33.453125
+      }
+    }
+  },
+  "case_order": [
+    "flip",
+    "stay",
+    "unchanged",
+    "tie"
+  ]
+}

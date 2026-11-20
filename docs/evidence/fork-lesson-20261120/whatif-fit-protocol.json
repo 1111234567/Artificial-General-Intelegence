@@ -1,0 +1,59 @@
+{
+  "fixed_anchor": "Three complete whole checkpoints. All body parameters and persistent masks remain frozen.",
+  "conditions": {
+    "binding": "The replica motor pulse encodes the primary population's self-chosen trial side.",
+    "misbound": "Each row receives the following independent row's self-chosen trial side, cyclically. Each batch has exactly the same number of sent left and right pulses as its own requests."
+  },
+  "trainable": "Two motor-axon input columns, feedback from the two replica motor neurons into primary neurons, and primary-only query, forecast and action readouts.",
+  "sources": {
+    "fork_lesson_whatif_fit.py": "7b9f824cd5aeae08eaf9cc506be20cd66f1f7fdfb2b0dbff085730386f01f9df",
+    "fork_lesson_whatif.py": "cd4f530efba47de2bbe6adde2d4628e0a483cb0bbabfc7d5ae3ede9b884a8673",
+    "fork_lesson_world.py": "6229dbd9de18ea6b4db4ef383bcebb2ee702556f73501e4d748020d9bce5064f",
+    "fork_lesson_fit.py": "2d1b7ef40cc467deb7eb2343b93184c8b7a16874fa2d5db09499f6bba64da373"
+  },
+  "anchors": {
+    "731": "24e01d5cbbca86f2adadf8819e3ee867a76d3fef7362a7a17cfdd36faf034a63",
+    "733": "ba8878cc76f1b262dccd9b14f61259d154bf65dc1809e2374dfa66edc79a949f",
+    "735": "405a34cb8b75bf356ad7694230899107017377d14a3207dc3c9c3fa128212256"
+  },
+  "training_world_seed": [
+    69274021,
+    "birth",
+    "optimizer_step"
+  ],
+  "steps": 1280,
+  "batch": 64,
+  "optimizer": "Adam",
+  "learning_rate": 0.005,
+  "query_exploration": 0.5,
+  "action_exploration": 0.3,
+  "forecast_criterion": "Squared error to the actual signed delayed outcome only when the primary's queried and actually executed sides coincide. Stabilized inverse action propensity weighting.",
+  "policy_gradient": "Both query and action likelihoods are weighted by the actual delayed outcome minus a baseline from previous batches.",
+  "forecast_tick": 3,
+  "additional_ticks_after_forecast": 2,
+  "trace_columns": [
+    "query_draw",
+    "query_prob_right",
+    "query",
+    "driven_query",
+    "action_draw",
+    "action_prob_right",
+    "action",
+    "forecast",
+    "actual_payoff",
+    "forecast_weight",
+    "clone_motor_left_input",
+    "clone_motor_right_input"
+  ],
+  "curve_columns": [
+    "matched_fraction",
+    "driven_match_fraction",
+    "delayed_return",
+    "weighted_forecast_mse",
+    "policy_loss",
+    "gradient_norm",
+    "query_right_fraction",
+    "action_right_fraction",
+    "ema_baseline"
+  ]
+}

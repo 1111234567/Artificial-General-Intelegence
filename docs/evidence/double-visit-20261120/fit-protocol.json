@@ -1,0 +1,206 @@
+{
+  "plan_sha256": "33ba349463c36d67e638a54e6d3e866abcdc388cc73dc2cde11661811e317ebf",
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "conditions": [
+    "baseline",
+    "identity"
+  ],
+  "updates": 1792,
+  "batch": 64,
+  "easy_updates": 256,
+  "checkpoint_interval": 128,
+  "world_seed": [
+    19367129,
+    "birth",
+    "step",
+    0
+  ],
+  "motor_seed": [
+    19367129,
+    "birth",
+    "step",
+    1
+  ],
+  "smoke_domain": 19367239,
+  "training_maps": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      1
+    ]
+  ],
+  "heldout_maps": [
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "inheritance": {
+    "condition": "next_room",
+    "update": 1792,
+    "transfer_protocol_sha256": "2ad97992ff9d573e0734670f56f11cea721928ff8c09fba15f4d1e1e9b0558b1",
+    "optimizer_inherited": false,
+    "files": {
+      "731": {
+        "path": "data/reroute-20261120/fit-transfer-next_room/birth-731.pt",
+        "sha256": "ba469ec85a5d6d5d527b512860826d5e10e7a95b407235b0659ce4be1b7e92cb"
+      },
+      "732": {
+        "path": "data/reroute-20261120/fit-transfer-next_room/birth-732.pt",
+        "sha256": "00774e0edee1167d3aa67dcfb64ed6bd45fcd2e820e3c6e4a3da1eaf9b765879"
+      },
+      "733": {
+        "path": "data/reroute-20261120/fit-transfer-next_room/birth-733.pt",
+        "sha256": "b0ede87bb1b4550a00fac95bbbe1b678517ee4bed4a1a915182c1eb7ec1a4886"
+      },
+      "734": {
+        "path": "data/reroute-20261120/fit-transfer-next_room/birth-734.pt",
+        "sha256": "fdb0caf9743b0a82bdf0d8a11950294a67429eb11cdc409d8a2cff1efb911ffc"
+      },
+      "735": {
+        "path": "data/reroute-20261120/fit-transfer-next_room/birth-735.pt",
+        "sha256": "c41b5835d63fa2544a4104701ef83108614c00d1e045b36b95d319aa70dd08bf"
+      },
+      "736": {
+        "path": "data/reroute-20261120/fit-transfer-next_room/birth-736.pt",
+        "sha256": "092441c25de827939e9257e941f164fe8a778b7dda8da9a4aa46f0c53af1600e"
+      }
+    }
+  },
+  "clock": {
+    "history": 24,
+    "goal": 3,
+    "preparation": 3,
+    "trial": 7,
+    "commit": 8
+  },
+  "calibration_clock": {
+    "room_trial_tick": 3,
+    "payoff_trial_tick": 5,
+    "identity_trial_tick": 5
+  },
+  "endpoint_readout": [
+    16,
+    17,
+    18
+  ],
+  "endpoint_logit_gain": 4.0,
+  "exploration": {
+    "trial": 0.45,
+    "commit": 0.3
+  },
+  "objective": {
+    "policy": "two mixture log-likelihoods with actual payoff and leave-one-out centering",
+    "room_and_payoff": "MSE on the physically taken, self-tried route, divided by its action propensity",
+    "identity": "additional CE on the same eligible route, physical endpoint 0–2 at the three existing primary units",
+    "identity_coefficient": 1.0,
+    "normalize_by_weight_sum": true,
+    "settlement_after_action_is_gradient_free": true,
+    "detach_prefix": false
+  },
+  "optimizer": {
+    "name": "Adam",
+    "lr": 0.003,
+    "gradient_norm_max": 2.0,
+    "decay": 0.0,
+    "fresh": true,
+    "foreach": false,
+    "fused": false
+  },
+  "backend": "cpu",
+  "threads_per_worker": 1,
+  "deterministic": true,
+  "dtype": "torch.float32",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.5.4",
+  "world_columns": [
+    "left_room",
+    "right_room",
+    "prior_room0",
+    "prior_room1",
+    "first_inspected_room",
+    "second_inspected_room",
+    "first_observed_endpoint",
+    "second_observed_endpoint",
+    "first_visited_door",
+    "second_visited_door",
+    "goal_endpoint0",
+    "goal_endpoint1",
+    "goal_endpoint2"
+  ],
+  "trace_columns": [
+    "query_draw",
+    "query_right_probability",
+    "query",
+    "action_draw",
+    "action_right_probability",
+    "action",
+    "actual_room",
+    "actual_endpoint",
+    "paid",
+    "predicted_room",
+    "predicted_payoff",
+    "endpoint_logit0",
+    "endpoint_logit1",
+    "endpoint_logit2",
+    "eligible",
+    "calibration_weight",
+    "endpoint_teacher_target",
+    "query_logit",
+    "action_logit"
+  ],
+  "curve_columns": [
+    "paid",
+    "eligible",
+    "payoff_mse",
+    "room_mse",
+    "room_accuracy",
+    "identity_ce",
+    "identity_accuracy",
+    "policy_loss",
+    "gradient_norm"
+  ],
+  "source_sha256": {
+    "experiments/pulse_game/double_visit_fit.py": "6b05168e9eab95fcfa9deab0bbc9699c99abeb30c0f7d13e28ad42e5a6d4e117",
+    "experiments/pulse_game/double_visit_world.py": "8df4590d535ccfedd69e4d6d2b8b3c66da2c6b9e817428629c6e9f811b5225b4",
+    "experiments/pulse_game/fork_lesson_bit_relay.py": "511cb627d35f3214ddc202e694bd01a95395199306bf25309a990524043d9b0e",
+    "experiments/pulse_game/fork_lesson_native_request.py": "434f2e453bb0b8e80439b344467d1e5efa10707ebca7844a601614bcfc807d06",
+    "experiments/pulse_game/fork_lesson_whatif.py": "cd4f530efba47de2bbe6adde2d4628e0a483cb0bbabfc7d5ae3ede9b884a8673",
+    "experiments/pulse_game/fork_lesson_world.py": "6229dbd9de18ea6b4db4ef383bcebb2ee702556f73501e4d748020d9bce5064f",
+    "experiments/pulse_game/local_trace_graph.py": "8bdd13b8a6954fae00d27ae56b585cc8073442221929a510813d0b10e728b31a",
+    "experiments/pulse_game/local_trace_train.py": "666eac678846ec83410e1dd6c879a4b9a925fc5fab190a1eb89525f0627a3a6f",
+    "experiments/pulse_game/native_rehearsal_graph.py": "f6bacf5e397ff8251ad591acfc16fb2764a9550f438759c406bf7e7f38ffeea0",
+    "experiments/pulse_game/native_rehearsal_trial.py": "9e71c2944dd9ee6052ee70b7a08679092f2030464754375f94472f970cf4c511",
+    "experiments/pulse_game/reroute_fit.py": "f9e4f9e85843db28415ad9cc79ef0aef91cbc7a17533d1b69ebf0be7d3d1d951",
+    "experiments/pulse_game/reroute_fit_transfer.py": "70a845e5123910afce978c824a8ab18801c8e00b80fc81ee8a84ca6fdd88df8c",
+    "experiments/pulse_game/reroute_world.py": "ae1f81af8204e471a088a28a8732b986d170a6cd2a1c6b2008deede6cb998bf1"
+  }
+}
