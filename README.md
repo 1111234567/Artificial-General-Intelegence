@@ -8,13 +8,11 @@
 
 ## 研究进展
 
-从 LIF 稳态与长等待、遗传搜索和生内改写，到最近的克隆区内部试探，项目始终在测同一件事：早先的行动后果，能否在下一次真正需要时帮助个体做选择。[从最初设计到双复查的研究回顾](docs/research-retrospective-2026-11-20.md)
-
 最新的双复查实验中，两份生命只有第一次看到的出口不同，正确门恰好相反。第二次复查后，较早出口仍能从完整状态读出，互换生内快权重与待写增量也会改变实际选择。额外教终点身份让预测更准，却没有提高两次首次选门都正确的概率。[双复查](docs/double-visit-2026-11-20.md) · [单次改道](docs/reroute-2026-11-20.md) · [内部试探](docs/fork-lesson-2026-11-20.md)
 
 | 想看什么 | 从这里进入 |
 |---|---|
-| 实验走过哪些方向，哪些结论值得保留 | [研究回顾](docs/research-retrospective-2026-11-20.md) · [逐项实验索引](docs/experiments.md) |
+| 实验走过哪些方向，哪些结论值得保留 | [研究脉络](docs/experiments.md#研究脉络) · [当前证据](agi.md#当前证据) |
 | 如何核对最近结果，下载哪些原始数据 | [11 月 20 日复算包](docs/evidence/reproduce-2026-11-20.md) · [证据索引](docs/evidence/README.md) |
 | 运行模型或沿用已有实现 | [连续游戏代码](experiments/pulse_game/INDEX.md) · [神经元模块](src/neurons/README.md) |
 

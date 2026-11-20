@@ -6,7 +6,18 @@
 
 研究记录更新至 2026-11-20。按问题找完整报告见[分主题报告](reports/README.md)，逐种子分母、冻结协议、源码指纹与失败记录从[证据目录](evidence/README.md)进入。研究目标见[设计](design.md)，方法复核见[评审](review-2026-10-26.md)，历史卷见[归档](archived/README.md)。
 
-[研究回顾](research-retrospective-2026-11-20.md)按实验之间的关系解释哪些能力已经在行动中验证；[复算包目录](evidence/reproduce-2026-11-20.md)按研究列出公开原始材料。
+[当前判断与下一轮优先检验的问题](../agi.md#当前证据) · [复算包目录](evidence/reproduce-2026-11-20.md)
+
+## 研究脉络
+
+| 时段 | 当时追问的问题 | 代表实验 |
+|---|---|---|
+| 10 月 22–27 日 | 从 LIF 稳态和局部活动迹出发，逐步分开测量跨等待的状态、事实读写、复习和规划。 | [早期原卷与修订](review-2026-10-26.md) · [持续记忆](persistent-experiment-2026-10-26.md) · [巩固](reports/memory/consolidation-experiment-2026-10-26.md) · [规划](planning-experiment-2026-10-26.md) |
+| 10 月 28 日–11 月上旬 | 回路、生退边和共享连接能否保住旧能力？即使状态里仍有正确内容，身体能否在合法时机出手？ | [渐退与再生长](rewiring-experiment-2026-10-28.md) · [无向图](undirected-results-2026-10-30.md) · [长任务与旧规则回访](reports/memory/learn-remember-experiment-2026-11-03.md) · [结束时机](teacher-timing-experiment-2026-11-06.md) |
+| 11 月 7–18 日 | 先让模型学习把请求与回执绑定，再搜索出生接线和可塑规则。等待、版本判断和学习私有符号分别计分。 | [学习绑定](reports/memory/learned-binding-experiment-2026-11-07.md) · [初始化搜索](evidence/seed-evolution-2026-11-11-large/report.md) · [四群交叉与有向图](../experiments/undirected/README.md#连续图搜索的终代记录) |
+| 11 月 19–20 日 | 从一次味觉如何写进图，追到新旧经验能否共存、主体能否借助内部试探，在需要时用上较早的事实。 | [自写启蒙](self-writing-bootstrap-2026-11-19.md) · [写入落点](edge-site-2026-11-20.md) · [本体向副区发问](fork-lesson-2026-11-20.md) · [双复查](double-visit-2026-11-20.md) |
+
+## 各轮结果
 
 | 最近研究 | 结果与证据 |
 |---|---|
