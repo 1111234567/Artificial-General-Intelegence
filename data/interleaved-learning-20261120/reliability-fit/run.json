@@ -1,0 +1,26 @@
+{
+  "config": {
+    "updates": 8000,
+    "worlds": 8,
+    "contacts": 16,
+    "lr": 0.0015,
+    "seed": 435168,
+    "checkpoint_every": 500
+  },
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "arms": [
+    "clean",
+    "mixed",
+    "noisy"
+  ],
+  "source": "F:\\agi\\data\\interleaved-learning-20261120\\retention-objective",
+  "code_sha256": "2a88e4034d439cae0d08122fb9347ee340f7bdd8385583f51eb78e61c34d2e33",
+  "note": "All actual gains/losses are delivered, including stochastic slips. From contact 3, earned resources count toward the outer criterion. Private clean correct-side is a diagnostic only. Two independent hidden values are fully crossed within every world. States are never reset within a life; gradients through h/trace/graph truncate every four contacts, previous sampled decisions retain future credit. Clean has no slips or flips. Noisy has 20% iid slips. Mixed gives half the lives the same noisy law, the rest 10% slips and .16 hidden flip probability at each re-encounter, with no regime cue."
+}

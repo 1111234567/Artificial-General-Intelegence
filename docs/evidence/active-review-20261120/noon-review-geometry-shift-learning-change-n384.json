@@ -1,0 +1,41 @@
+{
+  "stage_start": 0,
+  "stage_end": 16000,
+  "worlds_per_birth": 384,
+  "draws": 20000,
+  "contrast": "Change in native minus random execution on the same graph and the same clustered world from start to end, measured on all four actual final probes",
+  "unit": "Paired bootstrap over births and shared world geometries in each cohort, paired law-twin within world",
+  "results": {
+    "original": {
+      "initial": -0.0005425347222222222,
+      "final": 0.004069010416666667,
+      "change": 0.004611545138888889,
+      "ci95": [
+        -0.0009765625,
+        0.010363769531249881
+      ]
+    },
+    "independent": {
+      "initial": 0.0028211805555555555,
+      "final": 0.0013563368055555555,
+      "change": -0.00146484375,
+      "ci95": [
+        -0.008680555555555556,
+        0.005208333333333333
+      ]
+    }
+  },
+  "pooled": {
+    "change": 0.0015733506944444445,
+    "ci95": [
+      -0.0029568142361111114,
+      0.005995008680555556
+    ]
+  },
+  "source_sha256": {
+    "noon-review-geometry-shift-000000-original-n384.json": "411621a1893a3976a43f5c994c329fabb1cce2e9861f7e3c804cdfb6127a91d0",
+    "noon-review-geometry-shift-016000-original-n384.json": "929b94a040f90dab4bbd6e85c5f2520522fdcf7369caded38901cc0d5554051e",
+    "noon-review-geometry-shift-000000-independent-n384.json": "d2b3994a5617125084084bcb1662259b614ac53f1f516795c63a4122972fc5fa",
+    "noon-review-geometry-shift-016000-independent-n384.json": "1cabe8c23826eeebded53f123e168bc9394532dcf5c89f59bff61296d990f34d"
+  }
+}

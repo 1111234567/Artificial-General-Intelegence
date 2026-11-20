@@ -1,0 +1,16 @@
+{
+ "stage": 64000,
+ "three_births": [
+  731,
+  732,
+  733
+ ],
+ "deliberately_missing_in_isolated_copy": 733,
+ "matching_payloads": {
+  "731": "c23a031c84aa5f4811214b3ee870d9f92d31f2bc9e62ffe2a722d76d5ea11499",
+  "732": "8d1aa9534f97b3e340d93333a1bd5127d4637009b870925e038c65c83eb20781",
+  "733": "0b6306d2d2d2a3ef16471b6a0a9578208e88f577911cb2c0eae6fc522807f2a7"
+ },
+ "original_files_unchanged": true,
+ "note": "Resumed the archived optimizer at its sealed endpoint in a private temporary copy containing two of three exports. The missing companion was reconstructed before exit and every field in all three inference exports matched the original. No training update was run."
+}

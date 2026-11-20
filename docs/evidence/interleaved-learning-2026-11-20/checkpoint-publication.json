@@ -1,0 +1,22 @@
+{
+  "transitions": {
+    "interleave_geometry_curriculum": [
+      "69dac983f9fb3c0a65496b42f3bff73ed83237c22eb99d699e75b43ef80c5ad3",
+      "cefb26aa1d344a3e86f7e40b2140dfa2c74a237695c89b154148af29ff2c2a7d"
+    ],
+    "interleave_cross_skill": [
+      "77eb6e4df8917aa714cdc3afc395898e686bab1efb6177ec921bda8c946d1364",
+      "6aae14be3356e09313a1ae220066caf84d19a3f786b31092d9e4452e8ab1b2e2"
+    ],
+    "interleave_one_life": [
+      "9b10acab367c11d1d2a160ccdc994bb68bfac436168f9bbcc90a840cf055b041",
+      "75b333d22e9d46625c6439e331c0e40fc35eecaa7b0a374c31091b3267684513"
+    ]
+  },
+  "matched_numeric_and_training_loop_ast_sha256": {
+    "interleave_geometry_curriculum": "11748ff90cb1e29b867714f1e5782f394df8eb1ce82179fa1cc734b858f6a04a",
+    "interleave_cross_skill": "f0ec1382e49b19a95b73fadc7f6e7d60aa015623596eb9cfaf90193ee4cbf3b4",
+    "interleave_one_life": "46b74cd0c3458516e0b5086e35e719419ca4e800f7ba1b260c20ead819412cbb"
+  },
+  "note": "Only plan compatibility and publication order changed. The first hash produced the sealed optimizer and inference outputs. The second writes all per-birth exports before advancing the atomic optimizer snapshot, and restores missing companions when resuming a matching saved stage. The training data constructors, payout, learning kernels and outer update loop are unchanged."
+}

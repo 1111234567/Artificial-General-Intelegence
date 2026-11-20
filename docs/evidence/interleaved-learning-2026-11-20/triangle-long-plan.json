@@ -1,0 +1,7 @@
+{
+  "decision": "Original direct strict paired success on new rotations increased from 6.6% at 8000 to 25.4% at 16000 and 44.1% at 32000. Continue the ordinary uniformly weighted optimizer; do not choose an individual or change the architecture.",
+  "primary": "32000 versus 64000 Adam updates on the same six original trajectories; make the same comparison on six independently initialized trajectories with different training streams. True triple margins must exceed .05 for both +++ and --- and are scored in both sensory orientations.",
+  "order_check": "Six presentation orders of the same physical odors with each object's draws and orientation following its identity. Report typical single-order pass and the stricter all-six-orders pass separately. Also require success on all eight independent label maps to rule out trading the six other maps away.",
+  "holdout": {"seed": 6139481,"worlds_per_birth":128,"births_original":[731,732,733,734,735,736],"births_confirmation":[811,812,813,814,815,816]},
+  "budget": "32000 additional updates after the recorded 32000-step Adam state; total 64000 triangle updates per birth."
+}

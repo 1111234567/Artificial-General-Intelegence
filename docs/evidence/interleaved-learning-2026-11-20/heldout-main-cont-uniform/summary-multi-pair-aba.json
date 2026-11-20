@@ -1,0 +1,456 @@
+{
+  "split": "main",
+  "audit": {},
+  "rounds": 4,
+  "n_roots": 96,
+  "models": {
+    "uniform": {
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.34375
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.34375
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4270833333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4270833333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4895833333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4895833333333333
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.2604166666666667,
+              "worst_within_birth": 0.21875
+            },
+            "conflict": {
+              "mean": 0.2604166666666667,
+              "worst_within_birth": 0.21875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.13020833333333334,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.13020833333333334,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "public_lookup": {
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "local_active": {
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.6016710069444445,
+              "worst_within_birth": 0.4791666666666667
+            },
+            "conflict": {
+              "mean": 0.6016710069444445,
+              "worst_within_birth": 0.4791666666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4305555555555556,
+              "worst_within_birth": 0.3072916666666667
+            },
+            "conflict": {
+              "mean": 0.4305555555555556,
+              "worst_within_birth": 0.3072916666666667
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.8041449652777777,
+              "worst_within_birth": 0.6861979166666666
+            },
+            "conflict": {
+              "mean": 0.8041449652777777,
+              "worst_within_birth": 0.6861979166666666
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.18956163194444445,
+              "worst_within_birth": 0.10416666666666667
+            },
+            "conflict": {
+              "mean": 0.18956163194444445,
+              "worst_within_birth": 0.10416666666666667
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.1460503472222222,
+              "worst_within_birth": 0.052083333333333336
+            },
+            "conflict": {
+              "mean": 0.1460503472222222,
+              "worst_within_birth": 0.052083333333333336
+            }
+          },
+          "writes_per_request": 204.7950443828405,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "local_active_disabled": {
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.34375
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.34375
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4991319444444445,
+              "worst_within_birth": 0.40625
+            },
+            "conflict": {
+              "mean": 0.4991319444444445,
+              "worst_within_birth": 0.40625
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.18359375
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.18359375
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.22764756944444442,
+              "worst_within_birth": 0.125
+            },
+            "conflict": {
+              "mean": 0.22764756944444442,
+              "worst_within_birth": 0.125
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.11382378472222221,
+              "worst_within_birth": 0.041666666666666664
+            },
+            "conflict": {
+              "mean": 0.11382378472222221,
+              "worst_within_birth": 0.041666666666666664
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "local_active_shuffle": {
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.4969618055555555,
+              "worst_within_birth": 0.4114583333333333
+            },
+            "conflict": {
+              "mean": 0.4969618055555555,
+              "worst_within_birth": 0.4114583333333333
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5042317708333333,
+              "worst_within_birth": 0.390625
+            },
+            "conflict": {
+              "mean": 0.5042317708333333,
+              "worst_within_birth": 0.390625
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.49999999999999994,
+              "worst_within_birth": 0.453125
+            },
+            "conflict": {
+              "mean": 0.49999999999999994,
+              "worst_within_birth": 0.453125
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.20062934027777776,
+              "worst_within_birth": 0.13020833333333334
+            },
+            "conflict": {
+              "mean": 0.20062934027777776,
+              "worst_within_birth": 0.13020833333333334
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.10101996527777778,
+              "worst_within_birth": 0.03125
+            },
+            "conflict": {
+              "mean": 0.10101996527777778,
+              "worst_within_birth": 0.03125
+            }
+          },
+          "writes_per_request": 207.5405500952061,
+          "contact_all": 1.0,
+          "address_shuffle": {
+            "matched_weights": 0.9519275483630952,
+            "matched_bias": 1.0,
+            "relocated_birth": 0.11076233878968254,
+            "relocated_retirement": 0.052637493799603176,
+            "matched_retirement": 0.9474206349206349
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "uniform": {
+      "multi_pair": {}
+    },
+    "public_lookup": {
+      "multi_pair": {}
+    },
+    "local_active": {
+      "multi_pair": {
+        "local_active_disabled": {
+          "A": {
+            "all": {
+              "paired_difference": 0.10167100694444445,
+              "pointwise_95": [
+                0.06651475694444445,
+                0.1402533637152778
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.10167100694444445,
+              "pointwise_95": [
+                0.06651475694444445,
+                0.1402533637152778
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": -0.0685763888888889,
+              "pointwise_95": [
+                -0.10687934027777778,
+                -0.027886284722222224
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.0685763888888889,
+              "pointwise_95": [
+                -0.10687934027777778,
+                -0.027886284722222224
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": -0.0380859375,
+              "pointwise_95": [
+                -0.0817626953125,
+                0.003529188368055565
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.0380859375,
+              "pointwise_95": [
+                -0.0817626953125,
+                0.003529188368055565
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.3041449652777778,
+              "pointwise_95": [
+                0.2686631944444444,
+                0.3368055555555556
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.3041449652777778,
+              "pointwise_95": [
+                0.2686631944444444,
+                0.3368055555555556
+              ]
+            }
+          }
+        },
+        "local_active_shuffle": {
+          "A": {
+            "all": {
+              "paired_difference": 0.1047092013888889,
+              "pointwise_95": [
+                0.0666748046875,
+                0.1480034722222222
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.1047092013888889,
+              "pointwise_95": [
+                0.0666748046875,
+                0.1480034722222222
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": -0.07367621527777778,
+              "pointwise_95": [
+                -0.1142578125,
+                -0.029182942708333316
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.07367621527777778,
+              "pointwise_95": [
+                -0.1142578125,
+                -0.029182942708333316
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": -0.011067708333333334,
+              "pointwise_95": [
+                -0.03847384982638889,
+                0.015190972222222222
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.011067708333333334,
+              "pointwise_95": [
+                -0.03847384982638889,
+                0.015190972222222222
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.3041449652777778,
+              "pointwise_95": [
+                0.2669731987847222,
+                0.34022623697916665
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.3041449652777778,
+              "pointwise_95": [
+                0.2669731987847222,
+                0.34022623697916665
+              ]
+            }
+          }
+        }
+      }
+    },
+    "local_active_disabled": {
+      "multi_pair": {}
+    },
+    "local_active_shuffle": {
+      "multi_pair": {}
+    }
+  },
+  "statistics": "Matched roots and initial graphs are the sampling units. Worst values minimize over map within birth and then over births. Paired intervals are pointwise crossed bootstrap draws."
+}

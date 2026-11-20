@@ -1,0 +1,9 @@
+{
+  "reason": "An externally supplied birth reference at gain .12 preserved fresh learning but reduced old A recall when A was absent. Test if allowing the same-size reference to summarize actual fast graph values can improve this tradeoff.",
+  "fast_update": "Native write and topology commit first, then interpolate surviving ancestral weights and all biases by .12 toward the previous slow numeric state. Recompute both native postcommit ticks. No support bit is changed by this operation.",
+  "slow_update": "On the same continuously present ancestral rows, S <- S + beta*(actual relaxed W - S). Bias similarly. No label, reward sign, derivative, or diagnostic probe is supplied to this averaging step.",
+  "beta_grid": [0,0.005,0.02,0.08,0.25],
+  "selection": "One global beta chosen from original 731–736 only. Optimize actual A/B/new-X all-correct for absent A after four real pre-exposures of each anchor, equally across ages 16/64/128; ties go to the smallest beta. Freeze before independent 811–816 and new worlds. Also evaluate one pre-exposure and recurring A. An unchanged native reference and the fixed birth reference remain controls.",
+  "causal_test": "When beta is nonzero, transplant only slow values at start of the gap between matched histories with opposite A, shared B and future streams; compare old-A accuracy and specificity. Learning X still uses one actual taste. Report whether extra A retention is purchased by losing fresh learning.",
+  "cost": "This is an experimental external consolidation primitive, not an internally invented rule. Slow numeric storage per life replaces the stored immutable template and still costs 20x20 weights plus 20 biases; ancestral lineage mask remains necessary."
+}

@@ -6,6 +6,7 @@
 
 | 任务 | 代码 |
 |---|---|
+| 复算期限提示、实际单路线、反馈冲突和写入 | [单路训练](noon_horizon_online.py)、[路径账本核验](noon_horizon_online_audit.py)、[回执核验](noon_agreement_eval.py)、[写入或跳过的真实后续](noon_commit_eval.py)、[研究报告](../../docs/active-review-2026-11-20.md) |
 | 运行冻结控制器，保存或恢复同一生命的状态 | [lifelong_agent.py](lifelong_agent.py)、[live_continuity.py](live_continuity.py)、[lifetime_retention_fork.py](lifetime_retention_fork.py) |
 | 复算旧符号控制器封存结果 | [legacy_grounded_release.py](legacy_grounded_release.py) |
 | 生成 CPU 包，校验新进程续跑与晨间发布证据 | [export_reference.py](export_reference.py)、[portable_reboot.py](portable_reboot.py)、[morning_release_check.py](morning_release_check.py) |
@@ -13,6 +14,16 @@
 | 查批量物理实现与吞吐对照 | [unified_physical.py](unified_physical.py)、[unified_gpu.cu](unified_gpu.cu)、[physical_counts.py](physical_counts.py)、[physical_throughput_bench.py](physical_throughput_bench.py) |
 
 ## 按研究问题找代码
+
+跨对象学习从[冻结容量回放](interleave_capacity.py)、[真实回访目标对照](interleave_revisit_train.py)、[混合生命训练](interleave_train.py)与[全新对象第一次行动](interleave_induction.py)进入。各对照与使用口径见[研究记录](../../docs/interleaved-learning-2026-11-20.md)。
+
+| 跨对象学习的复现入口 | 实现和已有证据 |
+|---|---|
+| 看一张具体图怎样吃、写入和行动 | [固定个体回放](interleave_triangle_example.py) · [两个真实世界实例](../../docs/evidence/interleaved-learning-2026-11-20/triangle-lived-example-64000.md) |
+| 比较训练经历怎样改变学习能力 | [不同气味几何的同预算训练](interleave_geometry_curriculum.py) · [两种技能的训练顺序](interleave_cross_skill.py) · [一生七次接触和两次实际行动](interleave_one_life.py) |
+| 复算同一个状态能答对几件事 | [普通世界与几何泛化](interleave_geometry_eval.py) · [六项记忆分叉](interleave_cross_skill_eval.py) · [连续双答与独立留出](interleave_one_life_eval.py) |
+| 定位已有权重写入、低精度摘要与慢速巩固 | [同一存档的写入分量](interleave_triangle_components.py) · [习得稳定力度](interleave_adaptive_reference.py) · [慢副本的低精度实测](../../docs/evidence/interleaved-learning-2026-11-20/dynamic-quantized-reference.md) |
+| 对冻结图加速和核对源码 | [逐味觉展开八种赋值](interleave_triangle_prefix.py) · [配对测速和位级验证](../../docs/evidence/interleaved-learning-2026-11-20/triangle-prefix-bench.md) · [研究证据索引](../../docs/evidence/interleaved-learning-2026-11-20/README.md) |
 
 局部可塑图从实际终局收益学习。[训练](local_trace_train.py) · [冻结评估](local_trace_eval.py) · [等时读出](local_trace_timing.py) · [物理分量消融](local_trace_components.py)
 

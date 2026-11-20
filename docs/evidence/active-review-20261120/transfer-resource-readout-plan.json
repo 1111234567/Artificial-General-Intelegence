@@ -1,0 +1,13 @@
+{
+  "question": "Does the learned four-coefficient one-offer policy allocate useful purchases over a 32-offer continuously writable life?",
+  "primary_training_seed": 1177001,
+  "training_step": 2000,
+  "arms": ["price", "directional", "dose"],
+  "primary_environments": ["delayed", "immediate"],
+  "additional_training_seeds": [1177013, 1177033],
+  "additional_environment": ["delayed"],
+  "additional_launch_cutoff_local": "11:02",
+  "worlds_and_body": "Use the identical published 32-offer worlds, two six-birth cohorts, actual food rules and exact ticket-native 8000 bodies. The original native-policy rollouts are the shared-body baseline. The four coefficients trained using only the original six births deploy identically across both cohorts. Every model receives the same public and private event tape. Subsequent actual choices and tastes follow the actions in each replay.",
+  "readout": "At the paid native left/right menu, use the archived one-action feature map on the two public menu vectors, the current preview scent and the physically updated six-number covariance. Sample once from the exact sigmoid with the sealed offer-action uniform. Route the sampled purchase through the ordinary marked side. Local body activity, fee sensation, true paid food taste, harvest, learned writing rule, and the rest of the simulator follow the original native operations. The covariance receives contributions from actual nonzero food tastes over the complete life. Its dose and directional projection are recorded at every offer with no rescaling or clipping.",
+  "controls_and_outcomes": "Each model replays four independently shuffled allocations within every exact price, life-stage and private-life stratum, using its own natural purchase quota. The entire body and each later action are replayed, including always pass and always buy. Compare actual net resources, fees, harvests and purchase counts through offers 2, 8 and 32. Record the dose, directional projection, and output logit distributions before each offer and compare the high-load states to the maximum eight possible previously sensed food tastes in the single-offer training scene. Resample matched births and shared geometries across 4000 paired draws. Use the first declared coefficient seed for the primary result."
+}

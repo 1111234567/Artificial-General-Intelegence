@@ -1,0 +1,23 @@
+{
+  "question": "Does training a graph to choose reviews change what the same graph can learn and retain in other tasks?",
+  "cohorts": {
+    "original": {
+      "births": [731, 732, 733, 734, 735, 736],
+      "seeds": {"objects": 2057713101, "snapshot": 2057713107, "serial": 2057713113, "triangle": 2057713127}
+    },
+    "independent": {
+      "births": [811, 812, 813, 814, 815, 816],
+      "seeds": {"objects": 2057713203, "snapshot": 2057713211, "serial": 2057713217, "triangle": 2057713229}
+    }
+  },
+  "worlds": {"objects": 128, "snapshot": 96, "serial": 96, "triangle": 128},
+  "baseline_models": ["uniform", "parent", "long_only", "mixed", "triangle_expert"],
+  "training_arms": ["native", "random", "uncertain"],
+  "stage_rule": "Read complete checkpoints from every listed birth in all three training arms at the same step. Keep complete interim scores separate. Lock the last complete common stage by the experiment cutoff. Do not use card scores to choose a model or stage.",
+  "objects": "Use the existing ordinary odor generator with nested common prefixes. The two-object tape fully crosses A and B signs. The four- and eight-object tapes use an independent base law for each non-A item and cross A's sign with the common sign of the base law vector. Assess A alone, B alone, then A/B, four and eight contacts using independent actions forked from the same post-study snapshot. The primary no-review column uses the published four-tick probe wait. Secondary comparisons add one externally uniform real contact from that snapshot, the same contact with its write disabled, or the same number of neutral clock ticks. The index comes from held-out public randomness, shared across models and maps. The pre- and post-review probes use the same draws. The native internal review interface is scored separately on its own matched public tickets.",
+  "snapshot": "Seven real contacts, all 64 private maps per geometry and the three published support orders weighted equally; no extra review opportunity. Fork six independent terminal probes from one final snapshot. Report context A and B, mark, context A+B, context A+B+mark and all six, including all maps, A/B conflict and conflict with either equal-valued hard triangle map.",
+  "serial": "Use separate worlds with all 64 laws, both support schedules equally weighted, one triangle terminal query and one context or mark query. On the first physical action, save the signed payoff but only deliver zero taste. Then carry its sensory, movement and write state to the second action. Report each payoff and both positive, including the conflict strata. No extra review opportunity.",
+  "triangle": "Fresh rotations with old hard geometry (pairwise cosine -0.5), all eight maps, six orders, both paired terminal orientations. Primary three sampled correct on the two equally valued maps; report all maps, mixed maps and the existing margin diagnostic separately.",
+  "counts": "Report test rates separately. Score each geometry before resampling. Use 4000 paired crossed bootstrap replicates over matched training births and shared geometries. Cases, maps, signs and orders inside a world are not resampling units.",
+  "swap_diagnostic": "If continued training produces a marked drop in an old skill, cross the pretrained and native endpoint bodies and write rules within each corresponding birth. The original two models plus both reciprocal swaps use the sealed card and identical geometry. A swap transfers all inherited weights, biases and connectivity together, or all inherited write-rule tensors. Interpret inherited body and write-rule interactions explicitly."
+}

@@ -1,0 +1,36 @@
+{
+  "repeats": 24,
+  "worlds": 48,
+  "threads": 1,
+  "births": [
+    731,
+    735,
+    811,
+    815
+  ],
+  "tariffs": [
+    0.05,
+    0.25,
+    0.55
+  ],
+  "alternatives": [
+    "native",
+    "buy",
+    "skip",
+    "native-withheld"
+  ],
+  "mean_seconds": [
+    0.946226729166483,
+    0.5069662374986971
+  ],
+  "ratio": 1.8664492014991725,
+  "paired_ci95": [
+    1.8328615924872615,
+    1.9095766432539523
+  ],
+  "checked_scalar_count": 884736,
+  "raw_sha256": "de26e0abe29b3b9bce48d62804156e4a7469a5edcd0e263e6dcd34bf96e7086e",
+  "implementation_sha256": "d752b6192e32e71f12d9632ad708c8b92203ab8308b587c03ef4d0ed44a03dd1",
+  "torch": "2.11.0+cu130",
+  "note": "Both methods execute the same sample from the full four-branch, three-price endpoint battery. All eight per-life outcome fields including motor logit match exactly on every paired repeat. Measurements include all neural operations after tape generation and exclude optimizer/backward."
+}

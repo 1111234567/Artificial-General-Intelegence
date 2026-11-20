@@ -1,0 +1,741 @@
+{
+  "stage": 8000,
+  "worlds": 384,
+  "draws": 20000,
+  "results": {
+    "0": {
+      "informative_training_native_on_informative_test": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.8272026909722222,
+            "ci95": [
+              0.8154025607638888,
+              0.8388671875
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.8332248263888888,
+              "ci95": [
+                0.8181423611111112,
+                0.8484171549479166
+              ]
+            },
+            "independent": {
+              "mean": 0.8211805555555556,
+              "ci95": [
+                0.8029513888888888,
+                0.8388671875
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.4708116319444444,
+            "ci95": [
+              0.4397786458333333,
+              0.5018446180555556
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.4809027777777778,
+              "ci95": [
+                0.4381510416666667,
+                0.5234375
+              ]
+            },
+            "independent": {
+              "mean": 0.4607204861111111,
+              "ci95": [
+                0.4157986111111111,
+                0.505859375
+              ]
+            }
+          }
+        }
+      },
+      "distractor_training_native_on_informative_test": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.8272026909722222,
+            "ci95": [
+              0.8154025607638888,
+              0.8388671875
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.8332248263888888,
+              "ci95": [
+                0.8181423611111112,
+                0.8484171549479166
+              ]
+            },
+            "independent": {
+              "mean": 0.8211805555555556,
+              "ci95": [
+                0.8029513888888888,
+                0.8388671875
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.4708116319444444,
+            "ci95": [
+              0.4397786458333333,
+              0.5018446180555556
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.4809027777777778,
+              "ci95": [
+                0.4381510416666667,
+                0.5234375
+              ]
+            },
+            "independent": {
+              "mean": 0.4607204861111111,
+              "ci95": [
+                0.4157986111111111,
+                0.505859375
+              ]
+            }
+          }
+        }
+      },
+      "native_minus_random_on_same_informative_state": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": -0.00021701388888888888,
+            "ci95": [
+              -0.0028754340277777775,
+              0.0024820963541666665
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0013563368055555555,
+              "ci95": [
+                -0.0025227864583333335,
+                0.005235460069444444
+              ]
+            },
+            "independent": {
+              "mean": -0.0017903645833333333,
+              "ci95": [
+                -0.005533854166666667,
+                0.001980251736111111
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": -0.0015190972222222225,
+            "ci95": [
+              -0.008626302083333332,
+              0.005425347222222222
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0013020833333333333,
+              "ci95": [
+                -0.009440104166666666,
+                0.011827256944444444
+              ]
+            },
+            "independent": {
+              "mean": -0.004340277777777778,
+              "ci95": [
+                -0.013454861111111112,
+                0.004665798611111111
+              ]
+            }
+          }
+        }
+      },
+      "native_minus_distractor_policy_on_same_informative_state": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": -0.00010850694444444444,
+            "ci95": [
+              -0.0015462239583333333,
+              0.0013292100694444445
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0,
+              "ci95": [
+                -0.0018988715277777778,
+                0.001953125
+              ]
+            },
+            "independent": {
+              "mean": -0.00021701388888888888,
+              "ci95": [
+                -0.0022786458333333335,
+                0.0018446180555555555
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": -0.0009765625,
+            "ci95": [
+              -0.004448784722222222,
+              0.002170138888888889
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": -0.002170138888888889,
+              "ci95": [
+                -0.007378472222222222,
+                0.002387152777777778
+              ]
+            },
+            "independent": {
+              "mean": 0.00021701388888888888,
+              "ci95": [
+                -0.004340277777777778,
+                0.004557291666666667
+              ]
+            }
+          }
+        }
+      },
+      "informative_minus_distractor_training_on_same_informative_test": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "independent": {
+              "mean": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "independent": {
+              "mean": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "informative_minus_distractor_preview_as_experienced": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": -0.00029839409722222225,
+            "ci95": [
+              -0.0019259982638888888,
+              0.0013292100694444445
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0,
+              "ci95": [
+                -0.002007378472222222,
+                0.0020616319444444445
+              ]
+            },
+            "independent": {
+              "mean": -0.0005967881944444445,
+              "ci95": [
+                -0.003146701388888889,
+                0.0018446180555555555
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": -0.0018446180555555555,
+            "ci95": [
+              -0.005425347222222222,
+              0.0015190972222222222
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": -0.0026041666666666665,
+              "ci95": [
+                -0.0078125,
+                0.002170138888888889
+              ]
+            },
+            "independent": {
+              "mean": -0.0010850694444444445,
+              "ci95": [
+                -0.006076388888888889,
+                0.0036946614583328596
+              ]
+            }
+          }
+        }
+      }
+    },
+    "8000": {
+      "informative_training_native_on_informative_test": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.835693359375,
+            "ci95": [
+              0.8237575954861112,
+              0.847412109375
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.8431532118055556,
+              "ci95": [
+                0.8275824652777778,
+                0.85888671875
+              ]
+            },
+            "independent": {
+              "mean": 0.8282335069444444,
+              "ci95": [
+                0.8100043402777778,
+                0.845378960503472
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.4939236111111111,
+            "ci95": [
+              0.4618055555555556,
+              0.5258246527777778
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.5121527777777778,
+              "ci95": [
+                0.4676649305555556,
+                0.5570746527777778
+              ]
+            },
+            "independent": {
+              "mean": 0.4756944444444444,
+              "ci95": [
+                0.4305555555555556,
+                0.5203993055555556
+              ]
+            }
+          }
+        }
+      },
+      "distractor_training_native_on_informative_test": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.8355577256944444,
+            "ci95": [
+              0.8232693142361112,
+              0.8474392361111112
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.8430447048611112,
+              "ci95": [
+                0.8268229166666666,
+                0.8592122395833334
+              ]
+            },
+            "independent": {
+              "mean": 0.8280707465277778,
+              "ci95": [
+                0.8098415798611112,
+                0.8454861111111112
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.4966362847222222,
+            "ci95": [
+              0.4647352430555556,
+              0.5286458333333334
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.5162760416666666,
+              "ci95": [
+                0.4737413194444444,
+                0.5596788194444444
+              ]
+            },
+            "independent": {
+              "mean": 0.4769965277777778,
+              "ci95": [
+                0.4296875,
+                0.5234375
+              ]
+            }
+          }
+        }
+      },
+      "native_minus_random_on_same_informative_state": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.0008138020833333334,
+            "ci95": [
+              -0.001532660590277778,
+              0.0031873914930555555
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.002685546875,
+              "ci95": [
+                -0.0007052951388888889,
+                0.006103515625
+              ]
+            },
+            "independent": {
+              "mean": -0.0010579427083333333,
+              "ci95": [
+                -0.004313151041666667,
+                0.002197265625
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.0036349826388888886,
+            "ci95": [
+              -0.002712673611111111,
+              0.009982638888888888
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.009440104166666666,
+              "ci95": [
+                0.0,
+                0.018771701388888888
+              ]
+            },
+            "independent": {
+              "mean": -0.002170138888888889,
+              "ci95": [
+                -0.010525173611111112,
+                0.006293402777777778
+              ]
+            }
+          }
+        }
+      },
+      "native_minus_distractor_policy_on_same_informative_state": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": -0.0005696614583333334,
+            "ci95": [
+              -0.002414279513888889,
+              0.0011121961805555555
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": -0.00010850694444444444,
+              "ci95": [
+                -0.002224392361111111,
+                0.0021158854166666665
+              ]
+            },
+            "independent": {
+              "mean": -0.0010308159722222222,
+              "ci95": [
+                -0.004123263888888889,
+                0.00146484375
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": -0.0007595486111111111,
+            "ci95": [
+              -0.004774305555555556,
+              0.003146701388888889
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": -0.00043402777777777775,
+              "ci95": [
+                -0.005859375,
+                0.005208333333333333
+              ]
+            },
+            "independent": {
+              "mean": -0.0010850694444444445,
+              "ci95": [
+                -0.007161458333333333,
+                0.004123263888888889
+              ]
+            }
+          }
+        }
+      },
+      "informative_minus_distractor_training_on_same_informative_test": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.00013563368055555556,
+            "ci95": [
+              -0.0035264756944444445,
+              0.0035536024305555555
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.00010850694444444444,
+              "ci95": [
+                -0.00537109375,
+                0.005262586805555556
+              ]
+            },
+            "independent": {
+              "mean": 0.00016276041666666666,
+              "ci95": [
+                -0.004557291666666667,
+                0.004720052083333333
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": -0.002712673611111111,
+            "ci95": [
+              -0.01171875,
+              0.005859375
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": -0.004123263888888889,
+              "ci95": [
+                -0.017578125,
+                0.008463541666666666
+              ]
+            },
+            "independent": {
+              "mean": -0.0013020833333333333,
+              "ci95": [
+                -0.013671875,
+                0.011067708333333334
+              ]
+            }
+          }
+        }
+      },
+      "informative_minus_distractor_preview_as_experienced": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": -0.0005154079861111111,
+            "ci95": [
+              -0.002522786458333333,
+              0.001247829861111111
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": -0.00010850694444444444,
+              "ci95": [
+                -0.002387152777777778,
+                0.0020616319444444445
+              ]
+            },
+            "independent": {
+              "mean": -0.0009223090277777778,
+              "ci95": [
+                -0.004340277777777778,
+                0.0017903645833333333
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": -0.0006510416666666666,
+            "ci95": [
+              -0.005316840277777778,
+              0.003689236111111111
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.00043402777777777775,
+              "ci95": [
+                -0.005425347222222222,
+                0.006076388888888889
+              ]
+            },
+            "independent": {
+              "mean": -0.001736111111111111,
+              "ci95": [
+                -0.009114583333333334,
+                0.004557291666666667
+              ]
+            }
+          }
+        }
+      }
+    },
+    "learned_gain": {
+      "native_minus_random_on_same_informative_state": {
+        "mean_accuracy": {
+          "pooled": {
+            "mean": 0.0010308159722222222,
+            "ci95": [
+              -0.002197265625,
+              0.004177517361111111
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.0013292100694444445,
+              "ci95": [
+                -0.002902560763888889,
+                0.005588107638888889
+              ]
+            },
+            "independent": {
+              "mean": 0.000732421875,
+              "ci95": [
+                -0.004204644097222222,
+                0.005343967013888889
+              ]
+            }
+          }
+        },
+        "all_correct": {
+          "pooled": {
+            "mean": 0.005154079861111112,
+            "ci95": [
+              -0.003038194444444444,
+              0.013129340277777778
+            ]
+          },
+          "cohorts": {
+            "original": {
+              "mean": 0.008138020833333334,
+              "ci95": [
+                -0.0037977430555555555,
+                0.019856770833333332
+              ]
+            },
+            "independent": {
+              "mean": 0.002170138888888889,
+              "ci95": [
+                -0.009223090277777778,
+                0.013020833333333334
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "raw_sha256": {
+    "evaluation/preview/000000/original/informative-731-n384.npz": "b5f9d844f92aab7b6df61946f0cb26fbe7dc9f292d6685afafdfadb07a0f66d2",
+    "evaluation/preview/000000/original/distractor-731-n384.npz": "b5f9d844f92aab7b6df61946f0cb26fbe7dc9f292d6685afafdfadb07a0f66d2",
+    "evaluation/preview/000000/original/informative-732-n384.npz": "d1bfd9f9e407695528b431961dcf83f444f454fdbc194e97427010626eeb6d15",
+    "evaluation/preview/000000/original/distractor-732-n384.npz": "d1bfd9f9e407695528b431961dcf83f444f454fdbc194e97427010626eeb6d15",
+    "evaluation/preview/000000/original/informative-733-n384.npz": "2f9336b0be204c2519437e5410bd7d8ebfa2334b57525e8ede5eb25e0ea9113c",
+    "evaluation/preview/000000/original/distractor-733-n384.npz": "2f9336b0be204c2519437e5410bd7d8ebfa2334b57525e8ede5eb25e0ea9113c",
+    "evaluation/preview/000000/original/informative-734-n384.npz": "588828cbfa542d67ec14cd27384a38e9f55d53e8a5589b17feada5732e68e652",
+    "evaluation/preview/000000/original/distractor-734-n384.npz": "588828cbfa542d67ec14cd27384a38e9f55d53e8a5589b17feada5732e68e652",
+    "evaluation/preview/000000/original/informative-735-n384.npz": "b1b009968c544cbd82b3b7cbef1157fd0515ccda8ba2e01cab226413a7c65564",
+    "evaluation/preview/000000/original/distractor-735-n384.npz": "b1b009968c544cbd82b3b7cbef1157fd0515ccda8ba2e01cab226413a7c65564",
+    "evaluation/preview/000000/original/informative-736-n384.npz": "4b3773d8c888bbc0ec68af16f2d4300110b12957d7a69c8963008d011c962f6a",
+    "evaluation/preview/000000/original/distractor-736-n384.npz": "4b3773d8c888bbc0ec68af16f2d4300110b12957d7a69c8963008d011c962f6a",
+    "evaluation/preview/008000/original/informative-731-n384.npz": "a368089eddedc2f4ed915fd50eaa226dc8ebef28560a9cd406613dcd4167bfed",
+    "evaluation/preview/008000/original/distractor-731-n384.npz": "d7a8126a2cc5609f34b1572204dd6277f9a0082691abc32e331ff62eb71fffcf",
+    "evaluation/preview/008000/original/informative-732-n384.npz": "0af9d6c668b931a5e58cd48effcf52bd4ed3c35a67caaa626e348da11e3fbc36",
+    "evaluation/preview/008000/original/distractor-732-n384.npz": "21e2aee2ea84a394174a5bdc7a5bbe94b1fcd97a2521189accd6d9aa6fe1e0db",
+    "evaluation/preview/008000/original/informative-733-n384.npz": "85be0407e118b891dbe750f97984033bf97c56c411c42d3ecacf5fa5ef785f92",
+    "evaluation/preview/008000/original/distractor-733-n384.npz": "fce7765d49efc7982eea5da35b45622138ebb8e4e15b91e1a166115cc1a79342",
+    "evaluation/preview/008000/original/informative-734-n384.npz": "2972f3d9d1dd8fc0a615ee6ea6de94844e509236071256e799f9f9f59854196f",
+    "evaluation/preview/008000/original/distractor-734-n384.npz": "3989d5551b967b89bcc14d94c187667ccb7820cad2f55ac873b3841a12a3109a",
+    "evaluation/preview/008000/original/informative-735-n384.npz": "522ce952a9fa055df3278737f989087b759d089482641670cacb4d38f46e751a",
+    "evaluation/preview/008000/original/distractor-735-n384.npz": "964d7133d56317c2664e92275ba2d44cb76ab93b80eb4cadd79ca6c85bd9f4e7",
+    "evaluation/preview/008000/original/informative-736-n384.npz": "85268efeadd97d91e6743bfbe4434efad2f87d1456ed0df2ca664231ffdf6567",
+    "evaluation/preview/008000/original/distractor-736-n384.npz": "d2e0d94d0e42d3455effb354cb6aeec02cf0d81fc351ed83c65dfd5d016e6be2",
+    "evaluation/preview/000000/independent/informative-811-n384.npz": "0cad9ccd576d00d6c8c61635ba949a57bcb190d2b274097f9226725ff67e3d57",
+    "evaluation/preview/000000/independent/distractor-811-n384.npz": "0cad9ccd576d00d6c8c61635ba949a57bcb190d2b274097f9226725ff67e3d57",
+    "evaluation/preview/000000/independent/informative-812-n384.npz": "0bef209019c34f31b939a5f2c373e89b140542ab6e5628fce9ef52ea6f7b0eb4",
+    "evaluation/preview/000000/independent/distractor-812-n384.npz": "0bef209019c34f31b939a5f2c373e89b140542ab6e5628fce9ef52ea6f7b0eb4",
+    "evaluation/preview/000000/independent/informative-813-n384.npz": "28269e50f27ab12137d4aac5c0a4ee74ab56ab389221ba910f2181ae6d833de4",
+    "evaluation/preview/000000/independent/distractor-813-n384.npz": "28269e50f27ab12137d4aac5c0a4ee74ab56ab389221ba910f2181ae6d833de4",
+    "evaluation/preview/000000/independent/informative-814-n384.npz": "3177dfc293c0d68558bcc8d87693ad5448cc79ecaa3fa4171c263a34479c9c95",
+    "evaluation/preview/000000/independent/distractor-814-n384.npz": "3177dfc293c0d68558bcc8d87693ad5448cc79ecaa3fa4171c263a34479c9c95",
+    "evaluation/preview/000000/independent/informative-815-n384.npz": "c60e81cd20fadcb6c49680e0e03083bb377091666643eea46476f3061cadcd7d",
+    "evaluation/preview/000000/independent/distractor-815-n384.npz": "c60e81cd20fadcb6c49680e0e03083bb377091666643eea46476f3061cadcd7d",
+    "evaluation/preview/000000/independent/informative-816-n384.npz": "c4be8241b509ccc87a749065d7631435ecc677e3584211b1e23ed532d7a02e8d",
+    "evaluation/preview/000000/independent/distractor-816-n384.npz": "c4be8241b509ccc87a749065d7631435ecc677e3584211b1e23ed532d7a02e8d",
+    "evaluation/preview/008000/independent/informative-811-n384.npz": "f00af7f221791f64713edfdd80ee527f0bf1c659da976dcec45fd92cd936c5a6",
+    "evaluation/preview/008000/independent/distractor-811-n384.npz": "64ef9f118162598cc0e37cfa1c262306e40b5fb3e6e549b0d686c91e98511222",
+    "evaluation/preview/008000/independent/informative-812-n384.npz": "3b17c294a4096ff02afb7a3e6ff6e243c873009f7f8f7d151bd5f297830b7fb4",
+    "evaluation/preview/008000/independent/distractor-812-n384.npz": "363bf4b8e1ee3da1e855488b24cda0b21f4d951adf2ec1a8fff97a302a5888e5",
+    "evaluation/preview/008000/independent/informative-813-n384.npz": "e6384e54c96e629d957f485f0843afb38c4206f3001f2df786ecce9593f2677f",
+    "evaluation/preview/008000/independent/distractor-813-n384.npz": "3c1824ccb8b1ddf0fb64a27eb3d209d03f60753d7725d64079ef3cf62acc7638",
+    "evaluation/preview/008000/independent/informative-814-n384.npz": "8a230d9141e1a03c2851503b09132a8ddd69ee61662b57bd0c4838b7ce6df812",
+    "evaluation/preview/008000/independent/distractor-814-n384.npz": "052e105becc6e409b344e1f872514e38a9978befb242b2a5869c1763c32ece70",
+    "evaluation/preview/008000/independent/informative-815-n384.npz": "0160085819f8900f070858cc450629fc69d036e5da03952115912142e8f3dadc",
+    "evaluation/preview/008000/independent/distractor-815-n384.npz": "354ca51af6ba767167ea5dfe7802de2c937619f0fb43b3f291b12e06e3529309",
+    "evaluation/preview/008000/independent/informative-816-n384.npz": "e419879bf2e3f7e75669faa5c182aa529805ff16d54e7ae3e441e1c501622bb2",
+    "evaluation/preview/008000/independent/distractor-816-n384.npz": "7bde14195a7753e76e2a77a054097dd3afd59e7ae563b5f50f4284157f34e3d1"
+  },
+  "interval": "Paired resampling of independent births and shared worlds, preserving opposite-law twins.",
+  "primary_condition": "Both comparison arms see true candidates in the reported environment."
+}

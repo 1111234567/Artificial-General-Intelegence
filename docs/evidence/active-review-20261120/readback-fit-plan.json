@@ -1,0 +1,7 @@
+{
+  "lock":"Before fitting or inspecting selector outcomes",
+  "primary":"Logged single random side per history, actual sampled terminal payout. Shared function trained on six original bodies only. Independent six bodies at four objects are the transfer endpoint.",
+  "scorer":"f(x)=v*tanh(W*(z1,z2)/5+b), width four. Logit equals c times the existing native menu logit plus f(right)-f(left). No learned position bias, no hidden answers or teacher decisions.",
+  "fit":"Fixed seed 661837, Adam lr 0.025 with 1200 full-batch steps. Minimize negative expected return plus 0.0001 times mean squared coefficients and 0.002 times KL to a fair choice. Logged difference estimator 2*(+/- route sign)*(observed payment - training-set mean logged payment). Pair-rich companion learns the actual right-minus-left reward on two experienced continuations at twice the review rollout count. Compare learned menu-only gain, ordinary native motor and same-clock deterministic weaker two-direction confidence.",
+  "primary_measures":"Sampled four-object mean accuracy and all-four, own choice versus same graph's randomized action. Also test whether using own privately experienced history matters beyond redistributing its choices among that world's eight paired histories. All effects should be reported on held-out worlds and per body. Eight-object and transferred repaired-body results are secondary."
+}

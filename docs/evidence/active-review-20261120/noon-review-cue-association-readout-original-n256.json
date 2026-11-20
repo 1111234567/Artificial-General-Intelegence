@@ -1,0 +1,370 @@
+{
+  "cohort": "original",
+  "worlds": 256,
+  "seed": 76202671,
+  "births": [
+    731,
+    732,
+    733,
+    734,
+    735,
+    736
+  ],
+  "results": {
+    "write/preview_recognition": {
+      "mean": 0.5386555989583334,
+      "ci95": [
+        0.5142374674479165,
+        0.5625
+      ],
+      "by_birth": [
+        0.5029296875,
+        0.5595703125,
+        0.55126953125,
+        0.544921875,
+        0.52490234375,
+        0.54833984375
+      ]
+    },
+    "write/preview_delta_abs": {
+      "mean": 1.4379684005786355,
+      "ci95": [
+        1.3681884163859646,
+        1.5086716495398527
+      ],
+      "by_birth": [
+        1.4721821900457144,
+        1.475848062953446,
+        1.5142697447445244,
+        1.3630178642924875,
+        1.399030145839788,
+        1.4034623955958523
+      ]
+    },
+    "write/pulse_abs": {
+      "mean": 0.7517668367751563,
+      "ci95": [
+        0.709222314929745,
+        0.7877118799748131
+      ],
+      "by_birth": [
+        0.7452851196285337,
+        0.7647794394288212,
+        0.6526355042587966,
+        0.8177094452548772,
+        0.7518023860175163,
+        0.7783891260623932
+      ]
+    },
+    "write/changed_side": {
+      "mean": 0.8216552734375,
+      "ci95": [
+        0.7634236653645833,
+        0.863975016276042
+      ],
+      "by_birth": [
+        0.822021484375,
+        0.875244140625,
+        0.825927734375,
+        0.875244140625,
+        0.69287109375,
+        0.838623046875
+      ]
+    },
+    "write/own_resource": {
+      "mean": 0.81103515625,
+      "ci95": [
+        0.6364725748697917,
+        0.9801513671875002
+      ],
+      "by_birth": [
+        0.59375,
+        0.916015625,
+        0.8447265625,
+        0.9658203125,
+        0.69873046875,
+        0.84716796875
+      ]
+    },
+    "write/swapped_cells_resource": {
+      "mean": 0.6383463541666666,
+      "ci95": [
+        0.4838033040364583,
+        0.7900410970052083
+      ],
+      "by_birth": [
+        0.513671875,
+        0.7099609375,
+        0.58203125,
+        0.74169921875,
+        0.62255859375,
+        0.66015625
+      ]
+    },
+    "write/own_minus_swapped_total": {
+      "mean": 0.17268880208333334,
+      "ci95": [
+        0.10701497395833333,
+        0.23885498046874998
+      ],
+      "by_birth": [
+        0.080078125,
+        0.2060546875,
+        0.2626953125,
+        0.22412109375,
+        0.076171875,
+        0.18701171875
+      ]
+    },
+    "write/own_minus_swapped_review": {
+      "mean": 0.000732421875,
+      "ci95": [
+        -0.003173828125,
+        0.004801432291666666
+      ],
+      "by_birth": [
+        0.005859375,
+        0.001953125,
+        0.0009765625,
+        -0.001953125,
+        0.00048828125,
+        -0.0029296875
+      ]
+    },
+    "write/own_minus_swapped_tail": {
+      "mean": 0.17195638020833334,
+      "ci95": [
+        0.10513916015625,
+        0.2392598470052083
+      ],
+      "by_birth": [
+        0.07421875,
+        0.2041015625,
+        0.26171875,
+        0.22607421875,
+        0.07568359375,
+        0.18994140625
+      ]
+    },
+    "calibration_sham/preview_recognition": {
+      "mean": 0.83837890625,
+      "ci95": [
+        0.7848225911458334,
+        0.8922607421875001
+      ],
+      "by_birth": [
+        0.896484375,
+        0.8779296875,
+        0.9287109375,
+        0.7607421875,
+        0.8017578125,
+        0.7646484375
+      ]
+    },
+    "calibration_sham/preview_delta_abs": {
+      "mean": 1.7079201418576606,
+      "ci95": [
+        1.5341963944088395,
+        1.8950556296602976
+      ],
+      "by_birth": [
+        1.9264100793516263,
+        1.7836653459235094,
+        2.0110422796569765,
+        1.4166880529373884,
+        1.539152652490884,
+        1.5705624407855794
+      ]
+    },
+    "calibration_sham/pulse_abs": {
+      "mean": 0.7553854954894632,
+      "ci95": [
+        0.6860297086658343,
+        0.807386545612826
+      ],
+      "by_birth": [
+        0.7767649146262556,
+        0.5978120903018862,
+        0.7631246440578252,
+        0.8279458691831678,
+        0.7417982572223991,
+        0.8248671975452453
+      ]
+    },
+    "calibration_sham/changed_side": {
+      "mean": 0.8731282552083334,
+      "ci95": [
+        0.8185139973958334,
+        0.911541748046875
+      ],
+      "by_birth": [
+        0.9150390625,
+        0.90087890625,
+        0.91064453125,
+        0.87109375,
+        0.75048828125,
+        0.890625
+      ]
+    },
+    "calibration_sham/own_resource": {
+      "mean": 1.93408203125,
+      "ci95": [
+        1.7739257812500002,
+        2.0872456868489584
+      ],
+      "by_birth": [
+        1.97509765625,
+        2.0390625,
+        2.1787109375,
+        1.9033203125,
+        1.66455078125,
+        1.84375
+      ]
+    },
+    "calibration_sham/swapped_cells_resource": {
+      "mean": 1.4217936197916667,
+      "ci95": [
+        1.31168212890625,
+        1.5310160319010417
+      ],
+      "by_birth": [
+        1.41748046875,
+        1.41650390625,
+        1.4462890625,
+        1.494140625,
+        1.31103515625,
+        1.4453125
+      ]
+    },
+    "calibration_sham/own_minus_swapped_total": {
+      "mean": 0.5122884114583334,
+      "ci95": [
+        0.40104166666666663,
+        0.6337117513020832
+      ],
+      "by_birth": [
+        0.5576171875,
+        0.62255859375,
+        0.732421875,
+        0.4091796875,
+        0.353515625,
+        0.3984375
+      ]
+    },
+    "calibration_sham/own_minus_swapped_review": {
+      "mean": -8.138020833333333e-05,
+      "ci95": [
+        -0.00048828125,
+        0.0
+      ],
+      "by_birth": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.00048828125
+      ]
+    },
+    "calibration_sham/own_minus_swapped_tail": {
+      "mean": 0.5123697916666666,
+      "ci95": [
+        0.40136311848958334,
+        0.6337137858072915
+      ],
+      "by_birth": [
+        0.5576171875,
+        0.62255859375,
+        0.732421875,
+        0.4091796875,
+        0.353515625,
+        0.39892578125
+      ]
+    },
+    "write_minus_sham/preview_recognition": {
+      "mean": -0.2997233072916667,
+      "ci95": [
+        -0.3621480305989583,
+        -0.238604736328125
+      ],
+      "by_birth": [
+        -0.3935546875,
+        -0.318359375,
+        -0.37744140625,
+        -0.2158203125,
+        -0.27685546875,
+        -0.21630859375
+      ]
+    },
+    "write_minus_sham/preview_delta_abs": {
+      "mean": -0.2699517411044023,
+      "ci95": [
+        -0.4226068724436725,
+        -0.12591327368039246
+      ],
+      "by_birth": [
+        -0.4542278873268515,
+        -0.30781728314468637,
+        -0.49677253572735935,
+        -0.053670188412070274,
+        -0.14012250769883394,
+        -0.16710004431661218
+      ]
+    },
+    "write_minus_sham/pulse_abs": {
+      "mean": -0.0036186587143068514,
+      "ci95": [
+        -0.06284345003659836,
+        0.07104679976764601
+      ],
+      "by_birth": [
+        -0.03147979499772191,
+        0.166967349126935,
+        -0.11048913979902864,
+        -0.010236423928290606,
+        0.01000412879511714,
+        -0.0464780714828521
+      ]
+    },
+    "write_minus_sham/own_minus_swapped_total": {
+      "mean": -0.339599609375,
+      "ci95": [
+        -0.44921874999999994,
+        -0.2358357747395833
+      ],
+      "by_birth": [
+        -0.4775390625,
+        -0.41650390625,
+        -0.4697265625,
+        -0.18505859375,
+        -0.27734375,
+        -0.21142578125
+      ]
+    }
+  },
+  "ancestry": {
+    "data/active-review-20261120/paired-lesson/original/birth_731/odor/paired/checkpoint_12000.npz": "5aa28f176f4d0c4df19be22fb84c4cef92bbbc5c642439ec0a7a49b0f52d5405",
+    "data/active-review-20261120/horizon/preview_anchored/original/head-731.npz": "b6fc383559f9a93d4ac11cded3ba228bdcb8ba88515655b60003b23908e5f7a2",
+    "data/active-review-20261120/paired-lesson/original/birth_732/odor/paired/checkpoint_12000.npz": "364e115473e507feecc2d6359849feef6c2fd3a4ae1441cc73ea2a2fb40837ed",
+    "data/active-review-20261120/horizon/preview_anchored/original/head-732.npz": "b97fbba8323bbb5aae6f6d339d39bc990fd4faa4a58d842f919cf6820abf4243",
+    "data/active-review-20261120/paired-lesson/original/birth_733/odor/paired/checkpoint_12000.npz": "5534dd55456b1e9de0136ed3a1ba7c1f776a05aab1945f29bbf67714aa568a51",
+    "data/active-review-20261120/horizon/preview_anchored/original/head-733.npz": "72faea26f5ba5eb1efb52f0016a1c826e1f3ee2f67dd186accddb16c182c096c",
+    "data/active-review-20261120/paired-lesson/original/birth_734/odor/paired/checkpoint_12000.npz": "ed7a94d6d2d978f88d476a3470aaa5eeaaec03a0da459961f3e95deddffede66",
+    "data/active-review-20261120/horizon/preview_anchored/original/head-734.npz": "564a81b96f68c7545c89a766a209b2841372a28150240ba22946aa41c20eb9e9",
+    "data/active-review-20261120/paired-lesson/original/birth_735/odor/paired/checkpoint_12000.npz": "ab2af972dfb6b2034b50d6d86284c7ec65021e6646bcca3459b7af8ae46d833e",
+    "data/active-review-20261120/horizon/preview_anchored/original/head-735.npz": "5b0179932b7585c3a0a8a47340690d2d1a0f1ac799dda92d39da87163c08f864",
+    "data/active-review-20261120/paired-lesson/original/birth_736/odor/paired/checkpoint_12000.npz": "86c2fe9a877345acfe67104da4903c778c59a0a83e225ee6c80d4fdfb68d853c",
+    "data/active-review-20261120/horizon/preview_anchored/original/head-736.npz": "548e5d59b273afa64aec9a3d4b70d74bf2ff8d6d7adb53ebe57e23a22125bbfc"
+  },
+  "raw_sha256": {
+    "readout-ablation/original/731-n256.npz": "fc453685651bbe4573a523eac55d934a7944f47c609d4c3c4edaea7a85024228",
+    "readout-ablation/original/732-n256.npz": "7deb2c66cf7896fc816016a83df96e68c1266885828791539bf44918da52cb9d",
+    "readout-ablation/original/733-n256.npz": "5b484821fc7ba20296983cef9038340093ecceb43742ebc826c6ba5854a5fab3",
+    "readout-ablation/original/734-n256.npz": "45625d7d318b999c94a16929dc5166fca28feb7fec774aefb63c8ef14a316aa8",
+    "readout-ablation/original/735-n256.npz": "dad10e48f919e1f33ed9154128bf5b49cd77c8a82b37525a1fabd35c13d0cb81",
+    "readout-ablation/original/736-n256.npz": "04c94aaa2bdc09cb6c9a81c50daab88981cad462fc34d1ad25a966b24dbb44fa"
+  },
+  "plan_sha256": "06fc4ae777512232bbab35f58ba9fbe0a06f717ed9cf224fa5d4a2b868df587c",
+  "main_source_sha256": "e22d19f912e07bb649c5d27b8cc21f82e5eebfb1b1f94b022adb5a5d7bb2e1e4",
+  "source_sha256": "5134bd8dfbd36695e043850ab273ad28f080eead62dd0ef2e8fdc3108e7759ed"
+}

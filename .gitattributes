@@ -88,3 +88,13 @@ docs/evidence/open-graph-learning-2026-11-19/edges/*-raw.zip filter=lfs diff=lfs
 data/edit-receipt-20261119/evaluation/birth_*/**/checkpoint_*.npz filter=lfs diff=lfs merge=lfs -text
 data/revisit-choice-20261119/eval-trials.npz filter=lfs diff=lfs merge=lfs -text
 data/local-trace-20261119/eval-*/*.npz filter=lfs diff=lfs merge=lfs -text
+
+# November 20 behavioral ledgers and their source digests are byte-exact.
+experiments/pulse_game/interleave_*.py -text
+experiments/pulse_game/noon_*.py -text
+experiments/pulse_game/reporting/interleaved_*.py -text
+experiments/pulse_game/reporting/active_review_*.py -text
+docs/evidence/interleaved-learning-2026-11-20/** -text
+docs/evidence/active-review-20261120/** -text
+docs/evidence/interleaved-learning-2026-11-20/audit-data.zip filter=lfs diff=lfs merge=lfs -text
+docs/evidence/active-review-20261120/audit-data.zip filter=lfs diff=lfs merge=lfs -text

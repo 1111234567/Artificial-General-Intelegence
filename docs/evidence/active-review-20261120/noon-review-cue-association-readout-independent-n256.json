@@ -1,0 +1,370 @@
+{
+  "cohort": "independent",
+  "worlds": 256,
+  "seed": 76202672,
+  "births": [
+    811,
+    812,
+    813,
+    814,
+    815,
+    816
+  ],
+  "results": {
+    "write/preview_recognition": {
+      "mean": 0.5535481770833334,
+      "ci95": [
+        0.531329345703125,
+        0.5755208333333334
+      ],
+      "by_birth": [
+        0.548828125,
+        0.54833984375,
+        0.568359375,
+        0.57763671875,
+        0.546875,
+        0.53125
+      ]
+    },
+    "write/preview_delta_abs": {
+      "mean": 1.4958172776484087,
+      "ci95": [
+        1.437895239112792,
+        1.554587957556699
+      ],
+      "by_birth": [
+        1.459105714573525,
+        1.5411071761627682,
+        1.482858540606685,
+        1.5103894368512556,
+        1.4906640992267057,
+        1.4907786984695122
+      ]
+    },
+    "write/pulse_abs": {
+      "mean": 0.7872091160388663,
+      "ci95": [
+        0.7276526532000087,
+        0.836526727443561
+      ],
+      "by_birth": [
+        0.8359951744787395,
+        0.8009125713724643,
+        0.6512045657727867,
+        0.754210056969896,
+        0.8610054608434439,
+        0.8199268667958677
+      ]
+    },
+    "write/changed_side": {
+      "mean": 0.8538411458333334,
+      "ci95": [
+        0.8353678385416665,
+        0.8738606770833333
+      ],
+      "by_birth": [
+        0.85693359375,
+        0.84130859375,
+        0.86083984375,
+        0.888427734375,
+        0.83056640625,
+        0.844970703125
+      ]
+    },
+    "write/own_resource": {
+      "mean": 0.8668619791666666,
+      "ci95": [
+        0.6702392578124999,
+        1.0498128255208334
+      ],
+      "by_birth": [
+        0.95361328125,
+        0.9755859375,
+        0.9853515625,
+        0.9873046875,
+        0.5322265625,
+        0.76708984375
+      ]
+    },
+    "write/swapped_cells_resource": {
+      "mean": 0.6845703125,
+      "ci95": [
+        0.5195170084635417,
+        0.8465189615885417
+      ],
+      "by_birth": [
+        0.74658203125,
+        0.728515625,
+        0.8095703125,
+        0.74169921875,
+        0.44970703125,
+        0.63134765625
+      ]
+    },
+    "write/own_minus_swapped_total": {
+      "mean": 0.18229166666666666,
+      "ci95": [
+        0.12483520507812498,
+        0.23836263020833331
+      ],
+      "by_birth": [
+        0.20703125,
+        0.2470703125,
+        0.17578125,
+        0.24560546875,
+        0.08251953125,
+        0.1357421875
+      ]
+    },
+    "write/own_minus_swapped_review": {
+      "mean": 0.002685546875,
+      "ci95": [
+        -0.0006510416666666667,
+        0.006510416666666667
+      ],
+      "by_birth": [
+        0.0009765625,
+        0.0,
+        0.00146484375,
+        0.00390625,
+        0.00439453125,
+        0.00537109375
+      ]
+    },
+    "write/own_minus_swapped_tail": {
+      "mean": 0.17960611979166666,
+      "ci95": [
+        0.120361328125,
+        0.23641357421875
+      ],
+      "by_birth": [
+        0.2060546875,
+        0.2470703125,
+        0.17431640625,
+        0.24169921875,
+        0.078125,
+        0.13037109375
+      ]
+    },
+    "calibration_sham/preview_recognition": {
+      "mean": 0.8382161458333334,
+      "ci95": [
+        0.7812459309895833,
+        0.8859049479166667
+      ],
+      "by_birth": [
+        0.82421875,
+        0.8837890625,
+        0.818359375,
+        0.8994140625,
+        0.716796875,
+        0.88671875
+      ]
+    },
+    "calibration_sham/preview_delta_abs": {
+      "mean": 1.6717344026158873,
+      "ci95": [
+        1.5647783629615637,
+        1.7815128008223837
+      ],
+      "by_birth": [
+        1.634765699855052,
+        1.739313811645843,
+        1.539228571986314,
+        1.7642685795435682,
+        1.5484865958569571,
+        1.8043431568075903
+      ]
+    },
+    "calibration_sham/pulse_abs": {
+      "mean": 0.7711548510706052,
+      "ci95": [
+        0.708825194797828,
+        0.8229877654996623
+      ],
+      "by_birth": [
+        0.8399086114950478,
+        0.8091066104825586,
+        0.7075642452109605,
+        0.6433117892593145,
+        0.8280108110047877,
+        0.7990270389709622
+      ]
+    },
+    "calibration_sham/changed_side": {
+      "mean": 0.8751627604166666,
+      "ci95": [
+        0.8495259602864585,
+        0.8964843750000001
+      ],
+      "by_birth": [
+        0.89208984375,
+        0.8837890625,
+        0.88525390625,
+        0.86572265625,
+        0.82373046875,
+        0.900390625
+      ]
+    },
+    "calibration_sham/own_resource": {
+      "mean": 1.888671875,
+      "ci95": [
+        1.616937255859375,
+        2.092964680989583
+      ],
+      "by_birth": [
+        1.91796875,
+        1.98828125,
+        1.97998046875,
+        2.10693359375,
+        1.26806640625,
+        2.07080078125
+      ]
+    },
+    "calibration_sham/swapped_cells_resource": {
+      "mean": 1.4034016927083333,
+      "ci95": [
+        1.2464172363281252,
+        1.545013427734375
+      ],
+      "by_birth": [
+        1.45458984375,
+        1.4462890625,
+        1.50439453125,
+        1.4736328125,
+        1.08251953125,
+        1.458984375
+      ]
+    },
+    "calibration_sham/own_minus_swapped_total": {
+      "mean": 0.4852701822916667,
+      "ci95": [
+        0.3463460286458333,
+        0.5997741699218749
+      ],
+      "by_birth": [
+        0.46337890625,
+        0.5419921875,
+        0.4755859375,
+        0.63330078125,
+        0.185546875,
+        0.61181640625
+      ]
+    },
+    "calibration_sham/own_minus_swapped_review": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "by_birth": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "calibration_sham/own_minus_swapped_tail": {
+      "mean": 0.4852701822916667,
+      "ci95": [
+        0.3463460286458333,
+        0.5997741699218749
+      ],
+      "by_birth": [
+        0.46337890625,
+        0.5419921875,
+        0.4755859375,
+        0.63330078125,
+        0.185546875,
+        0.61181640625
+      ]
+    },
+    "write_minus_sham/preview_recognition": {
+      "mean": -0.28466796875,
+      "ci95": [
+        -0.33683268229166663,
+        -0.22680460611979167
+      ],
+      "by_birth": [
+        -0.275390625,
+        -0.33544921875,
+        -0.25,
+        -0.32177734375,
+        -0.169921875,
+        -0.35546875
+      ]
+    },
+    "write_minus_sham/preview_delta_abs": {
+      "mean": -0.17591712482195968,
+      "ci95": [
+        -0.2817849789610287,
+        -0.07737202521724004
+      ],
+      "by_birth": [
+        -0.1756599840009585,
+        -0.19820663530845195,
+        -0.0563700320199132,
+        -0.2538791432743892,
+        -0.057822496513836086,
+        -0.31356445781420916
+      ]
+    },
+    "write_minus_sham/pulse_abs": {
+      "mean": 0.016054264968261123,
+      "ci95": [
+        -0.021711923269322142,
+        0.05878562845852382
+      ],
+      "by_birth": [
+        -0.003913437016308308,
+        -0.008194039110094309,
+        -0.05635967943817377,
+        0.11089826771058142,
+        0.03299464983865619,
+        0.020899827824905515
+      ]
+    },
+    "write_minus_sham/own_minus_swapped_total": {
+      "mean": -0.302978515625,
+      "ci95": [
+        -0.40836791992187504,
+        -0.19710083007812498
+      ],
+      "by_birth": [
+        -0.25634765625,
+        -0.294921875,
+        -0.2998046875,
+        -0.3876953125,
+        -0.10302734375,
+        -0.47607421875
+      ]
+    }
+  },
+  "ancestry": {
+    "data/active-review-20261120/paired-lesson/independent/birth_811/odor/paired/checkpoint_12000.npz": "92f3949cead5f1645fcd57a425b1536a3137c123f638ccad29d9a1116b55bb35",
+    "data/active-review-20261120/horizon/preview_anchored/independent/head-811.npz": "433982e95bf8113ce865a6f00d3deac1e955f1b33fda6fc3610b3872e6606f83",
+    "data/active-review-20261120/paired-lesson/independent/birth_812/odor/paired/checkpoint_12000.npz": "3af84f44f03382696d65959e0687296c626478dd2226abf00481d24a9651da16",
+    "data/active-review-20261120/horizon/preview_anchored/independent/head-812.npz": "5387af0556586f936fbd178fdfaa903625ca3580c9fdb4b7dab23da44b1a7135",
+    "data/active-review-20261120/paired-lesson/independent/birth_813/odor/paired/checkpoint_12000.npz": "1eb9c14728a2b5a775e090930c0510dbc4f8dcc1c9fb987649b95431d44b7a6f",
+    "data/active-review-20261120/horizon/preview_anchored/independent/head-813.npz": "59d6c576a553214c0f1ca2c77fe9196568e33b618a403e8337125980695bb8ea",
+    "data/active-review-20261120/paired-lesson/independent/birth_814/odor/paired/checkpoint_12000.npz": "3474830fdcdeee81870f9b859cdb1c36966c0cb4c654c347d6dbd4716626684b",
+    "data/active-review-20261120/horizon/preview_anchored/independent/head-814.npz": "ddb4b25d63da2b310843a58c51bad23d1a4babb4f7acbaf458d9960d8919330e",
+    "data/active-review-20261120/paired-lesson/independent/birth_815/odor/paired/checkpoint_12000.npz": "2a6f9e6a6c51edc19d30a0fa73d45c9de109c313f18881c895a3d4934d4a23fc",
+    "data/active-review-20261120/horizon/preview_anchored/independent/head-815.npz": "1f3ae88689391b0bd7cbee94a9743328aaf133fdfbab03aefb521d82f6b9c224",
+    "data/active-review-20261120/paired-lesson/independent/birth_816/odor/paired/checkpoint_12000.npz": "287ca7f66f1de94dd8d4a4805f919bc4497ad598ea9230357513474333fd38c6",
+    "data/active-review-20261120/horizon/preview_anchored/independent/head-816.npz": "bae56fa2f2180b17471d60c4758d840cf6398bd0afcfd24f001997bd3b5841d1"
+  },
+  "raw_sha256": {
+    "readout-ablation/independent/811-n256.npz": "2f324fc0e89704fa8a76a014efb10e9df6462887eed0e8375af013db5e824e87",
+    "readout-ablation/independent/812-n256.npz": "1222890b8937af97184537ca52cc46a4185a0a804c2a3c46bbca245b21ea235d",
+    "readout-ablation/independent/813-n256.npz": "d81a971170eb3e66b1e20f1eca404db457fd56d7b03a502027835b9cbc7b1327",
+    "readout-ablation/independent/814-n256.npz": "cd54accfda0b0af9f03f5a3c4abfc3abcbc74a8ca6b963156425a4301c8593fa",
+    "readout-ablation/independent/815-n256.npz": "189fae4125ebb51a80c76b7703fc12ccb4064bcda00410dbec263e89a85b8077",
+    "readout-ablation/independent/816-n256.npz": "53424d5e48b22ae54ca8ca9e4442b155d3658a94ea35def5f046b82db510c4b0"
+  },
+  "plan_sha256": "06fc4ae777512232bbab35f58ba9fbe0a06f717ed9cf224fa5d4a2b868df587c",
+  "main_source_sha256": "e22d19f912e07bb649c5d27b8cc21f82e5eebfb1b1f94b022adb5a5d7bb2e1e4",
+  "source_sha256": "5134bd8dfbd36695e043850ab273ad28f080eead62dd0ef2e8fdc3108e7759ed"
+}

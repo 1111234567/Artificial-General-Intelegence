@@ -1,0 +1,119 @@
+{
+  "split": "pilot",
+  "rounds_per_context_pair": 4,
+  "roots": [
+    2034030569,
+    2081828500,
+    2084909820,
+    2024762885,
+    2055851077,
+    2027754391,
+    2079464194,
+    2037164320
+  ],
+  "profiles": [
+    "familiar",
+    "independent_odors",
+    "new_layout",
+    "novel_marks",
+    "multi_pair"
+  ],
+  "cases": [
+    "aba",
+    "cba",
+    "flipped",
+    "b_only",
+    "prime_zero",
+    "prime_donor",
+    "stable",
+    "natural",
+    "aligned_0",
+    "aligned_1",
+    "aligned_2",
+    "aligned_4"
+  ],
+  "specs": [
+    {
+      "name": "uniform",
+      "birth": 0,
+      "kind": "uniform",
+      "intervention": "active"
+    },
+    {
+      "name": "public_lookup",
+      "birth": 0,
+      "kind": "public_lookup",
+      "intervention": "active"
+    },
+    {
+      "name": "old_local_odor_8000",
+      "birth": 731,
+      "kind": "old",
+      "controller": "local",
+      "task": "odor",
+      "step": 8000,
+      "intervention": "active",
+      "checkpoint_sha256": "ca546568a4fb718e968749b53c28faee2af30ef68acf88f145da02e8ec6e53fe"
+    },
+    {
+      "name": "old_local_feeder_8000",
+      "birth": 731,
+      "kind": "old",
+      "controller": "local",
+      "task": "feeder",
+      "step": 8000,
+      "intervention": "active",
+      "checkpoint_sha256": "c0f01d462db74c289aa2c64b7e01443f331f57ba7c3b1756feabda6f08476018"
+    },
+    {
+      "name": "old_legacy_odor_8000",
+      "birth": 731,
+      "kind": "old",
+      "controller": "legacy",
+      "task": "odor",
+      "step": 8000,
+      "intervention": "active",
+      "checkpoint_sha256": "07aac2f60d6b3e167c9ac1e2322923c43f2cb83156ba5c2040f97ca7663647a0"
+    },
+    {
+      "name": "old_legacy_feeder_8000",
+      "birth": 731,
+      "kind": "old",
+      "controller": "legacy",
+      "task": "feeder",
+      "step": 8000,
+      "intervention": "active",
+      "checkpoint_sha256": "48e953afa735f9f5211438dabfd3fe945b4b6c3e45717a0ab17a7eb49027dfc1"
+    }
+  ],
+  "stochastic": true,
+  "domain": 8298817,
+  "donor_domain": 8298818,
+  "source_sha256": "54d357dcea1c43b0fbe49edf30819c498f61b0b06a6abafaef71075102c31af1",
+  "cue_bank": [
+    [
+      0.0,
+      1.100000023841858,
+      0.0
+    ],
+    [
+      0.0,
+      -0.550000011920929,
+      0.952627956867218
+    ],
+    [
+      0.0,
+      -0.550000011920929,
+      -0.952627956867218
+    ]
+  ],
+  "mark_axis": [
+    1.350000023841858,
+    0.0,
+    0.0
+  ],
+  "physical": "A native motor choice drives sustained left/right pulses in the existing mixture body. Its actual contact supplies side plus signed taste to native sensory ports; all silent contacts retain side while forcing physical writes off. Movement-step states stay in the body adapter.",
+  "laws": "Single-pair profiles fully cross independent A/B binary laws per root. The three-pair stress crosses all 8 A maps and sets B to the inverse for each pair. C has newly drawn odors and unrelated laws. Flipped keeps its prime sensory streams and inverts only earlier A taste. B-only substitutes B for A while holding length constant. Donor signs share neither private law nor choices with the receiver, and appear at the receiver's actual receipt event.",
+  "scoring": "A/B/mark are ordered independently per root after the B block. All three are silent and missed contacts count as incorrect. Joint A and B means both actual contacts were correct. The reversal's natural row exposes feedback immediately after each of the first four changed requests; aligned rows mask the earlier changes so all doses share the final physical layout.",
+  "plots": "No model or checkpoint selection on these evaluation roots."
+}

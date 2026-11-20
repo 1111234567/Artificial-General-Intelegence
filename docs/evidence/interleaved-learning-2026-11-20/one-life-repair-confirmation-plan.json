@@ -1,0 +1,11 @@
+{
+  "question": "Do the fixed repair checkpoints recover isolated behavior and retain long behavior on worlds that were not used to diagnose the deficit or measure the first repair?",
+  "fixed_models": "Both complete cohorts and all six births per cohort. Each birth contributes its exact interspersed 8k parent and its long-only and mixed 2000-step repair checkpoints. No continued training, model selection or assessment-specific adaptation outside the controller's native within-life updates.",
+  "seeds": {
+    "original": {"ordinary": 8303179, "joint": 7723817},
+    "independent": {"ordinary": 8303201, "joint": 7723833}
+  },
+  "paid_seed": "Use joint seed plus 71 through the unchanged serial payoff generator, including its existing independent domain. Each cohort has an entirely fresh set of ordinary, cold six-probe and serial two-action worlds shared by all three fixed models.",
+  "worlds": {"ordinary": 128, "joint": 96},
+  "measurement": "Repeat the fixed repair's native isolated A/B assay, three equal support orders for forked six-probe choices, and two equally weighted support schedules for actual serial terminal payoff. Report A/B jointly, A/B/mark jointly, six jointly, and two serial payouts jointly. Include the all-maps, conflict and hard/conflict strata. Within geometry average the complete law grid, 4 for ordinary and 64/32/8 for joint. Calculate paired arm and parent contrasts, with 4000 crossed resamples of independent births and shared geometries. Keep original validation artifacts unchanged."
+}

@@ -1,0 +1,376 @@
+{
+ "clean": true,
+ "checked_unique_files": 1613,
+ "checked_bytes": 125938990,
+ "reports": {
+  "model-cards-original": 72,
+  "triangle-transfer-original": 48,
+  "triangle-orders-long-original-32000": 6,
+  "triangle-components-original-32000": 6,
+  "triangle-orders-long-original-64000": 6,
+  "triangle-components-original-64000": 6,
+  "geometry-comparison-original-8000": 36,
+  "geometry-comparison-original-32000": 36,
+  "geometry-comparison-original-64000": 36,
+  "cross-skill-original-0": 12,
+  "cross-skill-original-4000": 36,
+  "cross-skill-original-8000": 36,
+  "one-life-original-shared-4000": 36,
+  "one-life-original-shared-8000": 36,
+  "one-life-original-disjoint-8000": 36,
+  "one-life-repair-original-2000": 42,
+  "one-life-repair-confirmation-original-2000": 36,
+  "model-cards-confirmation": 72,
+  "triangle-transfer-confirmation": 48,
+  "triangle-orders-long-independent-32000": 6,
+  "triangle-components-independent-32000": 6,
+  "triangle-orders-long-independent-64000": 6,
+  "triangle-components-independent-64000": 6,
+  "geometry-comparison-independent-8000": 36,
+  "geometry-comparison-independent-32000": 36,
+  "geometry-comparison-independent-64000": 36,
+  "cross-skill-independent-0": 12,
+  "cross-skill-independent-4000": 36,
+  "cross-skill-independent-8000": 36,
+  "one-life-independent-shared-4000": 36,
+  "one-life-independent-shared-8000": 36,
+  "one-life-independent-disjoint-8000": 36,
+  "one-life-repair-independent-2000": 42,
+  "one-life-repair-confirmation-independent-2000": 36,
+  "adaptive_gains": 75,
+  "constant_gain_transfer": 12,
+  "compact_birth_reference": 144,
+  "quantized-reference": 110,
+  "dynamic-quantized-reference": 242,
+  "one-life-body-rule-swap": 100,
+  "one-life-padding/original": 36,
+  "one-life-padding/independent": 36,
+  "completed_physical_summaries": 6
+ },
+ "trained_trajectories": {
+  "geometry/original/orthogonal/low": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 0,
+    "random": 0,
+    "orthogonal": 64000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "geometry/original/orthogonal/high": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 0,
+    "random": 0,
+    "orthogonal": 64000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "geometry/original/interleaved/low": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 32000,
+    "random": 16000,
+    "orthogonal": 16000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "geometry/original/interleaved/high": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 32000,
+    "random": 16000,
+    "orthogonal": 16000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "cross-skill/original/old_then_new": {
+   "step": 8000,
+   "old": 4000,
+   "new": 4000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "cross-skill/original/new_then_old": {
+   "step": 8000,
+   "old": 4000,
+   "new": 4000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "cross-skill/original/alternating": {
+   "step": 8000,
+   "old": 4000,
+   "new": 4000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "one-life/original/blocked": {
+   "step": 8000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "one-life/original/interspersed": {
+   "step": 8000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "one-life-repair/original/long_only": {
+   "step": 2000,
+   "short_credits": 0,
+   "long_credits": 2000
+  },
+  "one-life-repair/original/mixed": {
+   "step": 2000,
+   "short_credits": 1000,
+   "long_credits": 1000
+  },
+  "geometry/independent/orthogonal/low": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 0,
+    "random": 0,
+    "orthogonal": 64000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "geometry/independent/orthogonal/high": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 0,
+    "random": 0,
+    "orthogonal": 64000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "geometry/independent/interleaved/low": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 32000,
+    "random": 16000,
+    "orthogonal": 16000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "geometry/independent/interleaved/high": {
+   "step": 64000,
+   "outer_updates_by_geometry": {
+    "hard": 32000,
+    "random": 16000,
+    "orthogonal": 16000
+   },
+   "adam_steps": [
+    64000
+   ]
+  },
+  "cross-skill/independent/old_then_new": {
+   "step": 8000,
+   "old": 4000,
+   "new": 4000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "cross-skill/independent/new_then_old": {
+   "step": 8000,
+   "old": 4000,
+   "new": 4000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "cross-skill/independent/alternating": {
+   "step": 8000,
+   "old": 4000,
+   "new": 4000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "one-life/independent/blocked": {
+   "step": 8000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "one-life/independent/interspersed": {
+   "step": 8000,
+   "adam_steps": [
+    8000
+   ]
+  },
+  "one-life-repair/independent/long_only": {
+   "step": 2000,
+   "short_credits": 0,
+   "long_credits": 2000
+  },
+  "one-life-repair/independent/mixed": {
+   "step": 2000,
+   "short_credits": 1000,
+   "long_credits": 1000
+  }
+ },
+ "installed": {
+  "python": "3.14.5",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.5.4"
+ },
+ "final_source_sha256": {
+  "interleave_adaptive_reference.py": "b7df4074d4098e214bbccb83b03614ec67b8db1e7f5237e3ec43e3b2037e8e2a",
+  "interleave_adaptive_report.py": "1f6b7a395f526eb65387d902d2cff98b589273e81969566afc0880dae62c9973",
+  "interleave_adaptive_transfer.py": "403ba0665a960e5f8d7ac86d79ec72b7a45e005124e8c08c3b80e09270f3702e",
+  "interleave_adult_eval.py": "9e90a4ad2a0dda573881a61e7c4467e03d8409fcfe488bbe92164d8b67fc4ad3",
+  "interleave_adult_train.py": "58024f08f18cb55b7e0689f03a5656c6655698e0cbbea256b69b78437c027583",
+  "interleave_age_train.py": "37c852b5ed6154575711a7d2a906fbbc3954eceb58cfafeff7fe26829e2ea74b",
+  "interleave_binding.py": "27d0237c91bab7a6c0eb5068f3d017515bd3c6f2b5ada5d889160d12d43b0260",
+  "interleave_capacity.py": "22fce37ce690061fa80df100890d7bc10321c852081c73a51b3885a0c257f5ae",
+  "interleave_capacity_report.py": "55003c7127b84b671d4f7513b0e5367a338bc303cf36d57ab7daa946b7f0ae85",
+  "interleave_checkpoint_publish.py": "dffc1ab34f2d6e051ab816b5957f28c1430613fa9d0ebf7a67d8a9694c0a002d",
+  "interleave_code_probe.py": "c1a1a001522325f4d098f0cf4a5eff5c631f156e4e3c43028e40f04a74c0d72a",
+  "interleave_compact_reference.py": "6393e48b2dad4d18d5748af0b59d58f2d4f133a5c80d9d96828ffe0c2ba176a7",
+  "interleave_confirm_context.py": "c88cd5fe420ac4be2954bde2e8e48d360a544c7c83d0d9d9cafd606d63ce5eba",
+  "interleave_confirm_triangle.py": "240f203f2d9c2a44fe2df6371d95b26f7d2243514374e347a20b4080b94acac4",
+  "interleave_context_fork.py": "422a6b0362aa2611c3d3ce5b7663d4b8336f0157d2aee2f6ad981619bc8c0375",
+  "interleave_context_probe.py": "c7ec5b49db2fa14a17febaed0f5994f98b287c21502a54fb7fbaf4bebf25352b",
+  "interleave_context_time.py": "20c3bafd131149334e3dfe9993fd86869aae35152f991327ee7a3b7548db078d",
+  "interleave_credit_audit.py": "5f0eb89dcea317190c8adc453926bbe25234bc55c2527c4bcb2a35af7bafacda",
+  "interleave_credit_train.py": "9f2c14e5fda4a3f66d7342f4dd3d7372e6a9b42a615bb47b230890f73b60f11d",
+  "interleave_cross_skill.py": "6aae14be3356e09313a1ae220066caf84d19a3f786b31092d9e4452e8ab1b2e2",
+  "interleave_cross_skill_eval.py": "6fc609a386d4d9692788b233b6e6ddcffd0666474828c1250e4665ca5c2ae09e",
+  "interleave_curriculum.py": "8fe17751d0594b568658672f887481f35e200555a952ce89cc94eb9288e9b079",
+  "interleave_development.py": "864c0a198c10b86372ea9fe1fc4081a8c972a8eafd40dc548e6b6ecee132313a",
+  "interleave_dose.py": "2de727f8efcfbb8ab61119afb5f070a311f534ee1110d2328e82fc115718aea0",
+  "interleave_dynamic_quantized_reference.py": "fcb63201ee743c7176a41d858e51b190fa51664bcd3deb89eff881d8890b0444",
+  "interleave_eval.py": "5c2bb97f22c2e9600e5a6bf0f6051b8bddd9115d40a3889ef5237dad3346e213",
+  "interleave_evidence.py": "08a44d9aead9c3c155a19fc66598756b5ea1242fa88baeb0892fc2eba553dfc3",
+  "interleave_exception.py": "1aa66de663b79454ea8b8a31ef5410f70e85c26745596148b2fef7149aaccb70",
+  "interleave_geometry_curriculum.py": "cefb26aa1d344a3e86f7e40b2140dfa2c74a237695c89b154148af29ff2c2a7d",
+  "interleave_geometry_eval.py": "44948544c380f8fe939eaad6fa805712785257db0f677525d391962f9bdf0b42",
+  "interleave_homeostasis.py": "5a9852074797a05d614619b15b6cccd2e509df90dbf020c583a0bbdd9eb048cd",
+  "interleave_induction.py": "6b20721ab6a681418aa150d33bb3100b5a9fb0f71130c72944745810dd1c38ca",
+  "interleave_induction_report.py": "cc2781b7f10c1d9d1cf591345df542beeea33153fb5da2df6cdaaf1bf86de69b",
+  "interleave_induction_train.py": "c5b35bcbf9a9e2c2d31e4b67bf37f521ec07d0e93898612fe96f66758063c890",
+  "interleave_integrated_stability.py": "bbe8141211a7b6dfd2c53c4d0b5538f3a66716d4a6d1c72cf7dc5b4a2871de45",
+  "interleave_interference.py": "6e45e8fb18c06ba8e7645dcbd849aaee5e196f5ca80e24c605cde5c352787ce7",
+  "interleave_joint_continue.py": "f2454d090bdaa34adbcc8d7d2007eab4733bee69dca3a744389d6195227448ab",
+  "interleave_joint_validate.py": "f0a7eb10fbf43a7c023c3918fab37512374232c017549dec98ba20f881a952b2",
+  "interleave_local_consolidation.py": "ab11c21cba09510d96d43e40ac3b31034baa23b9eb55cb2b5a2cd1741aff5bfa",
+  "interleave_meta_evidence.py": "7ea311c2785660ff543445fc97cb118649468aa6242f3a0320d8d0a6ddf6a500",
+  "interleave_meta_readout.py": "33b8b6885dc25b7d89557b5963922a168bc2468d4c4e8b72ddcf54b1033561f4",
+  "interleave_model_cards.py": "dac3cd64fe9e0d36160fceac60f3f1e36406af948a4e8f316529f64734f8b479",
+  "interleave_motor.py": "da0defa4ca24be44ab5e5f0e3a03401ac0bc60038ae609995613ae93f8f22d8a",
+  "interleave_one_life.py": "75b333d22e9d46625c6439e331c0e40fc35eecaa7b0a374c31091b3267684513",
+  "interleave_one_life_eval.py": "cb6829a844f3c40cc24ffab5d18a9d2542b750d62861f5edb14b34f95a620813",
+  "interleave_one_life_padding.py": "68abc9860ed665d84f8917da2d64772bb15d68da4b3763e4b0c6ace4a3b80172",
+  "interleave_one_life_repair.py": "5b4fe66e7f426bb58e2ef79758c458230e290b08362c3a45fc06c209e9a94152",
+  "interleave_one_life_repair_confirm.py": "93a637200f8b47481d8bee8d2c7f51051dd4bca35e37724b94f083a39563eca2",
+  "interleave_one_life_repair_eval.py": "c5947a6acb2ad7bd67513ac1a96d2503d074016dd0ac84a180679c6955bc5562",
+  "interleave_one_life_swaps.py": "c7feb4123d2129cbc0607ac5f3c4d88e1c9c4281ea7d0e124c9919a64109d41f",
+  "interleave_plasticity.py": "bab74f0240d1439e9fdd15409c4906d389e26ab2f69170ea65917a17df2b9c45",
+  "interleave_public_kernel.py": "d96ebffda5450af71bcbdaaa8ccc16d43ae8df44b1c62eb7fc1f033ba053a5ef",
+  "interleave_quantized_reference.py": "1e60c89119bae25a669173a9ca73f1a3d44a94cfdc0c3b34da2f83fb81f68121",
+  "interleave_quest_eval.py": "d8fb534708f277d18901778bdd02727a42649fa1473142cb2781df845c8a93e0",
+  "interleave_quest_replication.py": "309a7882af7aaef93792283367aa208cb3ddc1f2e65b7688701f296057a0c40d",
+  "interleave_quest_train.py": "6daf41cf4e5c967563bbdb6cbc58d3ccdd9ad33eef14d0438d92de3cbc05d494",
+  "interleave_quiet_ticks.py": "3ee508823c27ea2be8eca67af6b0201d1797538a81aff5dda3d4bef883a76dc0",
+  "interleave_readback.py": "3de4a6f82f34cd610464cdc20605e1e1f504f3dafe1e2b367af5901b9bffbb1a",
+  "interleave_read_time.py": "661146bb4e07ee055207ccf073cd4f54dfa89a351823c918d98f4ddb4519d9cc",
+  "interleave_rejuvenation.py": "1e6f1cb1f76318f343bbd3ca50e4daa2c52ee60388d64ca8aef37fc2ba7a59a1",
+  "interleave_reliability.py": "2a88e4034d439cae0d08122fb9347ee340f7bdd8385583f51eb78e61c34d2e33",
+  "interleave_review_choice.py": "437e288176da8478188f9d692ffc691b94b1c0b2a491caf172eb5e39b87f3e4e",
+  "interleave_revisit_confirm.py": "09c5ae5c4886fb7383efe527661ef777092ba7d59cb2c11c1c597730681487ad",
+  "interleave_revisit_factorial.py": "1c1dcc4d713d2d5484d86e0f76ea92bdabdc3130aee70be26f18223ad7fc750a",
+  "interleave_revisit_train.py": "31e5a11e8e0e7d0c94f73c01ea393f0bdc783790f2d86608de90532f51254b9a",
+  "interleave_row_credit.py": "ff0eed45d24ac62162076306b5771a14bbdb3b1466e0ce808b12891829392941",
+  "interleave_rule_search.py": "eb42ceb398209a7b85772d412d0af60dbd4edd5bde54481b6f8bac4dd0ec7365",
+  "interleave_savings.py": "11937cf8f740edc2c7e445332040ce40e3d55dcbf732b0d737a2378fa1745825",
+  "interleave_scorecard.py": "f6d540cdc717ffe2d93bedded7a1632bdc9d1aeaa0c3174186343d0baffd5b14",
+  "interleave_slow_reference.py": "c92f09a7d950b7a519416738c4224afe47b15b5cd80209be128b36b11e076bf7",
+  "interleave_slow_report.py": "177d095cad5fd1093afbc5e46903bb3e3d42774c16d5dbf775b79fd3fa19baea",
+  "interleave_spacing.py": "cb1009d41d685541828381bb87e345d69541e91fe0d718a2549271bacd054fa0",
+  "interleave_stability_report.py": "83d9d3ada7bcf6e8634c0f8a119d8ff1f5cf87f53e6b1a0d2151aa675ea0b0c3",
+  "interleave_stream.py": "4b148e71b06b9b86f0cc35117b4761cabb76cf81d8e837438948b72c8b4b46ce",
+  "interleave_structure.py": "86a65ee48e2300b6c4be615d3f8d1a8760254cd3a54e8f57f544725ad45b8d56",
+  "interleave_susceptibility.py": "6e4e1fd9c5074f8275208695c7f1dd100ce8a7f2725ec9507c12b12f04cc744c",
+  "interleave_swap_training.py": "f92f9a951fcf1f4d5b47be7fc72ea359435e14ec825ebafecd5d9e2069dec3fe",
+  "interleave_terminal_speed.py": "166596ba7dbab9e03e3eda8ac7face48b79461d2414d579cd0d4281df3df2089",
+  "interleave_train.py": "d8e42f779cdc4805515b62e85e096683a902ce3cbab49eaf708a80bc0fdf0ac3",
+  "interleave_transfer_binding.py": "f24f0cb3491ddf6fc1f09f8923e2177d0e01bfab847a8b4b2c0e93a5dda6a797",
+  "interleave_transplant.py": "2c7a52b2ff837aba40d8e8fe13bb3fc8c1b0ee8490eca295725724532c95fb24",
+  "interleave_triangle_angular.py": "bf0445167f7097c10b8e89ede4e87c25d5c7a73f36aa0e8509b8cb0db743b625",
+  "interleave_triangle_components.py": "f667e4e5e192ea8660140cd0827511be411503de8a72f6f96da84f938eb02b9e",
+  "interleave_triangle_example.py": "e00686205ace1dbcd565f3ea0f194efdb61c8b55a617ada7aca7e8975ee2f0b9",
+  "interleave_triangle_extension.py": "da6a163df344be17e19aec8997c628ea29138ec68a699c8bfc360d43b0aafea2",
+  "interleave_triangle_long.py": "edc7c2c0ef55e91cc3433b7196fb2cebc546f5d0f1136be3ee5f78411fffff03",
+  "interleave_triangle_prefix.py": "5526ebcb9a88e6388412a52b197dd4d0b5ddeaa96c2d3327445d254dea62854e",
+  "interleave_triangle_prefix_bench.py": "daaaeb9e093d8e087b57c99c07fe0cee8ac100f92df391134327b0004c8d08da",
+  "interleave_triangle_report.py": "f4d6b3a73f5c7f5ef073c0d2404a84a29e7a19e4eb2f5bed11bb12e92bfa3582",
+  "interleave_triangle_rows.py": "0fbdcc83ce170155cda79dbfe1ec6dd5d696e82ede1b26438066293373fee071",
+  "interleave_triangle_train.py": "8ff87460f8176e05dafabb61641fa4dc7d6457c4a312655dcee0cbc846e128a4",
+  "interleave_triangle_transfer.py": "eca0c804a30339b6adf3497495b40369cb7cd9a01a60aa22cb384a8052f30ae8",
+  "interleave_triangle_wait.py": "35bedd534398da0e37a6caea31ae7dd0d8ec88b23886f802670b4a2a463a7981",
+  "interleave_warm_factorial.py": "90d33bf85c077059d9af0dbdb65fdbb639177e96a2d609f208c93a06a204fac9",
+  "interleave_wide_capacity.py": "eb7d9bc17e3031c35afb5f929bf6f7998eccdbabc0dae3dcb885f7c3e5a1b20e",
+  "interleave_write_range.py": "e7332e38a31c0291e05c6ec7b3fba12ae3628a22dc9de700d624b1ca3db48f36",
+  "reporting/interleaved_audit.py": "f8ba6019c428fe18d097ad75009b3562e23b7ca1458e85fc0d4f567541c54eac",
+  "reporting/interleaved_circuit_figure.py": "e61f8895bac9238f9cea0e40fece3aec0af1fc42dd0cb56d2e95f3d8fdd405a0",
+  "reporting/interleaved_curricula.py": "62bfae27c1036a72eb7cd1eb7e14200d13b4292ac4d72fff569d7764673c4c16",
+  "reporting/interleaved_one_life.py": "eb58ddd27036a453b444fb4e253ea6f42fe540b1bf5de2ef56258763845eac6a",
+  "reporting/interleaved_review.py": "153b723608b862db4ed584d8899edf8f612eb310d19aa72ff34f0d3111166714",
+  "self_param_writer.py": "6ad2439ee0930522494a40345b35fffeba43c066a3e14faffc36a5d572d007b9",
+  "local_trace_graph.py": "8bdd13b8a6954fae00d27ae56b585cc8073442221929a510813d0b10e728b31a",
+  "local_trace_train.py": "666eac678846ec83410e1dd6c879a4b9a925fc5fab190a1eb89525f0627a3a6f",
+  "local_trace_eval.py": "ac7a65b58ea33e9ca117b4ff0b9c4328f2a7bd5fa3d410ce4c977c4d4c3064d6",
+  "edit_receipt_graph.py": "41b3fd80a2191958355970867cdc0f84b4a56f4f672d8f5bef4c7f57bd9a9ace",
+  "edit_receipt_train.py": "c36dbd80489adb005765f05ab8cec676ff91beed8ccf153df7a7d2ad01472167",
+  "revisit_choice_graph.py": "eef973f7c6c9c002dcd247e802da86c57647e3a10125e9f99eac6e036aa6c507",
+  "world.py": "ff758f1ab963f258e6b6c83c43fef8f463b6db3c6db8cb729ef703b2925a5444"
+ },
+ "archived_training_sources": {
+  "interleave_geometry_curriculum": {
+   "as_run": "69dac983f9fb3c0a65496b42f3bff73ed83237c22eb99d699e75b43ef80c5ad3",
+   "after_checkpoint_publication_fix": "cefb26aa1d344a3e86f7e40b2140dfa2c74a237695c89b154148af29ff2c2a7d",
+   "archive": "training-sources/interleave_geometry_curriculum-69dac983f9fb.py"
+  },
+  "interleave_cross_skill": {
+   "as_run": "77eb6e4df8917aa714cdc3afc395898e686bab1efb6177ec921bda8c946d1364",
+   "after_checkpoint_publication_fix": "6aae14be3356e09313a1ae220066caf84d19a3f786b31092d9e4452e8ab1b2e2",
+   "archive": "training-sources/interleave_cross_skill-77eb6e4df891.py"
+  },
+  "interleave_one_life": {
+   "as_run": "9b10acab367c11d1d2a160ccdc994bb68bfac436168f9bbcc90a840cf055b041",
+   "after_checkpoint_publication_fix": "75b333d22e9d46625c6439e331c0e40fc35eecaa7b0a374c31091b3267684513",
+   "archive": "training-sources/interleave_one_life-9b10acab367c.py"
+  }
+ },
+ "physical_suites": {
+  "complete": 132,
+  "pending": 0,
+  "inventory_sha256": "443a0d9884edb3b8fa268cf88a14cbe1e0ee6775d0597ad3a7efe8dcee942219"
+ },
+ "tests": {
+  "passed": 335,
+  "warnings": 8,
+  "log_sha256": "cc7ca79ef6b772e9b2d28197cb6eeb6c5d9cf92fc56fb504812031b592640852"
+ },
+ "notes": "Checks the selected main model-card, triangle, three-geometry and six-memory studies, plus fixed/learned stability studies. The narrow-scope count does not include every file produced overnight. Recomputes ordinary three-odor sampled correctness from raw actions and the exact all-six uniform law crossing. Other dedicated evidence indices independently check field-specific raw data."
+}

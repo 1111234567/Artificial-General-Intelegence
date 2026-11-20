@@ -1,0 +1,401 @@
+{
+  "split": "main",
+  "rounds_per_context_pair": 4,
+  "roots": [
+    2157999228,
+    2164766253,
+    2168149663,
+    2197435865,
+    2113654975,
+    2172833522,
+    2196361365,
+    2181452803,
+    2172829199,
+    2184265830,
+    2105627862,
+    2132338076,
+    2107671350,
+    2178641473,
+    2169300212,
+    2123734517,
+    2160393244,
+    2128693898,
+    2160723751,
+    2119119187,
+    2171178655,
+    2105716244,
+    2198026983,
+    2190379226,
+    2134992654,
+    2180035778,
+    2184252277,
+    2169238259,
+    2137034051,
+    2105989310,
+    2133974443,
+    2172876202,
+    2192637603,
+    2103402939,
+    2150187614,
+    2107518392,
+    2105521698,
+    2179096311,
+    2154722517,
+    2128866378,
+    2167965739,
+    2130491526,
+    2129538737,
+    2106917792,
+    2170828189,
+    2153133587,
+    2100266398,
+    2182008084,
+    2128256521,
+    2199008547,
+    2172657316,
+    2144052795,
+    2181174025,
+    2186053215,
+    2122521499,
+    2139212345,
+    2133574903,
+    2199256652,
+    2189182279,
+    2136314190,
+    2139201748,
+    2192813667,
+    2121167848,
+    2173311757
+  ],
+  "profiles": [
+    "familiar"
+  ],
+  "cases": [
+    "aba",
+    "cba",
+    "flipped",
+    "b_only",
+    "prime_zero",
+    "prime_donor",
+    "stable",
+    "natural",
+    "aligned_0",
+    "aligned_1",
+    "aligned_2",
+    "aligned_4"
+  ],
+  "specs": [
+    {
+      "name": "uniform",
+      "birth": 0,
+      "kind": "uniform",
+      "intervention": "active"
+    },
+    {
+      "name": "public_lookup",
+      "birth": 0,
+      "kind": "public_lookup",
+      "intervention": "active"
+    },
+    {
+      "name": "local_active",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "disabled",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_independent",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "9a3454eaebae7f252c0f7ef5f847c05b75be960547880895e75008544fe21d7a"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 731,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "0d695a3c0a71d910d00ec49f293fa98066b9445717cced4380ad9768d93ac138"
+    },
+    {
+      "name": "local_active",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "disabled",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_independent",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "9a3454eaebae7f252c0f7ef5f847c05b75be960547880895e75008544fe21d7a"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 732,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "0d695a3c0a71d910d00ec49f293fa98066b9445717cced4380ad9768d93ac138"
+    },
+    {
+      "name": "local_active",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "disabled",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_independent",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "9a3454eaebae7f252c0f7ef5f847c05b75be960547880895e75008544fe21d7a"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 733,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "0d695a3c0a71d910d00ec49f293fa98066b9445717cced4380ad9768d93ac138"
+    },
+    {
+      "name": "local_active",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "disabled",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_independent",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "9a3454eaebae7f252c0f7ef5f847c05b75be960547880895e75008544fe21d7a"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 734,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "0d695a3c0a71d910d00ec49f293fa98066b9445717cced4380ad9768d93ac138"
+    },
+    {
+      "name": "local_active",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "disabled",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_independent",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "9a3454eaebae7f252c0f7ef5f847c05b75be960547880895e75008544fe21d7a"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 735,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "0d695a3c0a71d910d00ec49f293fa98066b9445717cced4380ad9768d93ac138"
+    },
+    {
+      "name": "local_active",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "disabled",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 500,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "a285d7a9d8715cde20656b3179e75549ee7b7accf74fbd6e8a2c1b123c87176b"
+    },
+    {
+      "name": "local_independent",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "9a3454eaebae7f252c0f7ef5f847c05b75be960547880895e75008544fe21d7a"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 736,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 500,
+      "intervention": "active",
+      "checkpoint_sha256": "0d695a3c0a71d910d00ec49f293fa98066b9445717cced4380ad9768d93ac138"
+    }
+  ],
+  "stochastic": true,
+  "domain": 8298817,
+  "donor_domain": 8298818,
+  "source_sha256": "cda6104ee17983430cba1bcfc2abfbc9f25e77af061a5f2cafdbda5fbde30c01",
+  "cue_bank": [
+    [
+      0.0,
+      1.100000023841858,
+      0.0
+    ],
+    [
+      0.0,
+      -0.550000011920929,
+      0.952627956867218
+    ],
+    [
+      0.0,
+      -0.550000011920929,
+      -0.952627956867218
+    ]
+  ],
+  "mark_axis": [
+    1.350000023841858,
+    0.0,
+    0.0
+  ],
+  "physical": "A native motor choice drives sustained left/right pulses in the existing mixture body. Its actual contact supplies side plus signed taste to native sensory ports; all silent contacts retain side while forcing physical writes off. Movement-step states stay in the body adapter.",
+  "laws": "Single-pair profiles fully cross independent A/B binary laws per root. The three-pair stress crosses all 8 A maps and sets B to the inverse for each pair. C has newly drawn odors and unrelated laws. Flipped keeps its prime sensory streams and inverts only earlier A taste. B-only substitutes B for A while holding length constant. Donor signs share neither private law nor choices with the receiver, and appear at the receiver's actual receipt event.",
+  "scoring": "A/B/mark are ordered independently per root after the B block. All three are silent and missed contacts count as incorrect. Joint A and B means both actual contacts were correct. The reversal's natural row exposes feedback immediately after each of the first four changed requests; aligned rows mask the earlier changes so all doses share the final physical layout.",
+  "selection": "These evaluation roots are held out from model and checkpoint selection."
+}

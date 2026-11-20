@@ -1,0 +1,236 @@
+{
+  "stage": 0,
+  "manifest": {
+    "path": "data/active-review-20261120/core/run.json",
+    "sha256": "1489a27ddc9eb14182faff74139ad9d20932666b40a96ed151fe7cfc46b287f7"
+  },
+  "script": {
+    "path": "experiments/pulse_game/noon_transfer_custody.py",
+    "sha256": "cd4eac6664e6e4231401bc693dcf0cae0f42f6737eb9ba84bee1c38796f8cdb3"
+  },
+  "reports": {},
+  "checkpoints": {
+    "original": {
+      "native": {
+        "optimizer": {
+          "path": "data/active-review-20261120/core/original/training/native/optimizer-000000.pt",
+          "sha256": "25c8ca57c53924232b44d08b60c69c482aba9c418e8c315738e02a2bb9a5ccd1"
+        },
+        "trace": {
+          "path": "data/active-review-20261120/core/original/training/native/trace-000000.npz",
+          "sha256": "4da21cd94109085c503421b2ba1172a809e8719ed23d39d19a80103aadbc7e28"
+        },
+        "models": {
+          "731": {
+            "path": "data/active-review-20261120/core/original/birth_731/odor/native/checkpoint_0.npz",
+            "sha256": "45feae317c6c592df867d6b601ad5f7888280a6f0538c92f438ab6a196120d92"
+          },
+          "732": {
+            "path": "data/active-review-20261120/core/original/birth_732/odor/native/checkpoint_0.npz",
+            "sha256": "a02503f304b654b0ff8547bc2bfad33030b27a24ca8ff1197a100ea40b00e85c"
+          },
+          "733": {
+            "path": "data/active-review-20261120/core/original/birth_733/odor/native/checkpoint_0.npz",
+            "sha256": "8ccefdb807c4d95da044750c38a696ae0604382dad93193d552b593afdec77ea"
+          },
+          "734": {
+            "path": "data/active-review-20261120/core/original/birth_734/odor/native/checkpoint_0.npz",
+            "sha256": "1e7e12de749d812725e01004e779773abca885d80f81c09337cc972241608294"
+          },
+          "735": {
+            "path": "data/active-review-20261120/core/original/birth_735/odor/native/checkpoint_0.npz",
+            "sha256": "55035afc90d8586a9c887147d3a74100709ecd5d49b234b83f3024d83fca0fd5"
+          },
+          "736": {
+            "path": "data/active-review-20261120/core/original/birth_736/odor/native/checkpoint_0.npz",
+            "sha256": "0778b5d63fe1983b17ba3fc73f836f7598bee6a8212179db374cfffc58c60e85"
+          }
+        }
+      },
+      "random": {
+        "optimizer": {
+          "path": "data/active-review-20261120/core/original/training/random/optimizer-000000.pt",
+          "sha256": "a52e9946760db3b80f257339b4ccf3e868c5fc49248089b437dcc3fbd09170c6"
+        },
+        "trace": {
+          "path": "data/active-review-20261120/core/original/training/random/trace-000000.npz",
+          "sha256": "4da21cd94109085c503421b2ba1172a809e8719ed23d39d19a80103aadbc7e28"
+        },
+        "models": {
+          "731": {
+            "path": "data/active-review-20261120/core/original/birth_731/odor/random/checkpoint_0.npz",
+            "sha256": "247ab8c0002fb14c89bb4cf975362c59af7ce48ab610101d4dd95f97a5ea098f"
+          },
+          "732": {
+            "path": "data/active-review-20261120/core/original/birth_732/odor/random/checkpoint_0.npz",
+            "sha256": "757bf8b24ea4ba70dc33baf86b4cd4ce97d8810760c26f7337d85d66c91515e1"
+          },
+          "733": {
+            "path": "data/active-review-20261120/core/original/birth_733/odor/random/checkpoint_0.npz",
+            "sha256": "590ed876885910c2e9cdcb45cd8aa7e74ae7715065ce0098b18c211db3c18284"
+          },
+          "734": {
+            "path": "data/active-review-20261120/core/original/birth_734/odor/random/checkpoint_0.npz",
+            "sha256": "3677d146f384635abf6af116a68c89dcad1d3a5865f22b6e0c88c7a2685d5a46"
+          },
+          "735": {
+            "path": "data/active-review-20261120/core/original/birth_735/odor/random/checkpoint_0.npz",
+            "sha256": "39de9b0ad960e91dc3d1f7f13ec8aa3c04045b0e2c8baffac3a4e47bae9e4ae6"
+          },
+          "736": {
+            "path": "data/active-review-20261120/core/original/birth_736/odor/random/checkpoint_0.npz",
+            "sha256": "f1f436eec62165e0f2518bc7eaee27bc3e0f189ab25c2cc625dffbf5e9d8ba67"
+          }
+        }
+      },
+      "uncertain": {
+        "optimizer": {
+          "path": "data/active-review-20261120/core/original/training/uncertain/optimizer-000000.pt",
+          "sha256": "4e190e618c58447c9832ebd3394524acd4feb361259a9ca55e2612056e9e5802"
+        },
+        "trace": {
+          "path": "data/active-review-20261120/core/original/training/uncertain/trace-000000.npz",
+          "sha256": "4da21cd94109085c503421b2ba1172a809e8719ed23d39d19a80103aadbc7e28"
+        },
+        "models": {
+          "731": {
+            "path": "data/active-review-20261120/core/original/birth_731/odor/uncertain/checkpoint_0.npz",
+            "sha256": "0514c9cb17c258314b03dde1820f73e63686006aa757ad3bb5729c674c8ef09e"
+          },
+          "732": {
+            "path": "data/active-review-20261120/core/original/birth_732/odor/uncertain/checkpoint_0.npz",
+            "sha256": "2f59cdb31e5e97237569410cf5112cd0222cda074b21bbb29fcd9f2c4c2b1d25"
+          },
+          "733": {
+            "path": "data/active-review-20261120/core/original/birth_733/odor/uncertain/checkpoint_0.npz",
+            "sha256": "d9dabd2b4f49359265b9e30f61bc5ca5ac75dc8c5a78d2dbde9a0fe1859c6855"
+          },
+          "734": {
+            "path": "data/active-review-20261120/core/original/birth_734/odor/uncertain/checkpoint_0.npz",
+            "sha256": "e09f9096799bc337aca65c051e3adff881271e8a5448d15b6e811ae2a4962eb0"
+          },
+          "735": {
+            "path": "data/active-review-20261120/core/original/birth_735/odor/uncertain/checkpoint_0.npz",
+            "sha256": "2ccff16bfad0b87b0b5b2f44a229032cd3010c83662a44b0989bba98877272c4"
+          },
+          "736": {
+            "path": "data/active-review-20261120/core/original/birth_736/odor/uncertain/checkpoint_0.npz",
+            "sha256": "8902d88d639c165d496c3ca0f1a00bc5372df74df3248accdf6d55f17a046c7c"
+          }
+        }
+      }
+    },
+    "independent": {
+      "native": {
+        "optimizer": {
+          "path": "data/active-review-20261120/core/independent/training/native/optimizer-000000.pt",
+          "sha256": "8e957b9d887386a63546c8e4544c1fc8094ed50854e0212355d3b99523bb20b5"
+        },
+        "trace": {
+          "path": "data/active-review-20261120/core/independent/training/native/trace-000000.npz",
+          "sha256": "82d1416098c6baaae0fed9e8de4c8894a9bd4fcf0242dc0d9a3510373c963517"
+        },
+        "models": {
+          "811": {
+            "path": "data/active-review-20261120/core/independent/birth_811/odor/native/checkpoint_0.npz",
+            "sha256": "9a272675083f4473f42bcb9ad0593e4e5570e41acd51f62b417fc21be92ac989"
+          },
+          "812": {
+            "path": "data/active-review-20261120/core/independent/birth_812/odor/native/checkpoint_0.npz",
+            "sha256": "6a2515712e95fd65951c5aeec82ef3a5394e2cc5f4398f09cc086a2c290bb1c6"
+          },
+          "813": {
+            "path": "data/active-review-20261120/core/independent/birth_813/odor/native/checkpoint_0.npz",
+            "sha256": "2209625f822367198045a8e7866930b17eb98cd039e4e948eaf98f720c2a7e4b"
+          },
+          "814": {
+            "path": "data/active-review-20261120/core/independent/birth_814/odor/native/checkpoint_0.npz",
+            "sha256": "4475d8eda62b291f77d3fab44e9533d979324a920ea15c8d275ebfdc360b965b"
+          },
+          "815": {
+            "path": "data/active-review-20261120/core/independent/birth_815/odor/native/checkpoint_0.npz",
+            "sha256": "78747de3ed818c687c3c16a9b2e464719495c74c22069cf23a536ab0a2d5aa50"
+          },
+          "816": {
+            "path": "data/active-review-20261120/core/independent/birth_816/odor/native/checkpoint_0.npz",
+            "sha256": "4d4f8cda574c588258f23ce02554e55e0c9aaab1d89b99b2bccff9dad10a35ca"
+          }
+        }
+      },
+      "random": {
+        "optimizer": {
+          "path": "data/active-review-20261120/core/independent/training/random/optimizer-000000.pt",
+          "sha256": "536631212c85099c36d00e46445da59553f1d1311c28c041d9801997eb7d81ac"
+        },
+        "trace": {
+          "path": "data/active-review-20261120/core/independent/training/random/trace-000000.npz",
+          "sha256": "82d1416098c6baaae0fed9e8de4c8894a9bd4fcf0242dc0d9a3510373c963517"
+        },
+        "models": {
+          "811": {
+            "path": "data/active-review-20261120/core/independent/birth_811/odor/random/checkpoint_0.npz",
+            "sha256": "407606b8cfa752a3cf721afca02c36086cf73c76fa01683697ca49510bc256bc"
+          },
+          "812": {
+            "path": "data/active-review-20261120/core/independent/birth_812/odor/random/checkpoint_0.npz",
+            "sha256": "4b3f6e3622e2c09f694792a669bdd9656d49321bb398b65def7d9468070e97dc"
+          },
+          "813": {
+            "path": "data/active-review-20261120/core/independent/birth_813/odor/random/checkpoint_0.npz",
+            "sha256": "88ef9c8910b79e9c41980938ce78e35c59720c8cb13bf287ba6ce8d7d964a8be"
+          },
+          "814": {
+            "path": "data/active-review-20261120/core/independent/birth_814/odor/random/checkpoint_0.npz",
+            "sha256": "7a7b9eeecf0b80d6d37b3c11e67db09ba45408ebc621f6dc208214658384d21d"
+          },
+          "815": {
+            "path": "data/active-review-20261120/core/independent/birth_815/odor/random/checkpoint_0.npz",
+            "sha256": "d7d4ca9e800c1b4cc3393db854c90d5fdfc1f7d126b8bbbe2a48b5dc7dab557e"
+          },
+          "816": {
+            "path": "data/active-review-20261120/core/independent/birth_816/odor/random/checkpoint_0.npz",
+            "sha256": "d8691f2b81c9e09013cdabb90d17c604dc3e929ead6897ff5fcfb0a956d051df"
+          }
+        }
+      },
+      "uncertain": {
+        "optimizer": {
+          "path": "data/active-review-20261120/core/independent/training/uncertain/optimizer-000000.pt",
+          "sha256": "f5cc87a10ff6974b570e62750211120e6fe1b2af1d0b37fcad7cd224d0ff408b"
+        },
+        "trace": {
+          "path": "data/active-review-20261120/core/independent/training/uncertain/trace-000000.npz",
+          "sha256": "82d1416098c6baaae0fed9e8de4c8894a9bd4fcf0242dc0d9a3510373c963517"
+        },
+        "models": {
+          "811": {
+            "path": "data/active-review-20261120/core/independent/birth_811/odor/uncertain/checkpoint_0.npz",
+            "sha256": "077675d81bcd795b8aa45fa450062bd34a67879a916cdea9d7b39274c510b218"
+          },
+          "812": {
+            "path": "data/active-review-20261120/core/independent/birth_812/odor/uncertain/checkpoint_0.npz",
+            "sha256": "71c80930eb3d9997a11dcdf70338686f1469cd6451f263b30fe4b3ea23352666"
+          },
+          "813": {
+            "path": "data/active-review-20261120/core/independent/birth_813/odor/uncertain/checkpoint_0.npz",
+            "sha256": "5cb2ba848689e1bc5fa7676b085d69f37e8069e31129cea15ddf33826331528d"
+          },
+          "814": {
+            "path": "data/active-review-20261120/core/independent/birth_814/odor/uncertain/checkpoint_0.npz",
+            "sha256": "fc14e40456905ac9fbd896a0bfc773283be6fb789833d8d9de8b92e354f5e031"
+          },
+          "815": {
+            "path": "data/active-review-20261120/core/independent/birth_815/odor/uncertain/checkpoint_0.npz",
+            "sha256": "e2242a151653d96534c901c35d4e42d74583a03c1757df1bff9fcf15edf359fc"
+          },
+          "816": {
+            "path": "data/active-review-20261120/core/independent/birth_816/odor/uncertain/checkpoint_0.npz",
+            "sha256": "472a75c6b8e3daa77d8454d5f22014bd8fb7b17b5b59375950391001acae24a9"
+          }
+        }
+      }
+    }
+  },
+  "updates_per_birth": 0,
+  "no_review_updates_per_birth": 0
+}

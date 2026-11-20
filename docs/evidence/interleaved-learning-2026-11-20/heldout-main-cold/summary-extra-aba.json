@@ -1,0 +1,2052 @@
+{
+  "split": "main",
+  "audit": {},
+  "rounds": 4,
+  "n_roots": 96,
+  "models": {
+    "uniform": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4791666666666667
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4791666666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4583333333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4583333333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4479166666666667
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4479166666666667
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.25,
+              "worst_within_birth": 0.20833333333333334
+            },
+            "conflict": {
+              "mean": 0.21875,
+              "worst_within_birth": 0.20833333333333334
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.125,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.109375,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4479166666666667
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4479166666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4791666666666667
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4791666666666667
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4895833333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4895833333333333
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.25,
+              "worst_within_birth": 0.21875
+            },
+            "conflict": {
+              "mean": 0.234375,
+              "worst_within_birth": 0.21875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.125,
+              "worst_within_birth": 0.10416666666666667
+            },
+            "conflict": {
+              "mean": 0.1171875,
+              "worst_within_birth": 0.10416666666666667
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.34375
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.34375
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4270833333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4270833333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4895833333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4895833333333333
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.2604166666666667,
+              "worst_within_birth": 0.21875
+            },
+            "conflict": {
+              "mean": 0.2604166666666667,
+              "worst_within_birth": 0.21875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.13020833333333334,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.13020833333333334,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "public_lookup": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            },
+            "conflict": {
+              "mean": 1.0,
+              "worst_within_birth": 1.0
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "local_active": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.7947048611111112,
+              "worst_within_birth": 0.5364583333333334
+            },
+            "conflict": {
+              "mean": 0.677517361111111,
+              "worst_within_birth": 0.5364583333333334
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.6367187499999999,
+              "worst_within_birth": 0.22395833333333334
+            },
+            "conflict": {
+              "mean": 0.3624131944444445,
+              "worst_within_birth": 0.22395833333333334
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.9524739583333334,
+              "worst_within_birth": 0.9140625
+            },
+            "conflict": {
+              "mean": 0.9605034722222222,
+              "worst_within_birth": 0.9322916666666666
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.505642361111111,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.14930555555555555,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.47808159722222227,
+              "worst_within_birth": 0.052083333333333336
+            },
+            "conflict": {
+              "mean": 0.14192708333333334,
+              "worst_within_birth": 0.052083333333333336
+            }
+          },
+          "writes_per_request": 183.36284722222223,
+          "contact_all": 1.0
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.7962239583333334,
+              "worst_within_birth": 0.5833333333333334
+            },
+            "conflict": {
+              "mean": 0.6883680555555555,
+              "worst_within_birth": 0.5833333333333334
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.6354166666666666,
+              "worst_within_birth": 0.3072916666666667
+            },
+            "conflict": {
+              "mean": 0.39236111111111116,
+              "worst_within_birth": 0.3072916666666667
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.8216145833333334,
+              "worst_within_birth": 0.7526041666666666
+            },
+            "conflict": {
+              "mean": 0.8454861111111112,
+              "worst_within_birth": 0.7552083333333334
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.5069444444444444,
+              "worst_within_birth": 0.13020833333333334
+            },
+            "conflict": {
+              "mean": 0.18055555555555558,
+              "worst_within_birth": 0.13020833333333334
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.4051649305555556,
+              "worst_within_birth": 0.0625
+            },
+            "conflict": {
+              "mean": 0.15364583333333331,
+              "worst_within_birth": 0.0625
+            }
+          },
+          "writes_per_request": 183.6603587962963,
+          "contact_all": 1.0
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5895182291666666,
+              "worst_within_birth": 0.46875
+            },
+            "conflict": {
+              "mean": 0.5895182291666666,
+              "worst_within_birth": 0.46875
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4471571180555556,
+              "worst_within_birth": 0.375
+            },
+            "conflict": {
+              "mean": 0.4471571180555556,
+              "worst_within_birth": 0.375
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.7823350694444443,
+              "worst_within_birth": 0.6731770833333334
+            },
+            "conflict": {
+              "mean": 0.7823350694444443,
+              "worst_within_birth": 0.6731770833333334
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.18967013888888887,
+              "worst_within_birth": 0.11458333333333333
+            },
+            "conflict": {
+              "mean": 0.18967013888888887,
+              "worst_within_birth": 0.11458333333333333
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.1467013888888889,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.1467013888888889,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "writes_per_request": 207.80008470542114,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "local_active_disabled": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.46875
+            },
+            "conflict": {
+              "mean": 0.5017361111111112,
+              "worst_within_birth": 0.4791666666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.49826388888888884,
+              "worst_within_birth": 0.4583333333333333
+            },
+            "conflict": {
+              "mean": 0.49826388888888884,
+              "worst_within_birth": 0.4583333333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.375
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.375
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24913194444444442,
+              "worst_within_birth": 0.1875
+            },
+            "conflict": {
+              "mean": 0.21267361111111113,
+              "worst_within_birth": 0.1875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.12456597222222221,
+              "worst_within_birth": 0.020833333333333332
+            },
+            "conflict": {
+              "mean": 0.10633680555555557,
+              "worst_within_birth": 0.020833333333333332
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4270833333333333
+            },
+            "conflict": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.4270833333333333
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.49652777777777773,
+              "worst_within_birth": 0.4270833333333333
+            },
+            "conflict": {
+              "mean": 0.49652777777777773,
+              "worst_within_birth": 0.4270833333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4479166666666667
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4479166666666667
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24826388888888887,
+              "worst_within_birth": 0.1875
+            },
+            "conflict": {
+              "mean": 0.24826388888888887,
+              "worst_within_birth": 0.1875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.12413194444444443,
+              "worst_within_birth": 0.041666666666666664
+            },
+            "conflict": {
+              "mean": 0.12413194444444443,
+              "worst_within_birth": 0.041666666666666664
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.2916666666666667
+            },
+            "conflict": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.2916666666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4991319444444445,
+              "worst_within_birth": 0.34375
+            },
+            "conflict": {
+              "mean": 0.4991319444444445,
+              "worst_within_birth": 0.34375
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5,
+              "worst_within_birth": 0.3776041666666667
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.3776041666666667
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24392361111111108,
+              "worst_within_birth": 0.14583333333333334
+            },
+            "conflict": {
+              "mean": 0.24392361111111108,
+              "worst_within_birth": 0.14583333333333334
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.12196180555555554,
+              "worst_within_birth": 0.03125
+            },
+            "conflict": {
+              "mean": 0.12196180555555554,
+              "worst_within_birth": 0.03125
+            }
+          },
+          "writes_per_request": 0.0,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "local_active_shuffle": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5032552083333334,
+              "worst_within_birth": 0.46875
+            },
+            "conflict": {
+              "mean": 0.502170138888889,
+              "worst_within_birth": 0.46875
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4991319444444445,
+              "worst_within_birth": 0.4635416666666667
+            },
+            "conflict": {
+              "mean": 0.5060763888888888,
+              "worst_within_birth": 0.46875
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.4952256944444445,
+              "worst_within_birth": 0.3802083333333333
+            },
+            "conflict": {
+              "mean": 0.49565972222222227,
+              "worst_within_birth": 0.3802083333333333
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24913194444444445,
+              "worst_within_birth": 0.171875
+            },
+            "conflict": {
+              "mean": 0.203125,
+              "worst_within_birth": 0.171875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.12456597222222221,
+              "worst_within_birth": 0.020833333333333332
+            },
+            "conflict": {
+              "mean": 0.10112847222222222,
+              "worst_within_birth": 0.020833333333333332
+            }
+          },
+          "writes_per_request": 184.54673032407408,
+          "contact_all": 1.0,
+          "address_shuffle": {
+            "matched_weights": 0.9967447916666666,
+            "matched_bias": 1.0,
+            "relocated_birth": 0.09928385416666667,
+            "relocated_retirement": 0.04515697337962963,
+            "matched_retirement": 0.9549696180555556
+          }
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5004340277777778,
+              "worst_within_birth": 0.4375
+            },
+            "conflict": {
+              "mean": 0.5043402777777778,
+              "worst_within_birth": 0.4583333333333333
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4978298611111111,
+              "worst_within_birth": 0.4427083333333333
+            },
+            "conflict": {
+              "mean": 0.5013020833333333,
+              "worst_within_birth": 0.4583333333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.501736111111111,
+              "worst_within_birth": 0.4557291666666667
+            },
+            "conflict": {
+              "mean": 0.5043402777777778,
+              "worst_within_birth": 0.4479166666666667
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24848090277777776,
+              "worst_within_birth": 0.171875
+            },
+            "conflict": {
+              "mean": 0.23046875,
+              "worst_within_birth": 0.171875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.12803819444444445,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.11588541666666667,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "writes_per_request": 184.62220775462964,
+          "contact_all": 1.0,
+          "address_shuffle": {
+            "matched_weights": 0.9970703125,
+            "matched_bias": 1.0,
+            "relocated_birth": 0.0983615451388889,
+            "relocated_retirement": 0.045337818287037035,
+            "matched_retirement": 0.9546802662037037
+          }
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.4958767361111111,
+              "worst_within_birth": 0.3333333333333333
+            },
+            "conflict": {
+              "mean": 0.4958767361111111,
+              "worst_within_birth": 0.3333333333333333
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4951171875,
+              "worst_within_birth": 0.4270833333333333
+            },
+            "conflict": {
+              "mean": 0.4951171875,
+              "worst_within_birth": 0.4270833333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.4996744791666667,
+              "worst_within_birth": 0.41015625
+            },
+            "conflict": {
+              "mean": 0.4996744791666667,
+              "worst_within_birth": 0.41015625
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.21310763888888892,
+              "worst_within_birth": 0.15104166666666666
+            },
+            "conflict": {
+              "mean": 0.21310763888888892,
+              "worst_within_birth": 0.15104166666666666
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.10687934027777778,
+              "worst_within_birth": 0.041666666666666664
+            },
+            "conflict": {
+              "mean": 0.10687934027777778,
+              "worst_within_birth": 0.041666666666666664
+            }
+          },
+          "writes_per_request": 209.61917912746415,
+          "contact_all": 1.0,
+          "address_shuffle": {
+            "matched_weights": 0.9976593501984127,
+            "matched_bias": 1.0,
+            "relocated_birth": 0.09906684027777778,
+            "relocated_retirement": 0.049215649801587304,
+            "matched_retirement": 0.9508463541666666
+          }
+        }
+      }
+    },
+    "local_independent": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.49956597222222215,
+              "worst_within_birth": 0.4114583333333333
+            },
+            "conflict": {
+              "mean": 0.5,
+              "worst_within_birth": 0.4166666666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4958767361111111,
+              "worst_within_birth": 0.4114583333333333
+            },
+            "conflict": {
+              "mean": 0.4934895833333333,
+              "worst_within_birth": 0.4322916666666667
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.4986979166666667,
+              "worst_within_birth": 0.1875
+            },
+            "conflict": {
+              "mean": 0.4978298611111111,
+              "worst_within_birth": 0.1875
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24696180555555555,
+              "worst_within_birth": 0.16145833333333334
+            },
+            "conflict": {
+              "mean": 0.2074652777777778,
+              "worst_within_birth": 0.16145833333333334
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.12413194444444446,
+              "worst_within_birth": 0.020833333333333332
+            },
+            "conflict": {
+              "mean": 0.10416666666666667,
+              "worst_within_birth": 0.020833333333333332
+            }
+          },
+          "writes_per_request": 186.43366608796296,
+          "contact_all": 1.0
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5013020833333334,
+              "worst_within_birth": 0.390625
+            },
+            "conflict": {
+              "mean": 0.4978298611111111,
+              "worst_within_birth": 0.390625
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4978298611111111,
+              "worst_within_birth": 0.453125
+            },
+            "conflict": {
+              "mean": 0.4952256944444444,
+              "worst_within_birth": 0.453125
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5004340277777778,
+              "worst_within_birth": 0.4557291666666667
+            },
+            "conflict": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.4583333333333333
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24934895833333334,
+              "worst_within_birth": 0.11979166666666667
+            },
+            "conflict": {
+              "mean": 0.2152777777777778,
+              "worst_within_birth": 0.11979166666666667
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.1247829861111111,
+              "worst_within_birth": 0.041666666666666664
+            },
+            "conflict": {
+              "mean": 0.10807291666666667,
+              "worst_within_birth": 0.041666666666666664
+            }
+          },
+          "writes_per_request": 186.43783275462962,
+          "contact_all": 1.0
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5026041666666666,
+              "worst_within_birth": 0.3958333333333333
+            },
+            "conflict": {
+              "mean": 0.5026041666666666,
+              "worst_within_birth": 0.3958333333333333
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.4997829861111111,
+              "worst_within_birth": 0.3802083333333333
+            },
+            "conflict": {
+              "mean": 0.4997829861111111,
+              "worst_within_birth": 0.3802083333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5023871527777778,
+              "worst_within_birth": 0.19010416666666666
+            },
+            "conflict": {
+              "mean": 0.5023871527777778,
+              "worst_within_birth": 0.19010416666666666
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.2191840277777778,
+              "worst_within_birth": 0.13541666666666666
+            },
+            "conflict": {
+              "mean": 0.2191840277777778,
+              "worst_within_birth": 0.13541666666666666
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.11078559027777779,
+              "worst_within_birth": 0.03125
+            },
+            "conflict": {
+              "mean": 0.11078559027777779,
+              "worst_within_birth": 0.03125
+            }
+          },
+          "writes_per_request": 210.25159610215053,
+          "contact_all": 1.0
+        }
+      }
+    },
+    "legacy_active": {
+      "new_layout": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5062934027777778,
+              "worst_within_birth": 0.4479166666666667
+            },
+            "conflict": {
+              "mean": 0.506076388888889,
+              "worst_within_birth": 0.4479166666666667
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5015190972222222,
+              "worst_within_birth": 0.4427083333333333
+            },
+            "conflict": {
+              "mean": 0.5004340277777778,
+              "worst_within_birth": 0.4583333333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5327690972222222,
+              "worst_within_birth": 0.234375
+            },
+            "conflict": {
+              "mean": 0.5303819444444444,
+              "worst_within_birth": 0.22395833333333334
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.2543402777777778,
+              "worst_within_birth": 0.171875
+            },
+            "conflict": {
+              "mean": 0.21918402777777776,
+              "worst_within_birth": 0.171875
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.13541666666666666,
+              "worst_within_birth": 0.010416666666666666
+            },
+            "conflict": {
+              "mean": 0.11545138888888888,
+              "worst_within_birth": 0.010416666666666666
+            }
+          },
+          "writes_per_request": 0.3118489583333333,
+          "contact_all": 1.0
+        }
+      },
+      "novel_marks": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5004340277777778,
+              "worst_within_birth": 0.4010416666666667
+            },
+            "conflict": {
+              "mean": 0.502170138888889,
+              "worst_within_birth": 0.421875
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5008680555555555,
+              "worst_within_birth": 0.4375
+            },
+            "conflict": {
+              "mean": 0.4986979166666667,
+              "worst_within_birth": 0.4375
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5190972222222222,
+              "worst_within_birth": 0.46875
+            },
+            "conflict": {
+              "mean": 0.517361111111111,
+              "worst_within_birth": 0.46875
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.24978298611111113,
+              "worst_within_birth": 0.15625
+            },
+            "conflict": {
+              "mean": 0.22873263888888887,
+              "worst_within_birth": 0.15625
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.13042534722222224,
+              "worst_within_birth": 0.07291666666666667
+            },
+            "conflict": {
+              "mean": 0.1189236111111111,
+              "worst_within_birth": 0.07291666666666667
+            }
+          },
+          "writes_per_request": 0.30807291666666664,
+          "contact_all": 1.0
+        }
+      },
+      "multi_pair": {
+        "aba": {
+          "success/A": {
+            "all": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.3333333333333333
+            },
+            "conflict": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.3333333333333333
+            }
+          },
+          "success/B": {
+            "all": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.3958333333333333
+            },
+            "conflict": {
+              "mean": 0.5008680555555556,
+              "worst_within_birth": 0.3958333333333333
+            }
+          },
+          "success/mark": {
+            "all": {
+              "mean": 0.5337456597222222,
+              "worst_within_birth": 0.21354166666666666
+            },
+            "conflict": {
+              "mean": 0.5337456597222222,
+              "worst_within_birth": 0.21354166666666666
+            }
+          },
+          "success/both": {
+            "all": {
+              "mean": 0.2222222222222222,
+              "worst_within_birth": 0.15104166666666666
+            },
+            "conflict": {
+              "mean": 0.2222222222222222,
+              "worst_within_birth": 0.15104166666666666
+            }
+          },
+          "success/both_modalities": {
+            "all": {
+              "mean": 0.11935763888888888,
+              "worst_within_birth": 0.020833333333333332
+            },
+            "conflict": {
+              "mean": 0.11935763888888888,
+              "worst_within_birth": 0.020833333333333332
+            }
+          },
+          "writes_per_request": 0.3312331989247312,
+          "contact_all": 1.0
+        }
+      }
+    }
+  },
+  "paired": {
+    "uniform": {
+      "new_layout": {},
+      "novel_marks": {},
+      "multi_pair": {}
+    },
+    "public_lookup": {
+      "new_layout": {},
+      "novel_marks": {},
+      "multi_pair": {}
+    },
+    "local_active": {
+      "new_layout": {
+        "local_active_disabled": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2947048611111111,
+              "pointwise_95": [
+                0.25910373263888886,
+                0.3276909722222222
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.17578125,
+              "pointwise_95": [
+                0.10176866319444444,
+                0.2426215277777778
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.1384548611111111,
+              "pointwise_95": [
+                0.10383572048611112,
+                0.1737250434027778
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.13585069444444445,
+              "pointwise_95": [
+                -0.19444444444444445,
+                -0.0720486111111111
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2565104166666667,
+              "pointwise_95": [
+                0.2300347222222222,
+                0.28027886284722225
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.06336805555555555,
+              "pointwise_95": [
+                -0.1189453125,
+                -0.012152777777777778
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.4524739583333333,
+              "pointwise_95": [
+                0.42892252604166664,
+                0.47125108506944446
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.4605034722222222,
+              "pointwise_95": [
+                0.43814019097222223,
+                0.4796006944444444
+              ]
+            }
+          }
+        },
+        "local_active_shuffle": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2914496527777778,
+              "pointwise_95": [
+                0.24814995659722222,
+                0.33106011284722225
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.1753472222222222,
+              "pointwise_95": [
+                0.09439019097222222,
+                0.24762369791666672
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.13758680555555555,
+              "pointwise_95": [
+                0.10133463541666667,
+                0.1754611545138889
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.14366319444444445,
+              "pointwise_95": [
+                -0.20291883680555556,
+                -0.07899305555555555
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2565104166666667,
+              "pointwise_95": [
+                0.23046875,
+                0.2827690972222222
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.05381944444444445,
+              "pointwise_95": [
+                -0.10286458333333333,
+                -0.008246527777777778
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.4572482638888889,
+              "pointwise_95": [
+                0.4329427083333333,
+                0.4806857638888889
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.46484375,
+              "pointwise_95": [
+                0.4361979166666667,
+                0.4919813368055556
+              ]
+            }
+          }
+        },
+        "local_independent": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2951388888888889,
+              "pointwise_95": [
+                0.2557454427083333,
+                0.3292100694444444
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.1775173611111111,
+              "pointwise_95": [
+                0.10199652777777778,
+                0.24284939236111117
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.1408420138888889,
+              "pointwise_95": [
+                0.10535481770833333,
+                0.1776312934027778
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.1310763888888889,
+              "pointwise_95": [
+                -0.19163411458333335,
+                -0.06898871527777771
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2586805555555556,
+              "pointwise_95": [
+                0.2306857638888889,
+                0.2862413194444444
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.058159722222222224,
+              "pointwise_95": [
+                -0.11371527777777778,
+                -0.0078125
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.4537760416666667,
+              "pointwise_95": [
+                0.4292534722222222,
+                0.4748263888888889
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.4626736111111111,
+              "pointwise_95": [
+                0.4383680555555556,
+                0.484375
+              ]
+            }
+          }
+        },
+        "legacy_active": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2884114583333333,
+              "pointwise_95": [
+                0.2520562065972222,
+                0.3216145833333333
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.1714409722222222,
+              "pointwise_95": [
+                0.10220269097222222,
+                0.2365451388888889
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.1351996527777778,
+              "pointwise_95": [
+                0.10069444444444445,
+                0.1703559027777778
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.13802083333333334,
+              "pointwise_95": [
+                -0.1957465277777778,
+                -0.07725694444444445
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2513020833333333,
+              "pointwise_95": [
+                0.22330729166666666,
+                0.2769097222222222
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.06987847222222222,
+              "pointwise_95": [
+                -0.12783203125,
+                -0.018229166666666668
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.4197048611111111,
+              "pointwise_95": [
+                0.3782552083333333,
+                0.4565972222222222
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.4301215277777778,
+              "pointwise_95": [
+                0.3841145833333333,
+                0.4713541666666667
+              ]
+            }
+          }
+        }
+      },
+      "novel_marks": {
+        "local_active_disabled": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2962239583333333,
+              "pointwise_95": [
+                0.2667100694444444,
+                0.3263888888888889
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.1875,
+              "pointwise_95": [
+                0.13411458333333334,
+                0.24522569444444445
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.1388888888888889,
+              "pointwise_95": [
+                0.10415581597222222,
+                0.17502712673611115
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.10416666666666667,
+              "pointwise_95": [
+                -0.1530056423611111,
+                -0.05185546874999996
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2586805555555556,
+              "pointwise_95": [
+                0.22569444444444445,
+                0.2928656684027778
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.06770833333333333,
+              "pointwise_95": [
+                -0.12088758680555556,
+                -0.018663194444444444
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.3216145833333333,
+              "pointwise_95": [
+                0.28634440104166664,
+                0.35840386284722225
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.3454861111111111,
+              "pointwise_95": [
+                0.3020833333333333,
+                0.3875868055555556
+              ]
+            }
+          }
+        },
+        "local_active_shuffle": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2957899305555556,
+              "pointwise_95": [
+                0.26322699652777776,
+                0.32867296006944446
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.1840277777777778,
+              "pointwise_95": [
+                0.125,
+                0.24241536458333338
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.13758680555555555,
+              "pointwise_95": [
+                0.10590277777777778,
+                0.1715549045138889
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.10894097222222222,
+              "pointwise_95": [
+                -0.1584201388888889,
+                -0.053385416666666664
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2584635416666667,
+              "pointwise_95": [
+                0.22547743055555555,
+                0.29395073784722225
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.04991319444444445,
+              "pointwise_95": [
+                -0.10026041666666667,
+                -0.0023763020833332937
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.3198784722222222,
+              "pointwise_95": [
+                0.2793999565972222,
+                0.361328125
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.3411458333333333,
+              "pointwise_95": [
+                0.2942708333333333,
+                0.3904188368055556
+              ]
+            }
+          }
+        },
+        "local_independent": {
+          "A": {
+            "all": {
+              "paired_difference": 0.294921875,
+              "pointwise_95": [
+                0.2651909722222222,
+                0.3259548611111111
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.19053819444444445,
+              "pointwise_95": [
+                0.13692491319444444,
+                0.24696180555555555
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.13758680555555555,
+              "pointwise_95": [
+                0.1037326388888889,
+                0.17340494791666672
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.10286458333333333,
+              "pointwise_95": [
+                -0.15147569444444445,
+                -0.051215277777777776
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2575954861111111,
+              "pointwise_95": [
+                0.225146484375,
+                0.291015625
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.034722222222222224,
+              "pointwise_95": [
+                -0.09375,
+                0.01953125
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.3211805555555556,
+              "pointwise_95": [
+                0.2860243055555556,
+                0.3585069444444444
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.3446180555555556,
+              "pointwise_95": [
+                0.30011935763888886,
+                0.3873806423611112
+              ]
+            }
+          }
+        },
+        "legacy_active": {
+          "A": {
+            "all": {
+              "paired_difference": 0.2957899305555556,
+              "pointwise_95": [
+                0.26117078993055554,
+                0.329541015625
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.18619791666666666,
+              "pointwise_95": [
+                0.13368055555555555,
+                0.2417534722222222
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": 0.1345486111111111,
+              "pointwise_95": [
+                0.10079752604166667,
+                0.16905381944444445
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.10633680555555555,
+              "pointwise_95": [
+                -0.15604383680555556,
+                -0.053385416666666664
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": 0.2571614583333333,
+              "pointwise_95": [
+                0.22188042534722222,
+                0.2909233940972223
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.048177083333333336,
+              "pointwise_95": [
+                -0.10199652777777778,
+                0.002170138888888889
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.3025173611111111,
+              "pointwise_95": [
+                0.25715060763888886,
+                0.3467881944444444
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.328125,
+              "pointwise_95": [
+                0.27147352430555555,
+                0.3815104166666667
+              ]
+            }
+          }
+        }
+      },
+      "multi_pair": {
+        "local_active_disabled": {
+          "A": {
+            "all": {
+              "paired_difference": 0.0886501736111111,
+              "pointwise_95": [
+                0.062060546875,
+                0.1183810763888889
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.0886501736111111,
+              "pointwise_95": [
+                0.062060546875,
+                0.1183810763888889
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": -0.05197482638888889,
+              "pointwise_95": [
+                -0.07486979166666667,
+                -0.029565429687499988
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.05197482638888889,
+              "pointwise_95": [
+                -0.07486979166666667,
+                -0.029565429687499988
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": -0.054253472222222224,
+              "pointwise_95": [
+                -0.08968912760416667,
+                -0.018120659722222224
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.054253472222222224,
+              "pointwise_95": [
+                -0.08968912760416667,
+                -0.018120659722222224
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.2823350694444444,
+              "pointwise_95": [
+                0.22921820746527777,
+                0.3399522569444444
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.2823350694444444,
+              "pointwise_95": [
+                0.22921820746527777,
+                0.3399522569444444
+              ]
+            }
+          }
+        },
+        "local_active_shuffle": {
+          "A": {
+            "all": {
+              "paired_difference": 0.09364149305555555,
+              "pointwise_95": [
+                0.06304253472222222,
+                0.12522243923611115
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.09364149305555555,
+              "pointwise_95": [
+                0.06304253472222222,
+                0.12522243923611115
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": -0.04796006944444445,
+              "pointwise_95": [
+                -0.0763888888888889,
+                -0.019417317708333316
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.04796006944444445,
+              "pointwise_95": [
+                -0.0763888888888889,
+                -0.019417317708333316
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": -0.0234375,
+              "pointwise_95": [
+                -0.05062120225694444,
+                0.004397243923611121
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.0234375,
+              "pointwise_95": [
+                -0.05062120225694444,
+                0.004397243923611121
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.2826605902777778,
+              "pointwise_95": [
+                0.23062879774305556,
+                0.339306640625
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.2826605902777778,
+              "pointwise_95": [
+                0.23062879774305556,
+                0.339306640625
+              ]
+            }
+          }
+        },
+        "local_independent": {
+          "A": {
+            "all": {
+              "paired_difference": 0.0869140625,
+              "pointwise_95": [
+                0.058211263020833334,
+                0.1179470486111111
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.0869140625,
+              "pointwise_95": [
+                0.058211263020833334,
+                0.1179470486111111
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": -0.05262586805555555,
+              "pointwise_95": [
+                -0.07476128472222222,
+                -0.030056423611111112
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.05262586805555555,
+              "pointwise_95": [
+                -0.07476128472222222,
+                -0.030056423611111112
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": -0.029513888888888888,
+              "pointwise_95": [
+                -0.06950141059027778,
+                0.011935763888888888
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.029513888888888888,
+              "pointwise_95": [
+                -0.06950141059027778,
+                0.011935763888888888
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.2799479166666667,
+              "pointwise_95": [
+                0.22965223524305556,
+                0.3362630208333333
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.2799479166666667,
+              "pointwise_95": [
+                0.22965223524305556,
+                0.3362630208333333
+              ]
+            }
+          }
+        },
+        "legacy_active": {
+          "A": {
+            "all": {
+              "paired_difference": 0.0886501736111111,
+              "pointwise_95": [
+                0.06304253472222222,
+                0.11675889756944446
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.0886501736111111,
+              "pointwise_95": [
+                0.06304253472222222,
+                0.11675889756944446
+              ]
+            }
+          },
+          "B": {
+            "all": {
+              "paired_difference": -0.0537109375,
+              "pointwise_95": [
+                -0.07906087239583334,
+                -0.0293484157986111
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.0537109375,
+              "pointwise_95": [
+                -0.07906087239583334,
+                -0.0293484157986111
+              ]
+            }
+          },
+          "both": {
+            "all": {
+              "paired_difference": -0.032552083333333336,
+              "pointwise_95": [
+                -0.07210557725694444,
+                0.0030381944444444445
+              ]
+            },
+            "conflict": {
+              "paired_difference": -0.032552083333333336,
+              "pointwise_95": [
+                -0.07210557725694444,
+                0.0030381944444444445
+              ]
+            }
+          },
+          "mark": {
+            "all": {
+              "paired_difference": 0.2485894097222222,
+              "pointwise_95": [
+                0.1600368923611111,
+                0.33610297309027776
+              ]
+            },
+            "conflict": {
+              "paired_difference": 0.2485894097222222,
+              "pointwise_95": [
+                0.1600368923611111,
+                0.33610297309027776
+              ]
+            }
+          }
+        }
+      }
+    },
+    "local_active_disabled": {
+      "new_layout": {},
+      "novel_marks": {},
+      "multi_pair": {}
+    },
+    "local_active_shuffle": {
+      "new_layout": {},
+      "novel_marks": {},
+      "multi_pair": {}
+    },
+    "local_independent": {
+      "new_layout": {},
+      "novel_marks": {},
+      "multi_pair": {}
+    },
+    "legacy_active": {
+      "new_layout": {},
+      "novel_marks": {},
+      "multi_pair": {}
+    }
+  },
+  "statistics": "Matched roots and initial graphs are the sampling units. Worst values minimize over map within birth and then over births. Paired intervals are pointwise crossed bootstrap draws."
+}

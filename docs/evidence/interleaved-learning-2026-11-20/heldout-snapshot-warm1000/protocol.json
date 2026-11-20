@@ -1,0 +1,433 @@
+{
+  "split": "main",
+  "rounds_per_context_pair": 4,
+  "roots": [
+    2134992643,
+    2137123124,
+    2124161545,
+    2139212332,
+    2167965717,
+    2196361334,
+    2192637575,
+    2172829176,
+    2160393225,
+    2190379197,
+    2123734509,
+    2103402938,
+    2114495351,
+    2199008517,
+    2137034040,
+    2105716243,
+    2133974432,
+    2181452777,
+    2180234643,
+    2106917790,
+    2157999210,
+    2155962858,
+    2150187598,
+    2128693889,
+    2160723732,
+    2140521169,
+    2198026953,
+    2164766232,
+    2130491517,
+    2116685185,
+    2171178633,
+    2184252251,
+    2133691307,
+    2105989309,
+    2171893958,
+    2172876180,
+    2132338066,
+    2123877248,
+    2173509575,
+    2159275045,
+    2129538728,
+    2153133570,
+    2179275222,
+    2119119180,
+    2145728352,
+    2187123057,
+    2154722499,
+    2129157390,
+    2120981729,
+    2178641448,
+    2172657293,
+    2186053187,
+    2122521492,
+    2168149641,
+    2100266398,
+    2132381542,
+    2135654510,
+    2113654971,
+    2177449954,
+    2180035753,
+    2110392932,
+    2178164086,
+    2139201735,
+    2128866369,
+    2190550304,
+    2164326732,
+    2182008059,
+    2133574892,
+    2181173999,
+    2119630141,
+    2169300191,
+    2184265803,
+    2118269684,
+    2157683319,
+    2173381699,
+    2121167842,
+    2192813639,
+    2127030336,
+    2181810978,
+    2144052782,
+    2169238237,
+    2128256512,
+    2105521697,
+    2197435835,
+    2189182251,
+    2179096285,
+    2199256621,
+    2105627860,
+    2173311735,
+    2196109142,
+    2107518390,
+    2107671348,
+    2172833499,
+    2170828167,
+    2185651297,
+    2136314179
+  ],
+  "profiles": [
+    "familiar"
+  ],
+  "cases": [
+    "aba",
+    "cba",
+    "flipped",
+    "b_only",
+    "prime_zero",
+    "prime_donor",
+    "stable",
+    "natural",
+    "aligned_0",
+    "aligned_1",
+    "aligned_2",
+    "aligned_4"
+  ],
+  "specs": [
+    {
+      "name": "uniform",
+      "birth": 0,
+      "kind": "uniform",
+      "intervention": "active"
+    },
+    {
+      "name": "public_lookup",
+      "birth": 0,
+      "kind": "public_lookup",
+      "intervention": "active"
+    },
+    {
+      "name": "local_active",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "disabled",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_independent",
+      "birth": 731,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "8749829450ae0eeac3819f2f9e70f95a85b5d529356692702de2cf9167ed1b1f"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 731,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "4641376950bca8239b454706071f9564a6e127a48fdc94f420b589e8f328372e"
+    },
+    {
+      "name": "local_active",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "disabled",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_independent",
+      "birth": 732,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "8749829450ae0eeac3819f2f9e70f95a85b5d529356692702de2cf9167ed1b1f"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 732,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "4641376950bca8239b454706071f9564a6e127a48fdc94f420b589e8f328372e"
+    },
+    {
+      "name": "local_active",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "disabled",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_independent",
+      "birth": 733,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "8749829450ae0eeac3819f2f9e70f95a85b5d529356692702de2cf9167ed1b1f"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 733,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "4641376950bca8239b454706071f9564a6e127a48fdc94f420b589e8f328372e"
+    },
+    {
+      "name": "local_active",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "disabled",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_independent",
+      "birth": 734,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "8749829450ae0eeac3819f2f9e70f95a85b5d529356692702de2cf9167ed1b1f"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 734,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "4641376950bca8239b454706071f9564a6e127a48fdc94f420b589e8f328372e"
+    },
+    {
+      "name": "local_active",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "disabled",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_independent",
+      "birth": 735,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "8749829450ae0eeac3819f2f9e70f95a85b5d529356692702de2cf9167ed1b1f"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 735,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "4641376950bca8239b454706071f9564a6e127a48fdc94f420b589e8f328372e"
+    },
+    {
+      "name": "local_active",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_disabled",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "disabled",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_active_shuffle",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_active",
+      "step": 1000,
+      "intervention": "shuffle",
+      "checkpoint_sha256": "f9d2ec4ef29b8586d51e8109ac9ecc931f20f482a3c2aae959d5cbde39abc7cc"
+    },
+    {
+      "name": "local_independent",
+      "birth": 736,
+      "kind": "new",
+      "arm": "local_independent",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "8749829450ae0eeac3819f2f9e70f95a85b5d529356692702de2cf9167ed1b1f"
+    },
+    {
+      "name": "legacy_active",
+      "birth": 736,
+      "kind": "new",
+      "arm": "legacy_active",
+      "step": 1000,
+      "intervention": "active",
+      "checkpoint_sha256": "4641376950bca8239b454706071f9564a6e127a48fdc94f420b589e8f328372e"
+    }
+  ],
+  "stochastic": true,
+  "domain": 8298817,
+  "donor_domain": 8298818,
+  "source_sha256": "2720c2ca1b93649ffc1cf01a18cb25f69c85f03f91b89a07fae7b681af557c8e",
+  "cue_bank": [
+    [
+      0.0,
+      1.100000023841858,
+      0.0
+    ],
+    [
+      0.0,
+      -0.550000011920929,
+      0.952627956867218
+    ],
+    [
+      0.0,
+      -0.550000011920929,
+      -0.952627956867218
+    ]
+  ],
+  "mark_axis": [
+    1.350000023841858,
+    0.0,
+    0.0
+  ],
+  "physical": "A native motor choice drives sustained left/right pulses in the existing mixture body. Its actual contact supplies side plus signed taste to native sensory ports; all silent contacts retain side while forcing physical writes off. Movement-step states stay in the body adapter.",
+  "laws": "Single-pair profiles fully cross independent A/B binary laws and both mark laws per root. The three-pair stress crosses all 8 A maps with both mark laws and sets B to the inverse for each pair. C has newly drawn odors and unrelated laws. Flipped keeps its prime sensory streams and inverts only earlier A taste. B-only substitutes B for A while holding length constant. Donor signs share neither private law nor choices with the receiver, and appear at the receiver's actual receipt event.",
+  "scoring": "A, B and marks are measured in distinct silent physical forks of the same pre-probe snapshot. The randomly ordered silent sequence is retained as a secondary measurement. Missed contacts count as incorrect. Joint A and B means both forked physical contacts were correct. The reversal's natural row exposes feedback immediately after each of the first four changed requests; aligned rows mask the earlier changes so all doses share the final physical layout.",
+  "selection": "These evaluation roots are held out from model and checkpoint selection."
+}
